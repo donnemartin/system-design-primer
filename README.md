@@ -294,3 +294,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
+
+### Design Mint.com
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/mint/README.md)
+
+![Imgur](http://i.imgur.com/V5q57vU.png)
