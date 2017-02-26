@@ -64,3 +64,17 @@ More experienced candidates are generally expected to know more about system des
 #### Any resources to prep for coding interviews?
 
 Check out the sister repo [**interactive-coding-challenges**](https://github.com/donnemartin/interactive-coding-challenges) for coding interview resources.
+
+## Contributing
+
+> Learn from the community.
+
+Feel free to submit pull requests to help:
+
+* Fix errors
+* Improve sections
+* Add new sections
+
+Content that needs some polishing is placed [under development](#under-development).
+
+Review the [Contributing Guidelines](https://github.com/donnemartin/awesome-aws/blob/master/CONTRIBUTING.md).
