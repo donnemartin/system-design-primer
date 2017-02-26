@@ -276,3 +276,9 @@ Check out the following links to get a better idea of what to expect:
 | Design Amazon's sales ranking by category feature | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/sales_rank/README.md) |
 | Design a system that scales to millions of users on AWS | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/scaling_aws/README.md) |
 | Add a system design question | [Contribute](#contributing) |
+
+### Design Pastebin.com (or Bit.ly)
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/pastebin/README.md)
+
+![Imgur](http://i.imgur.com/4edXG0T.png)
