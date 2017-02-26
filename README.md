@@ -282,3 +282,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
+
+### Design the Twitter timeline and search (or Facebook feed and search)
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/twitter/README.md)
+
+![Imgur](http://i.imgur.com/jrUBAF7.png)
