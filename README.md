@@ -288,3 +288,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
+
+### Design a web crawler
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/web_crawler/README.md)
+
+![Imgur](http://i.imgur.com/bWxPtQA.png)
