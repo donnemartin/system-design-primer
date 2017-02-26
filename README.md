@@ -306,3 +306,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
+
+### Design a key-value store for a search engine
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/query_cache/README.md)
+
+![Imgur](http://i.imgur.com/4j99mhe.png)
