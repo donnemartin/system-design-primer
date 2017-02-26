@@ -312,3 +312,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
+
+### Design Amazon's sales ranking by category feature
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/sales_rank/README.md)
+
+![Imgur](http://i.imgur.com/MzExP06.png)
