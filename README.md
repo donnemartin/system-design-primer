@@ -258,3 +258,21 @@ Check out the following links to get a better idea of what to expect:
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+
+## System design interview questions with solutions
+
+> Common system design interview questions with sample discussions, code, and diagrams.
+>
+> Solutions linked to content in the `solutions/` folder.
+
+| Question | |
+|---|---|
+| Design Pastebin.com (or Bit.ly) | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/pastebin/README.md) |
+| Design the Twitter timeline (or Facebook feed)<br/>Design Twitter search (or Facebook search) | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/twitter/README.md) |
+| Design a web crawler | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/web_crawler/README.md) |
+| Design Mint.com | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/mint/README.md) |
+| Design the data structures for a social network | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/social_graph/README.md) |
+| Design a key-value store for a search engine | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/query_cache/README.md) |
+| Design Amazon's sales ranking by category feature | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/sales_rank/README.md) |
+| Design a system that scales to millions of users on AWS | [Solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/scaling_aws/README.md) |
+| Add a system design question | [Contribute](#contributing) |
