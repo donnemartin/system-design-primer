@@ -168,3 +168,25 @@ Review the [Contributing Guidelines](https://github.com/donnemartin/awesome-aws/
 * [Credits](#credits)
 * [Contact info](#contact-info)
 * [License](#license)
+
+## Study guide
+
+> Suggested topics to review based on your interview timeline (short, medium, long).
+
+![Imgur](http://i.imgur.com/Klsu4cw.png)
+
+Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your experience, what positions you are interviewing for, and which companies you are interviewing with.
+
+* **Short** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
+* **Medium** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving a **many** interview questions.
+* **Long** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving a **most** interview questions.
+
+| | Short | Medium | Long |
+|---|---|---|---|
+| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
+| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
+| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
+| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
+| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
+| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
