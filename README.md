@@ -318,3 +318,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
+
+### Design a system that scales to millions of users on AWS
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/scaling_aws/README.md)
+
+![Imgur](http://i.imgur.com/jj3A5N8.png)
