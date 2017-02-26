@@ -300,3 +300,9 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
+
+### Design the data structures for a social network
+
+[View exercise and solution](https://github.com/donnemartin/system-design/blob/master/solutions/system_design/social_graph/README.md)
+
+![Imgur](http://i.imgur.com/cdCv5g7.png)
