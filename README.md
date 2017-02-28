@@ -918,3 +918,33 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 
 * Additional logic is needed to promote a slave to a master.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+
+#### Master-master replication
+
+Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+
+<p align="center">
+  <img src="http://i.imgur.com/krAHLGg.png">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+##### Disadvantage(s): master-master replication
+
+* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
+* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
+* Conflict resolution comes more into play as more write nodes are added and as latency increases.
+* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+
+##### Disadvantage(s): replication
+
+* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
+* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
+* The more read slaves, the more you have to replicate, which leads to greater replication lag.
+* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
+* Replication adds more hardware and additional complexity.
+
+##### Source(s) and further reading: replication
+
+* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
