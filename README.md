@@ -1164,3 +1164,45 @@ Graphs databases offer high performance for data models with complex relationshi
 * [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+
+### SQL or NoSQL
+
+<p align="center">
+  <img src="http://i.imgur.com/wXGqG5f.png">
+  <br/>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+</p>
+
+Reasons for **SQL**:
+
+* Structured data
+* Strict schema
+* Relational data
+* Need for complex joins
+* Transactions
+* Clear patterns for scaling
+* More established: developers, community, code, tools, etc
+* Lookups by index are very fast
+
+Reasons for **NoSQL**:
+
+* Semi-structured data
+* Dynamic or flexible schema
+* Non relational data
+* No need for complex joins
+* Store many TB (or PB) of data
+* Very data intensive workload
+* Very high throughput for IOPS
+
+Sample data well-suited for NoSQL:
+
+* Rapid ingest of clickstream and log data
+* Leaderboard or scoring data
+* Temporary data, such as a shopping cart
+* Frequently accessed ('hot') tables
+* Metadata/lookup tables
+
+##### Source(s) and further reading: SQL or NoSQL
+
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
