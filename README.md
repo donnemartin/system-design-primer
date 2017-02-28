@@ -882,3 +882,24 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
 * [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+
+## Database
+
+<p align="center">
+  <img src="http://i.imgur.com/Xkm5CXz.png">
+  <br/>
+  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
+</p>
+
+### Relational database management system (RDBMS)
+
+A relational database like SQL is a collection of data items organized in tables.
+
+**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+
+* **Atomicity** - Each transaction is all or nothing
+* **Consistency** - Any tranaction will bring the database from one valid state to another
+* **Isolation** - Excuting transactions concurrently has the same results as if the transactions were executed serially
+* **Durability** - Once a transaction has been committed, it will remain so
+
+There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
