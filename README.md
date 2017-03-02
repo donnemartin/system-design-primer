@@ -1381,3 +1381,19 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ##### Disadvantage(s): refresh-ahead
 
 * Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+
+### Disadvantage(s): cache
+
+* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
+* Need to make application changes such as adding Redis or memcached.
+* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
+
+### Source(s) and further reading
+
+* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+* [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+* [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+* [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
