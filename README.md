@@ -1365,3 +1365,19 @@ In write-behind, tha application does the following:
 
 * There could be data loss if the cache goes down prior to its contents hitting the data store.
 * It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+
+#### Refresh-ahead
+
+<p align="center">
+  <img src="http://i.imgur.com/kxtjqgE.png">
+  <br/>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+</p>
+
+You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+
+Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+
+##### Disadvantage(s): refresh-ahead
+
+* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
