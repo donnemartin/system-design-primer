@@ -1715,3 +1715,12 @@ Handy metrics based on numbers above:
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+
+## Under development
+
+Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+
+* Distributed computing with MapReduce
+* Consistent hashing
+* Scatter gather
+* [Contribute](#contributing)
