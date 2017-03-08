@@ -39,6 +39,19 @@ Additional topics for interview prep:
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
 
+## Anki flashcards
+
+<p align="center">
+  <img src="http://i.imgur.com/zdCAkB3.png">
+  <br/>
+</p>
+
+The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.  Great while on-the-go.
+
+* [System design deck](https://github.com/donnemartin/system-design-primer/blob/master/resources/flash_cards/System%20Design.apkg)
+* [System design exercises deck](https://github.com/donnemartin/system-design-primer/blob/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/blob/master/resources/flash_cards/OO%20Design.apkg)
+
 ## Contributing
 
 > Learn from the community.
