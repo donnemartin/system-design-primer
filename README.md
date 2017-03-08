@@ -121,7 +121,6 @@ Review the [Contributing Guidelines](https://github.com/donnemartin/system-desig
     * [Service discovery](#service-discovery)
 * [Database](#database)
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-    * [Scaling SQL](#scaling-sql)
         * [Master-slave replication](#master-slave-replication)
         * [Federation](#federation)
         * [Sharding](#sharding)
