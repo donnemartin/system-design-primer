@@ -31,7 +31,7 @@ Topics for learning system design:
 
 This is an **early draft** of a **continually updated, open source** project.
 
-[Contributions](#contributin) are welcome!
+[Contributions](#contributing) are welcome!
 
 ### Prep for the system design interview
 
@@ -77,7 +77,7 @@ Feel free to submit pull requests to help:
 
 Content that needs some polishing is placed [under development](#under-development).
 
-Review the [Contributing Guidelines](https://github.com/donnemartin/awesome-aws/blob/master/CONTRIBUTING.md).
+Review the [Contributing Guidelines](https://github.com/donnemartin/system-design-primer/blob/master/CONTRIBUTING.md).
 
 ## Index of system design topics
 
@@ -95,7 +95,7 @@ Review the [Contributing Guidelines](https://github.com/donnemartin/awesome-aws/
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
     * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp-consistency-and-partition-tolerance)
+        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
         * [AP - availability and partition tolerance](#ap-availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
     * [Weak consistency](#weak-consistency)
