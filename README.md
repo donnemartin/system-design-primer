@@ -180,9 +180,9 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
 | Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
 | Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Few | Some | Many |
+| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Few | Some | Many |
+| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Few | Some | Many |
 
 ## How to approach a system design interview question
 
