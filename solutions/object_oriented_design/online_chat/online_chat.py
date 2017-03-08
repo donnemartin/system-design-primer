@@ -3,8 +3,6 @@ from abc import ABCMeta
 
 class UserService(object):
 
-    __metaclass__ = Singleton
-
     def __init__(self):
         self.users_by_id = {}  # key: user id, value: User
 
@@ -38,8 +36,8 @@ class User(object):
 class Chat(metaclass=ABCMeta):
 
     def __init__(self, chat_id):
-        self.users = []
         self.chat_id = chat_id
+        self.users = []
         self.messages = []
 
 
@@ -80,12 +78,3 @@ class RequestStatus(Enum):
     READ = 1
     ACCEPTED = 2
     REJECTED = 3
-
-
-class Singleton(type):
-
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
