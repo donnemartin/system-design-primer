@@ -122,6 +122,7 @@ Review the [Contributing Guidelines](https://github.com/donnemartin/system-desig
 * [Database](#database)
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
         * [Master-slave replication](#master-slave-replication)
+        * [Master-master replication](#master-master-replication)
         * [Federation](#federation)
         * [Sharding](#sharding)
         * [Denormalization](#denormalization)
