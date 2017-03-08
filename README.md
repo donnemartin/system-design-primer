@@ -96,7 +96,7 @@ Review the [Contributing Guidelines](https://github.com/donnemartin/system-desig
 * [Availability vs consistency](#availability-vs-consistency)
     * [CAP theorem](#cap-theorem)
         * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap-availability-and-partition-tolerance)
+        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
     * [Weak consistency](#weak-consistency)
     * [Eventual consistency](#eventual-consistency)
