@@ -1,7 +1,7 @@
 # The System Design Primer
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png">
+  <img src="http://i.imgur.com/jj3A5N8.png">
   <br/>
 </p>
 
@@ -74,7 +74,10 @@ Review the [Contributing Guidelines](https://github.com/donnemartin/system-desig
 >
 > Each section contains links to more in-depth resources.
 
-![Imgur](http://i.imgur.com/jj3A5N8.png)
+<p align="center">
+  <img src="http://i.imgur.com/jrUBAF7.png">
+  <br/>
+</p>
 
 * [System design topics: start here](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
