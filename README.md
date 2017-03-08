@@ -1525,7 +1525,7 @@ Use UDP over TCP when:
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 * [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Remote procedural call (RPC)
+### Remote procedure call (RPC)
 
 <p align="center">
   <img src="http://i.imgur.com/iF4Mkb5.png">
