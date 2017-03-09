@@ -663,9 +663,9 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ## Reverse proxy (web server)
 
 <p align="center">
-  <img src="http://i.imgur.com/p7xHS4Z.png">
+  <img src="http://i.imgur.com/n41Azff.png">
   <br/>
-  <i><a href=https://commons.wikimedia.org/wiki/File:Proxy_concept_en.svg>Source: Wikipedia</a></i>
+  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
 </p>
 
