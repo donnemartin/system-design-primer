@@ -183,8 +183,8 @@ More experienced candidates are generally expected to know more about system des
 Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your experience, what positions you are interviewing for, and which companies you are interviewing with.
 
 * **Short** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving a **many** interview questions.
-* **Long** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving a **most** interview questions.
+* **Medium** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
+* **Long** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
 | | Short | Medium | Long |
 |---|---|---|---|
