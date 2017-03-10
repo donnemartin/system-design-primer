@@ -541,7 +541,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 
 * Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
 * DNS server management could be complex, although they are generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under DDoS attack, preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
 
 ### Source(s) and further reading
 
