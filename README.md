@@ -485,7 +485,7 @@ There are two main patterns to support high availability: **fail-over** and **re
 
 With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standy or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
 
 Active-passive failover can also be referred to as master-slave failover.
 
@@ -618,7 +618,7 @@ Load balancers can route traffic based on various metrics, including:
 
 * Random
 * Least loaded
-* Seesion/cookies
+* Session/cookies
 * [Round robin or weighted round robin](http://g33kinfo.com/info/archives/2657)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
@@ -719,7 +719,7 @@ Workers in the application layer also help enable [asynchronism](#asynchronism).
 
 ### Microservices
 
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-definied, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
 Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
 
@@ -755,8 +755,8 @@ A relational database like SQL is a collection of data items organized in tables
 **ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
 
 * **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any tranaction will bring the database from one valid state to another
-* **Isolation** - Excuting transactions concurrently has the same results as if the transactions were executed serially
+* **Consistency** - Any transaction will bring the database from one valid state to another
+* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
 * **Durability** - Once a transaction has been committed, it will remain so
 
 There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
@@ -857,7 +857,7 @@ Common ways to shard a table of users is either through the user's last name ini
 
 #### Denormalization
 
-Denormalization attemps to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redudant information and keeping redundant copies consistent.
+Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
 
 Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
 
@@ -1108,7 +1108,7 @@ There are multiple levels you can cache that fall into two general categories: *
 * Fully-formed serializable objects
 * Fully-rendered HTML
 
-Generaly, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
 
 ### Caching at the database query level
 
@@ -1351,7 +1351,7 @@ TCP is useful for applications that require high reliability but are less time c
 
 Use TCP over UDP when:
 
-* You need all of the data to arrive in tact
+* You need all of the data to arrive intact
 * You want to automatically make a best estimate use of the network throughput
 
 ### User datagram protocol (UDP)
