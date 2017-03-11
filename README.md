@@ -1428,7 +1428,7 @@ HTTP APIs following **REST** tend to be used more often for public APIs.
 #### Disadvantage(s): RPC
 
 * RPC clients become tightly coupled to the service implementation.
-* A new API must be definied for every new operation or use case.
+* A new API must be defined for every new operation or use case.
 * It can be difficult to debug RPC.
 * You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
 
