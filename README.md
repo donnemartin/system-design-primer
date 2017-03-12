@@ -19,9 +19,9 @@ System design is a broad topic.  There is a **vast amount of resources scattered
 
 This repo is an **organized collection** of resources to help you learn how to build systems at scale.
 
-#### Learn from the open source community
+### Learn from the open source community
 
-This is an **early draft** of a **continually updated, open source** project.
+This is an early draft of a continually updated, open source project.
 
 [Contributions](#contributing) are welcome!
 
@@ -29,7 +29,7 @@ This is an **early draft** of a **continually updated, open source** project.
 
 In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
 
-**Practice common system design interview questions** and **compare** your results with sample **discussions, code, and diagrams**.
+**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
 
 Additional topics for interview prep:
 
