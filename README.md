@@ -1740,6 +1740,7 @@ Special thanks to:
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
+* [High scalability](http://highscalability.com/)
 * [checkcheckzz/system-design-interview](https://github.com/checkcheckzz/system-design-interview)
 * [shashank88/system_design](https://github.com/shashank88/system_design)
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
