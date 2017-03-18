@@ -213,7 +213,7 @@ We might also choose to support a `Robots.txt` file that gives webmasters contro
 
 * The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Query API** server
-* The **Query API** server does does the following:
+* The **Query API** server does the following:
     * Parses the query
         * Removes markup
         * Breaks up the text into terms
