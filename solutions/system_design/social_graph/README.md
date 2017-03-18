@@ -104,7 +104,7 @@ We won't be able to fit all users on the same machine, we'll need to [shard](htt
 * The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Search API** server
 * The **Search API** server forwards the request to the **User Graph Service**
-* The **User Graph Service** does does the following:
+* The **User Graph Service** does the following:
     * Uses the **Lookup Service** to find the **Person Server** where the current user's info is stored
     * Finds the appropriate **Person Server** to retrieve the current user's list of `friend_ids`
     * Runs a BFS search using the current user as the `source` and the current user's `friend_ids` as the ids for each `adjacent_node`

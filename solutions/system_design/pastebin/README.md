@@ -95,7 +95,7 @@ An alternative to a relational database acting as a large hash table, we could u
 
 * The **Client** sends a create paste request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Write API** server
-* The **Write API** server does does the following:
+* The **Write API** server does the following:
     * Generates a unique url
         * Checks if the url is unique by looking at the **SQL Database** for a duplicate
         * If the url is not unique, it generates another url
