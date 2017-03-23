@@ -68,6 +68,10 @@ Content that needs some polishing is placed [under development](#under-developme
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 
+### Translations
+
+Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
+
 ## Index of system design topics
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
