@@ -729,7 +729,10 @@ Pinterest, for example, could have the following microservices: user profile, fo
 
 ### Service Discovery
 
-Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, ports, etc.
+Systems such as [Consul](https://www.consul.io/docs/index.html) and [Etcd](https://coreos.com/etcd/docs/latest) is among the newer commonly used pull based service discovery solutions today. They solve service registration/de registration of what name, address and port the service is available at. Health checks is often done using a http endpoint. Both Consul and Etcd also have a built in key/value store that can be useful for storing config values or other shared key/values for running a service
+
+Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) is a possible older system that can be used as a service discovery service. However zookeeper is hard to run and maintain in production. Since zookeeper is using a tcp connection to a node in the cluster it can get a bit fragile. Zookeeper have been used early to solve Service Discovery but should now be advised not to. Zookeeper have also often been used to solve cluster master election and hold state since it't a CAP AP solution
+ 
 
 ### Disadvantage(s): application layer
 
