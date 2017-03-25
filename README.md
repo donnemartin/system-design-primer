@@ -1330,6 +1330,8 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 
 *Can be called many times without different outcomes.
 
+The difference between `PUT` and `PATCH` is explained by example [here](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1).
+
 HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
 
 * [HTTP](https://www.nginx.com/resources/glossary/http/)
