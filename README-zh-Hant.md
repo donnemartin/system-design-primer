@@ -4,7 +4,6 @@
 > * 校对者：
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
-# The System Design Primer
 # 系统设计入门
 
 <p align="center">
@@ -12,61 +11,40 @@
   <br/>
 </p>
 
-## Motivation
-## 目标
+## 目的
 
-> Learn how to design large scale systems.
->
-> Prep for the system design interview.
 > 学习如何设计大型系统
 >
 > 为系统设计面试做准备
 
-### Learn how to design large scale systems
 ### 学习如何设计大型系统
 
-Learning how to design scalable systems will help you become a better engineer.
 学习如何设计大型系统将会帮助你成为一个更好的工程师。
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
 系统设计是一个很宽泛的话题。在互联网上，**关于系统设计原则的资源也是多如牛毛。**
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
 这个仓库就是这些资源的**有组织的集合**，它可以帮助你学习如果基于不同尺度构建系统。
 
-### Learn from the open source community
 ### 从开源社区学习
 
-This is an early draft of a continually updated, open source project.
 这是一个不断更新的开源项目的初期的版本。
 
-[Contributions](#contributing) are welcome!
 欢迎 [贡献](#contributing) ！
 
-### Prep for the system design interview
 ### 为系统设计面试做准备
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
 在很多科技公司中，除了代码面试，系统设计也是**技术面试过程**中的一个**必要环节**。
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
 **练习普通的系统设计面试题**并且把你的结果和**例子的答案**进行**比较**：讨论，代码和图表。
 
-Additional topics for interview prep:
 面试准备的其他主题：
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
 * [学习指引](#study-guide)
 * [如何回答一个系统设计面试题](#how-to-approach-a-system-design-interview-question)
 * [系统设计面试题， **有答案**](#system-design-interview-questions-with-solutions)
 * [面向对象设计面试题， **有答案**](#object-oriented-design-interview-questions-with-solutions)
 * [其他系统设计面试题](#additional-system-design-interview-questions)
 
-## Anki flashcards
 ## 抽认卡
 
 <p align="center">
@@ -74,53 +52,34 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
 这里提供的 [抽认卡堆](https://apps.ankiweb.net/) 使用间隔重复的方法帮助你记住系统设计的概念。
 
-* [System design deck](resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](resources/flash_cards/OO%20Design.apkg)
 * [系统设计卡堆](resources/flash_cards/System%20Design.apkg)
 * [系统设计练习卡堆](resources/flash_cards/System%20Design%20Exercises.apkg)
 * [面向对象设计练习卡堆](resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
 用起来非常棒。
 
-## Contributing
 ## 贡献
 
-> Learn from the community.
 > 向社区学习。
 
-Feel free to submit pull requests to help:
 自由提交 PR 来帮助：
 
-* Fix errors
-* Improve sections
-* Add new sections
 * 修复错误
 * 改善章节
 * 添加章节
 
-Content that needs some polishing is placed [under development](#under-development).
 还需要打磨的一些内容放在了 [开发中](#under-development)。
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
 查看 [贡献指导](CONTRIBUTING.md)。
 
-### Translations
 ### 翻译
 
-Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
 对**翻译**感兴趣？请查看这个 [门票](https://github.com/donnemartin/system-design-primer/issues/28)。
 
-## Index of system design topics
 ## 系统设计主题的索引
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
->
-> Each section contains links to more in-depth resources.
 > 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都对应一个职业**。
 >
 > 每个章节都包含更深层次的资源的链接。
@@ -212,45 +171,30 @@ Interested in **translating**?  Please see the following [ticket](https://github
 * [联系方式](#contact-info)
 * [许可](#license)
 
-## Study guide
 ## 学习指引
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
-> 基于你面试的时间线（短，中，长）去回顾那些推荐的主题。
+> 基于你面试的时间线（短，中，长）去复习那些推荐的主题。
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
 **问：对于面试来说，我需要知道这里的所有知识点吗？**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
-**答：不，如果只是为了准备面试的话，你并不需要知道指导的知识点。**
+**答：不，如果只是为了准备面试的话，你并不需要知道所有的知识点。**
 
-What you are asked in an interview depends on variables such as:
 在一场面试中你会被问到什么取决于下面这些因素：
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
 * 你的经验
 * 你的技术背景
 * 你面试的职位
 * 你面试的公司
 * 运气
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
 那些有经验的候选人通常会被期望了解更多的系统设计的知识。架构师或者团队负责人则会被期望了解更多除了个人贡献之外的知识。顶级的科技公司通常也会有一次或者更多的系统设计面试。
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 面试会很宽泛的展开并在几个领域深入。这回帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
 * **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
 * **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 * **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来联系。
 
 |                                          | 短期   | 中期   | 长期   |
@@ -263,32 +207,18 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | 完成 [面向对象设计面试题和答案](#object-oriented-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
 | 复习 [其他系统设计面试题和答案](#additional-system-design-interview-questions) | 一些   | 很多   | 大部分  |
 
-## How to approach a system design interview question
 ## 如何处理一个系统设计面试题
 
-> How to tackle a system design interview question.
 > 如何处理一个系统设计面试题。
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
 系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
 你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成 [系统设计面试题和答案](#system-design-interview-questions-with-solutions) 这个章节。
 
-### Step 1: Outline use cases, constraints, and assumptions
 ### 第一步：描述使用场景，约束和假设
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
 把所有需要的东西聚集在一起，审视问题。不停的提问，以至于我们可以明确使用场景和约束。讨论假设。
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
 * 谁会使用它？
 * 他们会怎样使用它？
 * 有多少用户？
@@ -298,33 +228,24 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 * 我们希望每秒钟处理多少请求？
 * 我们希望的读写比率？
 
-### Step 2: Create a high level design
 ### 第二步：创造一个高级的设计
 
-Outline a high level design with all important components.
 使用所有重要的组件来描绘出一个高级的设计。
 
-* Sketch the main components and connections
-* Justify your ideas
 * 画出主要的组件和连接
 * 证明你的想法
 
-### Step 3: Design core components
 ### 第三步：设计核心组件
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
 对每一个核心组件进行详细深入的分析。举例来说，如果你背问到 [设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
 
-* Generating and storing a hash of the full url
 * 生成并储存一个完整 url 的 hash
     * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
     * Hash 碰撞
     * SQL 还是 NoSQL
     * 数据库模型
-* Translating a hashed url to the full url
 * 将一个 hashed url 翻译成完整的 url
     * 数据库查找
-* API and object-oriented design
 * API 和面向对象设计
 
 ### Step 4: Scale the design
@@ -373,7 +294,7 @@ Check out the following links to get a better idea of what to expect:
 > Solutions linked to content in the `solutions/` folder.
 > 普通的系统设计面试题和相关事例的论述，代码和图表。
 >
-> 答案链接到 `solutions/` 文件夹中的内容中。
+> 答案会链接到 `solutions/` 文件夹中的内容。
 >
 | 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
