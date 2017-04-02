@@ -7,11 +7,11 @@
 
 ## Motivation
 
-> Learn how to design large scale systems.
+> Learn how to design large-scale systems.
 >
 > Prep for the system design interview.
 
-### Learn how to design large scale systems
+### Learn how to design large-scale systems
 
 Learning how to design scalable systems will help you become a better engineer.
 
@@ -1330,12 +1330,13 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 
 *Can be called many times without different outcomes.
 
-The difference between `PUT` and `PATCH` is explained by example [here](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1).
-
 HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
 
-* [HTTP](https://www.nginx.com/resources/glossary/http/)
-* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+#### Source(s) and further reading: HTTP
+
+* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
+* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
 ### Transmission control protocol (TCP)
 
@@ -1423,12 +1424,12 @@ POST /anotheroperation
 
 RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
 
-Choose a Native Library aka SDK when:
+Choose a native library (aka SDK) when:
 
 * You know your target platform.
-* You want to control how your "logic" is accessed
-* You want to control how error control happens off your library
-* Performance and end user experience is your primary concern
+* You want to control how your "logic" is accessed.
+* You want to control how error control happens off your library.
+* Performance and end user experience is your primary concern.
 
 HTTP APIs following **REST** tend to be used more often for public APIs.
 
