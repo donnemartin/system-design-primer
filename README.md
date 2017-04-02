@@ -1424,12 +1424,12 @@ POST /anotheroperation
 
 RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
 
-Choose a Native Library aka SDK when:
+Choose a native library (aka SDK) when:
 
 * You know your target platform.
-* You want to control how your "logic" is accessed
-* You want to control how error control happens off your library
-* Performance and end user experience is your primary concern
+* You want to control how your "logic" is accessed.
+* You want to control how error control happens off your library.
+* Performance and end user experience is your primary concern.
 
 HTTP APIs following **REST** tend to be used more often for public APIs.
 
