@@ -196,15 +196,15 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 * **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
 * **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
-| | Short | Medium | Long |
-|---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+|                                          | Short | Medium | Long |
+| ---------------------------------------- | ----- | ------ | ---- |
+| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1:  | :+1:   | :+1: |
+| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1:  | :+1:   | :+1: |
+| Read through a few [Real world architectures](#real-world-architectures) | :+1:  | :+1:   | :+1: |
+| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1:  | :+1:   | :+1: |
+| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some  | Many   | Most |
+| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some  | Many   | Most |
+| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some  | Many   | Most |
 
 ## How to approach a system design interview question
 
@@ -280,17 +280,17 @@ Check out the following links to get a better idea of what to expect:
 >
 > Solutions linked to content in the `solutions/` folder.
 
-| Question | |
-|---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
+| Question                                 |                                          |
+| ---------------------------------------- | ---------------------------------------- |
+| Design Pastebin.com (or Bit.ly)          | [Solution](solutions/system_design/pastebin/README.md) |
 | Design the Twitter timeline (or Facebook feed)<br/>Design Twitter search (or Facebook search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
+| Design a web crawler                     | [Solution](solutions/system_design/web_crawler/README.md) |
+| Design Mint.com                          | [Solution](solutions/system_design/mint/README.md) |
 | Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
 | Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
 | Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
 | Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Add a system design question             | [Contribute](#contributing)              |
 
 ### Design Pastebin.com (or Bit.ly)
 
@@ -348,16 +348,16 @@ Check out the following links to get a better idea of what to expect:
 
 >**Note: This section is under development**
 
-| Question | |
-|---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Question                               |                                          |
+| -------------------------------------- | ---------------------------------------- |
+| Design a hash map                      | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb) |
+| Design a least recently used cache     | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb) |
+| Design a call center                   | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb) |
+| Design a deck of cards                 | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
+| Design a parking lot                   | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
+| Design a chat server                   | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
+| Design a circular array                | [Contribute](#contributing)              |
+| Add an object-oriented design question | [Contribute](#contributing)              |
 
 ## System design topics: start here
 
@@ -695,16 +695,36 @@ Additional benefits include:
     * Videos
     * Etc
 
+## 反向代理（web 服务器）
+
+反向代理是一种可以集中地调用内部服务，并提供统一接口给公共客户的 web 服务器。来自客户端的请求先被反向代理服务器转发到可响应请求的服务器，然后代理再把服务器的响应结果返回给客户端。
+
+带来的好处包括：
+
+- **增加安全性** - 隐藏后端服务器的信息，屏蔽黑名单中的 IP，限制每个客户端的连接数。
+- **提高可扩展性和灵活性** - 客户端只能看到反向代理服务器的 IP，这使你可以增减服务器或者修改它们的配置。
+- **本地终结 SSL 会话** - 解密传入请求，加密服务器响应，这样后端服务器就不必完成这些潜在的高成本的操作。
+  - 免除了在每个服务器上安装 [X.509](https://en.wikipedia.org/wiki/X.509) 证书的需要
+- **压缩** - 压缩服务器响应
+- **缓存** - 直接返回命中的缓存结果
+- **静态内容** - 直接提供静态内容
+  - HTML/CSS/JS
+  - 图片
+  - 视频
+  - 等等
+
 ### Load balancer vs reverse proxy
 
 * Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
 * Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
 * Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
 
+
 ### Disadvantage(s): reverse proxy
 
 * Introducing a reverse proxy results in increased complexity.
 * A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
+
 
 ### Source(s) and further reading
 
@@ -712,6 +732,26 @@ Additional benefits include:
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+
+
+### 负载均衡器 VS 反向代理
+
+- 当你有多个服务器时，部署负载均衡器非常有用。通常，负载均衡器将流量路由给一组功能相同的服务器上。
+- 即使只有一台 web 服务器或者应用服务器时，反向代理也有用，可以参考上一节介绍的好处。
+- NGINX 和 HAProxy 等解决方案可以同时支持第 7 层反向代理和负载均衡。
+
+### 不利之处：反向代理
+
+- 引入反向代理会增加系统的复杂度。
+- 单独一个反向代理服务器仍可能发生单点故障，配置多台反向代理服务器（如[故障转移](https://en.wikipedia.org/wiki/Failover)）会进一步增加复杂度。
+
+### 来源及延伸阅读
+
+
+- [反向代理 VS 负载均衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+- [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+- [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+- [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
 ## Application layer
 
@@ -739,16 +779,48 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
 
 ### Disadvantage(s): application layer
 
-* Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-* Microservices can add complexity in terms of deployments and operations.
+- Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
+- Microservices can add complexity in terms of deployments and operations.
 
 ### Source(s) and further reading
 
-* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
-* [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+- [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
+- [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+- [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+- [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+- [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+
+## 应用层
+
+将 Web 服务层与应用层（也被称作平台层）分离，可以独立缩放和配置这两层。添加新的 API 只需要添加应用服务器，而不必添加额外的 web 服务器。
+
+**单一职责原则**提倡小型的，自治的服务共同合作。小团队通过提供小型的服务，可以更激进地计划增长。
+
+应用层中的工作进程也有可以实现 [异步化](#asynchronism)。
+
+### 微服务
+
+与此讨论相关的话题是 [微服务](https://en.wikipedia.org/wiki/Microservices)，可以被描述为一系列可以独立部署的小型的，模块化服务。每个服务运行在一个独立的进程中，通过明确定义的轻量级机制通讯，共同实现业务目标。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+
+例如，Pinterest 可能有这些微服务： 用户资料，关注者，Feed 流，搜索，照片上传等。
+
+### 服务发现
+
+诸如 Zookeeper 这类系统可以通过追踪注册名、地址、端口等来帮助服务互相发现对方。
+
+### 不利之处：应用层
+
+- 添加由多个松耦合服务组成的应用层，从架构、运营、流程等层面来讲将非常不同（相对于单体系统）。
+- 微服务会增加部署和运营的复杂度。
+
+
+### 来源及延伸阅读
+
+- [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
+- [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+- [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+- [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+- [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
 ## Database
 
@@ -771,6 +843,23 @@ A relational database like SQL is a collection of data items organized in tables
 
 There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 
+## 数据库
+
+### 关系型数据库管理系统（RDBMS）
+
+像 SQL 这样的关系型数据库是一系列以表的形式组织的数据项集合。
+
+> 校对注：这里是否是作者笔误，SQL 并不是一种数据库？
+
+**ACID** 用来描述关系型数据库[事务](https://en.wikipedia.org/wiki/Database_transaction)的特性。
+
+- **原子性** - 每个事务内部所有操作要么全部完成，要么全部不完成。
+- **一致性** - 事务使数据库从一个一致的状态转换到另一个一致状态。
+- **隔离性** - 并发执行事务的结果与顺序执行执行的结果相同。
+- **持久性** - 事务提交后，对系统的影响是永久的。
+
+关系型数据库扩展包括许多技术：**主从复制**、**主主复制**、**联合**、**分片**、**非规范化**和 **SQL调优**。
+
 #### Master-slave replication
 
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
@@ -785,6 +874,15 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 
 * Additional logic is needed to promote a slave to a master.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+
+#### 主从复制
+
+主库同时负责读取和写入操作，并复制写入到一个或多个从库中，从库只负责读操作。树状形式的从库再将写入复制到更多的从库中去。如果主库离线，系统可以以只读模式运行，直到某个从库被提升为主库或有新的主库出现。
+
+##### 不利之处：主从复制
+
+- 将从库提升为主库需要额外的逻辑。
+- 参考[不利之处：复制](#disadvantages-replication)中，主从复制和主主复制**共同**的问题。
 
 #### Master-master replication
 
@@ -803,18 +901,47 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 * Conflict resolution comes more into play as more write nodes are added and as latency increases.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 
+
 ##### Disadvantage(s): replication
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+*  There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
+*  Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
+*  The more read slaves, the more you have to replicate, which leads to greater replication lag.
+*  On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
+*  Replication adds more hardware and additional complexity.
+
 
 ##### Source(s) and further reading: replication
 
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+- [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+
+#### 主主复制
+
+两个主库都负责读操作和写操作，写入操作时互相协调。如果其中一个主库挂机，系统可以继续读取和写入。
+
+##### 不利之处： 主主复制
+
+- 你需要添加负载均衡器或者在应用逻辑中做改动，来确定写入哪一个数据库。
+- 多数主-主系统要么不能保证一致性（违反 ACID），要么因为同步产生了写入延迟。
+- 随着更多写入节点的加入和延迟的提高，如何解决冲突显得越发重要。
+- 参考[不利之处：复制](#disadvantages-replication)中，主从复制和主主复制**共同**的问题。
+
+##### 不利之处：复制
+
+
+- 如果主库在将新写入的数据复制到其他节点前挂掉，则有数据丢失的可能。
+- 写入会被重放到负责读取操作的副本。副本可能因为过多写操作阻塞住，导致读取功能异常。
+- 读取从库越多，需要复制的写入数据就越多，导致更严重的复制延迟。
+- 在某些数据库系统中，写入主库的操作可以用多个进程并行写入，但读取副本只支持单进程顺序地写入。
+- 复制意味着更多的硬件和额外的复杂度。
+
+
+##### 来源及延伸阅读
+
+
+- [扩展性，可用性，稳定性模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [多主复制](https://en.wikipedia.org/wiki/Multi-master_replication)
 
 #### Federation
 
@@ -835,7 +962,23 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 
 ##### Source(s) and further reading: federation
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+
+#### 联合
+
+联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
+
+##### 不利之处：联合
+
+
+- 如果你的数据库模式需要大量的功能和数据表，联合的效率并不好。
+- 你需要更新应用程序的逻辑来确定要读取和写入哪个数据库。
+- 用 [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers) 从两个库联结数据更复杂。
+- 联合需要更多的硬件和额外的复杂度。
+
+##### 来源及延伸阅读：联合
+
+- [扩展你的用户数到第一个千万]((https://www.youtube.com/watch?v=vg5onp8TU6Q))
 
 #### Sharding
 
@@ -865,6 +1008,28 @@ Common ways to shard a table of users is either through the user's last name ini
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
+#### 分片
+
+分片将数据分配在不同的数据库上，使得每个数据库仅管理整个数据集的一个子集。以用户数据库为例，随着用户数量的增加，越来越多的分片会被添加到集群中。
+
+类似[联合](#federation)的优点，分片可以减少读取和写入流量，减少复制并提高缓存命中率。也减少了索引，通常意味着查询更快，性能更好。如果一个分片出问题，其他的仍能运行，你可以使用某种形式的冗余来防止数据丢失。类似联合，没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
+
+常见的做法是用户姓氏的首字母或者用户的地理位置来分隔用户表。
+
+##### 不利之处：分片
+
+- 你需要修改应用程序的逻辑来实现分片，这会带来复杂的 SQL 查询。
+- 分片不合理可能导致数据负载不均衡。例如，被频繁访问的用户数据会导致其所在分片的负载相对其他分片高。
+  - 再平衡会引入额外的复杂度。基于[一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)的分片算法可以减少这种情况。
+- 联结多个分片的数据操作更复杂。
+- 分片需要更多的硬件和额外的复杂度。
+
+#### 来源及延伸阅读：分片
+
+- [分片时代来临](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+- [数据库分片架构](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+- [一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+
 #### Denormalization
 
 Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
@@ -879,9 +1044,28 @@ In most systems, reads can heavily number writes 100:1 or even 1000:1.  A read r
 * Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
 * A denormalized database under heavy write load might perform worse than its normalized counterpart.
 
-###### Source(s) and further reading: denormalization
+##### Source(s) and further reading: denormalization
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+
+
+#### 非规范化
+
+非规范化试图以写入性能为代价来换取读取性能。在多个表中冗余数据副本，以避免高成本的联结操作。一些关系型数据库，比如 [PostgreSQl](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支持[物化视图](https://en.wikipedia.org/wiki/Materialized_view)，可以处理冗余信息存储和保证冗余副本一致。
+
+当数据使用诸如[联合](#federation)和[分片](#sharding)等技术被分割，进一步提高了处理跨数据中心的联结操作复杂度。非规范化可以规避这种复杂的联结操作。
+
+在多数系统中，读取操作的频率远高于写入操作，比例可达到 100:1，甚至 1000:1。需要复杂的数据库联结的读取操作成本非常高，在磁盘操作上消耗了大量时间。
+
+##### 不利之处：非规范化
+
+- 数据会冗余。
+- 约束可以帮助冗余的信息副本保持同步，但这样会增加数据库设计的复杂度。
+- 非规范化的数据库在高写入负载下性能可能比规范化的数据库差。
+
+##### 来源及延伸阅读：非规范化
+
+- [非规范化](https://en.wikipedia.org/wiki/Denormalization)
 
 #### SQL tuning
 
@@ -904,34 +1088,85 @@ Benchmarking and profiling might point you to the following optimizations.
 * Use `DECIMAL` for currency to avoid floating point representation errors.
 * Avoid storing large `BLOBS`, store the location of where to get the object instead.
 * `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
+* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+
 
 ##### Use good indices
 
-* Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-* Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-* Placing an index can keep the data in memory, requiring more space.
-* Writes could also be slower since the index also needs to be updated.
-* When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+- Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
+- Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
+- Placing an index can keep the data in memory, requiring more space.
+- Writes could also be slower since the index also needs to be updated.
+- When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
 
 ##### Avoid expensive joins
 
-* [Denormalize](#denormalization) where performance demands it.
+- [Denormalize](#denormalization) where performance demands it.
 
 ##### Partition tables
 
-* Break up a table by putting hot spots in a separate table to help keep it in memory.
+- Break up a table by putting hot spots in a separate table to help keep it in memory.
 
 ##### Tune the query cache
 
-* In some cases, the [query cache](http://dev.mysql.com/doc/refman/5.7/en/query-cache) could lead to [performance issues](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/).
+- In some cases, the [query cache](http://dev.mysql.com/doc/refman/5.7/en/query-cache) could lead to [performance issues](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/).
 
 ##### Source(s) and further reading: SQL tuning
 
-* [Tips for optimizing MySQL queries](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-* [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+- [Tips for optimizing MySQL queries](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
+- [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+- [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+- [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+
+#### SQL 调优
+
+SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning)可以作为参考。
+
+利用**基准测试**和**性能分析**来模拟和发现系统瓶颈很重要。
+
+- **基准测试** - 用 [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) 等工具模拟高负载情况。
+- **性能分析** - 通过启用如[慢查询日志](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)等工具来辅助追踪性能问题。
+
+基准测试和性能分析可能会指引你到以下优化方案。
+
+##### 改进模式
+
+- 为了实现快速访问，MySQL 在磁盘上用连续的块存储数据。
+- 使用 `CHAR` 类型存储固定长度的字段，不要用 `VARCHAR`。
+  - `CHAR` 在快速、随机访问时效率很高。如果使用 `VARCHAR`，如果你想读取下一个字符串，不得不先读取到当前字符串的末尾。
+- 使用 `TEXT` 类型存储大块的文本，例如博客正文。`TEXT` 还允许布尔搜索。使用 `TEXT` 字段需要在磁盘上存储一个用于定位文本块的指针。
+- 使用 `INT` 类型存储高达 2^32 或 40 亿的较大数字。
+- 使用 `DECIMAL` 类型存储货币可以避免浮点数表示错误。
+- 避免使用 `BLOBS` 存储对象，存储存放对象的位置。
+- `VARCHAR(255)` 是以 8 位数字存储的最大字符数，在某些关系型数据库中，最大限度地利用字节。
+- 在适用场景中设置 `NOT NULL` 约束来[提高搜索性能](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)。
+
+##### 使用正确的索引
+
+- 你正查询（`SELECT`、`GROUP BY`、`ORDER BY`、`JOIN`）的列如果用了索引会更快。
+- 索引通常表示为自平衡的 [B 树](https://en.wikipedia.org/wiki/B-tree)，可以保持数据有序，并允许在对数时间内进行搜索，顺序访问，插入，删除操作。
+- 设置索引，会将数据存在内存中，占用了更多内存空间。
+- 写入操作会变慢，因为索引需要被更新。
+- 加载大量数据时，禁用索引再加载数据，然后重建索引，这样也许会更快。
+
+##### 避免高成本的联结操作
+
+- 有性能需要，可以进行非规范化。
+
+##### 分割数据表
+
+- 将热点数据拆分到单独的数据表中，可以有助于缓存。
+
+##### 调优查询缓存
+
+- 在某些情况下，[查询缓存](http://dev.mysql.com/doc/refman/5.7/en/query-cache)可能会导致[性能问题](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/)。
+
+##### 来源及延伸阅读
+
+- [MySQL 查询优化小贴士](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
+- [为什么 VARCHAR(255) 很常见？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+- [Null 值是如何影响数据库性能的？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+- [慢查询日志](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 ### NoSQL
 
@@ -944,6 +1179,18 @@ NoSQL is a collection of data items represented in a **key-value store**, **docu
 * **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
 
 In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document-stores**, **wide column stores**, and **graph databases** in the next section.
+
+### NoSQL
+
+NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#eventual-consistency)。
+
+**BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 定理](#cap-theorem)，BASE 强调可用性超过一致性。
+
+- **基本可用** - 系统保证可用性。
+- **软状态** - 即使没有输入，系统状态也可能随着时间变化。
+- **最终一致性** - 经过一段时间之后，系统最终会变一致，因为系统在此期间没有收到任何输入。
+
+除了在 [SQL 还是 NoSQL](#sql-or-nosql) 之间做选择，了解哪种类型的 NoSQL 数据库最适合你的用例也是非常有帮助的。我们将在下一节中快速了解下 **键-值存储**、**文档型存储**、**列型存储**和**图存储**数据库。
 
 #### Key-value store
 
@@ -962,6 +1209,23 @@ A key-value store is the basis for more complex systems such as a document store
 * [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
 * [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
+#### 键-值存储
+
+> 抽象模型：哈希表
+
+键-值存储通常可以实现 O(1) 时间读写，用内存或 SSD 存储数据。数据存储可以按[字典顺序](https://en.wikipedia.org/wiki/Lexicographical_order)维护键，从而实现键的高效检索。键-值存储可以用于存储元数据。
+
+键-值存储性能很高，通常用于存储简单数据模型或频繁修改的数据，如存放在内存中的缓存。键-值存储提供的操作有限，如果需要更多操作，复杂度将转嫁到应用程序层面。
+
+键-值存储是如文档存储，在某些情况下，甚至是图存储等更复杂的存储系统的基础。
+
+#### 来源及延伸阅读
+
+- [键-值数据库](https://en.wikipedia.org/wiki/Key-value_database)
+- [键-值存储的劣势](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+- [Redis 架构](http://qnimate.com/overview-of-redis-architecture/)
+- [Memcached 架构](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+
 #### Document store
 
 > Abstraction: key-value store with documents stored as values
@@ -976,10 +1240,29 @@ Document stores provide high flexibility and are often used for working with occ
 
 ##### Source(s) and further reading: document store
 
-* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
-* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
-* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+- [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
+- [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
+- [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+- [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+
+#### 文档类型存储
+
+> 抽象模型：将文档作为值的键-值存储
+
+文档类型存储以文档（XML、JSON、二进制文件等）为中心，文档存储了指定对象的全部信息。文档存储根据文档自身的内部结构提供 API 或查询语句来实现查询。请注意，许多键-值存储数据库有用值存储元数据的特性，这也模糊了这两种存储类型的界限。
+
+基于底层实现，文档可以根据集合、标签、元数据或者文件夹组织。尽管不同文档可以被组织在一起或者分成一组，但相互之间可能具有完全不同的字段。
+
+MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的查询语句来实现复杂查询。DynamoDB 同时支持键-值存储和文档类型存储。
+
+文档类型存储具备高度的灵活性，常用于处理偶尔变化的数据。
+
+#### 来源及延伸阅读：文档类型存储
+
+- [面向文档的数据库](https://en.wikipedia.org/wiki/Document-oriented_database)
+- [MongoDB 架构](https://www.mongodb.com/mongodb-architecture)
+- [CouchDB 架构](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+- [Elasticsearch 架构](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
 #### Wide column store
 
@@ -999,10 +1282,27 @@ Wide column stores offer high availability and high scalability.  They are often
 
 ##### Source(s) and further reading: wide column store
 
-* [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-* [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
-* [Cassandra architecture](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
+- [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+- [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+- [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+- [Cassandra architecture](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
+
+#### 列型存储
+
+> 抽象模型：嵌套的 `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>` 映射
+
+类型存储的基本数据单元是列（名／值对）。列可以在列族（类似于 SQL 的数据表）中被分组。超级列族再分组普通列族。你可以使用行键独立访问每一列，具有相同行键值的列组成一行。每个值都包含版本的时间戳用于解决版本冲突。
+
+Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，它影响了 Hadoop 生态系统中活跃的开源数据库 [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。像 BigTable，HBase 和 Cassandra 这样的存储系统将键以字母顺序存储，可以高效地读取键列。
+
+列型存储具备高可用性和高可扩展性。通常被用于大数据相关存储。
+
+##### 来源及延伸阅读：列型存储
+
+- [SQL 与 NoSQL 简史](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+- [BigTable 架构](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+- [Hbase 架构](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+- [Cassandra 架构](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
 #### Graph database
 
@@ -1020,9 +1320,23 @@ Graphs databases offer high performance for data models with complex relationshi
 
 ##### Source(s) and further reading: graph
 
-* [Graph database](https://en.wikipedia.org/wiki/Graph_database)
-* [Neo4j](https://neo4j.com/)
-* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+- [Graph database](https://en.wikipedia.org/wiki/Graph_database)
+- [Neo4j](https://neo4j.com/)
+- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+
+#### 图数据库
+
+> 抽象模型： 图
+
+在图数据库中，一个节点对应一条记录，一个弧对应两个节点之间的关系。图数据库被优化用于表示外键繁多的复杂关系或多对多关系。
+
+图数据库为存储复杂关系的数据模型，如社交网络，提供了很高的性能。它们相对较新，尚未广泛应用，查找开发工具或者资源相对较难。许多图只能通过 [REST API](#representational-state-transfer-restE) 访问。
+
+##### 来源及延伸阅读：图数据库
+
+- [图数据库](https://en.wikipedia.org/wiki/Graph_database)
+- [Neo4j](https://neo4j.com/)
+- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
 #### Source(s) and further reading: NoSQL
 
@@ -1031,6 +1345,14 @@ Graphs databases offer high performance for data models with complex relationshi
 * [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+
+#### 来源及延伸阅读：NoSQL
+
+- [数据库术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+- [NoSQL 数据库调查及决策指南](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+- [扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+- [NoSQL 介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+- [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 ### SQL or NoSQL
 
@@ -1053,26 +1375,62 @@ Reasons for **SQL**:
 
 Reasons for **NoSQL**:
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+- Semi-structured data
+- Dynamic or flexible schema
+- Non relational data
+- No need for complex joins
+- Store many TB (or PB) of data
+- Very data intensive workload
+- Very high throughput for IOPS
 
 Sample data well-suited for NoSQL:
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+- Rapid ingest of clickstream and log data
+- Leaderboard or scoring data
+- Temporary data, such as a shopping cart
+- Frequently accessed ('hot') tables
+- Metadata/lookup tables
 
 ##### Source(s) and further reading: SQL or NoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+- [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+
+### SQL 还是 NoSQL
+
+选取 **SQL**:
+
+- 结构化数据
+- 严格的模式
+- 关系型数据
+- 需要复杂的联结操作
+- 事务
+- 清晰的扩展模式
+- 既有资源更丰富：开发者、社区、代码库、工具等
+- 通过索引进行查询非常快
+
+选取 **NoSQL**：
+
+- 半结构化数据
+- 动态或灵活的模式
+- 非关系数型据
+- 不需要复杂的联结操作
+- 存储 TB （甚至 PB）级别的数据
+- 高数据密集的工作负载
+- IOPS 吞吐量非常高
+
+适合 NoSQL 的示例数据：
+
+- 快速获取点击流和日志数据
+- 排行榜或者得分数据
+- 临时数据，如购物车
+- 频繁访问的（“热”）表
+- 元数据／查找表
+
+来源及延伸阅读：SQL 或 NoSQL
+
+- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [SQL 与 NoSQL 的差异](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## Cache
 
@@ -1326,13 +1684,13 @@ HTTP is a method for encoding and transporting data between a client and a serve
 
 A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
-|---|---|---|---|---|
-| GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
-| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
-| DELETE | Deletes a resource | Yes | No | No |
+| Verb   | Description                              | Idempotent* | Safe | Cacheable                               |
+| ------ | ---------------------------------------- | ----------- | ---- | --------------------------------------- |
+| GET    | Reads a resource                         | Yes         | Yes  | Yes                                     |
+| POST   | Creates a resource or trigger a process that handles data | No          | No   | Yes if response contains freshness info |
+| PUT    | Creates or replace a resource            | Yes         | No   | No                                      |
+| PATCH  | Partially updates a resource             | No          | No   | Yes if response contains freshness info |
+| DELETE | Deletes a resource                       | Yes         | No   | No                                      |
 
 *Can be called many times without different outcomes.
 
@@ -1474,15 +1832,15 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 
 ### RPC and REST calls comparison
 
-| Operation | RPC | REST |
-|---|---|---|
-| Signup	| **POST** /signup | **POST** /persons |
-| Resign	| **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
-| Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
-| Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
+| Operation                       | RPC                                      | REST                                     |
+| ------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Signup                          | **POST** /signup                         | **POST** /persons                        |
+| Resign                          | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234                 |
+| Read a person                   | **GET** /readPerson?personid=1234        | **GET** /persons/1234                    |
+| Read a person’s items list      | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items              |
 | Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
-| Update an item	| **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
-| Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+| Update an item                  | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| Delete an item                  | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456                    |
 
 <p align="center">
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
@@ -1590,16 +1948,16 @@ Handy metrics based on numbers above:
 
 > Common system design interview questions, with links to resources on how to solve each.
 
-| Question | Reference(s) |
-|---|---|
-| Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Question                                 | Reference(s)                             |
+| ---------------------------------------- | ---------------------------------------- |
+| Design a file sync service like Dropbox  | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| Design a search engine like Google       | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Design Google docs                       | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| Design a key-value store like Redis      | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| Design a cache system like Memcached     | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | Design a recommendation system like Amazon's | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
-| Design a tinyurl system like Bitly | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
+| Design a tinyurl system like Bitly       | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
 | Design a chat app like WhatsApp | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
 | Design a picture sharing system like Instagram | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
 | Design the Facebook news feed function | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
@@ -1631,14 +1989,14 @@ Handy metrics based on numbers above:
 * Study what problems are solved by each component, where it works, where it doesn't
 * Review the lessons learned
 
-|Type | System | Reference(s) |
-|---|---|---|
+| Type            | System                                   | Reference(s)                             |
+| --------------- | ---------------------------------------- | ---------------------------------------- |
 | Data processing | **MapReduce** - Distributed data processing from Google | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
 | Data processing | **Spark** - Distributed data processing from Databricks | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
 | Data processing | **Storm** - Distributed data processing from Twitter | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
-| | | |
-| Data store | **Bigtable** - Distributed column-oriented database from Google | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
-| Data store | **HBase** - Open source implementation of Bigtable | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
+|                 |                                          |                                          |
+| Data store      | **Bigtable** - Distributed column-oriented database from Google | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
+| Data store      | **HBase** - Open source implementation of Bigtable | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
 | Data store | **Cassandra** - Distributed column-oriented database from Facebook | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
 | Data store | **DynamoDB** - Document-oriented database from Amazon | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
 | Data store | **MongoDB** - Document-oriented database | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
@@ -1657,30 +2015,30 @@ Handy metrics based on numbers above:
 
 ### Company architectures
 
-| Company | Reference(s) |
-|---|---|
-| Amazon | [Amazon architecture](http://highscalability.com/amazon-architecture) |
-| Cinchcast | [Producing 1,500 hours of audio every day](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
-| DataSift | [Realtime datamining At 120,000 tweets per second](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html) |
-| DropBox | [How we've scaled Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| ESPN | [Operating At 100,000 duh nuh nuhs per second](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
-| Google | [Google architecture](http://highscalability.com/google-architecture) |
-| Instagram | [14 million users, terabytes of photos](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[What powers Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
-| Justin.tv | [Justin.Tv's live video broadcasting architecture](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
-| Facebook | [Scaling memcached at Facebook](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook’s distributed data store for the social graph](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) |
-| Flickr | [Flickr architecture](http://highscalability.com/flickr-architecture) |
-| Mailbox | [From 0 to one million users in 6 weeks](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
-| Pinterest | [From 0 To 10s of billions of page views a month](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)<br/>[18 million visitors, 10x growth, 12 employees](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
-| Playfish | [50 million monthly users and growing](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html) |
-| PlentyOfFish | [PlentyOfFish architecture](http://highscalability.com/plentyoffish-architecture) |
-| Salesforce | [How they handle 1.3 billion transactions a day](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html) |
+| Company        | Reference(s)                             |
+| -------------- | ---------------------------------------- |
+| Amazon         | [Amazon architecture](http://highscalability.com/amazon-architecture) |
+| Cinchcast      | [Producing 1,500 hours of audio every day](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
+| DataSift       | [Realtime datamining At 120,000 tweets per second](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html) |
+| DropBox        | [How we've scaled Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| ESPN           | [Operating At 100,000 duh nuh nuhs per second](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
+| Google         | [Google architecture](http://highscalability.com/google-architecture) |
+| Instagram      | [14 million users, terabytes of photos](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[What powers Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
+| Justin.tv      | [Justin.Tv's live video broadcasting architecture](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
+| Facebook       | [Scaling memcached at Facebook](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook’s distributed data store for the social graph](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) |
+| Flickr         | [Flickr architecture](http://highscalability.com/flickr-architecture) |
+| Mailbox        | [From 0 to one million users in 6 weeks](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
+| Pinterest      | [From 0 To 10s of billions of page views a month](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)<br/>[18 million visitors, 10x growth, 12 employees](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
+| Playfish       | [50 million monthly users and growing](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html) |
+| PlentyOfFish   | [PlentyOfFish architecture](http://highscalability.com/plentyoffish-architecture) |
+| Salesforce     | [How they handle 1.3 billion transactions a day](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html) |
 | Stack Overflow | [Stack Overflow architecture](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html) |
-| TripAdvisor | [40M visitors, 200M dynamic page views, 30TB data](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
-| Tumblr | [15 billion page views a month](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
-| Twitter | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
-| Uber | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html) |
-| WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
-| YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
+| TripAdvisor    | [40M visitors, 200M dynamic page views, 30TB data](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
+| Tumblr         | [15 billion page views a month](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
+| Twitter        | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
+| Uber           | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html) |
+| WhatsApp       | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
+| YouTube        | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
 ### Company engineering blogs
 
