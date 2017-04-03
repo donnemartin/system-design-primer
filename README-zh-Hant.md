@@ -1020,17 +1020,17 @@ Graphs databases offer high performance for data models with complex relationshi
 
 ##### 相关资源和延伸阅读：图
 
-* [图数据库](https://en.wikipedia.org/wiki/Graph_database)
-* [Neo4j](https://neo4j.com/)
-* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+- [图数据库](https://en.wikipedia.org/wiki/Graph_database)
+- [Neo4j](https://neo4j.com/)
+- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
 #### 相关资源和延伸阅读：NoSQL
 
-* [基础术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL 数据库 — 调查与决策指导](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [可扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [NoSQL 的介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+- [基础术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+- [NoSQL 数据库 — 调查与决策指导](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+- [可扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+- [NoSQL 的介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+- [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 ### SQL 还是 NoSQL
 
@@ -1042,37 +1042,37 @@ Graphs databases offer high performance for data models with complex relationshi
 
 选择 **SQL** 的原因：
 
-* 结构化数据
-* 严格的架构
-* 关系型数据
-* 需要复杂的 joins
-* 事务
-* 清除缩放模式
-* 更成熟的开发人员，社区，代码，工具等等
-* 通过索引查找非常快
+- 结构化数据
+- 严格的架构
+- 关系型数据
+- 需要复杂的 joins
+- 事务
+- 清除缩放模式
+- 更成熟的开发人员，社区，代码，工具等等
+- 通过索引查找非常快
 
 选择 **NoSQL** 的原因：
 
-* 半结构化数据
-* 动态/灵活的模式
-* 非关系型数据
-* 不需要复杂的 joins 操作
-* 可以存储大量 TB/PB 数据
-* 非常数据密集的工作量
-* 非常高的 IOPS 吞吐量
+- 半结构化数据
+- 动态/灵活的模式
+- 非关系型数据
+- 不需要复杂的 joins 操作
+- 可以存储大量 TB/PB 数据
+- 非常数据密集的工作量
+- 非常高的 IOPS 吞吐量
 
 适合 NoSQL 操作的数据：
 
-* 埋点数据以及日志数据
-* 排行榜或者得分数据
-* 临时数据，比如购物车
-* 需要频繁访问的表
-* 元数据/查找表
+- 埋点数据以及日志数据
+- 排行榜或者得分数据
+- 临时数据，比如购物车
+- 需要频繁访问的表
+- 元数据/查找表
 
 相关资源和延伸阅读：SQL 还是 NoSQL
 
-* [扩大您的用户到第一个1000万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-* [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
+- [扩大您的用户到第一个1000万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## 缓存
 
@@ -1108,15 +1108,15 @@ Graphs databases offer high performance for data models with complex relationshi
 
 Redis 有下列附加功能：
 
-* 持久性选项
-* 内置数据结构比如有序集合和列表
+- 持久性选项
+- 内置数据结构比如有序集合和列表
 
 有多个缓存级别，分为两大类：**数据库查询**和**对象**：
 
-* 行级别
-* 查询级别
-* 完整的可序列化对象
-* 完全渲染的 HTML
+- 行级别
+- 查询级别
+- 完整的可序列化对象
+- 完全渲染的 HTML
 
 一般来说，你应该尽量避免基于文件的缓存，因为这使得复制和自动缩放很困难。
 
@@ -1124,22 +1124,22 @@ Redis 有下列附加功能：
 
 当你查询数据库的时候，将查询结果作为关键字同时将结果存储到缓存中。这种方法会遇到以下问题：
 
-* 很难用复杂的查询删除已缓存结果。
-* 如果一条数据比如表中某条数据的一项被改变，则需要删除所有可能包含已更改项的缓存结果。
+- 很难用复杂的查询删除已缓存结果。
+- 如果一条数据比如表中某条数据的一项被改变，则需要删除所有可能包含已更改项的缓存结果。
 
 ### 对象级别的缓存
 
 将您的数据视为对象，就像对待你的应用代码一样。 让应用程序将数据从数据库中组合到类实例或数据结构中：
 
-* 如果对象的基础数据已经更改了，那么从缓存中删掉这个对象。
-* 允许异步处理：workers 通过使用最新的缓存对象来组装对象。
+- 如果对象的基础数据已经更改了，那么从缓存中删掉这个对象。
+- 允许异步处理：workers 通过使用最新的缓存对象来组装对象。
 
 建议缓存的内容：
 
-* 用户会话
-* 完全渲染的 Web 页面
-* 活动流
-* 用户图数据
+- 用户会话
+- 完全渲染的 Web 页面
+- 活动流
+- 用户图数据
 
 ### 何时更新缓存
 
@@ -1155,10 +1155,10 @@ Redis 有下列附加功能：
 
 应用从存储器读写。缓存不和存储器直接交互，应用执行以下操作：
 
-* 在缓存中查找记录，如果所需数据不在缓存中
-* 从数据库中加载所需内容
-* 将查找到的结果存储到缓存中
-* 返回所需内容
+- 在缓存中查找记录，如果所需数据不在缓存中
+- 从数据库中加载所需内容
+- 将查找到的结果存储到缓存中
+- 返回所需内容
 
 ```
 def get_user(self, user_id):
@@ -1177,9 +1177,9 @@ def get_user(self, user_id):
 
 ##### 缓存的缺点：
 
-* 每一次所需数据不在缓存中都需要经历三个过程，这会导致明显的延迟。
-* 如果数据库中的数据更新了会导致缓存中的数据过时。这个问题需要通过设置 TTL 强制更新缓存或者直写模式来缓解这种情况。
-* 当一个节点出现故障的时候，它将会被一个新的节点替代，这增加了延迟的时间。
+- 每一次所需数据不在缓存中都需要经历三个过程，这会导致明显的延迟。
+- 如果数据库中的数据更新了会导致缓存中的数据过时。这个问题需要通过设置 TTL 强制更新缓存或者直写模式来缓解这种情况。
+- 当一个节点出现故障的时候，它将会被一个新的节点替代，这增加了延迟的时间。
 
 #### 直写模式
 
@@ -1191,9 +1191,9 @@ def get_user(self, user_id):
 
 应用使用缓存作为主要的数据存储，将数据读写到缓存中，而缓存负责从数据库中读写数据。
 
-* 应用向缓存中添加/更新数据
-* 缓存将所需内容写入数据存储
-* 返回所需内容
+- 应用向缓存中添加/更新数据
+- 缓存将所需内容写入数据存储
+- 返回所需内容
 
 应用代码：
 
@@ -1213,8 +1213,8 @@ def set_user(user_id, values):
 
 ##### 直写模式的缺点：
 
-* 由于故障或者缩放而创建的新的节点，新的节点不会缓存，直到数据库更新为止。缓存应用直写模式可以缓解这个问题。
-* 写入的大多数数据可能永远都不会被读取，用 TTL 可以最小化这种情况的出现。
+- 由于故障或者缩放而创建的新的节点，新的节点不会缓存，直到数据库更新为止。缓存应用直写模式可以缓解这个问题。
+- 写入的大多数数据可能永远都不会被读取，用 TTL 可以最小化这种情况的出现。
 
 #### 回写模式
 
@@ -1226,13 +1226,13 @@ def set_user(user_id, values):
 
 在回写模式中，应用执行以下操作：
 
-* 在缓存中增加或者更新条目
-* 异步写入数据，提高写入性能。
+- 在缓存中增加或者更新条目
+- 异步写入数据，提高写入性能。
 
 ##### 回写模式的缺点：
 
-* 缓存可能在其内容成功存储之前丢失数据。
-* 执行直写模式比缓存或者回写模式更复杂。
+- 缓存可能在其内容成功存储之前丢失数据。
+- 执行直写模式比缓存或者回写模式更复杂。
 
 #### 刷新
 
@@ -1248,23 +1248,23 @@ def set_user(user_id, values):
 
 ##### 刷新的缺点：
 
-* 不能准确预测到未来需要用到的数据可能会导致性能不如不使用刷新。
+- 不能准确预测到未来需要用到的数据可能会导致性能不如不使用刷新。
 
 ### 缓存的缺点：
 
-* 需要保持缓存和真实数据源之间的一致性，比如数据库根据[缓存无效](https://en.wikipedia.org/wiki/Cache_algorithms)。
-* 需要改变应用程序比如增加 Redis 或者 memcached。
-* 无效缓存是个难题，什么时候更新缓存是额外复杂的问题。
+- 需要保持缓存和真实数据源之间的一致性，比如数据库根据[缓存无效](https://en.wikipedia.org/wiki/Cache_algorithms)。
+- 需要改变应用程序比如增加 Redis 或者 memcached。
+- 无效缓存是个难题，什么时候更新缓存是额外复杂的问题。
 
 ### 相关资源和延伸阅读
 
-* [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [scale 的系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [可扩展性]((http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache))
-* [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
-* [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
+- [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+- [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+- [scale 的系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+- [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [可扩展性]((http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache))
+- [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+- [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
 
 ## 异步
 
@@ -1280,8 +1280,8 @@ def set_user(user_id, values):
 
 消息队列接收，保留和传递消息。如果按顺序执行操作太慢的话，你可以使用有以下工作流的消息队列：
 
-* 应用程序将作业发布到队列，然后通知用户作业状态
-* 一个 worker 从队列中取出该作业，对其进行处理，然后显示该作业完成
+- 应用程序将作业发布到队列，然后通知用户作业状态
+- 一个 worker 从队列中取出该作业，对其进行处理，然后显示该作业完成
 
 用户未被阻止，作业在后台处理。在此期间，客户端可能会进行一些处理使得看上去像是任务已经完成了。例如，如果要发送一条推文，推文可能会马上出现在你的时间线上，但是可能需要一些时间才能将你的推文推送到你的所有关注者那里去。
 
@@ -1303,14 +1303,14 @@ def set_user(user_id, values):
 
 ### 异步的缺点：
 
-* 廉价计算和实时工作流等用例可能更适用于同步操作，因为引入队列可能会增加延迟和复杂性。
+- 廉价计算和实时工作流等用例可能更适用于同步操作，因为引入队列可能会增加延迟和复杂性。
 
 ### 相关资源和延伸阅读
 
-* [这是一个数字游戏](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [超载时应用背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [利特尔法则](https://en.wikipedia.org/wiki/Little%27s_law)
-* [消息队列与任务队列有什么区别？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+- [这是一个数字游戏](https://www.youtube.com/watch?v=1KRYH75wgy4)
+- [超载时应用背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+- [利特尔法则](https://en.wikipedia.org/wiki/Little%27s_law)
+- [消息队列与任务队列有什么区别？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
 ## 通讯
 
@@ -1338,8 +1338,8 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 
 HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
 
-* [HTTP](https://www.nginx.com/resources/glossary/http/)
-* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+- [HTTP](https://www.nginx.com/resources/glossary/http/)
+- [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 
 ### 传输控制协议（TCP）
 
@@ -1351,8 +1351,8 @@ HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议�
 
 TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面向连接的协议。 使用[握手](https://en.wikipedia.org/wiki/Handshaking)建立和断开连接。 发送的所有数据包保证以原始顺序到达目的地，用以下措施保证数据包不被损坏：
 
-* 每个数据包的序列号和[校验码](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)。
-* [确认包](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))和自动重传
+- 每个数据包的序列号和[校验码](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)。
+- [确认包](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))和自动重传
 
 如果发送者没有收到正确的响应，它将重新发送数据包。如果多次超时，连接就会断开。TCP 实行[流量控制](https://en.wikipedia.org/wiki/Flow_control_(data))和[拥塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)。这些确保措施会导致延迟，而且通常导致传输效率比 UDP 低。
 
@@ -1362,8 +1362,8 @@ TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包
 
 什么时候使用 TCP over UDP：
 
-* 你需要数据完好无损。
-* 你想对网络吞吐量自动进行最佳评估。
+- 你需要数据完好无损。
+- 你想对网络吞吐量自动进行最佳评估。
 
 ### User datagram protocol (UDP)
 
