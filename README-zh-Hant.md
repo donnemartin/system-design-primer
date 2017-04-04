@@ -35,14 +35,14 @@
 
 在很多科技公司中，除了代码面试，系统设计也是**技术面试过程**中的一个**必要环节**。
 
-**练习普通的系统设计面试题**并且把你的结果和**例子的答案**进行**比较**：讨论，代码和图表。
+**练习普通的系统设计面试题**并且把你的结果和**例子的解答**进行**比较**：讨论，代码和图表。
 
 面试准备的其他主题：
 
 * [学习指引](#study-guide)
 * [如何回答一个系统设计面试题](#how-to-approach-a-system-design-interview-question)
-* [系统设计面试题， **有答案**](#system-design-interview-questions-with-solutions)
-* [面向对象设计面试题， **有答案**](#object-oriented-design-interview-questions-with-solutions)
+* [系统设计面试题， **含解答**](#system-design-interview-questions-with-solutions)
+* [面向对象设计面试题， **含解答**](#object-oriented-design-interview-questions-with-solutions)
 * [其他系统设计面试题](#additional-system-design-interview-questions)
 
 ## 抽认卡
@@ -203,9 +203,9 @@
 | 阅读一些你要面试的 [公司工程博客](#company-engineering-blogs) 的文章 | :+1: | :+1: | :+1: |
 | 阅读 [真实世界的架构](#real-world-architectures)  | :+1: | :+1: | :+1: |
 | 复习 [如何处理一个系统设计面试题](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| 完成 [系统设计面试题和答案](#system-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
-| 完成 [面向对象设计面试题和答案](#object-oriented-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
-| 复习 [其他系统设计面试题和答案](#additional-system-design-interview-questions) | 一些   | 很多   | 大部分  |
+| 完成 [系统设计面试题和解答](#system-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
+| 完成 [面向对象设计面试题和解答](#object-oriented-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
+| 复习 [其他系统设计面试题和解答](#additional-system-design-interview-questions) | 一些   | 很多   | 大部分  |
 
 ## 如何处理一个系统设计面试题
 
@@ -213,7 +213,7 @@
 
 系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
 
-你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成 [系统设计面试题和答案](#system-design-interview-questions-with-solutions) 这个章节。
+你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成 [系统设计面试题和解答](#system-design-interview-questions-with-solutions) 这个章节。
 
 ### 第一步：描述使用场景，约束和假设
 
@@ -251,110 +251,96 @@
 ### Step 4: Scale the design
 ### 第四步：度量设计
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
 确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成拓展性的议题吗？
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
 * 负载均衡
 * 水平拓展
 * 缓存
 * 数据库分片
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
 论述可能的解决办法和代价。每件事情需要取舍。可以使用 [可拓展系统的设计原则](#index-of-system-design-topics) 来处理瓶颈。
 
-### Back-of-the-envelope calculations
 ### 信封背面的计算
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
 你或许会被要求通过手算进行一些估算。涉及到的 [附录](#appendix) 涉及到的是下面的这些资源：
 
 * [使用信封的背面做计算](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [两张表的威力](#powers-of-two-table)
 * [每一位程序员都应该知道的数字误差](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
 ### 源码以及查看更多
 
-Check out the following links to get a better idea of what to expect:
 查看下面的链接以获得我们期望的更好的想法：
 
 * [怎样通过一个系统设计面试](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [系统设计面试](http://www.hiredintech.com/system-design)
 * [系统架构与设计面试简介](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-## System design interview questions with solutions
-## 系统设计面试题和答案
+## 系统设计面试题和解答
 
-> Common system design interview questions with sample discussions, code, and diagrams.
->
-> Solutions linked to content in the `solutions/` folder.
 > 普通的系统设计面试题和相关事例的论述，代码和图表。
 >
-> 答案会链接到 `solutions/` 文件夹中的内容。
+> 与内容有关的解答在 `solutions/` 文件夹中。
 >
 | 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
-| 设计 Pastebin.com (或者 Bit.ly)              | [答案](solutions/system_design/pastebin/README.md) |
-| 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [答案](solutions/system_design/twitter/README.md) |
-| 设计一个网页爬虫                                 | [答案](solutions/system_design/web_crawler/README.md) |
-| 设计 Mint.com                              | [答案](solutions/system_design/mint/README.md) |
-| 为一个社交网络设计数据结构                            | [答案](solutions/system_design/social_graph/README.md) |
-| 为搜索引擎设计一个 key-value 储存                   | [答案](solutions/system_design/query_cache/README.md) |
-| 通过分类特性设计 Amazon 的销售排名                    | [答案](solutions/system_design/sales_rank/README.md) |
-| 在 AWS 上设计一个百万用户级别的系统                     | [答案](solutions/system_design/scaling_aws/README.md) |
+| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
+| 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
+| 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
+| 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
+| 为一个社交网络设计数据结构                            | [解答](solutions/system_design/social_graph/README.md) |
+| 为搜索引擎设计一个 key-value 储存                   | [解答](solutions/system_design/query_cache/README.md) |
+| 通过分类特性设计 Amazon 的销售排名                    | [解答](solutions/system_design/sales_rank/README.md) |
+| 在 AWS 上设计一个百万用户级别的系统                     | [解答](solutions/system_design/scaling_aws/README.md) |
 | 添加一个系统设计问题                               | [贡献](#contributing)                      |
 
 ### 设计 Pastebin.com (或者 Bit.ly)
 
-[查看练习和答案](solutions/system_design/pastebin/README.md)
+[查看练习和解答](solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
 ### 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索)
 
-[查看练习和答案](solutions/system_design/twitter/README.md)
+[查看练习和解答](solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 
 ### 设计一个网页爬虫
 
-[查看练习和答案](solutions/system_design/web_crawler/README.md)
+[查看练习和解答](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
 ### 设计 Mint.com
 
-[查看练习和答案](solutions/system_design/mint/README.md)
+[查看练习和解答](solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 
 ### 为一个社交网络设计数据结构
 
-[查看练习和答案](solutions/system_design/social_graph/README.md)
+[查看练习和解答](solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
 ### 为搜索引擎设计一个 key-value 储存
 
-[查看练习和答案](solutions/system_design/query_cache/README.md)
+[查看练习和解答](solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
 ### Design Amazon's sales ranking by category feature
 ### 通过分类特性设计 Amazon 的销售排名
 
-[查看练习和答案](solutions/system_design/sales_rank/README.md)
+[查看练习和解答](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
 ### Design a system that scales to millions of users on AWS
 ### 在 AWS 上设计一个百万用户级别的系统
 
-[查看练习和答案](solutions/system_design/scaling_aws/README.md)
+[查看练习和解答](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
