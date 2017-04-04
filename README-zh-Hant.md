@@ -1260,7 +1260,7 @@ def set_user(user_id, values):
 
 - [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 - [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-- [scale 的系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+- [大型系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
 - [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 - [可扩展性]((http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache))
 - [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
