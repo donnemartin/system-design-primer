@@ -1385,14 +1385,14 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流（这个不�
 * 相对于数据丢失更糟的是数据延迟
 * 你想实现自己的错误校正方法
 
-#### 延伸阅读：TCP 与 UDP
+#### 来源及延伸阅读：TCP 与 UDP
 
-* [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
-* [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
-* [Difference between TCP and UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
-* [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
-* [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [游戏编程的网络](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [TCP 与 UDP 的关键区别](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
+* [TCP 与 UDP 的不同](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
+* [传输控制协议](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+* [用户数据报协议](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+* [Facebook 对内存缓存的扩展](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
 ### 远程过程调用协议（RPC）
 
@@ -1488,16 +1488,16 @@ REST 关注于暴露数据。它最小化了客户端与服务端的联系并经
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
 </p>
 
-#### 延伸阅读：REST 与 RPC
+#### 来源及延伸阅读：REST 与 RPC
 
-* [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
-* [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
+* [你知道你为什么更喜欢 REST 而不是 RPC 吗](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
+* [什么时候 RPC 比 REST 更合适？](http://programmers.stackexchange.com/a/181186)
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
-* [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
-* [Thrift](https://code.facebook.com/posts/1468950976659943/)
-* [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+* [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
+* [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [节约](https://code.facebook.com/posts/1468950976659943/)
+* [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
 ## 安全
 
@@ -1510,9 +1510,9 @@ REST 关注于暴露数据。它最小化了客户端与服务端的联系并经
 * 使用参数化的查询来防止 SQL 注入。
 * 使用[最小权限原则](https://en.wikipedia.org/wiki/Principle_of_least_privilege)。
 
-### 延伸阅读
+### 来源及延伸阅读
 
-* [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
+* [为开发者准备的安全引导](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
 ## 附录
@@ -1534,11 +1534,11 @@ Power           Exact Value         Approx Value        Bytes
 40              1,099,511,627,776   1 trillion           1 TB
 ```
 
-#### 延伸阅读
+#### 来源及延伸阅读
 
-* [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
+* [2 的次方](https://en.wikipedia.org/wiki/Power_of_two)
 
-### Latency numbers every programmer should know
+### 每个程序员都应该知道的延迟数
 
 ```
 Latency Comparison Numbers
@@ -1578,12 +1578,12 @@ Notes
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
-#### 延伸阅读
+#### 来源及延伸阅读
 
-* [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
-* [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
-* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
-* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+* [每个程序员都应该知道的延迟数 — 1](https://gist.github.com/jboner/2841832)
+* [每个程序员都应该知道的延迟数 — 2](https://gist.github.com/hellerbarde/2843375)
+* [关于建设大型分布式系统的的设计方案、课程和建议](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
+* [关于建设大型可拓展分布式系统的软件工程咨询](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
 ### 额外的系统设计面试问题
 
@@ -1729,7 +1729,7 @@ Notes
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 
-#### 延伸阅读
+#### 来源及延伸阅读
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
