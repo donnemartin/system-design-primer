@@ -1069,7 +1069,7 @@ Graphs databases offer high performance for data models with complex relationshi
 - 需要频繁访问的表
 - 元数据/查找表
 
-相关资源和延伸阅读：SQL 还是 NoSQL
+##### 相关资源和延伸阅读：SQL 还是 NoSQL
 
 - [扩大您的用户到第一个1000万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 - [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
