@@ -67,16 +67,16 @@
 欢迎提交 PR 提供帮助：
 
 * 修复错误
-* 改善章节
+* 完善章节
 * 添加章节
 
-还需要打磨的一些内容放在了 [开发中](#under-development)。
+一些还需要完善的内容放在了[开发中](#under-development)。
 
 查看 [贡献指导](CONTRIBUTING.md)。
 
 ### 翻译
 
-对**翻译**感兴趣？请查看这个 [门票](https://github.com/donnemartin/system-design-primer/issues/28)。
+对**翻译**感兴趣？请查看这个 [链接](https://github.com/donnemartin/system-design-primer/issues/28)。
 
 ## 系统设计主题的索引
 
@@ -134,21 +134,21 @@
         * [Key-value 存储](#key-value-store)
         * [文档存储](#document-store)
         * [宽列存储](#wide-column-store)
-        * [图表数据库](#graph-database)
+        * [图数据库](#graph-database)
     * [SQL 还是 NoSQL](#sql-or-nosql)
 * [缓存](#cache)
     * [客户端缓存](#client-caching)
     * [CDN 缓存](#cdn-caching)
-    * [Web 服务缓存](#web-server-caching)
+    * [Web 服务器缓存](#web-server-caching)
     * [数据库缓存](#database-caching)
     * [应用缓存](#application-caching)
-    * [在数据库查询层缓存](#caching-at-the-database-query-level)
-    * [对象缓存](#caching-at-the-object-level)
+    * [数据库查询级别的缓存](#caching-at-the-database-query-level)
+    * [对象级别的缓存](#caching-at-the-object-level)
     * [何时更新缓存](#when-to-update-the-cache)
-        * [隐式缓存](#cache-aside)
-        * [直接写入](#write-through)
-        * [回调写入](#write-behind-write-back)
-        * [自动更新](#refresh-ahead)
+        * [缓存模式](#cache-aside)
+        * [直写模式](#write-through)
+        * [回写模式](#write-behind-write-back)
+        * [刷新](#refresh-ahead)
 * [异步](#asynchronism)
     * [消息队列](#message-queues)
     * [任务队列](#task-queues)
@@ -237,7 +237,7 @@
 
 ### 第三步：设计核心组件
 
-对每一个核心组件进行详细深入的分析。举例来说，如果你背问到 [设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
+对每一个核心组件进行详细深入的分析。举例来说，如果你被问到 [设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
 
 * 生成并储存一个完整 url 的 hash
     * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
@@ -267,7 +267,7 @@
 * [两张表的威力](#powers-of-two-table)
 * [每一位程序员都应该知道的数字误差](#latency-numbers-every-programmer-should-know)
 
-### 源码以及查看更多
+### 相关资源和延伸阅读
 
 查看下面的链接以获得我们期望的更好的想法：
 
