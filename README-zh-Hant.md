@@ -1360,7 +1360,7 @@ TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面
 
 TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包括 Web 服务器，数据库信息，SMTP，FTP 和 SSH。
 
-什么时候使用 TCP over UDP：
+以下情况使用 TCP 代替 UDP：
 
 - 你需要数据完好无损。
 - 你想对网络吞吐量自动进行最佳评估。
