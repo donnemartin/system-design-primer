@@ -13,9 +13,9 @@
 
 ## 目的
 
-> 学习如何设计大型系统
+> 学习如何设计大型系统。
 >
-> 为系统设计面试做准备
+> 为系统设计面试做准备。
 
 ### 学习如何设计大型系统
 
@@ -23,7 +23,7 @@
 
 系统设计是一个很宽泛的话题。在互联网上，**关于系统设计原则的资源也是多如牛毛。**
 
-这个仓库就是这些资源的**有组织的集合**，它可以帮助你学习如果基于不同尺度构建系统。
+这个仓库就是这些资源的**有组织的集合**，它可以帮助你学习如何构建可扩展的系统。
 
 ### 从开源社区学习
 
@@ -35,7 +35,7 @@
 
 在很多科技公司中，除了代码面试，系统设计也是**技术面试过程**中的一个**必要环节**。
 
-**练习普通的系统设计面试题**并且把你的结果和**例子的解答**进行**比较**：讨论，代码和图表。
+**练习普通的系统设计面试题**并且把你的结果和**例子的解答**进行**对照**：讨论，代码和图表。
 
 面试准备的其他主题：
 
@@ -64,7 +64,7 @@
 
 > 向社区学习。
 
-自由提交 PR 来帮助：
+欢迎提交 PR 提供帮助：
 
 * 修复错误
 * 改善章节
@@ -80,7 +80,7 @@
 
 ## 系统设计主题的索引
 
-> 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都对应一个职业**。
+> 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都面临着取舍和权衡**。
 >
 > 每个章节都包含更深层次的资源的链接。
 
@@ -91,29 +91,29 @@
 </p>
 
 * [系统设计主题：从这里开始](#system-design-topics-start-here)
-    * [第一步：查阅拓展性的视频讲座](#step-1-review-the-scalability-video-lecture)
-    * [第二步： 查阅拓展性的文章](#step-2-review-the-scalability-article)
+    * [第一步：回顾可扩展性的视频讲座](#step-1-review-the-scalability-video-lecture)
+    * [第二步： 回顾可扩展性的文章](#step-2-review-the-scalability-article)
     * [接下来的步骤](#next-steps)
-* [性能 vs 拓展性](#performance-vs-scalability)
-* [延迟 vs 吞吐量](#latency-vs-throughput)
-* [可用性 vs 一致性](#availability-vs-consistency)
+* [性能与拓展性](#performance-vs-scalability)
+* [延迟与吞吐量](#latency-vs-throughput)
+* [可用性与一致性](#availability-vs-consistency)
     * [CAP 理论](#cap-theorem)
         * [CP - 一致性和分区容错性](#cp---consistency-and-partition-tolerance)
         * [AP - 可用性和分区容错性](#ap---availability-and-partition-tolerance)
 * [一致模式](#consistency-patterns)
     * [弱一致性](#weak-consistency)
     * [最终一致性](#eventual-consistency)
-    * [强一致](#strong-consistency)
+    * [强一致性](#strong-consistency)
 * [可用模式](#availability-patterns)
-    * [容灾](#fail-over)
-    * [复制集](#replication)
+    * [故障转移](#fail-over)
+    * [复制](#replication)
 * [域名系统](#domain-name-system)
 * [CDN](#content-delivery-network)
-    * [推送 CDNs](#push-cdns)
-    * [拉取 CDNs](#pull-cdns)
-* [负载均衡](#load-balancer)
-    * [主动-被动](#active-passive)
-    * [主动-主动](#active-active)
+    * [CDN 推送](#push-cdns)
+    * [CDN 拉取](#pull-cdns)
+* [负载均衡器](#load-balancer)
+    * [工作到备用切换(active-passive)](#active-passive)
+    * [双工作切换(active-active)](#active-active)
     * [4 层负载均衡](#layer-4-load-balancing)
     * [7 层负载均衡](#layer-7-load-balancing)
     * [水平拓展](#horizontal-scaling)
@@ -248,7 +248,6 @@
     * 数据库查找
 * API 和面向对象设计
 
-### Step 4: Scale the design
 ### 第四步：度量设计
 
 确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成拓展性的议题吗？
@@ -330,14 +329,12 @@
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
 ### 通过分类特性设计 Amazon 的销售排名
 
 [查看练习和解答](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
 ### 在 AWS 上设计一个百万用户级别的系统
 
 [查看练习和解答](solutions/system_design/scaling_aws/README.md)
