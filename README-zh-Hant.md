@@ -1325,7 +1325,6 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 
 一个基本的 HTTP 请求由一个动词（方法）和一个资源（端点）组成。 以下是常见的 HTTP 动词：
 
-<<<<<<< HEAD
 | 动词     | 描述             | *幂等  | 安全性  | 可缓存            |
 | ------ | -------------- | ---- | ---- | -------------- |
 | GET    | 读取资源           | Yes  | Yes  | Yes            |
@@ -1333,15 +1332,7 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 | PUT    | 创建或替换资源        | Yes  | No   | No             |
 | PATCH  | 部分更新资源         | No   | No   | Yes，如果回应包含刷新信息 |
 | DELETE | 删除资源           | Yes  | No   | No             |
-=======
-| Verb   | Description                              | Idempotent* | Safe | Cacheable                               |
-| ------ | ---------------------------------------- | ----------- | ---- | --------------------------------------- |
-| GET    | Reads a resource                         | Yes         | Yes  | Yes                                     |
-| POST   | Creates a resource or trigger a process that handles data | No          | No   | Yes if response contains freshness info |
-| PUT    | Creates or replace a resource            | Yes         | No   | No                                      |
-| PATCH  | Partially updates a resource             | No          | No   | Yes if response contains freshness info |
-| DELETE | Deletes a resource                       | Yes         | No   | No                                      |
->>>>>>> 5e2f3f50aeb57ab433d5fd8ca21f09bcb5fc4d83
+>>>>>>> 
 
 *多次执行不会产生不同的结果。
 
