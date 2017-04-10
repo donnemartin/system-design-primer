@@ -5,6 +5,14 @@
   <br/>
 </p>
 
+## Translations
+
+Interested in [translating](https://github.com/donnemartin/system-design-primer/issues/28)?  Translations in progress:
+
+* [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
+* [Simplified Chinese translation](https://github.com/donnemartin/system-design-primer/issues/38)
+* [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
+
 ## Motivation
 
 > Learn how to design large-scale systems.
@@ -80,10 +88,6 @@ Feel free to submit pull requests to help:
 Content that needs some polishing is placed [under development](#under-development).
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
-
-### Translations
-
-Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
 
 ## Index of system design topics
 
