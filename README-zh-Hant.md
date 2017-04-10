@@ -206,7 +206,6 @@
 | 完成 [系统设计面试题和解答](#system-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
 | 完成 [面向对象设计面试题和解答](#object-oriented-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
 | 复习 [其他系统设计面试题和解答](#additional-system-design-interview-questions) | 一些   | 很多   | 大部分  |
-
 ## 如何处理一个系统设计面试题
 
 > 如何处理一个系统设计面试题。
@@ -280,7 +279,6 @@
 > 普通的系统设计面试题和相关事例的论述，代码和图表。
 >
 > 与内容有关的解答在 `solutions/` 文件夹中。
->
 | 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
 | 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
@@ -1019,21 +1017,21 @@ In a graph database, each node is a record and each arc is a relationship betwee
 
 Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
 
-##### Source(s) and further reading: graph
+##### 相关资源和延伸阅读：图
 
-* [Graph database](https://en.wikipedia.org/wiki/Graph_database)
-* [Neo4j](https://neo4j.com/)
-* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+- [图数据库](https://en.wikipedia.org/wiki/Graph_database)
+- [Neo4j](https://neo4j.com/)
+- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-#### Source(s) and further reading: NoSQL
+#### 相关资源和延伸阅读：NoSQL
 
-* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+- [基础术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+- [NoSQL 数据库 — 调查与决策指导](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+- [可扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+- [NoSQL 的介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+- [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### SQL 还是 NoSQL
 
 <p align="center">
   <img src="http://i.imgur.com/wXGqG5f.png">
@@ -1041,41 +1039,41 @@ Graphs databases offer high performance for data models with complex relationshi
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
 
-Reasons for **SQL**:
+选择 **SQL** 的原因：
 
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
+- 结构化数据
+- 严格的架构
+- 关系型数据
+- 需要复杂的 joins
+- 事务
+- 清晰的缩放模式
+- 更成熟的开发人员，社区，代码，工具等等
+- 通过索引查找非常快
 
-Reasons for **NoSQL**:
+选择 **NoSQL** 的原因：
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+- 半结构化数据
+- 动态/灵活的模式
+- 非关系型数据
+- 不需要复杂的 joins 操作
+- 可以存储大量 TB/PB 数据
+- 非常数据密集的工作量
+- 非常高的 IOPS 吞吐量
 
-Sample data well-suited for NoSQL:
+适合 NoSQL 操作的数据：
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+- 埋点数据以及日志数据
+- 排行榜或者得分数据
+- 临时数据，比如购物车
+- 需要频繁访问的表
+- 元数据/查找表
 
-##### Source(s) and further reading: SQL or NoSQL
+##### 相关资源和延伸阅读：SQL 还是 NoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+- [扩大您的用户到第一个1000万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
-## Cache
+## 缓存
 
 <p align="center">
   <img src="http://i.imgur.com/Q6z24La.png">
@@ -1083,70 +1081,70 @@ Sample data well-suited for NoSQL:
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
 
-Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
+缓存可以提高页面加载速度，并可以减少服务器和数据库的负载。在这个模型中，分发器先查看请求之前是否被响应过，如果有则将之前的结果直接返回，来省掉真正的处理。
 
-Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
+数据库分片均匀分布的读取是最好的。但是热门数据会让读取分布不均匀，这样就会造成瓶颈，如果在数据库前加个缓存，就会抹平不均匀的负载和突发流量对数据库的影响。
 
-### Client caching
+### 客户端缓存
 
-Caches can be located on the client side (OS or browser), [server side](#reverse-proxy), or in a distinct cache layer.
+缓存可以位于客户端（操作系统或者浏览器），[服务端](#reverse-proxy)或者不同的缓存层。
 
-### CDN caching
+### CDN 缓存
 
-[CDNs](#content-delivery-network) are considered a type of cache.
+[CDNs](#content-delivery-network) 也被视为一种缓存。
 
-### Web server caching
+### Web 服务器缓存
 
-[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+[反向代理](#reverse-proxy-web-server)和缓存（比如 [Varnish](https://www.varnish-cache.org/)）可以直接提供静态和动态内容。Web 服务器同样也可以缓存请求，返回相应结果而不必连接应用服务器。
 
-### Database caching
+### 数据库缓存
 
-Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+数据库的默认配置中通常包含缓存级别，针对一般用例进行了优化。调整配置，在不同情况下使用不同的模式可以进一步提高性能。
 
-### Application caching
+### 应用缓存
 
-In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+基于内存的缓存比如 Memcached 和 Redis 是应用程序和数据存储之间的一种键值存储。由于数据保存在 RAM 中，它比存储在磁盘上的典型数据库要快多了。RAM 比磁盘限制更多，所以例如 [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) 的[缓存无效算法](https://en.wikipedia.org/wiki/Cache_algorithms)可以将「热门数据」放在 RAM 中，而对一些比较「冷门」的数据不做处理。
 
-Redis has the following additional features:
+Redis 有下列附加功能：
 
-* Persistence option
-* Built-in data structures such as sorted sets and lists
+- 持久性选项
+- 内置数据结构比如有序集合和列表
 
-There are multiple levels you can cache that fall into two general categories: **database queries** and **objects**:
+有多个缓存级别，分为两大类：**数据库查询**和**对象**：
 
-* Row level
-* Query-level
-* Fully-formed serializable objects
-* Fully-rendered HTML
+- 行级别
+- 查询级别
+- 完整的可序列化对象
+- 完全渲染的 HTML
 
-Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+一般来说，你应该尽量避免基于文件的缓存，因为这使得复制和自动缩放很困难。
 
-### Caching at the database query level
+### 数据库查询级别的缓存
 
-Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+当你查询数据库的时候，将查询语句的哈希值与查询结果存储到缓存中。这种方法会遇到以下问题：
 
-* Hard to delete a cached result with complex queries
-* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
+- 很难用复杂的查询删除已缓存结果。
+- 如果一条数据比如表中某条数据的一项被改变，则需要删除所有可能包含已更改项的缓存结果。
 
-### Caching at the object level
+### 对象级别的缓存
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+将您的数据视为对象，就像对待你的应用代码一样。让应用程序将数据从数据库中组合到类实例或数据结构中：
 
-* Remove the object from cache if its underlying data has changed
-* Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
+- 如果对象的基础数据已经更改了，那么从缓存中删掉这个对象。
+- 允许异步处理：workers 通过使用最新的缓存对象来组装对象。
 
-Suggestions of what to cache:
+建议缓存的内容：
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+- 用户会话
+- 完全渲染的 Web 页面
+- 活动流
+- 用户图数据
 
-### When to update the cache
+### 何时更新缓存
 
-Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+由于你只能在缓存中存储有限的数据，所以你需要选择一个适用于你用例的缓存更新策略。
 
-#### Cache-aside
+#### 缓存
 
 <p align="center">
   <img src="http://i.imgur.com/ONjORqk.png">
@@ -1154,12 +1152,12 @@ Since you can only store a limited amount of data in cache, you'll need to deter
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
 
-The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+应用从存储器读写。缓存不和存储器直接交互，应用执行以下操作：
 
-* Look for entry in cache, resulting in a cache miss
-* Load entry from the database
-* Add entry to cache
-* Return entry
+- 在缓存中查找记录，如果所需数据不在缓存中
+- 从数据库中加载所需内容
+- 将查找到的结果存储到缓存中
+- 返回所需内容
 
 ```
 def get_user(self, user_id):
@@ -1172,17 +1170,17 @@ def get_user(self, user_id):
     return user
 ```
 
-[Memcached](https://memcached.org/) is generally used in this manner.
+[Memcached](https://memcached.org/) 通常用这种方式使用。
 
-Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+添加到缓存中的数据读取速度很快。缓存模式也称为延迟加载。只缓存所请求的数据，这避免了没有被请求的数据占满了缓存空间。
 
-##### Disadvantage(s): cache-aside
+##### 缓存的缺点：
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
-* When a node fails, it is replaced by a new, empty node, increasing latency.
+- 请求的数据如果不在缓存中就需要经过三个步骤来获取数据，这会导致明显的延迟。
+- 如果数据库中的数据更新了会导致缓存中的数据过时。这个问题需要通过设置 TTL 强制更新缓存或者直写模式来缓解这种情况。
+- 当一个节点出现故障的时候，它将会被一个新的节点替代，这增加了延迟的时间。
 
-#### Write-through
+#### 直写模式
 
 <p align="center">
   <img src="http://i.imgur.com/0vBc0hN.png">
@@ -1190,19 +1188,19 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+应用使用缓存作为主要的数据存储，将数据读写到缓存中，而缓存负责从数据库中读写数据。
 
-* Application adds/updates entry in cache
-* Cache synchronously writes entry to data store
-* Return
+- 应用向缓存中添加/更新数据
+- 缓存同步地写入数据存储
+- 返回所需内容
 
-Application code:
+应用代码：
 
 ```
 set_user(12345, {"foo":"bar"})
 ```
 
-Cache code:
+缓存代码：
 
 ```
 def set_user(user_id, values):
@@ -1210,14 +1208,14 @@ def set_user(user_id, values):
     cache.set(user_id, user)
 ```
 
-Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+由于存写操作所以直写模式整体是一种很慢的操作，但是读取刚写入的数据很快。相比读取数据，用户通常比较能接受更新数据时速度较慢。缓存中的数据不会过时。
 
-##### Disadvantage(s): write through
+##### 直写模式的缺点：
 
-* When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never read, which can be minimized with a TTL.
+- 由于故障或者缩放而创建的新的节点，新的节点不会缓存，直到数据库更新为止。缓存应用直写模式可以缓解这个问题。
+- 写入的大多数数据可能永远都不会被读取，用 TTL 可以最小化这种情况的出现。
 
-#### Write-behind (write-back)
+#### 回写模式
 
 <p align="center">
   <img src="http://i.imgur.com/rgSrvjG.png">
@@ -1225,17 +1223,17 @@ Write-through is a slow overall operation due to the write operation, but subseq
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-In write-behind, tha application does the following:
+在回写模式中，应用执行以下操作：
 
-* Add/update entry in cache
-* Asynchronously write entry to the data store, improving write performance
+- 在缓存中增加或者更新条目
+- 异步写入数据，提高写入性能。
 
-##### Disadvantage(s): write-behind
+##### 回写模式的缺点：
 
-* There could be data loss if the cache goes down prior to its contents hitting the data store.
-* It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+- 缓存可能在其内容成功存储之前丢失数据。
+- 执行直写模式比缓存或者回写模式更复杂。
 
-#### Refresh-ahead
+#### 刷新
 
 <p align="center">
   <img src="http://i.imgur.com/kxtjqgE.png">
@@ -1243,31 +1241,31 @@ In write-behind, tha application does the following:
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
 
-You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+你可以将缓存配置成在到期之前自动刷新最近访问过的内容。
 
-Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+如果缓存可以准确预测将来可能请求哪些数据，那么刷新可能会导致延迟与读取时间的降低。
 
-##### Disadvantage(s): refresh-ahead
+##### 刷新的缺点：
 
-* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+- 不能准确预测到未来需要用到的数据可能会导致性能不如不使用刷新。
 
-### Disadvantage(s): cache
+### 缓存的缺点：
 
-* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Need to make application changes such as adding Redis or memcached.
-* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
+- 需要保持缓存和真实数据源之间的一致性，比如数据库根据[缓存无效](https://en.wikipedia.org/wiki/Cache_algorithms)。
+- 需要改变应用程序比如增加 Redis 或者 memcached。
+- 无效缓存是个难题，什么时候更新缓存是与之相关的复杂问题。
 
-### Source(s) and further reading
+### 相关资源和延伸阅读
 
-* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-* [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
-* [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+- [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+- [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+- [大型系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+- [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [可扩展性]((http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache))
+- [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+- [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
 
-## Asynchronism
+## 异步
 
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png">
@@ -1275,45 +1273,45 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+异步工作流有助于减少那些原本顺序执行的请求时间。它们可以通过提前进行一些耗时的工作来帮助减少请求时间，比如定期汇总数据。
 
-### Message queues
+### 消息队列
 
-Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+消息队列接收，保留和传递消息。如果按顺序执行操作太慢的话，你可以使用有以下工作流的消息队列：
 
-* An application publishes a job to the queue, then notifies the user of job status
-* A worker picks up the job from the queue, processes it, then signals the job is complete
+- 应用程序将作业发布到队列，然后通知用户作业状态
+- 一个 worker 从队列中取出该作业，对其进行处理，然后显示该作业完成
 
-The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
+不去阻塞用户操作，作业在后台处理。在此期间，客户端可能会进行一些处理使得看上去像是任务已经完成了。例如，如果要发送一条推文，推文可能会马上出现在你的时间线上，但是可能需要一些时间才能将你的推文推送到你的所有关注者那里去。
 
-**Redis** is useful as a simple message broker but messages can be lost.
+**Redis** 是一个令人满意的简单的消息代理，但是消息有可能会丢失。
 
-**RabbitMQ** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+**RabbitMQ** 很受欢迎但是要求你适应「AMQP」协议并且管理你自己的节点。
 
-**Amazon SQS**, is hosted but can have high latency and has the possibility of messages being delivered twice.
+**Amazon SQS** 是被托管的，但可能具有高延迟，并且消息可能会被传送两次。
 
-### Task queues
+### 任务队列
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+任务队列接收任务及其相关数据，运行它们，然后传递其结果。 它们可以支持调度，并可用于在后台运行计算密集型作业。
 
-**Celery** has support for scheduling and primarily has python support.
+**Celery** 支持调度，主要是用 Python 开发的。
 
-### Back pressure
+### 背压
 
-If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+如果队列开始明显增长，那么队列大小可能会超过内存大小，导致高速缓存未命中，磁盘读取，甚至性能更慢。[背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)可以通过限制队列大小来帮助我们，从而为队列中的作业保持高吞吐率和良好的响应时间。一旦队列填满，客户端将得到服务器忙活着 HTTP 503 状态码，以便稍后重试。客户端可以在稍后时间重试该请求，也许是[指数退避](https://en.wikipedia.org/wiki/Exponential_backoff)。
 
-### Disadvantage(s): asynchronism
+### 异步的缺点：
 
-* Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+- 简单的计算和实时工作流等用例可能更适用于同步操作，因为引入队列可能会增加延迟和复杂性。
 
-### Source(s) and further reading
+### 相关资源和延伸阅读
 
-* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
-* [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+- [这是一个数字游戏](https://www.youtube.com/watch?v=1KRYH75wgy4)
+- [超载时应用背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+- [利特尔法则](https://en.wikipedia.org/wiki/Little%27s_law)
+- [消息队列与任务队列有什么区别？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
+## 通讯
 
 <p align="center">
   <img src="http://i.imgur.com/5KeocQs.jpg">
@@ -1321,12 +1319,21 @@ If queues start to grow significantly, the queue size can become larger than mem
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
 
-### Hypertext transfer protocol (HTTP)
+### 超文本传输协议（HTTP）
 
-HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它是一个请求/响应协议：客户端和服务端针对相关内容和完成状态信息的请求和响应。HTTP 是独立的，允许请求和响应流经许多执行负载均衡，缓存，加密和压缩的中间路由器和服务器。
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+一个基本的 HTTP 请求由一个动词（方法）和一个资源（端点）组成。 以下是常见的 HTTP 动词：
 
+<<<<<<< HEAD
+| 动词     | 描述             | *幂等  | 安全性  | 可缓存            |
+| ------ | -------------- | ---- | ---- | -------------- |
+| GET    | 读取资源           | Yes  | Yes  | Yes            |
+| POST   | 创建资源或触发处理数据的进程 | No   | No   | Yes，如果回应包含刷新信息 |
+| PUT    | 创建或替换资源        | Yes  | No   | No             |
+| PATCH  | 部分更新资源         | No   | No   | Yes，如果回应包含刷新信息 |
+| DELETE | 删除资源           | Yes  | No   | No             |
+=======
 | Verb   | Description                              | Idempotent* | Safe | Cacheable                               |
 | ------ | ---------------------------------------- | ----------- | ---- | --------------------------------------- |
 | GET    | Reads a resource                         | Yes         | Yes  | Yes                                     |
@@ -1334,15 +1341,16 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 | PUT    | Creates or replace a resource            | Yes         | No   | No                                      |
 | PATCH  | Partially updates a resource             | No          | No   | Yes if response contains freshness info |
 | DELETE | Deletes a resource                       | Yes         | No   | No                                      |
+>>>>>>> 5e2f3f50aeb57ab433d5fd8ca21f09bcb5fc4d83
 
-*Can be called many times without different outcomes.
+*多次执行不会产生不同的结果。
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
+HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
 
-* [HTTP](https://www.nginx.com/resources/glossary/http/)
-* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+- [HTTP](https://www.nginx.com/resources/glossary/http/)
+- [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 
-### Transmission control protocol (TCP)
+### 传输控制协议（TCP）
 
 <p align="center">
   <img src="http://i.imgur.com/JdAsdvG.jpg">
@@ -1350,21 +1358,21 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
 
-TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
+TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面向连接的协议。 使用[握手](https://en.wikipedia.org/wiki/Handshaking)建立和断开连接。 发送的所有数据包保证以原始顺序到达目的地，用以下措施保证数据包不被损坏：
 
-* Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+- 每个数据包的序列号和[校验码](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)。
+- [确认包](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))和自动重传
 
-If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally results in less efficient transmission than UDP.
+如果发送者没有收到正确的响应，它将重新发送数据包。如果多次超时，连接就会断开。TCP 实行[流量控制](https://en.wikipedia.org/wiki/Flow_control_(data))和[拥塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)。这些确保措施会导致延迟，而且通常导致传输效率比 UDP 低。
 
-To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a [memcached](#memcached) server.  [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool) can help in addition to switching to UDP where applicable.
+为了确保高吞吐量，Web 服务器可以保持大量的 TCP 连接，从而导致高内存使用。在 Web 服务器线程间拥有大量开放连接可能开销巨大，消耗资源过多，也就是说，一个 [memcached](#memcached) 服务器。[连接池](https://en.wikipedia.org/wiki/Connection_pool) 可以帮助除了在适用的情况下切换到 UDP。
 
-TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.
+TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包括 Web 服务器，数据库信息，SMTP，FTP 和 SSH。
 
-Use TCP over UDP when:
+以下情况使用 TCP 代替 UDP：
 
-* You need all of the data to arrive intact
-* You want to automatically make a best estimate use of the network throughput
+- 你需要数据完好无损。
+- 你想对网络吞吐量自动进行最佳评估。
 
 ### User datagram protocol (UDP)
 
