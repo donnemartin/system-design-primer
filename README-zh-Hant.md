@@ -1261,7 +1261,7 @@ def set_user(user_id, values):
 - [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 - [大型系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
 - [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-- [可扩展性]((http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache))
+- [可扩展性](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 - [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 - [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
 
@@ -1332,8 +1332,6 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 | PUT    | 创建或替换资源        | Yes  | No   | No             |
 | PATCH  | 部分更新资源         | No   | No   | Yes，如果回应包含刷新信息 |
 | DELETE | 删除资源           | Yes  | No   | No             |
->>>>>>> 
-
 *多次执行不会产生不同的结果。
 
 HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
