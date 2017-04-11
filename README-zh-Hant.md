@@ -404,25 +404,25 @@
 
 另一个角度来看待性能与可扩展性:
 
-* 如果你的系统有 **性能** 问题，对于单个用户来说是缓慢的。
-* 如果你的系统有 **可扩展性** 问题，单个用户较快但在高负载下会变慢。
+* 如果你的系统有**性能**问题，对于单个用户来说是缓慢的。
+* 如果你的系统有**可扩展性**问题，单个用户较快但在高负载下会变慢。
 
 ### 来源及延伸阅读
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [简单谈谈可扩展性](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [可扩展性，可用性，稳定性和](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
 ## 延迟与吞吐量
 
 **延迟**是执行操作或运算结果所花费的时间。
 
-**吞吐量**是单位时间内(执行)此类操作或运算的数量。
+**吞吐量**是单位时间内（执行）此类操作或运算的数量。
 
 通常，你应该以**可接受级延迟**下**最大化吞吐量**为目标。
 
 ### 来源及延伸阅读
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [理解延迟与吞吐量](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
 ## 可用性与一致性
 
@@ -436,42 +436,42 @@
 
 在一个分布式计算系统中，只能同时满足下列的两点:
 
-* **一致性** - 每次访问都能获得最新数据但可能会收到错误响应
-* **可用性** - 每次访问都能收到非错响应，但不保证获取到最新数据
-* **分区容错性** - 在任意分区网络故障的情况下系统仍能继续运行
+* **一致性** ─ 每次访问都能获得最新数据但可能会收到错误响应
+* **可用性** ─ 每次访问都能收到非错响应，但不保证获取到最新数据
+* **分区容错性** ─ 在任意分区网络故障的情况下系统仍能继续运行
 
 *网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。*
 
-#### CP - 一致性和分区容错性
+#### CP ─ 一致性和分区容错性
 
 等待分区节点的响应可能会导致延时错误。如果你的业务需求需要原子读写，CP 是一个不错的选择。
 
-#### AP - 可用性与分区容错性
+#### AP ─ 可用性与分区容错性
 
-响应返回的最近版本数据可能并不是最新的。当分区解析完后，写入(操作)可能要花一些时间来传播。
+响应返回的最近版本数据可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
 
 如果业务需求允许[最终一致性](#eventual-consistency)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
 
 ### 来源及延伸阅读
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一致性模式
 
-有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 定理](#cap-theorem)中的一致性定义 - 每次访问都能获得最新数据但可能会收到错误响应
+有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 定理](#cap-theorem)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
 
 
 ### 弱一致性
 
-在写入之后，访问可能看到，也可能看不到(写入数据)。尽力优化之让其可见。
+在写入之后，访问可能看到，也可能看不到（写入数据）。尽力优化之让其能访问最新数据。
 
 这种方式可以 memcached 等系统中看到。弱一致性在 VoIP，视频聊天和实时多人游戏等真实用例中表现不错。打个比方，如果你在通话中丢失信号几秒钟时间，当重新连接时你是听不到这几秒钟所说的话的。
 
 ### 最终一致性
 
-在写入后，访问最终能看到写入数据(通常在数毫秒内)。数据被异步复制。
+在写入后，访问最终能看到写入数据（通常在数毫秒内）。数据被异步复制。
 
 DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性系统中效果不错。
 
@@ -479,7 +479,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 在写入后，访问立即可见。数据被同步复制。
 
-文件系统和关系型数据库(RDBMS)中使用的是此种方式。强一致性在需要记录的系统中运作良好。
+文件系统和关系型数据库（RDBMS）中使用的是此种方式。强一致性在需要记录的系统中运作良好。
 
 ### 来源及延伸阅读
 
@@ -487,19 +487,19 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 ## 可用性模式
 
-有两种支持高可用性的模式: **故障切换(fail-over)**和**复制(replication)**。
+有两种支持高可用性的模式: **故障切换（fail-over）**和**复制（replication）**。
 
 ### 故障切换
 
-#### 工作到备用切换(Active-passive)
+#### 工作到备用切换（Active-passive）
 
-关于工作到备用的故障切换，工作服务器发送周期信号给等待中的备用服务器。如果周期信号中断，备用服务器切换成工作服务器的 IP 地址并恢复服务。
+关于工作到备用的故障切换流程是，工作服务器发送周期信号给待机中的备用服务器。如果周期信号中断，备用服务器切换成工作服务器的 IP 地址并恢复服务。
 
-宕机时间取决于备用服务器处于‘热‘等待状态还是需要从‘冷‘等待状态进行启动。只有工作服务器处理流量。
+宕机时间取决于备用服务器处于“热”待机状态还是需要从“冷”待机状态进行启动。只有工作服务器处理流量。
 
 工作到备用的故障切换也被称为主从切换。
 
-#### 双工作切换(Active-active)
+#### 双工作切换（Active-active）
 
 在双工作切换中，双方都在管控流量，在它们之间分散负载。
 
@@ -514,12 +514,12 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 ### 复制
 
-#### 主-从复制和主-主复制
+#### 主─从复制和主─主复制
 
 这个主题进一步探讨了[数据库](#database)部分:
 
-* [主-从复制](#master-slave-replication)
-* [主-主复制](#master-master-replication)
+* [主─从复制](#master-slave-replication)
+* [主─主复制](#master-master-replication)
 
 ## 域名系统
 
@@ -531,12 +531,12 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 域名系统是把 www.example.com 等域名转换成 IP 地址。
 
-域名系统是分层次的，一些 DNS 服务器位于顶层。当查询(域名) IP 时，路由或 ISP 提供连接 DNS 服务器的信息。较低层 DNS 服务器缓存映射，它可能会因为 DNS 传播延时而失效。DNS 结果可以缓存在浏览器或操作系统中一段时间，时间长短取决于[存活时间 TTL](https://en.wikipedia.org/wiki/Time_to_live)。
+域名系统是分层次的，一些 DNS 服务器位于顶层。当查询（域名） IP 时，路由或 ISP 提供连接 DNS 服务器的信息。较底层的 DNS 服务器缓存映射，它可能会因为 DNS 传播延时而失效。DNS 结果可以缓存在浏览器或操作系统中一段时间，时间长短取决于[存活时间 TTL](https://en.wikipedia.org/wiki/Time_to_live)。
 
-* **NS 记录(域名服务)** - 指定解析域名或子域名的 DNS 服务器。
-* **MX 记录(邮件交换)** - 指定接收信息的邮件服务器。
-* **A 记录(地址)** - 指定域名对应的 IP 地址记录。
-* **CNAME(规范)** - 一个域名映射到另一个域名或 `CNAME` 记录(example.com 指向 www.example.com)或映射到一个 `A` 记录。
+* **NS 记录（域名服务）** ─ 指定解析域名或子域名的 DNS 服务器。
+* **MX 记录（邮件交换）** ─ 指定接收信息的邮件服务器。
+* **A 记录（地址）** ─ 指定域名对应的 IP 地址记录。
+* **CNAME（规范）** ─ 一个域名映射到另一个域名或 `CNAME` 记录（example.com 指向 www.example.com）或映射到一个 `A` 记录。
 
 [CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 等平台提供管理 DNS 的功能。某些 DNS 服务通过集中方式来路由流量:
 
@@ -549,15 +549,15 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 ### 缺陷:DNS
 
-* 虽说缓存可以来减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
+* 虽说缓存可以减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
 * 虽然它们通常由[政府，网络服务提供商和大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)管理，但 DNS 服务管理仍可能是复杂的。
-* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，防止不知道 Twtter IP 地址的用户访问 Twiiter。
+* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twtter IP 地址的用户访问 Twiiter。
 
 ### 来源及延伸阅读
 
-* [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+* [DNS 架构](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
-* [DNS articles](https://support.dnsimple.com/categories/dns/)
+* [关于 DNS 的文章](https://support.dnsimple.com/categories/dns/)
 
 ## 内容分发网络
 
@@ -574,22 +574,22 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 * 从靠近用户的数据中心提供资源
 * 通过 CDN 你的服务器不必真的处理请求
 
-### CDN 推送(push)
+### CDN 推送（push）
 
-当你服务器上内容发生变动时，推送给 CDN 接受新的内容。你负责提供内容，直接推送给 CDN 并重写 URL 地址以指向 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，最小化流量，但最大化存储空间。
-
-
+当你服务器上内容发生变动时，推送 CDN 接受新内容。你负责提供内容，直接推送给 CDN 并重写 URL 地址以指向 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，最小化流量，但最大化存储空间。
 
 
-### CDN 拉取(pull)
 
-CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。这样请求会更慢，直到内容被缓存在 CDN 上，。
 
-[存活时间(TTL)](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。CDN 拉取方式最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
+### CDN 拉取（pull）
+
+CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。这样请求会更慢，直到内容被缓存在 CDN 上。
+
+[存活时间（TTL）](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。CDN 拉取方式最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
 
 高流量站点使用 CDN 拉取效果不错，因为只有最近请求的内容保存在 CDN 中，流量才能更平衡地分散。
 
-### 缺陷:CDN
+### 缺陷：CDN
 
 * CDN 成本可能因流量而异，可能在权衡之后你将不会使用 CDN。
 * 如果在 TTL 过期之前更新内容，CDN 缓存内容可能会过时。
@@ -597,8 +597,8 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 来源及延伸阅读
 
-* [Globally distributed content delivery](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
-* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [全球性内容分发网络](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
+* [CDN 拉取和 CDN 推送的区别](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
 ## 负载均衡器
@@ -615,46 +615,46 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * 防止资源过载
 * 帮助消除单一的故障点
 
-负载均衡器可以通过硬件(昂贵)或 HAProxy 等软件来实现。
-增加的益处包括:
+负载均衡器可以通过硬件（昂贵）或 HAProxy 等软件来实现。
+增加的好处包括:
 
-* **SSL 终结** - 解密传入的请求并加密服务器响应，这样的话后端服务器就不必再执行这些潜在高消耗运算了。
+* **SSL 终结** ─ 解密传入的请求并加密服务器响应，这样的话后端服务器就不必再执行这些潜在高消耗运算了。
     * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
-* **Session 留存** - 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
+* **Session 留存** ─ 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
 
-通常会设置采用[工作-备用](#active-passive) 或 [双工作](#active-active) 模式的多个负载均衡器，以免发生故障。
+通常会设置采用[工作─备用](#active-passive) 或 [双工作](#active-active) 模式的多个负载均衡器，以免发生故障。
 
 负载均衡器能基于多种方式来路由流量:
 
 * 随机
 * 最少负载
-* Session/cookies
+* Session/cookie
 * [轮询调度或加权轮询调度算法](http://g33kinfo.com/info/archives/2657)
 * [四层负载均衡](#layer-4-load-balancing)
 * [七层负载均衡](#layer-7-load-balancing)
 
 ### 四层负载均衡
 
-四层负载均衡根据监看[传输层](#communication)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包(报文)内容。四层负载均衡执行[网络地址转换(NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
+四层负载均衡根据监看[传输层](#communication)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
 
 ### 七层负载均衡器
 
-七层负载均衡器根据监看[应用层](#communication)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
+七层负载均衡器根据监控[应用层](#communication)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
 
-以损失灵活性为代价，四层负载均衡比七层负载均衡只需更少时间和计算资源，虽然这在现代商用硬件上的性能影响甚微。
+以损失灵活性为代价，四层负载均衡比七层负载均衡花费更少时间和计算资源，虽然这对现代商用硬件的性能影响甚微。
 
 ### 水平扩展
 
-负载均衡器还能帮助水平扩展，提高性能和可用性。使用商业硬件的性价比更高，并且比在单台硬件上**纵向扩展**更贵的硬件具有更高的可用性。招聘商业硬件的人才比特定企业系统的人才更容易。
+负载均衡器还能帮助水平扩展，提高性能和可用性。使用商业硬件的性价比更高，并且比在单台硬件上**垂直扩展**更贵的硬件具有更高的可用性。相比招聘特定企业系统人才，招聘商业硬件方面的人才更加容易。
 
-#### 缺陷:水平扩展
+#### 缺陷：水平扩展
 
-* 水平扩展引入了复杂度并设计服务器复制
-    * 服务器应该是无状态的:它们也不该包含任何与用户关联的数据，像 session 或资料图片。
-    * session 可以集中存储在数据库或持久化[缓存](#cache)(Redis, Memcached)的数据存储区中。
+* 水平扩展引入了复杂度并涉及服务器复制
+    * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
+    * session 可以集中存储在数据库或持久化[缓存](#cache)（Redis, Memcached）的数据存储区中。
 * 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
-### 缺陷:负载均衡器
+### 缺陷：负载均衡器
 
 * 如果没有足够的资源配置或配置错误，负载均衡器会变成一个性能瓶颈。
 * 引入负载均衡器以帮助消除单点故障但导致了额外的复杂性。
@@ -662,13 +662,13 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 来源及延伸阅读
 
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [可扩展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [七层负载平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [ELB 监听器配置](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
 ## Reverse proxy (web server)
 
@@ -1261,7 +1261,7 @@ def set_user(user_id, values):
 - [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 - [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 - [大型系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-- [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 - [可扩展性](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 - [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 - [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
