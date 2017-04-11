@@ -1328,11 +1328,11 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 
 | Verb   | Description                              | Idempotent* | Safe | Cacheable                               |
 | ------ | ---------------------------------------- | ----------- | ---- | --------------------------------------- |
-| GET    | Reads a resource                         | Yes         | Yes  | Yes                                     |
-| POST   | Creates a resource or trigger a process that handles data | No          | No   | Yes if response contains freshness info |
-| PUT    | Creates or replace a resource            | Yes         | No   | No                                      |
-| PATCH  | Partially updates a resource             | No          | No   | Yes if response contains freshness info |
-| DELETE | Deletes a resource                       | Yes         | No   | No                                      |
+| GET    | 获取一个资源                         | Yes         | Yes  | Yes                                     |
+| POST   | 创建资源或触发处理数据的进程         | No          | No   | Yes if response contains freshness info |
+| PUT    | 创建或替换一个资源                   | Yes         | No   | No                                      |
+| PATCH  | 更新部分资源                         | No          | No   | Yes if response contains freshness info |
+| DELETE | 删除一个资源                         | Yes         | No   | No                                      |
 
 *Can be called many times without different outcomes.
 
@@ -1375,13 +1375,13 @@ Use TCP over UDP when:
 
 UDP 是无连接的。数据报（类似于数据包）只在数据报级别有保证。数据报可能会无序的到达目的地，也有可能会遗失。UDP 不支持拥塞控制。虽然不如 TCP 那样有保证，但 UDP 通常效率更高。
 
-UDP 可以通过广播将数组报发送至子网内的所有设备。这对 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) 很有用，因为子网内的设备还没有分配 IP 地址，而 IP 对于 TCP 是必须的。
+UDP 可以通过广播将数据报发送至子网内的所有设备。这对 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) 很有用，因为子网内的设备还没有分配 IP 地址，而 IP 对于 TCP 是必须的。
 
-UDP 可靠性更低但适合用在网络电话、视频聊天，流（这个不知具体指啥）和实时多人游戏上。
+UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实时多人游戏上。
 
 以下情况使用 UDP 代替 TCP：
 
-* 你需要更快的相应速度
+* 你需要低延迟
 * 相对于数据丢失更糟的是数据延迟
 * 你想实现自己的错误校正方法
 
@@ -1392,7 +1392,7 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流（这个不�
 * [TCP 与 UDP 的不同](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
 * [传输控制协议](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 * [用户数据报协议](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Facebook 对内存缓存的扩展](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [Memcache 在 Facebook 的扩展](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
 ### 远程过程调用协议（RPC）
 
@@ -1402,15 +1402,15 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流（这个不�
   <i><a href=http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/>Source: Crack the system design interview</a></i>
 </p>
 
-在一个 RPC 里，客户端会去调用另一个地址空间（通常是一个远程服务器）里的方法。调用代码看起来就像是调用的是一个本地方法，客户端和服务器交互的具体过程被抽象。远程调用相对于本地调用一般较慢而且可靠性更差，因此区分两者是有帮助的。热门的 RPC 框架包括 [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/) 和 [Avro](https://avro.apache.org/docs/current/)。
+在 RPC 中，客户端会去调用另一个地址空间（通常是一个远程服务器）里的方法。调用代码看起来就像是调用的是一个本地方法，客户端和服务器交互的具体过程被抽象。远程调用相对于本地调用一般较慢而且可靠性更差，因此区分两者是有帮助的。热门的 RPC 框架包括 [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/) 和 [Avro](https://avro.apache.org/docs/current/)。
 
 RPC 是一个“请求-响应”协议：
 
 * **客户端程序** ── 调用客户端存根程序。就像调用本地方法一样，参数会被压入栈中。
-* **客户端存根程序** ── 将请求过程的 id 和参数打包进请求信息中。
+* **客户端 stub 程序** ── 将请求过程的 id 和参数打包进请求信息中。
 * **客户端通信模块** ── 将信息从客户端发送至服务端。
 * **服务端通信模块** ── 将接受的包传给服务端存根程序。
-* **服务端存根程序** ── 将结果解包，依据过程 id 调用服务端方法并将参数传递过去。
+* **服务端 stub 程序** ── 将结果解包，依据过程 id 调用服务端方法并将参数传递过去。
 
 RPC 调用示例：
 
@@ -1427,7 +1427,7 @@ POST /anotheroperation
 RPC 专注于暴露方法。RPC 通常用于处理内部通讯的性能问题，这样你可以手动处理本地调用以更好的适应你的情况。
 
 
-当以下情况时选择本地库或者 SDK：
+当以下情况时选择本地库（也就是 SDK）：
 
 * 你知道你的目标平台。
 * 你想控制如何访问你的“逻辑”。
@@ -1443,15 +1443,15 @@ RPC 专注于暴露方法。RPC 通常用于处理内部通讯的性能问题，
 * RPC 很难调试。
 * 你可能没办法很方便的去修改现有的技术。举个例子，如果你希望在 [Squid](http://www.squid-cache.org/) 这样的缓存服务器上确保 [RPC 被正确缓存](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)的话可能需要一些额外的努力了。
 
-### 具象状态传输（REST）
+### 表述性状态转移（REST）
 
 REST 是一种强制的客户端/服务端架构设计模型，客户端基于服务端管理的一系列资源操作。服务端提供修改或获取资源的接口。所有的通信必须是无状态和可缓存的。
 
 RESTful 接口有四条规则：
 
 * **标志资源（HTTP 里的 URI）** ── 无论什么操作都使用同一个 URI。
-* **表示的改变（HTTP 的 Verbs）** ── 使用 verbs, headers 和 body。
-* **可自我描述的错误信息（HTTP 中的 状态相应）** ── 使用状态码，不要重新造轮子。
+* **表示的改变（HTTP 的动作）** ── 使用动作, headers 和 body。
+* **可自我描述的错误信息（HTTP 中的 status code）** ── 使用状态码，不要重新造轮子。
 * **[HATEOAS](http://restcookbook.com/Basics/hateoas/)（HTTP 中的HTML 接口）** ── 你的 web 服务器应该能够通过浏览器访问。
 
 REST 请求的例子：
@@ -1463,16 +1463,16 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-REST 关注于暴露数据。它最小化了客户端与服务端的联系并经常被用户公共 HTTP API。REST 使用更通常与规范化的方法来通过 URI 暴露资源，[通过 header 来表述](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)并通过 GET, POST, PUT, DELETE 和 PATCH 这些 verbs 来进行操作。因为无状态的特性，REST 易于横向扩展和隔离。
+REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，经常用于公共 HTTP API 接口设计。REST 使用更通常与规范化的方法来通过 URI 暴露资源，[通过 header 来表述](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)并通过 GET, POST, PUT, DELETE 和 PATCH 这些动作来进行操作。因为无状态的特性，REST 易于横向扩展和隔离。
 
 #### 缺点：REST
 
 * 由于 REST 将重点放在暴露数据，所以当资源不是自然组织的或者结构复杂的时候它可能无法很好的适应。举个例子，返回过去一小时中与特定事件集匹配的更新记录这种操作就很难表示为路径。使用 REST，可能会使用 URI 路径，查询参数和可能的请求体来实现。
-* REST 一般依赖几个 verbs（GET, POST, PUT, DELETE 和 PATCH），但有时候仅仅这些没法满足你的需要。举个例子，将过期的文档移动到归档文件夹里去，这样的操作可能没法简单的用上面这几个 verbs 表达。
-* 使用嵌套层次结构来获取复杂资源需要客户端和服务端多次交互来渲染单个视图。比如，获取博客的内容和其下的评论。对于在可变网络环境下的移动应用，是不希望看到这种多次请求。
+* REST 一般依赖几个动作（GET, POST, PUT, DELETE 和 PATCH），但有时候仅仅这些没法满足你的需要。举个例子，将过期的文档移动到归档文件夹里去，这样的操作可能没法简单的用上面这几个 verbs 表达。
+* 为了渲染单个页面，获取被嵌套在层级结构中的复杂资源需要客户端，服务器之间多次往返通信。例如，获取博客内容及其关联评论。对于使用不确定网络环境的移动应用来说，这些多次往返通信是非常麻烦的。
 * 随着时间的推移，更多的字段可能会被添加到 API 响应中，较旧的客户端将会接收到所有新的数据字段，即使是那些它们不需要的字段，结果它会增加负载大小并引起更大的延迟。
 
-### PRC 与 REST 比较
+### RPC 与 REST 比较
 
 | 操作                              | RPC                                      | REST                                     |
 | ------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -1496,14 +1496,14 @@ REST 关注于暴露数据。它最小化了客户端与服务端的联系并经
 * [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
 * [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
-* [节约](https://code.facebook.com/posts/1468950976659943/)
+* [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
 ## 安全
 
 这一部分需要更多内容。[一起来吧](#contributing)！
 
-安全是一个宽泛的话题。下面这些知识对你应该足够了除非你有很多的经验、安全背景或者你正在申请一个需要安全知识的职位。
+安全是一个宽泛的话题。除非你有相当的经验、安全方面背景或者正在申请的职位要求安全知识，你不需要了解安全基础知识以外的内容：
 
 * 在运输和等待过程中加密
 * 对所有的用户输入和从用户那里发来的参数进行处理以防止 [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) 和 [SQL 注入](https://en.wikipedia.org/wiki/SQL_injection)。
@@ -1624,7 +1624,7 @@ Notes
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
 
-** 不要专注于一下文章的细节，专注于以下方面：**
+** 不要专注于以下文章的细节，专注于以下方面：**
 
 * 发现这些文章中的共同的原则、技术和模式。
 * 学习每个组件解决哪些问题，什么情况下使用，什么情况下不适用
@@ -1739,10 +1739,12 @@ Notes
 
 * 使用 MapReduce 进行分布式计算
 * 一致性哈希
+* 直接存储器访问（DMA）控制器
 * [Contribute](#contributing)
 
 ## Credits
 
+整个仓库都提供了证书和源
 
 特别鸣谢：
 
