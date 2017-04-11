@@ -431,7 +431,7 @@
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>来源:CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>来源：再看 CAP 理论</a></i>
 </p>
 
 在一个分布式计算系统中，只能同时满足下列的两点:
@@ -526,7 +526,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 <p align="center">
   <img src="http://i.imgur.com/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>来源: DNS security presentation</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>来源：DNS 安全介绍</a></i>
 </p>
 
 域名系统是把 www.example.com 等域名转换成 IP 地址。
@@ -564,7 +564,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg">
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>来源: Why use a CDN</a></i>
+  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>来源：为什么使用 CDN</a></i>
 </p>
 
 内容分发网络是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
