@@ -339,267 +339,269 @@
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## 面向对象设计面试问题及解答
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> 常见面向对象设计面试问题及实例讨论，代码和图表演示。
 >
-> Solutions linked to content in the `solutions/` folder.
+> 与内容相关的解决方案在 `solutions/` 文件夹中。
 
->**Note: This section is under development**
+>**注：此节还在完善中**
 
-| Question                               |                                          |
-| -------------------------------------- | ---------------------------------------- |
-| Design a hash map                      | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb) |
-| Design a least recently used cache     | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb) |
-| Design a call center                   | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb) |
-| Design a deck of cards                 | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
-| Design a parking lot                   | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
-| Design a chat server                   | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
-| Design a circular array                | [Contribute](#contributing)              |
-| Add an object-oriented design question | [Contribute](#contributing)              |
+| 问题 | |
+|---|---|
+| 设计 hash map | [解决方案](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| 设计 LRU 缓存 | [解决方案](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| 设计一个呼叫中心 | [解决方案](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| 设计一副牌 | [解决方案](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| 设计一个停车场 | [解决方案](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| 设计一个聊天服务 | [解决方案](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| 设计一个环形数组 | [待解决](#contributing)  |
+| 添加一个面向对象设计问题 | [待解决](#contributing) |
 
-## System design topics: start here
+## 系统设计主题：从这里开始
 
-New to system design?
+不熟悉系统设计？
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+首先，你需要对一般性原则有一个基本的认识，知道它们是什么，怎样使用以及利弊。
 
-### Step 1: Review the scalability video lecture
+### 第一步：回顾可扩展性（scalability）的视频讲座
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[哈佛大学可扩展性讲座](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* 主题涵盖
+    * 垂直扩展（Vertical scaling）
+    * 水平扩展（Horizontal scaling）
+    * 缓存
+    * 负载均衡
+    * 数据库复制
+    * 数据库分区
 
-### Step 2: Review the scalability article
+### 第二步：回顾可扩展性文章
 
-[Scalability](http://www.lecloud.net/tagged/scalability)
+[可扩展性](http://www.lecloud.net/tagged/scalability)
 
-* Topics covered:
+* 主题涵盖：
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [数据库](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [缓存](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [异步](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### 接下来的步骤
 
-Next, we'll look at high-level trade-offs:
+接下来，我们将看看高阶的权衡和取舍:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **性能**与**可扩展性**
+* **延迟**与**吞吐量**
+* **可用性**与**一致性**
 
-Keep in mind that **everything is a trade-off**.
+记住**每个方面都面临取舍和权衡**。
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+然后，我们将深入更具体的主题，如 DNS，CDN 和负载均衡器。
 
-## Performance vs scalability
+## 性能与可扩展性
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。通常，提高性能意味着服务于更多的工作单元，另一方面，当数据集增长时，同样也可以处理更大的工作单位。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+另一个角度来看待性能与可扩展性:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* 如果你的系统有**性能**问题，对于单个用户来说是缓慢的。
+* 如果你的系统有**可扩展性**问题，单个用户较快但在高负载下会变慢。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [简单谈谈可扩展性](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## 延迟与吞吐量
 
-**Latency** is the time to perform some action or to produce some result.
+**延迟**是执行操作或运算结果所花费的时间。
 
-**Throughput** is the number of such actions or results per unit of time.
+**吞吐量**是单位时间内（执行）此类操作或运算的数量。
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+通常，你应该以**可接受级延迟**下**最大化吞吐量**为目标。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [理解延迟与吞吐量](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## 可用性与一致性
 
-### CAP theorem
+### CAP 理论
 
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>来源：再看 CAP 理论</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+在一个分布式计算系统中，只能同时满足下列的两点:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **一致性** ─ 每次访问都能获得最新数据但可能会收到错误响应
+* **可用性** ─ 每次访问都能收到非错响应，但不保证获取到最新数据
+* **分区容错性** ─ 在任意分区网络故障的情况下系统仍能继续运行
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。*
 
-#### CP - consistency and partition tolerance
+#### CP ─ 一致性和分区容错性
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+等待分区节点的响应可能会导致延时错误。如果你的业务需求需要原子读写，CP 是一个不错的选择。
 
-#### AP - availability and partition tolerance
+#### AP ─ 可用性与分区容错性
 
-Responses return the most recent version of the data, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+响应返回的最近版本数据可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
 
-AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+如果业务需求允许[最终一致性](#eventual-consistency)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
-## Consistency patterns
+## 一致性模式
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 定理](#cap-theorem)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
 
-### Weak consistency
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+### 弱一致性
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+在写入之后，访问可能看到，也可能看不到（写入数据）。尽力优化之让其能访问最新数据。
 
-### Eventual consistency
+这种方式可以 memcached 等系统中看到。弱一致性在 VoIP，视频聊天和实时多人游戏等真实用例中表现不错。打个比方，如果你在通话中丢失信号几秒钟时间，当重新连接时你是听不到这几秒钟所说的话的。
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+### 最终一致性
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+在写入后，访问最终能看到写入数据（通常在数毫秒内）。数据被异步复制。
 
-### Strong consistency
+DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性系统中效果不错。
 
-After a write, reads will see it.  Data is replicated synchronously.
+### 强一致性
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+在写入后，访问立即可见。数据被同步复制。
 
-### Source(s) and further reading
+文件系统和关系型数据库（RDBMS）中使用的是此种方式。强一致性在需要记录的系统中运作良好。
+
+### 来源及延伸阅读
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+## 可用性模式
 
-There are two main patterns to support high availability: **fail-over** and **replication**.
+有两种支持高可用性的模式: **故障切换（fail-over）**和**复制（replication）**。
 
-### Fail-over
+### 故障切换
 
-#### Active-passive
+#### 工作到备用切换（Active-passive）
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+关于工作到备用的故障切换流程是，工作服务器发送周期信号给待机中的备用服务器。如果周期信号中断，备用服务器切换成工作服务器的 IP 地址并恢复服务。
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+宕机时间取决于备用服务器处于“热”待机状态还是需要从“冷”待机状态进行启动。只有工作服务器处理流量。
 
-Active-passive failover can also be referred to as master-slave failover.
+工作到备用的故障切换也被称为主从切换。
 
-#### Active-active
+#### 双工作切换（Active-active）
 
-In active-active, both servers are managing traffic, spreading the load between them.
+在双工作切换中，双方都在管控流量，在它们之间分散负载。
 
-If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+如果是外网服务器，DNS 将需要对两方都了解。如果是内网服务器，应用程序逻辑将需要对两方都了解。
 
-Active-active failover can also be referred to as master-master failover.
+双工作切换也可以称为主主切换。
 
-### Disadvantage(s): failover
+### 缺陷:故障切换
 
-* Fail-over adds more hardware and additional complexity.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* 故障切换需要添加额外硬件并增加复杂性。
+* 如果新写入数据在能被复制到备用系统之前，工作系统出现了故障，则有可能会丢失数据。
 
-### Replication
+### 复制
 
-#### Master-slave and master-master
+#### 主─从复制和主─主复制
 
-This topic is further discussed in the [Database](#database) section:
+这个主题进一步探讨了[数据库](#database)部分:
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [主─从复制](#master-slave-replication)
+* [主─主复制](#master-master-replication)
 
-## Domain name system
+## 域名系统
 
 <p align="center">
   <img src="http://i.imgur.com/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>来源：DNS 安全介绍</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+域名系统是把 www.example.com 等域名转换成 IP 地址。
 
-DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+域名系统是分层次的，一些 DNS 服务器位于顶层。当查询（域名） IP 时，路由或 ISP 提供连接 DNS 服务器的信息。较底层的 DNS 服务器缓存映射，它可能会因为 DNS 传播延时而失效。DNS 结果可以缓存在浏览器或操作系统中一段时间，时间长短取决于[存活时间 TTL](https://en.wikipedia.org/wiki/Time_to_live)。
 
-* **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
-* **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
-* **A record (address)** - Points a name to an IP address.
-* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+* **NS 记录（域名服务）** ─ 指定解析域名或子域名的 DNS 服务器。
+* **MX 记录（邮件交换）** ─ 指定接收信息的邮件服务器。
+* **A 记录（地址）** ─ 指定域名对应的 IP 地址记录。
+* **CNAME（规范）** ─ 一个域名映射到另一个域名或 `CNAME` 记录（example.com 指向 www.example.com）或映射到一个 `A` 记录。
 
-Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
+[CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 等平台提供管理 DNS 的功能。某些 DNS 服务通过集中方式来路由流量:
 
-* [Weighted round robin](http://g33kinfo.com/info/archives/2657)
-    * Prevent traffic from going to servers under maintenance
-    * Balance between varying cluster sizes
-    * A/B testing
-* Latency-based
-* Geolocation-based
+* [加权轮询调度](http://g33kinfo.com/info/archives/2657)
+    * 防止流量进入维护中的服务器
+    * 在不同大小集群间负载均衡
+    * A/B 测试
+* 基于延迟路由
+* 基于地理位置路由
 
-### Disadvantage(s): DNS
+### 缺陷:DNS
 
-* Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex, although they are generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* 虽说缓存可以减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
+* 虽然它们通常由[政府，网络服务提供商和大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)管理，但 DNS 服务管理仍可能是复杂的。
+* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twtter IP 地址的用户访问 Twiiter。
 
-### Source(s) and further reading
+### 来源及延伸阅读
 
-* [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+* [DNS 架构](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
-* [DNS articles](https://support.dnsimple.com/categories/dns/)
+* [关于 DNS 的文章](https://support.dnsimple.com/categories/dns/)
 
-## Content delivery network
+## 内容分发网络
 
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg">
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
+  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>来源：为什么使用 CDN</a></i>
 </p>
 
-A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.  Generally, static files such as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as Amazon's CloudFront support dynamic content.  The site's DNS resolution will tell clients which server to contact.
+内容分发网络是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
 
-Serving content from CDNs can significantly improve performance in two ways:
+将内容存储在 CDN 上可以从两个方面来提供性能:
 
-* Users receive content at data centers close to them
-* Your servers do not have to serve requests that the CDN fulfills
+* 从靠近用户的数据中心提供资源
+* 通过 CDN 你的服务器不必真的处理请求
 
-### Push CDNs
+### CDN 推送（push）
 
-Push CDNs receive new content whenever changes occur on your server.  You take full responsibility for providing content, uploading directly to the CDN and rewriting URLs to point to the CDN.  You can configure when content expires and when it is updated.  Content is uploaded only when it is new or changed, minimizing traffic, but maximizing storage.
+当你服务器上内容发生变动时，推送 CDN 接受新内容。你负责提供内容，直接推送给 CDN 并重写 URL 地址以指向 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，最小化流量，但最大化存储空间。
 
-Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
 
-### Pull CDNs
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the server.
 
-A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
+### CDN 拉取（pull）
 
-Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
+CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。这样请求会更慢，直到内容被缓存在 CDN 上。
 
-### Disadvantage(s): CDN
+[存活时间（TTL）](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。CDN 拉取方式最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
 
-* CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
-* Content might be stale if it is updated before the TTL expires it.
-* CDNs require changing URLs for static content to point to the CDN.
+高流量站点使用 CDN 拉取效果不错，因为只有最近请求的内容保存在 CDN 中，流量才能更平衡地分散。
 
-### Source(s) and further reading
+### 缺陷：CDN
 
-* [Globally distributed content delivery](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
-* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* CDN 成本可能因流量而异，可能在权衡之后你将不会使用 CDN。
+* 如果在 TTL 过期之前更新内容，CDN 缓存内容可能会过时。
+* CDN 需要更改静态内容的 URL 地址以指向 CDN。
+
+### 来源及延伸阅读
+
+* [全球性内容分发网络](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
+* [CDN 拉取和 CDN 推送的区别](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
-## Load balancer
+## 负载均衡器
 
 <p align="center">
   <img src="http://i.imgur.com/h81n9iK.png">
@@ -607,67 +609,66 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
 
-Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+负载均衡器将传入的请求分发到应用服务器和数据库等计算资源。无论哪种情况，负载均衡器将从计算资源来的响应返回给恰当的客户端。负载均衡器的效用在于:
 
-* Preventing requests from going to unhealthy servers
-* Preventing overloading resources
-* Helping eliminate single points of failure
+* 防止请求进入不好的服务器
+* 防止资源过载
+* 帮助消除单一的故障点
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+负载均衡器可以通过硬件（昂贵）或 HAProxy 等软件来实现。
+增加的好处包括:
 
-Additional benefits include:
+* **SSL 终结** ─ 解密传入的请求并加密服务器响应，这样的话后端服务器就不必再执行这些潜在高消耗运算了。
+    * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
+* **Session 留存** ─ 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
 
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
+通常会设置采用[工作─备用](#active-passive) 或 [双工作](#active-active) 模式的多个负载均衡器，以免发生故障。
 
-To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
+负载均衡器能基于多种方式来路由流量:
 
-Load balancers can route traffic based on various metrics, including:
+* 随机
+* 最少负载
+* Session/cookie
+* [轮询调度或加权轮询调度算法](http://g33kinfo.com/info/archives/2657)
+* [四层负载均衡](#layer-4-load-balancing)
+* [七层负载均衡](#layer-7-load-balancing)
 
-* Random
-* Least loaded
-* Session/cookies
-* [Round robin or weighted round robin](http://g33kinfo.com/info/archives/2657)
-* [Layer 4](#layer-4-load-balancing)
-* [Layer 7](#layer-7-load-balancing)
+### 四层负载均衡
 
-### Layer 4 load balancing
+四层负载均衡根据监看[传输层](#communication)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
 
-Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+### 七层负载均衡器
 
-### layer 7 load balancing
+七层负载均衡器根据监控[应用层](#communication)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+以损失灵活性为代价，四层负载均衡比七层负载均衡花费更少时间和计算资源，虽然这对现代商用硬件的性能影响甚微。
 
-At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+### 水平扩展
 
-### Horizontal scaling
+负载均衡器还能帮助水平扩展，提高性能和可用性。使用商业硬件的性价比更高，并且比在单台硬件上**垂直扩展**更贵的硬件具有更高的可用性。相比招聘特定企业系统人才，招聘商业硬件方面的人才更加容易。
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+#### 缺陷：水平扩展
 
-#### Disadvantage(s): horizontal scaling
+* 水平扩展引入了复杂度并涉及服务器复制
+    * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
+    * session 可以集中存储在数据库或持久化[缓存](#cache)（Redis, Memcached）的数据存储区中。
+* 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
-* Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
-* Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+### 缺陷：负载均衡器
 
-### Disadvantage(s): load balancer
+* 如果没有足够的资源配置或配置错误，负载均衡器会变成一个性能瓶颈。
+* 引入负载均衡器以帮助消除单点故障但导致了额外的复杂性。
+* 单个负载均衡器会导致单点故障，但配置多个负载均衡器会进一步增加复杂性。
 
-* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
-* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+### 来源及延伸阅读
 
-### Source(s) and further reading
-
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [可扩展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [七层负载平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [ELB 监听器配置](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
 ## Reverse proxy (web server)
 
@@ -1260,7 +1261,7 @@ def set_user(user_id, values):
 - [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 - [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 - [大型系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-- [可扩展性，可用性，稳定性，模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 - [可扩展性](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 - [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 - [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
