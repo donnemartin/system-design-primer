@@ -672,7 +672,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
-## Reverse proxy (web server)
+## 反向代理（web 服务器）
 
 <p align="center">
   <img src="http://i.imgur.com/n41Azff.png">
@@ -680,24 +680,6 @@ Load balancers can also help with horizontal scaling, improving performance and 
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
 </p>
-
-A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public.  Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
-
-Additional benefits include:
-
-* **Increased security** - Hide information about backend servers, blacklist IPs, limit number of connections per client
-* **Increased scalability and flexibility** - Clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Compression** - Compress server responses
-* **Caching** - Return the response for cached requests
-* **Static content** - Serve static content directly
-    * HTML/CSS/JS
-    * Photos
-    * Videos
-    * Etc
-
-## 反向代理（web 服务器）
 
 反向代理是一种可以集中地调用内部服务，并提供统一接口给公共客户的 web 服务器。来自客户端的请求先被反向代理服务器转发到可响应请求的服务器，然后代理再把服务器的响应结果返回给客户端。
 
@@ -714,27 +696,6 @@ Additional benefits include:
   - 图片
   - 视频
   - 等等
-
-### Load balancer vs reverse proxy
-
-* Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
-* Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
-* Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
-
-
-### Disadvantage(s): reverse proxy
-
-* Introducing a reverse proxy results in increased complexity.
-* A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
-
-
-### Source(s) and further reading
-
-* [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
-
 
 ### 负载均衡器 VS 反向代理
 
@@ -755,7 +716,7 @@ Additional benefits include:
 - [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 - [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+## 应用层
 
 <p align="center">
   <img src="http://i.imgur.com/yB5SYwm.png">
@@ -763,46 +724,15 @@ Additional benefits include:
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.
-
-The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
-
-Workers in the application layer also help enable [asynchronism](#asynchronism).
-
-### Microservices
-
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
-
-Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
-
-### Service Discovery
-
-Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, ports, etc.
-
-### Disadvantage(s): application layer
-
-- Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-- Microservices can add complexity in terms of deployments and operations.
-
-### Source(s) and further reading
-
-- [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
-- [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
-- [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-- [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-- [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
-
-## 应用层
-
 将 Web 服务层与应用层（也被称作平台层）分离，可以独立缩放和配置这两层。添加新的 API 只需要添加应用服务器，而不必添加额外的 web 服务器。
 
 **单一职责原则**提倡小型的，自治的服务共同合作。小团队通过提供小型的服务，可以更激进地计划增长。
 
-应用层中的工作进程也有可以实现 [异步化](#asynchronism)。
+应用层中的工作进程也有可以实现[异步化](#asynchronism)。
 
 ### 微服务
 
-与此讨论相关的话题是 [微服务](https://en.wikipedia.org/wiki/Microservices)，可以被描述为一系列可以独立部署的小型的，模块化服务。每个服务运行在一个独立的进程中，通过明确定义的轻量级机制通讯，共同实现业务目标。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+与此讨论相关的话题是 [微服务](https://en.wikipedia.org/wiki/Microservices)，可以被描述为一系列可以独立部署的小型的，模块化服务。每个服务运行在一个独立的线程中，通过明确定义的轻量级机制通讯，共同实现业务目标。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
 例如，Pinterest 可能有这些微服务： 用户资料，关注者，Feed 流，搜索，照片上传等。
 
@@ -824,7 +754,7 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
 - [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 - [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## 数据库
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
@@ -832,50 +762,26 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-### Relational database management system (RDBMS)
-
-A relational database like SQL is a collection of data items organized in tables.
-
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
-
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
-
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
-
-## 数据库
-
 ### 关系型数据库管理系统（RDBMS）
 
 像 SQL 这样的关系型数据库是一系列以表的形式组织的数据项集合。
 
-> 校对注：这里是否是作者笔误，SQL 并不是一种数据库？
+> 校对注：这里作者 SQL 可能指的是 MySQL
 
 **ACID** 用来描述关系型数据库[事务](https://en.wikipedia.org/wiki/Database_transaction)的特性。
 
 - **原子性** - 每个事务内部所有操作要么全部完成，要么全部不完成。
-- **一致性** - 事务使数据库从一个一致的状态转换到另一个一致状态。
-- **隔离性** - 并发执行事务的结果与顺序执行执行的结果相同。
+- **一致性** - 任何事务都使数据库从一个有效的状态转换到另一个有效状态。
+- **隔离性** - 并发执行事务的结果与顺序执行事务的结果相同。
 - **持久性** - 事务提交后，对系统的影响是永久的。
 
 关系型数据库扩展包括许多技术：**主从复制**、**主主复制**、**联合**、**分片**、**非规范化**和 **SQL调优**。
-
-#### Master-slave replication
-
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
 <p align="center">
   <img src="http://i.imgur.com/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
-
-##### Disadvantage(s): master-slave replication
-
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 
 #### 主从复制
 
@@ -886,37 +792,11 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 - 将从库提升为主库需要额外的逻辑。
 - 参考[不利之处：复制](#disadvantages-replication)中，主从复制和主主复制**共同**的问题。
 
-#### Master-master replication
-
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
-
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
-
-##### Disadvantage(s): master-master replication
-
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
-
-
-##### Disadvantage(s): replication
-
-*  There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-*  Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-*  The more read slaves, the more you have to replicate, which leads to greater replication lag.
-*  On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-*  Replication adds more hardware and additional complexity.
-
-
-##### Source(s) and further reading: replication
-
-- [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-- [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
 #### 主主复制
 
@@ -935,7 +815,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 - 如果主库在将新写入的数据复制到其他节点前挂掉，则有数据丢失的可能。
 - 写入会被重放到负责读取操作的副本。副本可能因为过多写操作阻塞住，导致读取功能异常。
 - 读取从库越多，需要复制的写入数据就越多，导致更严重的复制延迟。
-- 在某些数据库系统中，写入主库的操作可以用多个进程并行写入，但读取副本只支持单进程顺序地写入。
+- 在某些数据库系统中，写入主库的操作可以用多个线程并行写入，但读取副本只支持单线程顺序地写入。
 - 复制意味着更多的硬件和额外的复杂度。
 
 
@@ -945,28 +825,13 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 - [扩展性，可用性，稳定性模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 - [多主复制](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### 联合
 
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
 </p>
-
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
-
-##### Disadvantage(s): federation
-
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
-
-##### Source(s) and further reading: federation
-
-- [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-
-#### 联合
 
 联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
 
@@ -982,35 +847,13 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 
 - [扩展你的用户数到第一个千万]((https://www.youtube.com/watch?v=vg5onp8TU6Q))
 
-#### Sharding
+#### 分片
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
-
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
-
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
-
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
-
-##### Disadvantage(s): sharding
-
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
-
-##### Source(s) and further reading: sharding
-
-* [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-* [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
-* [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
-
-#### 分片
 
 分片将数据分配在不同的数据库上，使得每个数据库仅管理整个数据集的一个子集。以用户数据库为例，随着用户数量的增加，越来越多的分片会被添加到集群中。
 
@@ -1032,25 +875,6 @@ Common ways to shard a table of users is either through the user's last name ini
 - [数据库分片架构](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 - [一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
-
-Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
-
-Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
-
-In most systems, reads can heavily number writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
-
-##### Disadvantage(s): denormalization
-
-* Data is duplicated.
-* Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
-* A denormalized database under heavy write load might perform worse than its normalized counterpart.
-
-##### Source(s) and further reading: denormalization
-
-* [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
-
-
 #### 非规范化
 
 非规范化试图以写入性能为代价来换取读取性能。在多个表中冗余数据副本，以避免高成本的联结操作。一些关系型数据库，比如 [PostgreSQl](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支持[物化视图](https://en.wikipedia.org/wiki/Materialized_view)，可以处理冗余信息存储和保证冗余副本一致。
@@ -1068,57 +892,6 @@ In most systems, reads can heavily number writes 100:1 or even 1000:1.  A read r
 ##### 来源及延伸阅读：非规范化
 
 - [非规范化](https://en.wikipedia.org/wiki/Denormalization)
-
-#### SQL tuning
-
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
-
-It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
-
-* **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
-* **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
-
-Benchmarking and profiling might point you to the following optimizations.
-
-##### Tighten up the schema
-
-* MySQL dumps to disk in contiguous blocks for fast access.
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
-* Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
-* Use `INT` for larger numbers up to 2^32 or 4 billion.
-* Use `DECIMAL` for currency to avoid floating point representation errors.
-* Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-
-
-##### Use good indices
-
-- Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-- Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-- Placing an index can keep the data in memory, requiring more space.
-- Writes could also be slower since the index also needs to be updated.
-- When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
-
-##### Avoid expensive joins
-
-- [Denormalize](#denormalization) where performance demands it.
-
-##### Partition tables
-
-- Break up a table by putting hot spots in a separate table to help keep it in memory.
-
-##### Tune the query cache
-
-- In some cases, the [query cache](http://dev.mysql.com/doc/refman/5.7/en/query-cache) could lead to [performance issues](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/).
-
-##### Source(s) and further reading: SQL tuning
-
-- [Tips for optimizing MySQL queries](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-- [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-- [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-- [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 #### SQL 调优
 
@@ -1172,18 +945,6 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 
 ### NoSQL
 
-NoSQL is a collection of data items represented in a **key-value store**, **document-store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
-
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
-
-* **Basically available** - the system guarantees availability.
-* **Soft state** - the state of the system may change over time, even without input.
-* **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
-
-In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document-stores**, **wide column stores**, and **graph databases** in the next section.
-
-### NoSQL
-
 NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#eventual-consistency)。
 
 **BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 定理](#cap-theorem)，BASE 强调可用性超过一致性。
@@ -1193,23 +954,6 @@ NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或*
 - **最终一致性** - 经过一段时间之后，系统最终会变一致，因为系统在此期间没有收到任何输入。
 
 除了在 [SQL 还是 NoSQL](#sql-or-nosql) 之间做选择，了解哪种类型的 NoSQL 数据库最适合你的用例也是非常有帮助的。我们将在下一节中快速了解下 **键-值存储**、**文档型存储**、**列型存储**和**图存储**数据库。
-
-#### Key-value store
-
-> Abstraction: hash table
-
-A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
-
-Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
-
-A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
-
-##### Source(s) and further reading: key-value store
-
-* [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
-* [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
-* [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### 键-值存储
 
@@ -1227,25 +971,6 @@ A key-value store is the basis for more complex systems such as a document store
 - [键-值存储的劣势](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 - [Redis 架构](http://qnimate.com/overview-of-redis-architecture/)
 - [Memcached 架构](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
-
-#### Document store
-
-> Abstraction: key-value store with documents stored as values
-
-A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
-
-Based on the underlying implementation, documents are organized in either collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
-
-Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
-
-Document stores provide high flexibility and are often used for working with occasionally changing data.
-
-##### Source(s) and further reading: document store
-
-- [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
-- [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
-- [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-- [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
 #### 文档类型存储
 
@@ -1266,30 +991,13 @@ MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的�
 - [CouchDB 架构](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 - [Elasticsearch 架构](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
-#### Wide column store
+#### 列型存储
 
 <p align="center">
   <img src="http://i.imgur.com/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
-
-> Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
-
-A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
-
-Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
-
-Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
-
-##### Source(s) and further reading: wide column store
-
-- [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-- [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-- [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
-- [Cassandra architecture](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
-
-#### 列型存储
 
 > 抽象模型：嵌套的 `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>` 映射
 
@@ -1306,27 +1014,13 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 - [Hbase 架构](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
 - [Cassandra 架构](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
-#### Graph database
+#### 图数据库
 
 <p align="center">
   <img src="http://i.imgur.com/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
-
-> Abstraction: graph
-
-In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.
-
-Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
-
-##### Source(s) and further reading: graph
-
-- [Graph database](https://en.wikipedia.org/wiki/Graph_database)
-- [Neo4j](https://neo4j.com/)
-- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
-
-#### 图数据库
 
 > 抽象模型： 图
 
@@ -1340,14 +1034,6 @@ Graphs databases offer high performance for data models with complex relationshi
 - [Neo4j](https://neo4j.com/)
 - [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-#### Source(s) and further reading: NoSQL
-
-* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
-
 #### 来源及延伸阅读：NoSQL
 
 - [数据库术语解释](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
@@ -1356,49 +1042,13 @@ Graphs databases offer high performance for data models with complex relationshi
 - [NoSQL 介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 - [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### SQL 还是 NoSQL
 
 <p align="center">
   <img src="http://i.imgur.com/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
-
-Reasons for **SQL**:
-
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
-
-Reasons for **NoSQL**:
-
-- Semi-structured data
-- Dynamic or flexible schema
-- Non relational data
-- No need for complex joins
-- Store many TB (or PB) of data
-- Very data intensive workload
-- Very high throughput for IOPS
-
-Sample data well-suited for NoSQL:
-
-- Rapid ingest of clickstream and log data
-- Leaderboard or scoring data
-- Temporary data, such as a shopping cart
-- Frequently accessed ('hot') tables
-- Metadata/lookup tables
-
-##### Source(s) and further reading: SQL or NoSQL
-
-- [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-- [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
-
-### SQL 还是 NoSQL
 
 选取 **SQL**:
 
