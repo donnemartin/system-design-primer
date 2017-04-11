@@ -410,7 +410,7 @@
 ### 来源及延伸阅读
 
 * [简单谈谈可扩展性](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [可扩展性，可用性，稳定性和](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
 ## 延迟与吞吐量
 
