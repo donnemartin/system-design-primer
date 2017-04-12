@@ -262,7 +262,7 @@
 你或许会被要求通过手算进行一些估算。涉及到的 [附录](#附录) 涉及到的是下面的这些资源：
 
 * [使用信封的背面做计算](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [2 的次方表](#2 的次方表)
+* [2 的次方表](#2-的次方表)
 * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
 
 ### 相关资源和延伸阅读
