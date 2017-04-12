@@ -73,7 +73,7 @@ Looking for resources to help you prep for the [**Coding Interview**](https://gi
 
 Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
-* [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Contributing
 
