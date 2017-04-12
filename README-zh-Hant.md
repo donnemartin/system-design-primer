@@ -1,7 +1,6 @@
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-> * 译者：
-> * 校对者：
+> * 译者：[XatMassacrE](https://github.com/XatMassacrE)，[L9m](https://github.com/L9m)，[Airmacho](https://github.com/Airmacho)，[xiaoyusilen](https://github.com/xiaoyusilen)，[jifaxu](https://github.com/jifaxu)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
 # 系统设计入门
@@ -29,7 +28,7 @@
 
 这是一个不断更新的开源项目的初期的版本。
 
-欢迎 [贡献](#contributing) ！
+欢迎 [贡献](#贡献) ！
 
 ### 为系统设计面试做准备
 
@@ -39,11 +38,11 @@
 
 面试准备的其他主题：
 
-* [学习指引](#study-guide)
-* [如何回答一个系统设计面试题](#how-to-approach-a-system-design-interview-question)
-* [系统设计面试题， **含解答**](#system-design-interview-questions-with-solutions)
-* [面向对象设计面试题， **含解答**](#object-oriented-design-interview-questions-with-solutions)
-* [其他系统设计面试题](#additional-system-design-interview-questions)
+* [学习指引](#学习指引)
+* [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)
+* [系统设计面试题， **含解答**](#系统设计面试题和解答)
+* [面向对象设计面试题， **含解答**](#面向对象设计面试问题及解答)
+* [其他系统设计面试题](#额外的系统设计面试问题)
 
 ## 抽认卡
 
@@ -70,7 +69,7 @@
 * 完善章节
 * 添加章节
 
-一些还需要完善的内容放在了[开发中](#under-development)。
+一些还需要完善的内容放在了[开发中](#正在开发中)。
 
 查看 [贡献指导](CONTRIBUTING.md)。
 
@@ -90,86 +89,86 @@
   <br/>
 </p>
 
-* [系统设计主题：从这里开始](#system-design-topics-start-here)
-    * [第一步：回顾可扩展性的视频讲座](#step-1-review-the-scalability-video-lecture)
-    * [第二步： 回顾可扩展性的文章](#step-2-review-the-scalability-article)
-    * [接下来的步骤](#next-steps)
-* [性能与拓展性](#performance-vs-scalability)
-* [延迟与吞吐量](#latency-vs-throughput)
-* [可用性与一致性](#availability-vs-consistency)
-    * [CAP 理论](#cap-theorem)
-        * [CP - 一致性和分区容错性](#cp---consistency-and-partition-tolerance)
-        * [AP - 可用性和分区容错性](#ap---availability-and-partition-tolerance)
-* [一致模式](#consistency-patterns)
-    * [弱一致性](#weak-consistency)
-    * [最终一致性](#eventual-consistency)
-    * [强一致性](#strong-consistency)
-* [可用模式](#availability-patterns)
-    * [故障转移](#fail-over)
-    * [复制](#replication)
-* [域名系统](#domain-name-system)
-* [CDN](#content-delivery-network)
-    * [CDN 推送](#push-cdns)
-    * [CDN 拉取](#pull-cdns)
-* [负载均衡器](#load-balancer)
-    * [工作到备用切换(active-passive)](#active-passive)
-    * [双工作切换(active-active)](#active-active)
-    * [4 层负载均衡](#layer-4-load-balancing)
-    * [7 层负载均衡](#layer-7-load-balancing)
-    * [水平拓展](#horizontal-scaling)
-* [反向代理（web 服务）](#reverse-proxy-web-server)
-    * [负载均衡 vs 反向代理](#load-balancer-vs-reverse-proxy)
-* [应用层](#application-layer)
-    * [微服务](#microservices)
-    * [服务发现](#service-discovery)
-* [数据库](#database)
-    * [关系型数据库管理系统 (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave 复制集](#master-slave-replication)
-        * [Master-master 复制集](#master-master-replication)
-        * [联合](#federation)
-        * [分片](#sharding)
-        * [反规则化](#denormalization)
-        * [SQL 笔试题](#sql-tuning)
-    * [NoSQL](#nosql)
-        * [Key-value 存储](#key-value-store)
-        * [文档存储](#document-store)
-        * [宽列存储](#wide-column-store)
-        * [图数据库](#graph-database)
-    * [SQL 还是 NoSQL](#sql-or-nosql)
-* [缓存](#cache)
-    * [客户端缓存](#client-caching)
-    * [CDN 缓存](#cdn-caching)
-    * [Web 服务器缓存](#web-server-caching)
-    * [数据库缓存](#database-caching)
-    * [应用缓存](#application-caching)
-    * [数据库查询级别的缓存](#caching-at-the-database-query-level)
-    * [对象级别的缓存](#caching-at-the-object-level)
-    * [何时更新缓存](#when-to-update-the-cache)
-        * [缓存模式](#cache-aside)
-        * [直写模式](#write-through)
-        * [回写模式](#write-behind-write-back)
-        * [刷新](#refresh-ahead)
-* [异步](#asynchronism)
-    * [消息队列](#message-queues)
-    * [任务队列](#task-queues)
-    * [背压机制](#back-pressure)
-* [通讯](#communication)
-    * [传输控制协议 (TCP)](#transmission-control-protocol-tcp)
-    * [用户数据报协议 (UDP)](#user-datagram-protocol-udp)
-    * [远程控制调用 (RPC)](#remote-procedure-call-rpc)
-    * [表述性状态转移 (REST)](#representational-state-transfer-rest)
-* [网络安全](#security)
-* [附录](#appendix)
-    * [两张表的威力](#powers-of-two-table)
-    * [每一位程序员应该知道的数字误差](#latency-numbers-every-programmer-should-know)
-    * [其他系统设计面试题](#additional-system-design-interview-questions)
-    * [真实架构](#real-world-architectures)
-    * [公司架构](#company-architectures)
-    * [公司工程博客](#company-engineering-blogs)
-* [开发中](#under-development)
-* [致谢](#credits)
-* [联系方式](#contact-info)
-* [许可](#license)
+* [系统设计主题：从这里开始](#系统设计主题：从这里开始)
+    * [第一步：回顾可扩展性的视频讲座](#第一步：回顾可扩展性（scalability）的视频讲座)
+    * [第二步： 回顾可扩展性的文章](#第二步：回顾可扩展性文章)
+    * [接下来的步骤](#接下来的步骤)
+* [性能与拓展性](#性能与可扩展性)
+* [延迟与吞吐量](#延迟与吞吐量)
+* [可用性与一致性](#可用性与一致性)
+    * [CAP 理论](#CAP-理论)
+        * [CP - 一致性和分区容错性](#CP-─-一致性和分区容错性)
+        * [AP - 可用性和分区容错性](#AP-─-可用性与分区容错性)
+* [一致模式](#一致性模式)
+    * [弱一致性](#弱一致性)
+    * [最终一致性](#最终一致性)
+    * [强一致性](#强一致性)
+* [可用模式](#可用性模式)
+    * [故障切换](#故障切换)
+    * [复制](#复制)
+* [域名系统](#域名系统)
+* [CDN](#内容分发网络)
+    * [CDN 推送](#CDN-推送（push）)
+    * [CDN 拉取](#CDN-拉取（pull）)
+* [负载均衡器](#负载均衡器)
+    * [工作到备用切换(active-passive)](#工作到备用切换（Active-passive）)
+    * [双工作切换(active-active)](#双工作切换（Active-active）)
+    * [4 层负载均衡](#四层负载均衡)
+    * [7 层负载均衡](#七层负载均衡器)
+    * [水平拓展](#水平扩展)
+* [反向代理（web 服务）](#反向代理（web-服务器）)
+    * [负载均衡 vs 反向代理](#负载均衡器-VS-反向代理)
+* [应用层](#应用层)
+    * [微服务](#微服务)
+    * [服务发现](#服务发现)
+* [数据库](#数据库)
+    * [关系型数据库管理系统 (RDBMS)](#关系型数据库管理系统（RDBMS）)
+        * [Master-slave 复制集](#主从复制)
+        * [Master-master 复制集](#主主复制)
+        * [联合](#联合)
+        * [分片](#分片)
+        * [反规则化](#非规范化)
+        * [SQL 调优](#SQL-调优)
+    * [NoSQL](#NoSQL)
+        * [Key-value 存储](#键-值存储)
+        * [文档存储](#文档类型存储)
+        * [宽列存储](#列型存储)
+        * [图数据库](#图数据库)
+    * [SQL 还是 NoSQL](#SQL-还是-NoSQL)
+* [缓存](#缓存)
+    * [客户端缓存](#客户端缓存)
+    * [CDN 缓存](#CDN-缓存)
+    * [Web 服务器缓存](#Web-服务器缓存)
+    * [数据库缓存](#数据库缓存)
+    * [应用缓存](#应用缓存)
+    * [数据库查询级别的缓存](#数据库查询级别的缓存)
+    * [对象级别的缓存](#对象级别的缓存)
+    * [何时更新缓存](#何时更新缓存)
+        * [缓存模式](#缓存模式)
+        * [直写模式](#直写模式)
+        * [回写模式](#回写模式)
+        * [刷新](#刷新)
+* [异步](#异步)
+    * [消息队列](#消息队列)
+    * [任务队列](#任务队列)
+    * [背压机制](#背压)
+* [通讯](#通讯)
+    * [传输控制协议 (TCP)](#传输控制协议（TCP）)
+    * [用户数据报协议 (UDP)](#用户数据报协议（UDP）)
+    * [远程控制调用 (RPC)](#远程过程调用协议（RPC）)
+    * [表述性状态转移 (REST)](#表述性状态转移（REST）)
+* [网络安全](#安全)
+* [附录](#附录)
+    * [2 的次方表](#2-的次方表)
+    * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
+    * [其他系统设计面试题](#额外的系统设计面试问题)
+    * [真实架构](#真实的设计架构)
+    * [公司架构](#公司的系统架构)
+    * [公司工程博客](#公司工程博客)
+* [开发中](#正在开发中)
+* [致谢](#Credits)
+* [联系方式](#联系方式)
+* [许可](#License)
 
 ## 学习指引
 
@@ -199,20 +198,20 @@
 
 |                                          | 短期   | 中期   | 长期   |
 | ---------------------------------------- | ---- | ---- | ---- |
-| 阅读 [系统设计主题](#index-of-system-design-topics) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
-| 阅读一些你要面试的 [公司工程博客](#company-engineering-blogs) 的文章 | :+1: | :+1: | :+1: |
-| 阅读 [真实世界的架构](#real-world-architectures)  | :+1: | :+1: | :+1: |
-| 复习 [如何处理一个系统设计面试题](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| 完成 [系统设计面试题和解答](#system-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
-| 完成 [面向对象设计面试题和解答](#object-oriented-design-interview-questions-with-solutions) | 一些   | 很多   | 大部分  |
-| 复习 [其他系统设计面试题和解答](#additional-system-design-interview-questions) | 一些   | 很多   | 大部分  |
+| 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
+| 阅读一些你要面试的 [公司工程博客](#公司工程博客) 的文章          | :+1: | :+1: | :+1: |
+| 阅读 [真实世界的架构](#真实的设计架构)                   | :+1: | :+1: | :+1: |
+| 复习 [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)       | :+1: | :+1: | :+1: |
+| 完成 [系统设计面试题和解答](#系统设计面试题和解答)             | 一些   | 很多   | 大部分  |
+| 完成 [面向对象设计面试题和解答](#面向对象设计面试问题及解答)        | 一些   | 很多   | 大部分  |
+| 复习 [其他系统设计面试题和解答](#额外的系统设计面试问题)          | 一些   | 很多   | 大部分  |
 ## 如何处理一个系统设计面试题
 
 > 如何处理一个系统设计面试题。
 
 系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
 
-你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成 [系统设计面试题和解答](#system-design-interview-questions-with-solutions) 这个章节。
+你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成 [系统设计面试题和解答](#系统设计面试题和解答) 这个章节。
 
 ### 第一步：描述使用场景，约束和假设
 
@@ -256,15 +255,15 @@
 * 缓存
 * 数据库分片
 
-论述可能的解决办法和代价。每件事情需要取舍。可以使用 [可拓展系统的设计原则](#index-of-system-design-topics) 来处理瓶颈。
+论述可能的解决办法和代价。每件事情需要取舍。可以使用 [可拓展系统的设计原则](#系统设计主题的索引) 来处理瓶颈。
 
 ### 信封背面的计算
 
-你或许会被要求通过手算进行一些估算。涉及到的 [附录](#appendix) 涉及到的是下面的这些资源：
+你或许会被要求通过手算进行一些估算。涉及到的 [附录](#附录) 涉及到的是下面的这些资源：
 
 * [使用信封的背面做计算](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [两张表的威力](#powers-of-two-table)
-* [每一位程序员都应该知道的数字误差](#latency-numbers-every-programmer-should-know)
+* [2 的次方表](#2-的次方表)
+* [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
 
 ### 相关资源和延伸阅读
 
@@ -280,7 +279,8 @@
 >
 
 > 与内容有关的解答在 `solutions/` 文件夹中。
-| 问题                                       |                                          |
+
+| 问题           |                                          |
 | ---------------------------------------- | ---------------------------------------- |
 | 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
 | 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
@@ -290,7 +290,7 @@
 | 为搜索引擎设计一个 key-value 储存                   | [解答](solutions/system_design/query_cache/README.md) |
 | 通过分类特性设计 Amazon 的销售排名                    | [解答](solutions/system_design/sales_rank/README.md) |
 | 在 AWS 上设计一个百万用户级别的系统                     | [解答](solutions/system_design/scaling_aws/README.md) |
-| 添加一个系统设计问题                               | [贡献](#contributing)                      |
+| 添加一个系统设计问题                               | [贡献](#贡献)                                |
 
 ### 设计 Pastebin.com (或者 Bit.ly)
 
@@ -1156,7 +1156,7 @@ Redis 有下列附加功能：
 
 由于你只能在缓存中存储有限的数据，所以你需要选择一个适用于你用例的缓存更新策略。
 
-#### 缓存
+#### 缓存模式
 
 <p align="center">
   <img src="http://i.imgur.com/ONjORqk.png">
