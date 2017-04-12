@@ -1,7 +1,6 @@
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-> * 译者：
-> * 校对者：
+> * 译者：[XatMassacrE](https://github.com/XatMassacrE)，[L9m](https://github.com/L9m)，[Airmacho](https://github.com/Airmacho)，[xiaoyusilen](https://github.com/xiaoyusilen)，[jifaxu](https://github.com/jifaxu)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
 # 系统设计入门
@@ -29,7 +28,7 @@
 
 这是一个不断更新的开源项目的初期的版本。
 
-欢迎 [贡献](#contributing) ！
+欢迎 [贡献](#贡献) ！
 
 ### 为系统设计面试做准备
 
@@ -39,11 +38,11 @@
 
 面试准备的其他主题：
 
-* [学习指引](#study-guide)
-* [如何回答一个系统设计面试题](#how-to-approach-a-system-design-interview-question)
-* [系统设计面试题， **含解答**](#system-design-interview-questions-with-solutions)
-* [面向对象设计面试题， **含解答**](#object-oriented-design-interview-questions-with-solutions)
-* [其他系统设计面试题](#additional-system-design-interview-questions)
+* [学习指引](#学习指引)
+* [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)
+* [系统设计面试题， **含解答**](#系统设计面试题和解答)
+* [面向对象设计面试题， **含解答**](#面向对象设计面试问题及解答)
+* [其他系统设计面试题](#额外的系统设计面试问题)
 
 ## 抽认卡
 
