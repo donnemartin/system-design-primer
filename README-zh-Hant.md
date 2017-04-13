@@ -10,12 +10,12 @@
   <br/>
 </p>
 
-## Translations
+## 翻译
 
-Interested in [translating](https://github.com/donnemartin/system-design-primer/issues/28)?  Translations in progress:
+有兴趣参与 [翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
 
 * [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
-* [Simplified Chinese translation](https://github.com/donnemartin/system-design-primer/issues/38)
+* [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
 * [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
 
 ## 目的
@@ -113,9 +113,9 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 * [性能与拓展性](#性能与可扩展性)
 * [延迟与吞吐量](#延迟与吞吐量)
 * [可用性与一致性](#可用性与一致性)
-    * [CAP 理论](#CAP-理论)
-        * [CP - 一致性和分区容错性](#CP-─-一致性和分区容错性)
-        * [AP - 可用性和分区容错性](#AP-─-可用性与分区容错性)
+    * [CAP 理论](#cap-理论)
+        * [CP - 一致性和分区容错性](#cp--一致性和分区容错性)
+        * [AP - 可用性和分区容错性](#ap--可用性与分区容错性)
 * [一致模式](#一致性模式)
     * [弱一致性](#弱一致性)
     * [最终一致性](#最终一致性)
@@ -449,7 +449,7 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>来源：再看 CAP 理论</a></i>
+  <strong><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>来源：再看 CAP 理论</a></strong>
 </p>
 
 在一个分布式计算系统中，只能同时满足下列的两点:
@@ -1787,7 +1787,7 @@ Notes
 
 ## 联系方式
 
-欢迎联系我讨论本文的不足、问题或者意见
+欢迎联系我讨论本文的不足、问题或者意见。
 
 可以在我的 [GitHub 主页](https://github.com/donnemartin)上找到我的联系方式
 
