@@ -10,6 +10,14 @@
   <br/>
 </p>
 
+## Translations
+
+Interested in [translating](https://github.com/donnemartin/system-design-primer/issues/28)?  Translations in progress:
+
+* [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
+* [Simplified Chinese translation](https://github.com/donnemartin/system-design-primer/issues/38)
+* [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
+
 ## 目的
 
 > 学习如何设计大型系统。
@@ -59,6 +67,19 @@
 
 用起来非常棒。
 
+### Coding Resource: Interactive Coding Challenges
+
+Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+
+<p align="center">
+  <img src="http://i.imgur.com/b4YtAEN.png">
+  <br/>
+</p>
+
+Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+
+* [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+
 ## 贡献
 
 > 向社区学习。
@@ -72,10 +93,6 @@
 一些还需要完善的内容放在了[开发中](#正在开发中)。
 
 查看[贡献指导](CONTRIBUTING.md)。
-
-### 翻译
-
-对**翻译**感兴趣？请查看这个[链接](https://github.com/donnemartin/system-design-primer/issues/28)。
 
 ## 系统设计主题的索引
 
@@ -449,7 +466,7 @@
 
 #### AP ─ 可用性与分区容错性
 
-响应返回的最近版本数据可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
+响应节点上可用数据的最近版本可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
 
 如果业务需求允许[最终一致性](#eventual-consistency)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
 
@@ -578,9 +595,6 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ### CDN 推送（push）
 
 当你服务器上内容发生变动时，推送 CDN 接受新内容。你负责提供内容，直接推送给 CDN 并重写 URL 地址以指向 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，最小化流量，但最大化存储空间。
-
-
-
 
 ### CDN 拉取（pull）
 
@@ -738,6 +752,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 服务发现
 
 诸如 Zookeeper 这类系统可以通过追踪注册名、地址、端口等来帮助服务互相发现对方。
+Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
 
 ### 不利之处：应用层
 
@@ -1343,12 +1358,15 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 
 
 
-*多次执行不会产生不同的结果。
+**多次执行不会产生不同的结果**。
 
 HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
 
-- [HTTP](https://www.nginx.com/resources/glossary/http/)
-- [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+#### Source(s) and further reading: HTTP
+* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)    +
+* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
+* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
 ### 传输控制协议（TCP）
 
