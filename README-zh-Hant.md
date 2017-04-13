@@ -12,7 +12,7 @@
 
 ## 翻译
 
-有兴趣参与 [翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
+有兴趣参与[翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
 
 * [巴西葡萄牙语](https://github.com/donnemartin/system-design-primer/issues/40)
 * [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
@@ -418,7 +418,7 @@
 
 ## 性能与可扩展性
 
-如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。通常，提高性能意味着服务于更多的工作单元，另一方面，当数据集增长时，同样也可以处理更大的工作单位。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+如果服务**性能**的增长与资源的增加是成比例的，服务就是可扩展的。通常，提高性能意味着服务于更多的工作单元，另一方面，当数据集增长时，同样也可以处理更大的工作单位。<sup><a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html">1</a></sup>
 
 另一个角度来看待性能与可扩展性:
 
@@ -449,7 +449,7 @@
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png">
   <br/>
-  <strong><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>来源：再看 CAP 理论</a></strong>
+  <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
 
 在一个分布式计算系统中，只能同时满足下列的两点:
@@ -544,7 +544,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 <p align="center">
   <img src="http://i.imgur.com/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>来源：DNS 安全介绍</a></i>
+  <strong><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">来源：DNS 安全介绍</a></strong>
 </p>
 
 域名系统是把 www.example.com 等域名转换成 IP 地址。
@@ -554,7 +554,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 * **NS 记录（域名服务）** ─ 指定解析域名或子域名的 DNS 服务器。
 * **MX 记录（邮件交换）** ─ 指定接收信息的邮件服务器。
 * **A 记录（地址）** ─ 指定域名对应的 IP 地址记录。
-* **CNAME（规范）** ─ 一个域名映射到另一个域名或 `CNAME` 记录（example.com 指向 www.example.com）或映射到一个 `A` 记录。
+* **CNAME（规范）** ─ 一个域名映射到另一个域名或 `CNAME` 记录（ example.com 指向 www.example.com ）或映射到一个 `A` 记录。
 
 [CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 等平台提供管理 DNS 的功能。某些 DNS 服务通过集中方式来路由流量:
 
@@ -582,7 +582,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg">
   <br/>
-  <strong><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>来源：为什么使用 CDN</a></strong>
+  <strong><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">来源：为什么使用 CDN</a></strong>
 </p>
 
 内容分发网络是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
@@ -621,7 +621,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/h81n9iK.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">来源：可扩展的系统设计模式</a></strong>
 </p>
 
 负载均衡器将传入的请求分发到应用服务器和数据库等计算资源。无论哪种情况，负载均衡器将从计算资源来的响应返回给恰当的客户端。负载均衡器的效用在于:
@@ -690,7 +690,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/n41Azff.png">
   <br/>
-  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
+  <strong><a href="https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg">资料来源：维基百科</a></strong>
   <br/>
 </p>
 
@@ -734,7 +734,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/yB5SYwm.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <strong><a href="http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">资料来源：可缩放系统构架介绍</a></strong>
 </p>
 
 将 Web 服务层与应用层（也被称作平台层）分离，可以独立缩放和配置这两层。添加新的 API 只需要添加应用服务器，而不必添加额外的 web 服务器。
@@ -772,7 +772,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
+  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩大到您的第一个 1000 万用户</a></strong>
 </p>
 
 ### 关系型数据库管理系统（RDBMS）
@@ -793,7 +793,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/C9ioGtn.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
 #### 主从复制
@@ -808,7 +808,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
 #### 主主复制
@@ -843,7 +843,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
+  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩大到您的第一个 1000 万用户</a></strong>
 </p>
 
 联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
@@ -858,14 +858,14 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ##### 来源及延伸阅读：联合
 
-- [扩展你的用户数到第一个千万]((https://www.youtube.com/watch?v=vg5onp8TU6Q))
+- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
 #### 分片
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
 分片将数据分配在不同的数据库上，使得每个数据库仅管理整个数据集的一个子集。以用户数据库为例，随着用户数量的增加，越来越多的分片会被添加到集群中。
@@ -1009,7 +1009,7 @@ MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的�
 <p align="center">
   <img src="http://i.imgur.com/n16iOGk.png">
   <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+  <strong><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html">资料来源: SQL 和 NoSQL，一个简短的历史</a></strong>
 </p>
 
 > 抽象模型：嵌套的 `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>` 映射
@@ -1032,7 +1032,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 <p align="center">
   <img src="http://i.imgur.com/fNcl65g.png">
   <br/>
-  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+  <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png">资料来源：图数据库</a></strong>
 </p>
 
 > 抽象模型： 图
@@ -1059,7 +1059,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 <p align="center">
   <img src="http://i.imgur.com/wXGqG5f.png">
   <br/>
-  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+  <strong><a href="https://www.infoq.com/articles/Transition-RDBMS-NoSQL/">资料来源：从 RDBMS 转换到 NoSQL</a></strong>
 </p>
 
 选取 **SQL** 的原因:
@@ -1100,7 +1100,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 <p align="center">
   <img src="http://i.imgur.com/Q6z24La.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">资料来源：可扩展的系统设计模式</a></strong>
 </p>
 
 缓存可以提高页面加载速度，并可以减少服务器和数据库的负载。在这个模型中，分发器先查看请求之前是否被响应过，如果有则将之前的结果直接返回，来省掉真正的处理。
@@ -1171,7 +1171,7 @@ Redis 有下列附加功能：
 <p align="center">
   <img src="http://i.imgur.com/ONjORqk.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <strong><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">资料来源：从缓存到内存数据网格</a></strong>
 </p>
 
 应用从存储器读写。缓存不和存储器直接交互，应用执行以下操作：
@@ -1207,7 +1207,7 @@ def get_user(self, user_id):
 <p align="center">
   <img src="http://i.imgur.com/0vBc0hN.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
 应用使用缓存作为主要的数据存储，将数据读写到缓存中，而缓存负责从数据库中读写数据。
@@ -1242,7 +1242,7 @@ def set_user(user_id, values):
 <p align="center">
   <img src="http://i.imgur.com/rgSrvjG.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
 
 在回写模式中，应用执行以下操作：
@@ -1260,7 +1260,7 @@ def set_user(user_id, values):
 <p align="center">
   <img src="http://i.imgur.com/kxtjqgE.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <strong><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>资料来源：从缓存到内存数据网格</a></strong>
 </p>
 
 你可以将缓存配置成在到期之前自动刷新最近访问过的内容。
@@ -1281,7 +1281,7 @@ def set_user(user_id, values):
 
 - [从缓存到内存数据](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 - [可扩展系统设计模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-- [大型系统架构介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+- [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale/)
 - [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 - [可扩展性](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 - [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
@@ -1292,7 +1292,7 @@ def set_user(user_id, values):
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <strong><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>资料来源：可缩放系统构架介绍</a></strong>
 </p>
 
 异步工作流有助于减少那些原本顺序执行的请求时间。它们可以通过提前进行一些耗时的工作来帮助减少请求时间，比如定期汇总数据。
@@ -1338,7 +1338,7 @@ def set_user(user_id, values):
 <p align="center">
   <img src="http://i.imgur.com/5KeocQs.jpg">
   <br/>
-  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
+  <strong><a href=http://www.escotal.com/osilayer.html>资料来源：OSI 7层模型</a></strong>
 </p>
 
 ### 超文本传输协议（HTTP）
@@ -1373,7 +1373,7 @@ HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议�
 <p align="center">
   <img src="http://i.imgur.com/JdAsdvG.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/">资料来源：如何制作多人游戏</a></strong>
 </p>
 
 TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面向连接的协议。 使用[握手](https://en.wikipedia.org/wiki/Handshaking)建立和断开连接。 发送的所有数据包保证以原始顺序到达目的地，用以下措施保证数据包不被损坏：
@@ -1397,7 +1397,7 @@ TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包
 <p align="center">
   <img src="http://i.imgur.com/yzDrJtA.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1">资料来源：如何制作多人游戏</a></strong>
 </p>
 
 UDP 是无连接的。数据报（类似于数据包）只在数据报级别有保证。数据报可能会无序的到达目的地，也有可能会遗失。UDP 不支持拥塞控制。虽然不如 TCP 那样有保证，但 UDP 通常效率更高。
@@ -1426,10 +1426,10 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实�
 <p align="center">
   <img src="http://i.imgur.com/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/>Source: Crack the system design interview</a></i>
+  <strong><a href="http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview">Source: Crack the system design interview</a></strong>
 </p>
 
-在 RPC 中，客户端会去调用另一个地址空间（通常是一个远程服务器）里的方法。调用代码看起来就像是调用的是一个本地方法，客户端和服务器交互的具体过程被抽象。远程调用相对于本地调用一般较慢而且可靠性更差，因此区分两者是有帮助的。热门的 RPC 框架包括 [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/) 和 [Avro](https://avro.apache.org/docs/current/)。
+在 RPC 中，客户端会去调用另一个地址空间（通常是一个远程服务器）里的方法。调用代码看起来就像是调用的是一个本地方法，客户端和服务器交互的具体过程被抽象。远程调用相对于本地调用一般较慢而且可靠性更差，因此区分两者是有帮助的。热门的 RPC 框架包括 [Protobuf](https://developers.google.com/protocol-buffers/)、[Thrift](https://thrift.apache.org/) 和 [Avro](https://avro.apache.org/docs/current/)。
 
 RPC 是一个“请求-响应”协议：
 
@@ -1490,12 +1490,12 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，经常用于公共 HTTP API 接口设计。REST 使用更通常与规范化的方法来通过 URI 暴露资源，[通过 header 来表述](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)并通过 GET, POST, PUT, DELETE 和 PATCH 这些动作来进行操作。因为无状态的特性，REST 易于横向扩展和隔离。
+REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，经常用于公共 HTTP API 接口设计。REST 使用更通常与规范化的方法来通过 URI 暴露资源，[通过 header 来表述](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)并通过 GET、POST、PUT、DELETE 和 PATCH 这些动作来进行操作。因为无状态的特性，REST 易于横向扩展和隔离。
 
 #### 缺点：REST
 
 * 由于 REST 将重点放在暴露数据，所以当资源不是自然组织的或者结构复杂的时候它可能无法很好的适应。举个例子，返回过去一小时中与特定事件集匹配的更新记录这种操作就很难表示为路径。使用 REST，可能会使用 URI 路径，查询参数和可能的请求体来实现。
-* REST 一般依赖几个动作（GET, POST, PUT, DELETE 和 PATCH），但有时候仅仅这些没法满足你的需要。举个例子，将过期的文档移动到归档文件夹里去，这样的操作可能没法简单的用上面这几个 verbs 表达。
+* REST 一般依赖几个动作（GET、POST、PUT、DELETE 和 PATCH），但有时候仅仅这些没法满足你的需要。举个例子，将过期的文档移动到归档文件夹里去，这样的操作可能没法简单的用上面这几个 verbs 表达。
 * 为了渲染单个页面，获取被嵌套在层级结构中的复杂资源需要客户端，服务器之间多次往返通信。例如，获取博客内容及其关联评论。对于使用不确定网络环境的移动应用来说，这些多次往返通信是非常麻烦的。
 * 随着时间的推移，更多的字段可能会被添加到 API 响应中，较旧的客户端将会接收到所有新的数据字段，即使是那些它们不需要的字段，结果它会增加负载大小并引起更大的延迟。
 
@@ -1512,12 +1512,12 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 | 删除一个物品      | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456                    |
 
 <p align="center">
-  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+  <strong><a href="https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc">资料来源：你真的知道你为什么更喜欢 REST 而不是 RPC 吗</a></strong>
 </p>
 
 #### 来源及延伸阅读：REST 与 RPC
 
-* [你知道你为什么更喜欢 REST 而不是 RPC 吗](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
+* [你真的知道你为什么更喜欢 REST 而不是 RPC 吗](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [什么时候 RPC 比 REST 更合适？](http://programmers.stackexchange.com/a/181186)
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
@@ -1648,7 +1648,7 @@ Notes
 <p align="center">
   <img src="http://i.imgur.com/TcUo2fw.png">
   <br/>
-  <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
+  <strong><a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability">Source: Twitter timelines at scale</a></strong>
 </p>
 
 **不要专注于以下文章的细节，专注于以下方面：**
