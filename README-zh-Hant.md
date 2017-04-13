@@ -67,21 +67,17 @@
 
 用起来非常棒。
 
-### Coding Resource: Interactive Coding Challenges
 ### 代码资源：交互式代码挑战
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
-寻找资源帮助你准备[**代码面试**](https://github.com/donnemartin/interactive-coding-challenges)?
+正在寻找资源帮助你准备[**代码面试**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 查看我们的兄弟仓库[**交互式代码挑战**](https://github.com/donnemartin/interactive-coding-challenges)，还包含了一个额外的抽认卡堆：
 
-* [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 * [代码卡堆](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## 贡献
@@ -755,8 +751,6 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 服务发现
 
-诸如 Zookeeper 这类系统可以通过追踪注册名、地址、端口等来帮助服务互相发现对方。
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#超文本传输协议（HTTP）) endpoint.  Both Consul and Etcd have a built in [key-value 存储](#键-值存储) that can be useful for storing config values and other shared data.
 像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议（HTTP）) 路径。 Consul 和 Etcd 都有一个内建的 [key-value 存储](#key-value 存储) 用来存储配置信息和其他的共享信息。
 
 ### 不利之处：应用层
@@ -1367,7 +1361,6 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 
 HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
 
-#### Source(s) and further reading: HTTP
 #### 来源及延伸阅读：HTTP
 
 * [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)    +
