@@ -14,9 +14,9 @@
 
 有兴趣参与 [翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
 
-* [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
+* [巴西葡萄牙语](https://github.com/donnemartin/system-design-primer/issues/40)
 * [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
-* [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
+* [土耳其语](https://github.com/donnemartin/system-design-primer/issues/39)
 
 ## 目的
 
@@ -68,8 +68,10 @@
 用起来非常棒。
 
 ### Coding Resource: Interactive Coding Challenges
+### 代码资源：交互式代码挑战
 
 Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+寻找资源帮助你准备[**代码面试**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
@@ -77,8 +79,10 @@ Looking for resources to help you prep for the [**Coding Interview**](https://gi
 </p>
 
 Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+查看我们的兄弟仓库[**交互式代码挑战**](https://github.com/donnemartin/interactive-coding-challenges)，还包含了一个额外的抽认卡堆：
 
 * [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [代码卡堆](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## 贡献
 
@@ -216,7 +220,7 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 |                                          | 短期   | 中期   | 长期   |
 | ---------------------------------------- | ---- | ---- | ---- |
 | 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
-| 阅读一些你要面试的[公司工程博客](#公司工程博客)的文章          | :+1: | :+1: | :+1: |
+| 阅读一些你要面试的[公司工程博客](#公司工程博客)的文章            | :+1: | :+1: | :+1: |
 | 阅读 [真实世界的架构](#真实的设计架构)                   | :+1: | :+1: | :+1: |
 | 复习 [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)       | :+1: | :+1: | :+1: |
 | 完成 [系统设计面试题和解答](#系统设计面试题和解答)             | 一些   | 很多   | 大部分  |
@@ -297,7 +301,7 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 
 > 与内容有关的解答在 `solutions/` 文件夹中。
 
-| 问题           |                                          |
+| 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
 | 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
 | 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
@@ -752,7 +756,8 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 服务发现
 
 诸如 Zookeeper 这类系统可以通过追踪注册名、地址、端口等来帮助服务互相发现对方。
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#超文本传输协议（HTTP）) endpoint.  Both Consul and Etcd have a built in [key-value 存储](#键-值存储) that can be useful for storing config values and other shared data.
+像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议（HTTP）) 路径。 Consul 和 Etcd 都有一个内建的 [key-value 存储](#key-value 存储) 用来存储配置信息和其他的共享信息。
 
 ### 不利之处：应用层
 
@@ -1363,10 +1368,12 @@ HTTP 是一种在客户端和服务器之间编码和传输数据的方法。它
 HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议。
 
 #### Source(s) and further reading: HTTP
+#### 来源及延伸阅读：HTTP
+
 * [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)    +
-* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
-* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
-* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+* [HTTP 是什么？](https://www.nginx.com/resources/glossary/http/)
+* [HTTP 和 TCP 的区别](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [PUT 和 PATCH的区别](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
 ### 传输控制协议（TCP）
 
