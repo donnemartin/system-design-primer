@@ -441,7 +441,7 @@
 * **可用性** ─ 每次访问都能收到非错响应，但不保证获取到最新数据
 * **分区容错性** ─ 在任意分区网络故障的情况下系统仍能继续运行
 
-*网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。*
+**网络并不可靠，所以你应要支持分区容错性，并需要在软件可用性和一致性间做出取舍。**
 
 #### CP ─ 一致性和分区容错性
 
@@ -565,7 +565,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg">
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>来源：为什么使用 CDN</a></i>
+  <strong><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>来源：为什么使用 CDN</a></strong>
 </p>
 
 内容分发网络是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
@@ -652,7 +652,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 * 水平扩展引入了复杂度并涉及服务器复制
     * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
-    * session 可以集中存储在数据库或持久化[缓存](#cache)（Redis, Memcached）的数据存储区中。
+    * session 可以集中存储在数据库或持久化[缓存](#cache)（Redis、Memcached）的数据存储区中。
 * 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
 ### 缺陷：负载均衡器
@@ -733,7 +733,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 与此讨论相关的话题是 [微服务](https://en.wikipedia.org/wiki/Microservices)，可以被描述为一系列可以独立部署的小型的，模块化服务。每个服务运行在一个独立的线程中，通过明确定义的轻量级机制通讯，共同实现业务目标。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-例如，Pinterest 可能有这些微服务： 用户资料，关注者，Feed 流，搜索，照片上传等。
+例如，Pinterest 可能有这些微服务： 用户资料、关注者、Feed 流、搜索、照片上传等。
 
 ### 服务发现
 
@@ -1038,8 +1038,6 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 - [NoSQL 数据库 - 调查及决策指南](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
 - [可扩展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 - [NoSQL 介绍](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-
-
 - [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 ### SQL 还是 NoSQL
@@ -1082,8 +1080,6 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 ##### 来源及延伸阅读：SQL 或 NoSQL
 
 - [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-
-
 - [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 ## 缓存
 
@@ -1637,7 +1633,7 @@ Notes
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
 
-** 不要专注于以下文章的细节，专注于以下方面： **
+**不要专注于以下文章的细节，专注于以下方面：**
 
 * 发现这些文章中的共同的原则、技术和模式。
 * 学习每个组件解决哪些问题，什么情况下使用，什么情况下不适用
