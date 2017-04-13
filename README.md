@@ -5,13 +5,21 @@
   <br/>
 </p>
 
+## Translations
+
+Interested in [translating](https://github.com/donnemartin/system-design-primer/issues/28)?  Translations in progress:
+
+* [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
+* [Simplified Chinese translation](https://github.com/donnemartin/system-design-primer/issues/38)
+* [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
+
 ## Motivation
 
-> Learn how to design large scale systems.
+> Learn how to design large-scale systems.
 >
 > Prep for the system design interview.
 
-### Learn how to design large scale systems
+### Learn how to design large-scale systems
 
 Learning how to design scalable systems will help you become a better engineer.
 
@@ -54,6 +62,19 @@ The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repeti
 
 Great for use while on-the-go.
 
+### Coding Resource: Interactive Coding Challenges
+
+Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+
+<p align="center">
+  <img src="http://i.imgur.com/b4YtAEN.png">
+  <br/>
+</p>
+
+Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+
+* [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+
 ## Contributing
 
 > Learn from the community.
@@ -67,10 +88,6 @@ Feel free to submit pull requests to help:
 Content that needs some polishing is placed [under development](#under-development).
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
-
-### Translations
-
-Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
 
 ## Index of system design topics
 
@@ -443,7 +460,7 @@ Waiting for a response from the partitioned node might result in a timeout error
 
 #### AP - availability and partition tolerance
 
-Responses return the most recent version of the data, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Responses return the most recent version of the data available on the a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 
@@ -576,7 +593,7 @@ Sites with a small amount of traffic or sites with content that isn't often upda
 
 ### Pull CDNs
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the server.
+Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
 
 A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
 
@@ -729,7 +746,7 @@ Pinterest, for example, could have the following microservices: user profile, fo
 
 ### Service Discovery
 
-Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, ports, etc.
+Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
 
 ### Disadvantage(s): application layer
 
@@ -1218,7 +1235,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-In write-behind, tha application does the following:
+In write-behind, the application does the following:
 
 * Add/update entry in cache
 * Asynchronously write entry to the data store, improving write performance
@@ -1332,8 +1349,11 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 
 HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
 
-* [HTTP](https://www.nginx.com/resources/glossary/http/)
-* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+#### Source(s) and further reading: HTTP
+
+* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
+* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
 ### Transmission control protocol (TCP)
 
@@ -1348,7 +1368,7 @@ TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.
 * Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
 * [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
 
-If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally results in less efficient transmission than UDP.
+If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally result in less efficient transmission than UDP.
 
 To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a [memcached](#memcached) server.  [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool) can help in addition to switching to UDP where applicable.
 
@@ -1421,12 +1441,12 @@ POST /anotheroperation
 
 RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
 
-Choose a Native Library aka SDK when:
+Choose a native library (aka SDK) when:
 
 * You know your target platform.
-* You want to control how your "logic" is accessed
-* You want to control how error control happens off your library
-* Performance and end user experience is your primary concern
+* You want to control how your "logic" is accessed.
+* You want to control how error control happens off your library.
+* Performance and end user experience is your primary concern.
 
 HTTP APIs following **REST** tend to be used more often for public APIs.
 
