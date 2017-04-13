@@ -1,6 +1,6 @@
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-> * 译者：[XatMassacrE](https://github.com/XatMassacrE)，[L9m](https://github.com/L9m)，[Airmacho](https://github.com/Airmacho)，[xiaoyusilen](https://github.com/xiaoyusilen)，[jifaxu](https://github.com/jifaxu)
+> * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
 # 系统设计入门
@@ -28,7 +28,7 @@
 
 这是一个不断更新的开源项目的初期的版本。
 
-欢迎 [贡献](#贡献) ！
+欢迎[贡献](#贡献) ！
 
 ### 为系统设计面试做准备
 
@@ -40,8 +40,8 @@
 
 * [学习指引](#学习指引)
 * [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)
-* [系统设计面试题， **含解答**](#系统设计面试题和解答)
-* [面向对象设计面试题， **含解答**](#面向对象设计面试问题及解答)
+* [系统设计面试题，**含解答**](#系统设计面试题和解答)
+* [面向对象设计面试题，**含解答**](#面向对象设计面试问题及解答)
 * [其他系统设计面试题](#额外的系统设计面试问题)
 
 ## 抽认卡
@@ -51,7 +51,7 @@
   <br/>
 </p>
 
-这里提供的 [抽认卡堆](https://apps.ankiweb.net/) 使用间隔重复的方法帮助你记住系统设计的概念。
+这里提供的[抽认卡堆](https://apps.ankiweb.net/)使用间隔重复的方法帮助你记住系统设计的概念。
 
 * [系统设计卡堆](resources/flash_cards/System%20Design.apkg)
 * [系统设计练习卡堆](resources/flash_cards/System%20Design%20Exercises.apkg)
@@ -71,11 +71,11 @@
 
 一些还需要完善的内容放在了[开发中](#正在开发中)。
 
-查看 [贡献指导](CONTRIBUTING.md)。
+查看[贡献指导](CONTRIBUTING.md)。
 
 ### 翻译
 
-对**翻译**感兴趣？请查看这个 [链接](https://github.com/donnemartin/system-design-primer/issues/28)。
+对**翻译**感兴趣？请查看这个[链接](https://github.com/donnemartin/system-design-primer/issues/28)。
 
 ## 系统设计主题的索引
 
@@ -172,7 +172,7 @@
 
 ## 学习指引
 
-> 基于你面试的时间线（短，中，长）去复习那些推荐的主题。
+> 基于你面试的时间线（短、中、长）去复习那些推荐的主题。
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
@@ -199,7 +199,7 @@
 |                                          | 短期   | 中期   | 长期   |
 | ---------------------------------------- | ---- | ---- | ---- |
 | 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
-| 阅读一些你要面试的 [公司工程博客](#公司工程博客) 的文章          | :+1: | :+1: | :+1: |
+| 阅读一些你要面试的[公司工程博客](#公司工程博客)的文章          | :+1: | :+1: | :+1: |
 | 阅读 [真实世界的架构](#真实的设计架构)                   | :+1: | :+1: | :+1: |
 | 复习 [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)       | :+1: | :+1: | :+1: |
 | 完成 [系统设计面试题和解答](#系统设计面试题和解答)             | 一些   | 很多   | 大部分  |
@@ -211,7 +211,7 @@
 
 系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
 
-你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成 [系统设计面试题和解答](#系统设计面试题和解答) 这个章节。
+你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成[系统设计面试题和解答](#系统设计面试题和解答)这个章节。
 
 ### 第一步：描述使用场景，约束和假设
 
@@ -235,7 +235,7 @@
 
 ### 第三步：设计核心组件
 
-对每一个核心组件进行详细深入的分析。举例来说，如果你被问到 [设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
+对每一个核心组件进行详细深入的分析。举例来说，如果你被问到[设计一个 url 缩写服务](solutions/system_design/pastebin/README.md)，开始讨论：
 
 * 生成并储存一个完整 url 的 hash
     * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
@@ -255,11 +255,11 @@
 * 缓存
 * 数据库分片
 
-论述可能的解决办法和代价。每件事情需要取舍。可以使用 [可拓展系统的设计原则](#系统设计主题的索引) 来处理瓶颈。
+论述可能的解决办法和代价。每件事情需要取舍。可以使用[可拓展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
 
 ### 信封背面的计算
 
-你或许会被要求通过手算进行一些估算。涉及到的 [附录](#附录) 涉及到的是下面的这些资源：
+你或许会被要求通过手算进行一些估算。涉及到的[附录](#附录)涉及到的是下面的这些资源：
 
 * [使用信封的背面做计算](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2 的次方表](#2-的次方表)
