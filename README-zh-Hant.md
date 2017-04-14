@@ -114,8 +114,8 @@
 * [延迟与吞吐量](#延迟与吞吐量)
 * [可用性与一致性](#可用性与一致性)
     * [CAP 理论](#cap-理论)
-        * [CP - 一致性和分区容错性](#cp-一致性和分区容错性)
-        * [AP - 可用性和分区容错性](#ap-可用性与分区容错性)
+        * [CP - 一致性和分区容错性](#cp--一致性和分区容错性)
+        * [AP - 可用性和分区容错性](#ap--可用性与分区容错性)
 * [一致模式](#一致性模式)
     * [弱一致性](#弱一致性)
     * [最终一致性](#最终一致性)
@@ -144,7 +144,7 @@
         * [Master-master 复制集](#主主复制)
         * [联合](#联合)
         * [分片](#分片)
-        * [反规则化](#反规则化)
+        * [非规范化](#非规范化)
         * [SQL 调优](#sql-调优)
     * [NoSQL](#nosql)
         * [Key-value 存储](#键-值存储)
@@ -172,9 +172,9 @@
 * [通讯](#通讯)
     * [传输控制协议（TCP）](#传输控制协议tcp)
     * [用户数据报协议（UDP）](#用户数据报协议udp)
-    * [远程控制调用（RPC）](#远程控制调用rpc)
+    * [远程控制调用协议（RPC）](#远程过程调用协议rpc)
     * [表述性状态转移（REST）](#表述性状态转移rest)
-* [网络安全](#安全)
+* [安全](#安全)
 * [附录](#附录)
     * [2 的次方表](#2-的次方表)
     * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
@@ -182,7 +182,7 @@
     * [真实架构](#真实架构)
     * [公司的系统架构](#公司的系统架构)
     * [公司工程博客](#公司工程博客)
-* [开发中](#正在完善中)
+* [正在完善中](#正在完善中)
 * [致谢](#致谢)
 * [联系方式](#联系方式)
 * [许可](#许可)
@@ -372,8 +372,8 @@
 | 设计一副牌        | [解决方案](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
 | 设计一个停车场      | [解决方案](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
 | 设计一个聊天服务     | [解决方案](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
-| 设计一个环形数组     | [待解决](#contributing)                     |
-| 添加一个面向对象设计问题 | [待解决](#contributing)                     |
+| 设计一个环形数组     | [待解决](#贡献)                     |
+| 添加一个面向对象设计问题 | [待解决](#贡献)                     |
 
 ## 系统设计主题：从这里开始
 
@@ -467,7 +467,7 @@
 
 响应节点上可用数据的最近版本可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
 
-如果业务需求允许[最终一致性](#eventual-consistency)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
+如果业务需求允许[最终一致性](#最终一致性)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
 
 ### 来源及延伸阅读
 
@@ -477,7 +477,7 @@
 
 ## 一致性模式
 
-有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 定理](#cap-theorem)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
+有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 理论](#cap-理论)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
 
 
 ### 弱一致性
@@ -533,10 +533,10 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 #### 主─从复制和主─主复制
 
-这个主题进一步探讨了[数据库](#database)部分:
+这个主题进一步探讨了[数据库](#数据库)部分:
 
-* [主─从复制](#master-slave-replication)
-* [主─主复制](#master-master-replication)
+* [主─从复制](#主从复制)
+* [主─主复制](#主主复制)
 
 ## 域名系统
 
@@ -636,7 +636,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
     * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
 * **Session 留存** ─ 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
 
-通常会设置采用[工作─备用](#active-passive) 或 [双工作](#active-active) 模式的多个负载均衡器，以免发生故障。
+通常会设置采用[工作─备用](#工作到备用切换active-passive) 或 [双工作](#双工作切换active-active) 模式的多个负载均衡器，以免发生故障。
 
 负载均衡器能基于多种方式来路由流量:
 
@@ -644,16 +644,16 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * 最少负载
 * Session/cookie
 * [轮询调度或加权轮询调度算法](http://g33kinfo.com/info/archives/2657)
-* [四层负载均衡](#layer-4-load-balancing)
-* [七层负载均衡](#layer-7-load-balancing)
+* [四层负载均衡](#四层负载均衡)
+* [七层负载均衡](#七层负载均衡)
 
 ### 四层负载均衡
 
-四层负载均衡根据监看[传输层](#communication)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
+四层负载均衡根据监看[传输层](#通讯)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
 
 ### 七层负载均衡器
 
-七层负载均衡器根据监控[应用层](#communication)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
+七层负载均衡器根据监控[应用层](#通讯)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
 
 以损失灵活性为代价，四层负载均衡比七层负载均衡花费更少时间和计算资源，虽然这对现代商用硬件的性能影响甚微。
 
@@ -665,7 +665,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 * 水平扩展引入了复杂度并涉及服务器复制
     * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
-    * session 可以集中存储在数据库或持久化[缓存](#cache)（Redis、Memcached）的数据存储区中。
+    * session 可以集中存储在数据库或持久化[缓存](#缓存)（Redis、Memcached）的数据存储区中。
 * 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
 ### 缺陷：负载均衡器
@@ -740,7 +740,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 **单一职责原则**提倡小型的，自治的服务共同合作。小团队通过提供小型的服务，可以更激进地计划增长。
 
-应用层中的工作进程也有可以实现[异步化](#asynchronism)。
+应用层中的工作进程也有可以实现[异步化](#异步)。
 
 ### 微服务
 
@@ -750,7 +750,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 服务发现
 
-像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议（HTTP）) 路径。Consul 和 Etcd 都有一个内建的 [key-value 存储](#键-值存储) 用来存储配置信息和其他的共享信息。
+像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议http) 路径。Consul 和 Etcd 都有一个内建的 [key-value 存储](#键-值存储) 用来存储配置信息和其他的共享信息。
 
 ### 不利之处：应用层
 
@@ -802,7 +802,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ##### 不利之处：主从复制
 
 - 将从库提升为主库需要额外的逻辑。
-- 参考[不利之处：复制](#disadvantages-replication)中，主从复制和主主复制**共同**的问题。
+- 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
@@ -819,7 +819,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 - 你需要添加负载均衡器或者在应用逻辑中做改动，来确定写入哪一个数据库。
 - 多数主-主系统要么不能保证一致性（违反 ACID），要么因为同步产生了写入延迟。
 - 随着更多写入节点的加入和延迟的提高，如何解决冲突显得越发重要。
-- 参考[不利之处：复制](#不利之处：复制)中，主从复制和主主复制**共同**的问题。
+- 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 ##### 不利之处：复制
 
@@ -959,7 +959,7 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 
 NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#最终一致性)。
 
-**BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 理论](#CAP 理论)，BASE 强调可用性超过一致性。
+**BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 理论](#cap-理论)，BASE 强调可用性超过一致性。
 
 - **基本可用** - 系统保证可用性。
 - **软状态** - 即使没有输入，系统状态也可能随着时间变化。
@@ -1038,7 +1038,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 在图数据库中，一个节点对应一条记录，一个弧对应两个节点之间的关系。图数据库被优化用于表示外键繁多的复杂关系或多对多关系。
 
-图数据库为存储复杂关系的数据模型，如社交网络，提供了很高的性能。它们相对较新，尚未广泛应用，查找开发工具或者资源相对较难。许多图只能通过 [REST API](#representational-state-transfer-restE) 访问。
+图数据库为存储复杂关系的数据模型，如社交网络，提供了很高的性能。它们相对较新，尚未广泛应用，查找开发工具或者资源相对较难。许多图只能通过 [REST API](#表述性状态转移rest) 访问。
 
 ##### 相关资源和延伸阅读：图
 - [图数据库](https://en.wikipedia.org/wiki/Graph_database)
@@ -1108,15 +1108,15 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ### 客户端缓存
 
-缓存可以位于客户端（操作系统或者浏览器），[服务端](#reverse-proxy)或者不同的缓存层。
+缓存可以位于客户端（操作系统或者浏览器），[服务端](#反向代理web-服务器)或者不同的缓存层。
 
 ### CDN 缓存
 
-[CDN](#内容分发网络) 也被视为一种缓存。
+[CDN](#内容分发网络cdn) 也被视为一种缓存。
 
 ### Web 服务器缓存
 
-[反向代理](#反向代理)和缓存（比如 [Varnish](https://www.varnish-cache.org/)）可以直接提供静态和动态内容。Web 服务器同样也可以缓存请求，返回相应结果而不必连接应用服务器。
+[反向代理](#反向代理web-服务器)和缓存（比如 [Varnish](https://www.varnish-cache.org/)）可以直接提供静态和动态内容。Web 服务器同样也可以缓存请求，返回相应结果而不必连接应用服务器。
 
 ### 数据库缓存
 
@@ -1527,7 +1527,7 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 
 ## 安全
 
-这一部分需要更多内容。[一起来吧](#contributing)！
+这一部分需要更多内容。[一起来吧](#贡献)！
 
 安全是一个宽泛的话题。除非你有相当的经验、安全方面背景或者正在申请的职位要求安全知识，你不需要了解安全基础知识以外的内容：
 
@@ -1638,7 +1638,7 @@ Notes
 | 设计一个数据源于多个数据中心的服务系统     | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | 设计一个多人网络卡牌游戏            | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | 设计一个垃圾回收系统              | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| 添加更多的系统设计问题             | [Contribute](#contributing)              |
+| 添加更多的系统设计问题             | [贡献](#贡献)              |
 
 ### 真实架构
 
@@ -1678,7 +1678,7 @@ Notes
 | Misc            | **Dapper** - 分布式系统跟踪基础设施 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf) |
 | Misc            | **Kafka** - LinkedIn 的发布订阅消息系统 | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc            | **Zookeeper** - 集中的基础架构和协调服务 | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-|                 | 添加更多                      | [Contribute](#contributing)              |
+|                 | 添加更多                      | [贡献](#贡献)              |
 
 ### 公司的系统架构
 
@@ -1761,12 +1761,12 @@ Notes
 
 ## 正在完善中
 
-有兴趣加入添加一些部分或者帮助完善某些部分吗？[加入进来吧](#contributing)！
+有兴趣加入添加一些部分或者帮助完善某些部分吗？[加入进来吧](#贡献)！
 
 * 使用 MapReduce 进行分布式计算
 * 一致性哈希
 * 直接存储器访问（DMA）控制器
-* [Contribute](#contributing)
+* [贡献](#贡献)
 
 ## 致谢
 
