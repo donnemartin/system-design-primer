@@ -22,35 +22,35 @@
 
 > 学习如何设计大型系统。
 >
-> 为系统设计面试做准备。
+> 为系统设计的面试做准备。
 
 ### 学习如何设计大型系统
 
-学习如何设计大型系统将会帮助你成为一个更好的工程师。
+学习如何设计可扩展的系统将会有助于你成为一个更好的工程师。
 
 系统设计是一个很宽泛的话题。在互联网上，**关于系统设计原则的资源也是多如牛毛。**
 
-这个仓库就是这些资源的**有组织的集合**，它可以帮助你学习如何构建可扩展的系统。
+这个仓库就是这些资源的**组织收集**，它可以帮助你学习如何构建可扩展的系统。
 
 ### 从开源社区学习
 
 这是一个不断更新的开源项目的初期的版本。
 
-欢迎[贡献](#贡献) ！
+欢迎[贡献](#贡献)！
 
-### 为系统设计面试做准备
+### 为系统设计的面试做准备
 
 在很多科技公司中，除了代码面试，系统设计也是**技术面试过程**中的一个**必要环节**。
 
-**练习普通的系统设计面试题**并且把你的结果和**例子的解答**进行**对照**：讨论，代码和图表。
+**实践常见的系统设计面试题**并且把你的答案和**例子的解答**进行**对照**：讨论，代码和图表。
 
 面试准备的其他主题：
 
 * [学习指引](#学习指引)
-* [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)
-* [系统设计面试题，**含解答**](#系统设计面试题和解答)
-* [面向对象设计面试题，**含解答**](#面向对象设计面试问题及解答)
-* [其它系统设计面试题](#其它系统设计面试题)
+* [如何处理一个系统设计的面试题](#如何处理一个系统设计的面试题)
+* [系统设计的面试题，**含解答**](#系统设计的面试题和解答)
+* [面向对象设计的面试题，**含解答**](#面向对象设计的面试问题及解答)
+* [其它的系统设计面试题](#其它的系统设计面试题)
 
 ## 抽认卡
 
@@ -59,30 +59,30 @@
   <br/>
 </p>
 
-这里提供的[抽认卡堆](https://apps.ankiweb.net/)使用间隔重复的方法帮助你记住系统设计的概念。
+这里提供的[抽认卡堆](https://apps.ankiweb.net/)使用间隔重复的方法，帮助你记忆关键的系统设计概念。
 
-* [系统设计卡堆](resources/flash_cards/System%20Design.apkg)
-* [系统设计练习卡堆](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [面向对象设计练习卡堆](resources/flash_cards/OO%20Design.apkg)
+* [系统设计的卡堆](resources/flash_cards/System%20Design.apkg)
+* [系统设计的练习卡堆](resources/flash_cards/System%20Design%20Exercises.apkg)
+* [面向对象设计的练习卡堆](resources/flash_cards/OO%20Design.apkg)
 
-用起来非常棒。
+随时随地都可使用。
 
-### 代码资源：交互式代码挑战
+### 代码资源：互动式编程挑战
 
-正在寻找资源帮助你准备[**代码面试**](https://github.com/donnemartin/interactive-coding-challenges)?
+你正在寻找资源以准备[**编程面试**](https://github.com/donnemartin/interactive-coding-challenges)吗？
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
   <br/>
 </p>
 
-查看我们的兄弟仓库[**交互式代码挑战**](https://github.com/donnemartin/interactive-coding-challenges)，还包含了一个额外的抽认卡堆：
+请查看我们的姐妹仓库[**互动式编程挑战**](https://github.com/donnemartin/interactive-coding-challenges)，其中包含了一个额外的抽认卡堆：
 
 * [代码卡堆](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## 贡献
 
-> 向社区学习。
+> 从社区中学习。
 
 欢迎提交 PR 提供帮助：
 
@@ -90,15 +90,15 @@
 * 完善章节
 * 添加章节
 
-一些还需要完善的内容放在了[开发中](#正在开发中)。
+一些还需要完善的内容放在了[正在完善中](#正在完善中)。
 
-查看[贡献指导](CONTRIBUTING.md)。
+请查看[贡献指南](CONTRIBUTING.md)。
 
 ## 系统设计主题的索引
 
 > 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都面临着取舍和权衡**。
 >
-> 每个章节都包含更深层次的资源的链接。
+> 每个章节都包含着更的资源的链接。
 
 
 <p align="center">
@@ -106,9 +106,9 @@
   <br/>
 </p>
 
-* [系统设计主题：从这里开始](#系统设计主题：从这里开始)
-    * [第一步：回顾可扩展性的视频讲座](#第一步：回顾可扩展性（scalability）的视频讲座)
-    * [第二步： 回顾可扩展性的文章](#第二步：回顾可扩展性文章)
+* [系统设计主题：从这里开始](#系统设计主题从这里开始)
+    * [第一步：回顾可扩展性的视频讲座](#第一步回顾可扩展性scalability的视频讲座)
+    * [第二步： 回顾可扩展性的文章](#第二步回顾可扩展性文章)
     * [接下来的步骤](#接下来的步骤)
 * [性能与拓展性](#性能与可扩展性)
 * [延迟与吞吐量](#延迟与吞吐量)
@@ -124,38 +124,38 @@
     * [故障切换](#故障切换)
     * [复制](#复制)
 * [域名系统](#域名系统)
-* [CDN](#内容分发网络)
-    * [CDN 推送](#CDN-推送（push）)
-    * [CDN 拉取](#CDN-拉取（pull）)
+* [CDN](#内容分发网络cdn)
+    * [CDN 推送](#cdn-推送push)
+    * [CDN 拉取](#cdn-拉取pull)
 * [负载均衡器](#负载均衡器)
-    * [工作到备用切换(active-passive)](#工作到备用切换（Active-passive）)
-    * [双工作切换(active-active)](#双工作切换（Active-active）)
-    * [4 层负载均衡](#四层负载均衡)
-    * [7 层负载均衡](#七层负载均衡器)
-    * [水平拓展](#水平扩展)
-* [反向代理（web 服务）](#反向代理（web-服务器）)
-    * [负载均衡 vs 反向代理](#负载均衡器-VS-反向代理)
+    * [工作到备用切换（Active-passive）](#工作到备用切换active-passive)
+    * [双工作切换（Active-active）](#双工作切换active-active)
+    * [四层负载均衡](#四层负载均衡)
+    * [七层负载均衡](#七层负载均衡器)
+    * [水平扩展](#水平扩展)
+* [反向代理（web 服务器）](#反向代理web-服务器)
+    * [负载均衡与反向代理](#负载均衡器与反向代理)
 * [应用层](#应用层)
     * [微服务](#微服务)
     * [服务发现](#服务发现)
 * [数据库](#数据库)
-    * [关系型数据库管理系统 (RDBMS)](#关系型数据库管理系统（RDBMS）)
+    * [关系型数据库管理系统（RDBMS）](#关系型数据库管理系统rdbms)
         * [Master-slave 复制集](#主从复制)
         * [Master-master 复制集](#主主复制)
         * [联合](#联合)
         * [分片](#分片)
-        * [反规则化](#非规范化)
-        * [SQL 调优](#SQL-调优)
-    * [NoSQL](#NoSQL)
+        * [非规范化](#非规范化)
+        * [SQL 调优](#sql-调优)
+    * [NoSQL](#nosql)
         * [Key-value 存储](#键-值存储)
         * [文档存储](#文档类型存储)
         * [宽列存储](#列型存储)
         * [图数据库](#图数据库)
-    * [SQL 还是 NoSQL](#SQL-还是-NoSQL)
+    * [SQL 还是 NoSQL](#sql-还是-nosql)
 * [缓存](#缓存)
     * [客户端缓存](#客户端缓存)
-    * [CDN 缓存](#CDN-缓存)
-    * [Web 服务器缓存](#Web-服务器缓存)
+    * [CDN 缓存](#cdn-缓存)
+    * [Web 服务器缓存](#web-服务器缓存)
     * [数据库缓存](#数据库缓存)
     * [应用缓存](#应用缓存)
     * [数据库查询级别的缓存](#数据库查询级别的缓存)
@@ -170,19 +170,19 @@
     * [任务队列](#任务队列)
     * [背压机制](#背压)
 * [通讯](#通讯)
-    * [传输控制协议 (TCP)](#传输控制协议（TCP）)
-    * [用户数据报协议 (UDP)](#用户数据报协议（UDP）)
-    * [远程控制调用 (RPC)](#远程过程调用协议（RPC）)
-    * [表述性状态转移 (REST)](#表述性状态转移（REST）)
-* [网络安全](#安全)
+    * [传输控制协议（TCP）](#传输控制协议tcp)
+    * [用户数据报协议（UDP）](#用户数据报协议udp)
+    * [远程控制调用协议（RPC）](#远程过程调用协议rpc)
+    * [表述性状态转移（REST）](#表述性状态转移rest)
+* [安全](#安全)
 * [附录](#附录)
     * [2 的次方表](#2-的次方表)
     * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
-    * [其它系统设计面试题](#其它系统设计面试题)
+    * [其它的系统设计面试题](#其它的系统设计面试题)
     * [真实架构](#真实架构)
     * [公司的系统架构](#公司的系统架构)
     * [公司工程博客](#公司工程博客)
-* [开发中](#正在开发中)
+* [正在完善中](#正在完善中)
 * [致谢](#致谢)
 * [联系方式](#联系方式)
 * [许可](#许可)
@@ -217,18 +217,17 @@
 | ---------------------------------------- | ---- | ---- | ---- |
 | 阅读 [系统设计主题](#系统设计主题的索引) 以获得一个关于系统如何工作的宽泛的认识 | :+1: | :+1: | :+1: |
 | 阅读一些你要面试的[公司工程博客](#公司工程博客)的文章            | :+1: | :+1: | :+1: |
-| 阅读 [真实世界的架构](#真实架构)                   | :+1: | :+1: | :+1: |
+| 阅读 [真实架构](#真实架构)                   | :+1: | :+1: | :+1: |
 | 复习 [如何处理一个系统设计面试题](#如何处理一个系统设计面试题)       | :+1: | :+1: | :+1: |
-| 完成 [系统设计面试题和解答](#系统设计面试题和解答)             | 一些   | 很多   | 大部分  |
-| 完成 [面向对象设计面试题和解答](#面向对象设计面试问题及解答)        | 一些   | 很多   | 大部分  |
-| 复习 [其它系统设计面试题](#其它系统设计面试题)          | 一些   | 很多   | 大部分  |
-## 如何处理一个系统设计面试题
+| 完成 [系统设计的面试题和解答](#系统设计的面试题和解答)             | 一些   | 很多   | 大部分  |
+| 完成 [面向对象设计的面试题和解答](#面向对象设计的面试问题及解答)        | 一些   | 很多   | 大部分  |
+| 复习 [其它的系统设计面试题](#其它的系统设计面试题)          | 一些   | 很多   | 大部分  |
 
-> 如何处理一个系统设计面试题。
+## 如何处理一个系统设计的面试题
 
 系统设计面试是一个**开放式的对话**。他们期望你去主导这个对话。
 
-你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成[系统设计面试题和解答](#系统设计面试题和解答)这个章节。
+你可以使用下面的步骤来指引讨论。为了巩固这个过程，请使用下面的步骤完成[系统设计的面试题和解答](#系统设计的面试题和解答)这个章节。
 
 ### 第一步：描述使用场景，约束和假设
 
@@ -286,11 +285,11 @@
 
 查看下面的链接以获得我们期望的更好的想法：
 
-* [怎样通过一个系统设计面试](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [系统设计面试](http://www.hiredintech.com/system-design)
-* [系统架构与设计面试简介](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [怎样通过一个系统设计的面试](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [系统设计的面试](http://www.hiredintech.com/system-design)
+* [系统架构与设计的面试简介](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-## 系统设计面试题和解答
+## 系统设计的面试题和解答
 
 > 普通的系统设计面试题和相关事例的论述，代码和图表。
 >
@@ -311,53 +310,53 @@
 
 ### 设计 Pastebin.com (或者 Bit.ly)
 
-[查看练习和解答](solutions/system_design/pastebin/README.md)
+[查看实践与解答](solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
 ### 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索)
 
-[查看练习和解答](solutions/system_design/twitter/README.md)
+[查看实践与解答](solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 
 ### 设计一个网页爬虫
 
-[查看练习和解答](solutions/system_design/web_crawler/README.md)
+[查看实践与解答](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
 ### 设计 Mint.com
 
-[查看练习和解答](solutions/system_design/mint/README.md)
+[查看实践与解答](solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 
 ### 为一个社交网络设计数据结构
 
-[查看练习和解答](solutions/system_design/social_graph/README.md)
+[查看实践与解答](solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
 ### 为搜索引擎设计一个 key-value 储存
 
-[查看练习和解答](solutions/system_design/query_cache/README.md)
+[查看实践与解答](solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-### 通过分类特性设计 Amazon 的销售排名
+### 设计按类别分类的 Amazon 销售排名
 
-[查看练习和解答](solutions/system_design/sales_rank/README.md)
+[查看实践与解答](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
 ### 在 AWS 上设计一个百万用户级别的系统
 
-[查看练习和解答](solutions/system_design/scaling_aws/README.md)
+[查看实践与解答](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## 面向对象设计面试问题及解答
+## 面向对象设计的面试问题及解答
 
 > 常见面向对象设计面试问题及实例讨论，代码和图表演示。
 >
@@ -373,8 +372,8 @@
 | 设计一副牌        | [解决方案](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
 | 设计一个停车场      | [解决方案](solutions/object_oriented_design/parking_lot/parking_lot.ipynb) |
 | 设计一个聊天服务     | [解决方案](solutions/object_oriented_design/online_chat/online_chat.ipynb) |
-| 设计一个环形数组     | [待解决](#contributing)                     |
-| 添加一个面向对象设计问题 | [待解决](#contributing)                     |
+| 设计一个环形数组     | [待解决](#贡献)                     |
+| 添加一个面向对象设计问题 | [待解决](#贡献)                     |
 
 ## 系统设计主题：从这里开始
 
@@ -468,7 +467,7 @@
 
 响应节点上可用数据的最近版本可能并不是最新的。当分区解析完后，写入（操作）可能需要一些时间来传播。
 
-如果业务需求允许[最终一致性](#eventual-consistency)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
+如果业务需求允许[最终一致性](#最终一致性)，或当有外部故障时要求系统继续运行，AP 是一个不错的选择。
 
 ### 来源及延伸阅读
 
@@ -478,7 +477,7 @@
 
 ## 一致性模式
 
-有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 定理](#cap-theorem)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
+有同一份数据的多份副本，我们面临着怎样同步它们的选择，以便让客户端有一致的显示数据。回想 [CAP 理论](#cap-理论)中的一致性定义 ─ 每次访问都能获得最新数据但可能会收到错误响应
 
 
 ### 弱一致性
@@ -525,7 +524,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 双工作切换也可以称为主主切换。
 
-### 缺陷:故障切换
+### 缺陷：故障切换
 
 * 故障切换需要添加额外硬件并增加复杂性。
 * 如果新写入数据在能被复制到备用系统之前，工作系统出现了故障，则有可能会丢失数据。
@@ -534,10 +533,10 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 #### 主─从复制和主─主复制
 
-这个主题进一步探讨了[数据库](#database)部分:
+这个主题进一步探讨了[数据库](#数据库)部分:
 
-* [主─从复制](#master-slave-replication)
-* [主─主复制](#master-master-replication)
+* [主─从复制](#主从复制)
+* [主─主复制](#主主复制)
 
 ## 域名系统
 
@@ -577,7 +576,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [关于 DNS 的文章](https://support.dnsimple.com/categories/dns/)
 
-## 内容分发网络
+## 内容分发网络（CDN）
 
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg">
@@ -585,7 +584,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
   <strong><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">来源：为什么使用 CDN</a></strong>
 </p>
 
-内容分发网络是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
+内容分发网络（CDN）是一个全球性的代理服务器分布式网络，它从靠近用户的位置提供内容。通常，HTML/CSS/JS，图片和视频等静态内容由 CDN 提供，虽然亚马逊 CloudFront 等也支持动态内容。CDN 的 DNS 解析会告知客户端连接哪台服务器。
 
 将内容存储在 CDN 上可以从两个方面来提供性能:
 
@@ -594,11 +593,11 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 ### CDN 推送（push）
 
-当你服务器上内容发生变动时，推送 CDN 接受新内容。你负责提供内容，直接推送给 CDN 并重写 URL 地址以指向 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，最小化流量，但最大化存储空间。
+当你服务器上内容发生变动时，推送 CDN 接受新内容。直接推送给 CDN 并重写 URL 地址以指向你的内容的 CDN 地址。你可以配置内容到期时间及何时更新。内容只有在更改或新增是才推送，流量最小化，但储存最大化。
 
 ### CDN 拉取（pull）
 
-CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。这样请求会更慢，直到内容被缓存在 CDN 上。
+CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源。你将内容留在自己的服务器上并重写 URL 指向 CDN 地址。直到内容被缓存在 CDN 上为止，这样请求只会更慢，
 
 [存活时间（TTL）](https://en.wikipedia.org/wiki/Time_to_live)决定缓存多久时间。CDN 拉取方式最小化 CDN 上的储存空间，但如果过期文件并在实际更改之前被拉取，则会导致冗余的流量。
 
@@ -637,7 +636,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
     * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
 * **Session 留存** ─ 如果 Web 应用程序不追踪会话，发出 cookie 并将特定客户端的请求路由到同一实例。
 
-通常会设置采用[工作─备用](#active-passive) 或 [双工作](#active-active) 模式的多个负载均衡器，以免发生故障。
+通常会设置采用[工作─备用](#工作到备用切换active-passive) 或 [双工作](#双工作切换active-active) 模式的多个负载均衡器，以免发生故障。
 
 负载均衡器能基于多种方式来路由流量:
 
@@ -645,16 +644,16 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * 最少负载
 * Session/cookie
 * [轮询调度或加权轮询调度算法](http://g33kinfo.com/info/archives/2657)
-* [四层负载均衡](#layer-4-load-balancing)
-* [七层负载均衡](#layer-7-load-balancing)
+* [四层负载均衡](#四层负载均衡)
+* [七层负载均衡](#七层负载均衡)
 
 ### 四层负载均衡
 
-四层负载均衡根据监看[传输层](#communication)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
+四层负载均衡根据监看[传输层](#通讯)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
 
 ### 七层负载均衡器
 
-七层负载均衡器根据监控[应用层](#communication)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
+七层负载均衡器根据监控[应用层](#通讯)来决定怎样分发请求。这会涉及请求头的内容，消息和 cookie。七层负载均衡器终结网络流量，读取消息，做出负载均衡判定，然后传送给特定服务器。比如，一个七层负载均衡器能直接将视频流量连接到托管视频的服务器，同时将更敏感的用户账单流量引导到安全性更强的服务器。
 
 以损失灵活性为代价，四层负载均衡比七层负载均衡花费更少时间和计算资源，虽然这对现代商用硬件的性能影响甚微。
 
@@ -666,7 +665,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 * 水平扩展引入了复杂度并涉及服务器复制
     * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
-    * session 可以集中存储在数据库或持久化[缓存](#cache)（Redis、Memcached）的数据存储区中。
+    * session 可以集中存储在数据库或持久化[缓存](#缓存)（Redis、Memcached）的数据存储区中。
 * 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
 ### 缺陷：负载均衡器
@@ -710,11 +709,11 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
   - 视频
   - 等等
 
-### 负载均衡器 VS 反向代理
+### 负载均衡器与反向代理
 
 - 当你有多个服务器时，部署负载均衡器非常有用。通常，负载均衡器将流量路由给一组功能相同的服务器上。
 - 即使只有一台 web 服务器或者应用服务器时，反向代理也有用，可以参考上一节介绍的好处。
-- NGINX 和 HAProxy 等解决方案可以同时支持第 7 层反向代理和负载均衡。
+- NGINX 和 HAProxy 等解决方案可以同时支持第七层反向代理和负载均衡。
 
 ### 不利之处：反向代理
 
@@ -724,7 +723,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 
-- [反向代理 VS 负载均衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+- [反向代理与负载均衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
 - [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 - [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 - [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
@@ -741,7 +740,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 **单一职责原则**提倡小型的，自治的服务共同合作。小团队通过提供小型的服务，可以更激进地计划增长。
 
-应用层中的工作进程也有可以实现[异步化](#asynchronism)。
+应用层中的工作进程也有可以实现[异步化](#异步)。
 
 ### 微服务
 
@@ -751,7 +750,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 服务发现
 
-像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议（HTTP）) 路径。 Consul 和 Etcd 都有一个内建的 [key-value 存储](#键-值存储) 用来存储配置信息和其他的共享信息。
+像 [Consul](https://www.consul.io/docs/index.html)，[Etcd](https://coreos.com/etcd/docs/latest) 和 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 这样的系统可以通过追踪注册名、地址、端口等信息来帮助服务互相发现对方。[Health checks](https://www.consul.io/intro/getting-started/checks.html) 可以帮助确认服务的完整性和是否经常使用一个 [HTTP](#超文本传输协议http) 路径。Consul 和 Etcd 都有一个内建的 [key-value 存储](#键-值存储) 用来存储配置信息和其他的共享信息。
 
 ### 不利之处：应用层
 
@@ -803,7 +802,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ##### 不利之处：主从复制
 
 - 将从库提升为主库需要额外的逻辑。
-- 参考[不利之处：复制](#disadvantages-replication)中，主从复制和主主复制**共同**的问题。
+- 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
@@ -820,7 +819,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 - 你需要添加负载均衡器或者在应用逻辑中做改动，来确定写入哪一个数据库。
 - 多数主-主系统要么不能保证一致性（违反 ACID），要么因为同步产生了写入延迟。
 - 随着更多写入节点的加入和延迟的提高，如何解决冲突显得越发重要。
-- 参考[不利之处：复制](#disadvantages-replication)中，主从复制和主主复制**共同**的问题。
+- 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 ##### 不利之处：复制
 
@@ -870,7 +869,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 分片将数据分配在不同的数据库上，使得每个数据库仅管理整个数据集的一个子集。以用户数据库为例，随着用户数量的增加，越来越多的分片会被添加到集群中。
 
-类似[联合](#federation)的优点，分片可以减少读取和写入流量，减少复制并提高缓存命中率。也减少了索引，通常意味着查询更快，性能更好。如果一个分片出问题，其他的仍能运行，你可以使用某种形式的冗余来防止数据丢失。类似联合，没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
+类似[联合](#联合)的优点，分片可以减少读取和写入流量，减少复制并提高缓存命中率。也减少了索引，通常意味着查询更快，性能更好。如果一个分片出问题，其他的仍能运行，你可以使用某种形式的冗余来防止数据丢失。类似联合，没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
 
 常见的做法是用户姓氏的首字母或者用户的地理位置来分隔用户表。
 
@@ -892,7 +891,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 非规范化试图以写入性能为代价来换取读取性能。在多个表中冗余数据副本，以避免高成本的联结操作。一些关系型数据库，比如 [PostgreSQl](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支持[物化视图](https://en.wikipedia.org/wiki/Materialized_view)，可以处理冗余信息存储和保证冗余副本一致。
 
-当数据使用诸如[联合](#federation)和[分片](#sharding)等技术被分割，进一步提高了处理跨数据中心的联结操作复杂度。非规范化可以规避这种复杂的联结操作。
+当数据使用诸如[联合](#联合)和[分片](#分片)等技术被分割，进一步提高了处理跨数据中心的联结操作复杂度。非规范化可以规避这种复杂的联结操作。
 
 在多数系统中，读取操作的频率远高于写入操作，比例可达到 100:1，甚至 1000:1。需要复杂的数据库联结的读取操作成本非常高，在磁盘操作上消耗了大量时间。
 
@@ -958,15 +957,15 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 
 ### NoSQL
 
-NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#eventual-consistency)。
+NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或**图数据库**的统称。数据库是非规范化的，表联结大多在应用程序代码中完成。大多数 NoSQL 无法实现真正符合 ACID 的事务，支持[最终一致](#最终一致性)。
 
-**BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 定理](#cap-theorem)，BASE 强调可用性超过一致性。
+**BASE** 通常被用于描述 NoSQL 数据库的特性。相比 [CAP 理论](#cap-理论)，BASE 强调可用性超过一致性。
 
 - **基本可用** - 系统保证可用性。
 - **软状态** - 即使没有输入，系统状态也可能随着时间变化。
 - **最终一致性** - 经过一段时间之后，系统最终会变一致，因为系统在此期间没有收到任何输入。
 
-除了在 [SQL 还是 NoSQL](#sql-or-nosql) 之间做选择，了解哪种类型的 NoSQL 数据库最适合你的用例也是非常有帮助的。我们将在下一节中快速了解下 **键-值存储**、**文档型存储**、**列型存储**和**图存储**数据库。
+除了在 [SQL 还是 NoSQL](#sql-还是-nosql) 之间做选择，了解哪种类型的 NoSQL 数据库最适合你的用例也是非常有帮助的。我们将在下一节中快速了解下 **键-值存储**、**文档型存储**、**列型存储**和**图存储**数据库。
 
 #### 键-值存储
 
@@ -1039,7 +1038,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 在图数据库中，一个节点对应一条记录，一个弧对应两个节点之间的关系。图数据库被优化用于表示外键繁多的复杂关系或多对多关系。
 
-图数据库为存储复杂关系的数据模型，如社交网络，提供了很高的性能。它们相对较新，尚未广泛应用，查找开发工具或者资源相对较难。许多图只能通过 [REST API](#representational-state-transfer-restE) 访问。
+图数据库为存储复杂关系的数据模型，如社交网络，提供了很高的性能。它们相对较新，尚未广泛应用，查找开发工具或者资源相对较难。许多图只能通过 [REST API](#表述性状态转移rest) 访问。
 
 ##### 相关资源和延伸阅读：图
 - [图数据库](https://en.wikipedia.org/wiki/Graph_database)
@@ -1109,15 +1108,15 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ### 客户端缓存
 
-缓存可以位于客户端（操作系统或者浏览器），[服务端](#reverse-proxy)或者不同的缓存层。
+缓存可以位于客户端（操作系统或者浏览器），[服务端](#反向代理web-服务器)或者不同的缓存层。
 
 ### CDN 缓存
 
-[CDNs](#content-delivery-network) 也被视为一种缓存。
+[CDN](#内容分发网络cdn) 也被视为一种缓存。
 
 ### Web 服务器缓存
 
-[反向代理](#reverse-proxy-web-server)和缓存（比如 [Varnish](https://www.varnish-cache.org/)）可以直接提供静态和动态内容。Web 服务器同样也可以缓存请求，返回相应结果而不必连接应用服务器。
+[反向代理](#反向代理web-服务器)和缓存（比如 [Varnish](https://www.varnish-cache.org/)）可以直接提供静态和动态内容。Web 服务器同样也可以缓存请求，返回相应结果而不必连接应用服务器。
 
 ### 数据库缓存
 
@@ -1528,7 +1527,7 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 
 ## 安全
 
-这一部分需要更多内容。[一起来吧](#contributing)！
+这一部分需要更多内容。[一起来吧](#贡献)！
 
 安全是一个宽泛的话题。除非你有相当的经验、安全方面背景或者正在申请的职位要求安全知识，你不需要了解安全基础知识以外的内容：
 
@@ -1612,7 +1611,7 @@ Notes
 * [关于建设大型分布式系统的的设计方案、课程和建议](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [关于建设大型可拓展分布式系统的软件工程咨询](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### 其它系统设计面试题
+### 其它的系统设计面试题
 
 > 常见的系统设计面试问题，给出了如何解决的方案链接
 
@@ -1639,7 +1638,7 @@ Notes
 | 设计一个数据源于多个数据中心的服务系统     | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | 设计一个多人网络卡牌游戏            | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | 设计一个垃圾回收系统              | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| 添加更多的系统设计问题             | [Contribute](#contributing)              |
+| 添加更多的系统设计问题             | [贡献](#贡献)              |
 
 ### 真实架构
 
@@ -1679,7 +1678,7 @@ Notes
 | Misc            | **Dapper** - 分布式系统跟踪基础设施 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf) |
 | Misc            | **Kafka** - LinkedIn 的发布订阅消息系统 | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc            | **Zookeeper** - 集中的基础架构和协调服务 | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-|                 | 添加更多                      | [Contribute](#contributing)              |
+|                 | 添加更多                      | [贡献](#贡献)              |
 
 ### 公司的系统架构
 
@@ -1760,14 +1759,14 @@ Notes
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## 正在开发中
+## 正在完善中
 
-有兴趣加入添加一些部分或者帮助完善某些部分吗？[加入进来吧](#contributing)！
+有兴趣加入添加一些部分或者帮助完善某些部分吗？[加入进来吧](#贡献)！
 
 * 使用 MapReduce 进行分布式计算
 * 一致性哈希
 * 直接存储器访问（DMA）控制器
-* [Contribute](#contributing)
+* [贡献](#贡献)
 
 ## 致谢
 
