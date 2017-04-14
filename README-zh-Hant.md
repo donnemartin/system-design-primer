@@ -78,7 +78,7 @@
 
 查看我们的兄弟仓库[**交互式代码挑战**](https://github.com/donnemartin/interactive-coding-challenges)，还包含了一个额外的抽认卡堆：
 
-* [代码卡堆](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [代码卡堆](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## 贡献
 
@@ -1791,7 +1791,7 @@ Notes
 
 可以在我的 [GitHub 主页](https://github.com/donnemartin)上找到我的联系方式
 
-## 许可 
+## 许可
 
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
