@@ -1,17 +1,11 @@
+*[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+
 # The System Design Primer
 
 <p align="center">
   <img src="http://i.imgur.com/jj3A5N8.png">
   <br/>
 </p>
-
-## Translations
-
-Interested in [translating](https://github.com/donnemartin/system-design-primer/issues/28)?  Translations in progress:
-
-* [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
-* [Simplified Chinese translation](https://github.com/donnemartin/system-design-primer/issues/38)
-* [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
 
 ## Motivation
 
@@ -84,6 +78,7 @@ Feel free to submit pull requests to help:
 * Fix errors
 * Improve sections
 * Add new sections
+* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
 
 Content that needs some polishing is placed [under development](#under-development).
 
