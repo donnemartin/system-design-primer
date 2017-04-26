@@ -1,3 +1,5 @@
+*[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+
 # The System Design Primer
 
 <p align="center">
@@ -65,7 +67,7 @@ Looking for resources to help you prep for the [**Coding Interview**](https://gi
 
 Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
-* [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Contributing
 
@@ -76,14 +78,11 @@ Feel free to submit pull requests to help:
 * Fix errors
 * Improve sections
 * Add new sections
+* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
 
 Content that needs some polishing is placed [under development](#under-development).
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
-
-### Translations
-
-Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
 
 ## Index of system design topics
 
@@ -456,7 +455,7 @@ Waiting for a response from the partitioned node might result in a timeout error
 
 #### AP - availability and partition tolerance
 
-Responses return the most recent version of the data, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Responses return the most recent version of the data available on the a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 
@@ -589,7 +588,7 @@ Sites with a small amount of traffic or sites with content that isn't often upda
 
 ### Pull CDNs
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the server.
+Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
 
 A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
 
