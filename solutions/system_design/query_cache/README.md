@@ -1,8 +1,8 @@
 # 设计一个键-值缓存来存储最近 web 服务查询的结果
 
-*Note：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。*
+**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
-## Step 1：简述用例与约束条件
+## 第一步：简述用例与约束条件
 
 > 搜集需求与问题的范围。
 > 提出问题来明确用例与约束条件。
@@ -20,16 +20,16 @@
 
 ### 限制条件与假设
 
-#### 状态假设
+#### 提出假设
 
 * 网络流量不是均匀分布的
     * 经常被查询的内容应该一直存于缓存中
     * 需要确定如何规定缓存过期、缓存刷新规则
-* 缓存提供的服务需要快速查询
+* 缓存提供的服务查询速度要快
 * 机器间延迟较低
 * 缓存有内存限制
     * 需要决定缓存什么、移除什么
-    * 需要缓存百万的查询
+    *  需要缓存百万级的查询
 * 1000 万用户
 * 每个月 100 亿次查询
 
@@ -54,24 +54,24 @@
 * 每秒 40 个请求 = 每个月 1 亿次请求
 * 每秒 400 个请求 = 每个月 10 亿次请求
 
-## Step 2：创建概要设计
+## 第二步：概要设计
 
 > 列出所有重要组件以规划概要设计。
 
 ![Imgur](http://i.imgur.com/KqZ3dSx.png)
 
-## Step 3：设计核心组件
+## 第三步：设计核心组件
 
 > 深入每个核心组件的细节。
 
 ### 用例：用户发送了一次请求，命中了缓存
 
-常用的查询可以由例如 Redis 或者 Memcached 之类的**内存缓存**提供支持，以减少数据读取延迟，并且避免**反向索引服务**以及**文档服务**的过载。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+常用的查询可以由例如 Redis 或者 Memcached 之类的**内存缓存**提供支持，以减少数据读取延迟，并且避免**反向索引服务**以及**文档服务**的过载。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
 
-由于缓存容量有限，我们将使用 LRU（近期最少使用算法）来控制那些被缓存了很久却没有被使用过的数据的过期。
+由于缓存容量有限，我们将使用 LRU（近期最少使用算法）来控制缓存的过期。
 
-* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务**发送一个请求
-* 这个 **Web 服务**将请求转发给**查询 API** 服务
+* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
+* 这个 **Web 服务器**将请求转发给**查询 API** 服务
 * **查询 API** 服务将会做这些事情：
     * 分析查询
         * 移除多余的内容
@@ -85,7 +85,7 @@
             * 返回缓存内容
         * 否则，**查询 API** 将会做以下事情：
             * 使用**反向索引服务**来查找匹配查询的文档
-                * **反向索引服务**对匹配到的结果进行排名，然后返回最符合的一个结果
+                * **反向索引服务**对匹配到的结果进行排名，然后返回最符合的结果
             * 使用**文档服务**返回文章标题与片段
             * 更新**内存缓存**，存入内容，将**内存缓存**入口位置指向 LRU 链表的头部
 
@@ -183,7 +183,7 @@ class Cache(object):
             node.results = results
             self.linked_list.move_to_front(node)
         else:
-            # 键不存在与缓存中
+            # 键不存在于缓存中
             if self.size == self.MAX_SIZE:
                 # 在链表中查找并删除最老的记录
                 self.lookup.pop(self.linked_list.tail.query, None)
@@ -204,25 +204,25 @@ class Cache(object):
 * 页面被移除或者加入了新页面
 * 页面的权值发生变动
 
-解决这些问题的最直接的方法，就是为缓存记录设置一个它在更新前能留在缓存中的最长时间，这个时间简称为存活时间（TTL）。
+解决这些问题的最直接的方法，就是为缓存记录设置一个它在被更新前能留在缓存中的最长时间，这个时间简称为存活时间（TTL）。
 
-参考 [《何时更新缓存》](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#何时更新缓存)来了解其权衡取舍及替代方案。以上方法在[缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)一章中详细地进行了描述。
+参考 [「何时更新缓存」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#何时更新缓存)来了解其权衡取舍及替代方案。以上方法在[缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)一章中详细地进行了描述。
 
-## Step 4：规模设计
+## 第四步：架构扩展
 
-> 找到并解决瓶颈，给出限制范围。
+> 根据限制条件，找到并解决瓶颈。
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-**重要提示：不要从最初设计简单地跳到最终设计中！**
+**重要提示：不要从最初设计直接跳到最终设计中！**
 
-现在你要 1) **基准测试、负载测试**。2) **分析、描述**性能瓶颈。3) 对替代方案与权衡评估中解决瓶颈问题。4) 重复以上步骤。请阅读[《设计一个系统，并将其扩大到为数以百万计的 AWS 用户服务》](../scaling_aws/README.md) 来了解如何逐步扩大初始设计。
+现在你要 1) **基准测试、负载测试**。2) **分析、描述**性能瓶颈。3) 在解决瓶颈问题的同时，评估替代方案、权衡利弊。4) 重复以上步骤。请阅读[「设计一个系统，并将其扩大到为数以百万计的 AWS 用户服务」](../scaling_aws/README.md) 来了解如何逐步扩大初始设计。
 
-描述你的初始设计会遇到怎样的瓶颈与如将如何解决它们是很重要的事情。例如加上一个多个 **Web 服务**的**负载均衡器**是否能够解决问题？**CDN**呢？**主从复制**呢？它们每个的替代方案和需要**权衡**的点又有什么呢？
+讨论初始设计可能遇到的瓶颈及相关解决方案是很重要的。例如加上一个配置多台 **Web 服务器**的**负载均衡器**是否能够解决问题？**CDN**呢？**主从复制**呢？它们各自的替代方案和需要**权衡**的利弊又有什么呢？
 
-我们将会介绍一些组件来完成设计，并解决架构缩放性问题。内置的负载均衡器将不做讨论以节省篇幅。
+我们将会介绍一些组件来完成设计，并解决架构扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
 
-*为了避免重复讨论*，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其总的要点、方案的权衡取舍以及可选的替代方案。
+**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
 
 * [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
 * [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
@@ -285,20 +285,20 @@ class Cache(object):
 * [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
 * [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
 
-### 交流
+### 通信
 
 * 可权衡选择的方案：
-    * 与客户端的外部交流 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-    * 内部交流 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
+    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
+    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
 * [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
 
 ### 安全性
 
-请参阅[《安全》](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)一章。
+请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)一章。
 
 ### 延迟数值
 
-请参阅[《每个程序员都应该知道的延迟数》](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
+请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
 
 ### 持续探讨
 
