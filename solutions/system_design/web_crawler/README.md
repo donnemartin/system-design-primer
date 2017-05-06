@@ -22,7 +22,7 @@
 
 #### 无需考虑  
 
-* 搜素分析
+* 搜索分析
 * 个性化搜索结果
 * 页面排名
 
@@ -36,22 +36,22 @@
 * 用户很快就能看到搜索结果
 * 网页爬虫不应该陷入死循环
     * 当爬虫路径包含环的时候，将会陷入死循环
-* 抓取 100 万个链接
+* 抓取 10 亿个链接
     * 要定期重新抓取页面以确保新鲜度
     * 平均每周重新抓取一次，网站越热门，那么重新抓取的频率越高
-        * 每月抓取 400 万个链接
-    * 每个页面的平均存储大小： 500 KB 
+        * 每月抓取 40 亿个链接
+    * 每个页面的平均存储大小：500 KB 
         * 简单起见，重新抓取的页面算作新页面
 * 每月搜索量 1000 亿次
 
-用更传统的系统来练习 —— 不要使用现成的系统，比如： [solr](http://lucene.apache.org/solr/) 或者 [nutch](http://nutch.apache.org/)。 
+用更传统的系统来练习 —— 不要使用 [solr](http://lucene.apache.org/solr/) 、[nutch](http://nutch.apache.org/) 之类的现成系统。 
 
 #### 计算用量
 
 **如果你需要进行粗略的用量计算，请向你的面试官说明。**
 
 * 每月存储 2 PB 页面
-    * 每月抓取 400 万个页面，每个页面 500 KB  
+    * 每月抓取 40 亿个页面，每个页面 500 KB  
     * 三年存储 72 PB 页面
 * 每秒 1600 次写请求
 * 每秒 40000 次搜索请求  
@@ -75,11 +75,11 @@
 
 ### 用例：爬虫服务抓取一系列网页 
 
-假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用知名门户网站作为种子链接来进行扩散，例如： [Yahoo](https://www.yahoo.com/)、 [DMOZ](http://www.dmoz.org/)，等等。 
+假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用 [Yahoo](https://www.yahoo.com/)、[DMOZ](http://www.dmoz.org/) 等知名门户网站作为种子链接来进行扩散 。 
 
 我们将用表 `crawled_links` （已抓取链接 ）来记录已经处理过的链接以及相应的页面签名。  
 
-我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型  **NoSQL 数据库**。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。 
+我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型 **NoSQL 数据库**中。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。 
 
 *  **爬虫服务**按照以下流程循环处理每一个页面链接：
     * 选取排名最靠前的待抓取链接
@@ -183,7 +183,7 @@ class Crawler(object):
 删除重复链接： 
 
 * 假设数据量较小，我们可以用类似于 `sort | unique` 的方法。（译注： 先排序，后去重）
-* 假设有 100 万条数据，我们应该使用 **MapReduce** 来输出只出现 1 次的记录。
+* 假设有 10 亿条数据，我们应该使用 **MapReduce** 来输出只出现 1 次的记录。
 
 ```
 class RemoveDuplicateUrls(MRJob):
