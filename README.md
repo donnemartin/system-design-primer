@@ -1,17 +1,11 @@
+*[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+
 # The System Design Primer
 
 <p align="center">
   <img src="http://i.imgur.com/jj3A5N8.png">
   <br/>
 </p>
-
-## Translations
-
-Interested in [translating](https://github.com/donnemartin/system-design-primer/issues/28)?  Translations in progress:
-
-* [Brazilian Portuguese translation](https://github.com/donnemartin/system-design-primer/issues/40)
-* [Simplified Chinese translation](https://github.com/donnemartin/system-design-primer/issues/38)
-* [Turkish translation](https://github.com/donnemartin/system-design-primer/issues/39)
 
 ## Motivation
 
@@ -73,7 +67,7 @@ Looking for resources to help you prep for the [**Coding Interview**](https://gi
 
 Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
-* [Coding deck](anki_cards/https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Contributing
 
@@ -84,6 +78,7 @@ Feel free to submit pull requests to help:
 * Fix errors
 * Improve sections
 * Add new sections
+* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
 
 Content that needs some polishing is placed [under development](#under-development).
 
@@ -648,7 +643,7 @@ Load balancers can route traffic based on various metrics, including:
 
 Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
 
-### layer 7 load balancing
+### Layer 7 load balancing
 
 Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
 
@@ -1780,6 +1775,10 @@ Feel free to contact me to discuss any issues, questions, or comments.
 My contact info can be found on my [GitHub page](https://github.com/donnemartin).
 
 ## License
+
+*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+
+    Copyright 2017 Donne Martin
 
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 

@@ -349,7 +349,7 @@ We'll introduce some components to complete the design and to address scalabilit
 * [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
 * [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
 * [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Asynchronism](https://github.com/donnemartin/system-design-primer#aysnchronism)
+* [Asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism)
 * [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
