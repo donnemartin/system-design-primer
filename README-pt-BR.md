@@ -151,7 +151,7 @@ Interested in **translating**?  Please see the following [ticket](https://github
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Segurança](#Segurança)
+* [Segurança](#seguranca)
 * [Appendix](#appendix)
     * [Powers of two table](#powers-of-two-table)
     * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
@@ -1493,7 +1493,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Segurança
+## Segurança <a name='seguranca'></a>
 
 Essa seção poderia ter algumas atualizações. [Contribua](#contributing)!
 
