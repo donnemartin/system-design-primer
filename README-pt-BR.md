@@ -151,7 +151,7 @@ Interested in **translating**?  Please see the following [ticket](https://github
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
+* [Segurança](#Segurança)
 * [Appendix](#appendix)
     * [Powers of two table](#powers-of-two-table)
     * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
@@ -1493,20 +1493,22 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Security
+## Segurança
 
-This section could use some updates.  Consider [contributing](#contributing)!
+Essa seção poderia ter algumas atualizações. [Contribua](#contributing)!
 
-Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+Segurança é um tópico abrangente. A não ser que você tenha muita experiência com segurança ou você está se aplicando para uma posição que exija conhecimento em segurança, você provavelmente não irá precisar conhecer muito além do básico:
 
-* Encrypt in transit and at rest.
-* Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
-* Use parameterized queries to prevent SQL injection.
-* Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-### Source(s) and further reading
+* Criptografe dados em trânsito e em descanso
+* Limpe todos os inputs de usuário ou qualquer paramêtro de input que foi passado ao usuário para previnir [XSS](https://pt.wikipedia.org/wiki/Cross-site_scripting) e [Injeção de SQL](https://br.wikipedia.org/wiki/SQL_injection)
 
-* [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
+* Use consultas SQL parametrizadas para prevenir injeção de SQL.
+* Use o princípio do [privilégio mínimo](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+
+### Fonte(s) e leituras adicionais
+
+* [Guia de segurança para desenvolvedores](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
 ## Appendix
