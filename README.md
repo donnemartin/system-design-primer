@@ -48,7 +48,7 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+The provided [Anki flashcard decks](https://apps.ankiweb.net/) uses spaced repetition to help you retain key system design concepts.
 
 * [System design deck](resources/flash_cards/System%20Design.apkg)
 * [System design exercises deck](resources/flash_cards/System%20Design%20Exercises.apkg)
