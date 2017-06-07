@@ -13,13 +13,13 @@
 > Ask questions to clarify use cases and constraints.
 > Discuss assumptions.
 
-> 收集需求和问题域。
+> 收集需求并调查问题。
 > 通过提问清晰用例和约束。
 > 讨论假设。
 
 Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
 
-如果没有访谈人员提出明确的问题，我们将自己定义一些用例和约束条件。
+如果没有面试官提出明确的问题，我们将自己定义一些用例和约束条件。
 
 ### Use cases
 
@@ -91,7 +91,7 @@ Unless you have a background in AWS or are applying for a position that requires
 
 **Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
 
-**如果你应该做一个粗略的使用计算，需要和你的访谈人员明确这一点**
+**向你的面试官厘清你是否应该做粗略的使用计算**
 
 * 1 TB of new content per month
     * 1 KB per write * 1 billion writes per month
@@ -119,7 +119,7 @@ Handy conversion guide:
 * 250 万秒 / 月
 * 1 次请求 / 秒 = 250 万次请求 / 月
 * 40 次请求 / 秒 = 1 亿次请求 / 月
-* 400 请求 / 秒 = 10 亿请求 / 月
+* 400 次请求 / 秒 = 10 亿请求 / 月
 
 ## Step 2: Create a high level design
 
@@ -229,7 +229,7 @@ The constraints assume there is a need for relational data.  We can start off us
 
 Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
 
-添加 **DNS** 服务，比如 53 号路由，将域映射到实例的公共 IP 中。
+添加 **DNS** 服务，比如 Route 53（[Amazon Route 53](https://aws.amazon.com/cn/route53/) - 译者注），将域映射到实例的公共 IP 中。
 
 *Trade-offs, alternatives, and additional details:*
 
@@ -304,7 +304,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
     * AWS costs could also increase, but should be weighed with the costs of managing similar systems on your own
 
 * 减轻单台服务器负载并且允许独立扩展
-    * 在 **对象存储中** 单独存储静态内容
+    * 在 **对象存储** 中单独存储静态内容
     * 将 **MySQL 数据库** 迁移到单独的服务器上
 * 缺点
     * 这些变化会增加复杂性，并要求对 **Web服务器** 进行更改，以指向 **对象存储** 和 **MySQL 数据库**
@@ -325,7 +325,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
     * Images
     * Videos
 
-* 考虑使用托管像 S3 的 **对象存储** 来存储静态内容
+* 考虑使用像 S3 这样可管理的 **对象存储** 服务来存储静态内容
     * 高扩展性和可靠性
     * 服务器端加密
 * 迁移静态内容到 S3
@@ -346,7 +346,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 
 * 考虑使用类似 RDS 的服务来管理 **MySQL 数据库**
     * 简单的管理，扩展
-    * 多可用空间
+    * 多个可用区域
     * 空闲时加密
 
 #### Secure the system
@@ -365,7 +365,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
     * 为单个 **Web 服务器** 创建一个公共子网，这样就可以发送和接收来自 internet 的流量
     * 为其他内容创建一个私有子网，禁止外部访问
     * 在每个组件上只为白名单 IP 打开端口
-* 这些相同的模式在剩下的练习中应该同样为新组件实现
+* 这些相同的模式应当在新的组件的实现中实践
 
 *Trade-offs, alternatives, and additional details:*
 
@@ -387,7 +387,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 
 Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Server** bottlenecks during peak hours, resulting in slow responses and in some cases, downtime.  As the service matures, we'd also like to move towards higher availability and redundancy.
 
-我们的 **基准/负载测试** 和 **分析** 显示，在高峰时段，我们的单一 **Web服务器** 存在瓶颈，导致响应缓慢，在某些情况下还会宕机。随着服务的成熟，我们也希望朝着更高的可用性和冗余发展。
+我们的 **基准/负载测试** 和 **性能测试** 显示，在高峰时段，我们的单一 **Web服务器** 存在瓶颈，导致响应缓慢，在某些情况下还会宕机。随着服务的成熟，我们也希望朝着更高的可用性和冗余发展。
 
 #### Goals
 
@@ -408,15 +408,15 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
     * For example, you can add **Application Servers** handling **Read APIs** while others handle **Write APIs**
 * Move static (and some dynamic) content to a [**Content Delivery Network (CDN)**](https://github.com/donnemartin/system-design-primer#content-delivery-network) such as CloudFront to reduce load and latency
 
-* 下面的目标试图用 **Web服务器** 解决伸缩性问题
+* 下面的目标试图用 **Web服务器** 解决扩展问题
     * 基于 **基准/负载测试** 和 **分析**，你可能只需要实现其中的一两个技术
 * 使用 [**横向扩展**](https://github.com/donnemartin/system-design-primer#horizontal-scaling) 来处理增加的负载和单点故障
     * 添加 [**负载均衡器**](https://github.com/donnemartin/system-design-primer#load-balancer) 例如 Amazon 的 ELB 或 HAProxy
         * ELB 是高可用的
-        * 如果你正在配置自己的 **负载均衡器**, 在多个可用性区域中设置多台服务器用于 [双活](https://github.com/donnemartin/system-design-primer#active-active) 或 [主被动活动](https://github.com/donnemartin/system-design-primer#active-passive) 将提高可用性
+        * 如果你正在配置自己的 **负载均衡器**, 在多个可用区域中设置多台服务器用于 [双活](https://github.com/donnemartin/system-design-primer#active-active) 或 [主被](https://github.com/donnemartin/system-design-primer#active-passive) 将提高可用性
         * 终止在 **负载平衡器** 上的SSL，以减少后端服务器上的计算负载，并简化证书管理
-    * 在多个可用性区域中使用多台 **Web服务器**
-    * 在多个可用性区域的 [**主-从 故障转移**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 模式中使用多个 **MySQL** 实例来改进冗余
+    * 在多个可用区域中使用多台 **Web服务器**
+    * 在多个可用区域的 [**主-从 故障转移**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 模式中使用多个 **MySQL** 实例来改进冗余
 * 分离 **Web 服务器** 和 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer)
     * 独立扩展和配置每一层
     * **Web 服务器** 可以作为 [**反向代理**](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
@@ -492,9 +492,9 @@ Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100
 * Add **Load Balancers** in front of **MySQL Read Replicas** (not pictured to reduce clutter)
 * Most services are read-heavy vs write-heavy
 
-* 额外添加和扩展 **内存缓存**，**MySQL 读取副本**也能够帮助释放在 **MySQL 写线程** 的负载。
-* 添加逻辑到 **网络服务器** 来区分读和写操作
-* 在 **MySQL 读取副本** 之前添加 **负载均衡** （不是为了减少混乱）
+* 除了添加和扩展 **内存缓存**，**MySQL 读副本服务器** 也能够帮助缓解在 **MySQL 写主服务器** 的负载。
+* 添加逻辑到 **Web 服务器** 来区分读和写操作
+* 在 **MySQL 读副本服务器** 之上添加 **负载均衡器** （不是为了减少混乱）
 * 大多数服务都是读取负载大于写入负载
 
 *Trade-offs, alternatives, and additional details:*
@@ -546,7 +546,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
     * **总水平** - 检查负载均衡器统计数据
     * **日志分析** - CloudWatch, CloudTrail, Loggly, Splunk, Sumo
     * **外部站点的性能** - Pingdom or New Relic
-    * **处理消息事件** - PagerDuty
+    * **处理通知和事件** - PagerDuty
     * **错误报告** - Sentry
 
 #### Add autoscaling
@@ -567,12 +567,12 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
         * Autoscaling can introduce complexity
         * It could take some time before a system appropriately scales up to meet increased demand, or to scale down when demand drops
 
-* 考虑一个托管服务，比如AWS **自动扩展**
+* 考虑使用一个托管服务，比如AWS **自动扩展**
     * 为每个 **Web 服务器** 创建一个组，并为每个 **应用服务器** 类型创建一个组，将每个组放置在多个可用区域中
-    * 设置一个最小值和最大数目的实例
+    * 设置最小和最大实例数
     * 通过 CloudWatch 来扩展或收缩
         * 可预测负载的简单时间度量
-        * 指标超过一段时间：
+        * 一段时间内的指标：
             * CPU 负载
             * 延迟
             * 网络流量
@@ -589,7 +589,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
 
 **Note:** **Autoscaling** groups not shown to reduce clutter
 
-**注释：** **自动伸缩** 组不需要显示以减少混乱
+**注释：** **自动伸缩** 组不显示以减少混乱
 
 #### Assumptions
 
@@ -615,8 +615,8 @@ We'll continue to address scaling issues due to the problem's constraints:
 
 * 如果我们的 **MySQL 数据库** 开始变得过于庞大, 我们可能只考虑把数据在数据库中存储一段有限的时间, 同时在例如 Redshift 这样的数据仓库中存储其余的数据
     * 像 Redshift 这样的数据仓库能够轻松处理每月 1TB 的新内容
-* 平均每秒 40,0000 次的读取请求, 可以通过扩展 **内存缓存** 来处理流行内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用
-    * **SQL读取副本** 可能会遇到处理缓存泄露的问题, 我们可能需要使用额外的SQL扩展模式
+* 平均每秒 40,000 次的读取请求, 可以通过扩展 **内存缓存** 来处理热点内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用
+    * **SQL读取副本** 可能会遇到处理缓存未命中的问题, 我们可能需要使用额外的 SQL 扩展模式
 * 对于单个 **SQL 写主-从** 模式来说，平均每秒 400 次写操作（明显更高）可能会很困难，同时还需要更多的扩展技术
 
 SQL scaling patterns include:
@@ -630,7 +630,7 @@ SQL 扩展模型包括：
 
 * [集合](https://github.com/donnemartin/system-design-primer#federation)
 * [分片](https://github.com/donnemartin/system-design-primer#sharding)
-* [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)
+* [反范式](https://github.com/donnemartin/system-design-primer#denormalization)
 * [SQL 调优](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
 To further address the high read and write requests, we should also consider moving appropriate data to a [**NoSQL Database**](https://github.com/donnemartin/system-design-primer#nosql) such as DynamoDB.
@@ -639,7 +639,7 @@ To further address the high read and write requests, we should also consider mov
 
 We can further separate out our [**Application Servers**](https://github.com/donnemartin/system-design-primer#application-layer) to allow for independent scaling.  Batch processes or computations that do not need to be done in real-time can be done [**Asynchronously**](https://github.com/donnemartin/system-design-primer#asynchronism) with **Queues** and **Workers**:
 
-我们可以进一步分离我们的 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer) 允许独立扩展。不需要实时完成的批处理或计算可以通过队列和人员异步完成：
+我们可以进一步分离我们的 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer) 以允许独立扩展。不需要实时完成的批处理任务和计算可以通过 Queues 和 Workers 异步完成：
 
 * For example, in a photo service, the photo upload and the thumbnail creation can be separated:
     * **Client** uploads photo
@@ -700,7 +700,7 @@ We can further separate out our [**Application Servers**](https://github.com/don
 * [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
 * [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
 
-* [健值存储](https://github.com/donnemartin/system-design-primer#key-value-store)
+* [键值存储](https://github.com/donnemartin/system-design-primer#key-value-store)
 * [文档存储](https://github.com/donnemartin/system-design-primer#document-store)
 * [宽表存储](https://github.com/donnemartin/system-design-primer#wide-column-store)
 * [图数据库](https://github.com/donnemartin/system-design-primer#graph-database)
@@ -728,7 +728,7 @@ We can further separate out our [**Application Servers**](https://github.com/don
 * 缓存到哪里
     * [客户端缓存](https://github.com/donnemartin/system-design-primer#client-caching)
     * [CDN 缓存](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [网络服务缓存](https://github.com/donnemartin/system-design-primer#web-server-caching)
+    * [Web 服务缓存](https://github.com/donnemartin/system-design-primer#web-server-caching)
     * [数据库缓存](https://github.com/donnemartin/system-design-primer#database-caching)
     * [应用缓存](https://github.com/donnemartin/system-design-primer#application-caching)
 * 缓存什么
@@ -765,7 +765,7 @@ We can further separate out our [**Application Servers**](https://github.com/don
 * [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
 
 * 关于折中方案的讨论:
-    * 客户端的外部通讯 - [HTTP APIs 后的空闲](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
+    * 客户端的外部通讯 - [遵循 REST 的 HTTP APIs](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
     * 内部通讯 - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
 * [服务探索](https://github.com/donnemartin/system-design-primer#service-discovery)
 
@@ -779,7 +779,7 @@ Refer to the [security section](https://github.com/donnemartin/system-design-pri
 
 ### Latency numbers
 
-### 延迟数字
+### 延迟数字指标
 
 See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
 
