@@ -1,6 +1,6 @@
 # 在 AWS 上设计支持百万级到千万级用户的系统
 
-** 注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
+**注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
 
 ## 第 1 步：用例和约束概要
 
@@ -94,7 +94,7 @@
 * 纵向扩展的代价将变得更昂贵
 * 无冗余/容错
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * **纵向扩展** 的可选方案是 [**横向扩展**](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
 
@@ -102,7 +102,7 @@
 
 约束条件假设需要关系型数据。我们可以开始时在单台服务器上使用 **MySQL 数据库**。
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅 [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 章节
 * 讨论使用 [SQL 或 NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) 的原因
@@ -116,7 +116,7 @@
 
 添加 **DNS** 服务，比如 Route 53（[Amazon Route 53](https://aws.amazon.com/cn/route53/) - 译者注），将域映射到实例的公共 IP 中。
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅 [域名系统](https://github.com/donnemartin/system-design-primer#domain-name-system) 章节
 
@@ -129,7 +129,7 @@
         * SSH IP 白名单 22
     * 防止 Web 服务器启动外链
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅 [安全](https://github.com/donnemartin/system-design-primer#security) 章节
 
@@ -185,7 +185,7 @@
     * 在每个组件上只为白名单 IP 打开端口
 * 这些相同的模式应当在新的组件的实现中实践
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅 [安全](https://github.com/donnemartin/system-design-primer#security) 章节
 
@@ -214,7 +214,7 @@
     * 例如, 你可以添加 **应用服务器** 处理 **读 API** 而另外一些处理 **写 API**
 * 将静态（和一些动态）内容转移到 [**内容分发网络 (CDN)**](https://github.com/donnemartin/system-design-primer#content-delivery-network) 例如 CloudFront 以减少负载和延迟
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅以上链接获得更多细节
 
@@ -241,7 +241,7 @@
 * 添加 [**MySQL 读取副本**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 来减少写主线程的负载
 * 添加更多 **Web 服务器** and **应用服务器** 来提高响应
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅以上链接获得更多细节
 
@@ -252,7 +252,7 @@
 * 在 **MySQL 读副本服务器** 之上添加 **负载均衡器** （不是为了减少混乱）
 * 大多数服务都是读取负载大于写入负载
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅 [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 章节
 
@@ -322,7 +322,7 @@ SQL 扩展模型包括：
 * [反范式](https://github.com/donnemartin/system-design-primer#denormalization)
 * [SQL 调优](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
-为了进一步处理高读和写请求，我们还应该考虑将适当的数据移动到一个 [**NoSQL数据库**](https://github.com/donnemartin/system design - nsql)，例如 DynamoDB。
+为了进一步处理高读和写请求，我们还应该考虑将适当的数据移动到一个 [**NoSQL数据库**](https://github.com/donnemartin/system-design-primer#nosql) ，例如 DynamoDB。
 
 我们可以进一步分离我们的 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer) 以允许独立扩展。不需要实时完成的批处理任务和计算可以通过 Queues 和 Workers 异步完成：
 
@@ -334,7 +334,7 @@ SQL 扩展模型包括：
         * 更新 **数据库**
         * 在 **对象存储** 中存储缩略图
 
-*折中方案, 可选方案, 和其他细节:*
+**折中方案, 可选方案, 和其他细节:**
 
 * 查阅以上链接获得更多细节
 
