@@ -218,7 +218,7 @@ class HitCounts(MRJob):
         period = self.extract_year_month(line)
         yield (period, url), 1
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """Sum values for each key.
 
         (2016-01, url0), 2
