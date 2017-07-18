@@ -1743,6 +1743,8 @@ Handy metrics based on numbers above:
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
+The list of blogs here will be kept relatively small and [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) will contain the larger list to avoid duplicating work. Do consider adding your company blog to the engineering-blogs repo instead.
+
 ## Under development
 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
