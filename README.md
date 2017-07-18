@@ -1714,6 +1714,7 @@ Handy metrics based on numbers above:
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
 * [GitHub Engineering Blog](http://githubengineering.com/)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
+* [Grab Engineering Blog](http://engineering.grab.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)
 * [Hubspot Engineering Blog](http://product.hubspot.com/blog/topic/engineering)
