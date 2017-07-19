@@ -1,6 +1,6 @@
 # 设计 Mint.com
 
-*注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题索引)中的有关部分，以避免重复的内容。您可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。*
+**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题索引)中的有关部分，以避免重复的内容。您可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
 ## 第一步：简述用例与约束条件
 
@@ -35,22 +35,22 @@
 #### 提出假设
 
 * 网络流量非均匀分布
-* 自动账户日更新只适用于30天内活跃的用户
+* 自动账户日更新只适用于 30 天内活跃的用户
 * 添加或者移除财务账户相对较少
 * 预算通知不需要及时
-* 1000万用户
+* 1000 万用户
     * 每个用户10个预算类别= 1亿个预算项
     * 示例类别:
         * Housing = $1,000
         * Food = $200
         * Gas = $100
     * 卖方确定交易类别
-        * 50,000 个卖方
-* 3000万财务账户
-* 每月50亿交易
-* 每月5亿读请求
+        * 50000 个卖方
+* 3000 万财务账户
+* 每月 50 亿交易
+* 每月 5 亿读请求
 * 10:1 读写比
-    * Write-heavy, 用户每天都进行交易，但是每天很少访问该网站
+    * Write-heavy，用户每天都进行交易，但是每天很少访问该网站
 
 #### 计算用量
 
@@ -63,10 +63,10 @@
     * `amount` - 5 字节
     * Total: ~50 字节
 * 每月产生 250 GB 新的交易内容
-    * 50 bytes per transaction * 5 billion transactions per month
-    * 9 TB of new transaction content in 3 years
+    * 每次交易 50 比特 * 50 亿交易每月
+    * 3年内新的交易内容 9 TB
     * Assume most are new transactions instead of updates to existing ones
-* 平均每秒产生 2,000 次交易
+* 平均每秒产生 2000 次交易
 * 平均每秒产生 200 读请求
 
 便利换算指南：
@@ -76,9 +76,9 @@
 * 每秒 40 个请求 = 每个月 1 亿次请求
 * 每秒 400 个请求 = 每个月 10 亿次请求
 
-## 第二步：高层设计
+## 第二步：概要设计
 
-> 列出所有重要组件以规划高层设计。
+> 列出所有重要组件以规划概要设计。
 
 ![Imgur](http://i.imgur.com/E8klrBh.png)
 
@@ -88,7 +88,7 @@
 
 ### 用例：用户连接到一个财务账户
 
-我们可以将1000万用户的信息存储在一个[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)中。我们应该讨论一下[选择SQL或NoSQL之间的用例和权衡](https://github.com/donnemartin/system-design-primer#sql-or-nosql)了。
+我们可以将 1000 万用户的信息存储在一个[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)中。我们应该讨论一下[选择SQL或NoSQL之间的用例和权衡](https://github.com/donnemartin/system-design-primer#sql-or-nosql)了。
 
 * **客户端** 作为一个[反向代理](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)，发送请求到 **Web 服务器**
 * **Web 服务器** 转发请求到 **账户API** 服务器
@@ -110,7 +110,7 @@ PRIMARY KEY(id)
 FOREIGN KEY(user_id) REFERENCES users(id)
 ```
 
-我们将在`id`，`user_id`和`created_at`等字段上创建一个[索引](https://github.com/donnemartin/system-design-primer#use-good-indices)以加速查找（对数时间而不是扫描整个表）并保持数据在内存中。从内存中顺序读取1 MB数据花费大约250毫秒，而从SSD读取是其4倍，从磁盘读取是其80倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+我们将在`id`，`user_id`和`created_at`等字段上创建一个[索引](https://github.com/donnemartin/system-design-primer#use-good-indices)以加速查找（对数时间而不是扫描整个表）并保持数据在内存中。从内存中顺序读取 1 MB数据花费大约250毫秒，而从SSD读取是其4倍，从磁盘读取是其80倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 
 我们将使用公开的[**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
 
@@ -130,7 +130,7 @@ $ curl -X POST --data '{ "user_id": "foo", "account_url": "bar", \
 
 * 用户首次链接账户
 * 用户手动更新账户
-* 为过去30天内活跃的用户自动日更新
+* 为过去 30 天内活跃的用户自动日更新
 
 数据流:
 
@@ -178,7 +178,7 @@ FOREIGN KEY(user_id) REFERENCES users(id)
 
 #### 分类服务
 
-对于 **分类服务**, 我们可以生成一个带有最受欢迎卖家的卖家-类别字典。如果我们估计50000个卖家，并估计每个条目占用不少于255个字节，该字典只需要大约12MB内存。
+对于 **分类服务**，我们可以生成一个带有最受欢迎卖家的卖家-类别字典。如果我们估计 50000 个卖家，并估计每个条目占用不少于 255 个字节，该字典只需要大约 12 MB内存。
 
 **告知你的面试官你准备写多少代码**。
 
@@ -197,7 +197,7 @@ seller_category_map['Target'] = DefaultCategories.SHOPPING
 ...
 ```
 
-对于一开始没有在映射中的卖家，我们可以通过评估用户提供的手动类别来进行众包。在O(1)时间内，我们可以用堆来快速查找每个卖家的顶端的手动覆盖。
+对于一开始没有在映射中的卖家，我们可以通过评估用户提供的手动类别来进行众包。在 O(1) 时间内，我们可以用堆来快速查找每个卖家的顶端的手动覆盖。
 
 ```
 class Categorizer(object):
@@ -230,7 +230,7 @@ class Transaction(object):
 
 ### 用例：服务推荐预算
 
-首先，我们可以使用根据收入等级分配每类别金额的通用预算模板。使用这种方法，我们不必存储在约束中标识的1亿个预算项目，只需存储用户覆盖的预算项目。如果用户覆盖预算类别，我们可以在
+首先，我们可以使用根据收入等级分配每类别金额的通用预算模板。使用这种方法，我们不必存储在约束中标识的 1 亿个预算项目，只需存储用户覆盖的预算项目。如果用户覆盖预算类别，我们可以在
 `TABLE budget_overrides`中存储此覆盖。
 
 ```
@@ -369,11 +369,11 @@ class SpendingByCategory(MRJob):
 
 我们可以使用诸如 Amazon Redshift 或者 Google BigQuery 等数据仓库解决方案，而不是将`monthly_spending`聚合表保留在 **SQL 数据库** 中。
 
-我们可能只想在数据库中存储一个月的`交易`数据，而将其余数据存储在数据仓库或者 **对象存储区** 中。**对象存储区** （如Amazon S3) 能够舒服地解决每月250GB新内容的限制。
+我们可能只想在数据库中存储一个月的`交易`数据，而将其余数据存储在数据仓库或者 **对象存储区** 中。**对象存储区** （如Amazon S3) 能够舒服地解决每月 250 GB新内容的限制。
 
 为了解决每秒 *平均* 2000 次读请求数（峰值时更高），受欢迎的内容的流量应由 **内存缓存** 而不是数据库来处理。 **内存缓存** 也可用于处理不均匀分布的流量和流量尖峰。 只要副本不陷入重复写入的困境，**SQL 读副本** 应该能够处理高速缓存未命中。
 
-*平均* 200次交易写入每秒（峰值时更高）对于单个 **SQL 写入主-从服务** 来说可能是棘手的。我们可能需要考虑其它的 SQL 性能拓展技术：
+*平均* 200 次交易写入每秒（峰值时更高）对于单个 **SQL 写入主-从服务** 来说可能是棘手的。我们可能需要考虑其它的 SQL 性能拓展技术：
 
 * [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
 * [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
