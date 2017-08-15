@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from enum import Enum
 
 
 class VehicleSize(Enum):
@@ -92,11 +93,11 @@ class Level(object):
 
     def _find_available_spot(self, vehicle):
         """Find an available spot where vehicle can fit, or return None"""
-        # ...
+        pass
 
     def _park_starting_at_spot(self, spot, vehicle):
         """Occupy starting at spot.spot_number to vehicle.spot_size."""
-        # ...
+        pass
 
 
 class ParkingSpot(object):
@@ -117,5 +118,8 @@ class ParkingSpot(object):
             return False
         return vehicle.can_fit_in_spot(self)
 
-    def park_vehicle(self, vehicle):  # ...
-    def remove_vehicle(self):  # ...
+    def park_vehicle(self, vehicle):
+        pass
+
+    def remove_vehicle(self):
+        pass
