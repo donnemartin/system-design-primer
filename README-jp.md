@@ -69,112 +69,112 @@
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## コントリビュート
 
-> Learn from the community.
+> コミュニティから学ぶ
 
-Feel free to submit pull requests to help:
+プルリクエスト等の貢献は積極的にお願いします:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* エラー修正
+* セクション内容修正
+* 新規セクション追加
+* [翻訳する](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+依然、推敲と内容の向上が必要なコンテンツは以下の場所にあります [作業中](#under-development).
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+コントリビュートする前にガイドラインを読みましょう [Contributing Guidelines](CONTRIBUTING.md).
 
-## Index of system design topics
+## システムデザイン目次
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> 賛否も含めた様々なシステムデザインの各トピックの概要。 **全てはトレードオフの関係にあります**
 >
-> Each section contains links to more in-depth resources.
+> それぞれのセクションはより学びを深めるような他の文献へのリンクが貼られています
 
 <p align="center">
   <img src="http://i.imgur.com/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
+* [システムデザイントピック: まずはここから](#system-design-topics-start-here)
+    * [Step 1: スケーラビリティに関する動画を見る](#step-1-review-the-scalability-video-lecture)
+    * [Step 2: スケーラビリティに関する記事を読む](#step-2-review-the-scalability-article)
     * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
+* [パフォーマンス vs スケーラビリティ](#performance-vs-scalability)
+* [レイテンシー vs スループット](#latency-vs-throughput)
+* [可用性 vs 一貫性](#availability-vs-consistency)
+    * [CAP 定理](#cap-theorem)
+        * [CP - 一貫性(consistency)と分割性(partition)耐性](#cp---consistency-and-partition-tolerance)
+        * [AP - 可用性(availability)と分割性(partition)耐性](#ap---availability-and-partition-tolerance)
+* [一貫性 パターン](#consistency-patterns)
+    * [弱い一貫性](#weak-consistency)
+    * [結果整合性](#eventual-consistency)
+    * [強い一貫性](#strong-consistency)
+* [可用性 パターン](#availability-patterns)
+    * [フェイルオーバー](#fail-over)
+    * [レプリケーション](#replication)
+* [ドメインネームシステム(DNS)](#domain-name-system)
+* [コンテントデリバリーネットワーク(CDN)](#content-delivery-network)
+    * [プッシュCDN](#push-cdns)
+    * [プルCDN](#pull-cdns)
+* [ロードバランサー](#load-balancer)
+    * [アクティブ/パッシブ構成](#active-passive)
+    * [アクティブ/アクティブ構成](#active-active)
+    * [Layer 4 ロードバランシング](#layer-4-load-balancing)
+    * [Layer 7 ロードバランシング](#layer-7-load-balancing)
+    * [水平スケーリング](#horizontal-scaling)
+* [リバースプロキシ (WEBサーバー)](#reverse-proxy-web-server)
+    * [ロードバランサー vs リバースプロキシ](#load-balancer-vs-reverse-proxy)
+* [アプリケーションレイヤー](#application-layer)
+    * [マイクロサービス](#microservices)
+    * [サービスディスカバリー](#service-discovery)
+* [データベース](#database)
+    * [リレーショナルデータベースマネジメントシステム (RDBMS)](#relational-database-management-system-rdbms)
+        * [マスター/スレーヴ レプリケーション](#master-slave-replication)
+        * [マスター/マスター レプリケーション](#master-master-replication)
+        * [フェデレーション](#federation)
+        * [シャーディング](#sharding)
+        * [デノーマライゼーション](#denormalization)
+        * [SQL チューニング](#sql-tuning)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
+        * [キー/バリューストア](#key-value-store)
+        * [ドキュメントストア](#document-store)
+        * [ワイドカラムストア](#wide-column-store)
+        * [グラフ データベース](#graph-database)
     * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+* [キャッシュ](#cache)
+    * [クライアントキャッシング](#client-caching)
+    * [CDNキャッシング](#cdn-caching)
+    * [Webサーバーキャッシング](#web-server-caching)
+    * [データベースキャッシング](#database-caching)
+    * [アプリケーションキャッシング](#application-caching)
+    * [データベースクエリレベルでキャッシングする](#caching-at-the-database-query-level)
+    * [オブジェクトレベルでキャッシングする](#caching-at-the-object-level)
+    * [いつキャッシュを更新するのか](#when-to-update-the-cache)
+        * [キャッシュアサイド](#cache-aside)
+        * [ライトスルー](#write-through)
+        * [ライトビハインド (ライトバック)](#write-behind-write-back)
+        * [リフレッシュアヘッド](#refresh-ahead)
+* [異時性](#asynchronism)
+    * [メッセージキュー](#message-queues)
+    * [タスクキュー](#task-queues)
+    * [バックプレッシャー](#back-pressure)
+* [通信](#communication)
+    * [伝送制御プロトコル (TCP)](#transmission-control-protocol-tcp)
+    * [ユーザデータグラムプロトコル (UDP)](#user-datagram-protocol-udp)
+    * [遠隔手続呼出 (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [セキュリティ](#security)
+* [補遺](#appendix)
+    * [2の指数表](#powers-of-two-table)
+    * [全てのプログラマーが知っておくべきレイテンシの参考値](#latency-numbers-every-programmer-should-know)
+    * [その他システムデザイン面接での質問例](#additional-system-design-interview-questions)
+    * [実世界でのアーキテキチャ](#real-world-architectures)
+    * [各企業のアーキテキチャ](#company-architectures)
+    * [各企業のエンジニアリングブログ](#company-engineering-blogs)
+* [作業中](#under-development)
+* [クレジット](#credits)
+* [連絡情報](#contact-info)
+* [ライセンス](#license)
 
 ## Study guide
 
