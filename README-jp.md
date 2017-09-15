@@ -7,65 +7,65 @@
   <br/>
 </p>
 
-## Motivation
+## 動機・目的
 
-> Learn how to design large-scale systems.
+> 大規模システムのデザイン設計を学ぶ
 >
-> Prep for the system design interview.
+> システムデザイン面接課題に備える
 
-### Learn how to design large-scale systems
+### 大規模システムの設計を学ぶ
 
-Learning how to design scalable systems will help you become a better engineer.
+スケーラブルなシステムのデザイン設計を学ぶことは、より良いエンジニアになることに資するでしょう。
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+システムデザインはとても広範なトピックを含みます。システムデザイン原理については **インターネット上には膨大な量の文献が散らばっています**
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+このレポジトリは大規模システム構築に必要な知識を学ぶことができる **文献リストを体系的にまとめたもの** です。
 
-### Learn from the open source community
+### オープンソースコミュニティから学ぶ
 
-This is an early draft of a continually updated, open source project.
+このプロジェクトは、これからもずっと更新されていくオープンソースプロジェクトの初期段階にすぎません。
 
-[Contributions](#contributing) are welcome!
+[Contributions](#contributing) は大歓迎です！
 
-### Prep for the system design interview
+### システムデザイン面接課題に備える
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+コード技術面接に加えて、システムデザインに関する知識は、多くのテック企業における **技術採用面接プロセス** で **必要不可欠な要素** です。
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**システムデザイン面接での頻出問題を練習し** また、自分の解答と *模範解答*:ディスカッション、コードそして図表などを　*比較* することで勉強できるでしょう。
 
-Additional topics for interview prep:
+面接準備に役立つその他のトピック:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [学習指針](#study-guide)
+* [システムデザイン面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question)
+* [システムデザイン課題例 **とその解答**](#system-design-interview-questions-with-solutions)
+* [オブジェクト思考デザイン課題例, **とその解答**](#object-oriented-design-interview-questions-with-solutions)
+* [その他のシステムデザイン面接課題例](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## 暗記カード
 
 <p align="center">
   <img src="http://i.imgur.com/zdCAkB3.png">
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+この[暗記カードアプリケーション](https://apps.ankiweb.net/) は、システムデザインの主要な概念を学ぶのに役立つアプリケーションです。程よい間隔で同じ問題を繰り返し出題してくれます。
 
-* [System design deck](resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](resources/flash_cards/OO%20Design.apkg)
+* [システムデザインデッキ](resources/flash_cards/System%20Design.apkg)
+* [システムデザイン練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
+* [オブジェクト思考練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+外出先や移動中の勉強に役立つでしょう。
 
-### Coding Resource: Interactive Coding Challenges
+### コーディング技術課題用の問題: 練習用インタラクティブアプリケーション
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+コード技術面接用の問題を探している場合は[**こちら**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+こちらの姉妹リポジトリも見てみてください [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), 追加の暗記デッキカードも入っています。
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
