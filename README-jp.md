@@ -176,41 +176,41 @@
 * [連絡情報](#contact-info)
 * [ライセンス](#license)
 
-## Study guide
+## 学習指針
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> 学習スパンに応じてみるべきトピックス (short, medium, long).
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Q: 面接のためには、ここにあるものすべてをやらないといけないのでしょうか？**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**A: いえ、ここにあるすべてをやる必要はありません。**.
 
-What you are asked in an interview depends on variables such as:
+面接で何を聞かれるかは以下の条件によって変わってきます:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* どれだけの技術経験があるか
+* あなたの技術背景が何であるか
+* どのポジション職位のために面接を受けているか
+* どの企業に面接しているか
+* 運
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+より経験のある候補者は一般的にシステムデザインについてより深い知識を有していることを要求されるでしょう。システムアーキテクトやチームリーダーは各メンバーの持つような知識よりは深い見識を持っているべきでしょう。一流テック企業では複数回のデザインインタビュー面接を課されることが多いです。
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+まずは広く始めて、そこからいくつかの分野に絞って深めていくのがいいでしょう。少しずつでの様々なシステムデザインのトピックについて知っておくことはいいことです。以下の学習ガイドを自分の学習に当てられる時間、技術経験、どの職位、どの会社に応募しているかなどを加味して自分用に調整して使うといいでしょう。
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **短期間** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
+* **中期間** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
+* **長期間** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
-| | Short | Medium | Long |
+| | 短期間 | 中期間 | 長期間 |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| 次のページを読んで [システムデザイントピック](#index-of-system-design-topics) システムがどのように動くかの大体の知識を入れる | :+1: | :+1: | :+1: |
+| 次のリンク先のいくつかのページを読んで [各企業のエンジニアリングブログ](#company-engineering-blogs) 応募する会社について知る | :+1: | :+1: | :+1: |
+| 次のリンク先のいくつかのページを読む [実世界でのアーキテキチャ](#real-world-architectures) | :+1: | :+1: | :+1: |
+| 復習する [システムデザイン面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| とりあえず一周する [システムデザイン課題例](#system-design-interview-questions-with-solutions) | Some | Many | Most |
+| とりあえず一周する [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
+| 復習する [その他システムデザイン面接での質問例](#additional-system-design-interview-questions) | Some | Many | Most |
 
 ## How to approach a system design interview question
 
