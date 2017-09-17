@@ -212,73 +212,73 @@
 | とりあえず一周する [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | 復習する [その他システムデザイン面接での質問例](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## システムデザイン面接にどのようにして臨めばいいか
 
-> How to tackle a system design interview question.
+> システムデザイン面接試験問題にどのように取り組むか
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+システムデザイン面接は **open-ended conversation(Yes/Noでは答えられない口頭質問)です**. 自分で会話を組み立てることを求められます。
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+以下のステップに従って議論を組み立てることができるでしょう。この過程を確かなものにするために、次のセクション[システムデザイン課題例とその解答](#system-design-interview-questions-with-solutions) を以下の指針に従って読み込むといいでしょう。
 
-### Step 1: Outline use cases, constraints, and assumptions
+### ステップ 1: そのシステム使用例の概要、制約、推計値等を聞き出し、まとめる
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+システム仕様の要求事項を聞き出し、問題箇所を特定しましょう。使用例と制約を明確にするための質問を投げかけましょう。要求する推計値についても議論しておきましょう。
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* 誰がそのサービスを使うのか？
+* どのように使うのか？
+* 何人のユーザーがいるのか？
+* システムはどのような機能を果たすのか？
+* システムへの入力と出力は？
+* どれだけの容量のデータを捌く必要があるのか？
+* 一秒間に何リクエストの送信が想定されるか？
+* 読み書き比率の推定値はいくら程度か？
 
-### Step 2: Create a high level design
+### ステップ 2: より高レベルのデザイン設計を組み立てる
 
-Outline a high level design with all important components.
+重要なコンポーネントを全て考慮した高レベルのデザイン設計概要を組み立てる。
 
-* Sketch the main components and connections
-* Justify your ideas
+* 主要なコンポーネントと接続をスケッチして書き出す
+* 考えの裏付けをする
 
-### Step 3: Design core components
+### Step 3: 核となるコンポーネントをデザインする
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+それぞれの主要なコンポーネントについての詳細を学ぶ。例えば、[url短縮サービス](solutions/system_design/pastebin/README.md)の設計を問われた際には次のようにするといいでしょう:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* 元のURLのハッシュ化したものを作り、それを保存する
+    * [MD5](solutions/system_design/pastebin/README.md) と [Base62](solutions/system_design/pastebin/README.md)
+    * ハッシュ衝突
+    * SQL もしくは NoSQL
+    * データベーススキーマ
+* ハッシュ化されたURLを元のURLに再翻訳する
+    * データベース参照
+* API & オブジェクト指向のデザイン設計
 
-### Step 4: Scale the design
+### ステップ 4: デザインのスケール
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+与えられた制約条件からボトルネックとなりそうなところを割り出し、明確化する。  例えば、スケーラビリティの問題解決のために以下の要素を考慮する必要があるだろうか？
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+* ロードバランサー
+* 水平スケーリング
+* キャッシング
+* データベースシャーディング
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+取りうる解決策とそのトレードオフについて議論をしよう。全てのことはトレードオフの関係にある。ボトルネックについては次の項を読むといい。[スケーラブルなシステムデザインの原理](#index-of-system-design-topics).
 
-### Back-of-the-envelope calculations
+### ちょっとした暗算問題
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+ちょっとした推計値を手計算ですることを求められることもあるかもしれません。[索引](#appendix)の以下の項目が役に立つでしょう:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [チラ裏計算でシステムデザインを設計する](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [2の指数表](#powers-of-two-table)
+* [全てのプログラマーが知っておくべきレイテンシの参考値](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
+### 文献とその他の参考資料
 
-Check out the following links to get a better idea of what to expect:
+以下のリンク先ページを見てどのような質問を投げかけられるか概要を頭に入れておきましょう:
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [システムデザイン面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [システムデザイン面接](http://www.hiredintech.com/system-design)
+* [アーキテキチャ、システムデザイン面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
 ## System design interview questions with solutions
 
