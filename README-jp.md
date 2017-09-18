@@ -284,7 +284,7 @@
 
 > 頻出のシステム設計面接課題と参考解答、コード及びダイアグラム
 >
-> 解答は `solutions/` フォルダ以下にリンクが貼られている.
+> 解答は `solutions/` フォルダ以下にリンクが貼られている。
 
 | 問題 | |
 |---|---|
@@ -348,22 +348,22 @@
 
 ## オブジェクト志向設計問題と解答
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> 頻出のオブジェクト志向システム設計面接課題と参考解答、コード及びダイアグラム
 >
-> Solutions linked to content in the `solutions/` folder.
+> 解答は `solutions/` フォルダ以下にリンクが貼られている。
 
->**Note: This section is under development**
+>**備考: このセクションは作業中です**
 
-| Question | |
+| 問題 | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| ハッシュマップの設計 | [解答](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| LRUキャッシュの設計 | [解答](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| コールセンターの設計 | [解答](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| カードのデッキの設計 | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| 円形配列の設計 | [Contribute](#contributing)  |
+| オブジェクト志向システム設計問題を追加する | [Contribute](#contributing) |
 
 ## System design topics: start here
 
