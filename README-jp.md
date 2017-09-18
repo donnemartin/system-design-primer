@@ -9,15 +9,15 @@
 
 ## 動機・目的
 
-> 大規模システムのデザイン設計を学ぶ
+> 大規模システムのシステム設計を学ぶ
 >
-> システムデザイン面接課題に備える
+> システム設計面接課題に備える
 
 ### 大規模システムの設計を学ぶ
 
-スケーラブルなシステムのデザイン設計を学ぶことは、より良いエンジニアになることに資するでしょう。
+スケーラブルなシステムのシステム設計を学ぶことは、より良いエンジニアになることに資するでしょう。
 
-システムデザインはとても広範なトピックを含みます。システムデザイン原理については **インターネット上には膨大な量の文献が散らばっています**
+システム設計はとても広範なトピックを含みます。システム設計原理については **インターネット上には膨大な量の文献が散らばっています**
 
 このレポジトリは大規模システム構築に必要な知識を学ぶことができる **文献リストを体系的にまとめたもの** です。
 
@@ -27,19 +27,19 @@
 
 [Contributions](#contributing) は大歓迎です！
 
-### システムデザイン面接課題に備える
+### システム設計面接課題に備える
 
-コード技術面接に加えて、システムデザインに関する知識は、多くのテック企業における **技術採用面接プロセス** で **必要不可欠な要素** です。
+コード技術面接に加えて、システム設計に関する知識は、多くのテック企業における **技術採用面接プロセス** で **必要不可欠な要素** です。
 
-**システムデザイン面接での頻出問題を練習し** また、自分の解答と *模範解答*:ディスカッション、コードそして図表などを　*比較* することで勉強できるでしょう。
+**システム設計面接での頻出問題を練習し** また、自分の解答と *模範解答*:ディスカッション、コードそして図表などを　*比較* することで勉強できるでしょう。
 
 面接準備に役立つその他のトピック:
 
 * [学習指針](#study-guide)
-* [システムデザイン面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question)
-* [システムデザイン課題例 **とその解答**](#system-design-interview-questions-with-solutions)
-* [オブジェクト思考デザイン課題例, **とその解答**](#object-oriented-design-interview-questions-with-solutions)
-* [その他のシステムデザイン面接課題例](#additional-system-design-interview-questions)
+* [システム設計面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question)
+* [システム設計課題例 **とその解答**](#system-design-interview-questions-with-solutions)
+* [オブジェクト思考設計課題例, **とその解答**](#object-oriented-design-interview-questions-with-solutions)
+* [その他のシステム設計面接課題例](#additional-system-design-interview-questions)
 
 ## 暗記カード
 
@@ -48,10 +48,10 @@
   <br/>
 </p>
 
-この[暗記カードアプリケーション](https://apps.ankiweb.net/) は、システムデザインの主要な概念を学ぶのに役立つアプリケーションです。程よい間隔で同じ問題を繰り返し出題してくれます。
+この[暗記カードアプリケーション](https://apps.ankiweb.net/) は、システム設計の主要な概念を学ぶのに役立つアプリケーションです。程よい間隔で同じ問題を繰り返し出題してくれます。
 
-* [システムデザインデッキ](resources/flash_cards/System%20Design.apkg)
-* [システムデザイン練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
+* [システム設計デッキ](resources/flash_cards/System%20Design.apkg)
+* [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
 * [オブジェクト思考練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
 
 外出先や移動中の勉強に役立つでしょう。
@@ -84,9 +84,9 @@
 
 コントリビュートする前にガイドラインを読みましょう [Contributing Guidelines](CONTRIBUTING.md).
 
-## システムデザイン目次
+## システム設計目次
 
-> 賛否も含めた様々なシステムデザインの各トピックの概要。 **全てはトレードオフの関係にあります**
+> 賛否も含めた様々なシステム設計の各トピックの概要。 **全てはトレードオフの関係にあります**
 >
 > それぞれのセクションはより学びを深めるような他の文献へのリンクが貼られています
 
@@ -95,7 +95,7 @@
   <br/>
 </p>
 
-* [システムデザイントピック: まずはここから](#system-design-topics-start-here)
+* [システム設計トピック: まずはここから](#system-design-topics-start-here)
     * [Step 1: スケーラビリティに関する動画を見る](#step-1-review-the-scalability-video-lecture)
     * [Step 2: スケーラビリティに関する記事を読む](#step-2-review-the-scalability-article)
     * [Next steps](#next-steps)
@@ -167,7 +167,7 @@
 * [補遺](#appendix)
     * [2の指数表](#powers-of-two-table)
     * [全てのプログラマーが知っておくべきレイテンシの参考値](#latency-numbers-every-programmer-should-know)
-    * [その他システムデザイン面接での質問例](#additional-system-design-interview-questions)
+    * [その他システム設計面接での質問例](#additional-system-design-interview-questions)
     * [実世界でのアーキテキチャ](#real-world-architectures)
     * [各企業のアーキテキチャ](#company-architectures)
     * [各企業のエンジニアリングブログ](#company-engineering-blogs)
@@ -194,9 +194,9 @@
 * どの企業に面接しているか
 * 運
 
-より経験のある候補者は一般的にシステムデザインについてより深い知識を有していることを要求されるでしょう。システムアーキテクトやチームリーダーは各メンバーの持つような知識よりは深い見識を持っているべきでしょう。一流テック企業では複数回のデザインインタビュー面接を課されることが多いです。
+より経験のある候補者は一般的にシステム設計についてより深い知識を有していることを要求されるでしょう。システムアーキテクトやチームリーダーは各メンバーの持つような知識よりは深い見識を持っているべきでしょう。一流テック企業では複数回の設計インタビュー面接を課されることが多いです。
 
-まずは広く始めて、そこからいくつかの分野に絞って深めていくのがいいでしょう。少しずつでの様々なシステムデザインのトピックについて知っておくことはいいことです。以下の学習ガイドを自分の学習に当てられる時間、技術経験、どの職位、どの会社に応募しているかなどを加味して自分用に調整して使うといいでしょう。
+まずは広く始めて、そこからいくつかの分野に絞って深めていくのがいいでしょう。少しずつでの様々なシステム設計のトピックについて知っておくことはいいことです。以下の学習ガイドを自分の学習に当てられる時間、技術経験、どの職位、どの会社に応募しているかなどを加味して自分用に調整して使うといいでしょう。
 
 * **短期間** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
 * **中期間** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
@@ -204,21 +204,21 @@
 
 | | 短期間 | 中期間 | 長期間 |
 |---|---|---|---|
-| 次のページを読んで [システムデザイントピック](#index-of-system-design-topics) システムがどのように動くかの大体の知識を入れる | :+1: | :+1: | :+1: |
+| 次のページを読んで [システム設計トピック](#index-of-system-design-topics) システムがどのように動くかの大体の知識を入れる | :+1: | :+1: | :+1: |
 | 次のリンク先のいくつかのページを読んで [各企業のエンジニアリングブログ](#company-engineering-blogs) 応募する会社について知る | :+1: | :+1: | :+1: |
 | 次のリンク先のいくつかのページを読む [実世界でのアーキテキチャ](#real-world-architectures) | :+1: | :+1: | :+1: |
-| 復習する [システムデザイン面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| とりあえず一周する [システムデザイン課題例](#system-design-interview-questions-with-solutions) | Some | Many | Most |
+| 復習する [システム設計面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| とりあえず一周する [システム設計課題例](#system-design-interview-questions-with-solutions) | Some | Many | Most |
 | とりあえず一周する [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| 復習する [その他システムデザイン面接での質問例](#additional-system-design-interview-questions) | Some | Many | Most |
+| 復習する [その他システム設計面接での質問例](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## システムデザイン面接にどのようにして臨めばいいか
+## システム設計面接にどのようにして臨めばいいか
 
-> システムデザイン面接試験問題にどのように取り組むか
+> システム設計面接試験問題にどのように取り組むか
 
-システムデザイン面接は **open-ended conversation(Yes/Noでは答えられない口頭質問)です**. 自分で会話を組み立てることを求められます。
+システム設計面接は **open-ended conversation(Yes/Noでは答えられない口頭質問)です**. 自分で会話を組み立てることを求められます。
 
-以下のステップに従って議論を組み立てることができるでしょう。この過程を確かなものにするために、次のセクション[システムデザイン課題例とその解答](#system-design-interview-questions-with-solutions) を以下の指針に従って読み込むといいでしょう。
+以下のステップに従って議論を組み立てることができるでしょう。この過程を確かなものにするために、次のセクション[システム設計課題例とその解答](#system-design-interview-questions-with-solutions) を以下の指針に従って読み込むといいでしょう。
 
 ### ステップ 1: そのシステム使用例の概要、制約、推計値等を聞き出し、まとめる
 
@@ -233,14 +233,14 @@
 * 一秒間に何リクエストの送信が想定されるか？
 * 読み書き比率の推定値はいくら程度か？
 
-### ステップ 2: より高レベルのデザイン設計を組み立てる
+### ステップ 2: より高レベルのシステム設計を組み立てる
 
-重要なコンポーネントを全て考慮した高レベルのデザイン設計概要を組み立てる。
+重要なコンポーネントを全て考慮した高レベルのシステム設計概要を組み立てる。
 
 * 主要なコンポーネントと接続をスケッチして書き出す
 * 考えの裏付けをする
 
-### Step 3: 核となるコンポーネントをデザインする
+### Step 3: 核となるコンポーネントを設計する
 
 それぞれの主要なコンポーネントについての詳細を学ぶ。例えば、[url短縮サービス](solutions/system_design/pastebin/README.md)の設計を問われた際には次のようにするといいでしょう:
 
@@ -251,9 +251,9 @@
     * データベーススキーマ
 * ハッシュ化されたURLを元のURLに再翻訳する
     * データベース参照
-* API & オブジェクト指向のデザイン設計
+* API & オブジェクト指向の設計
 
-### ステップ 4: デザインのスケール
+### ステップ 4: システム設計のスケール
 
 与えられた制約条件からボトルネックとなりそうなところを割り出し、明確化する。  例えば、スケーラビリティの問題解決のために以下の要素を考慮する必要があるだろうか？
 
@@ -262,13 +262,13 @@
 * キャッシング
 * データベースシャーディング
 
-取りうる解決策とそのトレードオフについて議論をしよう。全てのことはトレードオフの関係にある。ボトルネックについては次の項を読むといい。[スケーラブルなシステムデザインの原理](#index-of-system-design-topics).
+取りうる解決策とそのトレードオフについて議論をしよう。全てのことはトレードオフの関係にある。ボトルネックについては次の項を読むといい。[スケーラブルなシステム設計の原理](#index-of-system-design-topics).
 
 ### ちょっとした暗算問題
 
 ちょっとした推計値を手計算ですることを求められることもあるかもしれません。[索引](#appendix)の以下の項目が役に立つでしょう:
 
-* [チラ裏計算でシステムデザインを設計する](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [チラ裏計算でシステム設計する](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2の指数表](#powers-of-two-table)
 * [全てのプログラマーが知っておくべきレイテンシの参考値](#latency-numbers-every-programmer-should-know)
 
@@ -276,77 +276,77 @@
 
 以下のリンク先ページを見てどのような質問を投げかけられるか概要を頭に入れておきましょう:
 
-* [システムデザイン面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [システムデザイン面接](http://www.hiredintech.com/system-design)
-* [アーキテキチャ、システムデザイン面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [システム設計面接](http://www.hiredintech.com/system-design)
+* [アーキテキチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-## System design interview questions with solutions
+## システム設計課題例とその解答
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> 頻出のシステム設計面接課題と参考解答、コード及びダイアグラム
 >
-> Solutions linked to content in the `solutions/` folder.
+> 解答は `solutions/` フォルダ以下にリンクが貼られている.
 
-| Question | |
+| 問題 | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline (or Facebook feed)<br/>Design Twitter search (or Facebook search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Pastebin.com (もしくは Bit.ly) を設計する| [解答](solutions/system_design/pastebin/README.md) |
+| Twitterタイムライン (もしくはFacebookフィード)を設計する<br/>Twitter検索(もしくはFacebook検索)機能を設計する | [解答](solutions/system_design/twitter/README.md) |
+| ウェブクローラーを設計する | [解答](solutions/system_design/web_crawler/README.md) |
+| Mint.comを設計する | [解答](solutions/system_design/mint/README.md) |
+| SNSサービスのデータ構造を設計する | [解答](solutions/system_design/social_graph/README.md) |
+| 検索エンジンのキー/バリュー構造を設計する | [解答](solutions/system_design/query_cache/README.md) |
+| Amazonのカテゴリ毎の売り上げランキングを設計する | [解答](solutions/system_design/sales_rank/README.md) |
+| AWS上で100万人規模のユーザーを捌くサービスを設計する | [解答](solutions/system_design/scaling_aws/README.md) |
+| システム設計問題を追加する | [Contribute](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Pastebin.com (もしくは Bit.ly) を設計する
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[問題と解答を見る](solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Twitterタイムライン&検索 (もしくはFacebookフィード&検索)を設計する
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[問題と解答を見る](solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 
-### Design a web crawler
+### ウェブクローラーの設計
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[問題と解答を見る](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
-### Design Mint.com
+### Mint.comの設計
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[問題と解答を見る](solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 
-### Design the data structures for a social network
+### SNSサービスのデータ構造を設計する
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[問題と解答を見る](solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### 検索エンジンのキー/バリュー構造を設計する
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[問題と解答を見る](solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Amazonのカテゴリ毎の売り上げランキングを設計する
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[問題と解答を見る](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### AWS上で100万人規模のユーザーを捌くサービスを設計する
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[問題と解答を見る](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## オブジェクト志向設計問題と解答
 
 > Common object-oriented design interview questions with sample discussions, code, and diagrams.
 >
