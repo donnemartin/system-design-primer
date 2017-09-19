@@ -365,75 +365,75 @@
 | 円形配列の設計 | [Contribute](#contributing)  |
 | オブジェクト志向システム設計問題を追加する | [Contribute](#contributing) |
 
-## System design topics: start here
+## システム設計トピックス: まずはここから
 
-New to system design?
+システム設計の勉強は初めて？
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+まず初めに、よく使われる設計原理について、それらが何であるか、どのように用いられるか、長所短所について基本的な理解を得る必要があります
 
-### Step 1: Review the scalability video lecture
+### ステップ 1: スケーラビリティに関する動画を観て復習する
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Harvardでのスケーラビリティの講義](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* ここで触れられているトピックス:
+    * 垂直スケーリング
+    * 水平スケーリング
+    * キャッシング
+    * ロードバランシング
+    * データベースレプリケーション
+    * データベースパーティション
 
-### Step 2: Review the scalability article
+### ステップ 2: スケーラビリティに関する資料を読んで復習する
 
-[Scalability](http://www.lecloud.net/tagged/scalability)
+[スケーラビリティ](http://www.lecloud.net/tagged/scalability)
 
-* Topics covered:
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* ここで触れられているトピックス:
+    * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [データベース](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [キャッシュ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [非同期](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### 次のステップ
 
-Next, we'll look at high-level trade-offs:
+次に、ハイレベルでのトレードオフについてみていく:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **パフォーマンス** vs **スケーラビリティ**
+* **レイテンシ** vs **スループット**
+* **可用性** vs **一貫性**
 
-Keep in mind that **everything is a trade-off**.
+**全てはトレードオフの関係にある**というのを肝に命じておきましょう。
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+それから、より深い内容、DNSやCDNそしてロードバランサーなどについて学習を進めていきましょう。
 
-## Performance vs scalability
+## パフォーマンス vs スケーラビリティ
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+リソースが追加されるのにつれて **パフォーマンス** が向上する場合そのサービスは **scalable** であると言えるでしょう。一般的に、パフォーマンスを向上させるというのはすなわち計算処理を増やすことを意味しますが、データセットが増えた時などより大きな処理を捌けるようになることでもあります。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+パフォーマンスvsスケーラビリティをとらえる他の考え方:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* **パフォーマンス** での問題を抱えている時、あなたのシステムは一人のユーザーにとって遅いと言えるでしょう。
+* **スケーラビリティ** での問題を抱えているとき、一人のユーザーにとっては速いですが、多くのリクエストがある時には遅くなってしまうでしょう。
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [スケーラビリティについて](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## レイテンシー vs スループット
 
-**Latency** is the time to perform some action or to produce some result.
+**レイテンシー** とはなにがしかの動作を行う、もしくは結果を算出するのに要する時間
 
-**Throughput** is the number of such actions or results per unit of time.
+**スループット** とはそのような動作や結果算出が単位時間に行われる回数
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+一般的に、 **最大限のスループット** を **許容範囲内のレイテンシー** で実現することを目指すのが普通だ。
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [レイテンシー vs スループットを理解する](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## 可用性 vs 一貫性
 
-### CAP theorem
+### CAP 理論
 
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png">
@@ -441,28 +441,28 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+分散型コンピュータシステムにおいては下の三つのうち二つまでしか同時に保証することはできない。:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **一貫性** - 全ての読み込みは最新の書き込みもしくはエラーを受け取る
+* **可用性** - 受け取る情報が最新のものだという保証はないが、全てのリクエストはレスポンスを必ず受け取る
+* **分断耐性** - ネットワーク問題によって順不同の分断が起きてもシステムが動作を続ける
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*ネットワークは信頼できないので、分断耐性は必ず保証しなければなりません。つまりソフトウェアシステムとしてのトレードオフは、一貫性を取るか、可用性を取るかを考えなければなりません。*
 
-#### CP - consistency and partition tolerance
+#### CP - 一貫性と分断耐性(consistency and partition tolerance)
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+分断されたノードからのレスポンスを待ち続けているとタイムアウトエラーに陥る可能性があります。CPはあなたのサービスがアトミックな読み書き（不可分操作）を必要とする際にはいい選択肢でしょう。
 
-#### AP - availability and partition tolerance
+#### AP - 可用性と分断耐性(availability and partition tolerance)
 
-Responses return the most recent version of the data available on the a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+レスポンスはノード上にあるデータで最新のものを返します。つまり、最新版のデータが返されるとは限りません。分断が解消された後も、書き込みが反映されるのには時間がかかります。
 
-AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+[結果整合性](#eventual-consistency)　を求めるサービスの際にはAPを採用するのがいいでしょう。もしくは、外部エラーに関わらずシステムが稼働する必要がある際にも同様です。
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## Consistency patterns
@@ -487,7 +487,7 @@ After a write, reads will see it.  Data is replicated synchronously.
 
 This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
