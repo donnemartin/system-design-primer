@@ -606,7 +606,7 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 * [プッシュCDNとプルCDNの違い](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
-## Load balancer
+## ロードバランサー
 
 <p align="center">
   <img src="http://i.imgur.com/h81n9iK.png">
@@ -614,66 +614,66 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
 
-Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+ロードバランサーは入力されるクライアントのリクエストをアプリケーションサーバーやデータベースへと分散させる。どのケースでもロードバランサーはサーバー等計算リソースからのレスポンスを適切なクライアントに返す。ロードバランサーは以下のことに効果的です:
 
-* Preventing requests from going to unhealthy servers
-* Preventing overloading resources
-* Helping eliminate single points of failure
+* リクエストが状態の良くないサーバーに行くのを防ぐ
+* リクエストを過重に送るのを防ぐ
+* 特定箇所の欠陥でサービスが落ちることを防ぐ
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+ロードバランサーはハードウェアを用いて (費用高い) もしくはHAProxyなどのソフトウェアで実現できる。
 
-Additional benefits include:
+他の利点としては:
 
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
+* **SSL termination** - 入力されるリクエストを解読する、また、サーバーレスポンスを暗号化することでバックエンドのサーバーがこのコストが高くつきがちな処理を請け負わなくていいように肩代わりします。 
+    * [X.509 certificates](https://en.wikipedia.org/wiki/X.509) をそれぞれのサーバーにインストールする必要をなくします
+* **セッション管理** - クッキーを取り扱いウェブアプリがセッション情報を保持していない時などに、特定のクライアントのリクエストを同じインスタンスへと流します。
 
-To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
+障害に対応するために、[アクティブ・パッシブ](#active-passive) もしくは [アクティブ・アクティブ](#active-active) モードのいずれに限らず、複数のロードバランサーを配置するのが一般的です。
 
-Load balancers can route traffic based on various metrics, including:
+ロードバランサーは以下のような種々のメトリックを用いてとらふぃっくんルーティングを行うことができます:
 
-* Random
+* ランダム
 * Least loaded
-* Session/cookies
-* [Round robin or weighted round robin](http://g33kinfo.com/info/archives/2657)
+* セッション/クッキー
+* [ラウンドロビンもしくは荷重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
 
-### Layer 4 load balancing
+### Layer 4 ロードバランシング
 
-Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+Layer 4 ロードバランサーは [トランスポートレイヤー](#communication) を参照してどのようにリクエストを配分するか判断します。一般的に、トランスポートレイヤーとしては、ソース、送信先IPアドレス、ヘッダーに記述されたポート番号が含まれますが、パケットの中身のコンテンツは含みません Layer 4 ロードバランサーはネットワークパケットを上流サーバーへ届け、上流サーバーから配信することでネットワークアドレス変換 [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/) を実現します。
 
-### Layer 7 load balancing
+### Layer 7 ロードバランシング
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+Layer 7 ロードバランサーは [アプリケーションレイヤー](#communication) を参照してどのようにリクエストを配分するか判断します。ヘッダー、メッセージ、クッキーなどのコンテンツのことです。Layer 7 ロードバランサーはネットワークトラフィックの終端を受け持ち メッセージを読み込み、ロードバランシングの判断をし、選択したサーバーとの接続を繋ぎます。例えば layer 7 ロードバランサーは動画のトラフィックを直接、そのデータをホストしているサーバーにつなぐと同時に、決済処理などのより繊細なトラフィックをセキュリティ強化されたサーバー流すということもできる。
 
-At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+柔軟性とのトレードオフになりますが、 layer 4 ロードバランサーではLayer 7ロードバランサーよりも所要時間、計算リソースを少なく済むことができます。ただし、昨今の汎用ハードウェアではパフォーマンスは最小限のみしか発揮できないでしょう。
 
-### Horizontal scaling
+### 水平スケーリング
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+ロードバランサーでは水平スケーリングによってパフォーマンスと可用性を向上させることができます。手頃な汎用マシンを追加することによってスケーリングさせる方が、 **垂直スケーリング** と言って、サーバーをよりハイパフォーマンスなマシンに載せ替えることよりもずっと費用対効果も可用性も高いでしょう。また、汎用ハードウェアを扱える人材を雇う方が、特化型の商用ハードウェアを扱える人材を雇うよりも簡単でしょう。
 
-#### Disadvantage(s): horizontal scaling
+#### 欠点: 水平スケーリング
 
-* Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
-* Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+* 水平的にスケーリングしていくと、複雑さが増す上に、サーバーのクローニングが必要になる
+    * サーバーはステートレスである必要がある: ユーザーに関連するセッションや、プロフィール写真などのデータを持ってはいけない
+    * セッションは一元的な[データベース](#database) (SQL, NoSQL)などのデータストアにストアされるか [キャッシュ](#cache) (Redis, Memcached)に残す必要があります。
+* キャッシュやデータベースなどの下流サーバーは上流サーバーがスケールアウトするにつれてより多くの同時接続を保たなければなりません。
 
-### Disadvantage(s): load balancer
+### 欠点: ロードバランサー
 
-* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
-* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+* ロードバランサーはリソースが不足していたり、設定が適切でない場合、システム全体のボトルネックになる可能性があります。
+* 単一障害点を除こうとしてロードバランサーを導入した結果、複雑さが増してしまうことになります。
+* 単一ロードバランサーでは単一障害点が除かれたことにはなりませんが、複数のロードバランサーはそれすなわち複雑化です。
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [NGINX アーキテキチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy アーキテキチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [スケーラビリティ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [Layer 4 ロードバランシング](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [Layer 7 ロードバランシング](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
 ## Reverse proxy (web server)
