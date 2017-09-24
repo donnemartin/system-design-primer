@@ -756,7 +756,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
 * [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## データベース
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
@@ -764,22 +764,22 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-### Relational database management system (RDBMS)
+### リレーショナルデータベースマネジメントシステム (RDBMS)
 
-A relational database like SQL is a collection of data items organized in tables.
+SQLなどのリレーショナルデータベースはテーブルに整理されたデータの集合である。 
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+**ACID** はリレーショナルデータベースにおけるプロパティの集合である [トランザクション](https://en.wikipedia.org/wiki/Database_transaction)
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+* **不可分性** - それぞれのトランザクションはあるかないかである。
+* **一貫性** - どんなトランザクションもデータベースをある確かな状態から次の状態に遷移させる。
+* **独立性** - 同時にトランザクションを処理することは、連続的にトランザクションを処理するのと同じ結果をもたらす。
+* **永続性** - トランザクションが処理されたら、そのように保存される
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+リレーショナルデータベースをスケールさせるためにはたくさんの技術がある: **マスタースレーブ レプリケーション**、 **マスターマスター レプリケーション**、 **federation**, **シャーディング**, **denormalization**, and **SQL チューニング**.
 
-#### Master-slave replication
+#### マスタースレーブ レプリケーション
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+マスターデータベースが読み取りと書き込みを処理し、書き込みを一つ以上のスレーブデータベースに複製します。スレーブデータベースは読み取りのみを処理します。スレーブデータベースは木構造のように追加のスレーブにデータを複製することもできます。マスターデータベースがオフラインになった場合には、いずれかのスレーブがマスターに昇格するか、新しいマスターデータベースが追加されるまでは読み取り専用モードで稼働します。
 
 <p align="center">
   <img src="http://i.imgur.com/C9ioGtn.png">
@@ -787,14 +787,14 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### 欠点: マスタースレーブ レプリケーション
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* スレーブをマスターに昇格させるには追加のロジックが必要になる。
+* マスタースレーブ レプリケーション、マスターマスター レプリケーションの **両方** の欠点は次を参照[欠点: レプリケーション](#disadvantages-replication) 
 
-#### Master-master replication
+#### マスターマスター レプリケーション
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+いずれのマスターも読み取り書き込みの両方に対応する。書き込みに関してはそれぞれ強調する。いずれかのマスターが落ちても、システム全体としては読み書き両方に対応したまま運用できる。
 
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
@@ -802,25 +802,25 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### 欠点: マスターマスター レプリケーション
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* ロードバランサーを導入するか、アプリケーションロジックを変更することでどこに書き込むかを指定しなければならない。
+* 大体のマスターマスターシステムは、一貫性が緩い（ACID原理を守っていない）もしくは、同期する時間がかかるために書き込みのレイテンシーが増加してしまっている。
+* 書き込みノードが追加され、レイテンシーが増加するにつれ書き込みの衝突の可能性が増える。
+* マスタースレーブ レプリケーション、マスターマスター レプリケーションの **両方** の欠点は次を参照[欠点: レプリケーション](#disadvantages-replication) 
 
-##### Disadvantage(s): replication
+##### 欠点: レプリケーション
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+* 新しいデータ書き込みを複製する前にマスターが落ちた場合にはそのデータが失われてしまう可能性がある。
+* 書き込みは読み取りレプリカにおいてリプレイされる。書き込みが多い場合、複製ノードが書き込みの処理のみで行き詰まって、読み取りの処理を満足に行えない可能性がある。
+* 読み取りスレーブノードの数が多ければ多いほど、複製しなければならない数も増え、複製時間が伸びてしまいます。
+* システムによっては、マスターへの書き込みはマルチスレッドで並列処理できる一方、スレーブへの複製は単一スレッドで連続的に処理しなければならない場合があります。
+* レプリケーションでは追加のハードウェアが必要になり、複雑性も増します。
 
-##### Source(s) and further reading: replication
+##### その他の参考資料、ページ
 
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+* [スケーラビリティ、 可用性、 スタビリティ パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [マルチマスター レプリケーション](https://en.wikipedia.org/wiki/Multi-master_replication)
 
 #### Federation
 
