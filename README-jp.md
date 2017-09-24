@@ -719,7 +719,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
 * [HAProxy アーキテキチャ ガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+## アプリケーション層
 
 <p align="center">
   <img src="http://i.imgur.com/yB5SYwm.png">
@@ -727,34 +727,34 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.
+ウェブレイヤーをアプリケーション層 (プラットフォーム層とも言われる) と分離することでそれぞれの層を独立にスケール、設定することができるようにまります。新しいAPIをアプリケーション層に追加する際に、不必要にウェブサーバーを追加する必要がなくなります。
 
-The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+ **単一責任の原則** では、小さい自律的なサービスが協調して動くように提唱しています。小さいサービスの小さいチームが急成長のためにより積極的な計画を立てられるようにするためです。
 
-Workers in the application layer also help enable [asynchronism](#asynchronism).
+アプリケーション層は[異時性](#asynchronism)もサポートします。
 
-### Microservices
+### マイクロサービス
 
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+独立してデプロイできる、小規模なモジュール様式である[マイクロサービス](https://en.wikipedia.org/wiki/Microservices)もこの議論に関係してくる技術でしょう。それぞれのサービスは独自のプロセスを処理し、明確で軽量なメカニズムで通信して、その目的とする機能を実現します。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
+例えばPinterestでは以下のようなマイクロサービスに分かれています。ユーザープロフィール、フォロワー、フィード、検索、写真アップロードなどです。
 
 ### Service Discovery
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+[Consul](https://www.consul.io/docs/index.html)、 [Etcd](https://coreos.com/etcd/docs/latest)、 そして [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) などのシステムはそれぞれを見つけやすいように、登録された名前、アドレス、そしてポート番号などを監視しています。[Health checks](https://www.consul.io/intro/getting-started/checks.html) はサービスの統一性を証明するのに有用ですが、しばしば[HTTP](#hypertext-transfer-protocol-http) エンドポイントを用いています。  Consul と Etcd のいずれも組み込みの [key-value store](#key-value-store) を持っており、設定データや共有データなどのデータを保存しておくことに使われます。
 
-### Disadvantage(s): application layer
+### 欠点: アプリケーション層
 
-* Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-* Microservices can add complexity in terms of deployments and operations.
+* 緩く結び付けられたアプリケーション層を追加することは、モノリシックなシステムとはアーキテキチャ、運用、そしてプロセスの観点からすると異なるアプローチを必要とします。
+* マイクロサービスはデプロイと運用の点から見ると複雑性が増すことになります。
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
-* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
-* [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+* [スケールするシステムアーキテキチャを設計するためにイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale)
+* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [サービス指向アーキテキチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+* [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+* [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
 ## Database
 
