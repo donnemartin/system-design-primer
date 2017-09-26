@@ -775,7 +775,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 * **独立性** - 同時にトランザクションを処理することは、連続的にトランザクションを処理するのと同じ結果をもたらす。
 * **永続性** - トランザクションが処理されたら、そのように保存される
 
-リレーショナルデータベースをスケールさせるためにはたくさんの技術がある: **マスタースレーブ レプリケーション**、 **マスターマスター レプリケーション**、 **federation**, **シャーディング**, **denormalization**, and **SQL チューニング**.
+リレーショナルデータベースをスケールさせるためにはたくさんの技術がある: **マスタースレーブ レプリケーション**、 **マスターマスター レプリケーション**、 **federation**, **シャーディング**, **非正規化**, そして **SQL チューニング**
 
 #### マスタースレーブ レプリケーション
 
@@ -817,7 +817,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 * システムによっては、マスターへの書き込みはマルチスレッドで並列処理できる一方、スレーブへの複製は単一スレッドで連続的に処理しなければならない場合があります。
 * レプリケーションでは追加のハードウェアが必要になり、複雑性も増します。
 
-##### その他の参考資料、ページ
+##### その他の参考資料、ページ: レプリケーション
 
 * [スケーラビリティ、 可用性、 スタビリティ パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [マルチマスター レプリケーション](https://en.wikipedia.org/wiki/Multi-master_replication)
@@ -839,7 +839,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 * [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers)で二つのデータベースからのデータを連結するのはより複雑になるでしょう。
 * フェデレーションでは追加のハードウェアが必要になり、複雑性も増します。
 
-##### その他の参考資料、ページ
+##### その他の参考資料、ページ: federation
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
@@ -865,27 +865,27 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 * 複数のシャードからのデータを連結するのはより複雑です。
 * シャーディングでは追加のハードウェアが必要になり、複雑性も増します。
 
-##### その他の参考資料、ページ
+##### その他の参考資料、ページ: シャーディング
 
 * [シャードの登場](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [シャードデータベースアーキテキチャ](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### 非正規化
 
-Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
+非正規化では、書き込みのパフォーマンスをいくらか犠牲にして読み込みのパフォーマンスを向上させようとします。計算的に重いテーブルの結合などをせずに、複数のテーブルに冗長なデータのコピーが書き込まれるのを許容します。いくつかのRDBMS例えば、[PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) やOracleはこの冗長な情報を取り扱い、一貫性を保つための[materialized views](https://en.wikipedia.org/wiki/Materialized_view) という機能をサポートしています。
 
-Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
+[フェデレーション](#federation) や [シャーディング](#sharding)などのテクニックによってそれぞれのデータセンターに分配されたデータを合一させることはとても複雑な作業です。非正規化によってそのような複雑な処理をしなくて済むようになります。
 
-In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
+多くのシステムで、100対1あるいはは1000対1くらいになるくらい読み取りの方が、書き込みのトラフィックよりも多いことでしょう。読み込みを行うために、複雑なデータベースのジョイン処理が含まれるものは計算的に高価につきますし、ディスクの処理時間で膨大な時間を費消してしまうことになります。
 
-##### Disadvantage(s): denormalization
+##### 欠点: 非正規化
 
-* Data is duplicated.
-* Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
-* A denormalized database under heavy write load might perform worse than its normalized counterpart.
+* データが複製される
+* 冗長なデータの複製が同期されるように制約が存在し、そのことでデータベース全体の設計が複雑化する。
+* 非正規化されたデータベースは過大な書き込みを処理しなければならない場合、正規化されているそれよりもパフォーマンスにおいて劣る可能性がある。
 
-###### Source(s) and further reading: denormalization
+###### その他の参考資料、ページ: 非正規化
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
@@ -1340,7 +1340,7 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 | PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
 | DELETE | Deletes a resource | Yes | No | No |
 
-*Can be called many times without different outcomes.
+*Can be called many times without different outcomes.*
 
 HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
 
