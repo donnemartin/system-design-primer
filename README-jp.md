@@ -889,20 +889,20 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### SQLチューニング
 
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+SQLチューニングは広範な知識を必要とする分野で多くの [本](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) が書かれています。
 
-It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
+ボトルネックを明らかにし、シミュレートする上で、 **ベンチマーク** を定め、 **プロファイル** することはとても重要です。
 
-* **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
-* **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
+* **ベンチマーク** - [ab](http://httpd.apache.org/docs/2.2/programs/ab.html)などのツールを用いて、高負荷の状況をシミュレーションして見ましょう
+* **プロファイル** - [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) などのツールを用いて、パフォーマンス状況の確認をしましょう。
 
-Benchmarking and profiling might point you to the following optimizations.
+ベンチマークとプロファイルをとることで以下のような効率化の選択肢をとることになるでしょう。
 
-##### Tighten up the schema
+##### スキーマを絞る
 
-* MySQL dumps to disk in contiguous blocks for fast access.
+* MySQL dumps to disk in contiguous blocks for fast access.より早い接続を得るために、連続したブロックの中のディスクにMySQLをダンプする。
 * Use `CHAR` instead of `VARCHAR` for fixed-length fields.
     * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
 * Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
