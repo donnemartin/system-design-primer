@@ -3,6 +3,8 @@
 > * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
+[![](https://badge.juejin.im/entry/59ccbff3f265da065f04c5ea/likes.svg?style=flat-square)](https://juejin.im/post/59ccbee3f265da06624e7759)
+
 # 系统设计入门
 
 <p align="center">
