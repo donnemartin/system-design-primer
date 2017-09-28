@@ -1,5 +1,7 @@
 *[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
+[![](https://badge.juejin.im/entry/59ccbff3f265da065f04c5ea/likes.svg?style=flat-square)](https://juejin.im/post/59ccbee3f265da06624e7759)
+
 # The System Design Primer
 
 <p align="center">
