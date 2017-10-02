@@ -309,7 +309,7 @@ As the service continues to grow towards the figures outlined in the constraints
 
 We'll continue to address scaling issues due to the problem's constraints:
 
-* If our **MySQL Database** starts to grow too large, we might considering only storing a limited time period of data in the database, while storing the rest in a data warehouse such as Redshift
+* If our **MySQL Database** starts to grow too large, we might consider only storing a limited time period of data in the database, while storing the rest in a data warehouse such as Redshift
     * A data warehouse such as Redshift can comfortably handle the constraint of 1 TB of new content per month
 * With 40,000 average read requests per second, read traffic for popular content can be addressed by scaling the **Memory Cache**, which is also useful for handling the unevenly distributed traffic and traffic spikes
     * The **SQL Read Replicas** might have trouble handling the cache misses, we'll probably need to employ additional SQL scaling patterns
