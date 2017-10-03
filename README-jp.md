@@ -903,40 +903,40 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 ##### スキーマを絞る
 
 * MySQL dumps to disk in contiguous blocks for fast access.より早い接続を得るために、連続したブロックの中のディスクにMySQLをダンプする。
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
-* Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
-* Use `INT` for larger numbers up to 2^32 or 4 billion.
-* Use `DECIMAL` for currency to avoid floating point representation errors.
-* Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
+* 長さの決まったフィールドに対しては `CHAR` よりも `VARCHAR` を使うようにしましょう。
+    * `CHAR` の方が効率的に速くランダムにデータにアクセスできます。 一方、 `VARCHAR` では次のデータに移る前にデータの末尾を検知しなければならないために速度が犠牲になります。
+* ブログ投稿などの大きなテキスト `TEXT` を使いましょう。 `TEXT` ではブーリン型の検索も可能です。 `TEXT` フィールドを使うことは、テキストブロックを配置するのに用いたポインターをディスク上に保存することになります。 
+* 2の32乗や40億を超えてくる数に関しては `INT` を使いましょう
+* 通貨に関しては小数点表示上のエラーを避けるために `DECIMAL` を使いましょう。
+* 大きな `BLOBS` を保存するのは避けましょう。どこからそのオブジェクトを取ってくることができるかの情報を保存しましょう。
+* `VARCHAR(255)` は8ビットで数えることができる中で最大の文字数ですが、このフィールドがしばしばRDBMSの中で大きな容量を食います。
+* [検索性能を向上させる](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) ことが可能な箇所については `NOT NULL` 制約を設定しましょう
 
-##### Use good indices
+##### インデックスを効果的に用いる
 
-* Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-* Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-* Placing an index can keep the data in memory, requiring more space.
-* Writes could also be slower since the index also needs to be updated.
-* When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+* クエリ(`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) を用いて取得する列はインデックスを用いると速度を向上できる。
+* インデックスは通常、対数的にデータを検索、挿入、削除する際に用いる[B-tree](https://en.wikipedia.org/wiki/B-tree)として表現されています。
+* Placing an index can keep the data in memory, requiring more space.インデックスを配置することはデータをメモリーに残すことにつながりより容量を必要とします。
+* インデックスの更新も必要になるため書き込みも遅くなります。
+* 大きなデータを読み込む際には、インデックスを切ってからデータをロードして再びインデックスをビルドした方が速いことがあります。
 
-##### Avoid expensive joins
+##### 高負荷なジョインを避ける
 
-* [Denormalize](#denormalization) where performance demands it.
+* [非正規化](#denormalization) パフォーマンスが必要なところには適用する
 
-##### Partition tables
+##### テーブルのパーティション
 
-* Break up a table by putting hot spots in a separate table to help keep it in memory.
+* メモリー内に保つために、分離されたテーブルを分割してそれぞれにホットスポットを設定する。
 
-##### Tune the query cache
+##### クエリキャッシュを調整する
 
-* In some cases, the [query cache](http://dev.mysql.com/doc/refman/5.7/en/query-cache) could lead to [performance issues](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/).
+* 場合によっては[クエリキャッシュ](http://dev.mysql.com/doc/refman/5.7/en/query-cache) が[パフォーマンス問題](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/) を引き起こす可能性がある
 
-##### Source(s) and further reading: SQL tuning
+##### その他の参考資料、ページ: SQLチューニング
 
-* [Tips for optimizing MySQL queries](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-* [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+* [MySQLクエリを最適化するためのTips](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
+* [VARCHAR(255)をそんなにたくさん使う必要ある？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [null値はどのようにパフォーマンスに影響するのか？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 * [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 ### NoSQL
