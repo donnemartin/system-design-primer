@@ -941,32 +941,32 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 
 ### NoSQL
 
-NoSQL is a collection of data items represented in a **key-value store**, **document-store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
+NoSQL は **key-value store**、 **document-store**、 **wide column store**、 もしくは **graph database**によって表現されるデータアイテムの集合です。データは一般的に正規化されておらず、アプリケーション側でジョインが行われます。大部分のNoSQLは真のACIDトランザクションを持たず、 [結果整合性](#eventual-consistency) 的な振る舞いの方を好みます。
 
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
+**BASE** はしばしばNoSQLデータベースのプロパティを説明するために用いられます。[CAP Theorem](#cap-theorem) と対照的に、BASEは一貫性よりも可用性を優先します。
 
-* **Basically available** - the system guarantees availability.
-* **Soft state** - the state of the system may change over time, even without input.
-* **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
+* **Basically available** - システムは可用性を保証します。
+* **Soft state** - システムの状態は入力がなくても時間経過とともに変化する可能性があります。
+* **結果整合性** - システム全体は時間経過とともにその間に入力がないという前提のもと、一貫性が達成されます。
 
-In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document-stores**, **wide column stores**, and **graph databases** in the next section.
+[SQL or NoSQL](#sql-or-nosql) かを選択するのに加えて、どのタイプのNoSQLがどの使用例に最も適するかを理解するのはとても有益です。このセクションでは **キーバリューストア**、 **ドキュメントストア**、 **ワイドカラムストア**、 と **グラフデータベース** について触れていきます。
 
-#### Key-value store
+#### キーバリューストア
 
-> Abstraction: hash table
+> 概要: ハッシュテーブル
 
-A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
+キーバリューストアでは一般的に0,1の読み、書きができ、それらはメモリないしSSDで裏付けられています。データストアはキーを [辞書的順序](https://en.wikipedia.org/wiki/Lexicographical_order) で保持することでキーの効率的な取得を可能にしています。キーバリューストアではメタデータを値とともに保持することが可能です。
 
-Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
+キーバリューストアはハイパフォーマンスな挙動が可能で、単純なデータモデルやインメモリーキャッシュレイヤーなどのデータが急速に変わる場合などに使われます。単純な処理のみに機能が制限されているので、追加の処理機能が必要な場合にはその複雑性はアプリケーション層に載せることになります。
 
-A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
+キーバリューストアはもっと複雑なドキュメントストアや、グラフデータベースなどの基本です。
 
-##### Source(s) and further reading: key-value store
+##### その他の参考資料、ページ: キーバリューストア
 
-* [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
-* [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
-* [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database)
+* [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+* [Redisアーキテキチャ](http://qnimate.com/overview-of-redis-architecture/)
+* [メムキャッシュアーキテキチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### Document store
 
