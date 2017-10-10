@@ -168,8 +168,8 @@
     * [2の指数表](#powers-of-two-table)
     * [全てのプログラマーが知っておくべきレイテンシの参考値](#latency-numbers-every-programmer-should-know)
     * [その他システム設計面接での質問例](#additional-system-design-interview-questions)
-    * [実世界でのアーキテキチャ](#real-world-architectures)
-    * [各企業のアーキテキチャ](#company-architectures)
+    * [実世界でのアーキテクチャ](#real-world-architectures)
+    * [各企業のアーキテクチャ](#company-architectures)
     * [各企業のエンジニアリングブログ](#company-engineering-blogs)
 * [作業中](#under-development)
 * [クレジット](#credits)
@@ -206,7 +206,7 @@
 |---|---|---|---|
 | 次のページを読んで [システム設計トピック](#index-of-system-design-topics) システムがどのように動くかの大体の知識を入れる | :+1: | :+1: | :+1: |
 | 次のリンク先のいくつかのページを読んで [各企業のエンジニアリングブログ](#company-engineering-blogs) 応募する会社について知る | :+1: | :+1: | :+1: |
-| 次のリンク先のいくつかのページを読む [実世界でのアーキテキチャ](#real-world-architectures) | :+1: | :+1: | :+1: |
+| 次のリンク先のいくつかのページを読む [実世界でのアーキテクチャ](#real-world-architectures) | :+1: | :+1: | :+1: |
 | 復習する [システム設計面接課題にどのように準備するか](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
 | とりあえず一周する [システム設計課題例](#system-design-interview-questions-with-solutions) | Some | Many | Most |
 | とりあえず一周する [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
@@ -278,7 +278,7 @@
 
 * [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [システム設計面接](http://www.hiredintech.com/system-design)
-* [アーキテキチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [アーキテクチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
 ## システム設計課題例とその解答
 
@@ -561,7 +561,7 @@ DNSは少数のオーソライズされたサーバーが上位に位置する�
 
 ### その他の参考資料、ページ
 
-* [DNS アーキテキチャ](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+* [DNS アーキテクチャ](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [DNS 記事](https://support.dnsimple.com/categories/dns/)
 
@@ -668,8 +668,8 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
 
 ### その他の参考資料、ページ
 
-* [NGINX アーキテキチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy アーキテキチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy アーキテクチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [スケーラビリティ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [Layer 4 ロードバランシング](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
@@ -715,8 +715,8 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
 ### その他の参考資料、ページ
 
 * [リバースプロキシ vs ロードバランサー](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX アーキテキチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy アーキテキチャ ガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy アーキテクチャ ガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
 ## アプリケーション層
@@ -745,14 +745,14 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#comm
 
 ### 欠点: アプリケーション層
 
-* 緩く結び付けられたアプリケーション層を追加することは、モノリシックなシステムとはアーキテキチャ、運用、そしてプロセスの観点からすると異なるアプローチを必要とします。
+* 緩く結び付けられたアプリケーション層を追加することは、モノリシックなシステムとはアーキテクチャ、運用、そしてプロセスの観点からすると異なるアプローチを必要とします。
 * マイクロサービスはデプロイと運用の点から見ると複雑性が増すことになります。
 
 ### その他の参考資料、ページ
 
-* [スケールするシステムアーキテキチャを設計するためにイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale)
+* [スケールするシステムアーキテクチャを設計するためにイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale)
 * [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
-* [サービス指向アーキテキチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+* [サービス指向アーキテクチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
@@ -868,7 +868,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 ##### その他の参考資料、ページ: シャーディング
 
 * [シャードの登場](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-* [シャードデータベースアーキテキチャ](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+* [シャードデータベースアーキテクチャ](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
 #### 非正規化
@@ -965,27 +965,27 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 * [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database)
 * [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redisアーキテキチャ](http://qnimate.com/overview-of-redis-architecture/)
-* [メムキャッシュアーキテキチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [Redisアーキテクチャ](http://qnimate.com/overview-of-redis-architecture/)
+* [メムキャッシュアーキテクチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### Document store
+#### ドキュメントストア
 
-> Abstraction: key-value store with documents stored as values
+> 概要: ドキュメントがバリューとして保存されたキーバリューストア
 
-A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
+ドキュメントストアはオブジェクトに関する全ての情報を持つドキュメント(XML, JSON, binaryなど)を中心に据えたシステムです。ドキュメントストアでは、ドキュメント自身の内部構造に基づいた、APIもしくはクエリ言語を提供します。 *メモ：多くのキーバリューストアでは、値のメタデータを扱う機能を含んでいますが、そのことによって二つドキュメントストアとの境界線が曖昧になってしまっています。*
 
-Based on the underlying implementation, documents are organized in either collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
+以上のことを実現するために、ドキュメントはコレクション、タグ、メタデータやディレクトリなどとして整理されています。ドキュメント同士はまとめてグループにできるものの、それぞれで全く異なるフィールドを持つ可能性があります。 
 
-Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
+[MongoDB](https://www.mongodb.com/mongodb-architecture) や [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) などのドキュメントストアも、複雑なクエリを処理するためのSQLのような言語を提供しています。[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) はキーバリューとドキュメントの両方をサポートしています。
 
-Document stores provide high flexibility and are often used for working with occasionally changing data.
+ドキュメントストアは高い柔軟性を担保するので、頻繁に変化するデータを扱う時に用いられます。
 
-##### Source(s) and further reading: document store
+##### その他の参考資料、ページ:  ドキュメントストア
 
-* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
-* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
-* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+* [ドキュメント志向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [MongoDB アーキテクチャ](https://www.mongodb.com/mongodb-architecture)
+* [CouchDB アーキテクチャ](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+* [Elasticsearch アーキテクチャ](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
 #### Wide column store
 
