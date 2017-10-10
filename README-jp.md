@@ -1010,7 +1010,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 * [HBase アーキテクチャ](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
 * [Cassandra アーキテクチャ](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
-#### Graph database
+#### グラフデータベース
 
 <p align="center">
   <img src="http://i.imgur.com/fNcl65g.png">
@@ -1018,25 +1018,25 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
 
-> Abstraction: graph
+> 概要: グラフ
 
-In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.
+グラフデータベースでは、それぞれのノーどがレコードで、それぞれのアークは二つのノードを繋ぐ関係性として定義されます。グラフデータベースは多数の外部キーや多対多などの複雑な関係性を表すのに最適です。
 
-Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
+グラフデータベースはSNSなどのサービスの複雑な関係性モデルなどについて高いパフォーマンスを発揮します。比較的新しく、まだ一般的には用いられていないので、開発ツールやリソースを探すのが他の方法に比べて難しいかもしれません。多くのグラフは[REST APIs](#representational-state-transfer-rest)を通じてのみアクセスできます。
 
-##### Source(s) and further reading: graph
+##### その他の参考資料、ページ:  グラフ
 
-* [Graph database](https://en.wikipedia.org/wiki/Graph_database)
+* [Graphデータベース](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-#### Source(s) and further reading: NoSQL
+#### その他の参考資料、ページ:  NoSQL
 
-* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+* [基本用語の説明](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+* [NoSQLデータベースについて調査と選択ガイド](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+* [スケーラビリティ](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [NoSQLのイントロダクション](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+* [NoSQLパターン](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 ### SQL or NoSQL
 
