@@ -1038,7 +1038,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 * [NoSQLのイントロダクション](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQLパターン](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### SQLか？NoSQLか？
 
 <p align="center">
   <img src="http://i.imgur.com/wXGqG5f.png">
@@ -1046,39 +1046,39 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
 
-Reasons for **SQL**:
+**SQL** を選ぶ理由:
 
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
+* 構造化されたデータ
+* 厳格なスキーマ
+* リレーショナルデータ
+* 複雑なジョインをする必要性
+* トランザクション
+* スケールする際のパターンが明確なとき
+* 開発者の数、コミュニティ、コード等がより充実している
+* インデックスによるデータ探索はとても速い
 
-Reasons for **NoSQL**:
+**NoSQL** を選ぶ理由:
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non-relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+* 準構造化されたデータ
+* ダイナミックないし、フレキシブルなスキーマ
+* ノンリレーショナルなデータ
+* 複雑なジョインをする必要がない
+* データの多くのTB (もしくは PB) を保存する
+* 集中的、大規模なデータ負荷に耐えられる
+* IOPSについては極めて高いスループットを示す
 
-Sample data well-suited for NoSQL:
+NoSQLに適するサンプルデータ:
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+* 急激なクリックストリームやログデータの収集
+* リーダーボードやスコアリングデータ
+* ショッピングカートなどの一時的情報
+* 頻繁にアクセスされる ('ホットな') テーブル
+* メタデータやルックアップテーブル
 
-##### Source(s) and further reading: SQL or NoSQL
+##### その他の参考資料、ページ:  　SQLもしくはNoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
-* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+* [SQLとNoSQLの違い](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## Cache
 
