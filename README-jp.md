@@ -1080,7 +1080,7 @@ NoSQLに適するサンプルデータ:
 * [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 * [SQLとNoSQLの違い](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
-## Cache
+## キャッシュ
 
 <p align="center">
   <img src="http://i.imgur.com/Q6z24La.png">
@@ -1088,70 +1088,70 @@ NoSQLに適するサンプルデータ:
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
 
-Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
+キャッシュはページの読み込み時間を削減し、サーバーやデータベースへの負荷を低減することができます。このモデルでは、実際の処理を保存するために、ディスパッチャーがまず以前にリクエストが送信されたかどうかを確認し、直前の結果を受け取ります。
 
-Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
+データベースはそのパーティションに渡って統合された読み取り書き込みの分配を要求しますが、人気アイテムはその分配を歪めてシステム全体のボトルネックになってしまうことがあります。データベースの前にキャッシュを差し込むことでこのように、均一でない負荷やトラフィックの急激な増加を吸収することができます。
 
-### Client caching
+### クライアントキャッシング
 
-Caches can be located on the client side (OS or browser), [server side](#reverse-proxy), or in a distinct cache layer.
+キャッシュはOSやブラウザーなどのクライアントサイド、[server side](#reverse-proxy) もしくは独立のキャッシュレイヤーに設置することができます。
 
-### CDN caching
+### CDNキャッシング
 
-[CDNs](#content-delivery-network) are considered a type of cache.
+[CDNs](#content-delivery-network) もキャッシュの一つとして考えることができます。
 
-### Web server caching
+### Webサーバーキャッシング
 
-[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+[リバースプロキシ](#reverse-proxy-web-server) や [Varnish](https://www.varnish-cache.org/) などのキャッシュは静的そして動的なコンテンツを直接配信することができます。 webサーバーもリクエストをキャッシュしてアプリケーションサーバーに接続することなしにレスポンスを返すことができます。
 
-### Database caching
+### データベースキャッシング
 
-Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+データベースは普通、一般的な使用状況に適するようなキャッシングの設定を初期状態で持っています。この設定を特定の使用にあった仕様にいじることでパフォーマンスを向上させることができます。
 
-### Application caching
+### アプリケーションキャッシング
 
-In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+メムキャッシュなどのIn-memoryキャッシュやRedisはアプリケーションとデータストレージの間のキーバリューストアです。データはRAMで保持されるため、データがディスクで保存される一般的なデータベースよりもだいぶ速いです。RAM容量はディスクよりも限られているので、[least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used)などの[cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) アルゴリズムが 'コールド' なエントリを弾き、'ホット' なデータをRAMに保存します。
 
-Redis has the following additional features:
+Redisはさらに以下のような機能を備えています:
 
-* Persistence option
-* Built-in data structures such as sorted sets and lists
+* パージステンス設定
+* ソート済みセット、リストなどの組み込みデータ構造
 
-There are multiple levels you can cache that fall into two general categories: **database queries** and **objects**:
+キャッシュには様々なレベルのものがありますが、いずれも大きく二つのカテゴリーいずれかに分類することができます: **データベースクエリ** と **オブジェクト** です:
 
-* Row level
-* Query-level
+* 行レベル
+* クエリレベル
 * Fully-formed serializable objects
 * Fully-rendered HTML
 
-Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+一般的に、ファイルベースキャッシングはクローンを作り出してオートスケーリングを難しくしてしまうので避けるべきです。
 
-### Caching at the database query level
+### データベースクエリレベルでのキャッシング
 
-Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+データベースをクエリする際には必ずクエリをキーとしてハッシュして結果をキャッシュに保存しましょう。この手法はキャッシュ期限切れ問題に悩むことになります:
 
-* Hard to delete a cached result with complex queries
-* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
+* 複雑なクエリによりキャッシュされた結果を削除することが困難
+* テーブルセルなどのデータ断片が変化した時に、その変化したセルを含むかもしれない全てのキャッシュされたクエリを削除する必要がある。
 
-### Caching at the object level
+### オブジェクトレベルでのキャッシング
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+データをアプリケーションコードでそうするように、オブジェクトとして捉えてみましょう。アプリケーションに、データベースからのデータセットをクラスインスタンスやデータ構造として組み立てさせるます。:
 
-* Remove the object from cache if its underlying data has changed
-* Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
+* そのデータが変更されたら、オブジェクトをキャッシュから削除すること
+* 非同期処理を許容します: ワーカーがキャッシュされたオブジェクトの中で最新のものを集めてきます
 
-Suggestions of what to cache:
+何をキャッシュするか:
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+* ユーザーのセッション
+* 完全にレンダーされたウェブページ
+* アクテビティストリーム
+* ユーザーグラフデータ
 
-### When to update the cache
+### いつキャッシュを更新するか
 
-Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+キャッシュに保存できる容量は限られているため、自分のケースではどのキャッシュ手法が一番いいかは検討する必要があります。
 
-#### Cache-aside
+#### キャッシュアサイド
 
 <p align="center">
   <img src="http://i.imgur.com/ONjORqk.png">
@@ -1159,12 +1159,12 @@ Since you can only store a limited amount of data in cache, you'll need to deter
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
 
-The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+アプリケーションはストレージへの読み書きの処理をします。キャッシュはストレージとは直接やりとりをしません。アプリケーションは以下のことをします:
 
-* Look for entry in cache, resulting in a cache miss
-* Load entry from the database
-* Add entry to cache
-* Return entry
+* キャッシュの中のエントリを参照しますが、結果としてキャッシュミスになります
+* データベースからエントリを取得します
+* エントリをキャッシュに追加します
+* エントリを返します
 
 ```
 def get_user(self, user_id):
