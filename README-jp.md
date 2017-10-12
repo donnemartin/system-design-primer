@@ -1222,7 +1222,7 @@ def set_user(user_id, values):
 * ノードが落ちたこと、もしくはスケーリングによって新しいノードが作成された時に、新しいノードはデータベース内のエントリーが更新されるまではエントリーをキャッシュしません。キャッシュアサイドとライトスルーを併用することでこの問題を緩和できます。
 * 書き込まれたデータの大部分は一度も読み込まれることはありません。このデータはTTLによって圧縮することができます。
 
-#### Write-behind (write-back)
+#### ライトビハインド (ライトバック)
 
 <p align="center">
   <img src="http://i.imgur.com/rgSrvjG.png">
@@ -1230,17 +1230,17 @@ def set_user(user_id, values):
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-In write-behind, the application does the following:
+ライトビハインドではアプリケーションは以下のことをします:
 
-* Add/update entry in cache
-* Asynchronously write entry to the data store, improving write performance
+* キャッシュのエントリーを追加・更新します
+* データストアへの書き込みを非同期的に行うことで、書き込みパフォーマンスを向上させます。
 
-##### Disadvantage(s): write-behind
+##### 欠点: ライトビハインド
 
-* There could be data loss if the cache goes down prior to its contents hitting the data store.
-* It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+* キャッシュがデータストア内のコンテンツにヒットする前にキャッシュが落ちるとデータ欠損が起きる可能性があります。
+* キャッシュアサイドやライトスルーよりも実装が複雑になります。
 
-#### Refresh-ahead
+#### リフレッシュアヘッド
 
 <p align="center">
   <img src="http://i.imgur.com/kxtjqgE.png">
@@ -1248,28 +1248,28 @@ In write-behind, the application does the following:
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
 
-You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+期限切れよりも前に、直近でアクセスされた全てのキャッシュエントリを自動的に更新するように設定することができます。
 
-Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+もしどのアイテムが将来必要になるのかを正確に予測することができるのならば、リードスルーよりもレイテンシーを削減することができます。
 
-##### Disadvantage(s): refresh-ahead
+##### 欠点: リフレッシュアヘッド
 
-* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+* どのアイテムが必要になるかの予測が正確でない場合にはリフレッシュアヘッドがない方がレーテンシーは良いという結果になってしまいます。
 
-### Disadvantage(s): cache
+### 欠点: キャッシュ
 
-* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Need to make application changes such as adding Redis or memcached.
-* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
+* [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms)などを用いて、データベースなどの真のデータとキャッシュの間の一貫性を保つ必要があります。
+* Redisやmemcachedを追加することでアプリケーション構成を変更する必要があります。
+* Cache invalidationも難しいですがそれに加えて、いつキャッシュを更新するかという複雑な問題にも悩まされることになります。
 
-### Source(s) and further reading
+### その他の参考資料、ページ
 
 * [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-* [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+* [スエーラブルなシステムデザインパターン](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+* [スケールできるシステムを設計するためのイントロダクション](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+* [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [スケーラビリティ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [AWS ElastiCacheのストラテジー](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
 ## Asynchronism
