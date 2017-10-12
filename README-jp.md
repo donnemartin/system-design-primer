@@ -1177,17 +1177,17 @@ def get_user(self, user_id):
     return user
 ```
 
-[Memcached](https://memcached.org/) is generally used in this manner.
+[Memcached](https://memcached.org/) は通常このように使われる。
 
-Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+その後のキャッシュデータ読み込みは速いです。キャッシュアサイドはレージーローディングであるとも言われます。リクエストされたデータのみがキャッシュされ、リクエストされていないデータでキャッシュが溢れるのを防止します。
 
-##### Disadvantage(s): cache-aside
+##### 欠点: キャッシュアサイド
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
-* When a node fails, it is replaced by a new, empty node, increasing latency.
+* 各キャッシュミスは三つのトリップを呼び出すことになり、感じれるほどの遅延が起きてしまいます。
+* データベースのデータが更新されるとキャッシュデータは古いものになってしまいます。time-to-live (TTL)を設定することでキャッシュエントリの更新を強制的に行う、もしくはライトスルーを採用することでこの問題は緩和できます。
+* ノードが落ちると、新規の空のノードで代替されることでレーテンシーが増加することになります。
 
-#### Write-through
+#### ライトスルー
 
 <p align="center">
   <img src="http://i.imgur.com/0vBc0hN.png">
@@ -1195,19 +1195,19 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+アプリケーションはキャッシュをメインのデータストアとして使い、そこにデータの読み書きを行います。一方、キャッシュはデータベースへの読み書きを担当します。
 
-* Application adds/updates entry in cache
-* Cache synchronously writes entry to data store
-* Return
+* アプリケーションはキャッシュにあるエントリを追加・更新します
+* キャッシュは同期的にデータストアに書き込みを行います
+* エントリを返します
 
-Application code:
+アプリケーションコード:
 
 ```
 set_user(12345, {"foo":"bar"})
 ```
 
-Cache code:
+キャッシュコード:
 
 ```
 def set_user(user_id, values):
@@ -1215,12 +1215,12 @@ def set_user(user_id, values):
     cache.set(user_id, user)
 ```
 
-Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+ライトスルーは書き込み処理のせいで全体としては遅いオペレーションですが、書き込まれたばかりのデータに関する読み込みは速いです。ユーザー側は一般的にデータ更新時の方が読み込み時よりもレーテンシーに許容的です。キャッシュ内のデータは最新版で保たれます。
 
-##### Disadvantage(s): write through
+##### 欠点: ライトスルー
 
-* When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never read, which can be minimized with a TTL.
+* ノードが落ちたこと、もしくはスケーリングによって新しいノードが作成された時に、新しいノードはデータベース内のエントリーが更新されるまではエントリーをキャッシュしません。キャッシュアサイドとライトスルーを併用することでこの問題を緩和できます。
+* 書き込まれたデータの大部分は一度も読み込まれることはありません。このデータはTTLによって圧縮することができます。
 
 #### Write-behind (write-back)
 
