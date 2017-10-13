@@ -1318,7 +1318,7 @@ def set_user(user_id, values):
 * [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
 * [メッセージキューとタスクキューの違いとは？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
+## 通信
 
 <p align="center">
   <img src="http://i.imgur.com/5KeocQs.jpg">
@@ -1328,27 +1328,28 @@ def set_user(user_id, values):
 
 ### Hypertext transfer protocol (HTTP)
 
-HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP はクライアントとサーバー間でのデータをエンコードして転送するための手法です。リクエスト・レスポンスに関わるプロトコルです。クライアントがリクエストをサーバーに投げ、サーバーがリクエストに関係するコンテンツと完了ステータス情報をレスポンスとして返します。HTTPは自己完結するので、間にロードバランサー、キャッシュ、エンクリプション、圧縮などのどんな中間ルーターが入っても動くようにできています。
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+基本的なHTTPリクエストはHTTP動詞(メソッド)とリソース(エンドポイント)で成り立っています。以下がよくあるHTTP動詞です。:
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
+| 動詞 | 詳細 | 冪等性* | セーフ | キャッシュできるか |
 |---|---|---|---|---|
-| GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
-| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
-| DELETE | Deletes a resource | Yes | No | No |
+| GET | リソースを読み取る | Yes | Yes | Yes |
+| POST | リソースを作成するもしくはデータを処理するトリガー | No | No | Yes 
+レスポンスが新しい情報を含む場合 |
+| PUT | リソースを作成もしくは入れ替える | Yes | No | No |
+| PATCH | リソースを部分的に更新する | No | No | Yes レスポンスが新しい情報を含む場合 |
+| DELETE | リソースを削除する | Yes | No | No |
 
-*Can be called many times without different outcomes.*
+*何度呼んでも同じ結果が返ってくること*
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
+HTTPは**TCP** や **UDP** などの低級プロトコルに依存しているアプリケーションレイヤーのプロトコルである。
 
-#### Source(s) and further reading: HTTP
+#### その他の参考資料、ページ: HTTP
 
-* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
-* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
-* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+* [HTTPってなに?](https://www.nginx.com/resources/glossary/http/)
+* [HTTP と TCPの違い](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [PUT と PATCHの違い](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
 ### Transmission control protocol (TCP)
 
