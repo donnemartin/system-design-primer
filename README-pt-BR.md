@@ -715,11 +715,12 @@ Additional benefits include:
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Fonte: Introdução à arquitetura de sistemas escaláveis</a></i>
 </p>
 
-Separar a camada web da camada de aplicação (também conhecida como camada de plataforma) te permite escalar e configurar ambas as camadas independentemente. Adicionar uma nova API resulta em adicionar servidores de aplicação sem necessariamente precisar adicionar novos servidores web.
+Separar a camada web da camada de aplicação (também conhecida como camada de plataforma) te permite escalar e configurar 
+ambas as camadas de forma independente. Adicionar uma nova API resulta em adicionar servidores de aplicação sem necessariamente precisar adicionar novos servidores web.
 
 O **princípio de responsabilidade única** defende o uso de serviços pequenos e autônomos que trabalham juntos. Times pequenos com serviços pequenos são capazes de se planejarem melhor e crescerem rapidamente.
 
-Workers na camada de aplicação também permitem executar tarefas assíncronas [asynchronism](#asynchronism).
+Workers na camada de aplicação também permitem tarefas assíncronas [asynchronism](#asynchronism).
 
 ### Microservices
 
