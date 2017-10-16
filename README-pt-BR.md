@@ -142,9 +142,9 @@ Interested in **translating**?  Please see the following [ticket](https://github
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
+* [Assincronismo](#assincronismo)
+    * [Filas de Mensagens](#fila-de-mensagens)
+    * [Fila de Tarefas](#fila-de-tarefas)
     * [Back pressure](#back-pressure)
 * [Communication](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
@@ -379,7 +379,7 @@ First, you'll need a basic understanding of common principles, learning about wh
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [Assincronismo](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 ### Next steps
 
@@ -1261,7 +1261,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
-## Asynchronism
+## Assincronismo
 
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png">
@@ -1269,43 +1269,42 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+Tarefas assíncronas ajudam a reduzir o tempo de uma requisição em operações assíncronas que por outro lado seriam executadas sincronamente. Elas também podem te ajudar adiantando tarefas que são demoradas, como agregação periódica de dados.
 
-### Message queues
+### Fila de Mensagens
 
-Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+Filas de mensagens recebem, mantém, e entregam mensagens. Se uma operação é muito lenta para ser executada sequencialmente, você pode usar uma fila de mensagens da seguinte forma:
 
-* An application publishes a job to the queue, then notifies the user of job status
-* A worker picks up the job from the queue, processes it, then signals the job is complete
+* Uma aplicação adiciona uma tarefa na fila, e notifica o usuário do estado da tarefa.
+* Um worker pega a tarefa da fila, processa e notifica que a tarefa foi concluída.
 
-The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
+O usuário não é interrompido e a tarefa é processada em background. Durante esse tempo, a aplicação cliente pode opcionalmente fazer algum processamento para parecer que a tarefa foi concluída. Por exemplo, se estiver postando um tweet, o tweet poderia ser instantaneamente postado na sua linha do tempo, mas poderia levar um tempo a mais para que o tweet seja realmente entrege para todos os seus seguidores.
 
-**Redis** is useful as a simple message broker but messages can be lost.
+**Redis** é util como um simples **message broker** mas as mensagens podem se perder.
 
-**RabbitMQ** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+**RabbitMQ** é popular mas requer que você use o protocolo AMQP e gerencie seus própios nós.
+**Amazon SQS**, é servido pela Amazon mas pode ter uma latência grande e existe a possibilidade das mensagens serem entreges duas vezes.
 
-**Amazon SQS**, is hosted but can have high latency and has the possibility of messages being delivered twice.
+### Fila de tarefas
 
-### Task queues
+Filas de tarefas recebem tarefas e dados relacionados a elas, executam e retornam os resultados. Filas de tarefas podem suportar agendamento de tarefas e podem ser usadas para executar tarefas que são computacionalmente intensivas em background.
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
-
-**Celery** has support for scheduling and primarily has python support.
+**Celery** possui suporte para agendamento de tarefas e é usado para executar programas python.
 
 ### Back pressure
 
-If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+Se as filas começarem a crescer significantemente, o tamanho da fila pode se tornar maior que a quantidade de memória disponível, resultando em cache misses, acesso ao disco e até degradação da perfomance. [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) pode ajudar limitando o tamanho da fila, desse modo mantendo uma alta taxa de vazão e bom tempo de resposta para tarefas que já estão na fila. Uma vez que a fila enche, a aplicação cliente recebe  um status HTTP 503 informando que o servidor está ocupado e que a aplicação cliente deveria tentar novamente mais tarde, talvez com [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
-### Disadvantage(s): asynchronism
+### Desvantagen(s): Assincronismo
 
-* Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+* Casos de uso como cálculos que não são custosos ou operações em tempo real podem ser melhor em operações síncronas, sendo que adicionar filas pode adcionar atrasos e complexidade.
 
-### Source(s) and further reading
+### Fonte(s) e leituras adicionais
 
-* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
-* [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+* [É tudo um jogo de números - Em inglês](https://www.youtube.com/watch?v=1KRYH75wgy4)
+* [Aplicando  back pressure quando sobrecarregado - Em inglês](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+* [Lei de Little - Em Inglês](https://en.wikipedia.org/wiki/Little%27s_law)
+* [Qual é a diferença entre uma fila de mensagens e uma fila de tarefas? - Em inglês](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
 ## Communication
 
