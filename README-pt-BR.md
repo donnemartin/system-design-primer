@@ -145,7 +145,7 @@ Interested in **translating**?  Please see the following [ticket](https://github
 * [Assincronismo](#assincronismo)
     * [Filas de Mensagens](#fila-de-mensagens)
     * [Fila de Tarefas](#fila-de-tarefas)
-    * [Back pressure](#back-pressure)
+    * [Contra Pressão](#contra-pressão)
 * [Communication](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
@@ -1291,11 +1291,11 @@ Filas de tarefas recebem tarefas e dados relacionados a elas, executam e retorna
 
 **Celery** possui suporte para agendamento de tarefas e é usado para executar programas python.
 
-### Back pressure
+### Contra Pressão
 
-Se as filas começarem a crescer significantemente, o tamanho da fila pode se tornar maior que a quantidade de memória disponível, resultando em cache misses, acesso ao disco e até degradação da perfomance. [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) pode ajudar limitando o tamanho da fila, desse modo mantendo uma alta taxa de vazão e bom tempo de resposta para tarefas que já estão na fila. Uma vez que a fila enche, a aplicação cliente recebe  um status HTTP 503 informando que o servidor está ocupado e que a aplicação cliente deveria tentar novamente mais tarde, talvez com [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+Se as filas começarem a crescer significantemente, o tamanho da fila pode se tornar maior que a quantidade de memória disponível, resultando em cache misses, acesso ao disco e até degradação da perfomance. Aplicar [Contra Pressão](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) pode ajudar limitando o tamanho da fila, desse modo mantendo uma alta taxa de vazão e bom tempo de resposta para tarefas que já estão na fila. Uma vez que a fila enche, a aplicação cliente recebe  um status HTTP 503 informando que o servidor está ocupado e que a aplicação cliente deveria tentar novamente mais tarde, talvez usando o algoritmo de [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
-### Desvantagen(s): Assincronismo
+### Desvantagens: Assincronismo
 
 * Casos de uso como cálculos que não são custosos ou operações em tempo real podem ser melhor em operações síncronas, sendo que adicionar filas pode adcionar atrasos e complexidade.
 
