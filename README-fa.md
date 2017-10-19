@@ -296,7 +296,7 @@
 
 ### منابع برای مطالعه بیشتر
 
-از لینک‌های زیر میتونید استفاده کنید تا بهتر بشید که از شما چه انتظاراتی میره:
+از لینک‌های زیر میتونید استفاده کنید تا بیاد دستتون که مصاحبه طراحی سیستم چه جوریه و منتظر چه چیزایی باشید توش:
 
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
