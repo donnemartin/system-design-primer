@@ -1266,23 +1266,23 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Fonte: Introdução a arquitetura de sistemas para escalabilidade - Em Inglês</a></i>
 </p>
 
-Tarefas assíncronas ajudam a reduzir o tempo de uma requisição em operações assíncronas que por outro lado seriam executadas sincronamente. Elas também podem te ajudar adiantando tarefas que são demoradas, como agregação periódica de dados.
+Tarefas assíncronas ajudam a reduzir o tempo de resposta de uma requisição em operações assíncronas que por outro lado seriam executadas sincronamente. Elas também podem ajudar adiantando tarefas que são demoradas, como agregação periódica de dados.
 
 ### Fila de Mensagens
 
 Filas de mensagens recebem, mantém, e entregam mensagens. Se uma operação é muito lenta para ser executada sequencialmente, você pode usar uma fila de mensagens da seguinte forma:
 
 * Uma aplicação adiciona uma tarefa na fila, e notifica o usuário do estado da tarefa.
-* Um worker pega a tarefa da fila, processa e notifica que a tarefa foi concluída.
+* Um **worker** pega a tarefa da fila, processa e notifica que a tarefa foi concluída.
 
 O usuário não é interrompido e a tarefa é processada em background. Durante esse tempo, a aplicação cliente pode opcionalmente fazer algum processamento para parecer que a tarefa foi concluída. Por exemplo, se estiver postando um tweet, o tweet poderia ser instantaneamente postado na sua linha do tempo, mas poderia levar um tempo a mais para que o tweet seja realmente entrege para todos os seus seguidores.
 
 **Redis** é util como um simples **message broker** mas as mensagens podem se perder.
 
-**RabbitMQ** é popular mas requer que você use o protocolo AMQP e gerencie seus própios nós.
+**RabbitMQ** é uma fila de mensagens  popular mas requer que você use o protocolo AMQP e gerencie seus própios nós.
 **Amazon SQS**, é servido pela Amazon mas pode ter uma latência grande e existe a possibilidade das mensagens serem entreges duas vezes.
 
 ### Fila de tarefas
@@ -1293,7 +1293,7 @@ Filas de tarefas recebem tarefas e dados relacionados a elas, executam e retorna
 
 ### Contra Pressão
 
-Se as filas começarem a crescer significantemente, o tamanho da fila pode se tornar maior que a quantidade de memória disponível, resultando em cache misses, acesso ao disco e até degradação da perfomance. Aplicar [Contra Pressão](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) pode ajudar limitando o tamanho da fila, desse modo mantendo uma alta taxa de vazão e bom tempo de resposta para tarefas que já estão na fila. Uma vez que a fila enche, a aplicação cliente recebe  um status HTTP 503 informando que o servidor está ocupado e que a aplicação cliente deveria tentar novamente mais tarde, talvez usando o algoritmo de [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+Se as filas começarem a crescer significantemente, o tamanho da fila pode se tornar maior que a quantidade de memória disponível, resultando em **cache misses**, acesso ao disco e até degradação da performance. Aplicar [Contra Pressão](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) pode ajudar limitando o tamanho da fila, desse modo mantendo uma alta taxa de vazão e bom tempo de resposta para tarefas que já estão na fila. Uma vez que a fila enche, a aplicação cliente recebe  um status HTTP 503 informando que o servidor está ocupado e que a aplicação cliente deveria tentar novamente mais tarde, talvez usando o algoritmo de [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
 ### Desvantagens: Assincronismo
 
