@@ -198,9 +198,9 @@
 
 まずは広く始めて、そこからいくつかの分野に絞って深めていくのがいいでしょう。少しずつでの様々なシステム設計のトピックについて知っておくことはいいことです。以下の学習ガイドを自分の学習に当てられる時間、技術経験、どの職位、どの会社に応募しているかなどを加味して自分用に調整して使うといいでしょう。
 
-* **短期間** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **中期間** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **長期間** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **短期間** - **幅広く** システム設計トピックを学ぶ。**いくつかの** 面接課題を解くことで対策する。
+* **中期間** - **幅広く** そして **それなりに深く**システム設計トピックを学ぶ。**多くの** 面接課題を解くことで対策する。
+* **長期間** - **幅広く** そして **もっと深く**システム設計トピックを学ぶ。**ほぼ全ての** 面接課題を解くことで対策する。
 
 | | 短期間 | 中期間 | 長期間 |
 |---|---|---|---|
