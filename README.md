@@ -1,4 +1,4 @@
-*[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Japanese](https://github.com/donnemartin/system-design-primer/issues/100) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Traditional Chinese](https://github.com/donnemartin/system-design-primer/issues/88) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Japanese](https://github.com/donnemartin/system-design-primer/issues/100) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Traditional Chinese](https://github.com/donnemartin/system-design-primer/issues/88) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # The System Design Primer
 
@@ -1622,7 +1622,7 @@ Handy metrics based on numbers above:
 | Design a system that serves data from multiple data centers | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | Design an online multiplayer card game | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |                                     
+| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Add a system design question | [Contribute](#contributing) |
 
 ### Real world architectures
