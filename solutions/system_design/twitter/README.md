@@ -124,7 +124,7 @@ If our **Memory Cache** is Redis, we could use a native Redis list with the foll
 
 ```
            tweet n+2                   tweet n+1                   tweet n
-| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   7 bytes  1 byte |
+| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte |
 | tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |
 ```
 
