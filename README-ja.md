@@ -1,6 +1,6 @@
 *[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-# The System Design Primer
+# システム設計入門
 
 <p align="center">
   <img src="http://i.imgur.com/jj3A5N8.png">
@@ -98,7 +98,7 @@
 * [システム設計トピック: まずはここから](#システム設計トピックス-まずはここから)
     * [Step 1: スケーラビリティに関する動画を見る](#ステップ-1-スケーラビリティに関する動画を観て復習する)
     * [Step 2: スケーラビリティに関する記事を読む](#ステップ-2-スケーラビリティに関する資料を読んで復習する)
-    * [Next steps](#次のステップ)
+    * [次のステップ](#次のステップ)
 * [パフォーマンス vs スケーラビリティ](#パフォーマンス-vs-スケーラビリティ)
 * [レイテンシー vs スループット](#レイテンシー-vs-スループット)
 * [可用性 vs 一貫性](#可用性-vs-一貫性)
@@ -113,12 +113,12 @@
     * [フェイルオーバー](#フェイルオーバー)
     * [レプリケーション](#レプリケーション)
 * [ドメインネームシステム(DNS)](#ドメインネームシステム)
-* [コンテントデリバリーネットワーク(CDN)](#コンテントデリバリーネットワークcontent-delivery-network)
+* [コンテンツデリバリーネットワーク(CDN)](#コンテンツデリバリーネットワークcontent-delivery-network)
     * [プッシュCDN](#プッシュcdn)
-    * [プルCDN](#プルcdns)
+    * [プルCDN](#プルcdn)
 * [ロードバランサー](#ロードバランサー)
     * [アクティブ/パッシブ構成](#アクティブパッシブ)
-    * [アクティブ/アクティブ構成](#active-active)
+    * [アクティブ/アクティブ構成](#アクティブアクティブ)
     * [Layer 4 ロードバランシング](#layer-4-ロードバランシング)
     * [Layer 7 ロードバランシング](#layer-7-ロードバランシング)
     * [水平スケーリング](#水平スケーリング)
@@ -159,9 +159,9 @@
     * [タスクキュー](#タスクキュー)
     * [バックプレッシャー](#バックプレッシャー)
 * [通信](#通信)
-    * [伝送制御プロトコル (TCP)](#transmission-control-protocol-tcp)
-    * [ユーザデータグラムプロトコル (UDP)](#user-datagram-protocol-udp)
-    * [遠隔手続呼出 (RPC)](#remote-procedure-call-rpc)
+    * [伝送制御プロトコル (TCP)](#伝送制御プロトコルtcp)
+    * [ユーザデータグラムプロトコル (UDP)](#ユーザデータグラムプロトコルudp)
+    * [遠隔手続呼出 (RPC)](#遠隔手続呼出rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
 * [セキュリティ](#セキュリティ)
 * [補遺](#補遺)
@@ -407,7 +407,7 @@
 
 ## パフォーマンス vs スケーラビリティ
 
-リソースが追加されるのにつれて **パフォーマンス** が向上する場合そのサービスは **scalable** であると言えるでしょう。一般的に、パフォーマンスを向上させるというのはすなわち計算処理を増やすことを意味しますが、データセットが増えた時などより大きな処理を捌けるようになることでもあります。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+リソースが追加されるのにつれて **パフォーマンス** が向上する場合そのサービスは **スケーラブル** であると言えるでしょう。一般的に、パフォーマンスを向上させるというのはすなわち計算処理を増やすことを意味しますが、データセットが増えた時などより大きな処理を捌けるようになることでもあります。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
 パフォーマンスvsスケーラビリティをとらえる他の考え方:
 
@@ -739,7 +739,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 例えばPinterestでは以下のようなマイクロサービスに分かれています。ユーザープロフィール、フォロワー、フィード、検索、写真アップロードなどです。
 
-### Service Discovery
+### サービスディスカバリー
 
 [Consul](https://www.consul.io/docs/index.html)、 [Etcd](https://coreos.com/etcd/docs/latest)、 そして [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) などのシステムはそれぞれを見つけやすいように、登録された名前、アドレス、そしてポート番号などを監視しています。[Health checks](https://www.consul.io/intro/getting-started/checks.html) はサービスの統一性を証明するのに有用ですが、しばしば[HTTP](#hypertext-transfer-protocol-http) エンドポイントを用いています。  Consul と Etcd のいずれも組み込みの [key-value store](#キーバリューストア) を持っており、設定データや共有データなどのデータを保存しておくことに使われます。
 
@@ -905,7 +905,7 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 * より早い接続を得るために、連続したブロックの中のディスクにMySQLをダンプする。
 * 長さの決まったフィールドに対しては `CHAR` よりも `VARCHAR` を使うようにしましょう。
     * `CHAR` の方が効率的に速くランダムにデータにアクセスできます。 一方、 `VARCHAR` では次のデータに移る前にデータの末尾を検知しなければならないために速度が犠牲になります。
-* ブログ投稿などの大きなテキスト `TEXT` を使いましょう。 `TEXT` ではブーリン型の検索も可能です。 `TEXT` フィールドを使うことは、テキストブロックを配置するのに用いたポインターをディスク上に保存することになります。 
+* ブログ投稿などの大きなテキスト `TEXT` を使いましょう。 `TEXT` ではブーリアン型の検索も可能です。 `TEXT` フィールドを使うことは、テキストブロックを配置するのに用いたポインターをディスク上に保存することになります。 
 * 2の32乗や40億を超えてくる数に関しては `INT` を使いましょう
 * 通貨に関しては小数点表示上のエラーを避けるために `DECIMAL` を使いましょう。
 * 大きな `BLOBS` を保存するのは避けましょう。どこからそのオブジェクトを取ってくることができるかの情報を保存しましょう。
@@ -1094,7 +1094,7 @@ NoSQLに適するサンプルデータ:
 
 ### クライアントキャッシング
 
-キャッシュはOSやブラウザーなどのクライアントサイド、[server side](#リバースプロキシwebサーバー) もしくは独立のキャッシュレイヤーに設置することができます。
+キャッシュはOSやブラウザーなどのクライアントサイド、[サーバーサイド](#リバースプロキシwebサーバー) もしくは独立のキャッシュレイヤーに設置することができます。
 
 ### CDNキャッシング
 
@@ -1350,7 +1350,7 @@ HTTPは**TCP** や **UDP** などの低級プロトコルに依存している�
 * [HTTP と TCPの違い](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 * [PUT と PATCHの違い](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
-### Transmission control protocol (TCP)
+### 伝送制御プロトコル (TCP)
 
 <p align="center">
   <img src="http://i.imgur.com/JdAsdvG.jpg">
@@ -1369,12 +1369,12 @@ TCPは[IP network](https://en.wikipedia.org/wiki/Internet_Protocol)の上で成�
 
 TCPは高い依存性を要し、時間制約が厳しくないものに適しているでしょう。ウェブサーバー、データベース情報、SMTP、FTPやSSHなどの例に適用されます。
 
-以下の時にUDPよりもTCPを使うといいしょう:
+以下の時にUDPよりもTCPを使うといいでしょう:
 
 * 全てのデータが欠損することなしに届いてほしい
 * ネットワークスループットの最適な自動推測をしてオペレーションしたい
 
-### User datagram protocol (UDP)
+### ユーザデータグラムプロトコル (UDP)
 
 <p align="center">
   <img src="http://i.imgur.com/yzDrJtA.jpg">
@@ -1403,7 +1403,7 @@ TCPよりもUDPを使うのは:
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 * [Facebookのメムキャッシュスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Remote procedure call (RPC)
+### 遠隔手続呼出 (RPC)
 
 <p align="center">
   <img src="http://i.imgur.com/iF4Mkb5.png">
@@ -1581,8 +1581,8 @@ Notes
 * 1 Gbps Ethernetからの連続読み取り速度　100 MB/s
 * SSDからの連続読み取り速度 1 GB/s
 * main memoryからの連続読み取り速度 4 GB/s
-* 1秒でで地球6-7周できる
-* 1秒ででデータセンターと2000周やりとりできる
+* 1秒で地球6-7周できる
+* 1秒でデータセンターと2000周やりとりできる
 
 #### レイテンシーの視覚的表
 
@@ -1621,7 +1621,7 @@ Notes
 | 一定のインターバル時間での上位k件を返す | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
 | 複数のデータセンターからデータを配信するサービスの設計 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| ごみ収集システムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | システム設計例題を追加する | [Contribute](#contributing) |
 
 ### 実世界のアーキテクチャ
