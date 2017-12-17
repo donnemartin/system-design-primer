@@ -116,7 +116,7 @@ Interessado em **traduzir**?  Por favor siga esse  [ticket](https://github.com/d
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
 * [Bancos de dados](#database)
-    * [Sistema de gestão de banco de dados relacional (SGBDR)](#relational-database-management-system-rdbms)
+    * [Sistema de gerenciamento de banco de dados relacional (SGBDR)](#relational-database-management-system-rdbms)
         * [Replicação Master-slave](#master-slave-replication)
         * [Replicação Master-master](#master-master-replication)
         * [Federação](#federation)
@@ -753,22 +753,22 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Fonte: Escalando até os primeiros 10 millhões de usuários</a></i>
 </p>
 
-### Sistema de gestão de banco de dados relacional  (SGBDR)
+### Sistema de gerenciamento de banco de dados relacional (SGBDR)
 
-A relational database like SQL is a collection of data items organized in tables.
+Um banco de dados relacional usando SQL, é uma coleção de itens de dados, organizados em tabelas.
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+**ACID** é um conjunto de propriedades de [transações](https://en.wikipedia.org/wiki/Database_transaction) do banco de dados relacional.
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+* **Atomicidade** - Cada transação é tudo ou nada
+* **Consistência** - Qualquer transação levará o banco de dados de um estado válido para outro
+* **Isolamento** - Executando transações concorrentemente obteremos os mesmos resultados como se as transações fossem executadas serialmente (em sequência)
+* **Durabilidade** - Uma vez a transação sendo commitada (efetivada), será armazenada
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+Há muitas técnicas para escalar um banco de dados relacional: **replicação master-slave**, **replicação master-master**, **federação**, **sharding**, **desnormalização**, and **Ajuste de SQL**.
 
-#### Master-slave replication
+#### Replicação Master-slave
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+O banco master serve leituras e escritas, replicando escritas para um ou mais bancos slave, que servem somente leitura.  Slaves podem também ser replicados em slaves adicionais, num estilo "árvore binária". Se o master fica offline, o sistema continua a operar no modo de somente-leitura, até que um slave seja promovido a master, ou um novo master seja provisionado.
 
 <p align="center">
   <img src="http://i.imgur.com/C9ioGtn.png">
@@ -776,14 +776,14 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### Desvantagem(ns): replicação master-slave
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* É necessário lógica adicional para promover um slave para master.
+* See [Desvantagem(ns): replicação](#disadvantages-replication) para pontos relacionados a ambos tipos de replicação, master-slave e master-master.
 
-#### Master-master replication
+#### Replicação Master-master
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas escritas. Se algum deles cair, o sistema pode continuar a operar com as leituras e escritas.
 
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
@@ -791,9 +791,9 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### Desvantagem(ns): replicação master-master
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
+* Será necessário um "balanceador de carga" ou fazer muanças na lógica das aplicações para determinar onde escrever.
 * Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
 * Conflict resolution comes more into play as more write nodes are added and as latency increases.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
@@ -832,7 +832,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
-#### Sharding
+#### Arquitetura distribuída
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png">
