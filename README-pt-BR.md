@@ -122,9 +122,9 @@ Interessado em **traduzir**?  Por favor siga esse  [ticket](https://github.com/d
         * [Replicação Master-slave](#replicação-master-slave)
         * [Replicação Master-master](#replicação-master-master)
         * [Federação](#federação)
-        * [Fragmetação](#fragmentação)
+        * [Fragmentação](#fragmentação)
         * [Desnormalização](#desnormalização)
-        * [Tuning de SQL](#tuning-de-sql)
+        * [Ajuste de SQL](#ajuste-de-sql)
     * [NoSQL](#nosql)
         * [Armazenamento Key-value](#key-value-store)
         * [Armazenamento de Documento](#document-store)
@@ -850,7 +850,7 @@ Formas comuns de fragmentar uma tabela de usuários é através da inicial do ú
 
 ##### Desvantagem(ns): fragmentação
 
-* Será necessário atualizar a lógica das apicações para trabalhar com os fragmentos, o que pode resultar em consultas SQL complexas.
+* Será necessário atualizar a lógica das aplicações para trabalhar com os fragmentos, o que pode resultar em consultas SQL complexas.
 * Distribuição dos dados pode se tornar desigual num fragmento. Por exemplo, um conjunto de usuários bastante ativos num fragmento pode resultar em aumento de carga para s fragmento, comparado aos outros.
 * Rebalanceamento aumenta complexidade.  Uma função fragmentada baseada em [hashing consistente](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) pode reduzir a quantidade de dados transferidos.
 * Relacionar dados de múltiplos fragmentos é mais complexo.
@@ -862,7 +862,7 @@ Formas comuns de fragmentar uma tabela de usuários é através da inicial do ú
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### Desnormalização
 
 Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
 
@@ -880,7 +880,7 @@ In most systems, reads can heavily number writes 100:1 or even 1000:1.  A read r
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### Ajuste de SQL
 
 SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
 
