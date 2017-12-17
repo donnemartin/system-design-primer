@@ -8,22 +8,24 @@
 ## Motivação
 
 > Aprender como projetar sistemas de larga escala.
-> Aprender com a comunidade open source
+> 
+> Aprender com a comunidade open source.
+> 
 > Preparar-se para entrevistas de projeto de sistemas.
 
 ### Aprender como projetar sistemas de larga escala.
 
-Aprendendo como projetar sistemas escaláveis ajudará você a ser um engenheiro de sistemas melhor.
+Aprender a projetar sistemas escaláveis ajudará você a ser um engenheiro de sistemas melhor.
 
 Projeto de sistemas é um tópico amplo. Sobre princípios de projeto de sistemas, há uma **vasta quantidade de recursos espalhados pela internet**.
 
-Este repositório é uma **coleção organizada** de recursos que ajudarão você aprender como construir sistemas em escala.
+Este repositório é uma **coleção organizada** de recursos que ajudarão você a aprender como construir sistemas em escala.
 
 ### Aprender com a comunidade open source
 
-Este é um projeto open source em andamento e atualizado continuamente.
+Este é um projeto open source, em andamento e atualizado continuamente.
 
-[Contribuições](#contributing) são bem vindas!
+[Contribuições](#contribuindo) são bem vindas!
 
 ### Preparação para entrevista de projeto de sistemas
 
@@ -115,14 +117,14 @@ Interessado em **traduzir**?  Por favor siga esse  [ticket](https://github.com/d
 * [Camada de aplicação](#camada-de-aplicacao)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
-* [Bancos de dados](#database)
-    * [Sistema de gerenciamento de banco de dados relacional (SGBDR)](#relational-database-management-system-rdbms)
-        * [Replicação Master-slave](#master-slave-replication)
-        * [Replicação Master-master](#master-master-replication)
-        * [Federação](#federation)
-        * [Sharding](#sharding)
-        * [Desnormalização](#denormalization)
-        * [Tuning de SQL](#sql-tuning)
+* [Banco de dados](#banco-de-dados)
+    * [Sistema de gerenciamento de banco de dados relacional (SGBDR)](#sistema-de-gerenciamento-de-banco-de-dados-relacional-sgbdr)
+        * [Replicação Master-slave](#replicação-master-slave)
+        * [Replicação Master-master](#replicação-master-master)
+        * [Federação](#federação)
+        * [Fragmetação](#fragmentação)
+        * [Desnormalização](#desnormalização)
+        * [Tuning de SQL](#tuning-de-sql)
     * [NoSQL](#nosql)
         * [Armazenamento Key-value](#key-value-store)
         * [Armazenamento de Documento](#document-store)
@@ -764,7 +766,7 @@ Um banco de dados relacional usando SQL, é uma coleção de itens de dados, org
 * **Isolamento** - Executando transações concorrentemente obteremos os mesmos resultados como se as transações fossem executadas serialmente (em sequência)
 * **Durabilidade** - Uma vez a transação sendo commitada (efetivada), será armazenada
 
-Há muitas técnicas para escalar um banco de dados relacional: **replicação master-slave**, **replicação master-master**, **federação**, **sharding**, **desnormalização**, and **Ajuste de SQL**.
+Há muitas técnicas para escalar um banco de dados relacional: **replicação master-slave**, **replicação master-master**, **federação**, **fragmentação**, **desnormalização**, e  **ajuste (tuning) de SQL**.
 
 #### Replicação Master-slave
 
@@ -779,7 +781,7 @@ O banco master serve leituras e escritas, replicando escritas para um ou mais ba
 ##### Desvantagem(ns): replicação master-slave
 
 * É necessário lógica adicional para promover um slave para master.
-* See [Desvantagem(ns): replicação](#disadvantages-replication) para pontos relacionados a ambos tipos de replicação, master-slave e master-master.
+* Veja [Desvantagem(ns): replicação](#desvantagemns-replicação) para pontos relacionados a ambos tipos de replicação, master-slave e master-master.
 
 #### Replicação Master-master
 
@@ -794,9 +796,9 @@ Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas
 ##### Desvantagem(ns): replicação master-master
 
 * Será necessário um "balanceador de carga" ou fazer mudanças na lógica das aplicações para determinar onde escrever.
-* Muitos sistemas master-master ou são fracamente consistentes (violando ACID) ou tem a latência de escrta aumentada, devido à sincronização.
+* Muitos sistemas master-master ou são fracamente consistentes (violando ACID) ou tem a latência de escrita aumentada, devido à sincronização.
 * A necessidade de resolução de conflitos acontece mais vezes, quanto mais os nós de escrita são adicionados e a latência aumenta.
-* Veja [Desvantagem(ns): replicação](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Veja [Desvantagem(ns): replicação](#desvantagemns-replicação) para pontosrelacionados a **ambos** master-slave e master-master.
 
 ##### Desvantagem(ns): replicação
 
@@ -819,7 +821,7 @@ Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Federação (oo partcionamento funcional) divide bancos de dados por função. Por exemplo, ao invés de um único e monolítico banco de dado, você pode ter três: **forums**, **users**, e **products**, resultando em menos tráfego de leitura e escrita para cada um dos banco de dados e até menos demora na replicação.  Bancos menores resultam em mais dados que podem caber na memória, consequentemente resultando em mais eficiência do cache, devido à localização melhorada do cache. Se não há um único master central serializando as escritas, você pode escrever em paralelo, incrementando a taxa de transferência.
+Federação (ou particionamento funcional) divide bancos de dados por função. Por exemplo, ao invés de um único e monolítico banco de dados, você pode ter três: **forums**, **users**, e **products**, resultando em menos tráfego de leitura e escrita para cada um dos bancos de dados e até menos demora na replicação.  Bancos menores resultam em mais dados que podem caber na memória, consequentemente resultando em mais eficiência do cache, devido à localização melhorada do cache. Se não há um único master central serializando as escritas, você pode escrever em paralelo, incrementando a taxa de transferência.
 
 ##### Desvantagem(ns): federação
 
@@ -842,17 +844,17 @@ Federação (oo partcionamento funcional) divide bancos de dados por função. P
 
 Fragmentação distribui dados entre bancos de dados diferentes, de forma que cada um deles pode gerenciar somente um subconjunto dos dados. Tomando um banco de dados de usuários como exemplo, quando o número de usuários aumentar, mais fragmentos serão adicionados ao grupo.
 
-Similar às vantagens da [federação](#federation), a fragmentação resulta em menos tráfego de leituras e escritas, menos replicação, e mais eficiência do cache. Tamanho de índices também é reduzido, o que geralmente melhora performance, com consultas mais rápidas. Se um dos fragmentos cai, os outros ainda estão operacionais, embora você vá querer adicionar alguma forma de replicação para evitar perda de dados. Da mesma forma que a federação, não há um único master central master serializando escritas, permitindo escrita paralela com aumento da taxa de transferência.
+Similar às vantagens da [federação](#federação), a fragmentação resulta em menos tráfego de leituras e escritas, menos replicação, e mais eficiência do cache. Tamanho de índices também é reduzido, o que geralmente melhora performance, com consultas mais rápidas. Se um dos fragmentos cai, os outros ainda estão operacionais, embora você vá querer adicionar alguma forma de replicação, para evitar perda de dados. Da mesma forma que a federação, não há um único master central serializando escritas, permitindo escrita paralela, com aumento da taxa de transferência.
 
 Formas comuns de fragmentar uma tabela de usuários é através da inicial do último sobrenome, ou sua localização geográfica.
 
 ##### Desvantagem(ns): fragmentação
 
-* Será necessário atualizar a lógica das apicações para trabalhar com os fragmentos, o que pode resltar em consultas SQL complexas.
-* Distribuição dos dados pode se tornar desigual num fagmento. Por exemplo, um conjunto de usuários bastante ativos num fragmento pode resultar em aumento de carga para o fragmento, comparado aos outros.
-* Rebalanceamento aumenta complexidade.  Umafunção fragmentada baseada em [hashing consistente](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) pode reduzir a quantidade de dados transferidos.
+* Será necessário atualizar a lógica das apicações para trabalhar com os fragmentos, o que pode resultar em consultas SQL complexas.
+* Distribuição dos dados pode se tornar desigual num fragmento. Por exemplo, um conjunto de usuários bastante ativos num fragmento pode resultar em aumento de carga para s fragmento, comparado aos outros.
+* Rebalanceamento aumenta complexidade.  Uma função fragmentada baseada em [hashing consistente](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) pode reduzir a quantidade de dados transferidos.
 * Relacionar dados de múltiplos fragmentos é mais complexo.
-* Fragmetação requer mais hardware e complexidade adicional.
+* Fragmentação requer mais hardware e complexidade adicional.
 
 ##### Fonte(s) e leitura adicional: fragmentação
 
