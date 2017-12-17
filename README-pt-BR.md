@@ -5,39 +5,39 @@
   <br/>
 </p>
 
-## Motivation
+## Motivação
 
-> Learn how to design large scale systems.
->
-> Prep for the system design interview.
+> Aprender como projetar sistemas de larga escala.
+> Aprender com a comunidade open source
+> Preparar-se para entrevistas de projeto de sistemas.
 
-### Learn how to design large scale systems
+### Aprender como projetar sistemas de larga escala.
 
-Learning how to design scalable systems will help you become a better engineer.
+Aprendendo como projetar sistemas escaláveis ajudará você a ser um engenheiro de sistemas melhor.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Projeto de sistemas é um tópico amplo. Sobre princípios de projeto de sistemas, há uma **vasta quantidade de recursos espalhados pela internet**.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Este repositório é uma **coleção organizada** de recursos que ajudarão você aprender como construir sistemas em escala.
 
-### Learn from the open source community
+### Aprender com a comunidade open source
 
-This is an early draft of a continually updated, open source project.
+Este é um projeto open source em andamento e atualizado continuamente.
 
-[Contributions](#contributing) are welcome!
+[Contribuições](#contributing) são bem vindas!
 
-### Prep for the system design interview
+### Preparação para entrevista de projeto de sistemas
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Em conjunto com entrevistas que envolvem codificação, projeto de sistemas é um **requisito** do **processo de entrevista técnica** em muitas companhias de tecnologia.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Pratique questões comuns de entrevistas de projeto de sistemas** e **compare** seus resultados com **exemplos de soluções**: discussões, código, e diagramas.
 
-Additional topics for interview prep:
+Tópicos adicionais de preparação para entrevistas:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Guia de estudo](#study-guide)
+* [Como abordar uma questão de entrevista de projeto de sistemas](#how-to-approach-a-system-design-interview-question)
+* [Questões de entrevista de projeto de sistemas, **com soluções**](#system-design-interview-questions-with-solutions)
+* [Questões de entrevistas de projeto orientado a objetos, **com soluções**](#object-oriented-design-interview-questions-with-solutions)
+* [Questões adicionais de entrevista de projeto de sistemas](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -54,25 +54,25 @@ The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repeti
 
 Great for use while on-the-go.
 
-## Contributing
+## Contribuindo
 
-> Learn from the community.
+> Aprendendo com a comunidade.
 
-Feel free to submit pull requests to help:
+Sinta-se livre para submeter pull requests para ajudar a:
 
-* Fix errors
-* Improve sections
-* Add new sections
+* Corrigir erros
+* Melhorar seções
+* Adicionar novas seções
 
-Content that needs some polishing is placed [under development](#under-development).
+Conteúdos que necessitam alguma melhoria estão localizados como [em desenvolvimento](#under-development).
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+Revise o [Guia de Contribuição](CONTRIBUTING.md).
 
-### Translations
+### Traduções
 
-Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
+Interessado em **traduzir**?  Por favor siga esse  [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
 
-## Index of system design topics
+## Índice de tópicos em projeto de sistemas
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
 >
@@ -115,20 +115,20 @@ Interested in **translating**?  Please see the following [ticket](https://github
 * [Camada de aplicação](#camada-de-aplicacao)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
+* [Bancos de dados](#database)
+    * [Sistema de gestão de banco de dados relacional (SGBDR)](#relational-database-management-system-rdbms)
+        * [Replicação Master-slave](#master-slave-replication)
+        * [Replicação Master-master](#master-master-replication)
+        * [Federação](#federation)
         * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
+        * [Desnormalização](#denormalization)
+        * [Tuning de SQL](#sql-tuning)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
+        * [Armazenamento Key-value](#key-value-store)
+        * [Armazenamento de Documento](#document-store)
+        * [Armazenamento de coluna larga](#wide-column-store)
+        * [Banco de dados de Grafos](#graph-database)
+    * [SQL ou NoSQL](#sql-or-nosql)
 * [Cache](#cache)
     * [Client caching](#client-caching)
     * [CDN caching](#cdn-caching)
@@ -377,7 +377,7 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 * Topics covered:
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Bancos de dados](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Assincronismo](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
@@ -510,7 +510,7 @@ Active-active failover can also be referred to as master-master failover.
 
 #### Master-slave and master-master
 
-This topic is further discussed in the [Database](#database) section:
+Este tópico é melhor discutido na seção [Banco de dados](#database):
 
 * [Master-slave replication](#master-slave-replication)
 * [Master-master replication](#master-master-replication)
@@ -745,15 +745,15 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## Banco de dados
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Fonte: Escalando até os primeiros 10 millhões de usuários</a></i>
 </p>
 
-### Relational database management system (RDBMS)
+### Sistema de gestão de banco de dados relacional  (SGBDR)
 
 A relational database like SQL is a collection of data items organized in tables.
 
