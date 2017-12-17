@@ -793,25 +793,25 @@ Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas
 
 ##### Desvantagem(ns): replicação master-master
 
-* Será necessário um "balanceador de carga" ou fazer muanças na lógica das aplicações para determinar onde escrever.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Será necessário um "balanceador de carga" ou fazer mudanças na lógica das aplicações para determinar onde escrever.
+* Muitos sistemas master-master ou são fracamente consistentes (violando ACID) ou tem a latência de escrta aumentada, devido à sincronização.
+* A necessidade de resolução de conflitos acontece mais vezes, quanto mais os nós de escrita são adicionados e a latência aumenta.
+* Veja [Desvantagem(ns): replicação](#disadvantages-replication) for points related to **both** master-slave and master-master.
 
-##### Disadvantage(s): replication
+##### Desvantagem(ns): replicação
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+* Há um potencial para perda de dados se o master falhar antes que algum dado escrito recentemente seja replicado para outros nós. 
+* Escritas são re-executadas nas réplicas de leitura.  Se há muitas escritas a realizar, as réplicas de leitura estarão ocupadas com a re-execução das escritas, e podem deixar de realizar muitas leituras.
+* Quanto mais réplicas slave (leitura), mais você terá que replicar, o que leva a aumentar a demora na replicação.
+* Em alguns sistemas, escrever para o master pode disparar threads múltiplas, para escrever em paralelo, enquanto as réplicas de leitura só suportam escrita sequencial, com uma thread única.
+* Replicação requer mais hardware e adiciona complexidade.
 
-##### Source(s) and further reading: replication
+##### Fonte(s) e leitura adicional: replicação
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### Federação
 
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png">
@@ -819,20 +819,20 @@ Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+Federação (oo partcionamento funcional) divide bancos de dados por função. Por exemplo, ao invés de um único e monolítico banco de dado, você pode ter três: **forums**, **users**, e **products**, resultando em menos tráfego de leitura e escrita para cada um dos banco de dados e até menos demora na replicação.  Bancos menores resultam em mais dados que podem caber na memória, consequentemente resultando em mais eficiência do cache, devido à localização melhorada do cache. Se não há um único master central serializando as escritas, você pode escrever em paralelo, incrementando a taxa de transferência.
 
-##### Disadvantage(s): federation
+##### Desvantagem(ns): federação
 
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
+* Federação não é efetivo se seu esquema de dados requer funções ou tabelas enormes.
+* Será necessário atualizar a lógica das aplicações para determinar em que bancos de dados ler e escrever.
+* Relacionar dados de dois bancos de dados distintos é mais complexo com uma [ligação entre servidores](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
+* Federação requer mais hardware e adiciona complexidade.
 
-##### Source(s) and further reading: federation
+##### Fonte(s) e leitura adicional: federação
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
-#### Arquitetura distribuída
+#### Fragmentação
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png">
@@ -840,21 +840,21 @@ Federation (or functional partitioning) splits up databases by function.  For ex
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
+Fragmentação distribui dados entre bancos de dados diferentes, de forma que cada um deles pode gerenciar somente um subconjunto dos dados. Tomando um banco de dados de usuários como exemplo, quando o número de usuários aumentar, mais fragmentos serão adicionados ao grupo.
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+Similar às vantagens da [federação](#federation), a fragmentação resulta em menos tráfego de leituras e escritas, menos replicação, e mais eficiência do cache. Tamanho de índices também é reduzido, o que geralmente melhora performance, com consultas mais rápidas. Se um dos fragmentos cai, os outros ainda estão operacionais, embora você vá querer adicionar alguma forma de replicação para evitar perda de dados. Da mesma forma que a federação, não há um único master central master serializando escritas, permitindo escrita paralela com aumento da taxa de transferência.
 
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
+Formas comuns de fragmentar uma tabela de usuários é através da inicial do último sobrenome, ou sua localização geográfica.
 
-##### Disadvantage(s): sharding
+##### Desvantagem(ns): fragmentação
 
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
+* Será necessário atualizar a lógica das apicações para trabalhar com os fragmentos, o que pode resltar em consultas SQL complexas.
+* Distribuição dos dados pode se tornar desigual num fagmento. Por exemplo, um conjunto de usuários bastante ativos num fragmento pode resultar em aumento de carga para o fragmento, comparado aos outros.
+* Rebalanceamento aumenta complexidade.  Umafunção fragmentada baseada em [hashing consistente](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) pode reduzir a quantidade de dados transferidos.
+* Relacionar dados de múltiplos fragmentos é mais complexo.
+* Fragmetação requer mais hardware e complexidade adicional.
 
-##### Source(s) and further reading: sharding
+##### Fonte(s) e leitura adicional: fragmentação
 
 * [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
