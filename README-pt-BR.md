@@ -126,11 +126,11 @@ Interessado em **traduzir**?  Por favor siga esse  [ticket](https://github.com/d
         * [Desnormalização](#desnormalização)
         * [Ajuste de SQL](#ajuste-de-sql)
     * [NoSQL](#nosql)
-        * [Armazenamento Key-value](#key-value-store)
-        * [Armazenamento de Documento](#document-store)
-        * [Armazenamento de coluna larga](#wide-column-store)
-        * [Banco de dados de Grafos](#graph-database)
-    * [SQL ou NoSQL](#sql-or-nosql)
+        * [Armazenamento Chave-valor](#armazenamento-chave-valor)
+        * [Armazenamento de Documento](#armazenamento-de-documento)
+        * [Armazenamento de coluna grande](#armazenamento-de-coluna-grande)
+        * [Banco de dados de Grafos](#banco-de-dados-de-grafos)
+    * [SQL ou NoSQL](#sql-ou-nosql)
 * [Cache](#cache)
     * [Client caching](#client-caching)
     * [CDN caching](#cdn-caching)
@@ -508,14 +508,14 @@ Active-active failover can also be referred to as master-master failover.
 * Fail-over adds more hardware and additional complexity.
 * There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
 
-### Replication
+### Replicação
 
-#### Master-slave and master-master
+#### Master-slave e master-master
 
-Este tópico é melhor discutido na seção [Banco de dados](#database):
+Este tópico é melhor discutido na seção [Banco de dados](#banco-de-dados):
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Replicação Master-slave ](#replicação-master-slave)
+* [Replicação Master-master ](#replicação-master-master)
 
 ## Domain name system
 
@@ -763,8 +763,8 @@ Um banco de dados relacional usando SQL, é uma coleção de itens de dados, org
 
 * **Atomicidade** - Cada transação é tudo ou nada
 * **Consistência** - Qualquer transação levará o banco de dados de um estado válido para outro
-* **Isolamento** - Executando transações concorrentemente obteremos os mesmos resultados como se as transações fossem executadas serialmente (em sequência)
-* **Durabilidade** - Uma vez a transação sendo commitada (efetivada), será armazenada
+* **Isolamento** - Os mesmos resultados são obtidos, executando as transações concorrentemente ou serialmente (em sequência)
+* **Durabilidade** - Uma vez que a transação foi commitada (efetivada), ela continuará  armazenada
 
 Há muitas técnicas para escalar um banco de dados relacional: **replicação master-slave**, **replicação master-master**, **federação**, **fragmentação**, **desnormalização**, e  **ajuste (tuning) de SQL**.
 
@@ -798,7 +798,7 @@ Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas
 * Será necessário um "balanceador de carga" ou fazer mudanças na lógica das aplicações para determinar onde escrever.
 * Muitos sistemas master-master ou são fracamente consistentes (violando ACID) ou tem a latência de escrita aumentada, devido à sincronização.
 * A necessidade de resolução de conflitos acontece mais vezes, quanto mais os nós de escrita são adicionados e a latência aumenta.
-* Veja [Desvantagem(ns): replicação](#desvantagemns-replicação) para pontosrelacionados a **ambos** master-slave e master-master.
+* Veja [Desvantagem(ns): replicação](#desvantagemns-replicação) para pontos relacionados a **ambos** master-slave e master-master.
 
 ##### Desvantagem(ns): replicação
 
