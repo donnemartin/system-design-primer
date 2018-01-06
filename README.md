@@ -556,7 +556,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 ### Disadvantage(s): DNS
 
 * Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex, although they are generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
+* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
 * DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
 
 ### Source(s) and further reading
@@ -727,9 +727,7 @@ Additional benefits include:
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.
-
-The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
 
 Workers in the application layer also help enable [asynchronism](#asynchronism).
 
@@ -1259,8 +1257,8 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ### Disadvantage(s): cache
 
 * Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Need to make application changes such as adding Redis or memcached.
 * Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
+* Need to make application changes such as adding Redis or memcached.
 
 ### Source(s) and further reading
 
@@ -1485,12 +1483,12 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 
 | Operation | RPC | REST |
 |---|---|---|
-| Signup	| **POST** /signup | **POST** /persons |
-| Resign	| **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
+| Signup    | **POST** /signup | **POST** /persons |
+| Resign    | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
 | Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
 | Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
 | Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
-| Update an item	| **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| Update an item    | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
 | Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
 
 <p align="center">
@@ -1742,9 +1740,9 @@ Handy metrics based on numbers above:
 
 #### Source(s) and further reading
 
-* [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
+Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
 
-The list of blogs here will be kept relatively small and [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) will contain the larger list to avoid duplicating work. Do consider adding your company blog to the engineering-blogs repo instead.
+* [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
 ## Under development
 
