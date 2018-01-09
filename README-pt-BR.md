@@ -5,39 +5,41 @@
   <br/>
 </p>
 
-## Motivation
+## Motivação
 
-> Learn how to design large scale systems.
->
-> Prep for the system design interview.
+> Aprender como projetar sistemas de larga escala.
+> 
+> Aprender com a comunidade open source.
+> 
+> Preparar-se para entrevistas de projeto de sistemas.
 
-### Learn how to design large scale systems
+### Aprender como projetar sistemas de larga escala.
 
-Learning how to design scalable systems will help you become a better engineer.
+Aprender a projetar sistemas escaláveis ajudará você a ser um engenheiro de sistemas melhor.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Projeto de sistemas é um tópico amplo. Sobre princípios de projeto de sistemas, há uma **vasta quantidade de recursos espalhados pela internet**.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Este repositório é uma **coleção organizada** de recursos que ajudarão você a aprender como construir sistemas em escala.
 
-### Learn from the open source community
+### Aprender com a comunidade open source
 
-This is an early draft of a continually updated, open source project.
+Este é um projeto open source, em andamento e atualizado continuamente.
 
-[Contributions](#contributing) are welcome!
+[Contribuições](#contribuindo) são bem vindas!
 
-### Prep for the system design interview
+### Preparação para entrevista de projeto de sistemas
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Em conjunto com entrevistas que envolvem codificação, projeto de sistemas é um **requisito** do **processo de entrevista técnica** em muitas companhias de tecnologia.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Pratique questões comuns de entrevistas de projeto de sistemas** e **compare** seus resultados com **exemplos de soluções**: discussões, código, e diagramas.
 
-Additional topics for interview prep:
+Tópicos adicionais de preparação para entrevistas:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Guia de estudo](#study-guide)
+* [Como abordar uma questão de entrevista de projeto de sistemas](#how-to-approach-a-system-design-interview-question)
+* [Questões de entrevista de projeto de sistemas, **com soluções**](#system-design-interview-questions-with-solutions)
+* [Questões de entrevistas de projeto orientado a objetos, **com soluções**](#object-oriented-design-interview-questions-with-solutions)
+* [Questões adicionais de entrevista de projeto de sistemas](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -54,25 +56,25 @@ The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repeti
 
 Great for use while on-the-go.
 
-## Contributing
+## Contribuindo
 
-> Learn from the community.
+> Aprendendo com a comunidade.
 
-Feel free to submit pull requests to help:
+Sinta-se livre para submeter pull requests para ajudar a:
 
-* Fix errors
-* Improve sections
-* Add new sections
+* Corrigir erros
+* Melhorar seções
+* Adicionar novas seções
 
-Content that needs some polishing is placed [under development](#under-development).
+Conteúdos que necessitam alguma melhoria estão localizados como [em desenvolvimento](#under-development).
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+Revise o [Guia de Contribuição](CONTRIBUTING.md).
 
-### Translations
+### Traduções
 
-Interested in **translating**?  Please see the following [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
+Interessado em **traduzir**?  Por favor siga esse  [ticket](https://github.com/donnemartin/system-design-primer/issues/28).
 
-## Index of system design topics
+## Índice de tópicos em projeto de sistemas
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
 >
@@ -115,20 +117,20 @@ Interested in **translating**?  Please see the following [ticket](https://github
 * [Camada de aplicação](#camada-de-aplicacao)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
+* [Banco de dados](#banco-de-dados)
+    * [Sistema de gerenciamento de banco de dados relacional (SGBDR)](#sistema-de-gerenciamento-de-banco-de-dados-relacional-sgbdr)
+        * [Replicação Master-slave](#replicação-master-slave)
+        * [Replicação Master-master](#replicação-master-master)
+        * [Federação](#federação)
+        * [Fragmentação](#fragmentação)
+        * [Desnormalização](#desnormalização)
+        * [Ajuste de SQL](#ajuste-de-sql)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
+        * [Armazenamento Chave-valor](#armazenamento-chave-valor)
+        * [Armazenamento de Documento](#armazenamento-de-documento)
+        * [Armazenamento de coluna grande](#armazenamento-de-coluna-grande)
+        * [Banco de dados de Grafos](#banco-de-dados-de-grafos)
+    * [SQL ou NoSQL](#sql-ou-nosql)
 * [Cache](#cache)
     * [Client caching](#client-caching)
     * [CDN caching](#cdn-caching)
@@ -377,7 +379,7 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 * Topics covered:
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Bancos de dados](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Assincronismo](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
@@ -506,14 +508,14 @@ Active-active failover can also be referred to as master-master failover.
 * Fail-over adds more hardware and additional complexity.
 * There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
 
-### Replication
+### Replicação
 
-#### Master-slave and master-master
+#### Master-slave e master-master
 
-This topic is further discussed in the [Database](#database) section:
+Este tópico é melhor discutido na seção [Banco de dados](#banco-de-dados):
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Replicação Master-slave ](#replicação-master-slave)
+* [Replicação Master-master ](#replicação-master-master)
 
 ## Domain name system
 
@@ -745,30 +747,30 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## Banco de dados
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Fonte: Escalando até os primeiros 10 millhões de usuários</a></i>
 </p>
 
-### Relational database management system (RDBMS)
+### Sistema de gerenciamento de banco de dados relacional (SGBDR)
 
-A relational database like SQL is a collection of data items organized in tables.
+Um banco de dados relacional usando SQL, é uma coleção de itens de dados, organizados em tabelas.
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+**ACID** é um conjunto de propriedades de [transações](https://en.wikipedia.org/wiki/Database_transaction) do banco de dados relacional.
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+* **Atomicidade** - Cada transação é tudo ou nada
+* **Consistência** - Qualquer transação levará o banco de dados de um estado válido para outro
+* **Isolamento** - Os mesmos resultados são obtidos, executando as transações concorrentemente ou serialmente (em sequência)
+* **Durabilidade** - Uma vez que a transação foi commitada (efetivada), ela continuará  armazenada
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+Há muitas técnicas para escalar um banco de dados relacional: **replicação master-slave**, **replicação master-master**, **federação**, **fragmentação**, **desnormalização**, e  **ajuste (tuning) de SQL**.
 
-#### Master-slave replication
+#### Replicação Master-slave
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+O banco master serve leituras e escritas, replicando escritas para um ou mais bancos slave, que servem somente leitura.  Slaves podem também ser replicados em slaves adicionais, num estilo "árvore binária". Se o master fica offline, o sistema continua a operar no modo de somente-leitura, até que um slave seja promovido a master, ou um novo master seja provisionado.
 
 <p align="center">
   <img src="http://i.imgur.com/C9ioGtn.png">
@@ -776,14 +778,14 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### Desvantagem(ns): replicação master-slave
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* É necessário lógica adicional para promover um slave para master.
+* Veja [Desvantagem(ns): replicação](#desvantagemns-replicação) para pontos relacionados a ambos tipos de replicação, master-slave e master-master.
 
-#### Master-master replication
+#### Replicação Master-master
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+Ambos os bancos master servem leituras e escritas,  sincronizando entre eles nas escritas. Se algum deles cair, o sistema pode continuar a operar com as leituras e escritas.
 
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png">
@@ -791,27 +793,27 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### Desvantagem(ns): replicação master-master
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Será necessário um "balanceador de carga" ou fazer mudanças na lógica das aplicações para determinar onde escrever.
+* Muitos sistemas master-master ou são fracamente consistentes (violando ACID) ou tem a latência de escrita aumentada, devido à sincronização.
+* A necessidade de resolução de conflitos acontece mais vezes, quanto mais os nós de escrita são adicionados e a latência aumenta.
+* Veja [Desvantagem(ns): replicação](#desvantagemns-replicação) para pontos relacionados a **ambos** master-slave e master-master.
 
-##### Disadvantage(s): replication
+##### Desvantagem(ns): replicação
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+* Há um potencial para perda de dados se o master falhar antes que algum dado escrito recentemente seja replicado para outros nós. 
+* Escritas são re-executadas nas réplicas de leitura.  Se há muitas escritas a realizar, as réplicas de leitura estarão ocupadas com a re-execução das escritas, e podem deixar de realizar muitas leituras.
+* Quanto mais réplicas slave (leitura), mais você terá que replicar, o que leva a aumentar a demora na replicação.
+* Em alguns sistemas, escrever para o master pode disparar threads múltiplas, para escrever em paralelo, enquanto as réplicas de leitura só suportam escrita sequencial, com uma thread única.
+* Replicação requer mais hardware e adiciona complexidade.
 
-##### Source(s) and further reading: replication
+##### Fonte(s) e leitura adicional: replicação
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### Federação
 
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png">
@@ -819,20 +821,20 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+Federação (ou particionamento funcional) divide bancos de dados por função. Por exemplo, ao invés de um único e monolítico banco de dados, você pode ter três: **forums**, **users**, e **products**, resultando em menos tráfego de leitura e escrita para cada um dos bancos de dados e até menos demora na replicação.  Bancos menores resultam em mais dados que podem caber na memória, consequentemente resultando em mais eficiência do cache, devido à localização melhorada do cache. Se não há um único master central serializando as escritas, você pode escrever em paralelo, incrementando a taxa de transferência.
 
-##### Disadvantage(s): federation
+##### Desvantagem(ns): federação
 
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
+* Federação não é efetivo se seu esquema de dados requer funções ou tabelas enormes.
+* Será necessário atualizar a lógica das aplicações para determinar em que bancos de dados ler e escrever.
+* Relacionar dados de dois bancos de dados distintos é mais complexo com uma [ligação entre servidores](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
+* Federação requer mais hardware e adiciona complexidade.
 
-##### Source(s) and further reading: federation
+##### Fonte(s) e leitura adicional: federação
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
-#### Sharding
+#### Fragmentação
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png">
@@ -840,27 +842,27 @@ Federation (or functional partitioning) splits up databases by function.  For ex
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
+Fragmentação distribui dados entre bancos de dados diferentes, de forma que cada um deles pode gerenciar somente um subconjunto dos dados. Tomando um banco de dados de usuários como exemplo, quando o número de usuários aumentar, mais fragmentos serão adicionados ao grupo.
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+Similar às vantagens da [federação](#federação), a fragmentação resulta em menos tráfego de leituras e escritas, menos replicação, e mais eficiência do cache. Tamanho de índices também é reduzido, o que geralmente melhora performance, com consultas mais rápidas. Se um dos fragmentos cai, os outros ainda estão operacionais, embora você vá querer adicionar alguma forma de replicação, para evitar perda de dados. Da mesma forma que a federação, não há um único master central serializando escritas, permitindo escrita paralela, com aumento da taxa de transferência.
 
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
+Formas comuns de fragmentar uma tabela de usuários é através da inicial do último sobrenome, ou sua localização geográfica.
 
-##### Disadvantage(s): sharding
+##### Desvantagem(ns): fragmentação
 
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
+* Será necessário atualizar a lógica das aplicações para trabalhar com os fragmentos, o que pode resultar em consultas SQL complexas.
+* Distribuição dos dados pode se tornar desigual num fragmento. Por exemplo, um conjunto de usuários bastante ativos num fragmento pode resultar em aumento de carga para s fragmento, comparado aos outros.
+* Rebalanceamento aumenta complexidade.  Uma função fragmentada baseada em [hashing consistente](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) pode reduzir a quantidade de dados transferidos.
+* Relacionar dados de múltiplos fragmentos é mais complexo.
+* Fragmentação requer mais hardware e complexidade adicional.
 
-##### Source(s) and further reading: sharding
+##### Fonte(s) e leitura adicional: fragmentação
 
 * [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### Desnormalização
 
 Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
 
@@ -878,7 +880,7 @@ In most systems, reads can heavily number writes 100:1 or even 1000:1.  A read r
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### Ajuste de SQL
 
 SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
 
