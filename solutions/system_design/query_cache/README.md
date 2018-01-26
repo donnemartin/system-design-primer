@@ -247,7 +247,7 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
