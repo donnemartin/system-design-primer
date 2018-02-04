@@ -1309,6 +1309,7 @@ Se as filas começarem a crescer significantemente, o tamanho da fila pode se to
 * [Qual é a diferença entre uma fila de mensagens e uma fila de tarefas? - Em inglês](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
 ## Communication
+## Comunicação
 
 <p align="center">
   <img src="http://i.imgur.com/5KeocQs.jpg">
@@ -1316,50 +1317,50 @@ Se as filas começarem a crescer significantemente, o tamanho da fila pode se to
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
 
-### Hypertext transfer protocol (HTTP)
+### Protocolo de transferência de hipertexto (HTTP)
 
-HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP é um método para codificar e transportar dados entre um cliente e um servidor. É um protocolo de requisição/resposta: Clientes fazem requisições e servidores enviam respostas com conteúdo relevante e dados complementares sobre a requisição. HTTP é autocontido, permitindo que requisições e respostas trafeguem por vários roteadores intermediários e servidores que fazem balanceamento de carga, cache, criptografia e compreensão.
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+Uma requisição HTTP consiste basicamente de um verbo (método) e um recurso (endpoint). Abaixo estão alguns verbos HTTP:
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
+| Verbo | Descrição | Idempotente* | Seguro | Cacheável |
+
 |---|---|---|---|---|
-| GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
-| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
-| DELETE | Deletes a resource | Yes | No | No |
+| GET | Ler um recurso | Sim | Sim | Sim |
+| POST | Cria um recurso ou inicia uma operação para manipular dados | Não| Não | Sim se a resposta contém dados mais recentes |
+| PUT | Cria ou substitui um recurso | Sim | Não | Não |
+| PATCH | Parcialmente atualiza um recurso | Não | Não | Sim se a resposta contém dados mais recentes |
+| DELETE | Deleta um recurso | Sim | Não | Não |
 
-*Can be called many times without different outcomes.
+*Pode ser chamado várias vezes sem que o resultado mude.
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
+HTTP é um protocolo na camada de aplicação que depende de protocolos de baixo nível como **TCP** e **UDP**.
 
 * [HTTP](https://www.nginx.com/resources/glossary/http/)
-* [README](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [Leia-me](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 
-### Transmission control protocol (TCP)
+### Protocolo de controle de transmissão (TCP)
 
 <p align="center">
   <img src="http://i.imgur.com/JdAsdvG.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Fonte: Como fazer um jogo multiplayer (Em Inglês)</a></i>
 </p>
 
-TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
+TCP é um protocolo orietado a conexão em uma [rede IP](https://pt.wikipedia.org/wiki/Protocolo_de_Internet). Uma conexão é estabelecida e terminada usando um [handshake](https://pt.wikipedia.org/wiki/Handshake).
+Todos os pacotes enviados tem a garantia de alcançarem o destino na ordem original e sem serem corrompidos:
 
-* Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+* Números sequenciais e [checksum fields - Em Inglês](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) para cada pacote
+* [Acknowledgement - Em Inglês](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) pacotes e retransmissão automática
 
-If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally result in less efficient transmission than UDP.
+Se o remetente não receber a resposta correta, ele irá reenviar os pacotes. Se existem múltiplos timeouts, a conexão é abortada. TCP também implementa [Fluxo de controle - Em Inglês](https://en.wikipedia.org/wiki/Flow_control_(data)) e [Controle de congestão - Em Inglês](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  Essas garantias podem causar atrasos e geralmente resultam em uma transmissão menos eficiente do que UDP. Para garantir alta vazão, servidores web podem mander uma larga quantidade de conexões TCP abertas, resultando em alto consumo de memória. Pode ser custoso ter tantas conexões abertas entre threads em um servidor web e, por exemplo, um servidor [memcached](#memcached). [Connection pooling - Em Inglês](https://en.wikipedia.org/wiki/Connection_pool)  pode ajudar,  e também substituir por UDP quando for possível.
 
-To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a [memcached](#memcached) server.  [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool) can help in addition to switching to UDP where applicable.
+TCP é útil para aplicações que requerem grande confiabilidade mas são menos críticas. Alguns exemplos incluem servidores web, banco de dados, SMTP, FTP, e ssh.
 
-TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.
+Use TCP no lugar de UDP quando:
 
-Use TCP over UDP when:
-
-* You need all of the data to arrive intact
-* You want to automatically make a best estimate use of the network throughput
+* Você necessitar que todos os dados chegem intactos
+* Você deseja fazer uma melhor estimativa de uso da taxa de transfêrencia de rede
 
 ### User datagram protocol (UDP)
 
