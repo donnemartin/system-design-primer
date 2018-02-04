@@ -1324,7 +1324,6 @@ HTTP é um método para codificar e transportar dados entre um cliente e um serv
 Uma requisição HTTP consiste basicamente de um verbo (método) e um recurso (endpoint). Abaixo estão alguns verbos HTTP:
 
 | Verbo | Descrição | Idempotente* | Seguro | Cacheável |
-
 |---|---|---|---|---|
 | GET | Ler um recurso | Sim | Sim | Sim |
 | POST | Cria um recurso ou inicia uma operação para manipular dados | Não| Não | Sim se a resposta contém dados mais recentes |
