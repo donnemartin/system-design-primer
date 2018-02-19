@@ -65,6 +65,7 @@ Translations to new languages are always welcome, especially if you can maintain
 * Invite friends to review if possible. If desired, feel free to invite friends to help your original translation by letting them fork your repo, then merging their PRs.
 * Add links to your translation at the top of every README*.md file. (For consistency, the link should be added in alphabetical order by ISO code, and the anchor text should be in the native language.)
 * When done, indicate on the PR that it's ready to be merged into the main repo.
+* Once accepted, your PR will be squashed into a single commit into the `master` branch.
 
 ### Translation template credits
 
