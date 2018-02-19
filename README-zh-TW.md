@@ -80,9 +80,9 @@
 * 增加新的章節
 * [翻譯](https://github.com/donnemartin/system-design-primer/issues/28)
 
-某些還需要再完善的章節放在[修正中](#仍在進行中)。
+某些還需要再完善的章節放在 [修正中](#仍在進行中)。
 
-請參考[貢獻指南](CONTRIBUTING.md)。
+請參考 [貢獻指南](CONTRIBUTING.md)。
 
 ## 系統設計主題的索引
 
@@ -218,7 +218,7 @@
 
 系統設計是一個**開放式的對話過程**，面試官會期望由你來主導這個對話。
 
-你可以使用下面的步驟來引導整個討論過程。為了鞏固這個流程，請使用下面的步驟完成[系統設計面試題目與解答](#系統設計面試問題與解答)這個章節。
+你可以使用下面的步驟來引導整個討論過程。為了鞏固這個流程，請使用下面的步驟完成 [系統設計面試題目與解答](#系統設計面試問題與解答) 這個章節。
 
 ### 第一步：描述使用的場景、限制及假設
 
@@ -242,7 +242,7 @@
 
 ### 第三步： 設計核心的元件
 
-對每一個核心元件進行深入的分析。舉例來說， 如果你被問到[設計一個短網址的服務](solutions/system_design/pastebin/README.md)，可以開始討論以下內容：
+對每一個核心元件進行深入的分析。舉例來說， 如果你被問到 [設計一個短網址的服務](solutions/system_design/pastebin/README.md) ，可以開始討論以下內容：
 
 * 產生並儲存一個完整網址的 Hash
     * [MD5](solutions/system_design/pastebin/README.md) 和 [Base62](solutions/system_design/pastebin/README.md)
@@ -262,11 +262,11 @@
 * 快取
 * 資料庫切片
 
-針對你的設計討論可能的解決方法與代價。每個設計都有取捨。使用[可擴展的設計原則](#系統設計主題：從這裡開始)來處理系統瓶頸。
+針對你的設計討論可能的解決方法與代價。每個設計都有取捨。使用 [可擴展的設計原則](#系統設計主題：從這裡開始) 來處理系統瓶頸。
 
 ### 快速有效的進行估算
 
-你可能被要求針對你的設計進行一些估算，可以參考[附錄](#附錄)的一些資源：
+你可能被要求針對你的設計進行一些估算，可以參考 [附錄](#附錄) 的一些資源：
 
 * [使用快速估算法](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2 的次方表](#2-的次方表)
@@ -456,7 +456,7 @@
 
 每個進行回覆的節點中的最新版本可能不是最新的，當分區節點解析完畢後，寫入的操作可能需要一些時間來傳播資料。
 
-當你的系統需求需要保證 [最終一致性](#最終一致性)，或當外部系統故障時，系統要能夠繼續運作時，AP 是一個不錯的選擇。
+當你的系統需求需要保證 [最終一致性](#最終一致性) ，或當外部系統故障時，系統要能夠繼續運作時，AP 是一個不錯的選擇。
 
 ### 來源及延伸閱讀
 
@@ -466,7 +466,7 @@
 
 ## 一致性模式
 
-當你的資料有多個副本時，要考慮怎麼同步他們，以便讓使用者有一致的資料顯示。想想 [CAP 理論](#cap-理論)中的一致性定律 - 每次的訪問都可以得到最新的資料，但可能也會收到錯誤的回應。
+當你的資料有多個副本時，要考慮怎麼同步他們，以便讓使用者有一致的資料顯示。想想 [CAP 理論](#cap-理論) 中的一致性定律 - 每次的訪問都可以得到最新的資料，但可能也會收到錯誤的回應。
 
 ### 弱一致性
 
@@ -521,7 +521,7 @@ DNS 或是電子郵件系統使用的就是這種方式，最終一致性在高�
 
 #### 主動到備用複寫與雙主動複寫
 
-這一個主題進一步討論了[資料庫](#資料庫)部分：
+這一個主題進一步討論了 [資料庫](#資料庫) 部分：
 
 * [主動到備用複寫](#主動到備用複寫)
 * [雙主動複寫](#雙主動複寫)
@@ -536,14 +536,14 @@ DNS 或是電子郵件系統使用的就是這種方式，最終一致性在高�
 
 DNS 是將域名轉換為 IP 地址的系統。
 
-DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢域名時，你的路由器或 ISP 業者會提供連接到 DNS 伺服器的資訊。較底層的 DNS 伺服器會快取查詢的結果，而這些快取資訊會因為 DNS 的傳遞而逐漸更新。DNS 的結果可以暫存在瀏覽器或操作系統中一段時間，時間的長短取決於[存活時間(TTL)](https://en.wikipedia.org/wiki/Time_to_live)的設定。
+DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢域名時，你的路由器或 ISP 業者會提供連接到 DNS 伺服器的資訊。較底層的 DNS 伺服器會快取查詢的結果，而這些快取資訊會因為 DNS 的傳遞而逐漸更新。DNS 的結果可以暫存在瀏覽器或操作系統中一段時間，時間的長短取決於 [存活時間(TTL)](https://en.wikipedia.org/wiki/Time_to_live) 的設定。
 
 * **NS 記錄 (域名伺服器)** - 指定解析域名或子域名的 DNS 伺服器。
 * **MX 記錄 (電子郵件交換伺服器)** - 指定接收電子郵件的伺服器。
 * **A 記錄 (地址)** - 指向要對應的 IP 位置。
 * **CNAME (別名)** - 從一個域名指向另外一個域名，或是 `CNAME` (example.com 指向 www.example.com) 或指向一個 `A` 記錄。
 
-[CloudFlare](https://www.cloudflare.com/dns/) 和[Route 53](https://aws.amazon.com/route53/) 提供了 DNS 的服務。而這些 DNS 服務商透過以下幾種方式來決定流量如何被分派：
+[CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 提供了 DNS 的服務。而這些 DNS 服務商透過以下幾種方式來決定流量如何被分派：
 
 * [加權輪詢](http://g33kinfo.com/info/archives/2657)
     * 防止流量進入正在維修中的伺服器
@@ -555,8 +555,8 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ### DNS 的缺點
 
 * 儘管可以透過快取來減輕 DNS 的延遲，但連接 DNS 伺服器還是帶來了些許的延遲。
-* DNS 伺服器的管理是複雜的，儘管他通常由[政府、ISP 業者或大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729) 來處理。
-* DNS 伺服器會有 [DDoS 攻擊](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，讓不知道 Twitter IP 的使用者無法訪問 Twitter 網站。
+* DNS 伺服器的管理是複雜的，儘管他通常由 [政府、ISP 業者或大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729) 來處理。
+* DNS 伺服器會有 [DDoS 攻擊](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) ，讓不知道 Twitter IP 的使用者無法訪問 Twitter 網站。
 
 ### 來源及延伸閱讀
 
@@ -627,7 +627,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
     * 不需要在每一台機器上安裝 [X.509 憑證](https://en.wikipedia.org/wiki/X.509)。
 * **Session 保存** - 發行 cookie，並將特定使用者的請求路由到同樣的後端伺服器上。
 
-為了避免故障，通常會採用[主動到備用切換模式](#主動到備用切換模式(AP Mode))或[雙主動切換模式](#雙主動切換模式(AA Mode))這樣多個負載平衡器的模式。
+為了避免故障，通常會採用 [主動到備用切換模式](#主動到備用切換模式(AP Mode)) 或 [雙主動切換模式](#雙主動切換模式(AA Mode)) 這樣多個負載平衡器的模式。
 
 負載平衡器會基於多種方法來路由請求：
 
@@ -640,11 +640,11 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 ### 第四層負載平衡
 
-第四層的負載平衡器會監看[傳輸層](#傳輸層)的資訊來決定如何分發請求。一般來說，這包含了來源、目標 IP 位置，以及在 header 中的 port，但不包含資料本身的內容。第四層的負載平衡器會透過 [網路地址轉換(NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)來向上游的伺服器轉發資料。
+第四層的負載平衡器會監看 [傳輸層](#傳輸層) 的資訊來決定如何分發請求。一般來說，這包含了來源、目標 IP 位置，以及在 header 中的 port，但不包含資料本身的內容。第四層的負載平衡器會透過 [網路地址轉換(NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/) 來向上游的伺服器轉發資料。
 
 ### 第七層負載平衡
 
-第七層的負載平衡器會監看[應用層](#應用層)來決定如何分發請求。這包含了請求的 header、訊息和 cookies。這種負載平衡器會終結網路的流量、讀取訊息並做出如何轉發訊息的決定，並把流量轉往對應的伺服器。舉例來說，一個第七層的負載平衡器可以將影音的流量轉往負責影音流量的伺服器，而將更敏感的使用者帳單的請求轉往安全性更強的伺服器。
+第七層的負載平衡器會監看 [應用層](#應用層) 來決定如何分發請求。這包含了請求的 header、訊息和 cookies。這種負載平衡器會終結網路的流量、讀取訊息並做出如何轉發訊息的決定，並把流量轉往對應的伺服器。舉例來說，一個第七層的負載平衡器可以將影音的流量轉往負責影音流量的伺服器，而將更敏感的使用者帳單的請求轉往安全性更強的伺服器。
 
 第四層的負載平衡比起第七層的所要花費的時間和計算資源更低，雖然這對於現代商用硬體的性能影響已經微乎其微了。
 
@@ -656,7 +656,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 * 水平擴展會增加複雜性，同時也涉及了多台伺服器的議題
     * 伺服器應該是無狀態的：不應該包括像是 session 或資料圖片等和使用者相關的內容
-    * Session 可以集中儲存在資料庫或[快取](#快取)(Redis、Memcached) 等資料儲存中。
+    * Session 可以集中儲存在資料庫或 [快取](#快取)(Redis、Memcached) 等資料儲存中。
 * 快取伺服器或資料庫需要隨著伺服器的增加而進行擴展，以便處理更多的請求。
 
 ### 負載平衡器的缺點
@@ -709,7 +709,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ### 反向代理伺服器的缺點
 
 * 引入反向代理伺服器會增加系統複雜度。
-* 只有一台反向代理伺服器會有單點失效的問題，而設定多台的反向代理伺服器(如[故障轉移](https://en.wikipedia.org/wiki/Failover))同樣會增加系統複雜度。
+* 只有一台反向代理伺服器會有單點失效的問題，而設定多台的反向代理伺服器(如 [故障轉移](https://en.wikipedia.org/wiki/Failover) )同樣會增加系統複雜度。
 
 ### 來源與延伸閱讀
 
@@ -730,11 +730,11 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 **單一職責原則**鼓勵小型、自治的服務與共同合作，小型團隊透過提供小型的服務可以更有效率地讓計畫成長。
 
-在應用層中的工作程式可以實作[非同步機制](#非同步機制)
+在應用層中的工作程式可以實作 [非同步機制](#非同步機制)
 
 ### 微服務
 
-相關的主題還有[微服務](https://en.wikipedia.org/wiki/Microservices)，指的是可以獨立運作、小型的模組化服務。每個服務會透過明確定義好的輕量級溝通機制，運作在一個獨立的流程中來共同實現一個目標。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+相關的主題還有 [微服務](https://en.wikipedia.org/wiki/Microservices) ，指的是可以獨立運作、小型的模組化服務。每個服務會透過明確定義好的輕量級溝通機制，運作在一個獨立的流程中來共同實現一個目標。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
 舉例來說，Pinterest 可能有以下這些微服務：使用者資料、跟隨者、Feed、搜尋、照片上傳等等。
 
@@ -767,7 +767,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 像 SQL 這種關連式資料庫是以一組表格的形式存在的資料集合。
 
-**ACID** 是用來描述資料庫[事務](https://en.wikipedia.org/wiki/Database_transaction)的特性。
+**ACID** 是用來描述資料庫 [事務](https://en.wikipedia.org/wiki/Database_transaction) 的特性。
 
 * **原子性** - 每一個資料庫事務操作要不就是全部完成，要不就是全部不完成。
 * **一致性** - 任何一個資料庫事務操作都會讓資料庫從一個有效的狀態轉換到另外一個有效狀態。
@@ -852,7 +852,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 分片是指將資料分配在不同的資料庫上，使每個資料庫只管理整個資料的部分子集。以使用者資料庫為例，隨著使用者數量的增加，越來越多的分片會被加入到群集當中。
 
-類似於[聯邦式資料庫](#聯邦式資料庫)的優點，分片可以減少讀取和寫入的流量、減少複製並提高快取命中率。索引的容量也會減少，如此一來可以改善查詢的效能。當一個分片出現問題時，其餘的仍然可以正常運作，而為了避免資料遺失，你可能需要思考其他複寫的機制。如同聯邦式資料庫，分片的機制並沒有中央式的資料庫，你可以並行寫入以增加吞吐量。
+類似於 [聯邦式資料庫](#聯邦式資料庫) 的優點，分片可以減少讀取和寫入的流量、減少複製並提高快取命中率。索引的容量也會減少，如此一來可以改善查詢的效能。當一個分片出現問題時，其餘的仍然可以正常運作，而為了避免資料遺失，你可能需要思考其他複寫的機制。如同聯邦式資料庫，分片的機制並沒有中央式的資料庫，你可以並行寫入以增加吞吐量。
 
 以使用者資料庫為例，常見的做法是用使用者姓氏的部首或使用者地理問位置來區隔使用者資料表。
 
@@ -874,9 +874,9 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 反正規化嘗試以寫入的性能作為代價來改善讀取性能。透過在不同資料表中的重複資料來避免高成本的 Join 操作。
 
-某些關連式資料庫，例如 [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支援 [materialized views](https://en.wikipedia.org/wiki/Materialized_view)，可以用來處理重複資料的儲存，以及保證這些資料的一致性。
+某些關連式資料庫，例如 [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支援 [materialized views](https://en.wikipedia.org/wiki/Materialized_view) ，可以用來處理重複資料的儲存，以及保證這些資料的一致性。
 
-一旦資料使用如[聯合](#聯合)或[切片](#切片)等技術被分割，處理跨資料中心 Join 操作的複雜度。反正規化可以避免這種複雜的操作。
+一旦資料使用如 [聯合](#聯合) 或 [切片](#切片) 等技術被分割，處理跨資料中心 Join 操作的複雜度。反正規化可以避免這種複雜的操作。
 
 在多數系統中，讀取的操作頻率會遠高於寫入的頻率，比例可能會到 100:1 甚至 1000:1。進行複雜讀取操作的成本很高，會在硬碟上消耗大量的時間。
 
@@ -892,7 +892,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 #### SQL 優化
 
-SQL 優化是一個涵蓋範圍很廣的主題，有許多相關的[參考書籍](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) 可以做為參考。
+SQL 優化是一個涵蓋範圍很廣的主題，有許多相關的 [參考書籍](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) 可以做為參考。
 
 透過 **效能測試** 和 **效能分析** 來模擬並發現系統的瓶頸是很重要的。
 
@@ -916,14 +916,14 @@ SQL 優化是一個涵蓋範圍很廣的主題，有許多相關的[參考書籍
 ##### 使用正確的索引
 
 * 當你使用 (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) 這些操作的對應欄位如果有使用索引就會查詢更快。
-* 索引通常是使用平衡[B 樹](https://en.wikipedia.org/wiki/B-tree) 表示，這樣可以保證資料是有序的，並允許在對數時間內進行搜尋、循序訪問以及插入、刪除等操作。
+* 索引通常是使用平衡 [B 樹](https://en.wikipedia.org/wiki/B-tree) 表示，這樣可以保證資料是有序的，並允許在對數時間內進行搜尋、循序訪問以及插入、刪除等操作。
 * 設定索引時，會將資料放置於記憶體中，會佔用更多記憶體空間。
 * 寫入操作會變慢，因為所隱諱需要更新。
 * 當讀取大量資料時，禁用索引再讀取，之後再重新建立索引，這樣也許會更快。
 
 ##### 避免高成本的 Join 操作
 
-* 有性能需求時，可以進行[反正規化](#反正規化)。
+* 有性能需求時，可以進行 [反正規化](#反正規化)。
 
 ##### 分割資料表
 
@@ -956,7 +956,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 
 > 抽象模型：hash table
 
-一個鍵值對的資料庫通常可以實現 O(1) 時間內的讀寫，同時，它的背後通常使用記憶體或 SSD 當作儲存媒介。資料在儲存時，可以按照[字典順序](https://en.wikipedia.org/wiki/Lexicographical_order)來維護鍵的數值，進而實踐鍵數值的高效率檢索。鍵值對的資料庫也可以用來儲存值的 metadata。
+一個鍵值對的資料庫通常可以實現 O(1) 時間內的讀寫，同時，它的背後通常使用記憶體或 SSD 當作儲存媒介。資料在儲存時，可以按照 [字典順序](https://en.wikipedia.org/wiki/Lexicographical_order) 來維護鍵的數值，進而實踐鍵數值的高效率檢索。鍵值對的資料庫也可以用來儲存值的 metadata。
 
 鍵值對資料庫的效能很好，通常用來儲存簡單的資料模型或是頻繁修改的資料，如放在記憶體中的快取層。鍵值對資料庫所提供的操作有限，如果要進行更多操作，會將其放在應用端進行。
 
@@ -977,7 +977,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 
 根據底層實作的不同，文件資料庫可以根據集合、標籤、metadata 或目錄等來組織而成。儘管不同的文件可以被組織在一起或是分成一組，但彼此之間可能具有完全不同的內容。
 
-某些文件型資料庫，例如[MongoDB](https://www.mongodb.com/mongodb-architecture) 和 [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)同樣提供了類似於 SQL 查詢語句的功能來實現複雜的查詢。[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)則同時支援了鍵值對儲存和文件類型儲存的功能。
+某些文件型資料庫，例如 [MongoDB](https://www.mongodb.com/mongodb-architecture) 和 [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) 同樣提供了類似於 SQL 查詢語句的功能來實現複雜的查詢。[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)則同時支援了鍵值對儲存和文件類型儲存的功能。
 
 文件類型的資料庫具備高度靈活性，通常用於處理偶爾變化的資料。
 
@@ -1023,7 +1023,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 在圖形資料庫中，每一個節點會對應一條紀錄，而每個邊描述兩個節點之間的關係。圖形資料庫針對表示外來鍵(Foreign Key)眾多的複雜關聯或多對多關聯進行優化。
 
-圖形資料庫為了儲存複雜的資料結構，例如社群網路，提供了很高的性能。他們相對較新，尚未被廣泛使用，查詢工具或資源比較難取得，許多這種類型的資料庫只能透過[REST API](#representational-state-transfer-rest)來存取。
+圖形資料庫為了儲存複雜的資料結構，例如社群網路，提供了很高的性能。他們相對較新，尚未被廣泛使用，查詢工具或資源比較難取得，許多這種類型的資料庫只能透過 [REST API](#representational-state-transfer-rest) 來存取。
 
 ##### 來源及延伸閱讀
 
@@ -1095,7 +1095,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 ### 客戶端快取
 
-快取可以在客戶端(作業系統或瀏覽器)、[伺服器端](#反向代理伺服器)或不同的緩存層等。
+快取可以在客戶端(作業系統或瀏覽器)、[伺服器端](#反向代理伺服器) 或不同的緩存層等。
 
 ### CDN 快取
 
@@ -1103,7 +1103,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 ### 網站伺服器快取
 
-[反向代理](#反向代理網站伺服器)以及像是 [Varnish](https://www.varnish-cache.org/)等的快取服務可以提供靜態和動態內容。網站伺服器也可以快取使用者請求，返回結果，而不需要真正的處理這些請求。
+[反向代理](#反向代理網站伺服器) 以及像是 [Varnish](https://www.varnish-cache.org/) 等的快取服務可以提供靜態和動態內容。網站伺服器也可以快取使用者請求，返回結果，而不需要真正的處理這些請求。
 
 ### 資料庫快取
 
@@ -1111,7 +1111,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 ### 應用程式快取
 
-基於記憶體的快取，像是 Memcached 和 Redis 是一種在應用層和資料庫之間的鍵值對快取。由於資料保存在記憶體中，比起存放在硬碟中的資料庫在存取上要快得多。記憶體的限制也比硬碟更多，所以像是[least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) 的 [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) 方法可以讓 '熱門資料' 放在記憶體中，而比較 '冷門' 的資料在記憶體中失效。
+基於記憶體的快取，像是 Memcached 和 Redis 是一種在應用層和資料庫之間的鍵值對快取。由於資料保存在記憶體中，比起存放在硬碟中的資料庫在存取上要快得多。記憶體的限制也比硬碟更多，所以像是 [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) 的 [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) 方法可以讓 '熱門資料' 放在記憶體中，而比較 '冷門' 的資料在記憶體中失效。
 
 Redis 還有以下額外的功能：
 
@@ -1306,7 +1306,7 @@ def set_user(user_id, values):
 
 ### 背壓機制
 
-當佇列開始明顯成長時，佇列的大小可能會超過記憶體，這會導致無法命中快取，降低整體效能。[背壓](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) 可以用來限制佇列的大小，讓佇列保持高吞吐率和良好的回應時間。一旦佇列滿了，客戶端將會得到 HTTP 503 的回應碼，以便讓他們在稍後重新嘗試。客戶端可以透過[指數後退演算法](https://en.wikipedia.org/wiki/Exponential_backoff)這種方式來進行重試。
+當佇列開始明顯成長時，佇列的大小可能會超過記憶體，這會導致無法命中快取，降低整體效能。[背壓](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) 可以用來限制佇列的大小，讓佇列保持高吞吐率和良好的回應時間。一旦佇列滿了，客戶端將會得到 HTTP 503 的回應碼，以便讓他們在稍後重新嘗試。客戶端可以透過 [指數後退演算法](https://en.wikipedia.org/wiki/Exponential_backoff) 這種方式來進行重試。
 
 ### 非同步的缺點
 
@@ -1359,9 +1359,9 @@ HTTP 是依賴於較底層的協議(例如：**TCP** 和 **UDP**) 的應用層�
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>來源：如何開發多人遊戲</a></i>
 </p>
 
-TCP 是透過 [IP 網路](https://en.wikipedia.org/wiki/Internet_Protocol) 面向連線的通訊協定。連線是透過[握手](https://en.wikipedia.org/wiki/Handshaking)的方式來建立和斷開連接，所有發送的資料在接收時會保證順序，另外透過以下的機制來保證資料不會損毀：
+TCP 是透過 [IP 網路](https://en.wikipedia.org/wiki/Internet_Protocol) 面向連線的通訊協定。連線是透過 [握手](https://en.wikipedia.org/wiki/Handshaking) 的方式來建立和斷開連接，所有發送的資料在接收時會保證順序，另外透過以下的機制來保證資料不會損毀：
 
-* 每個資料的序列號碼和[校驗碼](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)
+* 每個資料的序列號碼和 [校驗碼](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)
 * [確認訊息](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) 和自動重傳
 
 如果發送端沒有收到正確的回應，會重新發送資料，如果有多次的逾期時，連線就會斷開。TCP 實作了 [流量控制](https://en.wikipedia.org/wiki/Flow_control_(data)) 和 [阻塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)，這些機制會導致延遲，而且通常傳輸的效率會比 UDP 來得低。
@@ -1746,7 +1746,7 @@ Notes
 
 ## 仍在進行中
 
-有興趣增加一些內容，或幫忙完善某些部分嗎？  [來貢獻吧](#如何貢獻)!
+有興趣增加一些內容，或幫忙完善某些部分嗎？ [來貢獻吧](#如何貢獻)!
 
 * 使用 MapReduce 進行分散式運算
 * 一致性的 hashing
