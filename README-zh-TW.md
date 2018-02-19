@@ -1,4 +1,4 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [Vietnamese](https://github.com/donnemartin/system-design-primer/issues/127) | [增加翻譯](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [Vietnamese](https://github.com/donnemartin/system-design-primer/issues/127) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # 系統設計入門
 
@@ -202,15 +202,15 @@
 * **中期** - 以系統設計的**廣度**和**初級深度**為目標。通過解決**很多**面試題目來練習。
 * **長期** - 以系統設計主題的**廣度**和**高級深度**為目標。通過解決**大部分**面試題目來練習。
 
-| | 短期 | 中期 | 長期 |
-|---|---|---|---|
-| 閱讀 [系統設計主題的索引](#系統設計主題的索引) 來取得關於系統如何運作的廣泛知識 | :+1: | :+1: | :+1: |
-| 閱讀一些你要面試的 [公司的工程部落格](#公司的工程部落格) 文章 | :+1: | :+1: | :+1: |
-| 閱讀關於 [真實世界的架構](#真實世界的架構) | :+1: | :+1: | :+1: |
-| 複習 [如何解決一個系統設計的面試題目](#如何解決一個系統設計的面試題目) | :+1: | :+1: | :+1: |
-| 完成 [系統設計面試題目與解答](#系統設計面試問題與解答) | 一些 | 很多 | 大部分 |
-| 完成 [物件導向設計與解答](#物件導向設計面試問題與解答) | 一些 | 很多 | 大部分 |
-| 複習 [其他的系統設計面試問題](#其他的系統設計面試問題) | 一些 | 很多 | 大部分 |
+|                                                                                 | 短期 | 中期 | 長期   |
+|---------------------------------------------------------------------------------|------|------|--------|
+| 閱讀 [系統設計主題的索引](#系統設計主題的索引) 來取得關於系統如何運作的廣泛知識 | :+1: | :+1: | :+1:   |
+| 閱讀一些你要面試的 [公司的工程部落格](#公司的工程部落格) 文章                   | :+1: | :+1: | :+1:   |
+| 閱讀關於 [真實世界的架構](#真實世界的架構)                                      | :+1: | :+1: | :+1:   |
+| 複習 [如何解決一個系統設計的面試題目](#如何解決一個系統設計的面試題目)          | :+1: | :+1: | :+1:   |
+| 完成 [系統設計面試題目與解答](#系統設計面試問題與解答)                          | 一些 | 很多 | 大部分 |
+| 完成 [物件導向設計與解答](#物件導向設計面試問題與解答)                          | 一些 | 很多 | 大部分 |
+| 複習 [其他的系統設計面試問題](#其他的系統設計面試問題)                          | 一些 | 很多 | 大部分 |
 
 ## 如何解決一個系統設計的面試題目
 
@@ -286,17 +286,17 @@
 >
 > 相關的解答位於 `解答/` 的資料夾中。
 
-| 問題 | |
-|---|---|
-| 設計 Pastebin.com (或 Bit.ly) | [解答](solutions/system_design/pastebin/README.md) |
-| 設計一個像是 Twitter 的 timeline (或 Facebook feed)<br/>設計一個 Twitter 搜尋功能 (or Facebook 搜尋功能) | [解答](solutions/system_design/twitter/README.md) |
-| 設計一個爬蟲系統 | [解答](solutions/system_design/web_crawler/README.md) |
-| 設計 Mint.com 網站 | [解答](solutions/system_design/mint/README.md) |
-| 設計一個社交網站的資料結構 | [解答](solutions/system_design/social_graph/README.md) |
-| 設計一個搜尋引擎使用的鍵值儲存資料結構 | [解答](solutions/system_design/query_cache/README.md) |
-| 設計一個根據產品分類的亞馬遜銷售排名 | [解答](solutions/system_design/sales_rank/README.md) |
-| 在 AWS 上設計一個百萬用戶等級的系統 | [解答](solutions/system_design/scaling_aws/README.md) |
-| 增加一個系統設計的問題 | [貢獻](#如何貢獻) |
+| 問題                                                                                                |                                                        |
+|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| 設計 Pastebin.com (或 Bit.ly)                                                                       | [解答](solutions/system_design/pastebin/README.md)     |
+| 設計一個像是 Twitter 的 timeline (或 Facebook feed)設計一個 Twitter 搜尋功能 (or Facebook 搜尋功能) | [解答](solutions/system_design/twitter/README.md)      |
+| 設計一個爬蟲系統                                                                                    | [解答](solutions/system_design/web_crawler/README.md)  |
+| 設計 Mint.com 網站                                                                                  | [解答](solutions/system_design/mint/README.md)         |
+| 設計一個社交網站的資料結構                                                                          | [解答](solutions/system_design/social_graph/README.md) |
+| 設計一個搜尋引擎使用的鍵值儲存資料結構                                                              | [解答](solutions/system_design/query_cache/README.md)  |
+| 設計一個根據產品分類的亞馬遜銷售排名                                                                | [解答](solutions/system_design/sales_rank/README.md)   |
+| 在 AWS 上設計一個百萬用戶等級的系統                                                                 | [解答](solutions/system_design/scaling_aws/README.md)  |
+| 增加一個系統設計的問題                                                                              | [貢獻](#如何貢獻)                                      |
 
 ### 設計 Pastebin.com (或 Bit.ly)
 
@@ -354,16 +354,15 @@
 
 >**注意: 本章節仍在完善內容中**
 
-| 問題 | |
-|---|---|
-| 設計一個 hash map | [解答](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| 設計一個 LRU 快取 | [解答](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| 設計一個客服系統 | [解答](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| 設計一副牌 | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| 設計一個停車場 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| 設計一個聊天室 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| 設計一個環形陣列 | [如何貢獻](#如何貢獻)  |
-| 增加一個物件導向設計問題 | [如何貢獻](#如何貢獻) |
+| 問題                     |                                                                            |
+|--------------------------|----------------------------------------------------------------------------|
+| 設計一個 hash map        | [解答](solutions/object_oriented_design/hash_table/hash_map.ipynb)         |
+| 設計一個 LRU 快取        | [解答](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)         |
+| 設計一個客服系統         | [解答](solutions/object_oriented_design/call_center/call_center.ipynb)     |
+| 設計一副牌               | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
+| 設計一個停車場           | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)     |
+| 設計一個環形陣列         | [如何貢獻](#如何貢獻)                                                      |
+| 增加一個物件導向設計問題 | [如何貢獻](#如何貢獻)                                                      |
 
 ## 系統設計主題：從這裡開始
 
@@ -1053,7 +1052,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 * 結構化資料
 * 嚴格的 schema
 * 關連式資料
-* 需要複雜的 join 
+* 需要複雜的 join
 * 事務
 * 清晰的擴展模式
 * 既有資源更豐富：開發者、社群、原始碼、工具等
@@ -1334,13 +1333,13 @@ HTTP 是一種在客戶端和伺服器端傳輸資料和定義編碼的方法。
 
 一個基本的 HTTP 請求是由一個動詞(方法)和一個資源(端點)所組成。以下是常見的 HTTP 動詞：
 
-| 動詞 | 描述 | 冪等* | 安全性 | 可快取性 |
-|---|---|---|---|---|
-| GET | 讀取資源 | Yes | Yes | Yes |
-| POST | 建立資源，或是驅動處理資料的流程 | No | No | Yes，如果回應包含更新的資訊 |
-| PUT | 建立或更新資料 | Yes | No | No |
-| PATCH | 更新部分資料 | No | No | Yes if response contains freshness info |
-| DELETE | 刪除資料 | Yes | No | No |
+| 動詞   | 描述                             | 冪等* | 安全性 | 可快取性                                |
+|--------|----------------------------------|-------|--------|-----------------------------------------|
+| GET    | 讀取資源                         | Yes   | Yes    | Yes                                     |
+| POST   | 建立資源，或是驅動處理資料的流程 | No    | No     | Yes，如果回應包含更新的資訊             |
+| PUT    | 建立或更新資源                   | Yes   | No     | No                                      |
+| PATCH  | 更新部分資料                     | No    | No     | Yes if response contains freshness info |
+| DELETE | 刪除資料                         | Yes   | No     | No                                      |
 
 * 指的是當進行多次相同請求時，結果是相同的。
 
@@ -1366,7 +1365,7 @@ TCP 是透過 [IP 網路](https://en.wikipedia.org/wiki/Internet_Protocol) 面�
 * [確認訊息](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) 和自動重傳
 
 如果發送端沒有收到正確的回應，會重新發送資料，如果有多次的逾期時，連線就會斷開。TCP 實作了 [流量控制](https://en.wikipedia.org/wiki/Flow_control_(data)) 和 [阻塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)，這些機制會導致延遲，而且通常傳輸的效率會比 UDP 來得低。
- 
+
 為了確保高吞吐量，Web 伺服器會保持大量的 TCP 連線，進而導致記憶體用量變大。在 Web 伺服器之間使用大量的開放連線可能是昂貴的，更別說是在 memcached 快取中做這些事情。[連線池](https://en.wikipedia.org/wiki/Connection_pool) 可以幫助在適合的情況下切換到 UDP。
 
 TCP 對於需要高可靠、低時間急迫性的應用來說很有用，比如說：Web 伺服器、資料庫、SMTP、FTP 和 SSH。
@@ -1485,15 +1484,15 @@ REST 關注於揭露資料，減少客戶端/伺服器之間耦合的程度，�
 
 ### RPC 和 REST 呼叫的比較
 
-| 操作 | RPC | REST |
-|---|---|---|
-| 註冊	| **POST** /signup | **POST** /persons |
-| 取消	| **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
-| 讀取使用者資訊 | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
-| 讀取使用者物品清單 | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
-| 增加一個物品到使用者的清單 | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
-| 更新一個物品	| **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
-| 刪除一個物品 | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+| 操作                       | RPC                                                                   | REST                                          |
+|----------------------------|-----------------------------------------------------------------------|-----------------------------------------------|
+| 註冊                       | **POST** /signup                                                      | **POST** /persons                             |
+| 取消                       | **POST** /resign{"personid": "1234"}                                  | **DELETE** /persons/1234                      |
+| 讀取使用者資訊             | **GET** /readPerson?personid=1234                                     | **GET** /persons/1234                         |
+| 讀取使用者物品清單         | **GET** /readUsersItemsList?personid=1234                             | **GET** /persons/1234/items                   |
+| 增加一個物品到使用者的清單 | **POST** /addItemToUsersItemsList{"personid": "1234";"itemid": "456"} | **POST** /persons/1234/items{"itemid": "456"} |
+| 更新一個物品               | **POST** /modifyItem{"itemid": "456";"key": "value"}                  | **PUT** /items/456{"key": "value"}            |
+| 刪除一個物品               | **POST** /removeItem{"itemid": "456"}                                 | **DELETE** /items/456                         |
 
 <p align="center">
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>資料來源：你真的知道為什麼你更喜歡 REST 而不是 RPC 嗎？</a></i>
@@ -1601,30 +1600,30 @@ Notes
 
 > 常見的系統設計問題，同時提供如何解決該問題的連結
 
-| 問題 | 來源 |
-|---|---|
-| 設計一個類似於 Dropbox 的文件同步系統 | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| 設計一個類似於 Google 的搜尋引擎 | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
-| 設計一個像 Google 一樣可擴展的網路爬蟲 | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| 設計一個 Google Docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| 設計一個像 Redis 一樣的鍵值對系統 | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| 設計一個像 Memcached 的快取系統 | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| 設計一個像 Amazon 一樣的推薦系統 | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
-| 設計一個像 Bitly 一樣的短網址服務 | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
-| 設計一個像 WhatsApp 一樣的即時訊息系統 | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-| 設計一個像 Instagram 一樣的相片服務 | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
-| 設計一個像 Facebook 的新聞推薦方法 | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
-| 設計一個 Facebook 時間軸功能 | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
-| 設計 Facebook 的聊天功能 | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
-| 設計一個像 Facebook 的圖形化搜尋系統 | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| 設計一個像 CloudFlare 的內容傳輸網路 | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci) |
-| 設計一個像 Twitter 的微網誌服務 | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
-| 設計一個隨機 ID 生成系統 | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
-| 給定一段時間，回傳次數排名前 K 的請求 | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
-| 設計一個資料來源在多個資料中心的系統 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| 設計一個線上多人卡牌遊戲 | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| 設計一個垃圾回收系統 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| 貢獻更多系統設計問題 | [Contribute](#如何貢獻) |
+| 問題                                   | 來源                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 設計一個類似於 Dropbox 的文件同步系統  | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc)                                                                                                                                                                                                                                                                                                                                                                                        |
+| 設計一個類似於 Google 的搜尋引擎       | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)[stanford.edu](http://infolab.stanford.edu/~backrub/google.html)                                                                                                 |
+| 設計一個像 Google 一樣可擴展的網路爬蟲 | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch)                                                                                                                                                                                                                                                                                                                                                                     |
+| 設計一個 Google Docs                   | [code.google.com](https://code.google.com/p/google-mobwrite/)[neil.fraser.name](https://neil.fraser.name/writing/sync/)                                                                                                                                                                                                                                                                                                                           |
+| 設計一個像 Redis 一樣的鍵值對系統      | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis)                                                                                                                                                                                                                                                                                                                                                                         |
+| 設計一個像 Memcached 的快取系統        | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached)                                                                                                                                                                                                                                                                                                                                                                    |
+| 設計一個像 Amazon 一樣的推薦系統       | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf)                                                                                                                                                                                                                                                                                                        |
+| 設計一個像 Bitly 一樣的短網址服務      | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/)                                                                                                                                                                                                                                                                                                                                                                                          |
+| 設計一個像 WhatsApp 一樣的即時訊息系統 | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)                                                                                                                                                                                                                                                                                                                    |
+| 設計一個像 Instagram 一樣的相片服務    | [highscalability.com](http://highscalability.com/flickr-architecture)[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)                                                                                                                                                                                                                                            |
+| 設計一個像 Facebook 的新聞推薦方法     | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture)                                                                                                                    |
+| 設計一個 Facebook 時間軸功能           | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html)                                                                                                                                                                                                                                     |
+| 設計 Facebook 的聊天功能               | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0)                                                                                                                                                                                                                                         |
+| 設計一個像 Facebook 的圖形化搜尋系統   | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| 設計一個像 CloudFlare 的內容傳輸網路   | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)                                                                                                                                                                                                                                                                                                                                                             |
+| 設計一個像 Twitter 的微網誌服務        | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/)                                                                                                                                                                                                                            |
+| 設計一個隨機 ID 生成系統               | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)[github.com](https://github.com/twitter/snowflake/)                                                                                                                                                                                                                                                                                                                         |
+| 給定一段時間，回傳次數排名前 K 的請求  | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf)                                                                                                                                                                                                                                                                                                         |
+| 設計一個資料來源在多個資料中心的系統   | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html)                                                                                                                                                                                                                                                                                                                            |
+| 設計一個線上多人卡牌遊戲               | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/)                                                                                                                                                                                                                                                                       |
+| 設計一個垃圾回收系統                   | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf)                                                                                                                                                                                                                                                             |
+| 貢獻更多系統設計問題                   | [Contribute](#如何貢獻)                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ### 真實世界的架構
 
@@ -1642,56 +1641,56 @@ Notes
 * 學習每個元件負責解決哪些問題、在什麼情況下使用、什麼情況下不適用
 * 複習學習過的文章
 
-|種類 | 系統 | 參考來源 |
-|---|---|---|
-| 資料處理 | **MapReduce** - Google 的分散式資料處理 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
-| 資料處理 | **Spark** - Databricks 的分散式資料處理 | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
-| 資料處理 | **Storm** - Twitter 的分散式資料處理 | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
-| | | |
-| 資料儲存 | **Bigtable** - Google 的列式資料庫 | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
-| 資料儲存 | **HBase** - Bigtable 的開放原始碼解決方案 | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
-| 資料儲存 | **Cassandra** - Facebook 的列式資料庫 | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
-| 資料儲存 | **DynamoDB** - Amazon 的文件式資料庫 | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
-| 資料儲存 | **MongoDB** - 文件式資料庫 | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
-| 資料儲存 | **Spanner** - Google 的全球分散式資料庫 | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
-| 資料儲存 | **Memcached** - 分散式的記憶體快取系統 | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| 資料儲存 | **Redis** - 具有持久化及值型別的分散式快取系統 | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| | | |
-| 檔案系統 | **Google File System (GFS)** - 分散式的檔案系統 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
-| 檔案系統 | **Hadoop File System (HDFS)** - GFS 的開放原始碼解決方案 | [apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) |
-| | | |
-| 其他 | **Chubby** - Google 的分散式系統低耦合鎖服務 | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
-| 其他 | **Dapper** - 分散式系統監控基礎設施 | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
-| 其他 | **Kafka** - LinkedIn 的 pub/sub 訊息佇列服務 | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
-| 其他 | **Zookeeper** - 集中式的基礎架構和協調服務 | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | 貢獻更多架構 | [Contribute](#如何貢獻) |
+| 種類     | 系統                                                     | 參考來源                                                                                                                                       |
+|----------|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| 資料處理 | **MapReduce** - Google 的分散式資料處理                  | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf)                     |
+| 資料處理 | **Spark** - Databricks 的分散式資料處理                  | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture)                                                             |
+| 資料處理 | **Storm** - Twitter 的分散式資料處理                     | [slideshare.net](http://www.slideshare.net/previa/storm-16094009)                                                                              |
+|          |                                                          |                                                                                                                                                |
+| 資料儲存 | **Bigtable** - Google 的列式資料庫                       | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)                                                    |
+| 資料儲存 | **HBase** - Bigtable 的開放原始碼解決方案                | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase)                                                                         |
+| 資料儲存 | **Cassandra** - Facebook 的列式資料庫                    | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)                                           |
+| 資料儲存 | **DynamoDB** - Amazon 的文件式資料庫                     | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)                                                   |
+| 資料儲存 | **MongoDB** - 文件式資料庫                               | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb)                                                                    |
+| 資料儲存 | **Spanner** - Google 的全球分散式資料庫                  | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf)                                                                 |
+| 資料儲存 | **Memcached** - 分散式的記憶體快取系統                   | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached)                                                                 |
+| 資料儲存 | **Redis** - 具有持久化及值型別的分散式快取系統           | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis)                                                                      |
+|          |                                                          |                                                                                                                                                |
+| 檔案系統 | **Google File System (GFS)** - 分散式的檔案系統          | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf)                         |
+| 檔案系統 | **Hadoop File System (HDFS)** - GFS 的開放原始碼解決方案 | [apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)                                                                           |
+|          |                                                          |                                                                                                                                                |
+| 其他     | **Chubby** - Google 的分散式系統低耦合鎖服務             | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
+| 其他     | **Dapper** - 分散式系統監控基礎設施                      | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)                                |
+| 其他     | **Kafka** - LinkedIn 的 pub/sub 訊息佇列服務             | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug)                                                                          |
+| 其他     | **Zookeeper** - 集中式的基礎架構和協調服務               | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)                                                       |
+|          | 貢獻更多架構                                             | [Contribute](#如何貢獻)                                                                                                                        |
 
 ### 公司的系統架構
 
-| 公司 | 參考 |
-|---|---|
-| Amazon | [Amazon 的架構](http://highscalability.com/amazon-architecture) |
-| Cinchcast | [每天產生 1,500 小時的音樂](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
-| DataSift | [每秒探勘 120,000 則 tweet](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html) |
-| DropBox | [我們如何擴展 Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| ESPN | [每秒操作 100,000 次 duh nuh nuhs](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
-| Google | [Google 的架構](http://highscalability.com/google-architecture) |
-| Instagram | [一千四百萬個使用者，TB 等級的照片儲存](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[什麼驅動著 Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
-| Justin.tv | [Justin.Tv 的即時影片廣播架構](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
-| Facebook | [Facebook 可擴展的 memcached 架構](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook 為了社交網路架構的分散式資料儲存](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook 的圖片儲存架構](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) |
-| Flickr | [Flickr 的架構](http://highscalability.com/flickr-architecture) |
-| Mailbox | [在六週內從 0 到 100 萬個使用者](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
-| Pinterest | [從零到每個月數十億次的瀏覽量](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)<br/>[1800 萬個訪問人次、10 倍成長、12 名員工](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
-| Playfish | [月使用者量 5000 萬人次在成長](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html) |
-| PlentyOfFish | [PlentyOfFish 的架構](http://highscalability.com/plentyoffish-architecture) |
-| Salesforce | [如何處理每天 13 億筆交易](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html) |
-| Stack Overflow | [Stack Overflow 的架構](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html) |
-| TripAdvisor | [4000 萬的訪問人次、2 億次頁面瀏覽量、30 TB 的資料](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
-| Tumblr | [每月 150 億的瀏覽量](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
-| Twitter | [如何讓 Twitter 的速度成長 10000 倍](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[使用 MySQL 儲存每天 2.5 億條 tweet](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[1.5 億的活躍使用者、300K QPS、22 MB/S 的串流資料](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[可擴展的 Timelines](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Twitter 的大大小小的資料](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Twitter 的運營：擴展超過一億個使用者](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
-| Uber | [Uber 是如何擴展他們的及時行銷平台](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html) |
-| WhatsApp | [讓 Facebook 用 $190 億購買下來的 WhatsApp 的架構](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
-| YouTube | [YouTube 的可擴展性](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube 的架構](http://highscalability.com/youtube-architecture) |
+| 公司           | 參考                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Amazon         | [Amazon 的架構](http://highscalability.com/amazon-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Cinchcast      | [每天產生 1,500 小時的音樂](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| DataSift       | [每秒探勘 120,000 則 tweet](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| DropBox        | [我們如何擴展 Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ESPN           | [每秒操作 100,000 次 duh nuh nuhs](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Google         | [Google 的架構](http://highscalability.com/google-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Instagram      | [一千四百萬個使用者，TB 等級的照片儲存](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)[什麼驅動著 Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances)                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Justin.tv      | [Justin.Tv 的即時影片廣播架構](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Facebook       | [Facebook 可擴展的 memcached 架構](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)[TAO: Facebook 為了社交網路架構的分散式資料儲存](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)[Facebook 的圖片儲存架構](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf)                                                                                                                                                                                                                                                     |
+| Flickr         | [Flickr 的架構](http://highscalability.com/flickr-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Mailbox        | [在六週內從 0 到 100 萬個使用者](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Pinterest      | [從零到每個月數十億次的瀏覽量](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)[1800 萬個訪問人次、10 倍成長、12 名員工](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html)                                                                                                                                                                                                                                                                                                                                                                                |
+| Playfish       | [月使用者量 5000 萬人次在成長](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| PlentyOfFish   | [PlentyOfFish 的架構](http://highscalability.com/plentyoffish-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Salesforce     | [如何處理每天 13 億筆交易](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Stack Overflow | [Stack Overflow 的架構](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| TripAdvisor    | [4000 萬的訪問人次、2 億次頁面瀏覽量、30 TB 的資料](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Tumblr         | [每月 150 億的瀏覽量](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Twitter        | [如何讓 Twitter 的速度成長 10000 倍](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)[使用 MySQL 儲存每天 2.5 億條 tweet](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)[1.5 億的活躍使用者、300K QPS、22 MB/S 的串流資料](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)[可擴展的 Timelines](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)[Twitter 的大大小小的資料](https://www.youtube.com/watch?v=5cKTP36HVgI)[Twitter 的運營：擴展超過一億個使用者](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
+| Uber           | [Uber 是如何擴展他們的及時行銷平台](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| WhatsApp       | [讓 Facebook 用 $190 億購買下來的 WhatsApp 的架構](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| YouTube        | [YouTube 的可擴展性](https://www.youtube.com/watch?v=w5WVu624fY8)[YouTube 的架構](http://highscalability.com/youtube-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ### 公司的工程部落格
 
