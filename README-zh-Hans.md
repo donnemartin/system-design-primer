@@ -771,7 +771,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
   <br/>
-  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩展你的用户数到第一个一千万</a></strong>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
 ### 关系型数据库管理系统（RDBMS）
@@ -842,7 +842,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png">
   <br/>
-  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩展你的用户数到第一个一千万</a></strong>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
 联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
@@ -857,7 +857,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ##### 来源及延伸阅读：联合
 
-- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=w95murBkYmU)
 
 #### 分片
 
@@ -1092,7 +1092,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ##### 来源及延伸阅读：SQL 或 NoSQL
 
-- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=w95murBkYmU)
 - [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 ## 缓存
 

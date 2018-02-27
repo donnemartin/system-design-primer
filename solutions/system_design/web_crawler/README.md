@@ -294,7 +294,7 @@ Below are a few other optimizations to the **Crawling Service**:
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
