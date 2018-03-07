@@ -68,7 +68,7 @@ class Hand(object):
 
     def score(self):
         total_value = 0
-        for card in card:
+        for card in self.cards:
             total_value += card.value
         return total_value
 
@@ -102,9 +102,9 @@ class Deck(object):
         self.deal_index = 0
 
     def remaining_cards(self):
-        return len(self.cards) - deal_index
+        return len(self.cards) - self.deal_index
 
-    def deal_card():
+    def deal_card(self):
         try:
             card = self.cards[self.deal_index]
             card.is_available = False
