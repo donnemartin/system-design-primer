@@ -92,7 +92,7 @@ class BlackJackHand(Hand):
 
     def possible_scores(self):
         """Return a list of possible scores, taking Aces into account."""
-        # ...
+        pass
 
 
 class Deck(object):
@@ -113,4 +113,5 @@ class Deck(object):
             return None
         return card
 
-    def shuffle(self):  # ...
+    def shuffle(self):
+        pass
