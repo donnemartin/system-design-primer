@@ -1308,7 +1308,6 @@ Se as filas começarem a crescer significantemente, o tamanho da fila pode se to
 * [Lei de Little - Em Inglês](https://en.wikipedia.org/wiki/Little%27s_law)
 * [Qual é a diferença entre uma fila de mensagens e uma fila de tarefas? - Em inglês](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
 ## Comunicação
 
 <p align="center">
@@ -1361,34 +1360,36 @@ Use TCP no lugar de UDP quando:
 * Você necessitar que todos os dados chegem intactos
 * Você deseja fazer uma melhor estimativa de uso da taxa de transfêrencia de rede
 
-### User datagram protocol (UDP)
+### Protocolo de datagrama de usuário (UDP)
 
 <p align="center">
   <img src="http://i.imgur.com/yzDrJtA.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Fonte: Como fazer um jogo multiplayer (Em Inglês)</a></i>
 </p>
 
-UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.
+UDP não tem conexões. Datagramas (igual a pacotes) são garantidos apenas no nível do datagrama. Datagramas podem
+não alcançar seu destino e se alcançar podem ser fora de ordem. UDP não suporta controle de congestão. Sem as garantias que o TCP suporta, UDP é geralmente mais eficiente. 
 
-UDP can broadcast, sending datagrams to all devices on the subnet.  This is useful with [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address.
+UDP pode enviar datagramas para todos os dispositivos (broadcast) em uma sub-rede. Isso é útil com [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) porque o cliente ainda não recebeu um endereço IP, portanto prevenindo que o TCP seja capaz de fazer isso.
 
-UDP is less reliable but works well in real time use cases such as VoIP, video chat, streaming, and realtime multiplayer games.
+UDP é menos confiável mas funciona bem para aplicações em tempo real como VoIP, chat de vídeo, streaming, e jogos multiplayer em tempo real.
 
+Use UDP ao invés de TCP quando:
+
+* Você precisa de pouca latência
+* Dados que chegam atrasados são piores do que perder dados
+* Você quer implementar sua própia correção de erros
 Use UDP over TCP when:
 
-* You need the lowest latency
-* Late data is worse than loss of data
-* You want to implement your own error correction
+#### Fonte(s) e leituras adicionais: TCP and UDP
 
-#### Source(s) and further reading: TCP and UDP
-
-* [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
-* [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
-* [Difference between TCP and UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
-* [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
-* [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [Redes para programação de jogos - Em Inglês](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [Diferenças entre os protocolos TCP e UDP - Em Inglês](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
+* [Diferença entre TCP e UDP - Em Inglês](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
+* [Protocolo de controle de transmissão - Em Inglês](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+* [Protocolo de datagrama de usuário - Em Inglês](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+* [Escalando memcache no Facebook - Em Inglês](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
 ### Remote procedure call (RPC)
 
