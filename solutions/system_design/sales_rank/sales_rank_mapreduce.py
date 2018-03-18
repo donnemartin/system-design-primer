@@ -9,7 +9,7 @@ class SalesRanker(MRJob):
         """Return True if timestamp is within past week, False otherwise."""
         ...
 
-    def mapper(self, _ line):
+    def mapper(self, _, line):
         """Parse each log line, extract and transform relevant lines.
 
         Emit key value pairs of the form:
