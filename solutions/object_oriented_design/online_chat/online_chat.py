@@ -6,11 +6,20 @@ class UserService(object):
     def __init__(self):
         self.users_by_id = {}  # key: user id, value: User
 
-    def add_user(self, user_id, name, pass_hash):  # ...
-    def remove_user(self, user_id):  # ...
-    def add_friend_request(self, from_user_id, to_user_id):  # ...
-    def approve_friend_request(self, from_user_id, to_user_id):  # ...
-    def reject_friend_request(self, from_user_id, to_user_id):  # ...
+    def add_user(self, user_id, name, pass_hash):
+        pass
+
+    def remove_user(self, user_id):
+        pass
+
+    def add_friend_request(self, from_user_id, to_user_id):
+        pass
+
+    def approve_friend_request(self, from_user_id, to_user_id):
+        pass
+
+    def reject_friend_request(self, from_user_id, to_user_id):
+        pass
 
 
 class User(object):
@@ -25,12 +34,23 @@ class User(object):
         self.received_friend_requests_by_friend_id = {}  # key: friend id, value: AddRequest
         self.sent_friend_requests_by_friend_id = {}  # key: friend id, value: AddRequest
 
-    def message_user(self, friend_id, message):  # ...
-    def message_group(self, group_id, message):  # ...
-    def send_friend_request(self, friend_id):  # ...
-    def receive_friend_request(self, friend_id):  # ...
-    def approve_friend_request(self, friend_id):  # ...
-    def reject_friend_request(self, friend_id):  # ...
+    def message_user(self, friend_id, message):
+        pass
+
+    def message_group(self, group_id, message):
+        pass
+
+    def send_friend_request(self, friend_id):
+        pass
+
+    def receive_friend_request(self, friend_id):
+        pass
+
+    def approve_friend_request(self, friend_id):
+        pass
+
+    def reject_friend_request(self, friend_id):
+        pass
 
 
 class Chat(metaclass=ABCMeta):
@@ -51,8 +71,11 @@ class PrivateChat(Chat):
 
 class GroupChat(Chat):
 
-    def add_user(self, user):  # ...
-    def remove_user(self, user):  # ... 
+    def add_user(self, user):
+        pass
+
+    def remove_user(self, user):
+        pass
 
 
 class Message(object):

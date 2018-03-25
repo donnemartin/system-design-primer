@@ -112,6 +112,11 @@ class CallCenter(object):
                 return employee
         return None
 
-    def notify_call_escalated(self, call):  # ...
-    def notify_call_completed(self, call):  # ...
-    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):  # ...
+    def notify_call_escalated(self, call):
+        pass
+
+    def notify_call_completed(self, call):
+        pass
+
+    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
+        pass
