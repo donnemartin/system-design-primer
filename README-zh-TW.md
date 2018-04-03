@@ -1341,7 +1341,7 @@ HTTP 是一種在客戶端和伺服器端傳輸資料和定義編碼的方法。
 | PATCH  | 更新部分資料                     | No    | No     | Yes if response contains freshness info |
 | DELETE | 刪除資料                         | Yes   | No     | No                                      |
 
-* 指的是當進行多次相同請求時，結果是相同的。
+*指的是當進行多次相同請求時，結果是相同的。
 
 HTTP 是依賴於較底層的協議(例如：**TCP** 和 **UDP**) 的應用層協議。
 
