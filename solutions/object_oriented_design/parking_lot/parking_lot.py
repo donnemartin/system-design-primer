@@ -45,7 +45,7 @@ class Car(Vehicle):
         super(Car, self).__init__(VehicleSize.COMPACT, license_plate, spot_size=1)
 
     def can_fit_in_spot(self, spot):
-        return True if (spot.size == LARGE or spot.size == COMPACT) else False
+        return spot.size in (VehicleSize.LARGE, VehicleSize.COMPACT)
 
 
 class Bus(Vehicle):
@@ -54,7 +54,7 @@ class Bus(Vehicle):
         super(Bus, self).__init__(VehicleSize.LARGE, license_plate, spot_size=5)
 
     def can_fit_in_spot(self, spot):
-        return True if spot.size == LARGE else False
+        return spot.size == VehicleSize.LARGE
 
 
 class ParkingLot(object):
