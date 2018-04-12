@@ -52,7 +52,7 @@ class Cache(object):
         self.lookup = {}
         self.linked_list = LinkedList()
 
-    def get(self, query)
+    def get(self, query):
         """Get the stored query result from the cache.
 
         Accessing a node updates its position to the front of the LRU list.
