@@ -35,7 +35,7 @@ class SpendingByCategory(MRJob):
         if period == self.current_year_month():
             yield (period, category), amount
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """Sum values for each key.
 
         (2016-01, shopping), 125
