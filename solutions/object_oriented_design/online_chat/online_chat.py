@@ -1,4 +1,5 @@
 from abc import ABCMeta
+from enum import Enum
 
 
 class UserService(object):
