@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# flake8: noqa  # Until issue #148 is resolved
-
 class Graph(object):
 
     def bfs(self, source, dest):
