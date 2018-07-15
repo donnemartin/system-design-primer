@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+# flake8: noqa  # Until issue #148 is resolved
+
 from collections import deque
 from enum import Enum
 
