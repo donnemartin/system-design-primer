@@ -750,7 +750,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ### 來源與延伸閱讀
 
 * [可擴展式系統架構介紹](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [破解系統設計面試](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [破解系統設計面試](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [面向服務架構](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Zookeeper 介紹](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [建構微服務系統你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -1409,7 +1409,7 @@ UDP 的可靠性較低，但適合用在像是網路電話、視訊聊天、串�
 <p align="center">
   <img src="http://i.imgur.com/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/>資料來源：破解系統設計面試</a></i>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>資料來源：破解系統設計面試</a></i>
 </p>
 
 在一個 RPC 中，客戶端會去呼叫另外一個位置空間(通常是在遠端的伺服器)的方法。呼叫的方式就像是呼叫本地端的一個方法一樣，客戶端和伺服器溝通的具體過程被抽象化，而遠端呼叫相較於本地端呼叫來說一般較慢，而且可靠性較差，因此了解如何區別這兩種方法是必要的。熱門的 RPC 框架包含了 [Protobuf](https://developers.google.com/protocol-buffers/)、[Thrift](https://thrift.apache.org/) 和 [Avro](https://avro.apache.org/docs/current/)。
@@ -1505,7 +1505,7 @@ REST 關注於揭露資料，減少客戶端/伺服器之間耦合的程度，�
 * [REST 和 JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [揭開 RPC 和 REST 的神秘面紗](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺點](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [破解系統設計面試](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [破解系統設計面試](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [為什麼在內部要使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1767,7 +1767,7 @@ Notes
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## 聯絡資訊
 
