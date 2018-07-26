@@ -100,7 +100,7 @@
 
 > 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都面临着取舍和权衡**。
 >
-> 每个章节都包含着更的资源的链接。
+> 每个章节都包含着更多的资源的链接。
 
 
 <p align="center">
@@ -110,7 +110,7 @@
 
 * [系统设计主题：从这里开始](#系统设计主题从这里开始)
     * [第一步：回顾可扩展性的视频讲座](#第一步回顾可扩展性scalability的视频讲座)
-    * [第二步： 回顾可扩展性的文章](#第二步回顾可扩展性文章)
+    * [第二步：回顾可扩展性的文章](#第二步回顾可扩展性文章)
     * [接下来的步骤](#接下来的步骤)
 * [性能与拓展性](#性能与可扩展性)
 * [延迟与吞吐量](#延迟与吞吐量)
@@ -209,7 +209,7 @@
 
 那些有经验的候选人通常会被期望了解更多的系统设计的知识。架构师或者团队负责人则会被期望了解更多除了个人贡献之外的知识。顶级的科技公司通常也会有一次或者更多的系统设计面试。
 
-面试会很宽泛的展开并在几个领域深入。这回帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
+面试会很宽泛的展开并在几个领域深入。这会帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
 
 * **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
 * **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
@@ -244,9 +244,9 @@
 * 我们希望每秒钟处理多少请求？
 * 我们希望的读写比率？
 
-### 第二步：创造一个高级的设计
+### 第二步：创造一个高层级的设计
 
-使用所有重要的组件来描绘出一个高级的设计。
+使用所有重要的组件来描绘出一个高层级的设计。
 
 * 画出主要的组件和连接
 * 证明你的想法
@@ -275,11 +275,11 @@
 
 论述可能的解决办法和代价。每件事情需要取舍。可以使用[可拓展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
 
-### 信封背面的计算
+### 预估计算量
 
 你或许会被要求通过手算进行一些估算。涉及到的[附录](#附录)涉及到的是下面的这些资源：
 
-* [使用信封的背面做计算](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2 的次方表](#2-的次方表)
 * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
 
@@ -763,7 +763,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 - [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
-- [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+- [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 - [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 - [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 - [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -773,7 +773,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png">
   <br/>
-  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩展你的用户数到第一个一千万</a></strong>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
 ### 关系型数据库管理系统（RDBMS）
@@ -844,7 +844,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png">
   <br/>
-  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩展你的用户数到第一个一千万</a></strong>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
 联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
@@ -859,7 +859,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ##### 来源及延伸阅读：联合
 
-- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=w95murBkYmU)
 
 #### 分片
 
@@ -1094,7 +1094,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ##### 来源及延伸阅读：SQL 或 NoSQL
 
-- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=w95murBkYmU)
 - [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 ## 缓存
 
@@ -1321,7 +1321,7 @@ def set_user(user_id, values):
 
 ### 背压
 
-如果队列开始明显增长，那么队列大小可能会超过内存大小，导致高速缓存未命中，磁盘读取，甚至性能更慢。[背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)可以通过限制队列大小来帮助我们，从而为队列中的作业保持高吞吐率和良好的响应时间。一旦队列填满，客户端将得到服务器忙活着 HTTP 503 状态码，以便稍后重试。客户端可以在稍后时间重试该请求，也许是[指数退避](https://en.wikipedia.org/wiki/Exponential_backoff)。
+如果队列开始明显增长，那么队列大小可能会超过内存大小，导致高速缓存未命中，磁盘读取，甚至性能更慢。[背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)可以通过限制队列大小来帮助我们，从而为队列中的作业保持高吞吐率和良好的响应时间。一旦队列填满，客户端将得到服务器忙或者 HTTP 503 状态码，以便稍后重试。客户端可以在稍后时间重试该请求，也许是[指数退避](https://en.wikipedia.org/wiki/Exponential_backoff)。
 
 ### 异步的缺点：
 
@@ -1523,7 +1523,7 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1784,7 +1784,7 @@ Notes
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## 联系方式
 

@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+from collections import deque
+from enum import Enum
+
+
+class State(Enum):
+    unvisited = 0
+    visited = 1
+
 
 class Graph(object):
 
@@ -61,3 +69,4 @@ class UserGraphService(object):
     def bfs(self, source, dest):
         # Use self.visited_ids to track visited nodes
         # Use self.lookup to translate a person_id to a Person
+        pass

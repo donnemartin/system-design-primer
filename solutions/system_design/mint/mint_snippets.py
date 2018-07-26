@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 
+from enum import Enum
+
+
 class DefaultCategories(Enum):
 
     HOUSING = 0
     FOOD = 1
     GAS = 2
     SHOPPING = 3
-    ...
+    # ...
+
 
 seller_category_map = {}
 seller_category_map['Exxon'] = DefaultCategories.GAS
@@ -44,4 +48,3 @@ class Budget(object):
 
     def override_category_budget(self, category, amount):
         self.categories_to_budget_map[category] = amount
-
