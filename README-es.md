@@ -180,23 +180,23 @@ Revise, las [directrices de contribución](CONTRIBUTING.md).
 
 ## Guía de estudio
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Temas sugeridos para revisar según el cronograma de la entrevista (corto, mediano, largo).
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**P: Para las entrevistas, ¿es necesario saber todo lo que aparece aquí?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**R: No, no necesitas saber todo para prepararte para una entrevista**.
 
-What you are asked in an interview depends on variables such as:
+Lo que te pregunten en una entrevista va a depender de variables tales como:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Cuanta experiencia tienes
+* Cuál es tu background técnico
+* A qué puesto te estás postulando
+* Qué empresa te está entrevistando
+* Suerte
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Los candidatos experimentados conozcan más sobre diseño de sistemas. Se espera que los arquitectos o team leads tengan mayores conocimientos que contribuidores individuales. Las mejores compañias tecnológicas tienden a tener una o más rondas de entrevistas de diseño de sistemas.
 
 Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 
