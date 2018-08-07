@@ -189,7 +189,7 @@ Response:
 
 ### Use case: User views the user timeline
 
-* The **Client** posts a home timeline request to the **Web Server**
+* The **Client** posts a user timeline request to the **Web Server**
 * The **Web Server** forwards the request to the **Read API** server
 * The **Read API** retrieves the user timeline from the **SQL Database**
 
