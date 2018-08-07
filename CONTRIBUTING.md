@@ -7,7 +7,7 @@ Contributions are welcome!
 
 ## Bug Reports
 
-For bug reports or requests [submit an issue](https://github.com/donnemartin/system-design-primer/issues).
+For bug reports or requests, pls do not hestitate to submit it at [submit an issue](https://github.com/donnemartin/system-design-primer/issues).
 
 ## Pull Requests
 
@@ -38,7 +38,7 @@ The preferred way to contribute is to fork the
 
 ### GitHub Pull Requests Docs
 
-If you are not familiar with pull requests, review the [pull request docs](https://help.github.com/articles/using-pull-requests/).
+If you are not familiar with pull requests, take your time and review the [pull request docs](https://help.github.com/articles/using-pull-requests/).
 
 ## Translations
 
@@ -64,9 +64,9 @@ Translations to new languages are always welcome, especially if you can maintain
 * To get it started, fork the repo, then submit a PR with the single file README-xx.md added, where xx is the language code. Use standard [IETF language tags](https://www.w3.org/International/articles/language-tags/), i.e. the same as is used by Wikipedia, *not* the code for a single country. These are usually just the two-letter lowercase code, for example, `fr` for French and `uk` for Ukrainian (not `ua`, which is for the country). For languages that have variations, use the shortest tag, such as `zh-Hant`.
 * Invite friends to review if possible. If desired, feel free to invite friends to help your original translation by letting them fork your repo, then merging their PRs.
 * Add links to your translation at the top of every README*.md file. (For consistency, the link should be added in alphabetical order by ISO code, and the anchor text should be in the native language.)
-* When done, indicate on the PR that it's ready to be merged into the main repo.
-* Once accepted, your PR will be squashed into a single commit into the `master` branch.
+* When it is done, indicate on the PR that it's ready to be merged into the main repo.
+* Once your PR is accepted, your PR will be squashed into a single commit into the `master` branch.
 
 ### Translation template credits
 
-Thanks to [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line) for the translation template.
+Special thanks to [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line) for the translation template.
