@@ -196,25 +196,25 @@ Lo que te pregunten en una entrevista va a depender de variables tales como:
 * Qué empresa te está entrevistando
 * Suerte
 
-Los candidatos experimentados conozcan más sobre diseño de sistemas. Se espera que los arquitectos o team leads tengan mayores conocimientos que contribuidores individuales. Las mejores compañias tecnológicas tienden a tener una o más rondas de entrevistas de diseño de sistemas.
+De los candidatos experimentados se espera que tengan mayor conocimiento sobre el diseño de sistemas. Se espera que los arquitectos o team leads tengan mayores conocimientos que contribuidores individuales. Las mejores compañias tecnológicas tienden a tener una o más rondas de entrevistas de diseño de sistemas.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Se recomienda que se comience a estudiar de manera amplia y luego se profundice en algunas áreas. Esto ayuda a saber un poco sobre varios temas claves de diseño del sistema. Ajustese a la siguiente línea de tiempo según su disponibilidad de tiempo, experiencia, para el puesto al que se está postulando y a qué empresas te estás postulando.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+- **Corto plazo** - Apunta a la **amplitud** Con los temas de diseño de sistemas. Practique resolviendo **algunas** preguntas de entrevistas
+* **Mediano plazo** - Apunta a la **amplitud** y a **una mediana profundidad** con respecto a temas de diseño de sistemas. Practique resolviendo **muchas** preguntas de entrevistas.
+* **Largo plazo** - Apunta a la **amplitud** y a **una mayor profunidad** en los temas referidos a diseño de sistema. Practique resolviendo **todas** las preguntas de entrevistas.
 
-| | Short | Medium | Long |
+| | Corto | Mediano | Largo |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Lee los [Temas de Diseño de Sistemas](#index-of-system-design-topics) para tener un amplio conocimiento de cómo funcionan los sistemas. | :+1: | :+1: | :+1: |
+| Lea algunos artículos de los [Blogs de las compañias](#company-engineering-blogs) a las que se va a entrevistar | :+1: | :+1: | :+1: |
+| Lea las [Arquitecturas en la vida real](#real-world-architectures) | :+1: | :+1: | :+1: |
+| Revise [Cómo enfocarse en las entrevista de diseños de sistemas](#Como-enfocarse-en-las-entrevista-de-diseños-de-sistemas) | :+1: | :+1: | :+1: |
+| Trabaje en las [preguntas de entrevistas de diseño de sistemas con soluciones](#system-design-interview-questions-with-solutions) | Algunas | Muchas | Todas |
+| Trabaje en [las preguntas de entrevistas sobre el diseño orientado a objeto con soluciones](#object-oriented-design-interview-questions-with-solutions) | Algunas | Muchas | Todas |
+| Revise [ Las preguntas de entrevistas sobre diseño de sistemas adicionales](#additional-system-design-interview-questions) | Algunas | Muchas | Todas |
 
-## How to approach a system design interview question
+## Como enfocarse en las entrevista de diseños de sistemas
 
 > How to tackle a system design interview question.
 
