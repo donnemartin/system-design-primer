@@ -136,7 +136,7 @@ Data flow:
 
 * The **Client** sends a request to the **Web Server**
 * The **Web Server** forwards the request to the **Accounts API** server
-* The **Accounts API** server places a job on a **Queue** such as Amazon SQS or [RabbitMQ](https://www.rabbitmq.com/)
+* The **Accounts API** server places a job on a **Queue** such as [Amazon SQS](https://aws.amazon.com/sqs/) or [RabbitMQ](https://www.rabbitmq.com/)
     * Extracting transactions could take awhile, we'd probably want to do this [asynchronously with a queue](https://github.com/donnemartin/system-design-primer#asynchronism), although this introduces additional complexity
 * The **Transaction Extraction Service** does the following:
     * Pulls from the **Queue** and extracts transactions for the given account from the financial institution, storing the results as raw log files in the **Object Store**
