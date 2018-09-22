@@ -1293,7 +1293,7 @@ The user is not blocked and the job is processed in the background.  During this
 
 **[RabbitMQ](https://www.rabbitmq.com/)** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
 
-**[Amazon SQS](https://aws.amazon.com/sqs/)**, is hosted but can have high latency and has the possibility of messages being delivered twice.
+**[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
 
 ### Task queues
 
