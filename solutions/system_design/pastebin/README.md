@@ -241,7 +241,7 @@ To delete expired pastes, we could just scan the **SQL Database** for all entrie
 
 State you would do this iteratively: 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
-It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Primary-Replica Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
@@ -255,8 +255,8 @@ We'll introduce some components to complete the design and to address scalabilit
 * [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
 * [Cache](https://github.com/donnemartin/system-design-primer#cache)
 * [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [SQL write primary-replica failover](https://github.com/donnemartin/system-design-primer#fail-over)
+* [Primary-replica replication](https://github.com/donnemartin/system-design-primer#primary-replica-replication)
 * [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
@@ -266,7 +266,7 @@ An **Object Store** such as Amazon S3 can comfortably handle the constraint of 1
 
 To address the 40 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
 
-4 *average* paste writes per second (with higher at peak) should be do-able for a single **SQL Write Master-Slave**.  Otherwise, we'll need to employ additional SQL scaling patterns:
+4 *average* paste writes per second (with higher at peak) should be do-able for a single **SQL Write Primary-Replica**.  Otherwise, we'll need to employ additional SQL scaling patterns:
 
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)

@@ -333,7 +333,7 @@ class SpendingByCategory(MRJob):
 
 State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
-It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Primary-Replica Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
@@ -347,8 +347,8 @@ We'll introduce some components to complete the design and to address scalabilit
 * [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
 * [Cache](https://github.com/donnemartin/system-design-primer#cache)
 * [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [SQL write primary-replica failover](https://github.com/donnemartin/system-design-primer#fail-over)
+* [Primary-replica replication](https://github.com/donnemartin/system-design-primer#primary-replica-replication)
 * [Asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism)
 * [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
@@ -375,7 +375,7 @@ We might only want to store a month of `transactions` data in the database, whil
 
 To address the 200 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
 
-2,000 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
+2,000 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Primary-Replica**.  We might need to employ additional SQL scaling patterns:
 
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)

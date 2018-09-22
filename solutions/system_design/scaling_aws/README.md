@@ -207,7 +207,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
         * If you are configuring your own **Load Balancer**, setting up multiple servers in [active-active](https://github.com/donnemartin/system-design-primer#active-active) or [active-passive](https://github.com/donnemartin/system-design-primer#active-passive) in multiple availability zones will improve availability
         * Terminate SSL on the **Load Balancer** to reduce computational load on backend servers and to simplify certificate administration
     * Use multiple **Web Servers** spread out over multiple availability zones
-    * Use multiple **MySQL** instances in [**Master-Slave Failover**](https://github.com/donnemartin/system-design-primer#master-slave-replication) mode across multiple availability zones to improve redundancy
+    * Use multiple **MySQL** instances in [**Primary-Replica Failover**](https://github.com/donnemartin/system-design-primer#primary-replica-replication) mode across multiple availability zones to improve redundancy
 * Separate out the **Web Servers** from the [**Application Servers**](https://github.com/donnemartin/system-design-primer#application-layer)
     * Scale and configure both layers independently
     * **Web Servers** can run as a [**Reverse Proxy**](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
@@ -238,7 +238,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100
     * Session data from the **Web Servers**
         * The **Web Servers** become stateless, allowing for **Autoscaling**
     * Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
-* Add [**MySQL Read Replicas**](https://github.com/donnemartin/system-design-primer#master-slave-replication) to reduce load on the write master
+* Add [**MySQL Read Replicas**](https://github.com/donnemartin/system-design-primer#primary-replica-replication) to reduce load on the write master
 * Add more **Web Servers** and **Application Servers** to improve responsiveness
 
 *Trade-offs, alternatives, and additional details:*
@@ -313,7 +313,7 @@ We'll continue to address scaling issues due to the problem's constraints:
     * A data warehouse such as Redshift can comfortably handle the constraint of 1 TB of new content per month
 * With 40,000 average read requests per second, read traffic for popular content can be addressed by scaling the **Memory Cache**, which is also useful for handling the unevenly distributed traffic and traffic spikes
     * The **SQL Read Replicas** might have trouble handling the cache misses, we'll probably need to employ additional SQL scaling patterns
-* 400 average writes per second (with presumably significantly higher peaks) might be tough for a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques
+* 400 average writes per second (with presumably significantly higher peaks) might be tough for a single **SQL Write Primary-Replica**, also pointing to a need for additional scaling techniques
 
 SQL scaling patterns include:
 
@@ -344,7 +344,7 @@ We can further separate out our [**Application Servers**](https://github.com/don
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#primary-replica-replication)
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)

@@ -239,7 +239,7 @@ class HitCounts(MRJob):
 
 说明您将迭代地执行这样的操作：1)**Benchmark/Load 测试**，2)**Profile** 出瓶颈，3)在评估替代方案和权衡时解决瓶颈，4)重复前面，可以参考[在 AWS 上设计一个可以支持百万用户的系统](../scaling_aws/README.md)这个用来解决如何迭代地扩展初始设计的例子。
 
-重要的是讨论在初始设计中可能遇到的瓶颈，以及如何解决每个瓶颈。比如，在多个 **Web 服务器** 上添加 **负载平衡器** 可以解决哪些问题？ **CDN** 解决哪些问题？**Master-Slave Replicas** 解决哪些问题? 替代方案是什么和怎么对每一个替代方案进行权衡比较？
+重要的是讨论在初始设计中可能遇到的瓶颈，以及如何解决每个瓶颈。比如，在多个 **Web 服务器** 上添加 **负载平衡器** 可以解决哪些问题？ **CDN** 解决哪些问题？**Primary-Replica Replicas** 解决哪些问题? 替代方案是什么和怎么对每一个替代方案进行权衡比较？
 
 我们将介绍一些组件来完成设计，并解决可伸缩性问题。内部的负载平衡器并不能减少杂乱。
 
@@ -253,7 +253,7 @@ class HitCounts(MRJob):
 * [应用层](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
 * [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
 * [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
+* [SQL write primary-replica failover](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
 * [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
 * [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
 * [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
@@ -264,7 +264,7 @@ class HitCounts(MRJob):
 
 要处理 *平均* 每秒 40 读请求(峰值更高)，其中热点内容的流量应该由 **内存缓存** 处理，而不是数据库。**内存缓存** 对于处理分布不均匀的流量和流量峰值也很有用。只要副本没有陷入复制写的泥潭，**SQL Read Replicas** 应该能够处理缓存丢失。
 
-对于单个 **SQL Write Master-Slave**，*平均* 每秒 4paste 写入 (峰值更高) 应该是可以做到的。否则，我们需要使用额外的 SQL 扩展模式:
+对于单个 **SQL Write Primary-Replica**，*平均* 每秒 4paste 写入 (峰值更高) 应该是可以做到的。否则，我们需要使用额外的 SQL 扩展模式:
 
 * [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
 * [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
