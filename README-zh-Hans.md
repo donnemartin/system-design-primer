@@ -395,7 +395,7 @@
 
 ### 第二步：回顾可扩展性文章
 
-[可扩展性](http://www.lecloud.net/tagged/scalability)
+[可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
 * 主题涵盖：
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)

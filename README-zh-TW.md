@@ -384,7 +384,7 @@
 
 ### 第二步：複習關於可擴展性的文章
 
-[可擴展性](http://www.lecloud.net/tagged/scalability)
+[可擴展性](http://www.lecloud.net/tagged/scalability/chrono)
 
 * 包含以下主題：
     * [複製](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
