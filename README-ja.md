@@ -385,7 +385,7 @@
 
 ### ステップ 2: スケーラビリティに関する資料を読んで復習する
 
-[スケーラビリティ](http://www.lecloud.net/tagged/scalability)
+[スケーラビリティ](http://www.lecloud.net/tagged/scalability/chrono)
 
 * ここで触れられているトピックス:
     * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
