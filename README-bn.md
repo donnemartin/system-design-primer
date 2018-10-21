@@ -25,7 +25,7 @@
 
 এটি একটি অবিরাম সংযোজিত, ওপেন সোর্স প্রোজেক্ট।
 
-আমরা [কন্ট্রিবিউশানকে](#contributing)  স্বাগতম জানাই!
+আমরা [কন্ট্রিবিউশানকে](#contributing) স্বাগতম জানাই!
 
 ### সিস্টেম ডিজাইন ইন্টারভিউয়ের জন্য প্রস্তুতি
 
@@ -35,7 +35,7 @@
 
 ইন্টারভিউ প্রস্তুতির জন্য আরও কিছু টপিক নিম্নে দেওয়া হল:
 
-* [শিক্ষার পথপ্রদর্শক](#study-guide)
+* [শিক্ষার গাইডলাইন](#study-guide)
 * [কিভাবে সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন মোকাবেলা করবেন](#how-to-approach-a-system-design-interview-question)
 * [সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন, **সমাধানসহ**](#system-design-interview-questions-with-solutions)
 * [অবজেক্ট ওরিয়েন্টেড ডিজাইন ইন্টারভিউ প্রশ্ন, **সমাধানসহ**](#object-oriented-design-interview-questions-with-solutions)
@@ -75,7 +75,103 @@
 
 বিনা দ্বিধায় পুল রিকুয়েস্ট সাবমিট করে আমাদের সাহায্য করুন:
 
-* ভুল সংশোধন (ফিক্স এরর)
+* ভুল সংশোধন (ফিক্স এরর)
 * সেকশনের উন্নয়ন
 * নতুন সেকশন সংযোজন
 * [অনুবাদ](https://github.com/donnemartin/system-design-primer/issues/28)
+
+কিছু বিষয় আমাদের আরও ঝালাই করতে হবে যা আপনি [উন্নয়নাধীন](#under-development) সেকশনে এ পাবেন।
+
+[কন্ট্রিবিউটিং গাইডলাইন](CONTRIBUTING.md) পর্যবেক্ষণ করুন।
+
+## সিস্টেম ডিজাইনের বিষয়গুলোর সূচি
+
+> বিভিন্ন সিস্টেম ডিজাইনের বিষয়গুলোর সুবিধা-অসুবিধাসহ সারমর্ম   **সবকিছুর ভাল-মন্দ দিক আছে**.
+>
+> প্রতিটি সেকশনে কিছু লিঙ্ক রয়েছে যা আপনাকে আরও গভীর রিসোর্সে নিয়ে যাবে।
+
+<p align="center">
+  <img src="http://i.imgur.com/jrUBAF7.png">
+  <br/>
+</p>
+
+* [ সিস্টেম ডিজাইন টপিকঃ ভূমিকা](#system-design-topics-start-here)
+    * [ধাপ ১ঃ স্কেলেবিলিটি ভিডিও লেকচারগুলো পর্যালোচনা](#step-1-review-the-scalability-video-lecture)
+    * [ধাপ ২ঃ স্কেলেবিলিটি আর্টিকেল পর্যালোচনা](#step-2-review-the-scalability-article)
+    * [পরবর্তী ধাপ](#next-steps)
+* [পারফরমেন্স বনাম স্কেলেবিলিটি](#performance-vs-scalability)
+* [ল্যাটেন্সি বনাম থ্রোপুট](#latency-vs-throughput)
+* [এভাইলিবিলিটি বনাম কন্সিস্টেন্সি/দৃঢ়তা](#availability-vs-consistency)
+    * [সিএপি তত্ত্ব](#cap-theorem)
+        * [সিপি - কন্সিস্টেন্সি এবং পারটিশান টলারেন্স](#cp---consistency-and-partition-tolerance)
+        * [এপি - এভাইলিবিলিটি এবং পারটিশান টলারেন্স](#ap---availability-and-partition-tolerance)
+* [কন্সিস্টেন্সি ধরণসমূহ](#consistency-patterns)
+    * [দুর্বল কন্সিস্টেন্সি](#weak-consistency)
+    * [Eventual কন্সিস্টেন্সি](#eventual-consistency)
+    * [সবল কন্সিস্টেন্সি](#strong-consistency)
+* [এভাইলিবিলিটি ধরণসমূহ](#availability-patterns)
+    * [ফেইল-ওভার](#fail-over)
+    * [রেপ্লিকেশান](#replication)
+* [ডোমেইন নাম সিস্টেম](#domain-name-system)
+* [কন্টেন্ট ডেলিভারি নেটওয়ার্ক](#content-delivery-network)
+    * [পুশ সিডিএন](#push-cdns)
+    * [পুল সিডিএন](#pull-cdns)
+* [লোড ব্যালেন্সার](#load-balancer)
+    * [একটিভ-পেসিভ](#active-passive)
+    * [একটিভ-একটিভ](#active-active)
+    * [লেয়ার ৪ লোড ব্যালান্সিং](#layer-4-load-balancing)
+    * [লেয়ার ৭ লোড ব্যালান্সিং](#layer-7-load-balancing)
+    * [অনুভূমিক স্কেলিং](#horizontal-scaling)
+* [Reverse proxy (web server)](#reverse-proxy-web-server)
+    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
+* [Application layer](#application-layer)
+    * [Microservices](#microservices)
+    * [Service discovery](#service-discovery)
+* [Database](#database)
+    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+        * [Master-slave replication](#master-slave-replication)
+        * [Master-master replication](#master-master-replication)
+        * [Federation](#federation)
+        * [Sharding](#sharding)
+        * [Denormalization](#denormalization)
+        * [SQL tuning](#sql-tuning)
+    * [NoSQL](#nosql)
+        * [Key-value store](#key-value-store)
+        * [Document store](#document-store)
+        * [Wide column store](#wide-column-store)
+        * [Graph Database](#graph-database)
+    * [SQL or NoSQL](#sql-or-nosql)
+* [Cache](#cache)
+    * [Client caching](#client-caching)
+    * [CDN caching](#cdn-caching)
+    * [Web server caching](#web-server-caching)
+    * [Database caching](#database-caching)
+    * [Application caching](#application-caching)
+    * [Caching at the database query level](#caching-at-the-database-query-level)
+    * [Caching at the object level](#caching-at-the-object-level)
+    * [When to update the cache](#when-to-update-the-cache)
+        * [Cache-aside](#cache-aside)
+        * [Write-through](#write-through)
+        * [Write-behind (write-back)](#write-behind-write-back)
+        * [Refresh-ahead](#refresh-ahead)
+* [Asynchronism](#asynchronism)
+    * [Message queues](#message-queues)
+    * [Task queues](#task-queues)
+    * [Back pressure](#back-pressure)
+* [Communication](#communication)
+    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
+    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
+    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+    * [Representational state transfer (REST)](#representational-state-transfer-rest)
+* [Security](#security)
+* [Appendix](#appendix)
+    * [Powers of two table](#powers-of-two-table)
+    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+    * [Additional system design interview questions](#additional-system-design-interview-questions)
+    * [Real world architectures](#real-world-architectures)
+    * [Company architectures](#company-architectures)
+    * [Company engineering blogs](#company-engineering-blogs)
+* [Under development](#under-development)
+* [Credits](#credits)
+* [Contact info](#contact-info)
+* [License](#license)
