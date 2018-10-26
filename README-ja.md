@@ -38,7 +38,7 @@
 * [学習指針](#学習指針)
 * [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか)
 * [システム設計課題例 **とその解答**](#システム設計課題例とその解答)
-* [オブジェクト思考設計課題例、 **とその解答**](#オブジェクト志向設計問題と解答)
+* [オブジェクト指向設計課題例、 **とその解答**](#オブジェクト指向設計問題と解答)
 * [その他のシステム設計面接課題例](#他のシステム設計面接例題)
 
 ## 暗記カード
@@ -52,7 +52,7 @@
 
 * [システム設計デッキ](resources/flash_cards/System%20Design.apkg)
 * [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [オブジェクト思考練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
+* [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
 
 外出先や移動中の勉強に役立つでしょう。
 
@@ -209,7 +209,7 @@
 | 次のリンク先のいくつかのページを読む [実世界でのアーキテクチャ](#実世界のアーキテクチャ) | :+1: | :+1: | :+1: |
 | 復習する [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか) | :+1: | :+1: | :+1: |
 | とりあえず一周する [システム設計課題例](#システム設計課題例とその解答) | Some | Many | Most |
-| とりあえず一周する [オブジェクト志向設計問題と解答](#オブジェクト志向設計問題と解答) | Some | Many | Most |
+| とりあえず一周する [オブジェクト指向設計問題と解答](#オブジェクト指向設計問題と解答) | Some | Many | Most |
 | 復習する [その他システム設計面接での質問例](#他のシステム設計面接例題) | Some | Many | Most |
 
 ## システム設計面接にどのようにして臨めばいいか
@@ -346,9 +346,9 @@
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## オブジェクト志向設計問題と解答
+## オブジェクト指向設計問題と解答
 
-> 頻出のオブジェクト志向システム設計面接課題と参考解答、コード及びダイアグラム
+> 頻出のオブジェクト指向システム設計面接課題と参考解答、コード及びダイアグラム
 >
 > 解答は `solutions/` フォルダ以下にリンクが貼られている
 
@@ -363,7 +363,7 @@
 | 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | 円形配列の設計 | [Contribute](#contributing)  |
-| オブジェクト志向システム設計問題を追加する | [Contribute](#contributing) |
+| オブジェクト指向システム設計問題を追加する | [Contribute](#contributing) |
 
 ## システム設計トピックス: まずはここから
 
@@ -982,7 +982,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ##### その他の参考資料、ページ:  ドキュメントストア
 
-* [ドキュメント志向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [ドキュメント指向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB アーキテクチャ](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB アーキテクチャ](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch アーキテクチャ](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
