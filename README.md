@@ -527,6 +527,53 @@ This topic is further discussed in the [Database](#database) section:
 * [Master-slave replication](#master-slave-replication)
 * [Master-master replication](#master-master-replication)
 
+### Availability in numbers
+Availability is generally quanitifed with terms like uptime and downtime as percentage of time the service guarenteed was available or not respectively. This is popularly measured in number of 9s, for example as 99.9% or 99.99% availability is described as three 9s of availability and 4 9s respectively.
+
+Here's what the numer transaltes to with respect to uptime:
+
+#### 99.9% Availability - 3 Nines
+| Downtime Per year   | 8h 45min 57s  |
+|---------------------|---------------|
+| Downtime Per month  | 43m 49.7s     |
+| Downtime Per week   | 10m 4.8s      |
+| Downtime Per day    | 1m 26.4s      |
+
+#### 99.99% Availability - 4 Nines
+| Downtime Per year   | 52min 35.7s   |
+|---------------------|---------------|
+| Downtime Per month  | 4m 23s     |
+| Downtime Per week   | 1m 5s      |
+| Downtime Per day    | 8.6s      |
+
+### Availability in parallel vs sequence
+If your service consists of multiple entites prone to failure your composite availability changes depending upon if they are connected in sequence or parallel.
+
+![Sequence vs Parallel](https://imgur.com/a/RjaSUvX)
+
+#### Connected in Sequence
+The overall availability decreases when two components with availability < 100% are connected in sequence. For two components `Foo` and `Bar` connected in sequence, the total availability comes out to be:
+
+```
+Availability (Total) = Availability (Foo) * Availability (Bar)
+```
+
+Given that Foo and Bar are independent, it's their probablity to be up together. 
+
+For two components with `99.9%` availability, total availability in sequence comes out to be `99.8%`. 
+
+#### Connected in Parallel
+The overall availability increases when two components with availability < 100% are connected in parallel. For two components `Foo` and `Bar` connected in parallel, the total availability comes out to be:
+
+```
+Availability (Total) = (1 - Availability (Foo)) * (1- Availability (Bar))
+```
+
+Given that Foo and Bar are independent, it's the probablity atlease one of them to be available at any given moment of time.
+
+For two components with `99.9%` availability, total availability in parallel comes out to be `99.9999%`. 
+
+
 ## Domain name system
 
 <p align="center">
