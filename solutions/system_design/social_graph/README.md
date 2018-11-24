@@ -81,7 +81,7 @@ class Graph(Graph):
                 prev_node_key = prev_node_keys[prev_node_key]
             return path_ids[::-1]
 
-    def _shortest_path(self, source, dest):
+    def _shortest_path(self, source, dest, path):
         queue = deque()
         queue.append(source)
         prev_node_keys = {source.key: None}
