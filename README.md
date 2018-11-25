@@ -549,7 +549,7 @@ Here's what the numer transaltes to with respect to uptime:
 ### Availability in parallel vs sequence
 If your service consists of multiple entites prone to failure your composite availability changes depending upon if they are connected in sequence or parallel.
 
-![Sequence vs Parallel](https://imgur.com/a/RjaSUvX)
+![Sequence vs Parallel](https://i.imgur.com/ZHNo49M.png)
 
 #### Connected in Sequence
 The overall availability decreases when two components with availability < 100% are connected in sequence. For two components `Foo` and `Bar` connected in sequence, the total availability comes out to be:
