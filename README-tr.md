@@ -47,71 +47,71 @@ Mülakat hazırlığı için ek başlıklar:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+[Anki bilgi kartı destesi'ni](https://apps.ankiweb.net/) anahtar sistem tasarım konseptlerini kavramanıza yardımcı olması için aralıklı olarak tekrarlama amaçlı kullanın. 
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Sistem tasarım destesi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Sistem tasarım alıştırma destesi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Nesne yönelimli tasarım alıştırma destesi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Hareket halindeyken kullanıma uygun
 
-### Coding Resource: Interactive Coding Challenges
+### Kodlama Kaynağı: Etkileşimli Kodlama Davetleri
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+**Kodlama mülakatı** hazırlığı için kaynak mı arıyorsunuz(https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Ek Anki destesi içeren kardeş repoyu inceleyin [**Etkileşimli Kodlama Davetleris**](https://github.com/donnemartin/interactive-coding-challenges) :
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Kodlama Destesi](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## Katkı
 
-> Learn from the community.
+> Topluluktan öğrenin.
 
-Feel free to submit pull requests to help:
+Yardım etmek için Pull request'leriniz gönderin:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* Hataları düzeltme
+* Bölümleri geliştirme
+* Yeni bölümler ekleme
+* [Çeviri](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Geliştirme gereken içerik [geliştirme aşamasında](#under-development) bölümüne yerleştirildi.
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+[Katkı Kılavuzlarını](CONTRIBUTING.md) inceleyin.
 
-## Index of system design topics
+## Sistem tasarım başlıkları indeksi
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Artı ve eksileri içeren çeşitli sistem tasarım başlıklarının özetleri.  **Herşey bir ticaret**.
 >
-> Each section contains links to more in-depth resources.
+> Her bölüm daha derinlemesine kaynakları içeren linkler barındırıyor.
 
 <p align="center">
   <img src="http://i.imgur.com/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
+* [Sistem tasarım başlığı: Başlangıç](#system-design-topics-start-here)
+    * [Adım 1: Ölçeklenebilirlik video konferansı incelemesi](#step-1-review-the-scalability-video-lecture)
+    * [Step 2: Ölçeklenebilirlik makale incelemesi](#step-2-review-the-scalability-article)
+    * [Diğer Adımlar](#next-steps)
+* [Performas vs ölçeklenebilirlik](#performance-vs-scalability)
+* [Bekleme vs çıktı](#latency-vs-throughput)
+* [Uygunluk vs Süreklilik](#availability-vs-consistency)
+    * [CAP teoremi](#cap-theorem)
+        * [CP - tutarlılık ve bölümleme toleransı](#cp---consistency-and-partition-tolerance)
+        * [AP - uygunluk ve bölümleme toleransı](#ap---availability-and-partition-tolerance)
+* [Tutarlılık paternleri](#consistency-patterns)
+    * [Zayıf tutarlılık](#weak-consistency)
+    * [Muhtemel tutarlılık](#eventual-consistency)
+    * [Güçlü tutarlılık](#strong-consistency)
+* [Uygunluk paternleri](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replication](#replication)
-* [Domain name system](#domain-name-system)
+* [Domain name sistemleri](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
@@ -121,13 +121,13 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Layer 4 load balancing](#layer-4-load-balancing)
     * [Layer 7 load balancing](#layer-7-load-balancing)
     * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
+* [Ters proxy (web server)](#reverse-proxy-web-server)
     * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
+* [Aplikasyon katmanı](#application-layer)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+* [Veritabanı](#database)
+    * [İlişkisel database yönetim sistemi (RDBMS)](#relational-database-management-system-rdbms)
         * [Master-slave replication](#master-slave-replication)
         * [Master-master replication](#master-master-replication)
         * [Federation](#federation)
@@ -144,38 +144,38 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Client caching](#client-caching)
     * [CDN caching](#cdn-caching)
     * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
+    * [Veritabanı caching](#database-caching)
+    * [Uygulama caching](#application-caching)
+    * [Veritabanı sorgu seviyesinde caching](#caching-at-the-database-query-level)
+    * [Nesne seviyesinde caching](#caching-at-the-object-level)
+    * [Cache güncellendiğinde](#when-to-update-the-cache)
         * [Cache-aside](#cache-aside)
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
 * [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
+    * [Mesaj dizileri](#message-queues)
+    * [Görev dizileri](#task-queues)
     * [Back pressure](#back-pressure)
-* [Communication](#communication)
+* [İletişim](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [Güvenlik](#security)
+* [Ekler](#appendix)
+    * [İki tablonun gücü](#powers-of-two-table)
+    * [Her programcının bilmesi gereken gizli varolan sayılar](#latency-numbers-every-programmer-should-know)
+    * [Sistem tasarımı ek soruları](#additional-system-design-interview-questions)
+    * [Gerçek dünya mimarisi](#real-world-architectures)
+    * [Şirket mimarisi](#company-architectures)
+    * [Şirket mühendislik blogları](#company-engineering-blogs)
+* [Geliştirme aşamasında](#under-development)
+* [Katkılar](#credits)
+* [İrtibat bilgisi](#contact-info)
+* [Lisas](#license)
 
-## Study guide
+## Çalışma Kılavuzu
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
