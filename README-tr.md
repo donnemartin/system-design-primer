@@ -177,23 +177,23 @@ Geliştirme gereken içerik [geliştirme aşamasında](#under-development) böl�
 
 ## Çalışma Kılavuzu
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Mülakata olan süreye (kısa, orta, uzun vade) tavsiye edilen başlıklar.
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Soru: Mülakatlar için, buradaki herşeyi bilmeli miyim?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**Cevap: Hayır, mülakata hazırlanmak için buradaki herşeyi bilmenize gerek yok**.
 
-What you are asked in an interview depends on variables such as:
+Mülakat sırasında sorulabilecek soruları etkileyen değişkenler:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Sahip olduğunuz tecrübe 
+* Teknik geçmişiniz
+* Hangi pozisyon için mülakata katıldığınız
+* Hangi şirketler ile görüştüğünüz
+* ŞANS
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Yüksek tecrübeye sahip adayların, sistem tasarımı hakkında daha çok bilgiye sahip olmaları beklenir. Mimarlar ya da takım liderlerinin, bireysel katılımcılara göre daha bilgili olması beklenebilir. Üst düzey teknoloji şirketleri birdne fazla tasarım mülakatı yapmaya eğilimlidir.
 
 Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 
