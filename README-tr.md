@@ -28,19 +28,19 @@ Bu, sürekli olarak güncellenen açık kaynaklı bir projedir.
 
 ### Sistem tasarım mülakatına hazırlık
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Kodlama mülakatlarına ek olarak sistem tasarımı, bir çok teknoloji şirketince, **teknik mülakat sürecinin zorunlu bir parçası** olarak görülmektedir. 
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Sık sorulan sistem tasarım mülakat soruları ile pratik yapın** ve kendi sonuçlarınızı **örnek çözümler**; tartışmalar, kod ve diyagramlar ile **karşılaştırın**.
 
-Additional topics for interview prep:
+Mülakat hazırlığı için ek başlıklar:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Çalışma kılavuzu](#study-guide)
+* [Sistem tasarım mülakatı sorularına nasıl yaklaşmalı](#how-to-approach-a-system-design-interview-question)
+* [Sistem tasarım mülakat soruları, **çözümleri ile**](#system-design-interview-questions-with-solutions)
+* [Nesne yönelimli tasarım mülakat soruları, **çözümleri ile**](#object-oriented-design-interview-questions-with-solutions)
+* [Sistem tasarım mülakatı ek soruları](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## Anki bilgi kartları
 
 <p align="center">
   <img src="http://i.imgur.com/zdCAkB3.png">
