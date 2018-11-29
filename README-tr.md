@@ -7,27 +7,26 @@
   <br/>
 </p>
 
-## Motivation
+## Motivasyon
 
-> Learn how to design large-scale systems.
->
-> Prep for the system design interview.
+> Büyük ölçekli sistemlerin nasıl dizayn edileceğini öğrenmek
 
-### Learn how to design large-scale systems
+> Sistem tasarım mülakatlarına hazırlanmak Prep for the system design interview.
 
-Learning how to design scalable systems will help you become a better engineer.
+### Büyük ölçekli sistemlerin nasıl dizayn edileceğini öğrenmek
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Büyük ölçekli sistemlerin nasıl dizayn edileceğini öğrenmek daha iyi bir mühendis olmanıza yardımcı olacaktır.
+Sistem tasarımı çok geniş bir konudur. Sistem tasarım prensipleri ile ilgili **internet üzerine dağılmış çok miktarda kaynak** bulunmaktadır. 
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Bu repo, ölçekli sistemlerin nasıl inşaa edileceği konusunda, size yardımı olacak kaynaklar içeren **organize koleksiyondur**.
 
-### Learn from the open source community
+### Açık kaynak topluluğundan öğrenin
 
-This is a continually updated, open source project.
+Bu, sürekli olarak güncellenen açık kaynaklı bir projedir.
 
-[Contributions](#contributing) are welcome!
+[Katkınızı](#katkıdabulunanlar) bekliyoruz!
 
-### Prep for the system design interview
+### Sistem tasarım mülakatına hazırlık
 
 In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
 
