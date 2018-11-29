@@ -195,13 +195,13 @@ Mülakat sırasında sorulabilecek soruları etkileyen değişkenler:
 
 Yüksek tecrübeye sahip adayların, sistem tasarımı hakkında daha çok bilgiye sahip olmaları beklenir. Mimarlar ya da takım liderlerinin, bireysel katılımcılara göre daha bilgili olması beklenebilir. Üst düzey teknoloji şirketleri birdne fazla tasarım mülakatı yapmaya eğilimlidir.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sistem tasarım başlıkları hakkında az da olsa bilgi sahibi olmaya yardımcı olacaktır. Zaman çizelgenize, tecrübenize, hangi pozisyon için mülakata katıldığınıza, ve hangi şirketin mülakatına katıldığınıza göre aşağıdaki kılavuzu kendinize göre ayarlayın.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Kısa vade** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
+* **Orta Vade** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
+* **Uzun vade** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
-| | Short | Medium | Long |
+| | Kısa | Orta | Uzun |
 |---|---|---|---|
 | Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
 | Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
