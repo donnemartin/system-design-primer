@@ -279,3 +279,88 @@
 * [কিভাবে একটি সিস্টেম ডিজাইন ইন্টারভিউ জয় করবেন](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [সিস্টেম ডিজাইন ইন্টারভিউ](http://www.hiredintech.com/system-design)
 * [ইন্ট্রো টু আর্কিটেকচার এন্ড সিস্টেম ডিজাইন ইন্টারভিউ](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+
+## সিস্টেম ডিজাইন ইন্টারভিউ সমাধানসহ প্রশ্ন
+
+> নমুনা আলোচনা, কোড, এবং ডায়াগ্রামের সাথে সাধারণ সিস্টেম ডিজাইনের ইন্টারভিউ প্রশ্ন।
+>
+> সমাধানগুলো `solutions/` ফোল্ডারে লিঙ্ক করা হয়েছে। 
+
+| প্রশ্ন | |
+|---|---|
+| Pastebin.com (or Bit.ly) ডিজাইন করুন | [সমাধান](solutions/system_design/pastebin/README.md) |
+| টুইটারের টাইমলাইন এবং সার্চ (অথবা ফেইসবুক ফিড এবং সার্চ) ডিজাইন করুন | [সমাধান](solutions/system_design/twitter/README.md) |
+| ওয়েব ক্রলার ডিজাইন করুন | [সমাধান](solutions/system_design/web_crawler/README.md) |
+| Mint.com ডিজাইন করুন | [সমাধান](solutions/system_design/mint/README.md) |
+| সামাজিক নেটওয়ার্কের জন্য ডাটা স্ট্রাকচার ডিজাইন করুন | [সমাধান](solutions/system_design/social_graph/README.md) |
+| সার্চ ইঞ্জিনের জন্য কি-ভ্যালু স্টোর ডিজাইন করুন | [সমাধান](solutions/system_design/query_cache/README.md) |
+| বিভিন্ন বৈশিষ্ট্যে অ্যামাজনের বিক্রয় রেঙ্কিং ডিজাইন করুন | [সমাধান](solutions/system_design/sales_rank/README.md) |
+| AWS লক্ষাধিক ব্যবহারকারীদের স্কেলিং করার জন্য সিস্টেম ডিজাইন করুন | [সমাধান](solutions/system_design/scaling_aws/README.md) |
+| একটি সিস্টেম ডিজাইন প্রশ্ন যোগ করুন | [কন্ট্রিবিউট](#contributing) |
+
+### Design Pastebin.com (or Bit.ly)
+
+[View exercise and solution](solutions/system_design/pastebin/README.md)
+
+![Imgur](http://i.imgur.com/4edXG0T.png)
+
+### Design the Twitter timeline and search (or Facebook feed and search)
+
+[View exercise and solution](solutions/system_design/twitter/README.md)
+
+![Imgur](http://i.imgur.com/jrUBAF7.png)
+
+### Design a web crawler
+
+[View exercise and solution](solutions/system_design/web_crawler/README.md)
+
+![Imgur](http://i.imgur.com/bWxPtQA.png)
+
+### Design Mint.com
+
+[View exercise and solution](solutions/system_design/mint/README.md)
+
+![Imgur](http://i.imgur.com/V5q57vU.png)
+
+### Design the data structures for a social network
+
+[View exercise and solution](solutions/system_design/social_graph/README.md)
+
+![Imgur](http://i.imgur.com/cdCv5g7.png)
+
+### Design a key-value store for a search engine
+
+[View exercise and solution](solutions/system_design/query_cache/README.md)
+
+![Imgur](http://i.imgur.com/4j99mhe.png)
+
+### Design Amazon's sales ranking by category feature
+
+[View exercise and solution](solutions/system_design/sales_rank/README.md)
+
+![Imgur](http://i.imgur.com/MzExP06.png)
+
+### Design a system that scales to millions of users on AWS
+
+[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+
+![Imgur](http://i.imgur.com/jj3A5N8.png)
+
+## Object-oriented design interview questions with solutions
+
+> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+>
+> Solutions linked to content in the `solutions/` folder.
+
+>**Note: This section is under development**
+
+| Question | |
+|---|---|
+| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Design a circular array | [Contribute](#contributing)  |
+| Add an object-oriented design question | [Contribute](#contributing) |
