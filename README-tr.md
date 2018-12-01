@@ -197,19 +197,18 @@ Yüksek tecrübeye sahip adayların, sistem tasarımı hakkında daha çok bilgi
 
 Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sistem tasarım başlıkları hakkında az da olsa bilgi sahibi olmaya yardımcı olacaktır. Zaman çizelgenize, tecrübenize, hangi pozisyon için mülakata katıldığınıza, ve hangi şirketin mülakatına katıldığınıza göre aşağıdaki kılavuzu kendinize göre ayarlayın.
 
-* **Kısa vade** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Orta Vade** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Uzun vade** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
-
+* **Kısa vade** - **Geniş açıdan** sistem tasarım başlıklarını incelemek. **Bazı** mülakat sorularını çözerek pratik yapmak. 
+* **Orta Vade** - **Geniş açıdan** sistem tasarım başlıkların incelemek ve bazı alanlarda **derinlemesine** çalışmak. **Birçok** mülakat sorusunu çözerek pratik yapmak. 
+* **Uzun vade** -**Geniş açıdan** sistem tasarım başlıkların incelemek ve **derinlemesine** çalışmak. **Tamamına yakın** mülakat sorusunu çözerek pratik yapmak.
 | | Kısa | Orta | Uzun |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Sistemlerin nasıl çalıştığını anlamak için [Sistem tasarım başlıkları](#index-of-system-design-topics) okuyunuz | :+1: | :+1: | :+1: |
+| Şirketlerin nasıl mülakat yaptıklarını anlamak için [Şirket mühendislik blogları](#company-engineering-blogs) dan birkaç makale okuyunuz. | :+1: | :+1: | :+1: |
+| Biraz [Gerçek dünya mimarileri](#real-world-architectures) okuyunuz.| :+1: | :+1: | :+1: |
+| Review [Sistem tasarım mülakat sorularına nasıl yaklaşılmalı](#how-to-approach-a-system-design-interview-question) inceleyiniz| :+1: | :+1: | :+1: |
+|[Sistem tasarım mülakat soruları ve cevaplarına](#system-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
+| [Nesne yönelimli tasarım mülakatı soru ve cevaplarına](#object-oriented-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
+| [Ek sistem tasarım mülakat soruları](#additional-system-design-interview-questions) inceleyiniz | Az | Orta | Çok |
 
 ## How to approach a system design interview question
 
