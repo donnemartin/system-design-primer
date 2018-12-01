@@ -210,11 +210,11 @@ Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sist
 | [Nesne yönelimli tasarım mülakatı soru ve cevaplarına](#object-oriented-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
 | [Ek sistem tasarım mülakat soruları](#additional-system-design-interview-questions) inceleyiniz | Az | Orta | Çok |
 
-## How to approach a system design interview question
+## Sistem tasarım mülakatı sorularına nasıl yaklaşmak gerekir? 
 
-> How to tackle a system design interview question.
+> Sistem tasarım mülakat sorularını nasıl ele almak gerekir. 
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Sistem tasarım mülakatı, **açık uçlu bir görüşmedir**. Bu görüşmeye sizin öncülük etmeniz beklenir.  
 
 You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
 
