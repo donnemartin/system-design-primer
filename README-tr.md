@@ -216,42 +216,42 @@ Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sist
 
 Sistem tasarım mülakatı, **açık uçlu bir görüşmedir**. Bu görüşmeye sizin öncülük etmeniz beklenir.  
 
-Tartışmaya yön vermeniz için aşağıdaki adımları takip edebilirsiniz. To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Tartışmaya yön vermeniz için aşağıdaki adımları takip edebilirsiniz. Bu süreci pekiştirmeye yardımcı olması için, [Sistem tasarım mülakatı soru ve cevapları](#system-design-interview-questions-with-solutions) üzerinden aşağıdaki adımları izleyerek çalışın.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Adım 1: Kullanım alanı belirleme, sınırlamalar, ve varsayımlar
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Gereklilikleri öğrenin ve probleme odaklanın. Kullanım alanlarını ve sınırlamaları belirlemek için sorular sorun. Varsayımları tartışın. 
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Kim kullanacak?
+* Nasıl kullanacak?
+* Kaç kullanıcı olacak?
+* Sistem tam olarak ne yapacak?
+* Sistem girdi ve çıktıları neler?
+* Üzerinde çalışılacak datanın büyüklüğü yaklaşık ne kadar?
+* Saniyede kaç sorgu bekliyoruz?
+* Beklenen okumadan yazma oranı ne?
 
-### Step 2: Create a high level design
+### Step 2: Üst düzey tasarım oluşturun
 
-Outline a high level design with all important components.
+Tüm önemli bileşenleri ile birlikte üst düzey tasarım şablonunu taslağını hazırlayın.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Ana bileşen ve bağlantıları kabataslak çiziniz. 
+* Fikirlerinizi tartın 
 
-### Step 3: Design core components
+### Step 3: Temel tasarım bileşenleri 
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Her temel tasarım bileşenini detaylandırın. Mesela;   For example, [url kısaltma servisi tasarımı](solutions/system_design/pastebin/README.md), ile ilgili soru ile karşılaştıysanız, tartışmanız gerekenler:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Tam url için bir hash üretme ve depolama
+    * [MD5](solutions/system_design/pastebin/README.md) ve [Base62](solutions/system_design/pastebin/README.md)
+    * Hash çatışmaları
+    * SQL ya da NoSQL
+    * Veritabanı şeması
+* Hash'lenmiş urlnin tam url'ye çevrilmesi 
+    * Veritabanı kontrolü 
+* API ve nesne yönelimli tasarım 
 
-### Step 4: Scale the design
+### Step 4: Tasarımı ölçeklendirmek
 
 Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
 
