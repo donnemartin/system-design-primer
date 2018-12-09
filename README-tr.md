@@ -216,7 +216,7 @@ Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sist
 
 Sistem tasarım mülakatı, **açık uçlu bir görüşmedir**. Bu görüşmeye sizin öncülük etmeniz beklenir.  
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Tartışmaya yön vermeniz için aşağıdaki adımları takip edebilirsiniz. To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
 
 ### Step 1: Outline use cases, constraints, and assumptions
 
@@ -1773,7 +1773,7 @@ Feel free to contact me to discuss any issues, questions, or comments.
 
 My contact info can be found on my [GitHub page](https://github.com/donnemartin).
 
-## License
+## Lisans
 
 *I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
 
