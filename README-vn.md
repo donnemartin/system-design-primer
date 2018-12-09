@@ -19,7 +19,7 @@
 
 Học cách thiết kế hệ thống quy mô lớn sẽ giúp bạn trở thành 1 kỹ sư tốt hơn
 
-Thiết kế hệ thống là một chủ đề rộng lớn. Có cả **một lượng lớn tài liệu trên mạng** về những quy tắc thiết kế hệ thống.
+Thiết kế hệ thống là một chủ đề rất rộng lớn. Có cả **một lượng lớn tài liệu trên mạng** về những quy tắc thiết kế hệ thống.
 
 Repo này là một **bộ sưu tập tài liệu có tổ chức** để giúp bạn học xây dựng hệ thống với quy mô lớn.
 
@@ -33,9 +33,9 @@ Repo này là một **bộ sưu tập tài liệu có tổ chức** để giúp 
 
 Ngoài phỏng vấn lập trình, thiết kề hệ thống là một **thành phần bắt buộc** của **quy trình phỏng vấn** tại nhiều công ty công nghệ.
 
-**Luyện tập những câu hỏi phỏng vấn phổ biến** và **so sánh** kết quả của bạn với **đáp án mẫu**: tháo luận, lập trình, và biểu đồ.
+**Luyện tập những câu hỏi phỏng vấn phổ biến** và **so sánh** kết quả của bạn với **đáp án mẫu**: thảo luận, lập trình, và biểu đồ.
 
-Những chủ đề khác cho viêc chuẩn bị phỏng vấn:
+Những chủ đề khác cho việc chuẩn bị phỏng vấn:
 
 * [Kế hoạch học](#study-guide)
 * [Phương pháp tiếp cận câu hỏi phỏng vấn thiết kế hệ thống](#how-to-approach-a-system-design-interview-question)
@@ -53,10 +53,10 @@ Những chủ đề khác cho viêc chuẩn bị phỏng vấn:
 [Thẻ Anki](https://apps.ankiweb.net/) sử dụng sự lặp lại có chu kỳ để giúp bạn lưu nhớ các khái niệm thiết kế hệ thống chính.
 
 * [Thẻ thiết kế hệ thống](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [Thẻ luyện tâp thiết kế hệ thống](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Thẻ luyện tâp thiết kế hướng đối tượng](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Thẻ luyện tập thiết kế hệ thống](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Thẻ luyện tập thiết kế hướng đối tượng](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Tue65t vởi cho việc sử dụng trong khi di chuyển.
+Tuyệt vời cho sử dụng trong khi di chuyển.
 
 ### Tài liệu luyện tập lập trình
 
