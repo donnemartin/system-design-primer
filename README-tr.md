@@ -1,4 +1,4 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [Arabic](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [German](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [Greek](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Spanish](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [Thai](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [Vietnamese](https://github.com/donnemartin/system-design-primer/issues/127) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [Arabic](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [German](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [Greek](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Spanish](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [Thai](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [Vietnamese](https://github.com/donnemartin/system-design-primer/issues/127) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # The System Design Primer
 
@@ -7,112 +7,111 @@
   <br/>
 </p>
 
-## Motivation
+## Motivasyon
 
-> Learn how to design large-scale systems.
->
-> Prep for the system design interview.
+> Büyük ölçekli sistemlerin nasıl dizayn edileceğini öğrenmek
 
-### Learn how to design large-scale systems
+> Sistem tasarım mülakatlarına hazırlanmak Prep for the system design interview.
 
-Learning how to design scalable systems will help you become a better engineer.
+### Büyük ölçekli sistemlerin nasıl dizayn edileceğini öğrenmek
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Büyük ölçekli sistemlerin nasıl dizayn edileceğini öğrenmek daha iyi bir mühendis olmanıza yardımcı olacaktır.
+Sistem tasarımı çok geniş bir konudur. Sistem tasarım prensipleri ile ilgili **internet üzerine dağılmış çok miktarda kaynak** bulunmaktadır. 
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Bu repo, ölçekli sistemlerin nasıl inşaa edileceği konusunda, size yardımı olacak kaynaklar içeren **organize koleksiyondur**.
 
-### Learn from the open source community
+### Açık kaynak topluluğundan öğrenin
 
-This is a continually updated, open source project.
+Bu, sürekli olarak güncellenen açık kaynaklı bir projedir.
 
-[Contributions](#contributing) are welcome!
+[Katkınızı](#katkıdabulunanlar) bekliyoruz!
 
-### Prep for the system design interview
+### Sistem tasarım mülakatına hazırlık
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Kodlama mülakatlarına ek olarak sistem tasarımı, bir çok teknoloji şirketince, **teknik mülakat sürecinin zorunlu bir parçası** olarak görülmektedir. 
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Sık sorulan sistem tasarım mülakat soruları ile pratik yapın** ve kendi sonuçlarınızı **örnek çözümler**; tartışmalar, kod ve diyagramlar ile **karşılaştırın**.
 
-Additional topics for interview prep:
+Mülakat hazırlığı için ek başlıklar:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Çalışma kılavuzu](#study-guide)
+* [Sistem tasarım mülakatı sorularına nasıl yaklaşmalı](#how-to-approach-a-system-design-interview-question)
+* [Sistem tasarım mülakat soruları, **çözümleri ile**](#system-design-interview-questions-with-solutions)
+* [Nesne yönelimli tasarım mülakat soruları, **çözümleri ile**](#object-oriented-design-interview-questions-with-solutions)
+* [Sistem tasarım mülakatı ek soruları](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## Anki bilgi kartları
 
 <p align="center">
   <img src="http://i.imgur.com/zdCAkB3.png">
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+[Anki bilgi kartı destesi'ni](https://apps.ankiweb.net/) anahtar sistem tasarım konseptlerini kavramanıza yardımcı olması için aralıklı olarak tekrarlama amaçlı kullanın. 
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Sistem tasarım destesi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Sistem tasarım alıştırma destesi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Nesne yönelimli tasarım alıştırma destesi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Hareket halindeyken kullanıma uygun
 
-### Coding Resource: Interactive Coding Challenges
+### Kodlama Kaynağı: Etkileşimli Kodlama Davetleri
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+**Kodlama mülakatı** hazırlığı için kaynak mı arıyorsunuz(https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Ek Anki destesi içeren kardeş repoyu inceleyin [**Etkileşimli Kodlama Davetleris**](https://github.com/donnemartin/interactive-coding-challenges) :
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Kodlama Destesi](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## Katkı
 
-> Learn from the community.
+> Topluluktan öğrenin.
 
-Feel free to submit pull requests to help:
+Yardım etmek için Pull request'leriniz gönderin:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* Hataları düzeltme
+* Bölümleri geliştirme
+* Yeni bölümler ekleme
+* [Çeviri](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Geliştirme gereken içerik [geliştirme aşamasında](#under-development) bölümüne yerleştirildi.
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+[Katkı Kılavuzlarını](CONTRIBUTING.md) inceleyin.
 
-## Index of system design topics
+## Sistem tasarım başlıkları indeksi
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Artı ve eksileri içeren çeşitli sistem tasarım başlıklarının özetleri.  **Herşey bir ticaret**.
 >
-> Each section contains links to more in-depth resources.
+> Her bölüm daha derinlemesine kaynakları içeren linkler barındırıyor.
 
 <p align="center">
   <img src="http://i.imgur.com/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
+* [Sistem tasarım başlığı: Başlangıç](#system-design-topics-start-here)
+    * [Adım 1: Ölçeklenebilirlik video konferansı incelemesi](#step-1-review-the-scalability-video-lecture)
+    * [Step 2: Ölçeklenebilirlik makale incelemesi](#step-2-review-the-scalability-article)
+    * [Diğer Adımlar](#next-steps)
+* [Performas vs ölçeklenebilirlik](#performance-vs-scalability)
+* [Bekleme vs çıktı](#latency-vs-throughput)
+* [Uygunluk vs Süreklilik](#availability-vs-consistency)
+    * [CAP teoremi](#cap-theorem)
+        * [CP - tutarlılık ve bölümleme toleransı](#cp---consistency-and-partition-tolerance)
+        * [AP - uygunluk ve bölümleme toleransı](#ap---availability-and-partition-tolerance)
+* [Tutarlılık paternleri](#consistency-patterns)
+    * [Zayıf tutarlılık](#weak-consistency)
+    * [Muhtemel tutarlılık](#eventual-consistency)
+    * [Güçlü tutarlılık](#strong-consistency)
+* [Uygunluk paternleri](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replication](#replication)
-* [Domain name system](#domain-name-system)
+* [Domain name sistemleri](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
@@ -122,13 +121,13 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Layer 4 load balancing](#layer-4-load-balancing)
     * [Layer 7 load balancing](#layer-7-load-balancing)
     * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
+* [Ters proxy (web server)](#reverse-proxy-web-server)
     * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
+* [Aplikasyon katmanı](#application-layer)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+* [Veritabanı](#database)
+    * [İlişkisel database yönetim sistemi (RDBMS)](#relational-database-management-system-rdbms)
         * [Master-slave replication](#master-slave-replication)
         * [Master-master replication](#master-master-replication)
         * [Federation](#federation)
@@ -145,115 +144,114 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Client caching](#client-caching)
     * [CDN caching](#cdn-caching)
     * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
+    * [Veritabanı caching](#database-caching)
+    * [Uygulama caching](#application-caching)
+    * [Veritabanı sorgu seviyesinde caching](#caching-at-the-database-query-level)
+    * [Nesne seviyesinde caching](#caching-at-the-object-level)
+    * [Cache güncellendiğinde](#when-to-update-the-cache)
         * [Cache-aside](#cache-aside)
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
 * [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
+    * [Mesaj dizileri](#message-queues)
+    * [Görev dizileri](#task-queues)
     * [Back pressure](#back-pressure)
-* [Communication](#communication)
+* [İletişim](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [Güvenlik](#security)
+* [Ekler](#appendix)
+    * [İki tablonun gücü](#powers-of-two-table)
+    * [Her programcının bilmesi gereken gizli varolan sayılar](#latency-numbers-every-programmer-should-know)
+    * [Sistem tasarımı ek soruları](#additional-system-design-interview-questions)
+    * [Gerçek dünya mimarisi](#real-world-architectures)
+    * [Şirket mimarisi](#company-architectures)
+    * [Şirket mühendislik blogları](#company-engineering-blogs)
+* [Geliştirme aşamasında](#under-development)
+* [Katkılar](#credits)
+* [İrtibat bilgisi](#contact-info)
+* [Lisas](#license)
 
-## Study guide
+## Çalışma Kılavuzu
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Mülakata olan süreye (kısa, orta, uzun vade) tavsiye edilen başlıklar.
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Soru: Mülakatlar için, buradaki herşeyi bilmeli miyim?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**Cevap: Hayır, mülakata hazırlanmak için buradaki herşeyi bilmenize gerek yok**.
 
-What you are asked in an interview depends on variables such as:
+Mülakat sırasında sorulabilecek soruları etkileyen değişkenler:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Sahip olduğunuz tecrübe 
+* Teknik geçmişiniz
+* Hangi pozisyon için mülakata katıldığınız
+* Hangi şirketler ile görüştüğünüz
+* ŞANS
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Yüksek tecrübeye sahip adayların, sistem tasarımı hakkında daha çok bilgiye sahip olmaları beklenir. Mimarlar ya da takım liderlerinin, bireysel katılımcılara göre daha bilgili olması beklenebilir. Üst düzey teknoloji şirketleri birdne fazla tasarım mülakatı yapmaya eğilimlidir.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sistem tasarım başlıkları hakkında az da olsa bilgi sahibi olmaya yardımcı olacaktır. Zaman çizelgenize, tecrübenize, hangi pozisyon için mülakata katıldığınıza, ve hangi şirketin mülakatına katıldığınıza göre aşağıdaki kılavuzu kendinize göre ayarlayın.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
-
-| | Short | Medium | Long |
+* **Kısa vade** - **Geniş açıdan** sistem tasarım başlıklarını incelemek. **Bazı** mülakat sorularını çözerek pratik yapmak. 
+* **Orta Vade** - **Geniş açıdan** sistem tasarım başlıkların incelemek ve bazı alanlarda **derinlemesine** çalışmak. **Birçok** mülakat sorusunu çözerek pratik yapmak. 
+* **Uzun vade** -**Geniş açıdan** sistem tasarım başlıkların incelemek ve **derinlemesine** çalışmak. **Tamamına yakın** mülakat sorusunu çözerek pratik yapmak.
+| | Kısa | Orta | Uzun |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Sistemlerin nasıl çalıştığını anlamak için [Sistem tasarım başlıkları](#index-of-system-design-topics) okuyunuz | :+1: | :+1: | :+1: |
+| Şirketlerin nasıl mülakat yaptıklarını anlamak için [Şirket mühendislik blogları](#company-engineering-blogs) dan birkaç makale okuyunuz. | :+1: | :+1: | :+1: |
+| Biraz [Gerçek dünya mimarileri](#real-world-architectures) okuyunuz.| :+1: | :+1: | :+1: |
+| Review [Sistem tasarım mülakat sorularına nasıl yaklaşılmalı](#how-to-approach-a-system-design-interview-question) inceleyiniz| :+1: | :+1: | :+1: |
+|[Sistem tasarım mülakat soruları ve cevaplarına](#system-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
+| [Nesne yönelimli tasarım mülakatı soru ve cevaplarına](#object-oriented-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
+| [Ek sistem tasarım mülakat soruları](#additional-system-design-interview-questions) inceleyiniz | Az | Orta | Çok |
 
-## How to approach a system design interview question
+## Sistem tasarım mülakatı sorularına nasıl yaklaşmak gerekir? 
 
-> How to tackle a system design interview question.
+> Sistem tasarım mülakat sorularını nasıl ele almak gerekir. 
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Sistem tasarım mülakatı, **açık uçlu bir görüşmedir**. Bu görüşmeye sizin öncülük etmeniz beklenir.  
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Tartışmaya yön vermeniz için aşağıdaki adımları takip edebilirsiniz. Bu süreci pekiştirmeye yardımcı olması için, [Sistem tasarım mülakatı soru ve cevapları](#system-design-interview-questions-with-solutions) üzerinden aşağıdaki adımları izleyerek çalışın.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Adım 1: Kullanım alanı belirleme, sınırlamalar, ve varsayımlar
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Gereklilikleri öğrenin ve probleme odaklanın. Kullanım alanlarını ve sınırlamaları belirlemek için sorular sorun. Varsayımları tartışın. 
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Kim kullanacak?
+* Nasıl kullanacak?
+* Kaç kullanıcı olacak?
+* Sistem tam olarak ne yapacak?
+* Sistem girdi ve çıktıları neler?
+* Üzerinde çalışılacak datanın büyüklüğü yaklaşık ne kadar?
+* Saniyede kaç sorgu bekliyoruz?
+* Beklenen okumadan yazma oranı ne?
 
-### Step 2: Create a high level design
+### Step 2: Üst düzey tasarım oluşturun
 
-Outline a high level design with all important components.
+Tüm önemli bileşenleri ile birlikte üst düzey tasarım şablonunu taslağını hazırlayın.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Ana bileşen ve bağlantıları kabataslak çiziniz. 
+* Fikirlerinizi tartın 
 
-### Step 3: Design core components
+### Step 3: Temel tasarım bileşenleri 
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Her temel tasarım bileşenini detaylandırın. Mesela;   For example, [url kısaltma servisi tasarımı](solutions/system_design/pastebin/README.md), ile ilgili soru ile karşılaştıysanız, tartışmanız gerekenler:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Tam url için bir hash üretme ve depolama
+    * [MD5](solutions/system_design/pastebin/README.md) ve [Base62](solutions/system_design/pastebin/README.md)
+    * Hash çatışmaları
+    * SQL ya da NoSQL
+    * Veritabanı şeması
+* Hash'lenmiş urlnin tam url'ye çevrilmesi 
+    * Veritabanı kontrolü 
+* API ve nesne yönelimli tasarım 
 
-### Step 4: Scale the design
+### Step 4: Tasarımı ölçeklendirmek
 
 Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
 
@@ -1775,7 +1773,7 @@ Feel free to contact me to discuss any issues, questions, or comments.
 
 My contact info can be found on my [GitHub page](https://github.com/donnemartin).
 
-## License
+## Lisans
 
 *I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
 
