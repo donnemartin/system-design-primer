@@ -1556,7 +1556,7 @@ REST 關注於揭露資料，減少客戶端/伺服器之間耦合的程度，�
 L1 快取參考數量級                           0.5 ns
 Branch mispredict                            5   ns
 L2 快取參考數量級                             7   ns                      14x L1 cache
-Mutex lock/unlock                          100   ns
+Mutex lock/unlock                          25   ns
 主記憶體參考數量級                      100   ns                      20x L2 cache, 200x L1 cache
 Compress 1K bytes with Zippy            10,000   ns       10 us
 Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
