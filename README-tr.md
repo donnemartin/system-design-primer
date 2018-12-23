@@ -177,7 +177,7 @@ Geliştirme gereken içerik [geliştirme aşamasında](#under-development) böl�
 
 ## Çalışma Kılavuzu
 
-> Mülakata olan süreye (kısa, orta, uzun vade) tavsiye edilen başlıklar.
+> Mülakata olan süreye göre (kısa, orta, uzun vade) tavsiye edilen başlıklar.
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
@@ -193,22 +193,22 @@ Mülakat sırasında sorulabilecek soruları etkileyen değişkenler:
 * Hangi şirketler ile görüştüğünüz
 * ŞANS
 
-Yüksek tecrübeye sahip adayların, sistem tasarımı hakkında daha çok bilgiye sahip olmaları beklenir. Mimarlar ya da takım liderlerinin, bireysel katılımcılara göre daha bilgili olması beklenebilir. Üst düzey teknoloji şirketleri birdne fazla tasarım mülakatı yapmaya eğilimlidir.
+Yüksek tecrübeye sahip adayların, sistem tasarımı hakkında daha çok bilgiye sahip olmaları beklenir. Mimarlar ya da takım liderlerinin, bireysel katılımcılara göre daha bilgili olması beklenebilir. Üst düzey teknoloji şirketleri birden fazla tasarım mülakatı yapmaya eğilimlidirler.
 
-Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sistem tasarım başlıkları hakkında az da olsa bilgi sahibi olmaya yardımcı olacaktır. Zaman çizelgenize, tecrübenize, hangi pozisyon için mülakata katıldığınıza, ve hangi şirketin mülakatına katıldığınıza göre aşağıdaki kılavuzu kendinize göre ayarlayın.
+Genelden başlayarak, bir kaç konuda derinlemesine inin. Çeşitli anahtar sistem tasarım başlıkları hakkında az da olsa bilgi sahibi olmak, faydalı olacaktır. Zaman çizelgenize, tecrübenize, hangi pozisyon için mülakata katıldığınıza, ve hangi şirketin mülakatına katıldığınıza göre aşağıdaki kılavuzu kendinize göre ayarlayın.
 
 * **Kısa vade** - **Geniş açıdan** sistem tasarım başlıklarını incelemek. **Bazı** mülakat sorularını çözerek pratik yapmak. 
 * **Orta Vade** - **Geniş açıdan** sistem tasarım başlıkların incelemek ve bazı alanlarda **derinlemesine** çalışmak. **Birçok** mülakat sorusunu çözerek pratik yapmak. 
 * **Uzun vade** -**Geniş açıdan** sistem tasarım başlıkların incelemek ve **derinlemesine** çalışmak. **Tamamına yakın** mülakat sorusunu çözerek pratik yapmak.
 | | Kısa | Orta | Uzun |
 |---|---|---|---|
-| Sistemlerin nasıl çalıştığını anlamak için [Sistem tasarım başlıkları](#index-of-system-design-topics) okuyunuz | :+1: | :+1: | :+1: |
-| Şirketlerin nasıl mülakat yaptıklarını anlamak için [Şirket mühendislik blogları](#company-engineering-blogs) dan birkaç makale okuyunuz. | :+1: | :+1: | :+1: |
+| Sistemlerin nasıl çalıştığını anlamak için [Sistem tasarım başlıklarını](#index-of-system-design-topics) okuyunuz | :+1: | :+1: | :+1: |
+| Şirketlerin nasıl mülakat yaptıklarını anlamak için [Şirket mühendislik blogları](#company-engineering-blogs) 'ndan birkaç makale okuyunuz. | :+1: | :+1: | :+1: |
 | Biraz [Gerçek dünya mimarileri](#real-world-architectures) okuyunuz.| :+1: | :+1: | :+1: |
-| Review [Sistem tasarım mülakat sorularına nasıl yaklaşılmalı](#how-to-approach-a-system-design-interview-question) inceleyiniz| :+1: | :+1: | :+1: |
-|[Sistem tasarım mülakat soruları ve cevaplarına](#system-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
+| [Sistem tasarım mülakat sorularına nasıl yaklaşılmalı](#how-to-approach-a-system-design-interview-question) inceleyiniz| :+1: | :+1: | :+1: |
+| [Sistem tasarım mülakat soruları ve cevaplarına](#system-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
 | [Nesne yönelimli tasarım mülakatı soru ve cevaplarına](#object-oriented-design-interview-questions-with-solutions) çalışınız | Az | Orta | Çok |
-| [Ek sistem tasarım mülakat soruları](#additional-system-design-interview-questions) inceleyiniz | Az | Orta | Çok |
+| [Ek sistem tasarım mülakat sorularını](#additional-system-design-interview-questions) inceleyiniz | Az | Orta | Çok |
 
 ## Sistem tasarım mülakatı sorularına nasıl yaklaşmak gerekir? 
 
@@ -231,14 +231,14 @@ Gereklilikleri öğrenin ve probleme odaklanın. Kullanım alanlarını ve sın�
 * Saniyede kaç sorgu bekliyoruz?
 * Beklenen okumadan yazma oranı ne?
 
-### Step 2: Üst düzey tasarım oluşturun
+### Adım 2: Üst düzey tasarım oluşturun
 
 Tüm önemli bileşenleri ile birlikte üst düzey tasarım şablonunu taslağını hazırlayın.
 
 * Ana bileşen ve bağlantıları kabataslak çiziniz. 
 * Fikirlerinizi tartın 
 
-### Step 3: Temel tasarım bileşenleri 
+### Adım 3: Temel tasarım bileşenleri 
 
 Her temel tasarım bileşenini detaylandırın. Mesela;   For example, [url kısaltma servisi tasarımı](solutions/system_design/pastebin/README.md), ile ilgili soru ile karşılaştıysanız, tartışmanız gerekenler:
 
@@ -251,159 +251,160 @@ Her temel tasarım bileşenini detaylandırın. Mesela;   For example, [url kıs
     * Veritabanı kontrolü 
 * API ve nesne yönelimli tasarım 
 
-### Step 4: Tasarımı ölçeklendirmek
+### Adım 4: Tasarımı ölçeklendirmek
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Verilen kısıtlamalardaki zorlukları tanımlayınız. Mesela; ölçeklenebilirlik sorununu gidermek için aşağıdakilere ihtiyacınız var mı?
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+* Yük Dengeleyici
+* Yatay ölçekleme 
+* Ön Bellekleme
+* Veritabanı dağıtma
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Potansiyel çözümleri ve takasları tartışınız. Her şey takas edilebilir. [Ölçeklenebilir sistem tasarımını](#index-of-system-design-topics) kullanarak kısıtlamaları belirleyiniz. 
 
-### Back-of-the-envelope calculations
+### Zarf arkası hesaplamaları
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Bazı olasılıkları elinizle hesaplamanız istenebilir. Aşağıdaki kaynakları, [Ekler](#appendix) kısmında bulabilirsiniz :
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Zarf arkası hesaplamaları kullanımı](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [İki tablonun gücü](#powers-of-two-table)
+* [Her programcının bilmesi gereken gecikme numaraları](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
+### Kaynaklar ve okunması gerekenler
 
-Check out the following links to get a better idea of what to expect:
+Daha ileri fikirler için aşağıdaki linkleri ziyaret edebilirsiniz: 
 
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-## System design interview questions with solutions
+## Sistem tasarım mülakatı soruları ve çözümleri
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Sistem tasarım mülakatlarında sık sorulan sorular ile örnek tartışmalar, kod ve diagramlar.
+
 >
-> Solutions linked to content in the `solutions/` folder.
+> Çözümler  `solutions/` dosyasının içindedir.
 
-| Question | |
+| Soru | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Pastebin.com (or Bit.ly) tasarımı | [Çözüm](solutions/system_design/pastebin/README.md) |
+| Twitter (Veya Facebook feed ve arama) timeline ve arama tasarımı| [Çözüm](solutions/system_design/twitter/README.md) |
+| Web tarayıcı tasarımı | [Çözüm](solutions/system_design/web_crawler/README.md) |
+| Mint.com tasarımı | [Çözüm](solutions/system_design/mint/README.md) |
+| Sosyal ağ için veri yapısı tasarımı | [Solution](solutions/system_design/social_graph/README.md) |
+| Arama motoru için anahtar-değer sistemi tasarımı | [Solution](solutions/system_design/query_cache/README.md) |
+| Amazon'un kategoriye göre satış sıralaması tasarımı | [Solution](solutions/system_design/sales_rank/README.md) |
+| AWS'deki milyonlarca kullanıcıyı ölçekleyen sistem tasarımı | [Solution](solutions/system_design/scaling_aws/README.md) |
+| Sistem tasarım sorusu ekleyiniz  | [Contribute](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Pastebin.com (or Bit.ly) tasarımı
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Twitter (Veya Facebook feed ve arama) timeline ve arama tasarımı
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 
-### Design a web crawler
+### Web tarayıcı tasarımı
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
-### Design Mint.com
+### Mint.com tasarımı
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 
-### Design the data structures for a social network
+### Sosyal ağ için veri yapısı tasarımı
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Arama motoru için anahtar-değer sistemi tasarımı
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Amazon'un kategoriye göre satış sıralaması tasarımı
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### AWS'deki milyonlarca kullanıcıyı ölçekleyen sistem tasarımı
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Alıştırma ve çözümü göster](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Nesne yönelimli tasarım mülakat soru ve çözümleri 
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Nesne yönelimli tasarım mülakatlarında sık sorulan sorular ile örnek tartışmalar, kod ve diagramlar.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Çözümler  `solutions/` dosyasının içindedir.
 
->**Note: This section is under development**
+>**Not: Bu bölüm geliştirme aşamasındadır**
 
-| Question | |
+| Soru | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Hash haritası tasarımı | [Çözüm](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Son kullanılan önbellek tasarımı | [Çözüm](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Çağrı merkezi tasarımı | [Çözüm](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Kart destesi tasarımı | [Çözüm](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Park alanı tasarımı | [Çözüm](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Sohbet sunucusu tasarımı | [Çözüm](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Dairesel dizi tasarımı | [Katkı](#contributing)  |
+| Nesne yönelimli tasarım sorusu ekleyiniz | [Katkı](#contributing) |
 
-## System design topics: start here
+## Sistem tasarım başlıkları: Başlangıç
 
-New to system design?
+Sistem tasarımında yeni misiniz?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+İlk olarak genel prensipleri anlamanız, ne olduklarını öğrenmeniz, nasıl kullanıldıklarını ve iyi ile kötü yanlarını bilmeniz gerekmektedir.
 
-### Step 1: Review the scalability video lecture
+### Adım 1: Ölçeklenebilirlik videosunu inceleyiniz. 
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Harvard Ölçeklenebilirlik Dersi](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* Bahsedilen konular:
+    * Yatay ölçekleme 
+    * Dikey ölçekleme
+    * Ön bellekleme
+    * Yükleme dengesi
+    * Veritabanı kopyalama
+    * Veritabanı bölme
 
-### Step 2: Review the scalability article
+### Step 2: Ölçeklenebilirlik makalesini inceleyiniz
 
-[Scalability](http://www.lecloud.net/tagged/scalability/chrono)
+[Ölçeklenebilirlik](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* Bahsedilen konular:
+    * [Klonlar](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Veritabanları](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Önbelleklemeler](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asenkronizm](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Sonraki Adımlar
 
-Next, we'll look at high-level trade-offs:
+Sonra, yüksek düzey karşılaştırmaları inceleyeceğiz:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Performans** vs **Ölçeklenebilirlik**
+* **Gecikme** vs **Çıktı**
+* **Uygunluk** vs **tutarlılık**
 
-Keep in mind that **everything is a trade-off**.
+**Herşeyin bir karşılaştırma/pazarlık olduğunu** aklınızdan çıkarmayın.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Daha sonras DNS, CDNs ve yük degeleyiciler gibi daha spesifik konulara geçeceğiz. 
 
-## Performance vs scalability
+## Performans vs Ölçeklenebilirlik
 
 A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
@@ -412,7 +413,7 @@ Another way to look at performance vs scalability:
 * If you have a **performance** problem, your system is slow for a single user.
 * If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
 
-### Source(s) and further reading
+### Kaynak(lar) ve okunması önerilenler
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
@@ -1504,7 +1505,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Security
+## Güvenlik
 
 This section could use some updates.  Consider [contributing](#contributing)!
 
@@ -1515,16 +1516,16 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 * Use parameterized queries to prevent SQL injection.
 * Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-### Source(s) and further reading
+### Kaynak(lar) ve okunması önerilenler
 
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
-## Appendix
+## Ekler
 
 You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
 
-### Powers of two table
+### İki Tablonun Gücü
 
 ```
 Power           Exact Value         Approx Value        Bytes
@@ -1539,11 +1540,11 @@ Power           Exact Value         Approx Value        Bytes
 40              1,099,511,627,776   1 trillion           1 TB
 ```
 
-#### Source(s) and further reading
+#### Kaynak(lar) ve okunması önerilenler
 
 * [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 
-### Latency numbers every programmer should know
+### Her programcının bilmesi gereken gecikme sayıları
 
 ```
 Latency Comparison Numbers
@@ -1571,59 +1572,60 @@ Notes
 1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
 ```
 
-Handy metrics based on numbers above:
+Yukarıdaki sayılara dayanan faydalı ölçümler:
 
-* Read sequentially from disk at 30 MB/s
-* Read sequentially from 1 Gbps Ethernet at 100 MB/s
-* Read sequentially from SSD at 1 GB/s
-* Read sequentially from main memory at 4 GB/s
-* 6-7 world-wide round trips per second
-* 2,000 round trips per second within a data center
+* 30 MB / s hızında diskten art arda okuma
+* 1 Gbps Ethernet'ten 100 MB / s'de art arda okuma
+* SSD'den 1 GB/s'de art arda okuma
+* Ana bellekten 4 GB / s'de art arda okuyun
+* Saniyede 6-7 kez dünya etrafında dönüş
+* Bir veri merkezinde saniyede 2.000 tur
 
-#### Latency numbers visualized
+
+#### Görselleştirilmiş gecikme sayıları 
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
-#### Source(s) and further reading
+#### Kaynak(lar)  ve okunması önerilenler
 
 * [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Additional system design interview questions
+### Sistem tasarım mülakatı ek soruları 
 
-> Common system design interview questions, with links to resources on how to solve each.
+> Sık sorulan sistem tasarım mülakat soruları ve çözümleri bulabileceğiniz bağlantılar.
 
-| Question | Reference(s) |
+| Soru | Referans(lar) |
 |---|---|
-| Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
-| Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Design a recommendation system like Amazon's | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
-| Design a tinyurl system like Bitly | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
-| Design a chat app like WhatsApp | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-| Design a picture sharing system like Instagram | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
-| Design the Facebook news feed function | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
-| Design the Facebook timeline function | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
-| Design the Facebook chat function | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
-| Design a graph search function like Facebook's | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| Design a content delivery network like CloudFlare | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
-| Design a trending topic system like Twitter's | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
-| Design a random ID generation system | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
-| Return the top k requests during a time interval | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/docs/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
-| Design a system that serves data from multiple data centers | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| Design an online multiplayer card game | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
-| Add a system design question | [Contribute](#contributing) |
+| Dropbox benzeri dosya senkronizasyon servisi tasarlayınız | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| Google benzeri arama motoru tasarlayınız | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Google benzeri web tarayıcı tasarlayınız | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
+| Google Docs tasarlayınız | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| Redis benzeri anahtar-değer sistemi tasarlayınız | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| Memcached benzeri önbellekleme sistemi tasarlayınız | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Amazon'unkine benzer tavsiye sistemi tasarlayınız | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
+| Bitly benzeri url kısaltma sistemi tasarlayınız | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
+| Whatsapp benzeri mesaj servisi tasarlayınız | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
+| Instagram benzeri resim paylaşım sistemi tasarlayınız | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
+| Facebook haber feed fonksiyonu tasarlayınız | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
+| Facebook zaman tüneli fonksiyonu tasarlayınız | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
+| Facebook sohbet fonksiyonu tasarlayınız | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
+| Facebook benzeri grafik arama fonksiyonu tasarlayınız | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| CloudFlare benzeri CDN tasarlayınız | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
+| Twitter benzeri trending topic sistemi tasarlayınız | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
+| Rastgele ID oluşturma sistemi tasarlayınız | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
+| Bir zaman dilimi içerisinde en çok yapılan k sayıdaki sorguyu döndürünüz | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/docs/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
+| Bir çok farklı veri merkezinden veri sağlayan sistem tasarlayınız | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
+| Çok oyunculu online kart oyunu tasarlayınız | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| Çöp toplama sistemi tasarlayınız | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| API oran sınırlayıcı tasarlayınız | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| Sistem tasarım sorusu ekleyiniz | [Contribute](#contributing) |
 
-### Real world architectures
+### Gerçek dünya mimarileri
 
-> Articles on how real world systems are designed.
+> Gerçek dünyada sistemlerin nasıl tasarlandığı üzerine makaleler.
 
 <p align="center">
   <img src="http://i.imgur.com/TcUo2fw.png">
@@ -1631,13 +1633,13 @@ Handy metrics based on numbers above:
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
 
-**Don't focus on nitty gritty details for the following articles, instead:**
+**Makalelerdeki ince detaylara takılmak yerine:**
 
-* Identify shared principles, common technologies, and patterns within these articles
-* Study what problems are solved by each component, where it works, where it doesn't
-* Review the lessons learned
+* Bahsedilen prensipleri, sık kullanılan teknolojileri ve kalıpları anlamaya çalışınız. 
+* Hangi problemi hangi bileşenin çözdüğünü, ne zaman çalıştığını ya da çalışmadığını anlamaya çalışınız.
+* Öğrendiklerinizi tekrar ediniz.
 
-|Type | System | Reference(s) |
+|Tip | Sistem | Referans(lar) |
 |---|---|---|
 | Data processing | **MapReduce** - Distributed data processing from Google | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
 | Data processing | **Spark** - Distributed data processing from Databricks | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
@@ -1661,9 +1663,9 @@ Handy metrics based on numbers above:
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | | Add an architecture | [Contribute](#contributing) |
 
-### Company architectures
+### Şirket mimarileri
 
-| Company | Reference(s) |
+| Şirket | Referans(lar) |
 |---|---|
 | Amazon | [Amazon architecture](http://highscalability.com/amazon-architecture) |
 | Cinchcast | [Producing 1,500 hours of audio every day](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
@@ -1689,11 +1691,11 @@ Handy metrics based on numbers above:
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
-### Company engineering blogs
+### Şirket mühendislik blogları
 
-> Architectures for companies you are interviewing with.
+> Mülakatına katıldığınız şirketler için mimariler.
 >
-> Questions you encounter might be from the same domain.
+> Karşılaşacağınız sorular aynı başlıktan olabilir.
 
 * [Airbnb Engineering](http://nerds.airbnb.com/)
 * [Atlassian Developers](https://developer.atlassian.com/blog/)
@@ -1736,26 +1738,25 @@ Handy metrics based on numbers above:
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 
-#### Source(s) and further reading
+#### Kaynak(lar) ve okunması önerilenler
 
-Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+Blog eklemek istemisiniz?  Duplikasyonu önlemek için şirket blogunuzu aşağıdaki repoya eklediğinize emin olunuz;
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+## Geliştirme aşamasında
 
-Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+Bölüm eklemek ya da devam eden bir bölümü tamamlamaya yardım etmeyle ilgilenir misiniz? [Katkı](#contributing)!
 
-* Distributed computing with MapReduce
+* MapReduce ile dağtılmış hesaplama 
 * Consistent hashing
 * Scatter gather
 * [Contribute](#contributing)
 
-## Credits
+## Teşekkür
 
-Credits and sources are provided throughout this repo.
-
-Special thanks to:
+Kaynaklar ve teşekkürler repo içerisinde gösterilmiştir. 
+Özel olarak teşekkür edilenler:
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
@@ -1767,15 +1768,15 @@ Special thanks to:
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Contact info
+## İletişim Bilgileri
 
-Feel free to contact me to discuss any issues, questions, or comments.
+Herhangi bir soru, yorum ya da konu hakkında lütfen iletişime geçmekten çekinmeyiniz.
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+İletişim bilgilerimi [GitHub sayfamda](https://github.com/donnemartin) bulabilirsiniz.
 
 ## Lisans
 
-*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+*Bu repoda code ve kaynakları açık kaynak kodu ile kullanıma sunuyorum. Bu benim şahsi repom olduğu, kodum ve kaynaklarım için almış olduğunuz lisans işverenimin (Facebook) değil, tamamen şahsıma aittir.*
 
     Copyright 2017 Donne Martin
 
