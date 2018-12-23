@@ -211,7 +211,7 @@
 
 * **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
 * **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
-* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来联系。
+* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来练习。
 
 |                                          | 短期   | 中期   | 长期   |
 | ---------------------------------------- | ---- | ---- | ---- |
@@ -262,20 +262,20 @@
     * 数据库查找
 * API 和面向对象设计
 
-### 第四步：度量设计
+### 第四步：扩展设计
 
-确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成拓展性的议题吗？
+确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成扩展性的议题吗？
 
 * 负载均衡
-* 水平拓展
+* 水平扩展
 * 缓存
 * 数据库分片
 
-论述可能的解决办法和代价。每件事情需要取舍。可以使用[可拓展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
+论述可能的解决办法和代价。每件事情需要取舍。可以使用[可扩展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
 
 ### 预估计算量
 
-你或许会被要求通过手算进行一些估算。涉及到的[附录](#附录)涉及到的是下面的这些资源：
+你或许会被要求通过手算进行一些估算。[附录](#附录)涉及到的是下面的这些资源：
 
 * [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2 的次方表](#2-的次方表)
@@ -395,7 +395,7 @@
 
 ### 第二步：回顾可扩展性文章
 
-[可扩展性](http://www.lecloud.net/tagged/scalability)
+[可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
 * 主题涵盖：
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
@@ -568,7 +568,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 * 虽说缓存可以减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
 * 虽然它们通常由[政府，网络服务提供商和大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)管理，但 DNS 服务管理仍可能是复杂的。
-* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twtter IP 地址的用户访问 Twiiter。
+* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twitter IP 地址的用户访问 Twitter。
 
 ### 来源及延伸阅读
 
@@ -761,7 +761,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 - [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
-- [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+- [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 - [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 - [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 - [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -1521,7 +1521,7 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1572,7 +1572,7 @@ Latency Comparison Numbers
 L1 cache reference                           0.5 ns
 Branch mispredict                            5   ns
 L2 cache reference                           7   ns                      14x L1 cache
-Mutex lock/unlock                          100   ns
+Mutex lock/unlock                           25   ns
 Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
 Compress 1K bytes with Zippy            10,000   ns       10 us
 Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
@@ -1782,7 +1782,7 @@ Notes
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## 联系方式
 

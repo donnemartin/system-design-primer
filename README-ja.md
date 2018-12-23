@@ -38,7 +38,7 @@
 * [学習指針](#学習指針)
 * [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか)
 * [システム設計課題例 **とその解答**](#システム設計課題例とその解答)
-* [オブジェクト思考設計課題例、 **とその解答**](#オブジェクト志向設計問題と解答)
+* [オブジェクト指向設計課題例、 **とその解答**](#オブジェクト指向設計問題と解答)
 * [その他のシステム設計面接課題例](#他のシステム設計面接例題)
 
 ## 暗記カード
@@ -52,7 +52,7 @@
 
 * [システム設計デッキ](resources/flash_cards/System%20Design.apkg)
 * [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [オブジェクト思考練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
+* [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
 
 外出先や移動中の勉強に役立つでしょう。
 
@@ -209,7 +209,7 @@
 | 次のリンク先のいくつかのページを読む [実世界でのアーキテクチャ](#実世界のアーキテクチャ) | :+1: | :+1: | :+1: |
 | 復習する [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか) | :+1: | :+1: | :+1: |
 | とりあえず一周する [システム設計課題例](#システム設計課題例とその解答) | Some | Many | Most |
-| とりあえず一周する [オブジェクト志向設計問題と解答](#オブジェクト志向設計問題と解答) | Some | Many | Most |
+| とりあえず一周する [オブジェクト指向設計問題と解答](#オブジェクト指向設計問題と解答) | Some | Many | Most |
 | 復習する [その他システム設計面接での質問例](#他のシステム設計面接例題) | Some | Many | Most |
 
 ## システム設計面接にどのようにして臨めばいいか
@@ -346,9 +346,9 @@
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## オブジェクト志向設計問題と解答
+## オブジェクト指向設計問題と解答
 
-> 頻出のオブジェクト志向システム設計面接課題と参考解答、コード及びダイアグラム
+> 頻出のオブジェクト指向システム設計面接課題と参考解答、コード及びダイアグラム
 >
 > 解答は `solutions/` フォルダ以下にリンクが貼られている
 
@@ -363,7 +363,7 @@
 | 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | 円形配列の設計 | [Contribute](#contributing)  |
-| オブジェクト志向システム設計問題を追加する | [Contribute](#contributing) |
+| オブジェクト指向システム設計問題を追加する | [Contribute](#contributing) |
 
 ## システム設計トピックス: まずはここから
 
@@ -385,7 +385,7 @@
 
 ### ステップ 2: スケーラビリティに関する資料を読んで復習する
 
-[スケーラビリティ](http://www.lecloud.net/tagged/scalability)
+[スケーラビリティ](http://www.lecloud.net/tagged/scalability/chrono)
 
 * ここで触れられているトピックス:
     * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
@@ -751,7 +751,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 ### その他の参考資料、ページ
 
 * [スケールするシステムアーキテクチャを設計するためのイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [サービス指向アーキテクチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -982,7 +982,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ##### その他の参考資料、ページ:  ドキュメントストア
 
-* [ドキュメント志向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [ドキュメント指向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB アーキテクチャ](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB アーキテクチャ](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch アーキテクチャ](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
@@ -1408,7 +1408,7 @@ TCPよりもUDPを使うのは:
 <p align="center">
   <img src="http://i.imgur.com/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/>Source: Crack the system design interview</a></i>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
 RPCではクライアントがリモートサーバーなどの異なるアドレス空間でプロシージャーが処理されるようにします。プロシージャーはローカルでのコールのように、クライアントからサーバーにどのように通信するかという詳細を省いた状態でコードが書かれます。リモートのコールは普通、ローカルのコールよりも遅く、信頼性に欠けるため、RPCコールをローカルコールと区別させておくことが好ましいでしょう。人気のRPCフレームワークは以下です。[Protobuf](https://developers.google.com/protocol-buffers/)、 [Thrift](https://thrift.apache.org/)、[Avro](https://avro.apache.org/docs/current/)
@@ -1504,7 +1504,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1555,7 +1555,7 @@ Latency Comparison Numbers
 L1 cache reference                           0.5 ns
 Branch mispredict                            5   ns
 L2 cache reference                           7   ns                      14x L1 cache
-Mutex lock/unlock                          100   ns
+Mutex lock/unlock                           25   ns
 Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
 Compress 1K bytes with Zippy            10,000   ns       10 us
 Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
@@ -1768,7 +1768,7 @@ Special thanks to:
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## Contact info
 
