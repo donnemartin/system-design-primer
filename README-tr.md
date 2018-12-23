@@ -552,7 +552,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 * Latency-based
 * Geolocation-based
 
-### Disadvantage(s): DNS
+### Dezavantaj(lar): DNS
 
 * Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
 * DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
