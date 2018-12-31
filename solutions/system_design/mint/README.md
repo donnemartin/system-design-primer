@@ -136,7 +136,7 @@ Data flow:
 
 * The **Client** sends a request to the **Web Server**
 * The **Web Server** forwards the request to the **Accounts API** server
-* The **Accounts API** server places a job on a **Queue** such as Amazon SQS or [RabbitMQ](https://www.rabbitmq.com/)
+* The **Accounts API** server places a job on a **Queue** such as [Amazon SQS](https://aws.amazon.com/sqs/) or [RabbitMQ](https://www.rabbitmq.com/)
     * Extracting transactions could take awhile, we'd probably want to do this [asynchronously with a queue](https://github.com/donnemartin/system-design-primer#asynchronism), although this introduces additional complexity
 * The **Transaction Extraction Service** does the following:
     * Pulls from the **Queue** and extracts transactions for the given account from the financial institution, storing the results as raw log files in the **Object Store**
@@ -331,7 +331,7 @@ class SpendingByCategory(MRJob):
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
-State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
@@ -349,7 +349,7 @@ We'll introduce some components to complete the design and to address scalabilit
 * [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
 * [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
 * [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Asynchronism](https://github.com/donnemartin/system-design-primer#aysnchronism)
+* [Asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism)
 * [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 

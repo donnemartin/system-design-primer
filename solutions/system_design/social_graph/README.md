@@ -104,7 +104,7 @@ We won't be able to fit all users on the same machine, we'll need to [shard](htt
 * The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Search API** server
 * The **Search API** server forwards the request to the **User Graph Service**
-* The **User Graph Service** does does the following:
+* The **User Graph Service** does the following:
     * Uses the **Lookup Service** to find the **Person Server** where the current user's info is stored
     * Finds the appropriate **Person Server** to retrieve the current user's list of `friend_ids`
     * Runs a BFS search using the current user as the `source` and the current user's `friend_ids` as the ids for each `adjacent_node`
@@ -254,7 +254,7 @@ For internal communications, we could use [Remote Procedure Calls](https://githu
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
-State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
@@ -290,7 +290,7 @@ Below are further optimizations:
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
