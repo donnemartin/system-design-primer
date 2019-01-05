@@ -1218,7 +1218,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 ##### Disadvantage(s): write through
 
 * When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never read, which can be minimized with a TTL.
+* Most data written might never be read, which can be minimized with a TTL.
 
 #### Write-behind (write-back)
 
