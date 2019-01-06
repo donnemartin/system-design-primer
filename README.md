@@ -566,7 +566,7 @@ For two components with `99.9%` availability, total availability in sequence com
 The overall availability increases when two components with availability < 100% are connected in parallel. For two components `Foo` and `Bar` connected in parallel, the total availability comes out to be:
 
 ```
-Availability (Total) = (1 - Availability (Foo)) * (1- Availability (Bar))
+Availability (Total) = 1 - (1 - Availability (Foo)) * (1- Availability (Bar))
 ```
 
 Given that Foo and Bar are independent, it's the probablity atlease one of them to be available at any given moment of time.
