@@ -17,6 +17,7 @@
 * [巴西葡萄牙语](https://github.com/donnemartin/system-design-primer/issues/40)
 * [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
 * [土耳其语](https://github.com/donnemartin/system-design-primer/issues/39)
+* [Українська](README-uk.md)
 
 ## 目的
 
