@@ -194,7 +194,7 @@ Since realtime analytics are not a requirement, we could simply **MapReduce** th
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-```
+```python
 class HitCounts(MRJob):
 
     def extract_url(self, line):
