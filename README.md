@@ -528,9 +528,9 @@ This topic is further discussed in the [Database](#database) section:
 * [Master-master replication](#master-master-replication)
 
 ### Availability in numbers
-Availability is generally quanitifed with terms like uptime and downtime as percentage of time the service guarenteed was available or not respectively. This is popularly measured in number of 9s, for example as 99.9% or 99.99% availability is described as three 9s of availability and 4 9s respectively.
+Availability is generally quantifed with terms like uptime and downtime as percentage of time the service guarenteed was available or not respectively. This is popularly measured in number of 9s, for example as 99.9% or 99.99% availability is described as three 9s of availability and 4 9s respectively.
 
-Here's what the numer transaltes to with respect to uptime:
+Here's what the numbers translate to with respect to uptime:
 
 #### 99.9% Availability - 3 Nines
 | Downtime Per year   | 8h 45min 57s  |
