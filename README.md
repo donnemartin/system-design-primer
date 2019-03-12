@@ -528,20 +528,22 @@ This topic is further discussed in the [Database](#database) section:
 * [Master-master replication](#master-master-replication)
 
 ### Availability in numbers
-Availability is generally quantifed with terms like uptime and downtime as percentage of time the service guarenteed was available or not respectively. This is popularly measured in number of 9s, for example as 99.9% or 99.99% availability is described as three 9s of availability and 4 9s respectively.
+Availability is generally quantified with terms like uptime and downtime as percentage of time the service guarenteed was available or not respectively. This is popularly measured in number of 9s, for example as 99.9% or 99.99% availability is described as three 9s of availability and 4 9s respectively.
 
 Here's what the numbers translate to with respect to uptime:
 
 #### 99.9% Availability - 3 Nines
-| Downtime Per year   | 8h 45min 57s  |
+| Duration        | Acceptable Downtime|
 |---------------------|---------------|
+| Downtime Per year   | 8h 45min 57s  |
 | Downtime Per month  | 43m 49.7s     |
 | Downtime Per week   | 10m 4.8s      |
 | Downtime Per day    | 1m 26.4s      |
 
 #### 99.99% Availability - 4 Nines
-| Downtime Per year   | 52min 35.7s   |
+| Duration        | Acceptable Downtime|
 |---------------------|---------------|
+| Downtime Per year   | 52min 35.7s   |
 | Downtime Per month  | 4m 23s     |
 | Downtime Per week   | 1m 5s      |
 | Downtime Per day    | 8.6s      |
