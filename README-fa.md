@@ -1,4 +1,5 @@
 *[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Farsi](https://github.com/donnemartin/system-design-primer/issues/110) . [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Japanese](https://github.com/donnemartin/system-design-primer/issues/100) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Traditional Chinese](https://github.com/donnemartin/system-design-primer/issues/88) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+<div dir="rtl">
 
 # مبانی طراحی سیستم
 
@@ -68,8 +69,10 @@
 ### منبع برنامه نویسی: مساله‌های تعاملی برنامه نویسی
 
 اگر به دنبال مخزنی میگیردید که به شما کمک کنه تا در مصاحبه برنامه نویسی شما رو آماده کنه لطفا به مخزن زیر مراجعه کنید:
+</div>
 
 > [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)
+<div dir="rtl">
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png">
@@ -77,12 +80,16 @@
 </p>
 
 همچنین مخزن دیگه‌ای وجود داره که میتونه فلش کارت‌های انکی بیشتری رو در اختیار شما بزاره. برای دسترسی به لینک زیر برید:
+</div>
 
 > [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges)
+<div dir="rtl">
 
 برای فلش کارت‌های انکی:
+</div>
 
 > [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+<div dir="rtl">
 
 ## همکاری
 
@@ -297,10 +304,12 @@
 ### منابع برای مطالعه بیشتر
 
 از لینک‌های زیر میتونید استفاده کنید تا بیاد دستتون که مصاحبه طراحی سیستم چه جوریه و منتظر چه چیزایی باشید توش:
+</div>
 
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+<div dir="rtl">
 
 ## سوالات مصاحبه طراحی سیستم همراه با پاسخ
 
@@ -445,9 +454,11 @@ DNS, CDNs, load balancers.
 * اگر شما مشکل مقیاس پذیری دارید، سیستم شما برای یک کاربر سریعه ولی برای بار زیاد، کُند عمل میکنه
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+<div dir="rtl">
 
 ## تاخیر در برابر بازدهی
 
@@ -460,8 +471,10 @@ DNS, CDNs, load balancers.
 به طور کلی شما باید برای **بیشترین بازدهی** به همراه **تاخیر قابل قبول** برنامه ریزی کنید.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+<div dir="rtl">
 
 ## دسترس پذیری دربرابر یکپارچگی
 
@@ -496,10 +509,12 @@ DNS, CDNs, load balancers.
 این مدل انتخاب خوبیه اگر شما نیاز به [یکپارچگی موکول](#یکپارچگی-موکول) دارید یا  سیستم نیاز داره که مستقل از خطاهای خارج از خودش(خطاهای خارجی) به علمکردش ادامه بده
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
+<div dir="rtl">
 
 ## الگوهای یکپارچگی
 
@@ -524,8 +539,10 @@ DNS, CDNs, load balancers.
 این روش معمولا در فایل سیستم‌ها و مدیریت پایگاه داده‌رابطه‌ای دیده میشه. در سیستم‌هایی که نیاز به تراکنش دارند این مدل به خوبی عمل میکنه.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+<div dir="rtl">
 
 ## الگوهای دسترس پذیری
 
@@ -578,8 +595,10 @@ DNS, CDNs, load balancers.
 </p>
 
 سیستم نام دامنه یا همان دی-اِن-اِس، نام یک دامنه را به آی-پی آن ترجمه میکند.
+</div>
 
 www.example.com ->  IP address.
+<div dir="rtl">
 
 دی-اِن-اِس به صورت سلسله مراتبی هست و تعداد کمی سرور اصلی در لایه‌های بالا وجود داره. روتر یا آی-اِس-پی شما اطلاعات مربوط به دی-ان-اس هایی که برای جستجو استفاده میشن رو در اختیار شما میزارن. دی-ان-اس های لایه پایین‌تر معمولا این نگاشت بین نام دامنه و آی-پی رو کش میکنن به خاطر این که انتشار تغییرات در دی-ان-اس کنده، که ممکنه بعد از مدتی اعتبار این نگاشت‌ها از بین بره . نتایجی که از دی-ان-اس برای شما میاد ممکنه که در مرورگر یا سیستم عامل برای مدت مشخصی کش بشه، به این مدت مشخص تایم-تو-لیو گفته میشه
 
@@ -592,8 +611,10 @@ www.example.com ->  IP address.
 * **A record (address)** - یک نام رو به یک آی-پی نگاشت میکنه
 
 * **CNAME (canonical)** - یک نام رو به نام دیگه یا سی-نیم یا اِی-رکورد دیگه نگاشت میکنه. به مثال زیر توجه کنید
+</div>
 
   * > example.com -> www.example.com
+<div dir="rtl">
 
 سرویسهای نظیر سرویس های زیر سرویس‌ دی-ان-اس مدیریت شده رو ارائه میکنن
 
@@ -613,18 +634,24 @@ www.example.com ->  IP address.
 * دسترسی به سرور دی-ان-اس یک تاخیری رو موجب میشه که با استفاده از کشینگ گفته شده برطرف میشه.
 
 * مدیریت سرورهای دی-ای-اس ممکنه پیچیده باشه با این حال توسط دولت ها،‌آی-اس-پی ها و کمپانی‌های بزرگ مدیریت میشه
+</div>
 
   * > [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
+<div dir="rtl">
 
 * سرویس دی-ان-اس اخیرا مورد حمله دی-داس قرارگرفته و باعث شده تا دسترسی کاربران به وب سایتها  قطع بشه، وب سایت‌هایی نظیر توییتر - به اینصورت که کاربرا آی-پی توییتر رو نمیتونستن پیدا کنن
+</div>
 
   * >  [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) 
+<div dir="rtl">
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [DNS articles](https://support.dnsimple.com/categories/dns/)
+<div dir="rtl">
 
 ## شبکه توزیع محتوا CDN
 
@@ -668,10 +695,12 @@ www.example.com ->  IP address.
 *  برای محتوای ایستا یو-آر-ال ها باید تغییر کنه و به سی-دی-اِن اشاره کنه.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [Globally distributed content delivery](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
 * [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
+<div dir="rtl">
 
 ## لود بالانسر
 
@@ -761,6 +790,7 @@ www.example.com ->  IP address.
 * یک دونه لودبالانسر میتونه خودش یک شکست نقطه‌ای باشه با این حال با تنظیم چندتا لودبالانسر پیچیدگی هم زیاد میشه.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
@@ -769,6 +799,7 @@ www.example.com ->  IP address.
 * [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+<div dir="rtl">
 
 ## وب سرور پروکسی معکوس
 
@@ -813,11 +844,13 @@ www.example.com ->  IP address.
 * یک دونه پروکسی معکوس میتونه یه شکست نقطه‌ای باشه و با تنظیم کردن چندتا از این پروکسی سرورها(به عنوان مثال به صورت [فِیل-اُوِر](https://en.wikipedia.org/wiki/Failover)) باعث افزایش پیچیدگی میشه.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+<div dir="rtl">
 
 ## لایه برنامه
 
@@ -863,12 +896,14 @@ www.example.com ->  IP address.
 * میکروسرویس‌ها میتونن در دیپلوی کردن و عملیات مربوطه پیچیدگی اضافه کنن
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
 * [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+<div dir="rtl">
 
 ## پایگاه داده
 
@@ -892,8 +927,10 @@ www.example.com ->  IP address.
 * **Durability** - زمانی که یک تراکنش انجام میش، باقی میمونه 
 
  روش‌های مختلفی برای اسکیل کردن پایگاه‌داده‌های رابطه‌ای وجود داره: 
-
+ </div>
+ 
 **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+<div dir="rtl">
 
 #### Master-slave replication
 
@@ -946,9 +983,11 @@ www.example.com ->  IP address.
 * ریپلیکیشن باعث میشه تا سخت افزار بیشتری اضافه بشه و پیچیدگی رو افزایش میده.
 
 ##### منابع برای مطالعه بیشتر: replication
+</div>
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+<div dir="rtl">
 
 #### Federation
 
@@ -973,8 +1012,10 @@ www.example.com ->  IP address.
 * باعث افزایش سخت افزار و افزودن پیچیدگی میشه
 
 ##### منابع بیشتربرای مطالعه :‌ federation
+</div>
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+<div dir="rtl">
 
 #### Sharding
 
@@ -1001,10 +1042,12 @@ www.example.com ->  IP address.
 * باعث افزایش سخت افزار و افزودن پیچیدگی میشه
 
 ##### منابع برای مطالعه بیشتر :‌ sharding
+</div>
 
 * [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+<div dir="rtl">
 
 #### Denormalization
 
@@ -1021,8 +1064,10 @@ www.example.com ->  IP address.
 * پایگاه‌داده دی-نرمالایز شده، زیر عملیات‌های سنگین نوشتن ممکنه کارایی خیلی بدی داشته باشه نسبت به مشابه نرمالایز شدش
 
 ###### منابع بیشتر برای مطالعه :‌denormalization
+</div>
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+<div dir="rtl">
 
 #### SQL tuning
 
@@ -1034,6 +1079,7 @@ www.example.com ->  IP address.
 * **Profile** - فعال کردن ابزارهایی مثل [لاگ کوئری‌های کُند](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) برای پیدا کردن مشکلات کارایی
 
 بنچمارک کردن و پروفایل کردن ممکنه که شما رو به سمت بهینه سازی های زیر برسونه
+</div>
 
 ##### Tighten up the schema
 
@@ -1066,13 +1112,16 @@ www.example.com ->  IP address.
 ##### Tune the query cache
 
 * In some cases, the [query cache](http://dev.mysql.com/doc/refman/5.7/en/query-cache) could lead to [performance issues](https://www.percona.com/blog/2014/01/28/10-mysql-performance-tuning-settings-after-installation/).
+<div dir="rtl">
 
 ##### منابع برای مطالعه بیشتر :‌ SQL tuning
+</div>
 
 * [Tips for optimizing MySQL queries](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
 * [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
 * [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 * [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+<div dir="rtl">
 
 ### NoSQL
 
@@ -1110,15 +1159,19 @@ www.example.com ->  IP address.
 > Document Store: ذخیره ساز اسنادی
 
 ##### منابع برای مطالعه بیشتر‌ : key-value store
+</div>
 
 * [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
 * [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 * [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
 * [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+<div dir="rtl">
 
 #### Document store
+</div>
 
 > Abstraction: key-value store with documents stored as values
+<div dir="rtl">
 
 یک ذخیره‌ساز اسنادی حول ایده اسناد شکل میگیره(مانند ایکس-ام-ال، جِیسان، باینری و ...) که در اینجا یک سند تمام اطلاعات مربوط به یک شی رو در خودش ذخیره میکنه. ذخیره‌سازهای اسنادی، اِی-پی-آی ها یا زبان‌های کوئری در اختیار قرار میدهند تا بتونیم ساختار داخلی خود سند رو مورد جستجو و کوئری قرار بدیم. به یاد داشته باشید که خیلی از ذخیره‌سازهای کلید-مقدار شامل ویژگی‌هایی هستند که میتونه با متادیتاهای مربوط به مقدارهای یک کلید هم کارکنه، که باعث میشه که مرز بین این ذخیره‌سازها از لحاظ نوع محل ذخیره‌سازی با یکدیگه کمرنگتر بشه . 
 
@@ -1129,11 +1182,13 @@ www.example.com ->  IP address.
 ذخیره‌ساز های اسنادی انعطاف زیادی رو میدن و معمولا جاهایی که تغییرات داده مکرر اتفاق میوفته استفاده میشه.
 
 ##### منابع برای مطالعه بیشتر : document store
+</div>
 
 * [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+<div dir="rtl">
 
 #### Wide column store
 
@@ -1142,8 +1197,10 @@ www.example.com ->  IP address.
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
+</div>
 
 > Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+<div dir="rtl">
 
 > Super Column Family: اَبَر-ستون‌-خانوادگی, Column Family ستون‌-خانوادگی: , Row Key: کلید سطر
 
@@ -1154,11 +1211,13 @@ www.example.com ->  IP address.
 ذخیره‌سازهای ستونی دسترس‌پذیری بالا و قابلیت اسکیل شدن بالا رو دراختیار قرار میدن. معمولا برای مجموعه داده‌های خیلی بزرگ مورد استفاده قرار میگیرند.
 
 ##### منابع برای مطالعه بیشتر : wide column store
+</div>
 
 * [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
 * [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
 * [Cassandra architecture](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
+<div dir="rtl">
 
 #### Graph database
 
@@ -1175,18 +1234,22 @@ www.example.com ->  IP address.
 پایگاه‌داده های گرافی دارای کارایی بالا هستند و برای مدل‌های داده‌ای که روابط پیچیده دارند مورد استفاده قرار میگیرند مانند شبکه‌های اجتماعی. این دسته از پایگاه‌داده‌ها تقریبا جدید هستند و خیلی مورد استفاده قرار نگرفته اند،‌معمولا پیدا کردن منابع و یا ابزار برای این دست از پایگاه‌داده ها دشواره. خیلی از پایگاه داده های گرافی معمولا از طریق [رِست ای-پی-آی](#representational-state-transfer-rest) قابل دسترسی هستند.
 
 ##### منابع برای مطالعه بیشتر :‌ graph
+</div>
 
 * [Graph database](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+<div dir="rtl">
 
 #### منابع بیشتر برای مطالعه : NoSQL
+</div>
 
 * [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
 * [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
 * [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+<div dir="rtl">
 
 ### SQL یا NoSQL
 
@@ -1228,9 +1291,11 @@ www.example.com ->  IP address.
 * جداولی که برای متادیتا هست یا برای جستوجو استفاده میشن
 
 ##### منابع بیشتر برای مطالعه : SQL or NoSQL
+</div>
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+<div dir="rtl">
 
 ## Cache
 
@@ -1319,6 +1384,7 @@ www.example.com ->  IP address.
 * اون آیتم رو از پایگاه داده لود میکنه
 * اون آیتم رو توی کش اضافه میکنه
 * آیتم رو بر میگردونه
+</div>
 
 ```
 def get_user(self, user_id):
@@ -1330,6 +1396,7 @@ def get_user(self, user_id):
             cache.set(key, json.dumps(user))
     return user
 ```
+<div dir="rtl">
 
 [مِم-کش-دی](https://memcached.org/) معمولا به این حالت ازش استفاده میشه
 
@@ -1356,18 +1423,22 @@ def get_user(self, user_id):
 * بعد نتیجه برمیگرده
 
 کد برنامه:
+</div>
 
 ```
 set_user(12345, {"foo":"bar"})
 ```
+<div dir="rtl">
 
 کد کش:
+</div>
 
 ```
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)
 ```
+<div dir="rtl">
 
 این روش با توجه به عملیات نوشتنی که داره، به طور کلی کُند هست اما عملیات‌های خوندنی که در ادامه اتفاق میوفته خیلی سریع هستند. کاربران معمولا زمانی که میخوان به روز رسانی داده‌هاشون رو انجام بدن خیلی نسبت تاخیر واکنش نشون نمیدن نسبت به زمانی که قصد دارن داده‌ها رو بخونن. داده‌ها داخل کش غیرمعتبر نمیشن
 
@@ -1417,6 +1488,7 @@ def set_user(user_id, values):
 * غیرمعتبرسازی کش مشکل دشواری هست و یه پیچیدگی در مورد زمان آپدیت کش به وجود میاره.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 * [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
@@ -1425,6 +1497,7 @@ def set_user(user_id, values):
 * [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+<div dir="rtl">
 
 ## Asynchronism
 
@@ -1468,11 +1541,13 @@ def set_user(user_id, values):
 * کاربردهایی که نیاز به محاسبات سنگین و جریان کاری بلادرنگ نداره بهتره تا از مدل‌های اجرایی همگام استفاده کنه چون که استفاده از صف باعث میشه که پیچیدگی و تاخیر زیاد بشه.
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
 * [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
 * [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
 * [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+<div dir="rtl">
 
 ## ارتباط
 
@@ -1505,10 +1580,12 @@ def set_user(user_id, values):
 > TCP: تی-سی-پی, UDP: یو-دی-پی
 
 #### منابع برای مطالعه بیشتر : HTTP
+</div>
 
 * [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
 * [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 * [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+<div dir="rtl">
 
 ### Transmission control protocol (TCP)
 
@@ -1561,6 +1638,7 @@ def set_user(user_id, values):
 * میخواید اصلاح خطای خودتون رو پیاده سازی کنید
 
 #### منابع بیشتر برای مطالعه : TCP و UDP
+</div>
 
 * [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
 * [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
@@ -1568,6 +1646,7 @@ def set_user(user_id, values):
 * [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 * [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+<div dir="rtl">
 
 ### Remote procedure call (RPC)
 
@@ -1591,6 +1670,7 @@ def set_user(user_id, values):
 * سرور در پاسخ مراحل بالا رو به صورت معکوس انجام میده
 
 نمونه فراخوانی آر-پی-سی:
+</div>
 
 ```
 GET /someoperation?data=anId
@@ -1601,6 +1681,7 @@ POST /anotheroperation
   "anotherdata": "another value"
 }
 ```
+<div dir="rtl">
 
 تمرکز آر-پی-سی روی بیان رفتارهاست. آر-پی-سی‌ها معمولا برای دلایلی مثل کارایی برای ارتباطات داخلی استفاده میشن، همینطور شما میتونید از فراخوانی‌های نِیتیو که انجام میدید و مناسب کاربردتون هست استفاده کنید.
 
@@ -1661,6 +1742,7 @@ PUT /someresources/anId
 * به مرورزمان، تعداد فیلدهای بیشتری ممکنه که به پاسخ اِی-پی-آی اضافه بشه و کلاینت‌های قدیمی فیلدهای جدید رو هم میگیرن حتی اون دسته از فیلدهایی که بدردشون نمیخوره که این باعث میشه سایز بدنه ارسالی زیاد بشه و این خودش یعنی افزایش تاخیر.
 
 ### مقایسه فراخوانی‌های آر-پی-سی و رِست
+</div>
 
 | عملیات                          | RPC                                      | REST                                     |
 | ------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -1671,12 +1753,13 @@ PUT /someresources/anId
 | Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
 | Update an item                  | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
 | Delete an item                  | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456                    |
-
 <p align="center">
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
 </p>
+<div dir="rtl">
 
 #### منابع بیشتر برای مطالعه : RPC و REST
+</div>
 
 * [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
@@ -1686,28 +1769,34 @@ PUT /someresources/anId
 * [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+<div dir="rtl">
 
 ## امنیت
 
 این قسمت ممکنه شامل یه سری به روز رسانی ها بشه. قسمت  [همکاری](#همکاری) رو بررسی کنید.
 
   امنیت یک مبحث گسترده‌ای هست. احتمالا نیازی ندارید که بیشتر از مسايل پایه‌ای رو در مورد امنیت بدونید مگر اینکه تجربه‌ی خوبی در این زمینه یا پیش‌زمینه امنیت داشته باشید و یا قصد دارید که برای پوزیشنی که نیاز به دانش امینت داره برید:
-
+  </div>
+  
 * Encrypt in transit and at rest.
 * Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
 * Use parameterized queries to prevent SQL injection.
 * Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+<div dir="rtl">
 
 ### منابع برای مطالعه بیشتر
+</div>
 
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+<div dir="rtl">
 
 ## پیوست
 
 ممکنه از شما بخوان که یه سری محاسبات سریعی رو انجام بدید. برای مثال ممکنه نیاز داشته داشته بدونید که چقدر زمان نیازه تا ۱۰۰ تصویر ثامب-نِیل از روی دیسک تولید بشه یا اینکه چقدر حافظه یک ساختمان داده خاص نیاز داره. **جدول اعداد توان ۲** و **اعداد تاخیری که هر برنامه نویسی باید بدونه** یه منبع مناسب هست برای این کار.
 
 ### جدول اعداد توان ۲
+</div>
 
 ```
 Power           Exact Value         Approx Value        Bytes
@@ -1721,12 +1810,16 @@ Power           Exact Value         Approx Value        Bytes
 32                  4,294,967,296                        4 GB
 40              1,099,511,627,776   1 trillion           1 TB
 ```
+<div dir="rtl">
 
 #### منابع برای مطالعه بیشتر
+</div>
 
 * [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
+<div dir="rtl">
 
 ### اعداد تاخیری که هر برنامه نویس باید بدونه
+</div>
 
 ```
 Latency Comparison Numbers
@@ -1753,8 +1846,10 @@ Notes
 1 us = 10^-6 seconds = 1,000 ns
 1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
 ```
+<div dir="rtl">
 
 متریک‌ها دم دست براساس اعداد بالا به صورت زیره:
+</div>
 
 * Read sequentially from disk at 30 MB/s
 * Read sequentially from 1 Gbps Ethernet at 100 MB/s
@@ -1762,21 +1857,25 @@ Notes
 * Read sequentially from main memory at 4 GB/s
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
+<div dir="rtl">
 
 #### مصور شده اعداد تاخیر
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
 #### منابع برای مطالعه بیشتر
+</div>
 
 * [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+<div dir="rtl">
 
 ### سوالات بیشتر مصاحبه طراحی سیستم
 
 > سوالات رایج مصاحبه طراحی سیستم به همراه لینک به منابعی که روش حلش رو ارائه کرده
+</div>
 
 | سوال                                     | منبع یا منابع                            |
 | ---------------------------------------- | ---------------------------------------- |
@@ -1804,6 +1903,7 @@ Notes
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) | 
 
 | Add a system design question | [Contribute](#contributing) |
+<div dir="rtl">
 
 ### معماری های دنیای واقعی
 
@@ -1820,6 +1920,7 @@ Notes
 * اصول مشترک، تکنولوژی‌های مرسوم، و الگوهایی که در این مقالات استفاده شده رو پیدا کنید.
 * اینکه چه کامپوننتی چه مساله‌ای رو حل میکنه، کجا کار میکنه، و کجا کار نمیکنه رو بررسی کنید
 * هرچی یادگرفتید رو مرور کنید
+</div>
 
 | نوع             | سیستم                                    | منبع یا منابع                            |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
@@ -1844,8 +1945,10 @@ Notes
 | Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | |یک معماری اضافه کنید | [همکاری](#همکاری) |
+<div dir="rtl">
 
 ### معماری کمپانی‌ها
+</div>
 
 | Company        | Reference(s)                             |
 | -------------- | ---------------------------------------- |
@@ -1871,12 +1974,14 @@ Notes
 | Uber           | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html) |
 | WhatsApp       | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube        | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
+<div dir="rtl">
 
 ### وبلاگ‌های مهندسی کمپانی‌ها
 
 > معماری‌ها برای کمپانی‌هایی که باهاشون قراره مصاحبه کنید
 >
 > سوالاتی که ممکنه باهاشون مواجه بشید، شاید در زمینه‌های مشابه باشه
+</div>
 
 * [Airbnb Engineering](http://nerds.airbnb.com/)
 * [Atlassian Developers](https://developer.atlassian.com/blog/)
@@ -1919,18 +2024,24 @@ Notes
 * [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
+<div dir="rtl">
 
 #### منابع برای مطالعه بیشتر
+</div>
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
+<div dir="rtl">
 
 لیست وبلاگ‌ها در اینجا نسبتا کوتاه‌تر نگه داشته میشه و ریپازیتوری زیر شامل لیست بلندی از این وبلاگ‌هاست که برای جلوگیری از دوباره نویسی در اینجا، فقط همین بخش کم آورده شده. وبلاگ مهندسی کمپانیتون روبه ریپازیتوری زیر اضافه کنید
+</div>
 
 > Engineering Blogs:  [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) 
+<div dir="rtl">
 
 ## تحت توسعه
 
 اگر تمایل به اضافه کردن بخش یا کامل کردن قسمتی که در حال توسعه هست به [همکاری](#همکاری) مراجعه کنید.
+</div>
 
 * Distributed computing with MapReduce
 * Consistent hashing
@@ -1940,8 +2051,10 @@ Notes
 ## Credits
 
 Credits and sources are provided throughout this repo.
+<div dir="rtl">
 
 تشکر ویژه از :
+</div>
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
@@ -1952,12 +2065,14 @@ Credits and sources are provided throughout this repo.
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+<div dir="rtl">
 
 ## اطلاعات تماس
 
 در صورتی که نیازه تا با من در مورد ایشوها، سوالها یا کامنت‌ها صحبت کنید، راحت باشید و ارتباط بگیرید.
 
 اطلاعات تماس من روی [صفحه گیت-هاب](https://github.com/donnemartin) من قابل دسترسی هست.
+</div>
 
 ## License
 
