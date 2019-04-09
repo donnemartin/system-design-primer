@@ -1737,6 +1737,7 @@ Handy metrics based on numbers above:
 * [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
+* [Stripe Engineering Blog](https://stripe.com/blog/engineering)
 
 #### Source(s) and further reading
 
