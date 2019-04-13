@@ -1164,7 +1164,7 @@ The application is responsible for reading and writing from storage.  The cache 
 * Add entry to cache
 * Return entry
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1201,13 +1201,13 @@ The application uses the cache as the main data store, reading and writing data 
 
 Application code:
 
-```
+```python
 set_user(12345, {"foo":"bar"})
 ```
 
 Cache code:
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)

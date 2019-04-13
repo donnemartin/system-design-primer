@@ -102,7 +102,7 @@ We'll use a multi-step **MapReduce**:
 * **Step 1** - Transform the data to `(category, product_id), sum(quantity)`
 * **Step 2** - Perform a distributed sort
 
-```
+```python
 class SalesRanker(MRJob):
 
     def within_past_week(self, timestamp):
