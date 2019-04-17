@@ -2,11 +2,6 @@
 
 # The System Design Primer
 
-<p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png">
-  <br/>
-</p>
-
 ## Motivation
 
 > Learn how to design large-scale systems.
