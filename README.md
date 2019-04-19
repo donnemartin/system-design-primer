@@ -553,6 +553,8 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 * Latency-based
 * Geolocation-based
 
+Managed DNS Services such as  [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) are very common during interviews these days. System design questions may revolve around managing mulitple availability zones of your application (e.g. like amazon.in and amaazon.com) and how would you route users to their appropiate geographical location depending on their source, so emphaize on these concepts more.
+
 ### Disadvantage(s): DNS
 
 * Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
