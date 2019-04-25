@@ -70,7 +70,7 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 
 Handy conversion guide:
 
-* 2.5 million seconds per month
+* 2.5 million requests per month
 * 1 request per second = 2.5 million requests per month
 * 40 requests per second = 100 million requests per month
 * 400 requests per second = 1 billion requests per month
@@ -108,7 +108,7 @@ An alternative to a relational database acting as a large hash table, we could u
 
 The `pastes` table could have the following structure:
 
-```
+```sql
 shortlink char(7) NOT NULL
 expiration_length_in_minutes int NOT NULL
 created_at datetime NOT NULL
@@ -148,14 +148,14 @@ url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 
 We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
 
-```
+```shell
 $ curl -X POST --data '{ "expiration_length_in_minutes": "60", \
     "paste_contents": "Hello World!" }' https://pastebin.com/api/v1/paste
 ```
 
 Response:
 
-```
+```json
 {
     "shortlink": "foobar"
 }
@@ -174,16 +174,16 @@ For internal communications, we could use [Remote Procedure Calls](https://githu
 
 REST API:
 
-```
+```shell
 $ curl https://pastebin.com/api/v1/paste?shortlink=foobar
 ```
 
 Response:
 
-```
+```json
 {
-    "paste_contents": "Hello World"
-    "created_at": "YYYY-MM-DD HH:MM:SS"
+    "paste_contents": "Hello World",
+    "created_at": "YYYY-MM-DD HH:MM:SS",
     "expiration_length_in_minutes": "60"
 }
 ```
