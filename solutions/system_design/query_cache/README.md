@@ -97,7 +97,7 @@ The cache can use a doubly-linked list: new items will be added to the head whil
 
 **Query API Server** implementation:
 
-```
+```python
 class QueryApi(object):
 
     def __init__(self, memory_cache, reverse_index_service):
@@ -121,7 +121,7 @@ class QueryApi(object):
 
 **Node** implementation:
 
-```
+```python
 class Node(object):
 
     def __init__(self, query, results):
@@ -131,7 +131,7 @@ class Node(object):
 
 **LinkedList** implementation:
 
-```
+```python
 class LinkedList(object):
 
     def __init__(self):
@@ -150,7 +150,7 @@ class LinkedList(object):
 
 **Cache** implementation:
 
-```
+```python
 class Cache(object):
 
     def __init__(self, MAX_SIZE):

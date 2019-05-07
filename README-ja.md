@@ -1166,7 +1166,7 @@ Redisはさらに以下のような機能を備えています:
 * エントリをキャッシュに追加します
 * エントリを返します
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1209,7 +1209,7 @@ set_user(12345, {"foo":"bar"})
 
 キャッシュコード:
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)

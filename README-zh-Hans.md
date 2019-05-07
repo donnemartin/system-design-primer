@@ -1180,7 +1180,7 @@ Redis 有下列附加功能：
 - 将查找到的结果存储到缓存中
 - 返回所需内容
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1223,7 +1223,7 @@ set_user(12345, {"foo":"bar"})
 
 缓存代码：
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)

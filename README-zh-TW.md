@@ -1167,7 +1167,7 @@ Redis 還有以下額外的功能：
 * 將該筆記錄儲存到快取
 * 將資料返回
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1210,7 +1210,7 @@ set_user(12345, {"foo":"bar"})
 
 快取程式碼：
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)
