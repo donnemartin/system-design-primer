@@ -552,11 +552,11 @@ Availability is generally quantified by uptime (or downtime) as a percentage of 
 
 #### Availability in parallel vs in sequence
 
-If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are connected in sequence or in parallel.
+If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
 
-###### Connected in Sequence
+###### In Sequence
 
-Overall availability decreases when two components with availability < 100% are connected in sequence:
+Overall availability decreases when two components with availability < 100% are in sequence:
 
 ```
 Availability (Total) = Availability (Foo) * Availability (Bar)
@@ -564,9 +564,9 @@ Availability (Total) = Availability (Foo) * Availability (Bar)
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
 
-###### Connected in Parallel
+###### In Parallel
 
-Overall availability increases when two components with availability < 100% are connected in parallel:
+Overall availability increases when two components with availability < 100% are in parallel:
 
 ```
 Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
