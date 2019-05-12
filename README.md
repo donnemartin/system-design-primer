@@ -112,6 +112,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Availability patterns](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replication](#replication)
+    * [Availability in numbers](#availability-in-numbers)
 * [Domain name system](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
     * [Push CDNs](#push-cdns)
@@ -399,7 +400,9 @@ Next, we'll look at high-level trade-offs:
 
 * **Performance** vs **scalability**
 * **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **
+
+bility** vs **consistency**
 
 Keep in mind that **everything is a trade-off**.
 
@@ -528,53 +531,52 @@ This topic is further discussed in the [Database](#database) section:
 * [Master-master replication](#master-master-replication)
 
 ### Availability in numbers
-Availability is generally quantified with terms like uptime and downtime as percentage of time the service guarenteed was available or not respectively. This is popularly measured in number of 9s, for example as 99.9% or 99.99% availability is described as three 9s of availability and 4 9s respectively.
 
-Here's what the numbers translate to with respect to uptime:
+Availability is generally quantified by uptime (or downtime) as a percentage of time the service is guaranteed to be available.  Availability is often measured in number of 9s.  A service with 99.99% availability is described as having four 9s.
 
-#### 99.9% Availability - 3 Nines
-| Duration        | Acceptable Downtime|
-|---------------------|---------------|
-| Downtime Per year   | 8h 45min 57s  |
-| Downtime Per month  | 43m 49.7s     |
-| Downtime Per week   | 10m 4.8s      |
-| Downtime Per day    | 1m 26.4s      |
+#### 99.9% availability - three 9s
 
-#### 99.99% Availability - 4 Nines
-| Duration        | Acceptable Downtime|
-|---------------------|---------------|
-| Downtime Per year   | 52min 35.7s   |
-| Downtime Per month  | 4m 23s     |
-| Downtime Per week   | 1m 5s      |
-| Downtime Per day    | 8.6s      |
+| Duration            | Acceptable downtime|
+|---------------------|--------------------|
+| Downtime per year   | 8h 45min 57s       |
+| Downtime per month  | 43m 49.7s          |
+| Downtime per week   | 10m 4.8s           |
+| Downtime per day    | 1m 26.4s           |
+
+#### 99.99% availability - four 9s
+
+| Duration            | Acceptable downtime|
+|---------------------|--------------------|
+| Downtime per year   | 52min 35.7s        |
+| Downtime per month  | 4m 23s             |
+| Downtime per week   | 1m 5s              |
+| Downtime per day    | 8.6s               |
 
 ### Availability in parallel vs sequence
-If your service consists of multiple entites prone to failure your composite availability changes depending upon if they are connected in sequence or parallel.
+
+If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are connected in sequence or in parallel.
 
 ![Sequence vs Parallel](https://i.imgur.com/ZHNo49M.png)
 
-#### Connected in Sequence
-The overall availability decreases when two components with availability < 100% are connected in sequence. For two components `Foo` and `Bar` connected in sequence, the total availability comes out to be:
+##### Connected in Sequence
+
+Overall availability decreases when two components with availability < 100% are connected in sequence:
 
 ```
 Availability (Total) = Availability (Foo) * Availability (Bar)
 ```
 
-Given that Foo and Bar are independent, it's their probablity to be up together. 
+If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
 
-For two components with `99.9%` availability, total availability in sequence comes out to be `99.8%`. 
+##### Connected in Parallel
 
-#### Connected in Parallel
-The overall availability increases when two components with availability < 100% are connected in parallel. For two components `Foo` and `Bar` connected in parallel, the total availability comes out to be:
+Overall availability increases when two components with availability < 100% are connected in parallel:
 
 ```
-Availability (Total) = 1 - (1 - Availability (Foo)) * (1- Availability (Bar))
+Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ```
 
-Given that Foo and Bar are independent, it's the probablity atlease one of them to be available at any given moment of time.
-
-For two components with `99.9%` availability, total availability in parallel comes out to be `99.9999%`. 
-
+If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
 
 ## Domain name system
 
