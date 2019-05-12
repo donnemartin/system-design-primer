@@ -3,7 +3,7 @@
 # 系統設計入門
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png">
+  <img src="http://i.imgur.com/jj3A5N8.png"/>
   <br/>
 </p>
 
@@ -44,7 +44,7 @@
 ## 學習單字卡
 
 <p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png">
+  <img src="http://i.imgur.com/zdCAkB3.png"/>
   <br/>
 </p>
 
@@ -61,7 +61,7 @@
 你正在尋找資源來面對[**程式語言面試**](https://github.com/donnemartin/interactive-coding-challenges)嗎？
 
 <p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png">
+  <img src="http://i.imgur.com/b4YtAEN.png"/>
   <br/>
 </p>
 
@@ -91,7 +91,7 @@
 > 每一章節都包含更深入資源的連結。
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png">
+  <img src="http://i.imgur.com/jrUBAF7.png"/>
   <br/>
 </p>
 
@@ -435,7 +435,7 @@
 ### CAP 理論
 
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png">
+  <img src="http://i.imgur.com/bgLMI2u.png"/>
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>來源：再看 CAP 理論</a></i>
 </p>
@@ -529,7 +529,7 @@ DNS 或是電子郵件系統使用的就是這種方式，最終一致性在高�
 ## 域名系統
 
 <p align="center">
-  <img src="http://i.imgur.com/IOyLj4i.jpg">
+  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>資料來源：DNS 安全介紹</a></i>
 </p>
@@ -567,7 +567,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 內容傳遞網路(CDN)
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg">
+  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>來源：為什麼要使用 CDN</a></i>
 </p>
@@ -608,7 +608,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 負載平衡器
 
 <p align="center">
-  <img src="http://i.imgur.com/h81n9iK.png">
+  <img src="http://i.imgur.com/h81n9iK.png"/>
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>來源：可擴展的系統設計模式</a></i>
 </p>
@@ -678,7 +678,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 反向代理(網頁伺服器)
 
 <p align="center">
-  <img src="http://i.imgur.com/n41Azff.png">
+  <img src="http://i.imgur.com/n41Azff.png"/>
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>來源：維基百科</a></i>
   <br/>
@@ -721,7 +721,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 應用層
 
 <p align="center">
-  <img src="http://i.imgur.com/yB5SYwm.png">
+  <img src="http://i.imgur.com/yB5SYwm.png"/>
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>資料來源：可縮放式系統架構介紹</a></i>
 </p>
@@ -758,7 +758,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 資料庫
 
 <p align="center">
-  <img src="http://i.imgur.com/Xkm5CXz.png">
+  <img src="http://i.imgur.com/Xkm5CXz.png"/>
   <br/>
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>來源：擴展你的使用者數量到第一個一千萬量級</a></i>
 </p>
@@ -781,7 +781,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 主資料庫負責讀和寫，並且將寫入的資料複寫至一或多個從屬資料庫中，從屬資料庫只負責讀取。而從屬資料庫可以再將寫入複製到更多以樹狀結構的其他資料庫中。如果主資料庫離線了，系統可以以只讀模式運行，直到某個從屬資料庫被提升為主資料庫，或有新的主資料庫出現。
 
 <p align="center">
-  <img src="http://i.imgur.com/C9ioGtn.png">
+  <img src="http://i.imgur.com/C9ioGtn.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>來源： 可擴展性、可用性、穩定性及其模式</a></i>
 </p>
@@ -796,7 +796,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 兩個主要的資料庫都負責讀取和寫入，並且兩者互相協調。如果其中一個主要資料庫離線，系統可以繼續運作。
 
 <p align="center">
-  <img src="http://i.imgur.com/krAHLGg.png">
+  <img src="http://i.imgur.com/krAHLGg.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>來源： 可擴展性、可用性、穩定性及其模式</a></i>
 </p>
@@ -824,7 +824,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 #### 聯邦式資料庫
 
 <p align="center">
-  <img src="http://i.imgur.com/U3qV33e.png">
+  <img src="http://i.imgur.com/U3qV33e.png"/>
   <br/>
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>來源：擴展你的使用者數量到第一個一千萬量級</a></i>
 </p>
@@ -845,7 +845,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 #### 分片
 
 <p align="center">
-  <img src="http://i.imgur.com/wU8x5Id.png">
+  <img src="http://i.imgur.com/wU8x5Id.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>來源： 可擴展性、可用性、穩定性及其模式</a></i>
 </p>
@@ -991,7 +991,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 #### 列儲存型資料庫
 
 <p align="center">
-  <img src="http://i.imgur.com/n16iOGk.png">
+  <img src="http://i.imgur.com/n16iOGk.png"/>
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>來源：SQL 和 NoSQL，簡短的歷史介紹</a></i>
 </p>
@@ -1014,7 +1014,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 #### 圖形資料庫
 
 <p align="center">
-  <img src="http://i.imgur.com/fNcl65g.png">
+  <img src="http://i.imgur.com/fNcl65g.png"/>
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>來源： 圖形化資料庫</a></i>
 </p>
@@ -1042,7 +1042,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 ### SQL 或 NoSQL
 
 <p align="center">
-  <img src="http://i.imgur.com/wXGqG5f.png">
+  <img src="http://i.imgur.com/wXGqG5f.png"/>
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>來源：從 RDBMS 轉換到 NoSQL</a></i>
 </p>
@@ -1084,7 +1084,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 ## 快取
 
 <p align="center">
-  <img src="http://i.imgur.com/Q6z24La.png">
+  <img src="http://i.imgur.com/Q6z24La.png"/>
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>來源：可擴展的系統設計模式</a></i>
 </p>
@@ -1155,7 +1155,7 @@ Redis 還有以下額外的功能：
 #### 快取模式
 
 <p align="center">
-  <img src="http://i.imgur.com/ONjORqk.png">
+  <img src="http://i.imgur.com/ONjORqk.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>資料來源：從快取到記憶體資料網格</a></i>
 </p>
@@ -1191,7 +1191,7 @@ def get_user(self, user_id):
 #### 寫入模式
 
 <p align="center">
-  <img src="http://i.imgur.com/0vBc0hN.png">
+  <img src="http://i.imgur.com/0vBc0hN.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>資料來源：可獲展性、可用性、穩定性與模式</a></i>
 </p>
@@ -1226,7 +1226,7 @@ def set_user(user_id, values):
 #### 事後寫入(回寫)
 
 <p align="center">
-  <img src="http://i.imgur.com/rgSrvjG.png">
+  <img src="http://i.imgur.com/rgSrvjG.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>資料來源：可獲展性、可用性、穩定性與模式</a></i>
 </p>
@@ -1244,7 +1244,7 @@ def set_user(user_id, values):
 #### 更新式快取
 
 <p align="center">
-  <img src="http://i.imgur.com/kxtjqgE.png">
+  <img src="http://i.imgur.com/kxtjqgE.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>來源：從快取到記憶體資料網格技術</a></i>
 </p>
@@ -1276,7 +1276,7 @@ def set_user(user_id, values):
 ## 非同步機制
 
 <p align="center">
-  <img src="http://i.imgur.com/54GYsSx.png">
+  <img src="http://i.imgur.com/54GYsSx.png"/>
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>資料來源：可縮放性系統架構介紹</a></i>
 </p>
@@ -1322,7 +1322,7 @@ def set_user(user_id, values):
 ## 通訊
 
 <p align="center">
-  <img src="http://i.imgur.com/5KeocQs.jpg">
+  <img src="http://i.imgur.com/5KeocQs.jpg"/>
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>來源：OSI 七層模型</a></i>
 </p>
@@ -1354,7 +1354,7 @@ HTTP 是依賴於較底層的協議(例如：**TCP** 和 **UDP**) 的應用層�
 ### 傳輸控制通訊協定(TCP)
 
 <p align="center">
-  <img src="http://i.imgur.com/JdAsdvG.jpg">
+  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>來源：如何開發多人遊戲</a></i>
 </p>
@@ -1378,7 +1378,7 @@ TCP 對於需要高可靠、低時間急迫性的應用來說很有用，比如�
 ### 使用者資料流通訊協定 (UDP)
 
 <p align="center">
-  <img src="http://i.imgur.com/yzDrJtA.jpg">
+  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>資料來源：如何製作多人遊戲</a></i>
 </p>
@@ -1407,7 +1407,7 @@ UDP 的可靠性較低，但適合用在像是網路電話、視訊聊天、串�
 ### 遠端程式呼叫 (RPC)
 
 <p align="center">
-  <img src="http://i.imgur.com/iF4Mkb5.png">
+  <img src="http://i.imgur.com/iF4Mkb5.png"/>
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>資料來源：破解系統設計面試</a></i>
 </p>
@@ -1630,7 +1630,7 @@ Notes
 > 底下是關於真實世界的系統架構是如何設計的文章
 
 <p align="center">
-  <img src="http://i.imgur.com/TcUo2fw.png">
+  <img src="http://i.imgur.com/TcUo2fw.png"/>
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>資料來源：可擴展式的 Twitter 時間軸設計</a></i>
 </p>
