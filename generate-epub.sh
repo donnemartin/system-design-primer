@@ -1,9 +1,18 @@
 #! /usr/bin/env sh
 
-generate_with_solutions () {
-  echo "Generating English with solutions"
+generate_from_stdin() {
+  outfile=$1
+  language=$2
 
-  tmpfile=$(mktemp /tmp/sytem-design-primer-epub-generator)
+  echo "Generating '$language' ..."
+
+  pandoc --metadata-file=epub-metadata.yaml --metadata=lang:$2 --from=markdown -o $1 <&0
+
+  echo "Done! You can find the '$language' book at ./$outfile"
+}
+
+generate_with_solutions () {
+  tmpfile=$(mktemp /tmp/sytem-design-primer-epub-generator.XXX)
 
   cat ./README.md >> $tmpfile
 
@@ -13,26 +22,16 @@ generate_with_solutions () {
     : [[ -d "$dir" ]] && ( cd "$dir" && cat ./README.md >> $tmpfile && echo "" >> $tmpfile )
   done
 
-  cat $tmpfile | pandoc --metadata-file=epub-metadata.yaml --metadata=lang:en --from=markdown -o README.epub
+  cat $tmpfile | generate_from_stdin 'README.epub' 'en'
 
   rm "$tmpfile"
-
-  echo "Done! You can find the book at ./README.epub"
 }
 
 generate () {
   name=$1
   language=$2
 
-  echo "Generating Ebook $name ..."
-
-  pandoc \
-    --metadata-file=epub-metadata.yaml \
-    --metadata=lang:$language \
-    -o $name.epub \
-    $name.md
-
-  echo "Done! You can find the book at ./$name.epub"
+  cat $name.md | generate_from_stdin $name.epub $language
 }
 
 generate_with_solutions
