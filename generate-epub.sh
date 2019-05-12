@@ -3,7 +3,7 @@
 generate_with_solutions () {
   echo "Generating English with solutions"
 
-  tmpfile=$(mktemp /tmp/abc-script.XXXXXX)
+  tmpfile=$(mktemp /tmp/sytem-design-primer-epub-generator)
 
   cat ./README.md >> $tmpfile
 
