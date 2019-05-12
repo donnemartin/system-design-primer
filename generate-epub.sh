@@ -13,7 +13,7 @@ generate_with_solutions () {
     : [[ -d "$dir" ]] && ( cd "$dir" && cat ./README.md >> $tmpfile && echo "" >> $tmpfile )
   done
 
-  cat $tmpfile | pandoc --from=markdown -o README.epub
+  cat $tmpfile | pandoc --metadata-file=epub-metadata.yaml --metadata=lang:en --from=markdown -o README.epub
 
   rm "$tmpfile"
 
@@ -22,12 +22,20 @@ generate_with_solutions () {
 
 generate () {
   name=$1
+  language=$2
+
   echo "Generating Ebook $name ..."
-  pandoc -o $name.epub $name.md
+
+  pandoc \
+    --metadata-file=epub-metadata.yaml \
+    --metadata=lang:$language \
+    -o $name.epub \
+    $name.md
+
   echo "Done! You can find the book at ./$name.epub"
 }
 
 generate_with_solutions
-generate README-ja
-generate README-zh-Hans
-generate README-zh-TW
+generate README-ja ja
+generate README-zh-Hans zh-Hans
+generate README-zh-TW zh-TW
