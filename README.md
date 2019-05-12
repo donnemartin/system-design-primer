@@ -400,9 +400,7 @@ Next, we'll look at high-level trade-offs:
 
 * **Performance** vs **scalability**
 * **Latency** vs **throughput**
-* **
-
-bility** vs **consistency**
+* **Availability** vs **consistency**
 
 Keep in mind that **everything is a trade-off**.
 
@@ -532,7 +530,7 @@ This topic is further discussed in the [Database](#database) section:
 
 ### Availability in numbers
 
-Availability is generally quantified by uptime (or downtime) as a percentage of time the service is guaranteed to be available.  Availability is often measured in number of 9s.  A service with 99.99% availability is described as having four 9s.
+Availability is generally quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is often measured in number of 9s--a service with 99.99% availability is described as having four 9s.
 
 #### 99.9% availability - three 9s
 
@@ -552,13 +550,11 @@ Availability is generally quantified by uptime (or downtime) as a percentage of 
 | Downtime per week   | 1m 5s              |
 | Downtime per day    | 8.6s               |
 
-### Availability in parallel vs sequence
+#### Availability in parallel vs in sequence
 
 If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are connected in sequence or in parallel.
 
-![Sequence vs Parallel](https://i.imgur.com/ZHNo49M.png)
-
-##### Connected in Sequence
+###### Connected in Sequence
 
 Overall availability decreases when two components with availability < 100% are connected in sequence:
 
@@ -568,7 +564,7 @@ Availability (Total) = Availability (Foo) * Availability (Bar)
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
 
-##### Connected in Parallel
+###### Connected in Parallel
 
 Overall availability increases when two components with availability < 100% are connected in parallel:
 
