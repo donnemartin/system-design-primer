@@ -1,9 +1,9 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [Arabic](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [Bengali](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [German](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [Greek](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [Italian](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [Korean](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [Persian](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Spanish](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [Thai](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [Vietnamese](https://github.com/donnemartin/system-design-primer/issues/127) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [韓國語](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # The System Design Primer
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png">
+  <img src="http://i.imgur.com/jj3A5N8.png"/>
   <br/>
 </p>
 
@@ -44,7 +44,7 @@ Additional topics for interview prep:
 ## Anki flashcards
 
 <p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png">
+  <img src="http://i.imgur.com/zdCAkB3.png"/>
   <br/>
 </p>
 
@@ -61,7 +61,7 @@ Great for use while on-the-go.
 Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png">
+  <img src="http://i.imgur.com/b4YtAEN.png"/>
   <br/>
 </p>
 
@@ -91,7 +91,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 > Each section contains links to more in-depth resources.
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png">
+  <img src="http://i.imgur.com/jrUBAF7.png"/>
   <br/>
 </p>
 
@@ -112,6 +112,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Availability patterns](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replication](#replication)
+    * [Availability in numbers](#availability-in-numbers)
 * [Domain name system](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
     * [Push CDNs](#push-cdns)
@@ -436,7 +437,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### CAP theorem
 
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png">
+  <img src="http://i.imgur.com/bgLMI2u.png"/>
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
@@ -527,10 +528,56 @@ This topic is further discussed in the [Database](#database) section:
 * [Master-slave replication](#master-slave-replication)
 * [Master-master replication](#master-master-replication)
 
+### Availability in numbers
+
+Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
+
+#### 99.9% availability - three 9s
+
+| Duration            | Acceptable downtime|
+|---------------------|--------------------|
+| Downtime per year   | 8h 45min 57s       |
+| Downtime per month  | 43m 49.7s          |
+| Downtime per week   | 10m 4.8s           |
+| Downtime per day    | 1m 26.4s           |
+
+#### 99.99% availability - four 9s
+
+| Duration            | Acceptable downtime|
+|---------------------|--------------------|
+| Downtime per year   | 52min 35.7s        |
+| Downtime per month  | 4m 23s             |
+| Downtime per week   | 1m 5s              |
+| Downtime per day    | 8.6s               |
+
+#### Availability in parallel vs in sequence
+
+If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+
+###### In sequence
+
+Overall availability decreases when two components with availability < 100% are in sequence:
+
+```
+Availability (Total) = Availability (Foo) * Availability (Bar)
+```
+
+If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
+
+###### In parallel
+
+Overall availability increases when two components with availability < 100% are in parallel:
+
+```
+Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
+```
+
+If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+
 ## Domain name system
 
 <p align="center">
-  <img src="http://i.imgur.com/IOyLj4i.jpg">
+  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
@@ -568,7 +615,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 ## Content delivery network
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg">
+  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
@@ -609,7 +656,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 ## Load balancer
 
 <p align="center">
-  <img src="http://i.imgur.com/h81n9iK.png">
+  <img src="http://i.imgur.com/h81n9iK.png"/>
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -679,7 +726,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ## Reverse proxy (web server)
 
 <p align="center">
-  <img src="http://i.imgur.com/n41Azff.png">
+  <img src="http://i.imgur.com/n41Azff.png"/>
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
@@ -722,7 +769,7 @@ Additional benefits include:
 ## Application layer
 
 <p align="center">
-  <img src="http://i.imgur.com/yB5SYwm.png">
+  <img src="http://i.imgur.com/yB5SYwm.png"/>
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -757,7 +804,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 ## Database
 
 <p align="center">
-  <img src="http://i.imgur.com/Xkm5CXz.png">
+  <img src="http://i.imgur.com/Xkm5CXz.png"/>
   <br/>
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -780,7 +827,7 @@ There are many techniques to scale a relational database: **master-slave replica
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
 <p align="center">
-  <img src="http://i.imgur.com/C9ioGtn.png">
+  <img src="http://i.imgur.com/C9ioGtn.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -795,7 +842,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
 
 <p align="center">
-  <img src="http://i.imgur.com/krAHLGg.png">
+  <img src="http://i.imgur.com/krAHLGg.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -823,7 +870,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 #### Federation
 
 <p align="center">
-  <img src="http://i.imgur.com/U3qV33e.png">
+  <img src="http://i.imgur.com/U3qV33e.png"/>
   <br/>
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -844,7 +891,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 #### Sharding
 
 <p align="center">
-  <img src="http://i.imgur.com/wU8x5Id.png">
+  <img src="http://i.imgur.com/wU8x5Id.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -988,7 +1035,7 @@ Document stores provide high flexibility and are often used for working with occ
 #### Wide column store
 
 <p align="center">
-  <img src="http://i.imgur.com/n16iOGk.png">
+  <img src="http://i.imgur.com/n16iOGk.png"/>
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1011,7 +1058,7 @@ Wide column stores offer high availability and high scalability.  They are often
 #### Graph database
 
 <p align="center">
-  <img src="http://i.imgur.com/fNcl65g.png">
+  <img src="http://i.imgur.com/fNcl65g.png"/>
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1039,7 +1086,7 @@ Graphs databases offer high performance for data models with complex relationshi
 ### SQL or NoSQL
 
 <p align="center">
-  <img src="http://i.imgur.com/wXGqG5f.png">
+  <img src="http://i.imgur.com/wXGqG5f.png"/>
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1081,7 +1128,7 @@ Sample data well-suited for NoSQL:
 ## Cache
 
 <p align="center">
-  <img src="http://i.imgur.com/Q6z24La.png">
+  <img src="http://i.imgur.com/Q6z24La.png"/>
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -1152,7 +1199,7 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 #### Cache-aside
 
 <p align="center">
-  <img src="http://i.imgur.com/ONjORqk.png">
+  <img src="http://i.imgur.com/ONjORqk.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1164,7 +1211,7 @@ The application is responsible for reading and writing from storage.  The cache 
 * Add entry to cache
 * Return entry
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1188,7 +1235,7 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 #### Write-through
 
 <p align="center">
-  <img src="http://i.imgur.com/0vBc0hN.png">
+  <img src="http://i.imgur.com/0vBc0hN.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1201,13 +1248,13 @@ The application uses the cache as the main data store, reading and writing data 
 
 Application code:
 
-```
+```python
 set_user(12345, {"foo":"bar"})
 ```
 
 Cache code:
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)
@@ -1223,7 +1270,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 #### Write-behind (write-back)
 
 <p align="center">
-  <img src="http://i.imgur.com/rgSrvjG.png">
+  <img src="http://i.imgur.com/rgSrvjG.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1241,7 +1288,7 @@ In write-behind, the application does the following:
 #### Refresh-ahead
 
 <p align="center">
-  <img src="http://i.imgur.com/kxtjqgE.png">
+  <img src="http://i.imgur.com/kxtjqgE.png"/>
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1273,7 +1320,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ## Asynchronism
 
 <p align="center">
-  <img src="http://i.imgur.com/54GYsSx.png">
+  <img src="http://i.imgur.com/54GYsSx.png"/>
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -1319,7 +1366,7 @@ If queues start to grow significantly, the queue size can become larger than mem
 ## Communication
 
 <p align="center">
-  <img src="http://i.imgur.com/5KeocQs.jpg">
+  <img src="http://i.imgur.com/5KeocQs.jpg"/>
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
@@ -1351,7 +1398,7 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 ### Transmission control protocol (TCP)
 
 <p align="center">
-  <img src="http://i.imgur.com/JdAsdvG.jpg">
+  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1375,7 +1422,7 @@ Use TCP over UDP when:
 ### User datagram protocol (UDP)
 
 <p align="center">
-  <img src="http://i.imgur.com/yzDrJtA.jpg">
+  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1404,7 +1451,7 @@ Use UDP over TCP when:
 ### Remote procedure call (RPC)
 
 <p align="center">
-  <img src="http://i.imgur.com/iF4Mkb5.png">
+  <img src="http://i.imgur.com/iF4Mkb5.png"/>
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
@@ -1600,7 +1647,7 @@ Handy metrics based on numbers above:
 | Question | Reference(s) |
 |---|---|
 | Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
 | Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
 | Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
@@ -1628,7 +1675,7 @@ Handy metrics based on numbers above:
 > Articles on how real world systems are designed.
 
 <p align="center">
-  <img src="http://i.imgur.com/TcUo2fw.png">
+  <img src="http://i.imgur.com/TcUo2fw.png"/>
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
@@ -1655,7 +1702,7 @@ Handy metrics based on numbers above:
 | Data store | **Redis** - Distributed memory caching system with persistence and value types | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | | | |
 | File system | **Google File System (GFS)** - Distributed file system | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
-| File system | **Hadoop File System (HDFS)** - Open source implementation of GFS | [apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) |
+| File system | **Hadoop File System (HDFS)** - Open source implementation of GFS | [apache.org](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) |
 | | | |
 | Misc | **Chubby** - Lock service for loosely-coupled distributed systems from Google | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
 | Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
@@ -1686,7 +1733,7 @@ Handy metrics based on numbers above:
 | Stack Overflow | [Stack Overflow architecture](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html) |
 | TripAdvisor | [40M visitors, 200M dynamic page views, 30TB data](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
 | Tumblr | [15 billion page views a month](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
-| Twitter | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
+| Twitter | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU)<br/>[How Twitter Handles 3,000 Images Per Second](http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html) |
 | Uber | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html)<br/>[Lessons Learned From Scaling Uber To 2000 Engineers, 1000 Services, And 8000 Git Repositories](http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html) |
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |

@@ -130,7 +130,7 @@ To generate the unique url, we could:
     * Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
     * The following [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) runs in O(k) time where k is the number of digits = 7:
 
-```
+```python
 def base_encode(num, base=62):
     digits = []
     while num > 0
@@ -142,7 +142,7 @@ def base_encode(num, base=62):
 
 * Take the first 7 characters of the output, which results in 62^7 possible values and should be sufficient to handle our constraint of 360 million shortlinks in 3 years:
 
-```
+```python
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
