@@ -62,7 +62,7 @@ Handy conversion guide:
 
 Without the constraint of millions of users (vertices) and billions of friend relationships (edges), we could solve this unweighted shortest path task with a general BFS approach:
 
-```
+```python
 class Graph(Graph):
 
     def shortest_path(self, source, dest):
@@ -117,7 +117,7 @@ We won't be able to fit all users on the same machine, we'll need to [shard](htt
 
 **Lookup Service** implementation:
 
-```
+```python
 class LookupService(object):
 
     def __init__(self):
@@ -132,7 +132,7 @@ class LookupService(object):
 
 **Person Server** implementation:
 
-```
+```python
 class PersonServer(object):
 
     def __init__(self):
@@ -151,7 +151,7 @@ class PersonServer(object):
 
 **Person** implementation:
 
-```
+```python
 class Person(object):
 
     def __init__(self, id, name, friend_ids):
@@ -162,7 +162,7 @@ class Person(object):
 
 **User Graph Service** implementation:
 
-```
+```python
 class UserGraphService(object):
 
     def __init__(self, lookup_service):
