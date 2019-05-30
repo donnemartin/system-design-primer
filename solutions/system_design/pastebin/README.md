@@ -70,7 +70,7 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 
 Handy conversion guide:
 
-* 2.5 million requests per month
+* 2.5 million seconds per month
 * 1 request per second = 2.5 million requests per month
 * 40 requests per second = 100 million requests per month
 * 400 requests per second = 1 billion requests per month
@@ -108,7 +108,7 @@ An alternative to a relational database acting as a large hash table, we could u
 
 The `pastes` table could have the following structure:
 
-```sql
+```
 shortlink char(7) NOT NULL
 expiration_length_in_minutes int NOT NULL
 created_at datetime NOT NULL
@@ -130,7 +130,7 @@ To generate the unique url, we could:
     * Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
     * The following [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) runs in O(k) time where k is the number of digits = 7:
 
-```python
+```
 def base_encode(num, base=62):
     digits = []
     while num > 0
@@ -142,7 +142,7 @@ def base_encode(num, base=62):
 
 * Take the first 7 characters of the output, which results in 62^7 possible values and should be sufficient to handle our constraint of 360 million shortlinks in 3 years:
 
-```python
+```
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
@@ -155,7 +155,7 @@ $ curl -X POST --data '{ "expiration_length_in_minutes": "60", \
 
 Response:
 
-```json
+```
 {
     "shortlink": "foobar"
 }
@@ -174,13 +174,13 @@ For internal communications, we could use [Remote Procedure Calls](https://githu
 
 REST API:
 
-```shell
+```
 $ curl https://pastebin.com/api/v1/paste?shortlink=foobar
 ```
 
 Response:
 
-```json
+```
 {
     "paste_contents": "Hello World",
     "created_at": "YYYY-MM-DD HH:MM:SS",
@@ -194,7 +194,7 @@ Since realtime analytics are not a requirement, we could simply **MapReduce** th
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-```python
+```
 class HitCounts(MRJob):
 
     def extract_url(self, line):
