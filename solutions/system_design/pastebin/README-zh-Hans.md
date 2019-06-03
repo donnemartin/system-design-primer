@@ -124,11 +124,11 @@ PRIMARY KEY(shortlink)
   * MD5 是一个普遍用来生成一个 128-bit 长度的哈希值的一种哈希方法
   * MD5 是一致分布的
   * 或者我们也可以用 MD5 哈希一个随机生成的数据
-* 用[**Base 62**](https://www.kerstner.at/2012/07/shortening-strings-using-base-62-encoding/) 编码 MD5 哈希值
+* 用 [**Base 62**](https://www.kerstner.at/2012/07/shortening-strings-using-base-62-encoding/) 编码 MD5 哈希值
   * 对于 urls，使用 Base 62 编码 `[a-zA-Z0-9]` 是比较合适的
   * 对于每一个原始输入只会有一个 hash 结果，Base 62 是确定的（不涉及随机性）
   * Base 64 是另外一个流行的编码方案，但是对于 urls，会因为额外的 `+` 和 `-` 字符串而产生一些问题
-  * 以下[Base 62 伪代码](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) 执行的时间复杂度是 O(k)，k 是数字的数量 = 7：
+  * 以下 [Base 62 伪代码](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) 执行的时间复杂度是 O(k)，k 是数字的数量 = 7：
 
 ```python
 def base_encode(num, base=62):
@@ -146,7 +146,7 @@ def base_encode(num, base=62):
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
-我们将会用一个公开的[**REST 风格接口 **](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
+我们将会用一个公开的 [**REST 风格接口**](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
 
 ```shell
 $ curl -X POST --data '{"expiration_length_in_minutes":"60", \"paste_contents":"Hello World!"}' https://pastebin.com/api/v1/paste
@@ -160,7 +160,7 @@ Response:
 }
 ```
 
-用于内部通信，我们可以用[RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
+用于内部通信，我们可以用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
 
 ### 用例：用户输入一个 paste 的 url 后可以看到它存储的内容
 
@@ -227,7 +227,7 @@ class HitCounts(MRJob):
 ### 用例： 服务删除过期的 pastes
 
 为了删除过期的 pastes，我们可以直接搜索 **SQL 数据库** 中所有的过期时间比当前时间更早的记录，
-所有过期的记录将从这张表里面删除（或者将其标记为过期）
+所有过期的记录将从这张表里面删除（或者将其标记为过期）。
 
 ## 第四步：扩展这个设计
 
@@ -318,11 +318,11 @@ class HitCounts(MRJob):
 
 ### 安全
 
-参考[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全).
+参考[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)。
 
 ### 延迟数字
 
-见[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数).
+见[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
 
 ### 持续进行
 
