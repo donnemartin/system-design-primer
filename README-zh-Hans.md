@@ -300,7 +300,7 @@
 
 | 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
-| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
+| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README-zh-Hans.md) |
 | 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
 | 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
 | 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
