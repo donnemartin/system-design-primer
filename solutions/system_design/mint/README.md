@@ -182,7 +182,7 @@ For the **Category Service**, we can seed a seller-to-category dictionary with t
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-```
+```python
 class DefaultCategories(Enum):
 
     HOUSING = 0
@@ -199,7 +199,7 @@ seller_category_map['Target'] = DefaultCategories.SHOPPING
 
 For sellers not initially seeded in the map, we could use a crowdsourcing effort by evaluating the manual category overrides our users provide.  We could use a heap to quickly lookup the top manual override per seller in O(1) time.
 
-```
+```python
 class Categorizer(object):
 
     def __init__(self, seller_category_map, self.seller_category_crowd_overrides_map):
@@ -219,7 +219,7 @@ class Categorizer(object):
 
 Transaction implementation:
 
-```
+```python
 class Transaction(object):
 
     def __init__(self, created_at, seller, amount):
@@ -232,7 +232,7 @@ class Transaction(object):
 
 To start, we could use a generic budget template that allocates category amounts based on income tiers.  Using this approach, we would not have to store the 100 million budget items identified in the constraints, only those that the user overrides.  If a user overrides a budget category, which we could store the override in the `TABLE budget_overrides`.
 
-```
+```python
 class Budget(object):
 
     def __init__(self, income):
@@ -273,7 +273,7 @@ user_id   timestamp   seller  amount
 
 **MapReduce** implementation:
 
-```
+```python
 class SpendingByCategory(MRJob):
 
     def __init__(self, categorizer):

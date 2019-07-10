@@ -100,7 +100,7 @@ We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Datab
 
 `PagesDataStore` is an abstraction within the **Crawler Service** that uses the **NoSQL Database**:
 
-```
+```python
 class PagesDataStore(object):
 
     def __init__(self, db);
@@ -134,7 +134,7 @@ class PagesDataStore(object):
 
 `Page` is an abstraction within the **Crawler Service** that encapsulates a page, its contents, child urls, and signature:
 
-```
+```python
 class Page(object):
 
     def __init__(self, url, contents, child_urls, signature):
@@ -146,7 +146,7 @@ class Page(object):
 
 `Crawler` is the main class within **Crawler Service**, composed of `Page` and `PagesDataStore`.
 
-```
+```python
 class Crawler(object):
 
     def __init__(self, data_store, reverse_index_queue, doc_index_queue):
@@ -187,7 +187,7 @@ We'll want to remove duplicate urls:
 * For smaller lists we could use something like `sort | unique`
 * With 1 billion links to crawl, we could use **MapReduce** to output only entries that have a frequency of 1
 
-```
+```python
 class RemoveDuplicateUrls(MRJob):
 
     def mapper(self, _, line):
