@@ -910,7 +910,7 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 * 通貨に関しては小数点表示上のエラーを避けるために `DECIMAL` を使いましょう。
 * 大きな `BLOBS` を保存するのは避けましょう。どこからそのオブジェクトを取ってくることができるかの情報を保存しましょう。
 * `VARCHAR(255)` は8ビットで数えられる最大の文字数です。一部のDBMSでは、1バイトの利用効率を最大化するためにこの文字数がよく使われます。
-* [検索性能を向上させる](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) ことが可能な箇所については `NOT NULL` 制約を設定しましょう
+* [検索性能向上のため](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) 、可能であれば `NOT NULL` 制約を設定しましょう。
 
 ##### インデックスを効果的に用いる
 
