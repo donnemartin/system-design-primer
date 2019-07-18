@@ -935,7 +935,7 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 ##### その他の参考資料、ページ: SQLチューニング
 
 * [MySQLクエリを最適化するためのTips](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-* [VARCHAR(255)をそんなにたくさん使う必要ある？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [VARCHAR(255)をやたらよく見かけるのはなんで？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
 * [null値はどのようにパフォーマンスに影響するのか？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 * [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
