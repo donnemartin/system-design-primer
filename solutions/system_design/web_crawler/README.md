@@ -100,7 +100,7 @@ We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Datab
 
 `PagesDataStore` is an abstraction within the **Crawler Service** that uses the **NoSQL Database**:
 
-```
+```python
 class PagesDataStore(object):
 
     def __init__(self, db);
@@ -134,7 +134,7 @@ class PagesDataStore(object):
 
 `Page` is an abstraction within the **Crawler Service** that encapsulates a page, its contents, child urls, and signature:
 
-```
+```python
 class Page(object):
 
     def __init__(self, url, contents, child_urls, signature):
@@ -146,7 +146,7 @@ class Page(object):
 
 `Crawler` is the main class within **Crawler Service**, composed of `Page` and `PagesDataStore`.
 
-```
+```python
 class Crawler(object):
 
     def __init__(self, data_store, reverse_index_queue, doc_index_queue):
@@ -187,7 +187,7 @@ We'll want to remove duplicate urls:
 * For smaller lists we could use something like `sort | unique`
 * With 1 billion links to crawl, we could use **MapReduce** to output only entries that have a frequency of 1
 
-```
+```python
 class RemoveDuplicateUrls(MRJob):
 
     def mapper(self, _, line):
@@ -213,7 +213,7 @@ We might also choose to support a `Robots.txt` file that gives webmasters contro
 
 * The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Query API** server
-* The **Query API** server does does the following:
+* The **Query API** server does the following:
     * Parses the query
         * Removes markup
         * Breaks up the text into terms
@@ -260,7 +260,7 @@ For internal communications, we could use [Remote Procedure Calls](https://githu
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
-State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
@@ -294,7 +294,7 @@ Below are a few other optimizations to the **Crawling Service**:
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)

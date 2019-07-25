@@ -76,7 +76,7 @@ Search
 * 100 thousand read requests per second
     * 250 billion read requests per month * (400 requests per second / 1 billion requests per month)
 * 6,000 tweets per second
-    * 15 billion tweets delivered on fanout per month * (400 requests per second / 1 billion requests per month)
+    * 15 billion tweets per month * (400 requests per second / 1 billion requests per month)
 * 60 thousand tweets delivered on fanout per second
     * 150 billion tweets delivered on fanout per month * (400 requests per second / 1 billion requests per month)
 * 4,000 search requests per second
@@ -124,7 +124,7 @@ If our **Memory Cache** is Redis, we could use a native Redis list with the foll
 
 ```
            tweet n+2                   tweet n+1                   tweet n
-| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   7 bytes  1 byte |
+| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte |
 | tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |
 ```
 
@@ -189,7 +189,7 @@ Response:
 
 ### Use case: User views the user timeline
 
-* The **Client** posts a home timeline request to the **Web Server**
+* The **Client** posts a user timeline request to the **Web Server**
 * The **Web Server** forwards the request to the **Read API** server
 * The **Read API** retrieves the user timeline from the **SQL Database**
 
@@ -226,7 +226,7 @@ The response would be similar to that of the home timeline, except for tweets ma
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
-State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
@@ -249,7 +249,7 @@ We'll introduce some components to complete the design and to address scalabilit
 
 The **Fanout Service** is a potential bottleneck.  Twitter users with millions of followers could take several minutes to have their tweets go through the fanout process.  This could lead to race conditions with @replies to the tweet, which we could mitigate by re-ordering the tweets at serve time.
 
-We could also avoid fanning out tweets from highly-followed users.  Instead, we could search to find tweets for high-followed users, merge the search results with the user's home timeline results, then re-order the tweets at serve time.
+We could also avoid fanning out tweets from highly-followed users.  Instead, we could search to find tweets for highly-followed users, merge the search results with the user's home timeline results, then re-order the tweets at serve time.
 
 Additional optimizations include:
 
