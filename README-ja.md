@@ -953,7 +953,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 #### キーバリューストア
 
-> 概要: ハッシュテーブル
+> 抽象化すると: ハッシュテーブル
 
 キーバリューストアでは一般的にO(1)の読み書きができ、それらはメモリないしSSDで裏付けられています。データストアはキーを [辞書的順序](https://en.wikipedia.org/wiki/Lexicographical_order) で保持することでキーの効率的な取得を可能にしています。キーバリューストアではメタデータを値とともに保持することが可能です。
 
@@ -970,7 +970,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 #### ドキュメントストア
 
-> 概要: ドキュメントがバリューとして保存されたキーバリューストア
+> 抽象化すると: ドキュメントがバリューとして保存されたキーバリューストア
 
 ドキュメントストアはオブジェクトに関する全ての情報を持つドキュメント(XML、 JSON、 binaryなど)を中心に据えたシステムです。ドキュメントストアでは、ドキュメント自身の内部構造に基づいた、APIもしくはクエリ言語を提供します。 *メモ：多くのキーバリューストアでは、値のメタデータを扱う機能を含んでいますが、そのことによってドキュメントストアとの境界線が曖昧になってしまっています。*
 
@@ -995,7 +995,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
 
-> 概要: ネストされたマップ `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+> 抽象化すると: ネストされたマップ `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
 ワイドカラムストアのデータの基本単位はカラム（ネーム・バリューのペア）です。それぞれのカラムはカラムファミリーとして（SQLテーブルのように）グループ化することができます。スーパーカラムファミリーはカラムファミリーの集合です。それぞれのカラムには行キーでアクセスすることができます。同じ行キーを持つカラムは同じ行として認識されます。それぞれの値は、バージョン管理とコンフリクトが起きた時のために、タイムスタンプを含みます。
 
@@ -1018,7 +1018,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
 
-> 概要: グラフ
+> 抽象化すると: グラフ
 
 グラフデータベースでは、各ノードはレコードに、各アークは二つのノードを繋ぐリレーションになります。グラフデータベースは、多数の外部キーを持つ複雑なリレーションや、多対多のリレーションを表す用途に最適化されています。
 
