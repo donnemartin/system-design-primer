@@ -1001,7 +1001,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)を初のワイドカラムストアとして発表しました。それがオープンソースでHadoopなどでよく使われる[HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) やFacebookによる[Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) などのプロジェクトに影響を与えました。BigTable、HBaseやCassandraなどのストアはキーを辞書形式で保持することで選択したキーレンジでのデータ取得を効率的にします。
 
-ワイドカラムストアは高い可用性とスケーラビリティを担保します。これらはとても大規模なデータセットを扱うことによく使われます。
+ワイドカラムストアでは、高い可用性とスケーラビリティを実現できます。ワイドカラムストアは、非常に大規模なデータセットを扱う際によく使われます。
 
 ##### その他の参考資料、ページ:  ワイドカラムストア
 
