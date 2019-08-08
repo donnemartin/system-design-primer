@@ -995,7 +995,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
 
-> 概要: ネストされたマップ `カラムファミリー<行キー、 カラム<ColKey、 Value、 Timestamp>>`
+> 概要: ネストされたマップ `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
 ワイドカラムストアのデータの基本単位はカラム（ネーム・バリューのペア）です。それぞれのカラムはカラムファミリーとして（SQLテーブルのように）グループ化することができます。スーパーカラムファミリーはカラムファミリーの集合です。それぞれのカラムには行キーでアクセスすることができます。同じ行キーを持つカラムは同じ行として認識されます。それぞれの値は、バージョン管理とコンフリクトが起きた時のために、タイムスタンプを含みます。
 
