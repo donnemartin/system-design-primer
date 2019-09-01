@@ -926,7 +926,7 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 - 使用 `TEXT` 类型存储大块的文本，例如博客正文。`TEXT` 还允许布尔搜索。使用 `TEXT` 字段需要在磁盘上存储一个用于定位文本块的指针。
 - 使用 `INT` 类型存储高达 2^32 或 40 亿的较大数字。
 - 使用 `DECIMAL` 类型存储货币可以避免浮点数表示错误。
-- 避免使用 `BLOBS` 存储对象，存储存放对象的位置。
+- 避免使用 `BLOBS` 存储实际对象，而是用来存储存放对象的位置。
 - `VARCHAR(255)` 是以 8 位数字存储的最大字符数，在某些关系型数据库中，最大限度地利用字节。
 - 在适用场景中设置 `NOT NULL` 约束来[提高搜索性能](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)。
 
