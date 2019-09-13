@@ -1280,7 +1280,7 @@ def set_user(user_id, values):
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-非同期のワークフローはもし、連続的に行われるとリクエスト時間を圧迫してしまうような重い処理を別で処理する手法です。また、定期的にデータを集合させるなどの時間がかかるような処理を前もって処理しておくことにも役立ちます。
+非同期のワークフローは、インラインで実行したらリクエスト時間を圧迫してしまうような重い処理の、リクエスト時間を短縮する手法です。また、定期的にデータを集約するといった時間のかかる処理を前もって処理しておくのにも役立ちます。
 
 ### メッセージキュー
 
