@@ -1363,7 +1363,7 @@ TCPは[IP ネットワーク](https://en.wikipedia.org/wiki/Internet_Protocol)�
 * 各パケットにあるシーケンス番号と[チェックサム](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)
 * [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))パケットと自動再送信
 
-もし送信者が正しいレスポンスを受け取らなかったとき、パケットを再送信します。複数のタイムアウトがあったとき、接続は解除されます。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの機能によって速度は低下し、一般的にUDPよりも非効率な転送手段になっています。
+送信側に正しいレスポンスが返ってこなかったら、パケットを再送信します。タイムアウトが何度も発生したときは、コネクションをdropします。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの保証のために遅延が発生するので、一般的に転送効率はUDPより劣ります。
 
 ハイスループットを実現するために、ウェブサーバーはかなり大きな数のTCP接続を開いておくことがあり、そのことでメモリー使用が圧迫されます。ウェブサーバスレッドと例えば[memcached](#memcached) サーバーの間で多数のコネクションを保っておくことは高くつくかもしれません。可能なところではUDPに切り替えるだけでなく[コネクションプーリング](https://en.wikipedia.org/wiki/Connection_pool)なども役立つかもしれません。
 
