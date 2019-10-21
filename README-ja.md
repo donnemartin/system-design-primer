@@ -1411,7 +1411,7 @@ UDPは信頼性の面では劣りますが、VoIP、ビデオチャット、ス�
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
-RPCではクライアントがリモートサーバーなどの異なるアドレス空間でプロシージャーが処理されるようにします。プロシージャーはローカルでのコールのように、クライアントからサーバーにどのように通信するかという詳細を省いた状態でコードが書かれます。リモートのコールは普通、ローカルのコールよりも遅く、信頼性に欠けるため、RPCコールをローカルコールと区別させておくことが好ましいでしょう。人気のRPCフレームワークは以下です。[Protobuf](https://developers.google.com/protocol-buffers/)、 [Thrift](https://thrift.apache.org/)、[Avro](https://avro.apache.org/docs/current/)
+RPCでは、クライアントから別のアドレス空間（通常はリモートサーバー）上で実行される手続きを呼び出します。この処理はローカルでの手続き呼び出しと同じようにコーディングされます。クライアントプログラムがサーバーとどのように通信するかといった詳細は、抽象化により省略されます。リモート呼び出しは普通、ローカルでの呼び出しよりも遅く、信頼性に欠けます。そのため、RPC呼び出しとローカルの手続き呼び出しとは区別がつくようにしておいた方がいいでしょう。よく使われるRPCフレームワークとしては[Protobuf](https://developers.google.com/protocol-buffers/)、 [Thrift](https://thrift.apache.org/)、[Avro](https://avro.apache.org/docs/current/) などがあります。
 
 RPC は リクエストレスポンスプロトコル:
 
