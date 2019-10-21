@@ -1360,7 +1360,7 @@ HTTPはアプリケーション層のプロトコルで、**TCP** や **UDP** �
 
 TCPは[IP ネットワーク](https://en.wikipedia.org/wiki/Internet_Protocol)の上で動作する、コネクション指向のプロトコルです。コネクションの確立と切断は[ハンドシェイク](https://en.wikipedia.org/wiki/Handshaking)によって行われます。送出されたパケットはすべて、元々の順序通りに、かつデータ破損なしに宛先へ到達することが、以下の方法で保証されています:
 
-* シーケンス番号と[checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)が全てのパケットに用意されている
+* 各パケットにあるシーケンス番号と[チェックサム](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)
 * [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))パケットと自動再送信
 
 もし送信者が正しいレスポンスを受け取らなかったとき、パケットを再送信します。複数のタイムアウトがあったとき、接続は解除されます。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの機能によって速度は低下し、一般的にUDPよりも非効率な転送手段になっています。
