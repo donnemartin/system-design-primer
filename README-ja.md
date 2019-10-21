@@ -1401,7 +1401,7 @@ UDPは信頼性の面では劣りますが、VoIP、ビデオチャット、ス�
 * [TCP と UDPの違い](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
 * [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Facebookのメムキャッシュスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [Facebookにおけるmemcacheのスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
 ### 遠隔手続呼出 (RPC)
 
