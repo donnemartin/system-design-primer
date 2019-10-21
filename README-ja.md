@@ -1450,7 +1450,7 @@ RPCは振る舞いを公開することに焦点を当てています。RPCは�
 * RPCクライアントがサービスの実装に密結合してしまいます。。
 * 新しい操作やユースケースができるたびに、新しいAPIを定義しなければなりません。
 * RPCをデバッグするのは難しい可能性があります。
-* 既存のテクノロジーをそのまま使ってサービスを構築することはできないかもしれません。例えば、[Squid](http://www.squid-cache.org/)などのサーバーに[RPCコールが正しくキャッシュ](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) されるように追加で骨を折る必要があるかもしれません。
+* 既存のテクノロジーをそのまま活用することはできないかもしれません。例えば、[Squid](http://www.squid-cache.org/) などのサーバーに[RPCコールを正しくキャッシュさせる](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) には追加の作業が必要になるかもしれません。
 
 ### Representational state transfer (REST)
 
