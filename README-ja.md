@@ -1472,7 +1472,7 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-RESTはデータを公開することに焦点を当てています。クライアントとサーバーのカップリングを最小限にするもので、パブリックAPIなどによく用いられます。RESTはURI、 [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)、そして、GET、POST、PUT、 DELETE、PATCHなどのHTTP動詞等のよりジェネリックで統一されたメソッドを用います。ステートレスであるのでRESTは水平スケーリングやパーティショニングに最適です。
+RESTはデータを公開することに焦点を当てています。RESTではクライアントとサーバーの結合度を最小にでき、公開APIなどによく用いられます。RESTでは、リソースの公開にはURI、リソースの[表現にはHTTPヘッダー](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)、アクションにはHTTP動詞（GET, POST, PUT, DELETE, PATCH）といったように、そのそれぞれに対してより一般的で統一された方法を用います。RESTはステートレスなので、水平スケーリングやパーティショニングに最適です。
 
 #### 欠点: REST
 
