@@ -1481,17 +1481,17 @@ RESTはデータを公開することに焦点を当てています。RESTでは
 * 入れ子になった階層構造を持つ、複雑なリソースを取得する場合、一つのビューを描画するだけでもクライアントとサーバーの間で複数回のやりとりが発生します。例えば、ブログのエントリーの内容と、それに対するコメントを取得する場合が該当します。様々なネットワーク環境で動作するようなモバイルアプリケーションにおいては、このようなやり取りが複数回発生するのは非常に好ましくありません。
 * 時が経つにつれて、APIレスポンスにはより多くのフィールドが追加されていきます。この際、古くからあるクライアントは、追加されたフィールドを使いもしないのにすべて受け取ることになります。結果として、ペイロードも膨れますし、レイテンシーも拡大することになります。
 
-### RPCとREST比較
+### RPCとRESTの比較
 
-| Operation | RPC | REST |
+| 操作 | RPC | REST |
 |---|---|---|
 | サインアップ	| **POST** /signup | **POST** /persons |
-| リザイン	| **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
-| Person読み込み | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
-| Personのアイテムリスト読み込み | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
-| Personのアイテムへのアイテム追加 | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
-| アイテム更新	| **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
-| アイテム削除 | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+| 退会	| **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
+| 個人データの読み込み | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
+| 個人のアイテムリスト読み込み | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
+| 個人のアイテムリストへアイテムを追加 | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| アイテムの更新	| **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| アイテムの削除 | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
 
 <p align="center">
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
