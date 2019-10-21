@@ -1365,7 +1365,7 @@ TCPは[IP ネットワーク](https://en.wikipedia.org/wiki/Internet_Protocol)�
 
 送信側に正しいレスポンスが返ってこなかったら、パケットを再送信します。タイムアウトが何度も発生したときは、コネクションをdropします。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの保証のために遅延が発生するので、一般的に転送効率はUDPより劣ります。
 
-ハイスループットを実現するために、ウェブサーバーはかなり大きな数のTCP接続を開いておくことがあり、そのことでメモリー使用が圧迫されます。ウェブサーバスレッドと例えば[memcached](#memcached) サーバーの間で多数のコネクションを保っておくことは高くつくかもしれません。可能なところではUDPに切り替えるだけでなく[コネクションプーリング](https://en.wikipedia.org/wiki/Connection_pool)なども役立つかもしれません。
+高スループットを確保するため、ウェブサーバーでは多数のTCPコネクションを開いたままにしておくことがあります。この場合は、メモリーの使用率が高くなります。ウェブサーバのスレッドと、例えば [memcached](#memcached) サーバーの間で多数のコネクションを張ったままにするのは高くつくかもしれません。この場合、可能であればUDPに切り替える、コネクションプーリング[コネクションプーリング](https://en.wikipedia.org/wiki/Connection_pool)を使うといった方法が役立つかもしれません。
 
 TCPは高い依存性を要し、時間制約が厳しくないものに適しているでしょう。ウェブサーバー、データベース情報、SMTP、FTPやSSHなどの例に適用されます。
 
