@@ -1463,7 +1463,7 @@ RESTful なインターフェースには次の四つの特徴があります:
 * **自己説明的なエラーメッセージ (HTTPにおけるステータスレスポンス)** - ステータスコードを使うこと。車輪の再発明はしないこと。
 * **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTTPにおけるHTMLインタフェース)** - Webサービスがブラウザから完全にアクセスできること。
 
-サンプル REST コール:
+REST呼び出しの例:
 
 ```
 GET /someresources/anId
