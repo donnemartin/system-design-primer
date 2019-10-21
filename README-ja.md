@@ -1382,7 +1382,7 @@ TCPは[IP ネットワーク](https://en.wikipedia.org/wiki/Internet_Protocol)�
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
 
-UDPはコネクションレスです。データグラム（パケットのようなもの）はデータグラムレベルでの保証しかされません。データグラムは順不同で受け取り先に到着したりそもそも着かなかったりします。UDPは輻輳制御をサポートしません。TCPにおいてはサポートされているこれらの保証がないため、UDPは一般的に、TCPよりも効率的です。
+UDPはコネクションレスです。データグラム（パケットのようなもの）はデータグラムレベルでの保証しかされません。データグラムは順不同で受け取り先に到着したりそもそも着かなかったりします。UDPは輻輳制御をサポートしません。TCPがサポートするこういった保証を行わないため、転送効率については一般的にTCPよりUDPの方が優れています。
 
 UDPはサブネット上のすべての機器にデータグラムを送信することができます。これは[DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) において役に立ちます。というのも、クライアントはまだIPアドレスを取得していないので、IPアドレスを必要とするTCPによるストリームができないからです。
 
