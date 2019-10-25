@@ -1406,7 +1406,7 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
 
 * Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+* [Acknowledgment](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
 
 If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally result in less efficient transmission than UDP.
 
@@ -1464,7 +1464,7 @@ RPC is a request-response protocol:
 * **Client stub procedure** - Marshals (packs) procedure id and arguments into a request message.
 * **Client communication module** - OS sends the message from the client to the server.
 * **Server communication module** - OS passes the incoming packets to the server stub procedure.
-* **Server stub procedure** -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.
+* **Server stub procedure** -  Unmarshals the results, calls the server procedure matching the procedure id and passes the given arguments.
 * The server response repeats the steps above in reverse order.
 
 Sample RPC calls:
@@ -1499,7 +1499,7 @@ HTTP APIs following **REST** tend to be used more often for public APIs.
 
 ### Representational state transfer (REST)
 
-REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server.  The server provides a representation of resources and actions that can either manipulate or get a new representation of resources.  All communication must be stateless and cacheable.
+REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server.  The server provides a representation of resources and actions that can either manipulate or get a new representation of resources.  All communication must be stateless and cache-able.
 
 There are four qualities of a RESTful interface:
 
@@ -1523,7 +1523,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 
 * With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
 * REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.
-* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
+* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple round-trips are highly undesirable.
 * Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
 
 ### RPC and REST calls comparison
