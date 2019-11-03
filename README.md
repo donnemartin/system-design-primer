@@ -1566,6 +1566,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 
 ### Source(s) and further reading
 
+* [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
