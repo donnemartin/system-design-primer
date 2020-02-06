@@ -486,31 +486,40 @@ AP adalah kompromi yang baik jika kebutuhan bisnis mengijinkan untuk [konsistens
 * [Pengantar teoream CAP dalam bahasa inggris polos](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [Tanya jawab CAP](https://github.com/henryr/cap-faq)
 
-## Consistency patterns
+## Pola konsistensi
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+Dengan adanya salinan ganda data, kita dihadapkan dengan pilihan cara untuk menyinkronkan salinan tersebut.
+Salinan data perlu disinkronkan sehingga pengguna memiliki pandangan yang konsisten terhadap data.
+Ingat kembali definisi konsistensi dari [teorema CAP](#teorema-cap) - Setiap operasi baca menerima tulisan terbaru atau gagal.
 
-### Weak consistency
+### Konsistensi lemah
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+Setelah operasi tulis, operasi baca belum tentu melihat hasil operasi tulis.
+Pendekatan usaha terbaik perlu diambil.
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+Pendekatan ini bisa dilihat pada sistem contohnya Memcached.
+Konsistensi lemah bekerja dengan baik pada sistem kasus penggunaan waktu nyata contohnya VoIP, obrolan video, dan permainan banyak pemain waktu nyata.
+Sebagai contoh, jika kita dalam panggilan telpon dan kehilangan sinyal untuk beberapa detik, kita tidak akan mendengar pembicaraan yang terjadi ketika koneksi terputus.
 
 ### Konsistensi akan datang (eventual consistency)
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+Setelah operasi tulis, operasi baca akan melihat pada waktu yang akan datang (biasanya dalam mili seconds).
+Data direplikasi secara asinkron.
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+Pendekatan ini terlihat di sistem contohnya DNS dan email.
+Konsistensi akan datang bekerja dengan baik di sistem yang sangat tersedia.
 
-### Strong consistency
+### Konsisten kuat
 
-After a write, reads will see it.  Data is replicated synchronously.
+Setelah operasi tulis, operasi baca akan langsung melihatnya.
+Data direplikasi secara sinkron.
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+Pendekatan ini terlihat pada sistem pemberkasan dan RDBMS.
+Konsistensi kuat bekerja dengan baik di sistem yang membutuhkan transaksi.
 
-### Source(s) and further reading
+### Sumber dan bacaan tambahan
 
-* [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [Transaksi lintas pusat data](http://snarfed.org/transactions_across_datacenters_io.html)
 
 ## Availability patterns
 
