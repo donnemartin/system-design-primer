@@ -449,39 +449,42 @@ Secara umum, kita menargetkan **lewatan yang maksimal** dengan **latensi yang da
 
 * [Memahami latensi vs lewatan](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## Ketersediaan vs konsistensi
 
-### CAP theorem
+### Teorema CAP
 
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png"/>
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Sumber: tinjauan kembali teorema CAP</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+Dalam sistem komputer terdistribusi, kita hanya dapat mendukung dua dari jaminan berikut:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **Konsistensi (Consistency)** - Setiap operasi baca menerima tulisan terbaru atau error
+* **Ketersediaan (Availability)** - Setiap permintaan mendapat tanggapan, tanpa jaminan tanggapan tersebut berisi informasi terbaru
+* **Toleransi Penyekatan (Partition Tolerance)** - Sistem tetap bekerja meskipun terjadi penyekatan yang berubah-ubah karena kegagalan jaringan
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*Jaringan tidak dapat diandalkan sehingga kita perlu mendukung toleransi penyekatan.*
+*Kita perlu memilih kompromi perangkat lunak antara konsistensi dan ketersediaan.*
 
-#### CP - consistency and partition tolerance
+#### CP - konsistensi dan toleransi penyekatan
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+Menunggu tanggapan dari mesin yang tersekat mungkin akan gagal karena kehabisan waktu.
+CP adalah kompromi yang baik jika bisnis mempunyai kebutuhan baca dan tulis yang bersifat atom.
 
-#### AP - availability and partition tolerance
+#### AP - ketersediaan dan toleransi penyekatan
 
-Responses return the most recent version of the data available on a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Tanggapan berisi data terakhir yang tersedia pada sebuah mesin dimana data tersebut mungkin bukan data terbaru.
+Tulisan bakal memerlukan beberapa saat untuk tersebar ke mesin lain ketika masalah penyekatan selesai.
 
-AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+AP adalah kompromi yang baik jika kebutuhan bisnis mengijinkan untuk [konsistensi akan datang](#konsistensi-akan-datang-eventual-consistency) atau ketika sistem perlu tetap bekerja walaupun ada kesalahan pihak luar.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
-* [CAP FAQ](https://github.com/henryr/cap-faq)
+* [Tinjauan kembali teorema CAP](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [Pengantar teoream CAP dalam bahasa inggris polos](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [Tanya jawab CAP](https://github.com/henryr/cap-faq)
 
 ## Consistency patterns
 
@@ -493,7 +496,7 @@ After a write, reads may or may not see it.  A best effort approach is taken.
 
 This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
 
-### Eventual consistency
+### Konsistensi akan datang (eventual consistency)
 
 After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
 
