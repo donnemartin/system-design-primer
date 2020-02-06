@@ -58,18 +58,18 @@ Topik-topik tambahan untuk persiapan wawancara:
 
 Cocok untuk digunakan ketika dalam perjalanan.
 
-### Coding Resource: Interactive Coding Challenges
+### Sumber daya kode: Tantangan kode interaktif
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+Apakah Anda mencari sumber daya untuk membantu persiapan [wawancara pemrograman](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="http://i.imgur.com/b4YtAEN.png"/>
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Silakan periksa repositori [Tantangan Pemrograman Interaktif](https://github.com/donnemartin/interactive-coding-challenges) yang berisi tambahan bungkusan Anki:
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Bungkusan pemrograman](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Kontribusi
 
