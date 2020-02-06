@@ -283,7 +283,7 @@ Tangani kemacetan menggunakan [prinsip-prinsip perancangan sistem terskala](#ind
 Anda mungkin diminta untuk mengestimasi dengan tangan.
 Aculah lampiran pada sumber daya berikut:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Kalkulasi belakang amplop](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [Tabel perpangkatan dua](#tabel-perpangkatan-dua)
 * [Nilai latensi yang perlu diketahui oleh setiap pemrogram](#nilai-latensi-yang-perlu-diketahui-oleh-setiap-pemrogram])
 
@@ -291,9 +291,9 @@ Aculah lampiran pada sumber daya berikut:
 
 Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawancara perancangan sistem:
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [Cara jago melewati wawancara perancangan sistem](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [Wawancara perancangan sistem](http://www.hiredintech.com/system-design)
+* [Pengantar Arsitektur dan Wawancara Perancangan Sistem](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
 ## Pertanyaan wawancara rancangan sistem beserta solusinya
 
@@ -381,45 +381,45 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 | Perancangan larik melingkar (circular array) | [Kontribusi](#kontribusi)  |
 | Add an object-oriented design question | [Kontribusi](#kontribusi) |
 
-## System design topics: start here
+## Topik perancangan sistem: Mulai dari sini
 
-New to system design?
+Baru mengenal perancangan sistem?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Pertama-tama, kita perlu memahami prinsip-prinsip umum, belajar apa saja prinsip-prinsip tersebut, bagaimana penggunaannya, dan kelebihan dan kekurangannya.
 
-### Step 1: Review the scalability video lecture
+### Langkah 1: Tonton kuliah video skalabilitas
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Kuliah skalabilitas di Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* Topik yang dicakup:
+    * Penyekalaan tegak lurus (vertical scaling)
+    * Penyekalan mendatar (horizontal scaling)
+    * Penyinggahan (caching)
+    * Pembagian beban (load balancing)
+    * Pereplikasian basis data (database replication)
+    * Penyekatan basis data (database partitioning)
 
-### Step 2: Review the scalability article
+### Langkah 2: Baca artikel skalabilitas
 
-[Scalability](http://www.lecloud.net/tagged/scalability/chrono)
+[Skalabilitas untuk orang-orangan](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* Topik yang dicakup:
+    * [Klona](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Basis data](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Singgahan](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asinkron](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Langkah selanjutnya
 
-Next, we'll look at high-level trade-offs:
+Selanjutnya kita akan melihat kompromi pada tingkat tinggi:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Kinerja** vs **skalabilitas**
+* **Latensi** vs **lewatan**
+* **Ketersediaan** vs **konsistensi**
 
-Keep in mind that **everything is a trade-off**.
+Perlu diingat bahwa **segala sesuatunya adalah hasil kompromi**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Selanjutnya kita akan mempelajari lebih dalam topik-topik tertentu seperti DNS, CDNs, dan penyeimbang beban.
 
 ## Performance vs scalability
 
