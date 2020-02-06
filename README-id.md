@@ -13,48 +13,50 @@
 >
 > Persiapan wawancara rancangan sistem.
 
-### Learn how to design large-scale systems
+### Belajar bagaimana merancang sistem dalam skala besar
 
-Learning how to design scalable systems will help you become a better engineer.
+Belajar bagaimana merancang sistem terskalakan membantu menjadikan kita perekayasa yang lebih baik.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Perancangan sistem merupakan topik yang luas.
+Sumber daya mengenai prinsip-prinsip perancangan sistem banyak tersebar di berbagai situs di internet.
+Hal ini menyulitkan karena sumber daya tersebut tidak terkumpul di satu tempat.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Repositori ini menjadi tempat **pengorganisasian koleksi-koleksi** sumber daya yang dibutuhkan untuk belajar membangun sistem dalam sekala besar.
 
-### Learn from the open source community
+### Belajar dari komunitas sumber terbuka
 
-This is a continually updated, open source project.
+Proyek ini merupakan proyek sumber terbuka yang terus diperbarui.
 
-[Contributions](#contributing) are welcome!
+[Ayo kontribusi](#kontribusi) di sini!
 
-### Prep for the system design interview
+### Persiapan wawancara rancangan sistem
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Selain wawancara pemrograman, perancangan sistem adalah salah satu **komponen yang diwajibkan** dari dari **proses wawancara teknis** di banyak perusahaan teknologi.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Latih pertanyaan-pertanyaan umum wawancara rancangan sistem** dan **bandingkan** hasilmu dengan contoh solusi: diskusi, program, dan diagram.
 
-Additional topics for interview prep:
+Topik-topik tambahan untuk persiapan wawancara:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Panduan belajar](#panduan-belajar)
+* [Pendekatan untuk menjawab pertanyaan wawancara rancangan sistem](#how-to-approach-a-system-design-interview-question)
+* [Pertanyaan-pertanyaan wawancara rancangan sistem beserta solusinya](#system-design-interview-questions-with-solutions)
+* [Pertanyaan-pertanyaan wawancara rancangan berbasis objek beserta solusinya](#object-oriented-design-interview-questions-with-solutions)
+* [Tambahan pertanyaan-pertanyaan wawancara rancangan sistem](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## Kartu kilat Anki
 
 <p align="center">
   <img src="http://i.imgur.com/zdCAkB3.png"/>
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+[Bungkusan kartu kilat Anki](https://apps.ankiweb.net/) yang disediakan menggunakan perulangan berjeda untuk membantu menguasai konsep-konsep kunci rancangan sistem.
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Bungkusan rancangan sistem](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Bungkusan latihan-latihan rancangan sistem](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Bungkusan latihan-latihan rancangan berbasis objek](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Cocok untuk digunakan ketika dalam perjalanan.
 
 ### Coding Resource: Interactive Coding Challenges
 
@@ -69,7 +71,7 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## Kontribusi
 
 > Learn from the community.
 
@@ -177,7 +179,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Contact info](#contact-info)
 * [License](#license)
 
-## Study guide
+## Panduan belajar
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
