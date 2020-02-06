@@ -264,7 +264,7 @@ Sebagai contoh, jika Anda diminta [merancang layanan penyingkat tautan](solution
 * Penerjemahan tautan hasil pencampuran menjadi tautan penuh
 * API dan rancangan berbasis objek
 
-### Langkah 4: Menyekalakan rancangan
+### Langkah 4: Skalakan rancangan
 
 Kenali dan tangani kemacetan dalam batasan yang ada.
 Sebagai contoh, apakah diperlukan hal-hal berikut untuk menangani masalah skalabilitas?
