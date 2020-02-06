@@ -655,40 +655,49 @@ Beberapa layanan DNS mampu mengarahkan lalu lintas melalui berbagai metode:
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg"/>
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
+  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Sumber: Mengapa menggunakan CDN</a></i>
 </p>
 
-A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.  Generally, static files such as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as Amazon's CloudFront support dynamic content.  The site's DNS resolution will tell clients which server to contact.
+Content delivery network (CDN) adalah jaringan server proksi yang tersebar secara global, menyuguhkan konten dari lokasi terdekat ke pengguna.
+Umumnya, berkas statis seperti HTML/CSS/JS, foto, dan video disuguhkan oleh CDN, meskipun beberapa CDN seperti Amazon CloudFront mendukung konten dinamis.
+Resolusi DNS situs akan memberitahu pengguna server mana yang dihubungi.
 
-Serving content from CDNs can significantly improve performance in two ways:
+Penyuguhan konten melalui CDN bisa meningkatkan kinerja secara signifikan melalui dua cara:
 
-* Users receive content at data centers close to them
-* Your servers do not have to serve requests that the CDN fulfills
+* Pengguna menerima konten dari pusat data terdekat ke mereka
+* Server kita tidak perlu melayani permintaan yang dipenuhi oleh CDN
 
-### Push CDNs
+### CDN setor
 
-Push CDNs receive new content whenever changes occur on your server.  You take full responsibility for providing content, uploading directly to the CDN and rewriting URLs to point to the CDN.  You can configure when content expires and when it is updated.  Content is uploaded only when it is new or changed, minimizing traffic, but maximizing storage.
+CDN setor menerima konten baru kapanpun perubahan terjadi di server kita.
+Kita bertanggungjawab penuh untuk menyediakan konten, mengunggah langsung ke CDN dan menulis ulang alamat URL supaya mengarah ke CDN.
+Kita dapat mengkonfigurasi kapan konten kedaluarsa dan kapan konten diperbarui.
+Konten diunggah hanya ketika ada konten baru atau konten berubah untuk meminimalkan lalu lintas dan memaksimalkan penyimpanan.
 
-Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
+Situs dengan lalu lintas kecil atau situs dengan konten yang tidak sering diperbarui bekerja baik dengan CDN setor.
+Konten ditempatkan pada CDN sekali, daripada ditarik ulang secara berkala.
 
-### Pull CDNs
+### CDN tarik
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
+CDN tarik mengambil konten baru dari server kita ketika ada user pertama yang meminta konten tersebut.
+Kita menyimpan konten di server kita dan menulis ulang URL supaya mengarah ke CDN.
+Mekanisme ini menghasilkan permintaan yang lebih lambat sampai konten singgah di CDN.
 
-A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
+[Masa berlaku](https://en.wikipedia.org/wiki/Time_to_live) menentukan berapa lama konten akan singgah.
+CDN tarik meminimalkan ruang penyimpanan pada CDN, tetapi bisa menciptakan lalu lintas yang berlebihan jika berkas kedaluarsa dan ditarik sebelum berkas tersebut diubah.
 
-Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
+Situs dengan lalu lintas padat bekerja baik dengan CDN tarik, sebagaimana lalu lintas tersebar secara merata dengan konten yang baru diminta saja yang tersimpan di CDN.
 
-### Disadvantage(s): CDN
+### Kekurangan: CDN
 
-* CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
-* Content might be stale if it is updated before the TTL expires it.
-* CDNs require changing URLs for static content to point to the CDN.
+* Biaya CDN bisa signifikan tergantung kepadatan lalu lintas, meskipun perlu ditimbang biaya tambahan yang akan ditanggung tanpa CDN.
+* Konten mungkin kedaluarsa jika konten diupdate sebelum masa berlaku habis.
+* CDN mengharuskan perubahan alamat URL sehingga konten statis mengarah ke CDN.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
-* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [Pengiriman konten terdistribusi secara global](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
+* [Perbedaan antara CDN setor dan tarik](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
 ## Load balancer
