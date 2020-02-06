@@ -86,11 +86,11 @@ Konten yang masih memerlukan polesan ditempatkan di bagian [dalam pengembangan](
 
 Tinjau kembali [Pedomain Kontribusi](CONTRIBUTING.md).
 
-## Index of system design topics
+## Indeks topik rancangan sistem
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Ringkasan dari berbagai topik rancangan sistem, termasuk kelebihan dan kekurangannya. **Segala sesuatu dalam rancangan adalah hasil kompromi**.
 >
-> Each section contains links to more in-depth resources.
+> Setiap bagian berisi tautan ke sumber daya yang lebih dalam.
 
 <p align="center">
   <img src="http://i.imgur.com/jrUBAF7.png"/>
@@ -181,39 +181,43 @@ Tinjau kembali [Pedomain Kontribusi](CONTRIBUTING.md).
 
 ## Panduan belajar
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Topik yang disarankan untuk ditinjau ulang berdasarkan garis waktu wawancara (pendek, sedang, panjang).
 
 ![Imgur](http://i.imgur.com/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**P: Apakah saya perlu mengetahui segala sesuatu yang ada di sini untuk wawancara?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**J: Tidak. Anda tidak perlu tahu segala sesuatu yang ada di sini untuk persiapan wawancara**.
 
-What you are asked in an interview depends on variables such as:
+Apa yang menjadi pertanyaan saat Anda wawancara bergantung pada hal-hal yang tidak tentu, contohnya:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Banyak pengalaman yang Anda miliki
+* Latar belakang teknis Anda
+* Posisi yang Anda lamar
+* Perusahaan tempat Anda wawancara
+* Keberuntungan
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Kandidat yang berpengalaman umumnya diharapkan untuk tahu lebih mengenai rancangan sistem.
+Arsitek atau pemimpin tim mungkin diharapkan untuk tahu lebih banyak dibandingkan kontributor perorangan.
+Perusahan teknologi top kemungkinan besar mempunyai satu atau lebih sesi wawancara rancangan.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Mulai dari topik yang luas dan masuk lebih dalam ke beberapa area.
+Pengetahuan dasar berbagai topik-topik kunci rancangan sistem akan sangat membantu.
+Sesuaikan panduan berikut berdasarkan waktu, pengalaman, posisi yang dilamar, dan perusahan tempat Anda wawancara.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Garis waktu pendek** - Bidik topik-topik rancangan sistem secara luas. Latih dengan cara menjawab beberapa pertanyaan wawancara.
+* **Garis waktu sedang** - Bidik topik-topik rancangan sistem secara luas dan perdalam dibeberapa bagian tertentu. Latih dengan cara menjawab banyak pertanyaan wawancara.
+* **Garis waktu panjang** - Bidik topik-topik rancangan sistem secara laus dan mendalam. Latih dengan cara menyelesaikan seluruh pertanyaan wawancara.
 
 | | Short | Medium | Long |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Baca sampai habis [Indeks topik rancangan sistem](#indeks-topik-rancangan-sistem) untuk pemahaman secara luas bagaimana cara kerja suatu sistem | :+1: | :+1: | :+1: |
+| Baca sampai habis beberapa artikel di [Blog teknik perusahaan](#blog-teknik-perusahaan) untuk perusahaan tempat Anda wawancara | :+1: | :+1: | :+1: |
+| Baca sampai habis beberapa [Arsitektur dunia nyata](#arsitektur-dunia-nyata) | :+1: | :+1: | :+1: |
+| Ulas [Pendekatan menjawab pertanyaan wawancara rancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-rancangan-sistem) | :+1: | :+1: | :+1: |
+| Tinjau [Pertanyaan wawancara rancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya) | Some | Many | Most |
+| Teliti [Pertanyaan wawancara rancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-rancangan-berbasis-objek-beserta-solusinya) | Some | Many | Most |
+| Periksa [Tambahan pertanyaan wawancara rancangan sistem](#tambahan-pertanyaan-wawancara-rancangan-sistem) | Some | Many | Most |
 
 ## Pendekatan menjawab pertanyaan wawancara rancangan sistem
 
@@ -1673,7 +1677,7 @@ Handy metrics based on numbers above:
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Add a system design question | [Contribute](#contributing) |
 
-### Real world architectures
+### Arsitektu dunia nyata
 
 > Articles on how real world systems are designed.
 
@@ -1741,7 +1745,7 @@ Handy metrics based on numbers above:
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
-### Company engineering blogs
+### Blog teknik perusahaan
 
 > Architectures for companies you are interviewing with.
 >
