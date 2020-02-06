@@ -437,17 +437,17 @@ Cara lain melihat kinerja vs skalabilitas:
 * [Sepatah kata untuk skalabilitas](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Skalabilitas, ketersediaan, stabilitas, pola](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## Latensi vs lewatan
 
-**Latency** is the time to perform some action or to produce some result.
+**Latensi** adalah waktu yang diperlukan untuk melakukan suatu aksi atau mendapatkan hasil.
 
-**Throughput** is the number of such actions or results per unit of time.
+**Lewatan** adalah jumlah aksi atau hasil yang didapatkan per satuan waktu.
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+Secara umum, kita menargetkan **lewatan yang maksimal** dengan **latensi yang dapat diterima**.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [Memahami latensi vs lewatan](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
 ## Availability vs consistency
 
