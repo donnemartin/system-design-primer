@@ -521,87 +521,92 @@ Konsistensi kuat bekerja dengan baik di sistem yang membutuhkan transaksi.
 
 * [Transaksi lintas pusat data](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+## Pola ketersediaan
 
-There are two main patterns to support high availability: **fail-over** and **replication**.
+Ada dua pola utama untuk mendukung ketersediaan tinggi: **fail-over** dan **replikasi**.
 
 ### Fail-over
 
-#### Active-passive
+#### Aktif-pasif
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+Dengan mekanisme fail-over aktif-pasif, denyut nadi dikirim antara server aktif dan pasif dalam keadaan siaga.
+Jika pengiriman denyut nadi terinterupsi, server pasif akan mengambil alih alamat IP yang aktif dan meneruskan layanan.
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+Lamanya waktu penghentian ditentukan berdasarkan kondisi server pasif apakah dalam status siaga 'panas' atau siaga 'dingin'.
+Hanya server yang aktif yang melayani permintaan.
 
-Active-passive failover can also be referred to as master-slave failover.
+Fail-over aktif-pasif disebut juga dengan istilah failover _master-slave_.
 
-#### Active-active
+#### Aktif-aktif
 
-In active-active, both servers are managing traffic, spreading the load between them.
+Dalam aktif-aktif, kedua server mengelola layanan secara berbarengan, menyebarkan beban kerja diantara mereka.
 
-If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+Jika server terhubung langsung ke internet, DNS perlu mengetahui IP publik kedua server.
+Jika server terhubung ke jaringan internal, logik pada aplikasi perlu mengetahui alamat IP kedua server.
 
-Active-active failover can also be referred to as master-master failover.
+Failover aktif-aktif disebut juga dengan istilah failover _master-master_.
 
-### Disadvantage(s): failover
+### Kerugian: failover
 
-* Fail-over adds more hardware and additional complexity.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* Fail-over meningkatkan jumlah perangkat keras yang dibutuhkan dan kompleksitas.
+* Ada potensi kehilangan data ketika sistem aktif gagal pada ada data terbaru yang sudah berhasil ditulis di server aktif tetapi belum direplikasi ke server pasif.
 
-### Replication
+### Replikasi
 
 #### Master-slave and master-master
 
-This topic is further discussed in the [Database](#database) section:
+Topik ini dibahas lebih lanjut di bagian [Basis data](#basis-data):
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Replikasi Master-slave](#replikasi-master-slave)
+* [Replikasi Master-master](#replikasi-master-master)
 
-### Availability in numbers
+### Ketersediaan dalam angka
 
-Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
+Ketersediaan seringnya dinyatakan berdasarkan waktu nyala (atau waktu padam) sebagai persentasi dari waktu ketersediaan layanan.
+Ketersediaan umumnya diukur di dalam angka 9s.
+Sebuah layanan dengan tingkat ketersediaan 99.99% digambarkan sebagai layanan yang memiliki empat 9.
 
-#### 99.9% availability - three 9s
+#### Ketersediaan 99.9% - tiga 9
 
-| Duration            | Acceptable downtime|
+| Durasi            | Waktu padam yang terterima|
 |---------------------|--------------------|
-| Downtime per year   | 8h 45min 57s       |
-| Downtime per month  | 43m 49.7s          |
-| Downtime per week   | 10m 4.8s           |
-| Downtime per day    | 1m 26.4s           |
+| Waktu padam per tahun  | 8h 45min 57s       |
+| Waktu padam per bulan  | 43m 49.7s          |
+| Waktu padam per minggu | 10m 4.8s           |
+| Waktu padam per hari   | 1m 26.4s           |
 
-#### 99.99% availability - four 9s
+#### Ketersediaan 99.99% - empat 9
 
-| Duration            | Acceptable downtime|
+| Durasi            | Waktu padam yang terterima|
 |---------------------|--------------------|
-| Downtime per year   | 52min 35.7s        |
-| Downtime per month  | 4m 23s             |
-| Downtime per week   | 1m 5s              |
-| Downtime per day    | 8.6s               |
+| Waktu padam per tahun  | 52min 35.7s        |
+| Waktu padam per bulan  | 4m 23s             |
+| Waktu padam per minggu | 1m 5s              |
+| Waktu padam per hari   | 8.6s               |
 
-#### Availability in parallel vs in sequence
+#### Ketersediaan sejajar vs berurutan
 
-If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+Jika suatu layanan terdiri dari beberapa komponen yang rentan mengalami kegagalan, ketersediaan layanan secara keseluruhan tergantung apakah komponen tersebut sejajar atau berurutan.
 
-###### In sequence
+###### Berurutan
 
-Overall availability decreases when two components with availability < 100% are in sequence:
-
-```
-Availability (Total) = Availability (Foo) * Availability (Bar)
-```
-
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
-
-###### In parallel
-
-Overall availability increases when two components with availability < 100% are in parallel:
+Ketersedian secara keseluruhan berkurang ketika dua komponen dengan tingkat ketersediaan kurang dari 100% bekerja berurutan:
 
 ```
-Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
+Ketersedian (Total) = Ketersediaan (Foo) * Ketersedian (Bar)
 ```
 
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+Jika `Foo` dan `Bar` keduanya masing-masing memiliki 99.9% tingkat ketersediaan, maka total tingkat ketersediaan keduanya berurutan menjadi 99.8%.
+
+###### Sejajar
+
+Ketersediaan secara keseluruhan meningkat ketika dua komponen dengan tingkat tersediaan kurang dari 100% bekerja sejajar:
+
+```
+Ketersediaan (Total) = 1 - (1 - Ketersediaan (Foo)) * (1 - Ketersediaan (Bar))
+```
+
+Jika `Foo` dan `Bar` keduanya masing-masing memiliki tingkat ketersediaan sebesar 99.9%, maka total tingkat ketersediaan sejajar keduanya adalah 99.9999%.
 
 ## Domain name system
 
