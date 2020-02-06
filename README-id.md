@@ -421,19 +421,21 @@ Perlu diingat bahwa **segala sesuatunya adalah hasil kompromi**.
 
 Selanjutnya kita akan mempelajari lebih dalam topik-topik tertentu seperti DNS, CDNs, dan penyeimbang beban.
 
-## Performance vs scalability
+## Kinerja vs skalabilitas
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Sebuah layanan disebut terskala jika layanan tersebut menghasilkan peningkatan kinerja secara proposional terhadap pertambahan sumber daya.
+Secara umum, peningkatan kinerja berarti pertambahan unit kerja yang bisa diselesaikan.
+kemungkinan lainnya adalah kemampuan menangani unit kerja ukurannya yang lebih besar, contohnya ketika himpunan data berkembang.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Cara lain melihat kinerja vs skalabilitas:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Jika layanan terkena masalah kinerja, sistem terasa lambat oleh pengguna tunggal.
+* Jika layanan terkena masalah skalabilitas, sistem terasa cepat oleh pengguna tunggal tetapi menjadi lambat ketika di bawah tekanan.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Sepatah kata untuk skalabilitas](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [Skalabilitas, ketersediaan, stabilitas, pola](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
 ## Latency vs throughput
 
