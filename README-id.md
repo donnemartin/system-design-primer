@@ -38,10 +38,10 @@ Selain wawancara pemrograman, perancangan sistem adalah salah satu **komponen ya
 Topik-topik tambahan untuk persiapan wawancara:
 
 * [Panduan belajar](#panduan-belajar)
-* [Pendekatan untuk menjawab pertanyaan wawancara rancangan sistem](#how-to-approach-a-system-design-interview-question)
-* [Pertanyaan-pertanyaan wawancara rancangan sistem beserta solusinya](#system-design-interview-questions-with-solutions)
-* [Pertanyaan-pertanyaan wawancara rancangan berbasis objek beserta solusinya](#object-oriented-design-interview-questions-with-solutions)
-* [Tambahan pertanyaan-pertanyaan wawancara rancangan sistem](#additional-system-design-interview-questions)
+* [Pendekatan menjawab pertanyaan wawancara rancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-rancangan-sistem)
+* [Pertanyaan wawancara rancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya)
+* [Pertanyaan wawancara rancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-rancangan-berbasis-objek-beserta-solusinya)
+* [Tambahan pertanyaan wawancara rancangan sistem](#tambahan-pertanyaan-wawancara-rancangan-sistem)
 
 ## Kartu kilat Anki
 
@@ -73,18 +73,18 @@ Silakan periksa repositori [Tantangan Pemrograman Interaktif](https://github.com
 
 ## Kontribusi
 
-> Learn from the community.
+> Belajar dari komunitas.
 
-Feel free to submit pull requests to help:
+Silakan kirim permintaan tarik (pull request) untuk membantu hal-hal berikut:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* Membenarkan kesalahan
+* Memperbaiki bagian yang ada
+* Menambahkan bagian baru
+* [Terjemahan](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Konten yang masih memerlukan polesan ditempatkan di bagian [dalam pengembangan](dalam-pengembangan)
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+Tinjau kembali [Pedomain Kontribusi](CONTRIBUTING.md).
 
 ## Index of system design topics
 
@@ -174,7 +174,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Real world architectures](#real-world-architectures)
     * [Company architectures](#company-architectures)
     * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
+* [Dalam pengembangan](#dalam-pengembangan)
 * [Credits](#credits)
 * [Contact info](#contact-info)
 * [License](#license)
@@ -215,7 +215,7 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## Pendekatan menjawab pertanyaan wawancara rancangan sistem
 
 > How to tackle a system design interview question.
 
@@ -283,7 +283,7 @@ Check out the following links to get a better idea of what to expect:
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-## System design interview questions with solutions
+## Pertanyaan wawancara rancangan sistem beserta solusinya
 
 > Common system design interview questions with sample discussions, code, and diagrams.
 >
@@ -349,7 +349,7 @@ Check out the following links to get a better idea of what to expect:
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Pertanyaan wawancara rancangan berbasis objek beserta solusinya
 
 > Common object-oriented design interview questions with sample discussions, code, and diagrams.
 >
@@ -1643,7 +1643,7 @@ Handy metrics based on numbers above:
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Additional system design interview questions
+### Tambahan pertanyaan wawancara rancangan sistem
 
 > Common system design interview questions, with links to resources on how to solve each.
 
@@ -1794,7 +1794,7 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+## Dalam pengembangan
 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
 
