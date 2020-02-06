@@ -221,67 +221,75 @@ Sesuaikan panduan berikut berdasarkan waktu, pengalaman, posisi yang dilamar, da
 
 ## Pendekatan menjawab pertanyaan wawancara rancangan sistem
 
-> How to tackle a system design interview question.
+> Cara menangani pertanyaan wawancara perancangan sistem.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Wawancara perancangan sistem adalah pembicaraan yang bersifat terbuka.
+Kita diharapkan untuk menuntun pembicaraan tersebut.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Kita dapat menggunakan langkah-langkah berikut untuk menuntun diskusi.
+Untuk memperkuat proses diskusi, ulas bagian [Pertanyaan wawancara rancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya) menggunakan langkah-langkah berikut.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Langkah 1: Uraikan kasus penggunaan, batasan, dan asumsi
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Kumpulkan kebutuhan dan tentukan ruang lingkup permasalahan.
+Gunakan pertanyaan untuk memperjelas kasus penggunaan dan batasan.
+Diskusikan juga asumsi yang diambil.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Siapa pengguna sistem?
+* Bagaimana pengguna sistem akan menggunakan sistem tersebut?
+* Berapa banyak pengguna sistem?
+* Apa yang dilakukan oleh sistem?
+* Masukan dan keluaran apa yang ada pada sistem?
+* Berapa besar ekspektasi data yang perlu ditangani?
+* Berapa ekspektasi jumlah permintaan per detik?
+* Berapa ekspektasi rasio baca dan tulis?
 
-### Step 2: Create a high level design
+### Langkah 2: Buat rancangan tingkat tinggi
 
-Outline a high level design with all important components.
+Jabarkan rancangan tingkat tinggi yang mencakup seluruh komponen penting.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Buat sketsa komponen utama dan hubungannya
+* Beri alasan untuk ide Anda
 
-### Step 3: Design core components
+### Langkah 3: Rancang komponen inti
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Perinci setiap komponen inti.
+Sebagai contoh, jika Anda diminta [merancang layanan penyingkat tautan](solutions/system_design/pastebin/README.md), diskusikan hal-hal berikut:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Pembangkitan dan penyimpanan campuran (hash) dari tautan penuh
+    * [MD5](solutions/system_design/pastebin/README.md) dan [Base62](solutions/system_design/pastebin/README.md)
+    * Tabrakan campuran (hash)
+    * SQL atau NoSQL
+    * Skema basis data
+* Penerjemahan tautan hasil pencampuran menjadi tautan penuh
+* API dan rancangan berbasis objek
 
-### Step 4: Scale the design
+### Langkah 4: Menyekalakan rancangan
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Kenali dan tangani kemacetan dalam batasan yang ada.
+Sebagai contoh, apakah diperlukan hal-hal berikut untuk menangani masalah skalabilitas?
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+* Pembagi beban (Load balancer)
+* Penyekalaan mendatar (Horizontal scaling)
+* Penyinggahan (Caching)
+* Pemecahan basis data (Database sharding)
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Diskusikan potensi solusi dan kompromi.
+Segala sesuatunya adalah hasil kompromi.
+Tangani kemacetan menggunakan [prinsip-prinsip perancangan sistem terskala](#indeks-topik-rancangan-sistem).
 
-### Back-of-the-envelope calculations
+### Kalkulasi belakang amplop
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Anda mungkin diminta untuk mengestimasi dengan tangan.
+Aculah lampiran pada sumber daya berikut:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Tabel perpangkatan dua](#tabel-perpangkatan-dua)
+* [Nilai latensi yang perlu diketahui oleh setiap pemrogram](#nilai-latensi-yang-perlu-diketahui-oleh-setiap-pemrogram])
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-Check out the following links to get a better idea of what to expect:
+Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawancara perancangan sistem:
 
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
@@ -1580,7 +1588,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 
 You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
 
-### Powers of two table
+### Tabel Perpangkatan dua
 
 ```
 Power           Exact Value         Approx Value        Bytes
@@ -1599,7 +1607,7 @@ Power           Exact Value         Approx Value        Bytes
 
 * [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 
-### Latency numbers every programmer should know
+### Nilai latensi yang perlu diketahui oleh setiap pemrogram]
 
 ```
 Latency Comparison Numbers
