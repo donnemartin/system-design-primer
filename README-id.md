@@ -613,38 +613,42 @@ Jika `Foo` dan `Bar` keduanya masing-masing memiliki tingkat ketersediaan sebesa
 <p align="center">
   <img src="http://i.imgur.com/IOyLj4i.jpg"/>
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Sumber: presentasi keamanan DNS</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+Domain Name System (DNS) menerjemahkan nama suatu domain seperti www.example.com menjadi alamaat IP.
 
-DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+DNS bersifat hierarki, dengan beberapa server berkuasa di level puncak.
+Router atau ISP yang kita gunakan menyediakan informasi mengenai server DNS yang dihubungi ketika melakukan pencarian.
+Server DNS tingkat lebih rendah menyinggahkan pemetaan yang mungkin tidak mutakhir karena penundaan perambatan DNS.
+Hasil DNS bisa juga disinggahkan oleh peramban atau sistem operasi selama periode tertentu yang ditentukan oleh [masa berlaku DNS](https://en.wikipedia.org/wiki/Time_to_live).
 
-* **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
-* **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
-* **A record (address)** - Points a name to an IP address.
-* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+* **NS record (name server)** - Menentukan server DNS untuk domain/subdomain tersebut.
+* **MX record (mail exchange)** - Menentukan server email untuk penerimaan pesan.
+* **A record (address)** - Mengarahkan sebuah nama ke alamat IP.
+* **CNAME (canonical)** - Mengarahkan sebuah nama ke nama lain. Nama lain tersebut bisa berupa `CNAME` atau `A` (Contohnya example.com diarahkan ke www.example.com).
 
-Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
+Layanan seperti [CloudFlare](https://www.cloudflare.com/dns/) dan [Route 53](https://aws.amazon.com/route53/) menyediakan layanan DNS terkelola.
+Beberapa layanan DNS mampu mengarahkan lalu lintas melalui berbagai metode:
 
 * [Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
-    * Prevent traffic from going to servers under maintenance
-    * Balance between varying cluster sizes
-    * A/B testing
-* Latency-based
-* Geolocation-based
+    * Mencegah lalu lintas bergerak menuju server yang sedang dalam pemeliharaan
+    * Menyeimbangkan antara berbagai ukuran gugusan
+    * Pengujian A/B
+* Berdasarkan latensi
+* Berdasarkan geolokasi
 
-### Disadvantage(s): DNS
+### Kekurangan: DNS
 
-* Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* Pengaksesan server DNS menambahkan sedikit penundaan, walaupun sudah diperingan menggunakan singgahan seperti penjelasan di atas.
+* Pengelolaan server DNS bisa jadi rumit dan umumnya dikelola oleh [pemerintah, penyedia jasa internet, dan perusahaan besar](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
+* Layanan DNS belakangan ini mengalami [serangan DDoS](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+* [Arsitektur DNS](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
-* [DNS articles](https://support.dnsimple.com/categories/dns/)
+* [Artikel tentang DNS](https://support.dnsimple.com/categories/dns/)
 
 ## Content delivery network
 
@@ -835,7 +839,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## Basis data
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png"/>
@@ -856,7 +860,7 @@ A relational database like SQL is a collection of data items organized in tables
 
 There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 
-#### Master-slave replication
+#### Replikasi master-slave
 
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
@@ -871,7 +875,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 * Additional logic is needed to promote a slave to a master.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 
-#### Master-master replication
+#### Replikasi master-master
 
 Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
 
