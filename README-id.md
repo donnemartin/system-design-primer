@@ -297,67 +297,68 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 
 ## Pertanyaan wawancara rancangan sistem beserta solusinya
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Pertanyaan umum pada wawancara perancangan sistem beserta contoh diskusi, kode, dan diagram.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Solusi terkait dengan konten pada folder `solutions/`.
 
-| Question | |
+
+| Pertanyaan | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Perancangan Pastebin.com (or Bit.ly) | [Solusi](solutions/system_design/pastebin/README.md) |
+| Perancangan linimasa Twitter and pencarian (atau linimasa dan pencarian Facebook) | [Solusi](solutions/system_design/twitter/README.md) |
+| Perancangan perayap web | [Solusi](solutions/system_design/web_crawler/README.md) |
+| Perancangan Mint.com | [solusi](solutions/system_design/mint/README.md) |
+| Perancangan struktur data untuk jejaring sosial | [Solusi](solutions/system_design/social_graph/README.md) |
+| Perancangan gudang tanda-nilai (key-value) untuk mesin pencari | [Solusi](solutions/system_design/query_cache/README.md) |
+| Perancangan peringkat penjualan Amazon berdasarkan fitur kategori | [Solusi](solutions/system_design/sales_rank/README.md) |
+| Perancangan sistem terskala untuk jutaan pengguna pada AWS | [Solusi](solutions/system_design/scaling_aws/README.md) |
+| Tambahkan pertanyaan perancangan sistem | [Kontribusi](#kontribusi) |
 
-### Design Pastebin.com (or Bit.ly)
+### Perancangan Pastebin.com (or Bit.ly)
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Lihat latihan dan solusi](solutions/system_design/pastebin/README.md)
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Perancangan linimasa Twitter and pencarian (atau linimasa dan pencarian Facebook)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Lihat latihan dan solusi](solutions/system_design/twitter/README.md)
 
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 
-### Design a web crawler
+### Perancangan perayap web
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Lihat latihan dan solusi](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
-### Design Mint.com
+### Perancangan Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Lihat latihan dan solusi](solutions/system_design/mint/README.md)
 
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 
-### Design the data structures for a social network
+### Perancangan struktur data untuk jejaring sosial
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Lihat latihan dan solusi](solutions/system_design/social_graph/README.md)
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Perancangan gudang tanda-nilai (key-value) untuk mesin pencari
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Lihat latihan dan solusi](solutions/system_design/query_cache/README.md)
 
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Perancangan peringkat penjualan Amazon berdasarkan fitur kategori
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Lihat latihan dan solusi](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### Perancangan sistem terskala untuk jutaan pengguna pada AWS
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Lihat latihan dan solusi](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
