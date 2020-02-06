@@ -299,7 +299,7 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 
 > Pertanyaan umum pada wawancara perancangan sistem beserta contoh diskusi, kode, dan diagram.
 >
-> Solusi terkait dengan konten pada folder `solutions/`.
+> Solusi terhubung dengan konten di dalam folder `solutions/`.
 
 
 | Pertanyaan | |
@@ -364,22 +364,22 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 
 ## Pertanyaan wawancara rancangan berbasis objek beserta solusinya
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Pertanyaan umum pada wawancara perancangan berbasis objek beserta diskusi, code, dan diagram.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Solusi terhubung dengan konten di dalam folder `solutions/`.
 
->**Note: This section is under development**
+> **Catatan: Bagian ini dalam proses pengembangan**
 
-| Question | |
+| Pertanyaan | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Perancangan peta campuran (hash map) | [Solusi](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Perancangan singgahan yang paling jarang digunakan (LRU cache) | [Solusi](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Perancangan pusat panggilan | [Solusi](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Perancangan tumpukan kartu | [Solusi](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Perancangan tempat parkir | [Solusi](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Perancangan server obrolan | [Solusi](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Perancangan larik melingkar (circular array) | [Kontribusi](#kontribusi)  |
+| Add an object-oriented design question | [Kontribusi](#kontribusi) |
 
 ## System design topics: start here
 
