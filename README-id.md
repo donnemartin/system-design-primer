@@ -1233,86 +1233,97 @@ Contoh data yang cocok untuk NoSQL:
 <p align="center">
   <img src="http://i.imgur.com/Q6z24La.png"/>
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Sumber: Pola perancangan sistem terskala</a></i>
 </p>
 
-Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
+Singgahan memperbaiki waktu pemuatan halaman dan bisa mengurangi beban pada server dan database.
+Pada model ini, dispatcher pertama-tama akan mencari apakah permintaan sudah pernah diajukan sebelumnya dan mencoba mencari hasil sebelumnya untuk dikembalikan untuk menghemat eksekusi yang sebenarnya.
 
-Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
+Basis data umumnya mendapat manfaat dari distribusi yang merata antara operasi baca dan tulis lintas partisi.
+Butir yang populer bisa memiringkan penyaluran yang menyebabkan kemacetan.
+Penempatan singgahan di depan database akan membantu menyerap beban yang tidak merata dan lonjakan lalu lintas.
 
-### Client caching
+### Singgahan klien
 
-Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
+Singgahan bisa tersedia pada sisi klien (Misalkan sistem operasi dan peramban), [sisi server](#proksi-terbalik-server-web), atau lapisan singgahan tersendiri.
 
-### CDN caching
+### Singgahan CDN
 
-[CDNs](#content-delivery-network) are considered a type of cache.
+[CDNs](#content-delivery-network) dianggap sebagai jenis singgahan.
 
-### Web server caching
+### Singgahan server web
 
-[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+[Proksi terbalik](#proksi-terbalik-server-web) dan singgahan seperti [Varnish](https://www.varnish-cache.org/) mampu melayani konten statis dan dinamis secara langsung.
+Server web juga bisa menyinggahi permintaan, mengembalikan tanggapan tanpa perlu mengontak server aplikasi.
 
-### Database caching
+### Singgahan basis data
 
-Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+Basis data biasanya menyertakan berbagai level singgahan dalam konfigurasi bawaan yang dioptimasi untuk kebutuhan general.
+Mengubah pengaturan untuk pola tertentu bisa meningkatkan kinerja basis data.
 
-### Application caching
+### Singgahan aplikasi
 
-In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+Singgahan dalam memori seperti Memcahed dan Redis adalah gudang kunci-nilai antara aplikasi kita dengan penyimpanan data.
+Karena data tersimpan di memori, pengambilan data menjadi lebih cepat dibandingkan basis data yang menyimpan data di disk.
+RAM lebih terbatas dibandingkan disk sehingga algoritma [invalidasi singgahan](https://en.wikipedia.org/wiki/Cache_algorithms) seperti [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) bisa membantu menginvalidasi entri 'dingin' dan mempertahankan entri 'panas' di RAM.
 
-Redis has the following additional features:
+Redis memiliki fitur tambahan berikut:
 
-* Persistence option
-* Built-in data structures such as sorted sets and lists
+* Opsi persisten
+* Struktur data bawaan seperti himpunan terurut dan lis
 
-There are multiple levels you can cache that fall into two general categories: **database queries** and **objects**:
+Ada beberapa level yang dapat kita cache yang secara umum terbagi menjadi 2 kategori: **kueri basis data** dan **objek**:
 
-* Row level
-* Query-level
-* Fully-formed serializable objects
-* Fully-rendered HTML
+* Level baris
+* Level kueri
+* Objek yang bisa diserialisasi dalam bentuk penuh
+* HTML yang sudah disajikan sepenuhnya
 
-Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+Secara umum, kita seharusnya menghindari singgahan berbasis file karena hal ini menyebabkan pengklonaan dan penyekalaan otomatis menjadi lebih sulit.
 
-### Caching at the database query level
+### Singgahan pada level kueri basis data
 
-Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+Setiap kali kita mengkueri basis data, cincang kueri untuk jadi kunci dan simpan hasil kueri ke singgahan.
+Pendekatan ini memiliki kelemahan dari sisi kedaluarsa:
 
-* Hard to delete a cached result with complex queries
-* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
+* Susah menghapus hasil singgahan dengan kueri kompleks
+* Jika satu potong data berubah contohnya sel tabel, kita perlu menghapus seluruh kueri singgahan yang mungkin di dalamnya termasuk sel yang berubah.
 
-### Caching at the object level
+### Singgahan pada level objek
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+Perlakukan data kita sebagai objek sebagaimana kita memperlakukan kode aplikasi.
+Biarkan aplikasi kita mengumpulkan himpunan data dari basis data menjadi objek kelas atau struktur data:
 
-* Remove the object from cache if its underlying data has changed
-* Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
+* Hapus objek dari singgahan jika dasar datanya berubah
+* Ijinkan pemrosesan asinkron: pekerja mengumpulkan objek dengan cara mengkonsumsi objek singgahan terbaru
 
-Suggestions of what to cache:
+Saran akan apa saja yang disinggahi:
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+* Sesi pengguna
+* Halaman web yang sudah disajikan secara penuh
+* Aliran aktivitas
+* Data graf pengguna
 
-### When to update the cache
+### Kapan singgahan diperbarui
 
-Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+Karena kita hanya bisa menyimpan data dalam jumlah terbatas pada singgahan, kita perlu menentukan strategi memperbarui singgahan yang bekerja paling baik untuk kasus penggunan kita.
 
-#### Cache-aside
+#### Singgahan sampingan (Cache-aside)
 
 <p align="center">
   <img src="http://i.imgur.com/ONjORqk.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Sumber: Dari singgahan menuju kisi data dalam memori</a></i>
 </p>
 
-The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+Aplikasi bertanggung jawab membaca dan menulis dari penyimpanan.
+Singgahan tidak berinteraksi dengan penyimpanan secara langsung.
+Aplikasi melakukan hal berikut:
 
-* Look for entry in cache, resulting in a cache miss
-* Load entry from the database
-* Add entry to cache
-* Return entry
+* Mencari entri di singgahan yang menghasilkan entri luput
+* Muat entri dari basis data
+* Simpan entri ke dalam singgahan
+* Kembalikan entri
 
 ```python
 def get_user(self, user_id):
@@ -1325,37 +1336,39 @@ def get_user(self, user_id):
     return user
 ```
 
-[Memcached](https://memcached.org/) is generally used in this manner.
+[Memcached](https://memcached.org/) umumnya digunakan untuk kasus seperti di atas.
 
-Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+Operasi pembacaan data selanjutnya menjadi cepat.
+Singgahan sampingan dikenal juga dengan istilah _lazy loading_.
+Hanya data yang diminta yang ada disinggahan sehingga menghindari singgahan penuh dengan data yang tidak diminta.
 
-##### Disadvantage(s): cache-aside
+##### Kekurangan: singgahan sampingan
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
-* When a node fails, it is replaced by a new, empty node, increasing latency.
+* Setiap singgahan yang luput menghasilkan tiga perjalanan yang dapat menyebabkan jeda nyata.
+* Data bisa kedaluarsa jika data diperbarui pada basis data. Masalah ini dimitigasi dengan aturan masa berlaku yang memaksa pembaruan entri singgahan atau menggunakan mekanisme _write-through_.
+* Ketika simpul gagal, simpul digantikan oleh simpul yang baru yang kosong sehingga meningkatkan latensi.
 
 #### Write-through
 
 <p align="center">
   <img src="http://i.imgur.com/0vBc0hN.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Sumber: Skalabilitas, ketersedian, stabilitas, pola</a></i>
 </p>
 
-The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+Aplikasi menggunakan singgahan sebagai gudang data utama, membaca dan menulis data ke singgahan sementara singgahan bertanggung jawab membaca dan menulis ke basis data:
 
-* Application adds/updates entry in cache
-* Cache synchronously writes entry to data store
-* Return
+* Aplikasi menambah/mengubah entri pada singgahan
+* Singgahan secara sinkron menulis entri ke gudang data
+* Kembali
 
-Application code:
+Kode aplikasi:
 
 ```python
 set_user(12345, {"foo":"bar"})
 ```
 
-Cache code:
+Kode singgahan:
 
 ```python
 def set_user(user_id, values):
@@ -1363,61 +1376,63 @@ def set_user(user_id, values):
     cache.set(user_id, user)
 ```
 
-Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+Write-through adalah operasi yang lambat secara keseluruhan karena beban operasi menulis, tetapi operasi baca selanjutnya terhadap data yang baru ditulis menjadi cepat.
+Pengguna umumnya lebih toleran terhadap latensi ketika mengubah data dibandingkan membaca data.
+Data di dalam singgahan tidak kedaluarsa.
 
-##### Disadvantage(s): write through
+##### Kekurangan: write through
 
-* When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never be read, which can be minimized with a TTL.
+* Ketika simpul baru diciptakan karena kegagalan atau penyekalaan, simpul baru tersebut tidak menyimpan entri sampai entri diperbarui di basis data. Singgahan sampingan bersamaan dengan _write-through_ dapat meringakan masalah ini.
+* Kebanyakan data yang tertulis mungkin tidak pernah dibaca. Hal ini bisa diminimalkan dengan masa berlaku.
 
 #### Write-behind (write-back)
 
 <p align="center">
   <img src="http://i.imgur.com/rgSrvjG.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Sumber: Sumber: Skalabilitas, ketersedian, stabilitas, pola</a></i>
 </p>
 
-In write-behind, the application does the following:
+Pada *write-behind*, aplikasi melakukan hal berikut:
 
-* Add/update entry in cache
-* Asynchronously write entry to the data store, improving write performance
+* Menambah/memperbarui entri pada singgahan
+* Secara asinkron menuliskan entri ke gudang data untuk meningkatkan kinerja
 
-##### Disadvantage(s): write-behind
+##### Kekurangan: write-behind
 
-* There could be data loss if the cache goes down prior to its contents hitting the data store.
-* It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+* Ada potensi kehilangan data jika singgahan mati sebelum konten tersimpan ke gudang data.
+* Lebih kompleks untuk diimplementasikan dibandingkan singgahan sampingan dan _write-through_.
 
 #### Refresh-ahead
 
 <p align="center">
   <img src="http://i.imgur.com/kxtjqgE.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Sumber: Dari singgahan menuju kisi data dalam memori</a></i>
 </p>
 
-You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+Kita dapat mengkonfigurasi singgahan agar secara otomatis menyegarkan entri singgahan yang paling baru diakses sebelum waktu kedaluarsa.
 
-Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+_Refresh-ahead_ bisa menghasilkan pengurangan latensi dibandingkan _read-through_ jika singgahan bisa memprediksi dengan akurat butir-butir mana yang kemungkinan besar dibutuhkan di masa yang akan datang.
 
-##### Disadvantage(s): refresh-ahead
+##### Kekurangan: refresh-ahead
 
-* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+* Kesalahan prediksi butir yang kemungkinan dibutuhkan di masa yang akan datang bisa berdampak pada penurunan kinerja jika dibandingkan dengan singgahan tanpa _refresh-ahead_.
 
-### Disadvantage(s): cache
+### Kekurangan: singgahan
 
-* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
-* Need to make application changes such as adding Redis or memcached.
+* Perlu memelihara konsistensi antara singgahan dan sumber kebenaran seperti basis data melalui [invalidasi singgahan](https://en.wikipedia.org/wiki/Cache_algorithms).
+* Invalidasi cache adalah masalah sulit. Tambahan kompleksitas lainnya adalah penentuan waktu untuk memperbarui singgahan.
+* Perlu mengubah aplikasi contohnya menambahkan Redis atau Memcached.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan:
 
-* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-* [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+* [Dari singgahan menuju kisi data dalam memori](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+* [Pola perancangan sistem terskala](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+* [Pengantar arsitektur sistem terskala](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+* [Skalabilitas, ketersediaan, kestabilan, pola](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Skalabilitas](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [Strategi AWS ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
 ## Asinkronisme
