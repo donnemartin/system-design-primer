@@ -700,75 +700,86 @@ Situs dengan lalu lintas padat bekerja baik dengan CDN tarik, sebagaimana lalu l
 * [Perbedaan antara CDN setor dan tarik](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
-## Load balancer
+## Penyeimbang beban
 
 <p align="center">
   <img src="http://i.imgur.com/h81n9iK.png"/>
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Sumber: Pola perancangan sistem terskala</a></i>
 </p>
 
-Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+Penyeimbang beban membagikan permintaan klien yang masuk ke sumber daya komputasi seperti server aplikasi dan basis data.
+Dalam setiap kasus, penyeimbang beban mengembalikan tanggapan dari sumber daya komputasi ke klien yang sesuai.
+Penyeimbang beban efektif dalam hal:
 
-* Preventing requests from going to unhealthy servers
-* Preventing overloading resources
-* Helping eliminate single points of failure
+* Mencegah permintaan dilayani oleh server yang tidak sehat
+* Mencegah sumber daya kelebihan beban
+* Membantu menghilangkan titik kegagalan
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+Penyeimbang beban bisa diimplementasikan menggunakan perangkat keras (mahal) atau dengan perangkat lunak seperti HAProxy.
 
-Additional benefits include:
+Yang termasuk dalam manfaat tambahan:
 
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
+* **Terminasi SSL** - Mendekripsi permintaan yang datang dan mengenkripsi tanggapan server sehingga server bagian belakang tidak perlu melakukan operasi yang berpotensi mahal ini
+    * Menghilangkan kebutuhan menginstall [sertifikat x.509](https://en.wikipedia.org/wiki/X.509) pada setiap server
+* **Persistensi sesi** - Mengeluarkan kuki dan mengarahkan permintaan klien yang spesifik ke server yang sama jika aplikasi web tidak melakukan pelacakan sesi
 
-To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
+Untuk menjaga dari kegagalan, biasa dilakukan pendirian penyeimbang beban berganda, baik itu mode [aktif-pasif](#aktif-pasif) atau [aktif-aktif](#aktif-aktif).
 
-Load balancers can route traffic based on various metrics, including:
+Penyeimbang beban dapat mengarahkan lalu linta berdasarkan berbagai metrik termasuk:
 
-* Random
-* Least loaded
-* Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
-* [Layer 4](#layer-4-load-balancing)
-* [Layer 7](#layer-7-load-balancing)
+* Sembarang
+* Beban tersedikit
+* Sesi/kuki
+* [Bergantian atau bergantian dengan bobot](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [Lapisan ke-4](#penyeimbangan-beban-lapisan-ke-4)
+* [Lapisan ke-7](#layer-7-load-balancing)
 
-### Layer 4 load balancing
+### Penyeimbangan beban lapisan ke-4
 
-Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+Penyeimbang beban lapisan ke-4 menggunakan informasi pada [lapisan transportasi](#komunikasi) untuk menentukan bagaimana cara mendistribusikan permintaan.
+Umumnya, proses ini melibatkan asal alamat ip, tujuan alamat ip dan porta pada tajuk (header), tetapi bukan isi paket.
+Penyeimbang beban lapisan ke-4 meneruskan paket jaringan dari dan ke server hulu dengan melakukan [translasi alamat jaringan](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
 
-### Layer 7 load balancing
+### Penyeimbang beban lapisan ke-7
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+Penyeimbang beban lapisan ke-7 menggunakan informasi pada [lapisan aplikasi](#komunikasi) untuk menentukan cara mendistribusikan permintaan.
+Informasi yang dapat dilibat adalah tajuk, pesan, dan kuki.
+Penyeimbang beban lapisan ke-7 mengakhiri lalu lintas jaringan, membaca pesan, membuat keputusan penyeimbangan beban, kemudian membuka koneksi ke server terpilih.
+Sebagai contoh, penyeimbang beban lapisan ke-7 bisa mengarahkan lalu lintas video menuju server yang menginangi video tersebut sembari mengarahkan lalu lintas tagihan pengguna yang lebih sensitif ke server yang keamanannya sudah diperketat.
+Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  
 
-At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+Dengan mengorbankan fleksibilitas, penyeimbang beban lapisan ke-4 memerlukan waktu dan sumber daya komputasi yang lebih sedikit dibandingkan dengan penyeimbang beban lapisan ke-7, walaupun dampak kinerjanya bisa sangat minim pada perangkat keras komoditas modern.
 
-### Horizontal scaling
+### Penyekalaan horizontal
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+Penyeimbang beban bisa juga membantu penyekalaan horizontal untuk meningkatkan kinerja dan ketersediaan.
+Penyekalaan keluar menggunakan mesin komoditas lebih efisien dari segi biaya dan menghasilkan ketersediaan yang lebih tinggi dibandingkan dengan penyekalaan ke atas server.
+Penyekalaan ke atas sebuah server individu menggunakan perangkat keras yang lebih mahal disebut dengan penyekalaan vertikal.
+Mencari pekerja yang bekerja pada perangkat lunak komoditas juga lebih mudah dibandingkan mencari pekerja untuk sistem firma terspesialisasi.
 
-#### Disadvantage(s): horizontal scaling
+#### Kekurangan: Penyekalaan horizontal
 
-* Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
-* Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+* Penyekalaan secara horizontal meningkatkan kompleksitas dan melibatkan pengklonaan server
+    * Server seharusnya nirkeadaan: server seharusnya tidak mengandung data apapun yang berhubungan dengan pengguna seperti sesi dan profil pengguna
+    * Sesi dapat disimpan pada penyimpanan data terpusat seperti [basis data](#basis-data) (SQL, NoSQL) atau [singgahan](#singgahan) persisten (Redis, Memcached)
+* Server hilir seperti singgahan dan basis data perlu menangani lebih banyak koneksi secara simultan ketika terjadi penyekalaan keluar server hulu
 
-### Disadvantage(s): load balancer
+### Kekurangan: penyeimbang beban
 
-* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
-* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+* Penyeimbang beban bisa menjadi titik macet kinerja jika penyeimbang beban tidak memiliki sumber daya yang cukup atau tidak dikonfigurasi dengan benar.
+* Menambahkan penyeimbang beban untuk menghilangkan titik kegagalan akan meningkatkan kompleksitas.
+* Penyeimbang beban tunggal adalah titik kegagalan. Konfigurasi penyeimbang beban ganda membuat sistem lebih kompleks lagi.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [Arsitektur NGINX](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [Panduan arsitektur HAProxy](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [Penyekalaan](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [Penyeimbang beban lapisan ke-4](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [Penyeimbang beban lapisak ke-7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [Konfigurasi pendengar ELB](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
 ## Reverse proxy (web server)
 
@@ -1172,7 +1183,7 @@ Sample data well-suited for NoSQL:
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
-## Cache
+## Singgahan
 
 <p align="center">
   <img src="http://i.imgur.com/Q6z24La.png"/>
@@ -1410,7 +1421,7 @@ If queues start to grow significantly, the queue size can become larger than mem
 * [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
 * [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
+## Komunikasi
 
 <p align="center">
   <img src="http://i.imgur.com/5KeocQs.jpg"/>
