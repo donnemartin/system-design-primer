@@ -825,40 +825,46 @@ Benefit tambahan yang termasuk di dalamnya:
 * [Panduan arsitektur HAProxy](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+## Lapisan aplikasi
 
 <p align="center">
   <img src="http://i.imgur.com/yB5SYwm.png"/>
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Sumber: Pengantar pengarsitekan sistem secara terskala</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+Pemisahan antara lapisan web dengan lapisan aplikasi (dikenal juga dengan istilah lapisan platform) memungkinkan kita untuk menyekala dan mengkonfigurasi kedua lapisan secara independen.
+Penambahan API baru menghasilkan penambahan server aplikasi tanpa perlu penambahan server web.
+Prinsip tanggung jawab tunggal menganjurkan untuk layanan yang kecil dan mandiri yang bekerja secara bersama.
+Tim kecil dengan layanan kecil bisa merencanakan pertumbuhan yang cepat secara lebih agresif. 
 
-Workers in the application layer also help enable [asynchronism](#asynchronism).
+Pekerja pada lapisan aplikasi membantu mengaktifkan [asinkronisme](#asinkronisme).
 
-### Microservices
+### Layanan mikro (Microservices)
 
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+Sehubungan dengan diskusi ini adalah [microservices](https://en.wikipedia.org/wiki/Microservices) dimana dapat digambarkan sebagai sekumpulan layanan yang kecil, modular, dan dapat digelar secara independen.
+Setiap layanan menjalankan proses yang unik dan berkomunikasi melalui mekanisme ringan dan sudah terdefinisi dengan baik untuk melayani tujuan bisnis.<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
+Contohnya, Pinterest bisa memiliki layanan mikro: profil pengguna, pengikut, umpan, pencarian, pengunggahan foto, dan lain.
 
-### Service Discovery
+### Penemuan layanan (Service Discovery)
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+Sistem seperti [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), dan [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) bisa membantu layanan untuk saling menemukan dengan cara melacak nama yang terdaftar, alamat, dan porta.
+[Pemeriksaan kesehatan](https://www.consul.io/intro/getting-started/checks.html) membantu menguji integritas layanan dan seringkali dilakukan menggunakan titik akhir [HTTP](#hypertext-transfer-protocol-http).
+Baik Consul dan Etcd keduanya memiliki [gudang tanda-nilai](#gudang-tanda-nilai) bawaan yang berguna untuk menyimpan nilai konfigurasi dan data bersama lainnya.
 
-### Disadvantage(s): application layer
+### Kekurangan: lapisan aplikasi
 
-* Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-* Microservices can add complexity in terms of deployments and operations.
+* Penambahan lapisan aplikasi dengan layanan hubungan renggang memerlukan pendekatan yang berbeda dari sudut pandang arsitektur, operasi, dan proses dibandingkan dengan sistem monolitik.
+* Layanan mikro bisa meningkatkan kompleksitas dalam aspek penggelaran dan operasi.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
-* [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+* [Pengantar pengarsitekan sistem secara terskala](http://lethain.com/introduction-to-architecting-systems-for-scale)
+* [Meretakan wawancara perancangan sistem](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [Arsitektur berorientasi layanan](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+* [Pengantar Zookeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+* [Alasan kenapa kita perlu tahu mengenai pembangunan layanan mikro](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
 ## Basis data
 
@@ -1055,7 +1061,7 @@ NoSQL is a collection of data items represented in a **key-value store**, **docu
 
 In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document stores**, **wide column stores**, and **graph databases** in the next section.
 
-#### Key-value store
+#### Gudang tanda-nilai
 
 > Abstraction: hash table
 
@@ -1376,7 +1382,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
-## Asynchronism
+## Asinkronisme
 
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png"/>
