@@ -1,6 +1,6 @@
 *[English](README.md) ∙ [Indonesian](README-id.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [韓國語](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-# Dasar Rancangan Sistem
+# Dasar Perancangan Sistem
 
 <p align="center">
   <img src="http://i.imgur.com/jj3A5N8.png"/>
@@ -29,19 +29,19 @@ Proyek ini merupakan proyek sumber terbuka yang terus diperbarui.
 
 [Ayo kontribusi](#kontribusi) di sini!
 
-### Persiapan wawancara rancangan sistem
+### Persiapan wawancara perancangan sistem
 
 Selain wawancara pemrograman, perancangan sistem adalah salah satu **komponen yang diwajibkan** dari dari **proses wawancara teknis** di banyak perusahaan teknologi.
 
-**Latih pertanyaan-pertanyaan umum wawancara rancangan sistem** dan **bandingkan** hasilmu dengan contoh solusi: diskusi, program, dan diagram.
+**Latih pertanyaan-pertanyaan umum wawancara perancangan sistem** dan **bandingkan** hasilmu dengan contoh solusi: diskusi, program, dan diagram.
 
 Topik-topik tambahan untuk persiapan wawancara:
 
 * [Panduan belajar](#panduan-belajar)
-* [Pendekatan menjawab pertanyaan wawancara rancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-rancangan-sistem)
-* [Pertanyaan wawancara rancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya)
-* [Pertanyaan wawancara rancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-rancangan-berbasis-objek-beserta-solusinya)
-* [Tambahan pertanyaan wawancara rancangan sistem](#tambahan-pertanyaan-wawancara-rancangan-sistem)
+* [Pendekatan menjawab pertanyaan wawancara perancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-perancangan-sistem)
+* [Pertanyaan wawancara perancangan sistem beserta solusinya](#pertanyaan-wawancara-perancangan-sistem-beserta-solusinya)
+* [Pertanyaan wawancara perancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-perancangan-berbasis-objek-beserta-solusinya)
+* [Tambahan pertanyaan wawancara perancangan sistem](#tambahan-pertanyaan-wawancara-perancangan-sistem)
 
 ## Kartu kilat Anki
 
@@ -50,11 +50,11 @@ Topik-topik tambahan untuk persiapan wawancara:
   <br/>
 </p>
 
-[Bungkusan kartu kilat Anki](https://apps.ankiweb.net/) yang disediakan menggunakan perulangan berjeda untuk membantu menguasai konsep-konsep kunci rancangan sistem.
+[Bungkusan kartu kilat Anki](https://apps.ankiweb.net/) yang disediakan menggunakan perulangan berjeda untuk membantu menguasai konsep-konsep kunci perancangan sistem.
 
-* [Bungkusan rancangan sistem](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [Bungkusan latihan-latihan rancangan sistem](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Bungkusan latihan-latihan rancangan berbasis objek](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Bungkusan perancangan sistem](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Bungkusan latihan-latihan perancangan sistem](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Bungkusan latihan-latihan perancangan berbasis objek](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
 Cocok untuk digunakan ketika dalam perjalanan.
 
@@ -86,9 +86,9 @@ Konten yang masih memerlukan polesan ditempatkan di bagian [dalam pengembangan](
 
 Tinjau kembali [Pedomain Kontribusi](CONTRIBUTING.md).
 
-## Indeks topik rancangan sistem
+## Indeks topik perancangan sistem
 
-> Ringkasan dari berbagai topik rancangan sistem, termasuk kelebihan dan kekurangannya. **Segala sesuatu dalam rancangan adalah hasil kompromi**.
+> Ringkasan dari berbagai topik perancangan sistem, termasuk kelebihan dan kekurangannya. **Segala sesuatu dalam perancangan adalah hasil kompromi**.
 >
 > Setiap bagian berisi tautan ke sumber daya yang lebih dalam.
 
@@ -197,29 +197,29 @@ Apa yang menjadi pertanyaan saat Anda wawancara bergantung pada hal-hal yang tid
 * Perusahaan tempat Anda wawancara
 * Keberuntungan
 
-Kandidat yang berpengalaman umumnya diharapkan untuk tahu lebih mengenai rancangan sistem.
+Kandidat yang berpengalaman umumnya diharapkan untuk tahu lebih mengenai perancangan sistem.
 Arsitek atau pemimpin tim mungkin diharapkan untuk tahu lebih banyak dibandingkan kontributor perorangan.
-Perusahan teknologi top kemungkinan besar mempunyai satu atau lebih sesi wawancara rancangan.
+Perusahan teknologi top kemungkinan besar mempunyai satu atau lebih sesi wawancara perancangan.
 
 Mulai dari topik yang luas dan masuk lebih dalam ke beberapa area.
-Pengetahuan dasar berbagai topik-topik kunci rancangan sistem akan sangat membantu.
+Pengetahuan dasar berbagai topik-topik kunci perancangan sistem akan sangat membantu.
 Sesuaikan panduan berikut berdasarkan waktu, pengalaman, posisi yang dilamar, dan perusahan tempat Anda wawancara.
 
-* **Garis waktu pendek** - Bidik topik-topik rancangan sistem secara luas. Latih dengan cara menjawab beberapa pertanyaan wawancara.
-* **Garis waktu sedang** - Bidik topik-topik rancangan sistem secara luas dan perdalam dibeberapa bagian tertentu. Latih dengan cara menjawab banyak pertanyaan wawancara.
-* **Garis waktu panjang** - Bidik topik-topik rancangan sistem secara laus dan mendalam. Latih dengan cara menyelesaikan seluruh pertanyaan wawancara.
+* **Garis waktu pendek** - Bidik topik-topik perancangan sistem secara luas. Latih dengan cara menjawab beberapa pertanyaan wawancara.
+* **Garis waktu sedang** - Bidik topik-topik perancangan sistem secara luas dan perdalam dibeberapa bagian tertentu. Latih dengan cara menjawab banyak pertanyaan wawancara.
+* **Garis waktu panjang** - Bidik topik-topik perancangan sistem secara laus dan mendalam. Latih dengan cara menyelesaikan seluruh pertanyaan wawancara.
 
 | | Short | Medium | Long |
 |---|---|---|---|
-| Baca sampai habis [Indeks topik rancangan sistem](#indeks-topik-rancangan-sistem) untuk pemahaman secara luas bagaimana cara kerja suatu sistem | :+1: | :+1: | :+1: |
+| Baca sampai habis [Indeks topik perancangan sistem](#indeks-topik-perancangan-sistem) untuk pemahaman secara luas bagaimana cara kerja suatu sistem | :+1: | :+1: | :+1: |
 | Baca sampai habis beberapa artikel di [Blog teknik perusahaan](#blog-teknik-perusahaan) untuk perusahaan tempat Anda wawancara | :+1: | :+1: | :+1: |
 | Baca sampai habis beberapa [Arsitektur dunia nyata](#arsitektur-dunia-nyata) | :+1: | :+1: | :+1: |
-| Ulas [Pendekatan menjawab pertanyaan wawancara rancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-rancangan-sistem) | :+1: | :+1: | :+1: |
-| Tinjau [Pertanyaan wawancara rancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya) | Some | Many | Most |
-| Teliti [Pertanyaan wawancara rancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-rancangan-berbasis-objek-beserta-solusinya) | Some | Many | Most |
-| Periksa [Tambahan pertanyaan wawancara rancangan sistem](#tambahan-pertanyaan-wawancara-rancangan-sistem) | Some | Many | Most |
+| Ulas [Pendekatan menjawab pertanyaan wawancara perancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-perancangan-sistem) | :+1: | :+1: | :+1: |
+| Tinjau [Pertanyaan wawancara perancangan sistem beserta solusinya](#pertanyaan-wawancara-perancangan-sistem-beserta-solusinya) | Some | Many | Most |
+| Teliti [Pertanyaan wawancara perancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-perancangan-berbasis-objek-beserta-solusinya) | Some | Many | Most |
+| Periksa [Tambahan pertanyaan wawancara perancangan sistem](#tambahan-pertanyaan-wawancara-perancangan-sistem) | Some | Many | Most |
 
-## Pendekatan menjawab pertanyaan wawancara rancangan sistem
+## Pendekatan menjawab pertanyaan wawancara perancangan sistem
 
 > Cara menangani pertanyaan wawancara perancangan sistem.
 
@@ -227,7 +227,7 @@ Wawancara perancangan sistem adalah pembicaraan yang bersifat terbuka.
 Kita diharapkan untuk menuntun pembicaraan tersebut.
 
 Kita dapat menggunakan langkah-langkah berikut untuk menuntun diskusi.
-Untuk memperkuat proses diskusi, ulas bagian [Pertanyaan wawancara rancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya) menggunakan langkah-langkah berikut.
+Untuk memperkuat proses diskusi, ulas bagian [Pertanyaan wawancara perancangan sistem beserta solusinya](#pertanyaan-wawancara-rancangan-sistem-beserta-solusinya) menggunakan langkah-langkah berikut.
 
 ### Langkah 1: Uraikan kasus penggunaan, batasan, dan asumsi
 
@@ -276,7 +276,7 @@ Sebagai contoh, apakah diperlukan hal-hal berikut untuk menangani masalah skalab
 
 Diskusikan potensi solusi dan kompromi.
 Segala sesuatunya adalah hasil kompromi.
-Tangani kemacetan menggunakan [prinsip-prinsip perancangan sistem terskala](#indeks-topik-rancangan-sistem).
+Tangani kemacetan menggunakan [prinsip-prinsip perancangan sistem terskala](#indeks-topik-perancangan-sistem).
 
 ### Kalkulasi belakang amplop
 
@@ -295,7 +295,7 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 * [Wawancara perancangan sistem](http://www.hiredintech.com/system-design)
 * [Pengantar Arsitektur dan Wawancara Perancangan Sistem](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
-## Pertanyaan wawancara rancangan sistem beserta solusinya
+## Pertanyaan wawancara perancangan sistem beserta solusinya
 
 > Pertanyaan umum pada wawancara perancangan sistem beserta contoh diskusi, kode, dan diagram.
 >
@@ -362,7 +362,7 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## Pertanyaan wawancara rancangan berbasis objek beserta solusinya
+## Pertanyaan wawancara perancangan berbasis objek beserta solusinya
 
 > Pertanyaan umum pada wawancara perancangan berbasis objek beserta diskusi, code, dan diagram.
 >
@@ -1007,7 +1007,7 @@ Operasi baca yang memerlukan penggabungan basis data yang kompleks bisa menjadi 
 ##### Kekurangan: denormalisasi
 
 * Data punya salinan.
-* Batasan bisa membantu salinan informasi yang berlebihan untuk tetap sinkron yang berdampak pada meningkatnya kompleksitas rancangan basis data.
+* Batasan (constraint) bisa membantu salinan informasi yang berlebihan untuk tetap sinkron yang berdampak pada meningkatnya kompleksitas rancangan basis data.
 * Basis data denormalisasi dengan beban operasi tulis berat mungkin kinerjanya akan lebih buruk dibandingkan basis data ternormalisasi.
 
 ###### Sumber dan bacaan lanjutan: denormalisasi
@@ -1744,7 +1744,7 @@ Handy metrics based on numbers above:
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Tambahan pertanyaan wawancara rancangan sistem
+### Tambahan pertanyaan wawancara perancangan sistem
 
 > Common system design interview questions, with links to resources on how to solve each.
 
