@@ -309,7 +309,7 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 | Perancangan perayap web | [Solusi](solutions/system_design/web_crawler/README.md) |
 | Perancangan Mint.com | [solusi](solutions/system_design/mint/README.md) |
 | Perancangan struktur data untuk jejaring sosial | [Solusi](solutions/system_design/social_graph/README.md) |
-| Perancangan gudang tanda-nilai (key-value) untuk mesin pencari | [Solusi](solutions/system_design/query_cache/README.md) |
+| Perancangan gudang kunci-nilai (key-value) untuk mesin pencari | [Solusi](solutions/system_design/query_cache/README.md) |
 | Perancangan peringkat penjualan Amazon berdasarkan fitur kategori | [Solusi](solutions/system_design/sales_rank/README.md) |
 | Perancangan sistem terskala untuk jutaan pengguna pada AWS | [Solusi](solutions/system_design/scaling_aws/README.md) |
 | Tambahkan pertanyaan perancangan sistem | [Kontribusi](#kontribusi) |
@@ -344,7 +344,7 @@ Periksa tautan-tautan berikut untuk lebih memahami apa yang diharapkan saat wawa
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
-### Perancangan gudang tanda-nilai (key-value) untuk mesin pencari
+### Perancangan gudang kunci-nilai (key-value) untuk mesin pencari
 
 [Lihat latihan dan solusi](solutions/system_design/query_cache/README.md)
 
@@ -478,7 +478,7 @@ CP adalah kompromi yang baik jika bisnis mempunyai kebutuhan baca dan tulis yang
 Tanggapan berisi data terakhir yang tersedia pada sebuah mesin dimana data tersebut mungkin bukan data terbaru.
 Tulisan bakal memerlukan beberapa saat untuk tersebar ke mesin lain ketika masalah penyekatan selesai.
 
-AP adalah kompromi yang baik jika kebutuhan bisnis mengijinkan untuk [konsistensi akan datang](#konsistensi-akan-datang-eventual-consistency) atau ketika sistem perlu tetap bekerja walaupun ada kesalahan pihak luar.
+AP adalah kompromi yang baik jika kebutuhan bisnis mengijinkan untuk [konsistensi yang mungkin terjadi](#konsistensi-yang-mungkin-terjadi-eventual-consistency) atau ketika sistem perlu tetap bekerja walaupun ada kesalahan pihak luar.
 
 ### Sumber dan bacaan lanjutan
 
@@ -501,13 +501,13 @@ Pendekatan ini bisa dilihat pada sistem contohnya Memcached.
 Konsistensi lemah bekerja dengan baik pada sistem kasus penggunaan waktu nyata contohnya VoIP, obrolan video, dan permainan banyak pemain waktu nyata.
 Sebagai contoh, jika kita dalam panggilan telpon dan kehilangan sinyal untuk beberapa detik, kita tidak akan mendengar pembicaraan yang terjadi ketika koneksi terputus.
 
-### Konsistensi akan datang (eventual consistency)
+### Konsistensi yang mungkin terjadi (eventual consistency)
 
 Setelah operasi tulis, operasi baca akan melihat pada waktu yang akan datang (biasanya dalam mili seconds).
 Data direplikasi secara asinkron.
 
 Pendekatan ini terlihat di sistem contohnya DNS dan email.
-Konsistensi akan datang bekerja dengan baik di sistem yang sangat tersedia.
+Konsistensi yang mungkin terjadi bekerja dengan baik di sistem yang sangat tersedia.
 
 ### Konsisten kuat
 
@@ -851,7 +851,7 @@ Contohnya, Pinterest bisa memiliki layanan mikro: profil pengguna, pengikut, ump
 
 Sistem seperti [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), dan [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) bisa membantu layanan untuk saling menemukan dengan cara melacak nama yang terdaftar, alamat, dan porta.
 [Pemeriksaan kesehatan](https://www.consul.io/intro/getting-started/checks.html) membantu menguji integritas layanan dan seringkali dilakukan menggunakan titik akhir [HTTP](#hypertext-transfer-protocol-http).
-Baik Consul dan Etcd keduanya memiliki [gudang tanda-nilai](#gudang-tanda-nilai) bawaan yang berguna untuk menyimpan nilai konfigurasi dan data bersama lainnya.
+Baik Consul dan Etcd keduanya memiliki [gudang kunci-nilai](#gudang-kunci-nilai) bawaan yang berguna untuk menyimpan nilai konfigurasi dan data bersama lainnya.
 
 ### Kekurangan: lapisan aplikasi
 
@@ -871,324 +871,362 @@ Baik Consul dan Etcd keduanya memiliki [gudang tanda-nilai](#gudang-tanda-nilai)
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png"/>
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Sumber: Penyekalaan untuk 10 juta pengguna pertama</a></i>
 </p>
 
-### Relational database management system (RDBMS)
+### Sistem pengelolaan basis data relasional (Relational database management system / RDBMS)
 
-A relational database like SQL is a collection of data items organized in tables.
+Basis data relasional seperti SQL merupakan sekumpulan butir data yang diorganisasi ke dalam tabel.
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+***ACID** adalah sekumpulan property dari [transaksi](https://en.wikipedia.org/wiki/Database_transaction) basis data relasional 
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+* **Atomicity** - Seluruh operasi dalam transaksi berhasil seluruhnya atau gagal semuanya
+* **Consistency** - Transaksi apa pun akan membawa basis data dari satu keadaan ke keadaan lain
+* **Isolation** - Menjalankan transaksi secara bersamaan memiliki hasil yang sama seolah-olah transaksi dijalankan secara berurutan
+* **Durability** - Sekali transaksi telah dilakukan, transaksi akan bertahan
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+Ada banyak teknik untuk menyekala basis data relasional: **replikasi master-slave**, **replikasi master-master**, **federasi**, **sharding**, **denormalization**, dan **penyetelan SQL**.
 
 #### Replikasi master-slave
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+Master melayani operasi baca dan tulis, mereplikasi tulisan ke slave lainnya dimana slave hanya melayani operasi baca.
+Slave bisa juga mereplikasi data ke slave lainnya membentuk mode seperti pohon.
+Jika master luring, sistem tetap bisa beroperasi dalam mode hanya baca sampai salah satu slave dipromosikan menjadi master atau master yang baru diadakan.
 
 <p align="center">
   <img src="http://i.imgur.com/C9ioGtn.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Sumber: Skalabilitas, Ketersediaan, Kestabilan, Pola-pola</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### Kekurangan: replikasi master-slave
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Logik tambahan diperlukan untuk mempromosikan sebuah slave menjadi master.
+* Lihat [Kekurangan: replikasi](#kekurangan-replikasi) untuk hal yang berhubungan dengan master-slave dan master-master.
 
 #### Replikasi master-master
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+Kedua master melayani operasi baca dan tulis dan berkoordinasi satu sama lain untuk operasi tulis.
+Jika salah satu master mati, sistem tetap bisa beroperasi untuk baca dan tulis.
 
 <p align="center">
   <img src="http://i.imgur.com/krAHLGg.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Sumber: Skalabilitas, Ketersediaan, Kestabilan, Pola-pola</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### Kekurangan: master-master replication
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Kita akan memerlukan penyeimbang beban atau membuat perubahan pada logik aplikasi untuk menentukan kemana operasi tulis diarahkan.
+* Kebanyakan sistem master-master memiliki konsistensi yang longgar (melanggar prinsip ACID) atau mengalami peningkatan jeda operasi tulis karena ada sinkronisasi.
+* Resolusi konflik lebih berperan karena lebih banyak simpul yang ditambahkan dan peningkatan latensi.
+* Lihat [Kekurangan: replikasi](#kekurangan-replikasi) untuk hal yang berhubungan dengan master-slave dan master-master.
 
-##### Disadvantage(s): replication
+##### Kekurangan: replikasi
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+* Ada potensi kehilangan data jika master gagal sebelum data yang baru tertulis direplikasi ke simpul yang lain.
+* Tulisan diputar ulang pada replika baca.  Jika ada banyak tulisan, replika baca bisa macet ketika menulis ulang tulisan dan tidak mampu melakukan banyak operasi baca.
+* Semakin banyak slave baca, semakin banyak pula yang perlu direplikasi sehingga meningkatkan jeda replikasi.
+* Pada beberapa sistem, menulis ke master bisa menghidupkan beberapa ulir (thread) untuk menulis secara paralel, sedangkan replika baca hanya mendukung menulis secara berurutan menggunakan satu ulir.
+* Replikasi meningkatkan kebutuhan perangkat keras dan tambahan kompleksitas.
 
-##### Source(s) and further reading: replication
+##### Sumber dan bacaan lanjuta: replikasi
 
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+* [Skalabilitas, Ketersediaan, Kestabilan, Pola-pola](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Replikasi multi master](https://en.wikipedia.org/wiki/Multi-master_replication)
 
 #### Federation
 
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png"/>
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Sumber: Penyekalaan untuk 10 juta pengguna pertama</a></i>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+Federasi (atau penyekatan fungsional) membagi basis data berdasarkan fungsi.
+Sebagai contoh, alih-alih basis data tunggal yang monolitik, kita bisa memiliki tiga basis data: **forum**, **pengguna**, dan **produk**.
+Federasi mengurangi lalu lintas baca dan tulis ke setiap basis data dan oleh karena itu mengurangi jeda replikasi.
+Basis data yang lebih kecil memungkinkan lebih banyak data yang bisa dimuat di dalam memori sehingga meningkatkan popularitas singgahan dikarenakan kualitas lokalitasnya.
+Tanpa master terpusat tunggal yang menyambungkan tulisan sehingga kita bisa melakukan operasi tulis secara paralel yang berdampak meningkatnya lewatan.
 
-##### Disadvantage(s): federation
+##### Kekurangan: federasi
 
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
+* Federasi tidak efektif jika skema kita memerlukan fungsi atau tabel dalam jumlah yang sangat besar.
+* Kita perlu memperbarui logik aplikasi untuk menentukan basis data mana untuk operasi baca dan tulis.
+* Menggabungkan data dari dua basis data menjadi lebih kompleks ketika menggunakan [hubungan server](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
+* Federasi meningkatkan jumlah perangkat keras dan kompleksitas.
 
-##### Source(s) and further reading: federation
+##### Sumber dan bacaan lanjutan: federasi
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Penyekalaan untuk 10 juta pengguna pertama](https://www.youtube.com/watch?v=w95murBkYmU)
 
-#### Sharding
+#### Pecahan (Sharding)
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png"/>
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Sumber: Skalabilitas, Ketersediaan, Kestabilan, Pola-pola</a></i>
 </p>
 
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
+Pecahan (sharding) mendistribusikan data ke berbagai basis data yang berbeda dimana setiap basis data hanya dapat mengelola subset data.
+Ambil basis data pengguna sebagai contoh. Ketika jumlah pengguna bertambah maka lebih banyak pecahan yang ditambahkan ke dalam gugusan.
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+Serupa dengan manfaat dari (federasi)[#federasi], pecahan mengurangi lalu lintas baca dan tulis, mengurangi replikasi, dan meningkatkan popularitas singgahan.
+Ukuran indeks juga berkurang yang secara umum meningkatkan kinerja dengan kueri yang lebih cepat.
+Jika salah satu pecahan mati, pecahan yang lain masih beroperasi, meski kita ingin menambahkan beberapa bentuk replikasi untuk mencegah kehilangan data.
+Seperti federasi, tidak ada master terpusat tunggal yang menyambungkan tulisan sehingga kita bisa melakukan operasi tulis secara paralel yang berdampak meningkatnya lewatan.
 
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
+Cara umum memecah sebuah tabel pengguna adalah salah satunya dengan memanfaat inisial nama belakang pengguna atau geolokasi pengguna.
 
-##### Disadvantage(s): sharding
+##### Kekurangan: pecahan
 
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
+* Kita perlu memperbarui logik aplikasi untuk bekerja dengan pecahan yang dapat menyebabkan kueri yang lebih kompleks.
+* Distribusi data bisa menjadi tidak seimbang di dalam pecahan. Contohnya, sekumpulan pengguna dengan kuasa penuh pada suatu pecahan bisa menghasilkan beban berlebih dibandingkan pecahan lain.
+    * Penyeimbangan ulang menambah kompleksitas. Pecahan yang berfungsi berdasarkan [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) bisa mengurangi jumlah data yang dikirim.
+* Menggabungkan data dari berbagai pecahan menjadi lebih kompleks.
+* Pecahan memerlukan lebih banyak perangkat keras dan menambah kompleksitas.
 
-##### Source(s) and further reading: sharding
+##### Sumber dan bacaan tambahan: pecahan
 
-* [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-* [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+* [Kedatangan pecahan](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+* [Arsitektur basis data pecahan](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### Denormalisasi (Denormalization)
 
-Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
+Denormalisasi mencoba memperbaiki kinerja operasi baca dengan mengorbankan operasi tulis.
+Salinan data yang berlebihan ditulis di beberapa tabel untuk menghindari operasi penggabungan yang mahal.
+Beberapa RDBMS seperti [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) dan Oracle mendukung [materialized views](https://en.wikipedia.org/wiki/Materialized_view) yang menangani penyimpanan informasi yang berlebih dan memastikan salinan tersebut konsisten.
 
-Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
+Ketika data menjadi terdistribusi dengan teknik seperti [federasi](#federasi) dan [pecahan](#pecahan), pengelolaan penggabungan data lintas pusat data meningkatkan kompleksitas lebih tinggi lagi.
+Denormalisasi bisa jadi menghindari kebutuhan penggabungan yang bersifat kompleks.
 
-In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
+Pada kebanyakan sistem, operasi baca bisa jauh mengalahkan operasi tulis dengan rasio 100:1 bahkan 1000:1.
+Operasi baca yang memerlukan penggabungan basis data yang kompleks bisa menjadi sangat mahal biayanya dan menghabiskan banyak waktu untuk operasi disk.
 
-##### Disadvantage(s): denormalization
+##### Kekurangan: denormalisasi
 
-* Data is duplicated.
-* Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
-* A denormalized database under heavy write load might perform worse than its normalized counterpart.
+* Data punya salinan.
+* Batasan bisa membantu salinan informasi yang berlebihan untuk tetap sinkron yang berdampak pada meningkatnya kompleksitas rancangan basis data.
+* Basis data denormalisasi dengan beban operasi tulis berat mungkin kinerjanya akan lebih buruk dibandingkan basis data ternormalisasi.
 
-###### Source(s) and further reading: denormalization
+###### Sumber dan bacaan lanjutan: denormalisasi
 
-* [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+* [Denormalisasi](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### Penyetelan SQL (SQL tuning)
 
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+Penyetelah SQL merupakan topik yang luas dan banyak [buku](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) yang sudah dituliskan sebagai referensi.
 
-It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
+**Tolok ukur** dan **profil** penting untuk menyimulasi dan menemukan kemacetan.
 
-* **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
-* **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
+* **Tolok ukur** - Menyimulasi situasi beban tinggi dengan alat seperti [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
+* **Profil** - Memungkinkan alat seperti [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) membantu melacak masalah kinerja.
 
-Benchmarking and profiling might point you to the following optimizations.
+Pembuatan tolok ukur dan profil bisa mengarahkan kita kepada optimisasi berikut.
 
-##### Tighten up the schema
+##### Perketat skema
 
-* MySQL dumps to disk in contiguous blocks for fast access.
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
-* Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
-* Use `INT` for larger numbers up to 2^32 or 4 billion.
-* Use `DECIMAL` for currency to avoid floating point representation errors.
-* Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
+* MySQL menulis data ke disk pada blok yang berdekatan untuk mempercepat akses.
+* Gunakan `CHAR` dari pada `VARCHAR` untuk bidang dengan panjang tetap.
+    * `CHAR` memungkinkan akses acak yang cepat secara efektif sedangkan pada `VARCHAR` kita harus menemukan ujung sebuah string sebelum pindah ke string selanjutnya.
+* Gunakan `TEXT` untuk teks dalam blok besar seperti tulisan blog. `TEXT` juga memungkinkan untuk pencarian biner. Penggunaan `TEXT` menghasilkan penyimpanan penunjuk pada disk yang berguna untuk menemukan blok teks selanjutnya.
+* Gunakan `INT` untuk menyimpan jumlah besar sampai dengan 2^32 atau 4 miliar.
+* Gunakan `DECIMAL` untuk mata uang sehingga terhindar dari kesalahan representasi _floating point_.
+* Hindari menyimpan `BLOBS` berukuran besar, simpan lokasi dimana objek tersebut berada.
+* `VARCHAR(255)` adalah jumlah karakter terbesar yang bisa dihitung dalam angka 8 bit, seringkali memaksimalkan penggunaan byte pada beberapa RDBMS.
+* Atur batasan `NOT NULL` ditempat yang relevan untuk [meningkatkan kinerja pencarian](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
 
-##### Use good indices
+##### Gunakan indeks yang baik
 
-* Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-* Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-* Placing an index can keep the data in memory, requiring more space.
-* Writes could also be slower since the index also needs to be updated.
-* When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+* Kolom yang kita kueri (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) menjadi lebih cepat dengan indeks.
+* Indeks umumnya digambarkan sebagai penyeimbang diri [B-tree](https://en.wikipedia.org/wiki/B-tree) yang menjaga data terurut dan memungkinkan pencarian, akses berurut, penambahan, dan penghapusan dalam waktu yang logaritmik.
+* Penempatan pada indeks memungkinkan data disimpan pada memori sehingga membutuhkan ruang lebih.
+* Operasi tulis bisa menjadi lebih lambat karena indeks juga perlu diperbarui.
+* Ketika memuat data dalam jumlah besar, mungkin akan lebih cepat ketika indeks dinonaktifkan, muat data, kemudian bangun kembali indeks.
 
-##### Avoid expensive joins
+##### Hindari penggabungan mahal
 
-* [Denormalize](#denormalization) where performance demands it.
+* [Denormalisasi](#denormalisasi) ketika kinerja membutuhkan hal tersebut.
 
-##### Partition tables
+##### Partisi table
 
-* Break up a table by putting hot spots in a separate table to help keep it in memory.
+* Pisahkan tabel dengan menempatkan titik panas di tabel yang berbeda untuk membantu tabel tetap dalam memori.
 
-##### Tune the query cache
+##### Setel singgahan kueri
 
-* In some cases, the [query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) could lead to [performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
+* Pada beberapa kasus, [singgahan kueri](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) dapat menyebabkan [masalah kinerja](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
 
-##### Source(s) and further reading: SQL tuning
+##### Sumber dan bacaan lanjutan: Peyetelan SQL
 
-* [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
-* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-* [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+* [Kiat untuk mengoptimasi kueri MySQL](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
+* [Apakah ada alasan yang baik dibalik seringnya digunakan VARCHAR(255)?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [Bagaimana nilai null mempengaruhi kinerja?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+* [Log kueri lambat](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 ### NoSQL
 
-NoSQL is a collection of data items represented in a **key-value store**, **document store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
+NoSQL adalah sekumpulan butir data yang diwakili pada **gudang kunci-nilai**, **gudang dokumen**, **gudang kolom lebar**, atau **basis data graf**.
+Data di denormalisasi dan penggabungan umumnya dilakukan pada kode aplikasi.
+Kebanyakan gudang NoSQL tidak memiliki transaksi ACID dan memilih [konsistensi yang mungkin terjadi](#konsistensi-yang-mungkin-terjadi-eventual-consistency).
 
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
+**BASE** seringkali digunakan untuk menggambarkan property basis data NoSQL.
+Sebagai perbandingan dengan [teorema CAP](#teorema-cap), BASE memilih ketersediaan dibandingkan konsistensi.
 
-* **Basically available** - the system guarantees availability.
-* **Soft state** - the state of the system may change over time, even without input.
-* **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
+* **Basically available** - Sistem menjamin ketersediaan.
+* **Soft state** - Keadaan sistem bisa berubah seiring waktu, bahkan tanpa ada masukan.
+* **Eventual consistency** - Sistem akan menjadi konsisten selama periode waktu tertentu mengingat bahwa sistem tidak menerima masukan selama periode tersebut.
 
-In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document stores**, **wide column stores**, and **graph databases** in the next section.
+Sebagai tambahan dalam pemilihan antara [SQL atau NoSQL](#sql-atau-nosql), pemahaman akan tipe basis data NoSQL yang sesuai dengan kasus penggunan kita menjadi penting.
+Kita akan bahas **gudang tanda-kunci**, **gudang dokumen**, **gudang kolom lebar**, dan **basis data graf** di bagian selanjutnya.
 
-#### Gudang tanda-nilai
+#### Gudang kunci-nilai
 
-> Abstraction: hash table
+> Abstraksi: tabel hash
 
-A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
+Gudang kunci-nilai umumnya memungkinkan operasi baca dan tulis dengan kompleksitas waktu O(1) dan umumnya didukung oleh memori atau SSD.
+Gudang data mampu mengelola kunci menurut [urutan leksikografis](https://en.wikipedia.org/wiki/Lexicographical_order) yang memungkinkan pengambilan rentang kunci yang efisien.
+Gudang kunci-nilai mengizinkan penyimpanan meta data beserta dengan nilai.
 
-Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
+Gudang kunci-nilai menyediakan kinerja tinggi dan sering kali digunakan untuk model data sederhana atau data yang berubah dengan cepat seperti lapisan singgah dalam memori.
+Karena Gudan kunci-nilai hanya menawarkan kumpulan operasi yang terbatas, kompleksitas dipindahkan ke lapisan aplikasi jika operasi tambahan diperlukan.
 
-A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
+Gudang kunci-nilai menjadi dasar bagi sistem yang lebih kompleks seperti gudang dokumen, dan di beberapa kasus graf database.
 
-##### Source(s) and further reading: key-value store
+##### Sumber dan bacaan lanjutan: gudang kunci-nilai
 
-* [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
-* [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
-* [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [Basis data kunci-nilai](https://en.wikipedia.org/wiki/Key-value_database)
+* [Kekurangan gudang kunci-nilai](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+* [Arsitektur Redis](http://qnimate.com/overview-of-redis-architecture/)
+* [Arsitektur Memcached](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### Document store
+#### Gudang dokumen (document store)
 
-> Abstraction: key-value store with documents stored as values
+> Abstraksi: gudang kunci-nilai dimana dokumen disimpan sebagai nilai
 
-A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
+Gudang dokumen terpusat pada dokumen (XML, JSON, biner, dan lainnya) dimana dokumen menyimapan semua informasi untuk objek tertentu.
+Gudang dokumen menyediakan API atau bahasa kueri untuk mengkueri berdasarkan struktur internal dari dokumen itu sendiri.
+*Menjadi catatan bahwa banyak gudang kunci-nilai menyertakan fitur untuk bekerja dengan metadata suatu nilai sehingga mengaburkan batasan antara kedua jenis gudang.*
 
-Based on the underlying implementation, documents are organized by collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
+Berdasarkan implementasi yang mendasarinya, dokumen diorganisasi berdasarkan koleksi, tag, metdata, atau direktori.
+Meskipun dokumen bisa diorganisasi atau dikelompokan bersama, dokumen bisa memiliki bidang yang berbeda satu sama lain.
 
-Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
+Beberapa gudang dokumen seperti [MongoDB](https://www.mongodb.com/mongodb-architecture) dan [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) menyediakan bahasa seperti SQL untuk melakukan kueri yang kompleks.
+[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) mendukung kunci-nilai dan dokumen.
 
-Document stores provide high flexibility and are often used for working with occasionally changing data.
+Gudang dokumen menyediakan fleksibilitas tinggi dan sering kali digunakan untuk bekerja dengan data yang sesekali berubah.
 
-##### Source(s) and further reading: document store
+##### Sumber dan bacaan lanjutan: gudang dokumen
 
-* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
-* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
-* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+* [Basis data berorientasi dokumen](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [Arsitektur MongoDB](https://www.mongodb.com/mongodb-architecture)
+* [Arsitektur CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+* [Arsitektur Elasticsearch](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
-#### Wide column store
+#### Gudang kolom lebar (Wide column store)
 
 <p align="center">
   <img src="http://i.imgur.com/n16iOGk.png"/>
   <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Sumber: SQL & NoSQL, sejarah singkat</a></i>
 </p>
 
-> Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+> Abstraksi: peta bersarang `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
-A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
+Dasar unit data dari gudang kolom lebar adalah kolom (pasangan nama/nilai).
+Kolom bisa digabung ke dalam keluarga kolom (sejalan dengan tabel SQL).
+Keluarga kolom super menggabungkan keluarga kolom.
+Kita bisa mengakses setiap kolom secara independen menggunakan kunci baris.
+Kolom dengan kunci baris yang sama membentuk baris.
+Setiap nilai mengandung cap waktu untuk kebutuh pemersian dan resolusi konflik.
 
-Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
+Google mengenalkan [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) sebagai gudang kolom lebar pertama.
+Rancangan Bigtable mempengaruhi [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) yang sering digunakan pada ekosistem Hadoop dan [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) dari Facebook.
+Gudang seperti BigTable, HBase, dan Cassandra memelihara kunci dengan urutan leksikografi yang memungkinkan pengambilan rentang kunci secara selektif.
 
-Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
+Gudang kolom lebar menawarkan ketersediaan dan skalabilitas tinggi.
+Mereka sering kali digunakan untuk penyimpanan himpunan data yang sangat besar.
 
-##### Source(s) and further reading: wide column store
+##### Sumber dan bacaan lanjutan: gudang kolom lebar
 
-* [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-* [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
-* [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
+* [SQL & NoSQL, sejarah singkat](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+* [Arsitektur Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+* [Arsitektur HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [Arsitektur Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
-#### Graph database
+#### Basis data Graf (graph database)
 
 <p align="center">
   <img src="http://i.imgur.com/fNcl65g.png"/>
   <br/>
-  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Sumber: Basis data graf</a></i>
 </p>
 
-> Abstraction: graph
+> Abstraksi: graf
 
-In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.
+Di dalam basis data graf, setiap simpul adalah catatan dan setiap busur adalah hubuungan antar dua simpul.
+Basis data graf dioptimisasi untuk mengambarkan hubungan kompleks dengan banyak kunci asing atau hubungan banyak-ke-banyak.
 
-Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
+Basis data graf menawarkan kinerja tinggi untuk model data dengan hubungan kompleks seperti jejaring sosial.
+Basis data ini relatif baru dan belum banyak digunakan secara luas.
+Hal ini menyebabkan lebih sulit menemukan alat pengembangan dan sumber daya.
+Banyak graf hanya bisa diakses menggunakan [API REST](#representational-state-transfer-rest)
 
-##### Source(s) and further reading: graph
+##### Sumber dan bacaan lanjutan: graph
 
-* [Graph database](https://en.wikipedia.org/wiki/Graph_database)
+* [Basis data Graf](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-#### Source(s) and further reading: NoSQL
+#### Sumber dan bacaan lanjutan: NoSQL
 
-* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+* [Penjelasan terminologi base](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+* [Panduan keputusan dan survei basis data NoSQL](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+* [Skalabilitas](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [Pengantar NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+* [Pola NoSQL](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### SQL atau NoSQL
 
 <p align="center">
   <img src="http://i.imgur.com/wXGqG5f.png"/>
   <br/>
-  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Sumber: Transisi dari RDBMS ke NoSQL</a></i>
 </p>
 
-Reasons for **SQL**:
+Alasan memilih **SQL**:
 
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
+* Data terstruktur
+* Ketat skema
+* Data bersifat relasional
+* Kebutuhan penggabungan yang kompleks
+* Transaksi
+* Pola penyekalaan jelas
+* Lebih mapan: pengembang, komunitas, kode, alat-alat, dan lainnya
+* Pencarian menggunakan indek sangat cepat
 
-Reasons for **NoSQL**:
+Alasan memilih **NoSQL**:
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non-relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+* Data semi terstruktur
+* Skema fleksible dan dinamis
+* Data bersifat tidak relasional
+* Tidak perlu penggabungan yang kompleks
+* Menyimpan banyak TB (bahkan PB) data
+* Beban kerja yang sangat intens akan data
+* Lewatan sangat tinggi untuk keluaran masukan per detik
 
-Sample data well-suited for NoSQL:
+Contoh data yang cocok untuk NoSQL:
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+* Mengkonsumsi secara cepat data *clickstream* dan log
+* Papan peringkat atau data penilaian
+* Data sementara seperti keranjang belanja
+* Tabel yang sering diakses (tabel 'panas')
+* Tabel metadata/pencarian
 
-##### Source(s) and further reading: SQL or NoSQL
+##### Sumber dan bacaan lanjutan: SQL atau NoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
-* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+* [Penyekalaan untuk 10 juta pengguna pertama](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Perbedaan SQL vs NoSQL](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## Singgahan
 
