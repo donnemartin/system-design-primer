@@ -1440,46 +1440,55 @@ _Refresh-ahead_ bisa menghasilkan pengurangan latensi dibandingkan _read-through
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png"/>
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Sumber: Pengantar arsitektur sistem terskala</a></i>
 </p>
 
-Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+Alur kerja asinkron membantu mengurangi waktu permintaan untuk operasi mahal yang sebaliknya dilakukan dalam barisan.
+Alur kerja ini juga dapat membantu terlebih dahulu mengerjakan pekerjaan yang memakan waktu seperti agregasi data berkala.
 
-### Message queues
+### Antrian pesan (Message queues)
 
-Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+Antrian pesan menerima, menahan, dan mengirimkan pesan.
+Jika operasi terlalu lambat dilakukan secara berurutan, kita dapat menggunakan antrian pesan dengan alur kerja sebagai berikut:
 
-* An application publishes a job to the queue, then notifies the user of job status
-* A worker picks up the job from the queue, processes it, then signals the job is complete
+* Aplikasi menerbitkan kerjaan ke antrian, kemudian memberitahu penggunan tentang status pekerjaan
+* Pekerja akan mengambil pekerjaan dari antrian, memproses pekerjaan tersebut, kemudian memberi isyarat ketika pekerjaan selesai
 
-The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
+Pengguna tidak terhambat dan pekerjaan bisa diproses dibelakang layar.
+Selama periode ini, klien bisa melakukan pemrosesan kecil-kecilan supaya kelihatan pekerjaan telah selesai.
+Contohnya, ketika mengirimkan sebuah tweet, tweet bisa saja muncul secara instan di linimasa kita, tetapi tweet akan membutuhkan waktu untuk bisa muncul di linimasa pengikut kita.
 
-**[Redis](https://redis.io/)** is useful as a simple message broker but messages can be lost.
+**[Redis](https://redis.io/)** adalah broker pesan sederhana yang berguna dimana pesan bisa hilang.
 
-**[RabbitMQ](https://www.rabbitmq.com/)** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+**[RabbitMQ](https://www.rabbitmq.com/)** adalah antrian pesan yang populer yang mengharuskan kita untuk beradaptasi dengan protokol 'AMQP' dan mengelola simpul kita sendiri.
 
-**[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
+**[Amazon SQS](https://aws.amazon.com/sqs/)** adalah antrian pesan yang dikelola oleh pihak lain dimana ada kemungkinan latensi yang tinggi. Kemungkinan lain adalah pesan dikirimkan lebih dari sekali.
 
-### Task queues
+### Antrian tugas
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+Antrian tugas menerima tugas dan data lainnya, menjalankan tugas tersebut, dan kemudian mengirimkan hasilnya.
+Antrian tugas mendukung penjadwalan dan bisa digunakan untuk menjalankan tugas komputasi intens di belakang layar.
 
-**Celery** has support for scheduling and primarily has python support.
+**Celery** adalah antrian tugas yang memiliki support python yang baik. Selain itu Celery juga mendukung untuk penjadwalan.
 
-### Back pressure
+### Tekanan balik (Back pressure)
 
-If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+Jika antrian mulai tumbuh secara signifikan maka ukuran antrian menjadi lebih lebih besar dibandingkan ukuran memori.
+Hal ini mengakibatkan singgahan luput, operasi baca disk, dan bahkan kinerja yang lebih lambat.
+[Tekanan balik](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) membantu dengan cara membatasi ukuran antrian dengan demikian memelihara laju lewatan tinggi dan waktu tanggap yang baik bagi pekerjaan yang ada di dalam antrian.  
+Ketika antrian penuh, klien memperoleh balasan server sibuk atau HTTP code status 503 untuk mencoba lagi di waktu yang akan datang.
+Klien dapat mencoba mengiriman permintaan lagi di waktu yang akan datang dengan tambahan [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
-### Disadvantage(s): asynchronism
+### Kekurangan: asinkronisme
 
-* Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+* Kasus penggunaan seperti kalkulasi yang tidak mahal dan alur kerja waktu nyata lebih cocok untuk operasi secara sinkron. Penambahan antrian meningkatkan jeda dan kompleksitas.
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan:
 
-* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
-* [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+* [Semua ini adalah permainan angka](https://www.youtube.com/watch?v=1KRYH75wgy4)
+* [Menerapkan tekanan balik ketika kelebihan beban](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+* [Hukum Little](https://en.wikipedia.org/wiki/Little%27s_law)
+* [Apa perbedaan antara antrian pesan dan antrian tugas?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
 ## Komunikasi
 
