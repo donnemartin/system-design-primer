@@ -97,83 +97,83 @@ Tinjau kembali [Pedomain Kontribusi](CONTRIBUTING.md).
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
+* [Topik perancangan sistem: Mulai dari sini](#topik-perancangan-sistem-mulai-dari-sini)
+    * [Langkah 1: Tonton kuliah video skalabilitas](#langkah-1-tonton-kuliah-video-skalabilitas)
+    * [Langkah 2: Baca artikel skalabilitas](#langkah-2-baca-artikel-skalabilitas)
+    * [Langkah selanjutnya](#langkah-selanjutnya)
+* [Kinerja vs skalabilitas](#kinerja-vs-skalabilitas)
+* [Latensi vs lewatan](#latensi-vs-lewatan)
+* [Ketersediaan vs konsistensi](#ketersediaan-vs-konsistensi)
+    * [Teorema CAP](#teorema-cap)
+        * [CP - konsistensi dan toleransi penyekatan](#cp---konsistensi-dan-toleransi-penyekatan)
+        * [AP - ketersediaan dan toleransi penyekatan](#ap---ketersediaan-dan-toleransi-penyekatan)
+* [Pola konsistensi](#pola-konsistensi)
+    * [Konsistensi lemah](#konsistensi-lemah)
+    * [Konsistensi yang mungkin terjadi (eventual consistency)](#konsistensi-yang-mungkin-terjadi-eventual-consistency)
+    * [Konsisten kuat](#konsisten-kuat)
+* [Pola ketersediaan](#pola-ketersediaan)
     * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
+    * [Replikasi](#replikasi)
+    * [Ketersediaan dalam angka](#ketersediaan-dalam-angka)
 * [Domain name system](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
+    * [CDN setor](#cdn-setor)
+    * [CDN tarik](#cdn-tarik)
+* [Penyeimbang beban](#penyeimbang-beban)
+    * [Aktif-pasif](#aktif-pasif)
+    * [Aktif-aktif](#aktif-aktif)
+    * [Penyeimbangan beban lapisan ke-4](#penyeimbangan-beban-lapisan-ke-4)
+    * [Penyeimbang beban lapisan ke-7](#penyeimbang-beban-lapisan-ke-7)
+    * [Penyekalaan horizontal](#penyekalaan-horizontal)
+* [Proksi terbalik (server web)](#proksi-terbalik-server-web)
+    * [Penyeimbang beban vs proksi terbalik](#penyeimbang-beban-vs-proksi-terbalik)
+* [Lapisan aplikasi](#lapisan-aplikasi)
+    * [Layanan mikro (Microservices)](#layanan-mikro-microservices)
+    * [Penemuan layanan (Service Discovery)](#penemuan-layanan-service-discovery-)
+* [Basis data](#basis-data)
+    * [Sistem pengelolaan basis data relasional](#sistem-pengelolaan-basis-data-relasional)
+        * [Replikasi master-slave](#replikasi-master-slave)
+        * [Replikasi master-master](#replikasi-master-master)
+        * [Federasi](#federasi)
+        * [Pecahan (Sharding)](#pecahan-sharding)
+        * [Denormalisasi](#denormalisasi)
+        * [Penyetelan SQL](#penyetelan-sql)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
+        * [Gudang kunci-nilai](#gudang-kunci-nilai)
+        * [Gudang dokumen (document store)](#gudang-dokumen-document-store)
+        * [Gudang kolom lebar (Wide column store)](#gudang-kolom-lebar-wide-column-store)
+        * [Basis data graf](#basis-data-graf)
+    * [SQL atau NoSQL](#sql-atau-nosql)
+* [Singgahan](#singgahan)
+    * [Singgahan klien](#singgahan-klien)
+    * [Singgahan CDN](#singgahan-cdn)
+    * [Singgahan server web](#singgahan-server-web)
+    * [Singgahan basis data](#singgahan-basis-data)
+    * [Singgahan aplikasi](#singgahan-aplikasi)
+    * [Singgahan pada level kueri basis data](#singgahan-pada-level-kueri-basis-data)
+    * [Singgahan pada level objek](#singgahan-pada-level-objek)
+    * [Kapan singgahan diperbarui](#kapan-singgahan-diperbarui)
+        * [Singgahan sampingan (Cache-aside)](#singgahan-sampingan-cache-aside)
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
+* [Asinkronisme](#asinkronisme)
+    * [Antrian pesan](#antrian-pesan)
+    * [Antrian tugas](#antrian-tugas)
+    * [Tekanan balik (Back pressure)](#tekanan-balik-back-pressure)
+* [Komunikasi](#komunikasi)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
+* [Keamanan](#keamanan)
+* [Lampiran](#lampiran)
+    * [Tabel perpangkatan dua](#tabel-perpangkatan-dua)
+    * [Nilai latensi yang perlu diketahui oleh setiap pemrogram](#nilai-latensi-yang-perlu-diketahui-oleh-setiap-pemrogram)
+    * [ambahan pertanyaan wawancara perancangan sistem](#tambahan-pertanyaan-wawancara-perancangan-sistem)
+    * [Arsitektu dunia nyata](#arsitektu-dunia-nyata)
+    * [Arsitektur perusahaan](#arsitektur-perusahaan)
+    * [Blog teknik perusahaan](#blog-teknik-perusahaan)
 * [Dalam pengembangan](#dalam-pengembangan)
 * [Credits](#credits)
 * [Contact info](#contact-info)
@@ -874,7 +874,7 @@ Baik Consul dan Etcd keduanya memiliki [gudang kunci-nilai](#gudang-kunci-nilai)
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Sumber: Penyekalaan untuk 10 juta pengguna pertama</a></i>
 </p>
 
-### Sistem pengelolaan basis data relasional (Relational database management system / RDBMS)
+### Sistem pengelolaan basis data relasional
 
 Basis data relasional seperti SQL merupakan sekumpulan butir data yang diorganisasi ke dalam tabel.
 
@@ -935,7 +935,7 @@ Jika salah satu master mati, sistem tetap bisa beroperasi untuk baca dan tulis.
 * [Skalabilitas, Ketersediaan, Kestabilan, Pola-pola](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Replikasi multi master](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### Federasi
 
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png"/>
@@ -992,7 +992,7 @@ Cara umum memecah sebuah tabel pengguna adalah salah satunya dengan memanfaat in
 * [Arsitektur basis data pecahan](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalisasi (Denormalization)
+#### Denormalisasi
 
 Denormalisasi mencoba memperbaiki kinerja operasi baca dengan mengorbankan operasi tulis.
 Salinan data yang berlebihan ditulis di beberapa tabel untuk menghindari operasi penggabungan yang mahal.
@@ -1014,7 +1014,7 @@ Operasi baca yang memerlukan penggabungan basis data yang kompleks bisa menjadi 
 
 * [Denormalisasi](https://en.wikipedia.org/wiki/Denormalization)
 
-#### Penyetelan SQL (SQL tuning)
+#### Penyetelan SQL
 
 Penyetelah SQL merupakan topik yang luas dan banyak [buku](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) yang sudah dituliskan sebagai referensi.
 
@@ -1154,7 +1154,7 @@ Mereka sering kali digunakan untuk penyimpanan himpunan data yang sangat besar.
 * [Arsitektur HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
 * [Arsitektur Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
-#### Basis data Graf (graph database)
+#### Basis data graf
 
 <p align="center">
   <img src="http://i.imgur.com/fNcl65g.png"/>
@@ -1446,7 +1446,7 @@ _Refresh-ahead_ bisa menghasilkan pengurangan latensi dibandingkan _read-through
 Alur kerja asinkron membantu mengurangi waktu permintaan untuk operasi mahal yang sebaliknya dilakukan dalam barisan.
 Alur kerja ini juga dapat membantu terlebih dahulu mengerjakan pekerjaan yang memakan waktu seperti agregasi data berkala.
 
-### Antrian pesan (Message queues)
+### Antrian pesan
 
 Antrian pesan menerima, menahan, dan mengirimkan pesan.
 Jika operasi terlalu lambat dilakukan secara berurutan, kita dapat menggunakan antrian pesan dengan alur kerja sebagai berikut:
@@ -1712,7 +1712,7 @@ Karena nirkeadaan, REST sangat bagus untuk penyekalaan horizontal dan pemecahan.
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Kenapa REST untuk penggunaan internal dan bukan RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Security
+## Keamanan
 
 Bagian ini memerlukan pembaruan.
 Pertimbangkan untuk [berkontribusi](#kontribusi)!
