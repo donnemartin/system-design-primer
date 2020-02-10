@@ -209,15 +209,15 @@ Sesuaikan panduan berikut berdasarkan waktu, pengalaman, posisi yang dilamar, da
 * **Garis waktu sedang** - Bidik topik-topik perancangan sistem secara luas dan perdalam dibeberapa bagian tertentu. Latih dengan cara menjawab banyak pertanyaan wawancara.
 * **Garis waktu panjang** - Bidik topik-topik perancangan sistem secara laus dan mendalam. Latih dengan cara menyelesaikan seluruh pertanyaan wawancara.
 
-| | Short | Medium | Long |
+| | Pendek | Menengah | Panjang |
 |---|---|---|---|
 | Baca sampai habis [Indeks topik perancangan sistem](#indeks-topik-perancangan-sistem) untuk pemahaman secara luas bagaimana cara kerja suatu sistem | :+1: | :+1: | :+1: |
 | Baca sampai habis beberapa artikel di [Blog teknik perusahaan](#blog-teknik-perusahaan) untuk perusahaan tempat Anda wawancara | :+1: | :+1: | :+1: |
 | Baca sampai habis beberapa [Arsitektur dunia nyata](#arsitektur-dunia-nyata) | :+1: | :+1: | :+1: |
 | Ulas [Pendekatan menjawab pertanyaan wawancara perancangan sistem](#pendekatan-menjawab-pertanyaan-wawancara-perancangan-sistem) | :+1: | :+1: | :+1: |
-| Tinjau [Pertanyaan wawancara perancangan sistem beserta solusinya](#pertanyaan-wawancara-perancangan-sistem-beserta-solusinya) | Some | Many | Most |
-| Teliti [Pertanyaan wawancara perancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-perancangan-berbasis-objek-beserta-solusinya) | Some | Many | Most |
-| Periksa [Tambahan pertanyaan wawancara perancangan sistem](#tambahan-pertanyaan-wawancara-perancangan-sistem) | Some | Many | Most |
+| Tinjau [Pertanyaan wawancara perancangan sistem beserta solusinya](#pertanyaan-wawancara-perancangan-sistem-beserta-solusinya) | Sebagian | Banyak | Sebagian besar |
+| Teliti [Pertanyaan wawancara perancangan berbasis objek beserta solusinya](#pertanyaan-wawancara-perancangan-berbasis-objek-beserta-solusinya) | Sebagaian | Banyak | Sebagian besar |
+| Periksa [Tambahan pertanyaan wawancara perancangan sistem](#tambahan-pertanyaan-wawancara-perancangan-sistem) | Sebagian | Banyak | Sebagian besar |
 
 ## Pendekatan menjawab pertanyaan wawancara perancangan sistem
 
