@@ -1956,12 +1956,12 @@ Ingin menambahkan blog? Untuk menghindari duplikasi kerjaan, pertimbangkan untuk
 
 ## Dalam pengembangan
 
-Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+Berminta menambahkan bagian atau membantu menyelesaikan bagian yang sedang dalam tahap pengerjaan? [Ayo kontribusi](#kontribusi)!
 
-* Distributed computing with MapReduce
-* Consistent hashing
-* Scatter gather
-* [Contribute](#contributing)
+* Komputasi terdistribusi dengan MapReduce
+* Hashing konsisten
+* _Scatter gather_
+* [Kontribusi](#kontribusi)
 
 ## Credits
 
