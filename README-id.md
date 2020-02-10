@@ -1714,20 +1714,22 @@ Karena nirkeadaan, REST sangat bagus untuk penyekalaan horizontal dan pemecahan.
 
 ## Security
 
-This section could use some updates.  Consider [contributing](#contributing)!
+Bagian ini memerlukan pembaruan.
+Pertimbangkan untuk [berkontribusi](#kontribusi)!
 
-Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+Keamanan merupakan topik yang luas.
+Kecuali Anda memiliki pengalaman yang cukup, latar belakang keamanan, atau melamar posisi yang membutuhkan pengetahuan keamanan, Anda mungkin tidak perlu mengetahui lebih dari pengetahuan dasar:
 
-* Encrypt in transit and at rest.
-* Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
-* Use parameterized queries to prevent SQL injection.
-* Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+* Enkripsi saat transit dan saat istirahat.
+* Bersihkan seluruh masukan pengguna atau parameter masukan yang terekspos ke pengguna untuk mencegah [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) dan [Injeksi SQL](https://en.wikipedia.org/wiki/SQL_injection).
+* Gunakan kueri terparameter untuk mencegah injeksi SQL.
+* Gunakan prinsip [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-### Source(s) and further reading
+### Sumber dan bacaan lanjutan
 
-* [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
-* [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
-* [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+* [Daftar periksa keamanan API](https://github.com/shieldfy/API-Security-Checklist)
+* [Panduan keamanan untuk pengembang](https://github.com/FallibleInc/security-guide-for-developers)
+* [sepuluh teratas OWASP](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
 ## Appendix
 
