@@ -175,7 +175,7 @@ Tinjau kembali [Pedomain Kontribusi](CONTRIBUTING.md).
     * [Arsitektur perusahaan](#arsitektur-perusahaan)
     * [Blog teknik perusahaan](#blog-teknik-perusahaan)
 * [Dalam pengembangan](#dalam-pengembangan)
-* [Credits](#credits)
+* [Kredit](#kredit)
 * [Contact info](#contact-info)
 * [License](#license)
 
@@ -1963,11 +1963,11 @@ Berminta menambahkan bagian atau membantu menyelesaikan bagian yang sedang dalam
 * _Scatter gather_
 * [Kontribusi](#kontribusi)
 
-## Credits
+## Kredit
 
-Credits and sources are provided throughout this repo.
+Kredit dan sumber tersedia di sepanjang repo ini.
 
-Special thanks to:
+Terima kasih khusus kepada:
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
@@ -1975,9 +1975,9 @@ Special thanks to:
 * [checkcheckzz/system-design-interview](https://github.com/checkcheckzz/system-design-interview)
 * [shashank88/system_design](https://github.com/shashank88/system_design)
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
-* [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
-* [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [Contekan perancangan sistem](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
+* [Daftar baca sistem terdistribusi](http://dancres.github.io/Pages/)
+* [Pemecahan wawancara perancangan sistem](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## Contact info
 
