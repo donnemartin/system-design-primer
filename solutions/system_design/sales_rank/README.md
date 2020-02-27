@@ -102,7 +102,7 @@ t5          product4    category1      1        5.00         5            6
 * **第 1 步** - 将数据转换为 `(category, product_id), sum(quantity)` 的形式
 * **第 2 步** - 执行分布式排序
 
-```
+```python
 class SalesRanker(MRJob):
 
     def within_past_week(self, timestamp):

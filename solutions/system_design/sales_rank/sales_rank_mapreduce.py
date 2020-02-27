@@ -9,7 +9,7 @@ class SalesRanker(MRJob):
         """Return True if timestamp is within past week, False otherwise."""
         ...
 
-    def mapper(self, _ line):
+    def mapper(self, _, line):
         """Parse each log line, extract and transform relevant lines.
 
         Emit key value pairs of the form:
@@ -25,7 +25,7 @@ class SalesRanker(MRJob):
         if self.within_past_week(timestamp):
             yield (category, product_id), quantity
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """Sum values for each key.
 
         (foo, p1), 2
@@ -74,4 +74,4 @@ class SalesRanker(MRJob):
 
 
 if __name__ == '__main__':
-    HitCounts.run()
+    SalesRanker.run()

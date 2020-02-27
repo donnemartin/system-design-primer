@@ -124,7 +124,7 @@
 
 ```
            tweet n+2                   tweet n+1                   tweet n
-| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   7 bytes  1 byte |
+| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte |
 | tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |
 ```
 
@@ -189,7 +189,7 @@ $ curl https://twitter.com/api/v1/home_timeline?user_id=123
 
 ### 用例：用户浏览用户时间轴
 
-* **客户端**向**Web 服务器**发起获得主页时间轴的请求
+* **客户端**向**Web 服务器**发起获得用户时间线的请求
 * **Web 服务器**将请求转发给**读取 API**服务器
 * **读取 API**从 **SQL 数据库**中取出用户的时间轴
 
@@ -207,7 +207,7 @@ REST API 与前面的主页时间轴类似，区别只在于取出的推特是�
         * 规范字母大小写
         * 将查询转换为布尔操作
     * 查询**搜索集群**（例如[Lucene](https://lucene.apache.org/)）检索结果：
-        * 对集群内的所有服务器进行查询，将有结果的查询进行[发散聚合（Scatter gathers）](https://github.com/donnemartin/system-design-primer#under-development) 
+        * 对集群内的所有服务器进行查询，将有结果的查询进行[发散聚合（Scatter gathers）](https://github.com/donnemartin/system-design-primer#under-development)
         * 合并取到的条目，进行评分与排序，最终返回结果
 
 REST API：

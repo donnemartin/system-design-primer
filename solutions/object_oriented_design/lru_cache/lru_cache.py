@@ -11,9 +11,14 @@ class LinkedList(object):
         self.head = None
         self.tail = None
 
-    def move_to_front(self, node):  # ...
-    def append_to_front(self, node):  # ...
-    def remove_from_tail(self):  # ...
+    def move_to_front(self, node):
+        pass
+
+    def append_to_front(self, node):
+        pass
+
+    def remove_from_tail(self):
+        pass
 
 
 class Cache(object):
@@ -24,12 +29,12 @@ class Cache(object):
         self.lookup = {}  # key: query, value: node
         self.linked_list = LinkedList()
 
-    def get(self, query)
+    def get(self, query):
         """Get the stored query result from the cache.
-        
+
         Accessing a node updates its position to the front of the LRU list.
         """
-        node = self.lookup[query]
+        node = self.lookup.get(query)
         if node is None:
             return None
         self.linked_list.move_to_front(node)
@@ -37,12 +42,12 @@ class Cache(object):
 
     def set(self, results, query):
         """Set the result for the given query key in the cache.
-        
+
         When updating an entry, updates its position to the front of the LRU list.
         If the entry is new and the cache is at capacity, removes the oldest entry
         before the new entry is added.
         """
-        node = self.lookup[query]
+        node = self.lookup.get(query)
         if node is not None:
             # Key exists in cache, update the value
             node.results = results
