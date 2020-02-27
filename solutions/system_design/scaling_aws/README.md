@@ -83,7 +83,7 @@
 
 * **Web 服务器** 在 EC2 上
     * 存储用户数据
-    * [**MySQL 数据库**](https://github.com/donnemartin/system-design-primer#sql)
+    * [**MySQL 数据库**](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
 
 运用 **纵向扩展**：
 
@@ -344,7 +344,7 @@ SQL 扩展模型包括：
 
 ### SQL 扩展模式
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave)
+* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [集合](https://github.com/donnemartin/system-design-primer#federation)
 * [分区](https://github.com/donnemartin/system-design-primer#sharding)
 * [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)

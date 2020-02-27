@@ -62,7 +62,7 @@
 
 没有百万用户（点）的和十亿朋友关系（边）的限制，我们能够用一般 BFS 方法解决无权重最短路径任务：
 
-```
+```python
 class Graph(Graph):
 
     def shortest_path(self, source, dest):
@@ -116,7 +116,7 @@ class Graph(Graph):
 
 **查询服务** 实现：
 
-```
+```python
 class LookupService(object):
 
     def __init__(self):
@@ -131,7 +131,7 @@ class LookupService(object):
 
 **人员服务器** 实现：
 
-```
+```python
 class PersonServer(object):
 
     def __init__(self):
@@ -150,7 +150,7 @@ class PersonServer(object):
 
 **用户** 实现：
 
-```
+```python
 class Person(object):
 
     def __init__(self, id, name, friend_ids):
@@ -161,7 +161,7 @@ class Person(object):
 
 **用户图服务** 实现：
 
-```
+```python
 class UserGraphService(object):
 
     def __init__(self, lookup_service):
@@ -289,7 +289,7 @@ $ curl https://social.com/api/v1/friend_search?person_id=1234
 
 ### SQL 扩展模式
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave)
+* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [集合](https://github.com/donnemartin/system-design-primer#federation)
 * [分区](https://github.com/donnemartin/system-design-primer#sharding)
 * [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)

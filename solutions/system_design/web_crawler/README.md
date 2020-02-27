@@ -13,14 +13,14 @@
 #### 我们把问题限定在仅处理以下用例的范围中
 
 * **服务** 抓取一系列链接：
-    * 生成包含搜索词的网页倒排索引 
+    * 生成包含搜索词的网页倒排索引
     * 生成页面的标题和摘要信息
         * 页面标题和摘要都是静态的，它们不会根据搜索词改变
 * **用户** 输入搜索词后，可以看到相关的搜索结果列表，列表每一项都包含由网页爬虫生成的页面标题及摘要
     * 只给该用例绘制出概要组件和交互说明，无需讨论细节
 * **服务** 具有高可用性
 
-#### 无需考虑  
+#### 无需考虑
 
 * 搜索分析
 * 个性化搜索结果
@@ -31,7 +31,7 @@
 #### 提出假设
 
 * 搜索流量分布不均
-    * 有些搜索词非常热门，有些则非常冷门 
+    * 有些搜索词非常热门，有些则非常冷门
 * 只支持匿名用户
 * 用户很快就能看到搜索结果
 * 网页爬虫不应该陷入死循环
@@ -40,57 +40,57 @@
     * 要定期重新抓取页面以确保新鲜度
     * 平均每周重新抓取一次，网站越热门，那么重新抓取的频率越高
         * 每月抓取 40 亿个链接
-    * 每个页面的平均存储大小：500 KB 
+    * 每个页面的平均存储大小：500 KB
         * 简单起见，重新抓取的页面算作新页面
 * 每月搜索量 1000 亿次
 
-用更传统的系统来练习 —— 不要使用 [solr](http://lucene.apache.org/solr/) 、[nutch](http://nutch.apache.org/) 之类的现成系统。 
+用更传统的系统来练习 —— 不要使用 [solr](http://lucene.apache.org/solr/) 、[nutch](http://nutch.apache.org/) 之类的现成系统。
 
 #### 计算用量
 
 **如果你需要进行粗略的用量计算，请向你的面试官说明。**
 
 * 每月存储 2 PB 页面
-    * 每月抓取 40 亿个页面，每个页面 500 KB  
+    * 每月抓取 40 亿个页面，每个页面 500 KB
     * 三年存储 72 PB 页面
 * 每秒 1600 次写请求
-* 每秒 40000 次搜索请求  
+* 每秒 40000 次搜索请求
 
 简便换算指南：
 
 * 一个月有 250 万秒
-* 每秒 1 个请求，即每月 250 万个请求 
-* 每秒 40 个请求，即每月 1 亿个请求 
-* 每秒 400 个请求，即每月 10 亿个请求 
+* 每秒 1 个请求，即每月 250 万个请求
+* 每秒 40 个请求，即每月 1 亿个请求
+* 每秒 400 个请求，即每月 10 亿个请求
 
 ## 第二步： 概要设计
 
-> 列出所有重要组件以规划概要设计。 
+> 列出所有重要组件以规划概要设计。
 
 ![Imgur](http://i.imgur.com/xjdAAUv.png)
 
-## 第三步：设计核心组件 
+## 第三步：设计核心组件
 
 > 对每一个核心组件进行详细深入的分析。
 
-### 用例：爬虫服务抓取一系列网页 
+### 用例：爬虫服务抓取一系列网页
 
-假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用 [Yahoo](https://www.yahoo.com/)、[DMOZ](http://www.dmoz.org/) 等知名门户网站作为种子链接来进行扩散 。 
+假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用 [Yahoo](https://www.yahoo.com/)、[DMOZ](http://www.dmoz.org/) 等知名门户网站作为种子链接来进行扩散 。
 
-我们将用表 `crawled_links` （已抓取链接 ）来记录已经处理过的链接以及相应的页面签名。  
+我们将用表 `crawled_links` （已抓取链接 ）来记录已经处理过的链接以及相应的页面签名。
 
-我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型 **NoSQL 数据库**中。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。 
+我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型 **NoSQL 数据库**中。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
 
 *  **爬虫服务**按照以下流程循环处理每一个页面链接：
     * 选取排名最靠前的待抓取链接
         * 在  **NoSQL 数据库**的 `crawled_links` 中，检查待抓取页面的签名是否与某个已抓取页面的签名相似
             * 若存在，则降低该页面链接的优先级
-                * 这样做可以避免陷入死循环 
-                * 继续（进入下一次循环） 
-            * 若不存在，则抓取该链接 
-                * 在**倒排索引服务**任务队列中，新增一个生成[倒排索引](https://en.wikipedia.org/wiki/Search_engine_indexing)任务。 
+                * 这样做可以避免陷入死循环
+                * 继续（进入下一次循环）
+            * 若不存在，则抓取该链接
+                * 在**倒排索引服务**任务队列中，新增一个生成[倒排索引](https://en.wikipedia.org/wiki/Search_engine_indexing)任务。
                 * 在**文档服务**任务队列中，新增一个生成静态标题和摘要的任务。
-                * 生成页面签名 
+                * 生成页面签名
                 * 在 **NoSQL 数据库**的 `links_to_crawl` 中删除该链接
                 * 在 **NoSQL 数据库**的 `crawled_links` 中插入该链接以及页面签名
 
@@ -98,7 +98,7 @@
 
 `PagesDataStore` 是**爬虫服务**中的一个抽象类，它使用 **NoSQL 数据库**进行存储。
 
-```
+```python
 class PagesDataStore(object):
 
     def __init__(self, db);
@@ -132,7 +132,7 @@ class PagesDataStore(object):
 
 `Page` 是**爬虫服务**的一个抽象类，它封装了网页对象，由页面链接、页面内容、子链接和页面签名构成。
 
-```
+```python
 class Page(object):
 
     def __init__(self, url, contents, child_urls, signature):
@@ -144,7 +144,7 @@ class Page(object):
 
 `Crawler` 是**爬虫服务**的主类，由`Page` 和 `PagesDataStore` 组成。
 
-```
+```python
 class Crawler(object):
 
     def __init__(self, data_store, reverse_index_queue, doc_index_queue):
@@ -180,12 +180,12 @@ class Crawler(object):
 
 **向面试官了解你需要写多少代码**.
 
-删除重复链接： 
+删除重复链接：
 
 * 假设数据量较小，我们可以用类似于 `sort | unique` 的方法。（译注： 先排序，后去重）
 * 假设有 10 亿条数据，我们应该使用 **MapReduce** 来输出只出现 1 次的记录。
 
-```
+```python
 class RemoveDuplicateUrls(MRJob):
 
     def mapper(self, _, line):
@@ -197,13 +197,13 @@ class RemoveDuplicateUrls(MRJob):
             yield key, total
 ```
 
-比起处理重复内容，检测重复内容更为复杂。我们可以基于网页内容生成签名，然后对比两者签名的相似度。可能会用到的算法有 [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) 以及 [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)。 
+比起处理重复内容，检测重复内容更为复杂。我们可以基于网页内容生成签名，然后对比两者签名的相似度。可能会用到的算法有 [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) 以及 [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)。
 
-### 抓取结果更新策略 
+### 抓取结果更新策略
 
-要定期重新抓取页面以确保新鲜度。抓取结果应该有个 `timestamp` 字段记录上一次页面抓取时间。每隔一段时间，比如说 1 周，所有页面都需要更新一次。对于热门网站或是内容频繁更新的网站，爬虫抓取间隔可以缩短。 
+要定期重新抓取页面以确保新鲜度。抓取结果应该有个 `timestamp` 字段记录上一次页面抓取时间。每隔一段时间，比如说 1 周，所有页面都需要更新一次。对于热门网站或是内容频繁更新的网站，爬虫抓取间隔可以缩短。
 
-尽管我们不会深入网页数据分析的细节，我们仍然要做一些数据挖掘工作来确定一个页面的平均更新时间，并且根据相关的统计数据来决定爬虫的重新抓取频率。 
+尽管我们不会深入网页数据分析的细节，我们仍然要做一些数据挖掘工作来确定一个页面的平均更新时间，并且根据相关的统计数据来决定爬虫的重新抓取频率。
 
 当然我们也应该根据站长提供的 `Robots.txt` 来控制爬虫的抓取频率。
 
@@ -212,13 +212,13 @@ class RemoveDuplicateUrls(MRJob):
 *  **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
 * **Web 服务器** 发送请求到 **Query API** 服务器
 * **查询 API** 服务将会做这些事情：
-    * 解析查询参数 
+    * 解析查询参数
         * 删除 HTML 标记
         * 将文本分割成词组 （译注： 分词处理）
-        * 修正错别字 
-        * 规范化大小写 
-        * 将搜索词转换为布尔运算 
-    * 使用**倒排索引服务**来查找匹配查询的文档 
+        * 修正错别字
+        * 规范化大小写
+        * 将搜索词转换为布尔运算
+    * 使用**倒排索引服务**来查找匹配查询的文档
         * **倒排索引服务**对匹配到的结果进行排名，然后返回最符合的结果
     * 使用**文档服务**返回文章标题与摘要
 
@@ -286,7 +286,7 @@ $ curl https://search.com/api/v1/search?query=hello+world
 * DNS 查询可能会成为瓶颈，**爬虫服务**最好专门维护一套定期更新的 DNS 查询服务。
 * 借助于[连接池](https://en.wikipedia.org/wiki/Connection_pool)，即同时维持多个开放网络连接，可以提升**爬虫服务**的性能并减少内存使用量。
     * 改用 [UDP](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#用户数据报协议udp) 协议同样可以提升性能
-* 网络爬虫受带宽影响较大，请确保带宽足够维持高吞吐量。 
+* 网络爬虫受带宽影响较大，请确保带宽足够维持高吞吐量。
 
 ## 其它要点
 
@@ -309,7 +309,7 @@ $ curl https://search.com/api/v1/search?query=hello+world
 * [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
 
 
-### 缓存 
+### 缓存
 
 * 在哪缓存
     * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
@@ -325,8 +325,8 @@ $ curl https://search.com/api/v1/search?query=hello+world
     * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
     * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
     * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
- 
-### 异步与微服务 
+
+### 异步与微服务
 
 * [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
 * [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
@@ -346,7 +346,7 @@ $ curl https://search.com/api/v1/search?query=hello+world
 请参阅[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)。
 
 
-### 延迟数值 
+### 延迟数值
 
 请参阅[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
 

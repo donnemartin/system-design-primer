@@ -131,7 +131,7 @@ PRIMARY KEY(shortlink)
     * Base 64 是另一种很流行的编码形式，但是它生成的字符串作为 url 存在一些问题：Base 64m字符串内包含 `+` 和 `/` 符号
     * 下面的 [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) 算法时间复杂度为 O(k)，本例中取 num =7，即 k 值为 7：
 
-```
+```python
 def base_encode(num, base=62):
     digits = []
     while num > 0
@@ -143,7 +143,7 @@ def base_encode(num, base=62):
 
 * 输出前 7 个字符，其结果将有 62^7 种可能的值，作为短链接来说足够了。因为我们限制了 3 年内最多产生 36000 万个短链接：
 
-```
+```python
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 我们可以调用一个公共的 [REST API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
@@ -194,7 +194,7 @@ $ curl https://pastebin.com/api/v1/paste?shortlink=foobar
 
 **向你的面试官告知你准备写多少代码**。
 
-```
+```python
 class HitCounts(MRJob):
 
     def extract_url(self, line):

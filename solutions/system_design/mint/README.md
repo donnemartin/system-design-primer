@@ -136,7 +136,7 @@ $ curl -X POST --data '{ "user_id": "foo", "account_url": "bar", \
 
 * **客户端**向 **Web服务器** 发送请求
 * **Web服务器** 将请求转发到 **帐户API** 服务器
-* **帐户API** 服务器将job放在 **队列** 中，如 Amazon SQS 或者 [RabbitMQ](https://www.rabbitmq.com/)
+* **帐户API** 服务器将job放在 **队列** 中，如 [Amazon SQS](https://aws.amazon.com/sqs/) 或者 [RabbitMQ](https://www.rabbitmq.com/)
     * 提取交易可能需要一段时间，我们可能希望[与队列异步](https://github.com/donnemartin/system-design-primer#asynchronism)地来做，虽然这会引入额外的复杂度。
 * **交易提取服务** 执行如下操作：
     * 从 **Queue** 中拉取并从金融机构中提取给定用户的交易，将结果作为原始日志文件存储在 **对象存储区**。
@@ -182,7 +182,7 @@ FOREIGN KEY(user_id) REFERENCES users(id)
 
 **告知你的面试官你准备写多少代码**。
 
-```
+```python
 class DefaultCategories(Enum):
 
     HOUSING = 0
@@ -199,7 +199,7 @@ seller_category_map['Target'] = DefaultCategories.SHOPPING
 
 对于一开始没有在映射中的卖家，我们可以通过评估用户提供的手动类别来进行众包。在 O(1) 时间内，我们可以用堆来快速查找每个卖家的顶端的手动覆盖。
 
-```
+```python
 class Categorizer(object):
 
     def __init__(self, seller_category_map, self.seller_category_crowd_overrides_map):
@@ -219,7 +219,7 @@ class Categorizer(object):
 
 交易实现：
 
-```
+```python
 class Transaction(object):
 
     def __init__(self, created_at, seller, amount):
@@ -233,7 +233,7 @@ class Transaction(object):
 首先，我们可以使用根据收入等级分配每类别金额的通用预算模板。使用这种方法，我们不必存储在约束中标识的 1 亿个预算项目，只需存储用户覆盖的预算项目。如果用户覆盖预算类别，我们可以在
 `TABLE budget_overrides`中存储此覆盖。
 
-```
+```python
 class Budget(object):
 
     def __init__(self, income):
@@ -274,7 +274,7 @@ user_id   timestamp   seller  amount
 
 **MapReduce** 实现:
 
-```
+```python
 class SpendingByCategory(MRJob):
 
     def __init__(self, categorizer):
@@ -348,6 +348,7 @@ class SpendingByCategory(MRJob):
 * [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
 * [SQL 故障主从切换](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
 * [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
+* [异步](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#异步)
 * [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
 * [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
 

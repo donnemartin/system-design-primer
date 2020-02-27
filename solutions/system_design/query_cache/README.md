@@ -97,7 +97,7 @@
 
 实现**查询 API 服务**：
 
-```
+```python
 class QueryApi(object):
 
     def __init__(self, memory_cache, reverse_index_service):
@@ -121,7 +121,7 @@ class QueryApi(object):
 
 实现**节点**：
 
-```
+```python
 class Node(object):
 
     def __init__(self, query, results):
@@ -131,7 +131,7 @@ class Node(object):
 
 实现**链表**：
 
-```
+```python
 class LinkedList(object):
 
     def __init__(self):
@@ -150,7 +150,7 @@ class LinkedList(object):
 
 实现**缓存**：
 
-```
+```python
 class Cache(object):
 
     def __init__(self, MAX_SIZE):
