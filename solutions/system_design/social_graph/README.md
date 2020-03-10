@@ -1,66 +1,66 @@
-# 为社交网络设计数据结构
+# Design the data structures for a social network
 
-**注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
+*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
-## 第 1 步：用例和约束概要
+## Step 1: Outline use cases and constraints
 
-> 收集需求并调查问题。
-> 通过提问清晰用例和约束。
-> 讨论假设。
+> Gather requirements and scope the problem.
+> Ask questions to clarify use cases and constraints.
+> Discuss assumptions.
 
-如果没有面试官提出明确的问题，我们将自己定义一些用例和约束条件。
+Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
 
-### 用例
+### Use cases
 
-#### 我们就处理以下用例审视这一问题
+#### We'll scope the problem to handle only the following use cases
 
-* **用户** 寻找某人并显示与被寻人之间的最短路径
-* **服务** 高可用
+* **User** searches for someone and sees the shortest path to the searched person
+* **Service** has high availability
 
-### 约束和假设
+### Constraints and assumptions
 
-#### 状态假设
+#### State assumptions
 
-* 流量分布不均
-    * 某些搜索比别的更热门，同时某些搜索仅执行一次
-* 图数据不适用单一机器
-* 图的边没有权重
-* 1 千万用户
-* 每个用户平均有 50 个朋友
-* 每月 10 亿次朋友搜索
+* Traffic is not evenly distributed
+    * Some searches are more popular than others, while others are only executed once
+* Graph data won't fit on a single machine
+* Graph edges are unweighted
+* 100 million users
+* 50 friends per user average
+* 1 billion friend searches per month
 
-训练使用更传统的系统 - 别用图特有的解决方案例如 [GraphQL](http://graphql.org/) 或图数据库如 [Neo4j](https://neo4j.com/)。
+Exercise the use of more traditional systems - don't use graph-specific solutions such as [GraphQL](http://graphql.org/) or a graph database like [Neo4j](https://neo4j.com/)
 
-#### 计算使用
+#### Calculate usage
 
-**向你的面试官厘清你是否应该做粗略的使用计算**
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
 
-* 50 亿朋友关系
-    * 1 亿用户 * 平均每人 50 个朋友
-* 每秒 400 次搜索请求
+* 5 billion friend relationships
+    * 100 million users * 50 friends per user average
+* 400 search requests per second
 
-便捷的转换指南：
+Handy conversion guide:
 
-* 每月 250 万秒
-* 每秒 1 个请求 = 每月 250 万次请求
-* 每秒 40 个请求 = 每月 1 亿次请求
-* 每秒 400 个请求 = 每月 10 亿次请求
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
 
-## 第 2 步：创建高级设计方案
+## Step 2: Create a high level design
 
-> 用所有重要组件概述高水平设计
+> Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/wxXyq2J.png)
 
-## 第 3 步：设计核心组件
+## Step 3: Design core components
 
-> 深入每个核心组件的细节。
+> Dive into details for each core component.
 
-### 用例： 用户搜索某人并查看到被搜人的最短路径
+### Use case: User searches for someone and sees the shortest path to the searched person
 
-**和你的面试官说清你期望的代码量**
+**Clarify with your interviewer how much code you are expected to write**.
 
-没有百万用户（点）的和十亿朋友关系（边）的限制，我们能够用一般 BFS 方法解决无权重最短路径任务：
+Without the constraint of millions of users (vertices) and billions of friend relationships (edges), we could solve this unweighted shortest path task with a general BFS approach:
 
 ```python
 class Graph(Graph):
@@ -99,22 +99,23 @@ class Graph(Graph):
         return None
 ```
 
-我们不能在同一台机器上满足所有用户，我们需要通过 **人员服务器** [拆分](https://github.com/donnemartin/system-design-primer#sharding) 用户并且通过 **查询服务** 访问。
+We won't be able to fit all users on the same machine, we'll need to [shard](https://github.com/donnemartin/system-design-primer#sharding) users across **Person Servers** and access them with a **Lookup Service**.
 
-* **客户端** 向 **服务器** 发送请求，**服务器** 作为 [反向代理](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* **搜索 API** 服务器向 **用户图服务** 转发请求
-* **用户图服务** 有以下功能：
-    * 使用 **查询服务** 找到当前用户信息存储的 **人员服务器**
-    * 找到适当的 **人员服务器** 检索当前用户的 `friend_ids` 列表
-    * 把当前用户作为 `source` 运行 BFS 搜索算法同时 当前用户的 `friend_ids` 作为每个 `adjacent_node` 的 ids
-    * 给定 id 获取 `adjacent_node`:
-        * **用户图服务** 将 **再次** 和 **查询服务** 通讯，最后判断出和给定 id 相匹配的存储 `adjacent_node` 的 **人员服务器**（有待优化）
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Search API** server
+* The **Search API** server forwards the request to the **User Graph Service**
+* The **User Graph Service** does the following:
+    * Uses the **Lookup Service** to find the **Person Server** where the current user's info is stored
+    * Finds the appropriate **Person Server** to retrieve the current user's list of `friend_ids`
+    * Runs a BFS search using the current user as the `source` and the current user's `friend_ids` as the ids for each `adjacent_node`
+    * To get the `adjacent_node` from a given id:
+        * The **User Graph Service** will *again* need to communicate with the **Lookup Service** to determine which **Person Server** stores the`adjacent_node` matching the given id (potential for optimization)
 
-**和你的面试官说清你应该写的代码量**
+**Clarify with your interviewer how much code you should be writing**.
 
-**注释**：简易版错误处理执行如下。询问你是否需要编写适当的错误处理方法。
+**Note**: Error handling is excluded below for simplicity.  Ask if you should code proper error handing.
 
-**查询服务** 实现：
+**Lookup Service** implementation:
 
 ```python
 class LookupService(object):
@@ -129,7 +130,7 @@ class LookupService(object):
         return self.lookup[person_id]
 ```
 
-**人员服务器** 实现：
+**Person Server** implementation:
 
 ```python
 class PersonServer(object):
@@ -148,7 +149,7 @@ class PersonServer(object):
         return results
 ```
 
-**用户** 实现：
+**Person** implementation:
 
 ```python
 class Person(object):
@@ -159,7 +160,7 @@ class Person(object):
         self.friend_ids = friend_ids
 ```
 
-**用户图服务** 实现：
+**User Graph Service** implementation:
 
 ```python
 class UserGraphService(object):
@@ -217,13 +218,13 @@ class UserGraphService(object):
         return None
 ```
 
-我们用的是公共的 [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)：
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
 
 ```
 $ curl https://social.com/api/v1/friend_search?person_id=1234
 ```
 
-响应：
+Response:
 
 ```
 {
@@ -243,106 +244,106 @@ $ curl https://social.com/api/v1/friend_search?person_id=1234
 },
 ```
 
-内部通信使用 [远端过程调用](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)。
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
 
-## 第 4 步：扩展设计
+## Step 4: Scale the design
 
-> 在给定约束条件下，定义和确认瓶颈。
+> Identify and address bottlenecks, given the constraints.
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 
-**重要：别简化从最初设计到最终设计的过程！**
+**Important: Do not simply jump right into the final design from the initial design!**
 
-你将要做的是：1) **基准/负载 测试**， 2) 瓶颈 **概述**， 3) 当评估可选和折中方案时定位瓶颈，4) 重复。以 [在 AWS 上设计支持百万级到千万级用户的系统](../scaling_aws/README.md) 为参考迭代地扩展最初设计。
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
-讨论最初设计可能遇到的瓶颈和处理方法十分重要。例如，什么问题可以通过添加多台 **Web 服务器** 作为 **负载均衡** 解决？**CDN**？**主从副本**？每个问题都有哪些替代和 **折中** 方案？
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
-我们即将介绍一些组件来完成设计和解决扩展性问题。内部负载均衡不显示以减少混乱。
+We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
-**避免重复讨论**，以下网址链接到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 相关的主流方案、折中方案和替代方案。
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
 * [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [负载均衡](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [横向扩展](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web 服务器（反向代理）](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API 服务器（应用层）](https://github.com/donnemartin/system-design-primer#application-layer)
-* [缓存](https://github.com/donnemartin/system-design-primer#cache)
-* [一致性模式](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [可用性模式](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
+* [Cache](https://github.com/donnemartin/system-design-primer#cache)
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
-解决 **平均** 每秒 400 次请求的限制（峰值），人员数据可以存在例如 Redis 或 Memcached 这样的 **内存** 中以减少响应次数和下游流量通信服务。这尤其在用户执行多次连续查询和查询哪些广泛连接的人时十分有用。从内存中读取 1MB 数据大约要 250 微秒，从 SSD 中读取同样大小的数据时间要长 4 倍，从硬盘要长 80 倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+To address the constraint of 400 *average* read requests per second (higher at peak), person data can be served from a **Memory Cache** such as Redis or Memcached to reduce response times and to reduce traffic to downstream services.  This could be especially useful for people who do multiple searches in succession and for people who are well-connected.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 
-以下是进一步优化方案：
+Below are further optimizations:
 
-* 在 **内存** 中存储完整的或部分的BFS遍历加快后续查找
-* 在 **NoSQL 数据库** 中批量离线计算并存储完整的或部分的BFS遍历加快后续查找
-* 在同一台 **人员服务器** 上托管批处理同一批朋友查找减少机器跳转
-    * 通过地理位置 [拆分](https://github.com/donnemartin/system-design-primer#sharding) **人员服务器** 来进一步优化，因为朋友通常住得都比较近
-* 同时进行两个 BFS 查找，一个从 source 开始，一个从 destination 开始，然后合并两个路径
-* 从有庞大朋友圈的人开始找起，这样更有可能减小当前用户和搜索目标之间的 [离散度数](https://en.wikipedia.org/wiki/Six_degrees_of_separation)
-* 在询问用户是否继续查询之前设置基于时间或跳跃数阈值，当在某些案例中搜索耗费时间过长时。
-* 使用类似 [Neo4j](https://neo4j.com/) 的 **图数据库** 或图特定查询语法，例如 [GraphQL](http://graphql.org/)（如果没有禁止使用 **图数据库** 的限制的话）
+* Store complete or partial BFS traversals to speed up subsequent lookups in the **Memory Cache**
+* Batch compute offline then store complete or partial BFS traversals to speed up subsequent lookups in a **NoSQL Database**
+* Reduce machine jumps by batching together friend lookups hosted on the same **Person Server**
+    * [Shard](https://github.com/donnemartin/system-design-primer#sharding) **Person Servers** by location to further improve this, as friends generally live closer to each other
+* Do two BFS searches at the same time, one starting from the source, and one from the destination, then merge the two paths
+* Start the BFS search from people with large numbers of friends, as they are more likely to reduce the number of [degrees of separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation) between the current user and the search target
+* Set a limit based on time or number of hops before asking the user if they want to continue searching, as searching could take a considerable amount of time in some cases
+* Use a **Graph Database** such as [Neo4j](https://neo4j.com/) or a graph-specific query language such as [GraphQL](http://graphql.org/) (if there were no constraint preventing the use of **Graph Databases**)
 
-## 额外的话题
+## Additional talking points
 
-> 根据问题的范围和剩余时间，还需要深入讨论其他问题。
+> Additional topics to dive into, depending on the problem scope and time remaining.
 
-### SQL 扩展模式
+### SQL scaling patterns
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [集合](https://github.com/donnemartin/system-design-primer#federation)
-* [分区](https://github.com/donnemartin/system-design-primer#sharding)
-* [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
 #### NoSQL
 
-* [键值存储](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [文档存储](https://github.com/donnemartin/system-design-primer#document-store)
-* [宽表存储](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [图数据库](https://github.com/donnemartin/system-design-primer#graph-database)
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
 * [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
 
-### 缓存
+### Caching
 
-* 缓存到哪里
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web 服务缓存](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer#application-caching)
-* 缓存什么
-    * [数据库请求层缓存](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [对象层缓存](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
-* 何时更新缓存
-    * [预留缓存](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [完全写入](https://github.com/donnemartin/system-design-primer#write-through)
-    * [延迟写 (写回)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [事先更新](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+* Where to cache
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+* What to cache
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+* When to update the cache
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
+    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
 
-### 异步性和微服务
+### Asynchronism and microservices
 
-* [消息队列](https://github.com/donnemartin/system-design-primer#message-queues)
-* [任务队列](https://github.com/donnemartin/system-design-primer#task-queues)
-* [回退压力](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [微服务](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
 
-### 沟通
+### Communications
 
-* 关于折中方案的讨论:
-    * 客户端的外部通讯 - [遵循 REST 的 HTTP APIs](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * 内部通讯 - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [服务探索](https://github.com/donnemartin/system-design-primer#service-discovery)
+* Discuss tradeoffs:
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
 
-### 安全性
+### Security
 
-参考 [安全章节](https://github.com/donnemartin/system-design-primer#security)
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
 
-### 延迟数字指标
+### Latency numbers
 
-查阅 [每个程序员必懂的延迟数字](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know)
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
 
-### 正在进行
+### Ongoing
 
-* 继续基准测试并监控你的系统以解决出现的瓶颈问题
-* 扩展是一个迭代的过程
+* Continue benchmarking and monitoring your system to address bottlenecks as they come up
+* Scaling is an iterative process
