@@ -1834,7 +1834,7 @@ Metrik yang berguna berdasarkan nilai di atas:
 | Rancang pembatas laju API | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Tambahkan pertanyaan perancangan sistem | [Kontribusi](#kontribusi) |
 
-### Arsitektu dunia nyata
+### Arsitektur dunia nyata
 
 > Artikel tentang bagaiman sistem dirancang pada dunia nyata.
 
