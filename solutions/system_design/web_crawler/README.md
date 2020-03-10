@@ -1,102 +1,104 @@
-# 设计一个网页爬虫
+# Design a web crawler
 
-**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
+*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
-## 第一步：简述用例与约束条件
+## Step 1: Outline use cases and constraints
 
-> 把所有需要的东西聚集在一起，审视问题。不停的提问，以至于我们可以明确使用场景和约束。讨论假设。
+> Gather requirements and scope the problem.
+> Ask questions to clarify use cases and constraints.
+> Discuss assumptions.
 
-我们将在没有面试官明确说明问题的情况下，自己定义一些用例以及限制条件。
+Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
 
-### 用例
+### Use cases
 
-#### 我们把问题限定在仅处理以下用例的范围中
+#### We'll scope the problem to handle only the following use cases
 
-* **服务** 抓取一系列链接：
-    * 生成包含搜索词的网页倒排索引
-    * 生成页面的标题和摘要信息
-        * 页面标题和摘要都是静态的，它们不会根据搜索词改变
-* **用户** 输入搜索词后，可以看到相关的搜索结果列表，列表每一项都包含由网页爬虫生成的页面标题及摘要
-    * 只给该用例绘制出概要组件和交互说明，无需讨论细节
-* **服务** 具有高可用性
+* **Service** crawls a list of urls:
+    * Generates reverse index of words to pages containing the search terms
+    * Generates titles and snippets for pages
+        * Title and snippets are static, they do not change based on search query
+* **User** inputs a search term and sees a list of relevant pages with titles and snippets  the crawler generated
+    * Only sketch high level components and interactions for this use case, no need to go into depth
+* **Service** has high availability
 
-#### 无需考虑
+#### Out of scope
 
-* 搜索分析
-* 个性化搜索结果
-* 页面排名
+* Search analytics
+* Personalized search results
+* Page rank
 
-### 限制条件与假设
+### Constraints and assumptions
 
-#### 提出假设
+#### State assumptions
 
-* 搜索流量分布不均
-    * 有些搜索词非常热门，有些则非常冷门
-* 只支持匿名用户
-* 用户很快就能看到搜索结果
-* 网页爬虫不应该陷入死循环
-    * 当爬虫路径包含环的时候，将会陷入死循环
-* 抓取 10 亿个链接
-    * 要定期重新抓取页面以确保新鲜度
-    * 平均每周重新抓取一次，网站越热门，那么重新抓取的频率越高
-        * 每月抓取 40 亿个链接
-    * 每个页面的平均存储大小：500 KB
-        * 简单起见，重新抓取的页面算作新页面
-* 每月搜索量 1000 亿次
+* Traffic is not evenly distributed
+    * Some searches are very popular, while others are only executed once
+* Support only anonymous users
+* Generating search results should be fast
+* The web crawler should not get stuck in an infinite loop
+    * We get stuck in an infinite loop if the graph contains a cycle
+* 1 billion links to crawl
+    * Pages need to be crawled regularly to ensure freshness
+    * Average refresh rate of about once per week, more frequent for popular sites
+        * 4 billion links crawled each month
+    * Average stored size per web page: 500 KB
+        * For simplicity, count changes the same as new pages
+* 100 billion searches per month
 
-用更传统的系统来练习 —— 不要使用 [solr](http://lucene.apache.org/solr/) 、[nutch](http://nutch.apache.org/) 之类的现成系统。
+Exercise the use of more traditional systems - don't use existing systems such as [solr](http://lucene.apache.org/solr/) or [nutch](http://nutch.apache.org/).
 
-#### 计算用量
+#### Calculate usage
 
-**如果你需要进行粗略的用量计算，请向你的面试官说明。**
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
 
-* 每月存储 2 PB 页面
-    * 每月抓取 40 亿个页面，每个页面 500 KB
-    * 三年存储 72 PB 页面
-* 每秒 1600 次写请求
-* 每秒 40000 次搜索请求
+* 2 PB of stored page content per month
+    * 500 KB per page * 4 billion links crawled per month
+    * 72 PB of stored page content in 3 years
+* 1,600 write requests per second
+* 40,000 search requests per second
 
-简便换算指南：
+Handy conversion guide:
 
-* 一个月有 250 万秒
-* 每秒 1 个请求，即每月 250 万个请求
-* 每秒 40 个请求，即每月 1 亿个请求
-* 每秒 400 个请求，即每月 10 亿个请求
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
 
-## 第二步： 概要设计
+## Step 2: Create a high level design
 
-> 列出所有重要组件以规划概要设计。
+> Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/xjdAAUv.png)
 
-## 第三步：设计核心组件
+## Step 3: Design core components
 
-> 对每一个核心组件进行详细深入的分析。
+> Dive into details for each core component.
 
-### 用例：爬虫服务抓取一系列网页
+### Use case: Service crawls a list of urls
 
-假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用 [Yahoo](https://www.yahoo.com/)、[DMOZ](http://www.dmoz.org/) 等知名门户网站作为种子链接来进行扩散 。
+We'll assume we have an initial list of `links_to_crawl` ranked initially based on overall site popularity.  If this is not a reasonable assumption, we can seed the crawler with popular sites that link to outside content such as [Yahoo](https://www.yahoo.com/), [DMOZ](http://www.dmoz.org/), etc
 
-我们将用表 `crawled_links` （已抓取链接 ）来记录已经处理过的链接以及相应的页面签名。
+We'll use a table `crawled_links` to store processed links and their page signatures.
 
-我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型 **NoSQL 数据库**中。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
+We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Database**.  For the ranked links in `links_to_crawl`, we could use [Redis](https://redis.io/) with sorted sets to maintain a ranking of page links.  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
 
-*  **爬虫服务**按照以下流程循环处理每一个页面链接：
-    * 选取排名最靠前的待抓取链接
-        * 在  **NoSQL 数据库**的 `crawled_links` 中，检查待抓取页面的签名是否与某个已抓取页面的签名相似
-            * 若存在，则降低该页面链接的优先级
-                * 这样做可以避免陷入死循环
-                * 继续（进入下一次循环）
-            * 若不存在，则抓取该链接
-                * 在**倒排索引服务**任务队列中，新增一个生成[倒排索引](https://en.wikipedia.org/wiki/Search_engine_indexing)任务。
-                * 在**文档服务**任务队列中，新增一个生成静态标题和摘要的任务。
-                * 生成页面签名
-                * 在 **NoSQL 数据库**的 `links_to_crawl` 中删除该链接
-                * 在 **NoSQL 数据库**的 `crawled_links` 中插入该链接以及页面签名
+* The **Crawler Service** processes each page link by doing the following in a loop:
+    * Takes the top ranked page link to crawl
+        * Checks `crawled_links` in the **NoSQL Database** for an entry with a similar page signature
+            * If we have a similar page, reduces the priority of the page link
+                * This prevents us from getting into a cycle
+                * Continue
+            * Else, crawls the link
+                * Adds a job to the **Reverse Index Service** queue to generate a [reverse index](https://en.wikipedia.org/wiki/Search_engine_indexing)
+                * Adds a job to the **Document Service** queue to generate a static title and snippet
+                * Generates the page signature
+                * Removes the link from `links_to_crawl` in the **NoSQL Database**
+                * Inserts the page link and signature to `crawled_links` in the **NoSQL Database**
 
-**向面试官了解你需要写多少代码**。
+**Clarify with your interviewer how much code you are expected to write**.
 
-`PagesDataStore` 是**爬虫服务**中的一个抽象类，它使用 **NoSQL 数据库**进行存储。
+`PagesDataStore` is an abstraction within the **Crawler Service** that uses the **NoSQL Database**:
 
 ```python
 class PagesDataStore(object):
@@ -106,31 +108,31 @@ class PagesDataStore(object):
         ...
 
     def add_link_to_crawl(self, url):
-        """将指定链接加入 `links_to_crawl`。"""
+        """Add the given link to `links_to_crawl`."""
         ...
 
     def remove_link_to_crawl(self, url):
-        """从 `links_to_crawl` 中删除指定链接。"""
+        """Remove the given link from `links_to_crawl`."""
         ...
 
     def reduce_priority_link_to_crawl(self, url)
-        """在 `links_to_crawl` 中降低一个链接的优先级以避免死循环。"""
+        """Reduce the priority of a link in `links_to_crawl` to avoid cycles."""
         ...
 
     def extract_max_priority_page(self):
-        """返回 `links_to_crawl` 中优先级最高的链接。"""
+        """Return the highest priority link in `links_to_crawl`."""
         ...
 
     def insert_crawled_link(self, url, signature):
-        """将指定链接加入 `crawled_links`。"""
+        """Add the given link to `crawled_links`."""
         ...
 
     def crawled_similar(self, signature):
-        """判断待抓取页面的签名是否与某个已抓取页面的签名相似。"""
+        """Determine if we've already crawled a page matching the given signature"""
         ...
 ```
 
-`Page` 是**爬虫服务**的一个抽象类，它封装了网页对象，由页面链接、页面内容、子链接和页面签名构成。
+`Page` is an abstraction within the **Crawler Service** that encapsulates a page, its contents, child urls, and signature:
 
 ```python
 class Page(object):
@@ -142,7 +144,7 @@ class Page(object):
         self.signature = signature
 ```
 
-`Crawler` 是**爬虫服务**的主类，由`Page` 和 `PagesDataStore` 组成。
+`Crawler` is the main class within **Crawler Service**, composed of `Page` and `PagesDataStore`.
 
 ```python
 class Crawler(object):
@@ -153,7 +155,7 @@ class Crawler(object):
         self.doc_index_queue = doc_index_queue
 
     def create_signature(self, page):
-        """基于页面链接与内容生成签名。"""
+        """Create signature based on url and contents."""
         ...
 
     def crawl_page(self, page):
@@ -174,16 +176,16 @@ class Crawler(object):
                 self.crawl_page(page)
 ```
 
-### 处理重复内容
+### Handling duplicates
 
-我们要谨防网页爬虫陷入死循环，这通常会发生在爬虫路径中存在环的情况。
+We need to be careful the web crawler doesn't get stuck in an infinite loop, which happens when the graph contains a cycle.
 
-**向面试官了解你需要写多少代码**.
+**Clarify with your interviewer how much code you are expected to write**.
 
-删除重复链接：
+We'll want to remove duplicate urls:
 
-* 假设数据量较小，我们可以用类似于 `sort | unique` 的方法。（译注： 先排序，后去重）
-* 假设有 10 亿条数据，我们应该使用 **MapReduce** 来输出只出现 1 次的记录。
+* For smaller lists we could use something like `sort | unique`
+* With 1 billion links to crawl, we could use **MapReduce** to output only entries that have a frequency of 1
 
 ```python
 class RemoveDuplicateUrls(MRJob):
@@ -197,38 +199,38 @@ class RemoveDuplicateUrls(MRJob):
             yield key, total
 ```
 
-比起处理重复内容，检测重复内容更为复杂。我们可以基于网页内容生成签名，然后对比两者签名的相似度。可能会用到的算法有 [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) 以及 [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)。
+Detecting duplicate content is more complex.  We could generate a signature based on the contents of the page and compare those two signatures for similarity.  Some potential algorithms are [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) and [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity).
 
-### 抓取结果更新策略
+### Determining when to update the crawl results
 
-要定期重新抓取页面以确保新鲜度。抓取结果应该有个 `timestamp` 字段记录上一次页面抓取时间。每隔一段时间，比如说 1 周，所有页面都需要更新一次。对于热门网站或是内容频繁更新的网站，爬虫抓取间隔可以缩短。
+Pages need to be crawled regularly to ensure freshness.  Crawl results could have a `timestamp` field that indicates the last time a page was crawled.  After a default time period, say one week, all pages should be refreshed.  Frequently updated or more popular sites could be refreshed in shorter intervals.
 
-尽管我们不会深入网页数据分析的细节，我们仍然要做一些数据挖掘工作来确定一个页面的平均更新时间，并且根据相关的统计数据来决定爬虫的重新抓取频率。
+Although we won't dive into details on analytics, we could do some data mining to determine the mean time before a particular page is updated, and use that statistic to determine how often to re-crawl the page.
 
-当然我们也应该根据站长提供的 `Robots.txt` 来控制爬虫的抓取频率。
+We might also choose to support a `Robots.txt` file that gives webmasters control of crawl frequency.
 
-### 用例：用户输入搜索词后，可以看到相关的搜索结果列表，列表每一项都包含由网页爬虫生成的页面标题及摘要
+### Use case: User inputs a search term and sees a list of relevant pages with titles and snippets
 
-*  **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
-* **Web 服务器** 发送请求到 **Query API** 服务器
-* **查询 API** 服务将会做这些事情：
-    * 解析查询参数
-        * 删除 HTML 标记
-        * 将文本分割成词组 （译注： 分词处理）
-        * 修正错别字
-        * 规范化大小写
-        * 将搜索词转换为布尔运算
-    * 使用**倒排索引服务**来查找匹配查询的文档
-        * **倒排索引服务**对匹配到的结果进行排名，然后返回最符合的结果
-    * 使用**文档服务**返回文章标题与摘要
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Query API** server
+* The **Query API** server does the following:
+    * Parses the query
+        * Removes markup
+        * Breaks up the text into terms
+        * Fixes typos
+        * Normalizes capitalization
+        * Converts the query to use boolean operations
+    * Uses the **Reverse Index Service** to find documents matching the query
+        * The **Reverse Index Service** ranks the matching results and returns the top ones
+    * Uses the **Document Service** to return titles and snippets
 
-我们使用  [**REST API**](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) 与客户端通信：
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
 
 ```
 $ curl https://search.com/api/v1/search?query=hello+world
 ```
 
-响应内容:
+Response:
 
 ```
 {
@@ -248,109 +250,104 @@ $ curl https://search.com/api/v1/search?query=hello+world
 },
 ```
 
-对于服务器内部通信，我们可以使用 [远程过程调用协议（RPC）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
 
+## Step 4: Scale the design
 
-## 第四步：架构扩展
-
-> 根据限制条件，找到并解决瓶颈。
+> Identify and address bottlenecks, given the constraints.
 
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 
-**重要提示：不要直接从最初设计跳到最终设计！**
+**Important: Do not simply jump right into the final design from the initial design!**
 
-现在你要 1) **基准测试、负载测试**。2) **分析、描述**性能瓶颈。3) 在解决瓶颈问题的同时，评估替代方案、权衡利弊。4) 重复以上步骤。请阅读[设计一个系统，并将其扩大到为数以百万计的 AWS 用户服务](../scaling_aws/README.md) 来了解如何逐步扩大初始设计。
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
-讨论初始设计可能遇到的瓶颈及相关解决方案是很重要的。例如加上一套配备多台 **Web 服务器**的**负载均衡器**是否能够解决问题？**CDN**呢？**主从复制**呢？它们各自的替代方案和需要**权衡**的利弊又有哪些呢？
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
-我们将会介绍一些组件来完成设计，并解决架构规模扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
+We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
-**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及替代方案。
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
-* [水平扩展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
-* [Web 服务器（反向代理）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
-* [API 服务器（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
-* [NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#nosql)
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
+* [Cache](https://github.com/donnemartin/system-design-primer#cache)
+* [NoSQL](https://github.com/donnemartin/system-design-primer#nosql)
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
-有些搜索词非常热门，有些则非常冷门。热门的搜索词可以通过诸如 Redis 或者 Memcached 之类的**内存缓存**来缩短响应时间，避免**倒排索引服务**以及**文档服务**过载。**内存缓存**同样适用于流量分布不均匀以及流量短时高峰问题。从内存中读取 1 MB  连续数据大约需要 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数">1</a></sup>
+Some searches are very popular, while others are only executed once.  Popular queries can be served from a **Memory Cache** such as Redis or Memcached to reduce response times and to avoid overloading the **Reverse Index Service** and **Document Service**.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 
+Below are a few other optimizations to the **Crawling Service**:
 
-以下是优化**爬虫服务**的其他建议：
+* To handle the data size and request load, the **Reverse Index Service** and **Document Service** will likely need to make heavy use sharding and replication.
+* DNS lookup can be a bottleneck, the **Crawler Service** can keep its own DNS lookup that is refreshed periodically
+* The **Crawler Service** can improve performance and reduce memory usage by keeping many open connections at a time, referred to as [connection pooling](https://en.wikipedia.org/wiki/Connection_pool)
+    * Switching to [UDP](https://github.com/donnemartin/system-design-primer#user-datagram-protocol-udp) could also boost performance
+* Web crawling is bandwidth intensive, ensure there is enough bandwidth to sustain high throughput
 
-* 为了处理数据大小问题以及网络请求负载，**倒排索引服务**和**文档服务**可能需要大量应用数据分片和数据复制。
-* DNS 查询可能会成为瓶颈，**爬虫服务**最好专门维护一套定期更新的 DNS 查询服务。
-* 借助于[连接池](https://en.wikipedia.org/wiki/Connection_pool)，即同时维持多个开放网络连接，可以提升**爬虫服务**的性能并减少内存使用量。
-    * 改用 [UDP](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#用户数据报协议udp) 协议同样可以提升性能
-* 网络爬虫受带宽影响较大，请确保带宽足够维持高吞吐量。
+## Additional talking points
 
-## 其它要点
+> Additional topics to dive into, depending on the problem scope and time remaining.
 
-> 是否深入这些额外的主题，取决于你的问题范围和剩下的时间。
+### SQL scaling patterns
 
-### SQL 扩展模式
-
-* [读取复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
 #### NoSQL
 
-* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
-* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
 
+### Caching
 
-### 缓存
+* Where to cache
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+* What to cache
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+* When to update the cache
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
+    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
 
-* 在哪缓存
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
-    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
-* 什么需要缓存
-    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
-    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
-* 何时更新缓存
-    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
-    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
-    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
-    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
+### Asynchronism and microservices
 
-### 异步与微服务
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
+### Communications
 
-### 通信
+* Discuss tradeoffs:
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
 
-* 可权衡选择的方案：
-    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-    * 内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
+### Security
 
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
 
-### 安全性
+### Latency numbers
 
-请参阅[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)。
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
 
+### Ongoing
 
-### 延迟数值
-
-请参阅[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
-
-### 持续探讨
-
-* 持续进行基准测试并监控你的系统，以解决他们提出的瓶颈问题。
-* 架构扩展是一个迭代的过程。
+* Continue benchmarking and monitoring your system to address bottlenecks as they come up
+* Scaling is an iterative process
