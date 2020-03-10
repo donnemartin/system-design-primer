@@ -1,88 +1,88 @@
-# 为 Amazon 设计分类售卖排行
+# Design Amazon's sales rank by category feature
 
-**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
+*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
-## 第一步：简述用例与约束条件
+## Step 1: Outline use cases and constraints
 
-> 搜集需求与问题的范围。
-> 提出问题来明确用例与约束条件。
-> 讨论假设。
+> Gather requirements and scope the problem.
+> Ask questions to clarify use cases and constraints.
+> Discuss assumptions.
 
-我们将在没有面试官明确说明问题的情况下，自己定义一些用例以及限制条件。
+Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
 
-### 用例
+### Use cases
 
-#### 我们将把问题限定在仅处理以下用例的范围中
+#### We'll scope the problem to handle only the following use case
 
-* **服务**根据分类计算过去一周中最受欢迎的商品
-* **用户**通过分类浏览过去一周中最受欢迎的商品
-* **服务**有着高可用性
+* **Service** calculates the past week's most popular products by category
+* **User** views the past week's most popular products by category
+* **Service** has high availability
 
-#### 不在用例范围内的有
+#### Out of scope
 
-* 一般的电商网站
-    * 只为售卖排行榜设计组件
+* The general e-commerce site
+    * Design components only for calculating sales rank
 
-### 限制条件与假设
+### Constraints and assumptions
 
-#### 提出假设
+#### State assumptions
 
-* 网络流量不是均匀分布的
-* 一个商品可能存在于多个分类中
-* 商品不能够更改分类
-* 不会存在如 `foo/bar/baz` 之类的子分类
-* 每小时更新一次结果
-    * 受欢迎的商品越多，就需要更频繁地更新
-* 1000 万个商品
-* 1000 个分类
-* 每个月 10 亿次交易
-* 每个月 1000 亿次读取请求
-* 100:1 的读写比例
+* Traffic is not evenly distributed
+* Items can be in multiple categories
+* Items cannot change categories
+* There are no subcategories ie `foo/bar/baz`
+* Results must be updated hourly
+    * More popular products might need to be updated more frequently
+* 10 million products
+* 1000 categories
+* 1 billion transactions per month
+* 100 billion read requests per month
+* 100:1 read to write ratio
 
-#### 计算用量
+#### Calculate usage
 
-**如果你需要进行粗略的用量计算，请向你的面试官说明。**
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
 
-* 每笔交易的用量：
-    * `created_at` - 5 字节
-    * `product_id` - 8 字节
-    * `category_id` - 4 字节
-    * `seller_id` - 8 字节
-    * `buyer_id` - 8 字节
-    * `quantity` - 4 字节
-    * `total_price` - 5 字节
-    * 总计：大约 40 字节
-* 每个月的交易内容会产生 40 GB 的记录
-    * 每次交易 40 字节 * 每个月 10 亿次交易
-    * 3年内产生了 1.44 TB 的新交易内容记录
-    * 假定大多数的交易都是新交易而不是更改以前进行完的交易
-* 平均每秒 400 次交易次数
-* 平均每秒 40,000 次读取请求
+* Size per transaction:
+    * `created_at` - 5 bytes
+    * `product_id` - 8 bytes
+    * `category_id` - 4 bytes
+    * `seller_id` - 8 bytes
+    * `buyer_id` - 8 bytes
+    * `quantity` - 4 bytes
+    * `total_price` - 5 bytes
+    * Total: ~40 bytes
+* 40 GB of new transaction content per month
+    * 40 bytes per transaction * 1 billion transactions per month
+    * 1.44 TB of new transaction content in 3 years
+    * Assume most are new transactions instead of updates to existing ones
+* 400 transactions per second on average
+* 40,000 read requests per second on average
 
-便利换算指南：
+Handy conversion guide:
 
-* 每个月有 250 万秒
-* 每秒一个请求 = 每个月 250 万次请求
-* 每秒 40 个请求 = 每个月 1 亿次请求
-* 每秒 400 个请求 = 每个月 10 亿次请求
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
 
-## 第二步：概要设计
+## Step 2: Create a high level design
 
-> 列出所有重要组件以规划概要设计。
+> Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/vwMa1Qu.png)
 
-## 第三步：设计核心组件
+## Step 3: Design core components
 
-> 深入每个核心组件的细节。
+> Dive into details for each core component.
 
-### 用例：服务需要根据分类计算上周最受欢迎的商品
+### Use case: Service calculates the past week's most popular products by category
 
-我们可以在现成的**对象存储**系统（例如 Amazon S3 服务）中存储 **售卖 API** 服务产生的日志文本， 因此不需要我们自己搭建分布式文件系统了。
+We could store the raw **Sales API** server log files on a managed **Object Store** such as Amazon S3, rather than managing our own distributed file system.
 
-**向你的面试官告知你准备写多少代码**。
+**Clarify with your interviewer how much code you are expected to write**.
 
-假设下面是一个用 tab 分割的简易的日志记录：
+We'll assume this is a sample log entry, tab delimited:
 
 ```
 timestamp   product_id  category_id    qty     total_price   seller_id    buyer_id
@@ -95,25 +95,24 @@ t5          product4    category1      1        5.00         5            6
 ...
 ```
 
-**售卖排行服务** 需要用到 **MapReduce**，并使用 **售卖 API** 服务进行日志记录，同时将结果写入 **SQL 数据库**中的总表 `sales_rank` 中。我们也可以讨论一下[究竟是用 SQL 还是用 NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
+The **Sales Rank Service** could use **MapReduce**, using the **Sales API** server log files as input and writing the results to an aggregate table `sales_rank` in a **SQL Database**.  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
 
-我们需要通过以下步骤使用 **MapReduce**：
+We'll use a multi-step **MapReduce**:
 
-* **第 1 步** - 将数据转换为 `(category, product_id), sum(quantity)` 的形式
-* **第 2 步** - 执行分布式排序
+* **Step 1** - Transform the data to `(category, product_id), sum(quantity)`
+* **Step 2** - Perform a distributed sort
 
 ```python
 class SalesRanker(MRJob):
 
     def within_past_week(self, timestamp):
-        """如果时间戳属于过去的一周则返回 True，
-        否则返回 False。"""
+        """Return True if timestamp is within past week, False otherwise."""
         ...
 
     def mapper(self, _ line):
-        """解析日志的每一行，提取并转换相关行，
+        """Parse each log line, extract and transform relevant lines.
 
-        将键值对设定为如下形式：
+        Emit key value pairs of the form:
 
         (category1, product1), 2
         (category2, product1), 2
@@ -128,7 +127,7 @@ class SalesRanker(MRJob):
             yield (category_id, product_id), quantity
 
     def reducer(self, key, value):
-        """将每个 key 的值加起来。
+        """Sum values for each key.
 
         (category1, product1), 2
         (category2, product1), 3
@@ -139,9 +138,9 @@ class SalesRanker(MRJob):
         yield key, sum(values)
 
     def mapper_sort(self, key, value):
-        """构造 key 以确保正确的排序。
+        """Construct key to ensure proper sorting.
 
-        将键值对转换成如下形式：
+        Transform key and value to the form:
 
         (category1, 2), product1
         (category2, 3), product1
@@ -149,8 +148,8 @@ class SalesRanker(MRJob):
         (category2, 7), product3
         (category1, 1), product4
 
-        MapReduce 的随机排序步骤会将键
-        值的排序打乱，变成下面这样：
+        The shuffle/sort step of MapReduce will then do a
+        distributed sort on the keys, resulting in:
 
         (category1, 1), product4
         (category1, 2), product1
@@ -166,7 +165,7 @@ class SalesRanker(MRJob):
         yield key, value
 
     def steps(self):
-        """ 此处为 map reduce 步骤"""
+        """Run the map and reduce steps."""
         return [
             self.mr(mapper=self.mapper,
                     reducer=self.reducer),
@@ -175,7 +174,7 @@ class SalesRanker(MRJob):
         ]
 ```
 
-得到的结果将会是如下的排序列，我们将其插入 `sales_rank` 表中：
+The result would be the following sorted list, which we could insert into the `sales_rank` table:
 
 ```
 (category1, 1), product4
@@ -185,7 +184,7 @@ class SalesRanker(MRJob):
 (category2, 7), product3
 ```
 
-`sales_rank` 表的数据结构如下：
+The `sales_rank` table could have the following structure:
 
 ```
 id int NOT NULL AUTO_INCREMENT
@@ -197,21 +196,21 @@ FOREIGN KEY(category_id) REFERENCES Categories(id)
 FOREIGN KEY(product_id) REFERENCES Products(id)
 ```
 
-我们会以 `id`、`category_id` 与 `product_id` 创建一个 [索引](https://github.com/donnemartin/system-design-primer#use-good-indices)以加快查询速度（只需要使用读取日志的时间，不再需要每次都扫描整个数据表）并让数据常驻内存。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
+We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id `, `category_id`, and `product_id` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 
-### 用例：用户需要根据分类浏览上周中最受欢迎的商品
+### Use case: User views the past week's most popular products by category
 
-* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
-* 这个 **Web 服务器**将请求转发给**查询 API** 服务
-* The **查询 API** 服务将从 **SQL 数据库**的 `sales_rank` 表中读取数据
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Read API** server
+* The **Read API** server reads from the **SQL Database** `sales_rank` table
 
-我们可以调用一个公共的 [REST API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
 
 ```
 $ curl https://amazon.com/api/v1/popular?category_id=1234
 ```
 
-返回：
+Response:
 
 ```
 {
@@ -234,105 +233,106 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 },
 ```
 
-而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
 
-## 第四步：架构扩展
+## Step 4: Scale the design
 
-> 根据限制条件，找到并解决瓶颈。
+> Identify and address bottlenecks, given the constraints.
 
 ![Imgur](http://i.imgur.com/MzExP06.png)
 
-**重要提示：不要从最初设计直接跳到最终设计中！**
+**Important: Do not simply jump right into the final design from the initial design!**
 
-现在你要 1) **基准测试、负载测试**。2) **分析、描述**性能瓶颈。3) 在解决瓶颈问题的同时，评估替代方案、权衡利弊。4) 重复以上步骤。请阅读[「设计一个系统，并将其扩大到为数以百万计的 AWS 用户服务」](../scaling_aws/README.md) 来了解如何逐步扩大初始设计。
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
-讨论初始设计可能遇到的瓶颈及相关解决方案是很重要的。例如加上一个配置多台 **Web 服务器**的**负载均衡器**是否能够解决问题？**CDN**呢？**主从复制**呢？它们各自的替代方案和需要**权衡**的利弊又有什么呢？
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 
-我们将会介绍一些组件来完成设计，并解决架构扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
+We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
-**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
-* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
-* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
-* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
-* [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
-* [SQL 故障主从切换](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
-* [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
+* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
+* [Cache](https://github.com/donnemartin/system-design-primer#cache)
+* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
+* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
+* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
-**分析数据库** 可以用现成的数据仓储系统，例如使用 Amazon Redshift 或者 Google BigQuery 的解决方案。
+The **Analytics Database** could use a data warehousing solution such as Amazon Redshift or Google BigQuery.
 
-当使用数据仓储技术或者**对象存储**系统时，我们只想在数据库中存储有限时间段的数据。Amazon S3 的**对象存储**系统可以很方便地设置每个月限制只允许新增 40 GB 的存储内容。
+We might only want to store a limited time period of data in the database, while storing the rest in a data warehouse or in an **Object Store**.  An **Object Store** such as Amazon S3 can comfortably handle the constraint of 40 GB of new content per month.
 
-平均每秒 40,000 次的读取请求（峰值将会更高）, 可以通过扩展 **内存缓存** 来处理热点内容的读取流量，这对于处理不均匀分布的流量和流量峰值也很有用。由于读取量非常大，**SQL Read 副本** 可能会遇到处理缓存未命中的问题，我们可能需要使用额外的 SQL 扩展模式。
+To address the 40,000 *average* read requests per second (higher at peak), traffic for popular content (and their sales rank) should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  With the large volume of reads, the **SQL Read Replicas** might not be able to handle the cache misses.  We'll probably need to employ additional SQL scaling patterns.
 
-平均每秒 400 次写操作（峰值将会更高）可能对于单个 **SQL 写主-从** 模式来说比较很困难，因此同时还需要更多的扩展技术
+400 *average* writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques.
 
-SQL 缩放模式包括：
+SQL scaling patterns include:
 
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
-我们也可以考虑将一些数据移至 **NoSQL 数据库**。
+We should also consider moving some data to a **NoSQL Database**.
 
-## 其它要点
+## Additional talking points
 
-> 是否深入这些额外的主题，取决于你的问题范围和剩下的时间。
+> Additional topics to dive into, depending on the problem scope and time remaining.
 
 #### NoSQL
 
-* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
-* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
 
-### 缓存
+### Caching
 
-* 在哪缓存
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
-    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
-* 什么需要缓存
-    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
-    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
-* 何时更新缓存
-    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
-    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
-    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
-    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
+* Where to cache
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+* What to cache
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+* When to update the cache
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
+    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
 
-### 异步与微服务
+### Asynchronism and microservices
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
 
-### 通信
+### Communications
 
-* 可权衡选择的方案：
-    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
+* Discuss tradeoffs:
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
 
-### 安全性
+### Security
 
-请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)一章。
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
 
-### 延迟数值
+### Latency numbers
 
-请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
 
-### 持续探讨
+### Ongoing
 
-* 持续进行基准测试并监控你的系统，以解决他们提出的瓶颈问题。
-* 架构拓展是一个迭代的过程。
+* Continue benchmarking and monitoring your system to address bottlenecks as they come up
+* Scaling is an iterative process
