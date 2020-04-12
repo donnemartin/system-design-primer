@@ -11,6 +11,7 @@ l10n:p -->
 # Пособие по проектированию систем
 
 <!-- l10n:ignore start -->
+![l10n-sync-ru](https://github.com/voitau/system-design-primer/workflows/l10n-sync-ru/badge.svg)
 > ## Contributing: Russian translation
 >
 > **WARNING**: the document is currently being translated.
