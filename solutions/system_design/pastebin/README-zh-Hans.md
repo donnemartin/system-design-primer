@@ -1,6 +1,6 @@
 # 设计 Pastebin.com (或者 Bit.ly)
 
-**Note: 为了避免重复，当前文档直接链接到[系统设计主题](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)的相关区域，请参考链接内容以获得综合的讨论点、权衡和替代方案。**
+**注意: 为了避免重复，当前文档会直接链接到[系统设计主题](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)的相关区域，请参考链接内容以获得综合的讨论点、权衡和替代方案。**
 
 **设计 Bit.ly** - 是一个类似的问题，区别是 pastebin 需要存储的是 paste 的内容，而不是原始的未短化的 url。
 
