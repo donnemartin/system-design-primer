@@ -10,6 +10,25 @@ l10n:p -->
 
 # Пособие по проектированию систем
 
+<!-- l10n:ignore start -->
+> WARNING: the document is currently being translated
+> If you want to contribute:
+>
+> * choose a task for a section which you want to translate in the [Project](https://github.com/voitau/system-design-primer/projects/4)
+> * assign it to yourself and move it to `In progress`
+> * do not change original text in comments
+> * make PR to this fork. When translation is complete, all changes will go into one PR to main repository.
+>
+> ВНИМАНИЕ: статья находится в процессе активного перевода.
+> Если вы хотите поучастововать:
+>
+> * выберите доступную задачу с секцией для перевода в [Проекте](https://github.com/voitau/system-design-primer/projects/4)
+> * переведите ее состояние в `In progress`
+> * не изменяйте оригинальный текст, находящийся в комментариях
+> * сделайте PR в этот fork. Когда перевод будет готов, все изменения вместе будут предложены в основной репозиторий.
+>
+<!-- l10n:ignore end -->
+
 <p align="center">
   <img src="http://i.imgur.com/jj3A5N8.png"/>
   <br/>
@@ -168,7 +187,7 @@ Content that needs some polishing is placed [under development](#under-developme
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 l10n:p -->
 
-## Содействие
+## Contributing
 
 > Учитесь у сообщества.
 
