@@ -12,6 +12,7 @@ l10n:p -->
 
 <!-- l10n:ignore start -->
 [![l10n-sync-ru](https://github.com/voitau/system-design-primer/workflows/l10n-sync-ru/badge.svg)](https://github.com/voitau/system-design-primer/actions?query=workflow:l10n-sync-ru)
+[![Gitter](https://badges.gitter.im/system-design-primer-Russian/community.svg)](https://gitter.im/system-design-primer-Russian/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 > ## Contributing: Russian translation
 >
 > **WARNING**: the document is currently being translated.
