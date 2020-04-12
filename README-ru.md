@@ -12,12 +12,15 @@ l10n:p -->
 
 <!-- l10n:ignore start -->
 > ## Contributing: Russian translation
-> **WARNING**: the document is currently being translated. If you want to contribute:
+>
+> **WARNING**: the document is currently being translated.
+>
+> Thank you for your interest in contributing to Russian translation! If you want to contribute, please do the following:
 >
 > * choose a task for a section which you want to translate in the [Project](https://github.com/voitau/system-design-primer/projects/4)
 > * assign it to yourself and move it to `In progress`
-> * **do not change original text in comments**
-> * make PR to this fork. When translation is complete, all changes will go into one PR to main repository.
+> * text in comments is copied from original and is kept in sync. you can use it as a source for translation, but **do not change it**
+> * make PR to this fork. When translation is complete, all changes will go into one PR to main repository
 > * **do not change Header names and internal links, keep them original**. To avoid broken links, they all will be updated after document is completely translated before final PR to main repository
 >
 <!-- l10n:ignore end -->
