@@ -297,7 +297,7 @@ l10n:p -->
 
 ## Index of system design topics
 
-> Обобщение различных тем по проектирования систем, включая преимущества и недостатки.  **Любое решение требует уступок**.
+> Обобщение различных тем по проектирования систем, включая преимущества и недостатки.  **Любое решение требует компромисса**.
 >
 > Каждый раздел содержит ссылки на более подробное описание.
 
@@ -574,7 +574,7 @@ l10n:p -->
 * Кэширование
 * Шардинг (sharding) базы данных
 
-Обсудите потенциальные варианты и уступки. Разберитесь с узкими местами используя [principles of scalable system design](#index-of-system-design-topics).
+Обсудите потенциальные варианты и компромиссы. Разберитесь с узкими местами используя [principles of scalable system design](#index-of-system-design-topics).
 
 <!-- l10n:p
 ### Back-of-the-envelope calculations
@@ -880,13 +880,13 @@ l10n:p -->
 
 ### Next steps
 
-Далее, изучим уступки в общем виде:
+Далее, изучим компромиссы в общем виде:
 
 * **Производительность** и **масштабирование**
 * **Задержка** и **пропускная способность**
 * **Доступность** и **согласованность данных**
 
-Помните, что **везде необходимы уступки**.
+Помните, что **везде необходимы компромиссы**.
 
 Далее, изучем более детально DNS, CDN, балансировщики нагрузки и другие темы.
 
@@ -984,7 +984,7 @@ l10n:p -->
   <i><a href=https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_CAP>Дополнительный источник: Wikipedia</a></i>
 </p>
 
-В распределенный системах можно обеспечить только два из трех свойств, указанных ниже:
+В распределённый системах можно обеспечить только два из трех свойств, указанных ниже:
 
 * **Согласованность данных (Consistency)** - каждый запрос на чтение возвращает самые актуальные данные либо ошибку.
 * **Доступность (Availability)** - любой запрос возвращает результат, но без гарантии, что он содержит самую актуальную версию данных.
@@ -1012,7 +1012,7 @@ l10n:p -->
 
 #### AP - availability and partition tolerance
 
-При таком решении ответы на запросы возвращают данные, которые могут быть не самыми актуальными. Операция на запись может занять некоторое время, если придется ожидать восстановления потерянного соединения с одним из узлов распределенной системы.
+При таком решении ответы на запросы возвращают данные, которые могут быть не самыми актуальными. Операция на запись может занять некоторое время, если придется ожидать восстановления потерянного соединения с одним из узлов распределённой системы.
 
 AP решение подходит для систем, где система должна продолжать работать несмотря на внешние ошибки и допустима [eventual consistency](#eventual-consistency).
 
@@ -1038,7 +1038,7 @@ l10n:p -->
 
 ## Consistency patterns
 
-В распределенной системе можете существовать несколько копий одних и тех же данных. Для достижения согласованности данных, получаемых клиенстким приложением, существует несколько подходов синхронизации этих копий.
+В распределённой системе можете существовать несколько копий одних и тех же данных. Для достижения согласованности данных, получаемых клиенстким приложением, существует несколько подходов синхронизации этих копий.
 
 <!-- l10n:p
 ### Weak consistency
@@ -1120,7 +1120,7 @@ l10n:p -->
 
 #### Active-passive
 
-В таком режиме, активный и пассивны сервер, находящийся в режиме ожидание, обмениваются специальными сообщениями - heartbeats. Если такой сообщение не получается, то пассивный сервер получает IP адрес активного сервера и восстанавливает работу сервера.
+В таком режиме, активный и пассивный сервер, находящийся в режиме ожидания, обмениваются специальными сообщениями - heartbeats. Если такой сообщение не приходит, то пассивный сервер получает IP адрес активного сервера и восстанавливает работу сервера.
 
 Время простоя определяется в каком состоянии находится пассивный сервер:
 
@@ -1311,7 +1311,31 @@ l10n:p -->
 
 ## Domain name system
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
+  <br/>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Источник: DNS security presentation</a></i>
+</p>
+
+Система домменных имен (DNS) преобразует доменное имя (например, www.example.com) в IP адрес.
+
+DNS иерархична и имеет несколько корневых серверов. Информацию о том, какой DNS сервер надо использовать, предоставляется вашим маршрутизатором или интернет-провайдером. Нижестоящие DNS сервера кэшируют таблицы соответствия хостов и IP адресов, которые могут устаревать из-за задержки обновления. Результаты преобразования могут быть закэшированы браузером или операционной системой на определенное [Время жизни (Time to live - TTL)](https://ru.wikipedia.org/wiki/Time_to_live)
+
+Типы записей:
+
+* **Запись NS (name server)** - указывает DNS сервер для вашего домена/поддомена.
+* **Запись MX (mail exchange)** - указывает сервера электронной почты для получения сообщений.
+* **Запись A (address)** - связывает имя с IP адресом.
+* **CNAME (canonical)** - связывает имя с другим именем, записью CNAME (example.com to www.example.com) или записью А.
+
+Такие сервисы, как [CloudFlare](https://www.cloudflare.com/dns/) и [Route 53](https://aws.amazon.com/route53/) предоставляют управлемые DNS сервисы. Некоторые DNS сервисы могут направлять трафик, используя различные методы:
+
+* взвешенный циклический ([Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)):
+  * предотвращает попадания трафика на сервера, находящиеся на обслуживании
+  * балансирует трафик для кластера, размер которого может меняться
+  * может использоваться для A/B тестирования
+* на основе задержки отклика серверов
+* на основе геораспределения серверов
 
 <!-- l10n:p
 ### Disadvantage(s): DNS
@@ -1323,7 +1347,9 @@ l10n:p -->
 
 ### Disadvantage(s): DNS
 
-TBD
+* Запрос на DNS сервер занимает некоторое время, которое может быть сокращено, используя кэширование, описанное выше.
+* Управление DNS серверами может быть трудоёмким и поэтому обычно они управляются [правительствами государств, интернет-провайдерами и большими компаниями](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)
+* DNS серверы могут подвергаться [DDoS-атакам](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), в результате пользователи не могут получить доступ к сервисам, например Twitter, не зная его IP адреса(-ов).
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1335,7 +1361,9 @@ l10n:p -->
 
 ### Source(s) and further reading
 
-TBD
+* [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+* [Wikipedia (ru)](https://ru.wikipedia.org/wiki/DNS)
+* [DNS articles](https://support.dnsimple.com/categories/dns/)
 
 <!-- l10n:p
 ## Content delivery network
@@ -1356,7 +1384,13 @@ l10n:p -->
 
 ## Content delivery network
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
+  <br/>
+  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Источник: Why use a CDN</a></i>
+</p>
+
+Сеть доставки содержимого (Content Delivery Network, CDN) - это глобальная распределённая сеть прокси-серверов, которые доставляют содержимое с серверов, наиболее близко находящихся к пользователю. Обычно в CDN размещаются статические файлы, такие как HTML/CSS/JS, фотографии и видео. Некоторые сервисы, как, например Amazon CloudFront, поддерживают доставку динамического содержимого. DNS запрос на сайт даст ответ на какой DNS сервер клиент должен делать запрос.
 
 <!-- l10n:p
 ### Push CDNs
@@ -1368,7 +1402,7 @@ l10n:p -->
 
 ### Push CDNs
 
-TBD
+Содержимое Pull CDN обновляется тогда, когда оно обновлеятся на сервере. Разработчик сайта загружает содержимое на CDN и обновляет соотвествующие URL адреса, чтобы они указывали на CDN. Далее, можно сконфигурировать время жизни содержимого в CDN и когда оно должно быть обновлено. Загружается только новое или обновленное содержимое, минимизируя трафик и увеличивая объем хранящихся данных в CDN.
 
 <!-- l10n:p
 ### Pull CDNs
@@ -1382,7 +1416,11 @@ l10n:p -->
 
 ### Pull CDNs
 
-TBD
+Pull CDN загружает новое содержимое при первом обращении пользователя. Разработчик сайта оставляет содержимое на своем сервере, но обновляет адреса, чтобы они указывали на CDN. В результате, запрос обрабатывается медленее, ожидая пока содержимое будет закэшировано в CDN.
+
+[Время жизни (Time to live - TTL)](https://ru.wikipedia.org/wiki/Time_to_live) определяет как долго содержимое будет закэшировано. Pull CDN минимизирует объем хранящихся данных в CDN, но может привести к дополнительному трафику, если время жизни в CDN истекло, а файл на сервере изменен не был.
+
+Pull CDN подходит для загруженных сайтов. Трафик в таком случае распределяется более равномерно и в результате в CDN хранится только то содержимое, к которому обращались недавно.
 
 <!-- l10n:p
 ### Disadvantage(s): CDN
@@ -1394,7 +1432,9 @@ l10n:p -->
 
 ### Disadvantage(s): CDN
 
-TBD
+* Стоимость CDN может быть высока и зависит от объема трафика, но стоит иметь в виду и дополнительные расходы, которые будут если CDN не использовать.
+* Содежимое в CDN может оказаться устаревшим, если оно будет обновлено до того, как истечет время жизни (TTL).
+* Исходные URL ссылки должны быть изменены и указывать на CDN.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1406,7 +1446,9 @@ l10n:p -->
 
 ### Source(s) and further reading
 
-TBD
+* [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
+* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [Wikipedia (ru)](https://ru.wikipedia.org/wiki/Content_Delivery_Network)
 
 <!-- l10n:p
 ## Load balancer
@@ -1445,7 +1487,36 @@ l10n:p -->
 
 ## Load balancer
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/h81n9iK.png"/>
+  <br/>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+</p>
+
+Балансировщик нагрузки распределяет входящие клиентские запросы между серверами приложений или баз данных, возвращая ответ от конкретного сервера клиенту, от которого пришел запрос. Балансировщики нагрузки используются для:
+
+* предотвращения запроса на неработающий сервер
+* предотвращения чрезмерной нагрузки ресурсов
+* избежания единой точки отказа
+
+Балансировщики нагрузки могут быть аппаратными (дорогой вариант) или программными (например, HAProxy).
+
+Дополнительные плюсы:
+
+* **SSL-терминация** - расшифровка входящих запросов и шифровка ответов; в таком случае бэкенд-сервера не тратят свои ресурсы на эти потенциально трудоемкие операции
+  * нет необходимости устанавливать [X.509 сертификаты](https://ru.wikipedia.org/wiki/X.509)
+* **Сохранение сессии** - выдает куки и перенаправляет клиенсткий запрос на тот же сервер в случае, если сами веб-приложения не хранят сессии.
+
+Для защиты от сбоев, можно использовать вместе несколько балансировщиков в [active-passive](#active-passive) или [active-active](#active-active) режиме.
+
+Балансировщики могут направлять трафик опираюсь на различные метрики, включая:
+
+* случайно
+* наименее загруженные сервер
+* сессия/куки
+* взвешенный циклический ([Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb))
+* [Layer 4](#layer-4-load-balancing)
+* [Layer 7](#layer-7-load-balancing)
 
 <!-- l10n:p
 ### Layer 4 load balancing
@@ -1455,7 +1526,7 @@ l10n:p -->
 
 ### Layer 4 load balancing
 
-TBD
+Для распределения запросов балансировщики 4го уровня используют транспортный уровень модели OSI [transport layer](#communication). Обычно, используются IP адрес и порт источника и получателя из заголовков пакетов, но не из их содержимого. Балансировщики этого уровня перенаправляют сетевые пакеты с серверов, используя [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
 
 <!-- l10n:p
 ### Layer 7 load balancing
@@ -1467,7 +1538,9 @@ l10n:p -->
 
 ### Layer 7 load balancing
 
-TBD
+Для распределения запросов балансировщики 7го уровня используют прикладной уровень модели OSI [application layer](#communication). Для этого могут быть задействованы заголовок, сообщение и куки. Балансировщики на этом уровне прерывают сетевой трафик, сканируют сообщение, принимают решение, куда отправить запрос и открывают соединение с выбранным сервером. Например, они могут отправить запрос на видео на видео-сервер, а запрос на биллинг - на сервера с усиленной безопасностью.
+
+Балансировка на 4м уровне быстрее и требует меньше ресусров, чем на 7м уровне, но имеет меньшую гибкость. Хотя на современном аппаратном обеспечении эта разница может быть незаметна.
 
 <!-- l10n:p
 ### Horizontal scaling
@@ -1477,7 +1550,7 @@ l10n:p -->
 
 ### Horizontal scaling
 
-TBD
+Балансировщики нагрузки могут быть использованы для горизонтального масштабирования, улучшая производительность и доступность. "Масштабирование вширь" используя стандартные сервера дешевле и приводит к более высокой доступности, чем "масштабирование вверх" одного сервера с более дорогим аппаратным обеспечением (**Вертикальное масштабирование**). Так же проще найти и специалиста, который умеет работать со стандартным аппаратным обеспечением, чем со специализированными Enterprise-системами.
 
 <!-- l10n:p
 #### Disadvantage(s): horizontal scaling
@@ -1490,7 +1563,10 @@ l10n:p -->
 
 #### Disadvantage(s): horizontal scaling
 
-TBD
+* Горизонтальное масштабирование увеливает сложность система и предполагает клонирование серверов:
+  * Сервера не должны хранить состояние, например сессию или изображение пользователя
+  * Сессии должны хранится в центразиванном хранилище, например в [database](#database) (SQL, NoSQL) или в [cache](#cache) (Redis, Memcached)
+* С увеличением количества серверов, принимающие сервера на следующем уровне должны обрабатывать больше одновременных запросов
 
 <!-- l10n:p
 ### Disadvantage(s): load balancer
@@ -1502,7 +1578,9 @@ l10n:p -->
 
 ### Disadvantage(s): load balancer
 
-TBD
+* Балансировщик нагрузки может стать узким место в производительности системы, если он неправильно сконфигурирован или его аппаратное обеспечение слишком слабое.
+* Балансировщик нагрузки позволяет избежать единой точки отказа, но увеличивает совокупную сложность всей системы.
+* Единственный балансировщик становится единой точкой отказа, использование нескольких балансировщиком еще больше усложняет систему.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1518,7 +1596,13 @@ l10n:p -->
 
 ### Source(s) and further reading
 
-TBD
+* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
 <!-- l10n:p
 ## Reverse proxy (web server)
@@ -3103,26 +3187,26 @@ l10n:p -->
 
 | Тип | Система | Ссылки |
 |---|---|---|
-| Обработка данных | **MapReduce** - Распределенная обработка данных от Google | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
-| Обработка данных | **Spark** - Распределенная обработка данных от Databricks | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
-| Обработка данных | **Storm** - Распределенная обработка данных от Twitter | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
+| Обработка данных | **MapReduce** - распределённая обработка данных от Google | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
+| Обработка данных | **Spark** - распределённая обработка данных от Databricks | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
+| Обработка данных | **Storm** - распределённая обработка данных от Twitter | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
 | | | |
-| Хранилище данных | **Bigtable** - Распределенная колоночная база данных от Google | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
+| Хранилище данных | **Bigtable** - распределённая колоночная база данных от Google | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
 | Хранилище данных | **HBase** - Реализация Bigtable с открытым исходным кодом | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
-| Хранилище данных | **Cassandra** - Распределенная колоночная база данных от Facebook | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
+| Хранилище данных | **Cassandra** - распределённая колоночная база данных от Facebook | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
 | Хранилище данных | **DynamoDB** - Документно-ориенитрованная база данных от Amazon | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
 | Хранилище данных | **MongoDB** - Документно-ориенитрованная база данных | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
-| Хранилище данных | **Spanner** - Глобально-распределенная база данных от Google | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
-| Хранилище данных | **Memcached** - Распределенный кэш, хранящийся в памяти | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Хранилище данных | **Spanner** - Глобально-распределённая база данных от Google | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
+| Хранилище данных | **Memcached** - распределённый кэш, хранящийся в памяти | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | Хранилище данных | **Redis** - Распеределенная система кэширавния с возможностью сохранения и типами данных | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | | | |
-| Файловая система | **Google File System (GFS)** - Распределенная файловая система | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
+| Файловая система | **Google File System (GFS)** - распределённая файловая система | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
 | Файловая система | **Hadoop File System (HDFS)** - Реализация GFS с открытым исходным кодом | [apache.org](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) |
 | | | |
-| Другое | **Chubby** - Система блокировки для слабосвязанных распределенных систем от Google | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
-| Другое | **Dapper** - Система отслеживания операций в распределенных системах | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
+| Другое | **Chubby** - Система блокировки для слабосвязанных распределённых систем от Google | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
+| Другое | **Dapper** - Система отслеживания операций в распределённых системах | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Другое | **Kafka** - Очередь сообщений Pub/sub от LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
-| Другое | **Zookeeper** - Централизованная инфраструктура и сервисы для синхронизации распределенных систем | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
+| Другое | **Zookeeper** - Централизованная инфраструктура и сервисы для синхронизации распределённых систем | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | | Добавьте архитектуру | [Contribute](#contributing) |
 
 <!-- l10n:p
@@ -3306,7 +3390,7 @@ l10n:p -->
 
 Заинтересованы в добавлении раздела или в завершении того, что уже в процессе? [Содействуйте!](#contributing)!
 
-* Распределенные вычисления с MapReduce
+* распределённые вычисления с MapReduce
 * Согласованное хеширование
 * Scatter gather
 * [Содействие](#contributing)
