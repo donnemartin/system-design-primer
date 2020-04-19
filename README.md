@@ -1522,7 +1522,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 #### Disadvantage(s): REST
 
 * With REST being resource oriented, it demands a solid understanding of the business, so hierarchy and relationships between resources can be properly modeled. A poorly designed API is hard to evolve and misleads future clients implementations.
-* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
+* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable. In this case, additional endpoints or query parameters logic must be implemented to return aggregated data and reduce latency.
 * Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
 
 ### RPC and REST calls comparison
