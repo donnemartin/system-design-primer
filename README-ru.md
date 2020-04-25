@@ -8,7 +8,7 @@
 </p>
 l10n:p -->
 
-# Пособие по проектированию систем
+# Пособие по Проектированию Cистем
 
 <!-- l10n:ignore start -->
 [![l10n-sync-ru](https://github.com/voitau/system-design-primer/workflows/l10n-sync-ru/badge.svg)](https://github.com/voitau/system-design-primer/actions?query=workflow:l10n-sync-ru)
@@ -1633,7 +1633,28 @@ l10n:p -->
 
 ## Reverse proxy (web server)
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/n41Azff.png"/>
+  <br/>
+  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
+  <br/>
+</p>
+
+Обратный прокси-сервер - это веб-сервер, который централизует внутренние сервисы и предоставляет уницифицированный интерфейс для доступа из публичной сети. Клиенсткие запросы перенаправляются на сервер, который их будет обрабабывать, и затем обратный прокси возвращает ответ клиенту.
+
+Дополнительные преимущества:
+
+* **повышенная безопасность** - скрывает информацию о бэкенд-серверах, блокирует IP адреса, ограничивает допустимое количество соединений на клиента
+* **повешенная масштабируемость и гибкость** - клиенсткое приложение знает только IP адрес прокси-сервера, таким образом можно менять количество серверов или изменять их конфигурацию
+* **SSL терминация** - расшифровка входящих запросов и шифровка ответов; в таком случае бэкенд-сервера не тратят свои ресурсы на эти потенциально трудоемкие операции
+  * нет необходимости устанавливать [X.509 сертификаты](https://ru.wikipedia.org/wiki/X.509)
+* **Сжатие** - сжатие ответов сервера клиенту
+* **Кэширование** - возвращает ответы для закэшированных запросов
+* **Статическое содержимое** - предоставляет статическое содержимое напрямую:
+  * HTML/CSS/JS
+  * Фотографии
+  * Видео
+  * и т.д.
 
 <!-- l10n:p
 ### Load balancer vs reverse proxy
@@ -1645,7 +1666,9 @@ l10n:p -->
 
 ### Load balancer vs reverse proxy
 
-TBD
+* Использование балансировщика нагрузки полезно при наличии нескольких серверов. Часто балансировщики направляют трафик на сервера, выполняющие одинаковую функцию.
+* Обратный прокси-сервер может быть полезен даже при использовании одного веб-сервера или сервера приложений, предоставляе преимущества, описанные в предыдущей секции
+* Такие решения, как NGINX и HAProxy могут поддерживать как реверс-прокси 7го уровня, так и балансировку нагрузки
 
 <!-- l10n:p
 ### Disadvantage(s): reverse proxy
@@ -1656,7 +1679,8 @@ l10n:p -->
 
 ### Disadvantage(s): reverse proxy
 
-TBD
+* Использование обратного прокси-сервера увиличивает сложность системы в целом
+* Использование одного прокси-сервера создает единую точку отказа. Настройка нескольких обратных прокси-серверов ([Аварийное переключение](https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%B0%D1%80%D0%B8%D0%B9%D0%BD%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)) еще больше усложняет систему.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1669,7 +1693,10 @@ l10n:p -->
 
 ### Source(s) and further reading
 
-TBD
+* [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [Wikipedia (ru)](https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%BA%D1%81%D0%B8)
 
 <!-- l10n:p
 ## Application layer
@@ -1687,7 +1714,15 @@ l10n:p -->
 
 ## Application layer
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/yB5SYwm.png"/>
+  <br/>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+</p>
+
+Разделение веб-уровня и уровня приложение (так же известного как уровень платформы) позволяет масштабировать и настраивать оба уровня независимо. Для добавления нового API может понадобиться добавление нового сервера на уровне приложение, но необязатльно на веб-уровне. **Принцип единой отвественности** подразумевает созданте небольших и автономных сервисов, который работают вместе. Небольшие команды с небольшими сервисами могут быстрее расти.
+
+Worker-сервера на уровне приложений позволяют поддерживать [asynchronism](#asynchronism).
 
 <!-- l10n:p
 ### Microservices
@@ -1699,7 +1734,9 @@ l10n:p -->
 
 ### Microservices
 
-TBD
+[Микросервисная архитектура](https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0) может быть описана как набор независимо развёртываемых, небольших, модульных сервисов. Каждый сервис работает как независый процесс и взаимодействует на основе предустановленного легковесного протокола для обслуживания бизнес задачи. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+
+Микросервисы Pinterest могут включать: профиль пользователя, подписчик, лента, поиск, загрущка фото и т.д.
 
 <!-- l10n:p
 ### Service Discovery
@@ -1709,7 +1746,7 @@ l10n:p -->
 
 ### Service Discovery
 
-TBD
+Ведя учет зарегистрованных имен, адресов и порто, такие системы как [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), и [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) помогают сервисам находит друг друга. Проверки состояния [Health checks](https://www.consul.io/intro/getting-started/checks.html) позволяют убедиться в работоспособности сервера с помощью [HTTP](#hypertext-transfer-protocol-http) запросы. Consul и Etcd имеют [key-value store](#key-value-store), которое может быть полезно для хранения конфигурации и других общих данных.
 
 <!-- l10n:p
 ### Disadvantage(s): application layer
@@ -1720,7 +1757,8 @@ l10n:p -->
 
 ### Disadvantage(s): application layer
 
-TBD
+* Добавление уровня приложений со слабосвязанными сервисами требует другого подхода для архитектуры и процессов (в отличие от монолитной системы).
+* Микросервисная архитектура усложняет развертывание и эксплуатацию сервисов.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1734,7 +1772,11 @@ l10n:p -->
 
 ### Source(s) and further reading
 
-TBD
+* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
+* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [Сервис-ориентированная архитектура](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0)
+* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
 <!-- l10n:p
 ## Database
