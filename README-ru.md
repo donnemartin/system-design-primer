@@ -2102,7 +2102,14 @@ l10n:p -->
 
 #### SQL tuning
 
-TBD
+SQL тюнинг - это обширная тема, описанная во многих [книгах](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning)).
+
+Очень важно проводить **бенчмарки** и **профилирование** для имитации и обнаружения узких мест.
+
+* **Бенчмарк** - эталонный тест производительности, имитация высокой нагрузки с помощью таких средств, как [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
+* **Профилирование** - отслеживание проблем производительность с помощью таки средства, как [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+
+Проведение бенчмарков и профилирования может указать на следующие шаги оптимизации.
 
 <!-- l10n:p
 ##### Tighten up the schema
@@ -2120,7 +2127,15 @@ l10n:p -->
 
 ##### Tighten up the schema
 
-TBD
+* Запись в MySQL на смежные блоки для быстрого доступа.
+* Использование `CHAR` вместо `VARCHAR` для полей с фиксированной длиной.
+  * `CHAR` обеспечивает быстрый произвольный доступ, в случае с `VARCHAR` необходимо найти конец строки для перехода на следующую.
+* Использование `TEXT` для больших фрагментов текста (например, блог-посты). `TEXT` позволяет делать булевый поиск. Использование поля типа `TEXT` приводит к хранению указателя на диске, которые иоспользуется для поиска этого блока.
+* Использование `INT` для больших числе до 2^32.
+* Использование `DECIMAL` для денежных едениц для избежания ошибок, связанных с представлением в формате с плавающей точкой.
+* Избежание хранения большиъ `BLOBS`, вместо этого хранение указателя на место хранения объекта.
+* Установка ограничения `NOT NULL`, где возможно, для улучшения производительности ([improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)).
+
 
 <!-- l10n:p
 ##### Use good indices
@@ -2134,7 +2149,11 @@ l10n:p -->
 
 ##### Use good indices
 
-TBD
+* Запрос столбцов (включая операторы `SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) может быть быстрее с индексами.
+* Индексы обычно представляют собой самобалансирующиеся [B-деревья](https://ru.wikipedia.org/wiki/B-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE), которые хранят данные отсортированными, позволяют поиск, последовательный доступ, вставку и удаление с логарифмической сложностью.
+* Создание индексы может потребовать хранения данных в памяти, требуя больше места.
+* Операции записи могут быть медленне, так как индекс тоже необходимо обновлять.
+* При загрузке большого объема данных отключение индексов может помочь для ускорения этой операции; индексы в таком случае обновляются после загрузки данных.
 
 <!-- l10n:p
 ##### Avoid expensive joins
@@ -2144,7 +2163,7 @@ l10n:p -->
 
 ##### Avoid expensive joins
 
-TBD
+* [Denormalize](#denormalization), если необходимо повысить производительность.
 
 <!-- l10n:p
 ##### Partition tables
@@ -2154,7 +2173,7 @@ l10n:p -->
 
 ##### Partition tables
 
-TBD
+* Разбиение таблицы, поместив часто используемые данные в отдельную таблицу, для того, чтобы хранить ее в памяти.
 
 <!-- l10n:p
 ##### Tune the query cache
@@ -2164,7 +2183,7 @@ l10n:p -->
 
 ##### Tune the query cache
 
-TBD
+* В некоторых случаях, кэширование запросов ([query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html)) может привести к проблемам с производительностью ([performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/)).
 
 <!-- l10n:p
 ##### Source(s) and further reading: SQL tuning
@@ -2177,7 +2196,10 @@ l10n:p -->
 
 ##### Source(s) and further reading: SQL tuning
 
-TBD
+* [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
+* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 <!-- l10n:p
 ### NoSQL
@@ -2195,7 +2217,15 @@ l10n:p -->
 
 ### NoSQL
 
-TBD
+NoSQL - это набор данных, представленных в виде **базы ключ-значение**, **документориентированной базы данных**, **колоночной базы данных** или **графовой база данных**. Данны денормализованы и операции соединения данных обычно происходят на уровне кода. Большинство NoSQL хранилищ не поддерживают ACID свойств транзакий и характеризуются [согласованностью в конечном счете](https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B2_%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC_%D1%81%D1%87%D1%91%D1%82%D0%B5).
+
+Для описания свойств NoSQL баз данных используют **BASE** свойства. Согласно [CAP Theorem](#cap-theorem), BASE придерживается доступности данных, а не их согласованности.
+
+* **В целом доступные** - система гарантирует доступность.
+* **Неокончательное (soft) удаление** - состояние ситемы может со временем измениться, даже без дополнительный операций.
+* **Согласованность в конечном счете (eventual consistency)** - данные в системе станут согласованными в течение некоторого времени, если в течение этого времени не будут приходить новые данные.
+
+Вместе с выбором между [SQL or NoSQL](#sql-or-nosql), надо сделать выбор типа NoSQL базы данных, которая подходит для вашего сценария использования. В следующей секции представлены **базы ключ-значение**, **документориентированные базы данных**, **колоночные базы данных** или **графовые база данных**.
 
 <!-- l10n:p
 #### Key-value store
@@ -2211,7 +2241,13 @@ l10n:p -->
 
 #### Key-value store
 
-TBD
+> Абстракция: хэщ-таблица
+
+База данных типа ключ-значение обычно позволяет выполнять операции чтение и записи со сложностью O(1) и используют оперативную память или SSD. Эти базы данных могут поддерживать [лексикографический порядок](https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BA%D1%81%D0%B8%D0%BA%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA), позволяя эффективно выполнять запросы на диапазон ключей. Базы этого типа позволяют хранить мета-данные вместе с данными.
+
+Такие базы данных имеют высокую производительность и обычно используют для простых моделей данных или для быстро изменяющихся данных, таких как кэши, находящиейся в оперативной памяти. Обычно они предоставляют ограниченный набор действий. Поэтому сложность смещается на уровень приложение в том случае, если необходимы дополнительные действия.
+
+Базы данных типа ключ-значнеие являются основой для более сложных система, таких как Документоориентированных базы данных, и, в некоторых случаях, графовые базы данных.
 
 <!-- l10n:p
 ##### Source(s) and further reading: key-value store
@@ -2224,7 +2260,10 @@ l10n:p -->
 
 ##### Source(s) and further reading: key-value store
 
-TBD
+* [База данных "ключ-значение"](https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%C2%AB%D0%BA%D0%BB%D1%8E%D1%87-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%C2%BB)
+* [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+* [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
+* [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 <!-- l10n:p
 #### Document store
@@ -2242,12 +2281,20 @@ l10n:p -->
 
 #### Document store
 
-TBD
+> Абстракция: база данных "ключ-значение" с документами в качестве значения
+
+Документнориентированная база данных работает с документами (XML, JSON, бинарные и др.), где документ хранит все информацию об объекте. Такие базы данные предоставляют API или язык для запросов по внутренней структуре самих документов. *Обратите внимание, что такая же функциональность может быть доступна и для метаданных, тем самым размывая разницу между этими двумя типа данных.*
+
+В зависимости от реализации, документы могут быть организованы по коллекциям, меткам, метаданным или директориям. Документы могут быть организованы и сгруппированы вместе, и одновременно иметь поля, которых нет в других документах.
+
+Такие базы данных как [MongoDB](https://www.mongodb.com/mongodb-architecture) и [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) предоставляют SQL-подобный язык для выполнения сложных запросов. [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) работает с данными в виде "ключ-значение" и с документами.
+
+Документоориентированные базы данных предоставляют высокую гибкость и часто используются для работы с данными, структура которых может меняться.
 
 <!-- l10n:p
 ##### Source(s) and further reading: document store
 
-* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [Документоориентированная СУБД](https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F_%D0%A1%D0%A3%D0%91%D0%94)
 * [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
@@ -2255,7 +2302,10 @@ l10n:p -->
 
 ##### Source(s) and further reading: document store
 
-TBD
+* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
+* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
 <!-- l10n:p
 #### Wide column store
@@ -2277,7 +2327,19 @@ l10n:p -->
 
 #### Wide column store
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/n16iOGk.png"/>
+  <br/>
+  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+</p>
+
+> Абстракция: вложенная ассоциативная таблица `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+
+Основной единицой данных в колоночных базах данных является колонка - пара имя/значение. Колонки могут быть сгруппированы в семейства колонок (по аналогии с SQL таблицей). Следующим уровнем будет супер-семейство колонок. Значение каждой колонки можно получить по ключу строки. Все колонки с одинаковым ключом строки формируют строку. Каждое значение содержит временную метку для версионности и разрешения конфликтов.
+
+Google представили [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf), как первую колоночную базу данных, которая была создана под влиянием [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture), часто используемой в экосистеме Hadoop, и [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) от Facebook. BigTable, HBase, and Cassandra и другие базы данных этого типа хранят ключи в лексикографическом порядке, позволяя делать эффективные запросы по диапазону ключей.
+
+Колоночные базы данных имеют высокую доступность и масштабируемость. Часто они используются для очень больших объемов данных.
 
 <!-- l10n:p
 ##### Source(s) and further reading: wide column store
@@ -2290,7 +2352,10 @@ l10n:p -->
 
 ##### Source(s) and further reading: wide column store
 
-TBD
+* [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+* [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+* [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
 <!-- l10n:p
 #### Graph database
@@ -2310,8 +2375,17 @@ l10n:p -->
 
 #### Graph database
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/fNcl65g.png"/>
+  <br/>
+  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+</p>
 
+> Абстракция: граф
+
+В графовой базе данных, каждый узел это запись, а ребра это связь между двумя узлаим. Графовые базы данных оптимизированы для представление сложных связей с множеством внешних ключей или связей многих ко многим.
+
+Графовые базы данных имеют высокую производительность для моделей данных со сложными связями, как в социальных сетях. Они относительно новые и не пока не используются широко. Может быть сложно найти средства и ресурсы для их разработки. Получить доступ ко многим графам можно только с помощью [REST APIs](#representational-state-transfer-rest).
 <!-- l10n:p
 ##### Source(s) and further reading: graph
 
@@ -2322,7 +2396,9 @@ l10n:p -->
 
 ##### Source(s) and further reading: graph
 
-TBD
+* [Графовая база данных](https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B1%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
+* [Neo4j](https://neo4j.com/)
+* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
 <!-- l10n:p
 #### Source(s) and further reading: NoSQL
@@ -2336,7 +2412,11 @@ l10n:p -->
 
 #### Source(s) and further reading: NoSQL
 
-TBD
+* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 <!-- l10n:p
 ### SQL or NoSQL
@@ -2379,7 +2459,40 @@ l10n:p -->
 
 ### SQL or NoSQL
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/wXGqG5f.png"/>
+  <br/>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+</p>
+
+Причины использовать **SQL**:
+
+* Структурированные данные
+* Строгая схема
+* Реаляционные данные
+* Необходимость сложных соединений (JOIN)
+* Транзакции
+* Понятные шаблоны масштабирования
+* Широко используются: разработчики, сообщество, код, средства и т.д.
+* Поиск по индексу очень быстрый
+
+Причины использовать **NoSQL**:
+
+* Частично-структурированные данные
+* Динамическая или гибкая схема данных
+* Нереляицонные данные
+* Нет необходимости в сложных соединениях (JOIN)
+* Хранение большого количества данных (TB или PB)
+* Очень большая нагрузка связанная с работой с данными
+* Большая пропуская способность для IOPS (количество операций ввода-вывода в секунду)
+
+Примеры данных, хорошо подходящих для NoSQL:
+
+* Скоростное сохранение clickstream данных и данных журналирования (logs)
+* Список лидеров или общий счет
+* Временные данные, например, корзина
+* Таблицы с частым доступом (горячие таблицы)
+* Метаданные или данные для поиска
 
 <!-- l10n:p
 ##### Source(s) and further reading: SQL or NoSQL
@@ -2390,7 +2503,8 @@ l10n:p -->
 
 ##### Source(s) and further reading: SQL or NoSQL
 
-TBD
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 <!-- l10n:p
 ## Cache
