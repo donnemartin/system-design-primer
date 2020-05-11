@@ -277,6 +277,7 @@ l10n:p -->
     * [Task queues](#task-queues)
     * [Back pressure](#back-pressure)
 * [Communication](#communication)
+    * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
@@ -371,6 +372,7 @@ l10n:p -->
     * [Task queues](#task-queues)
     * [Back pressure](#back-pressure)
 * [Communication](#communication)
+    * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
@@ -3131,7 +3133,27 @@ l10n:p -->
 
 ### Transmission control protocol (TCP)
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
+  <br/>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Источник: How to make a multiplayer game</a></i>
+</p>
+
+TCP - это протокол с установкой соединения, работающих поверх [межсетевого протокола IP](https://ru.wikipedia.org/wiki/IP). Соединение устанавливается и завершается с помощью [рукопожатия](https://en.wikipedia.org/wiki/Handshaking). Гарантия доставки пакетов в оригинальном порядке и без искажений получателю основана на:
+
+* номерах последовательности и [полем контрольной суммы](https://ru.wikipedia.org/wiki/Transmission_Control_Protocol#%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%83%D0%BC%D0%BC%D0%B0_(Checksum))
+* [подтверждении](https://ru.wikipedia.org/wiki/Transmission_Control_Protocol#%D0%9D%D0%BE%D0%BC%D0%B5%D1%80_%D0%BF%D0%BE%D0%B4%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F) пакетов и автоматической повторной передаче.
+
+Если отправитель не получает правильного ответа, пакеты будут отправление повторно. Если время ожидания истекает несколько раз, соединиение разрывается. TCP также реализует [контроль потока](https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) и [отслеживание перегрузок](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control). Такие гарантии вызывают задержки и обычнго приводят к менее эффективной передаче по сравнению с UDP.
+
+Для поддержики высокой пропускной способности, веб-сервера могут держать большое количество открытых TCP соединений, что приводит к использованию большого количества оперативной памяти. Ресурсозатратным можем быть поддержание большого количества открытых соединений между потоками веб-сервера и, например, сервером [Memcached](https://memcached.org/). В этом случае может помочь использование [пула соединений](https://en.wikipedia.org/wiki/Connection_pool) и UPD там, где он может быть применим.
+
+TCP полезен для приложений, которым необходимы высокая надежная, но менее требовательным ко времени, например веб-серверы, базы данных, SMTP, FTP, SSH.
+
+Используйте TCP (а не UDP) в случаях, когда необходимо:
+
+* сохранить данные неповрежденными
+* наилучшим образом использовать пропускную способность сети автоматически
 
 <!-- l10n:p
 ### User datagram protocol (UDP)
@@ -3157,7 +3179,11 @@ l10n:p -->
 
 ### User datagram protocol (UDP)
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
+  <br/>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Источник: How to make a multiplayer game</a></i>
+</p>
 
 <!-- l10n:p
 #### Source(s) and further reading: TCP and UDP
@@ -3172,7 +3198,17 @@ l10n:p -->
 
 #### Source(s) and further reading: TCP and UDP
 
-TBD
+UPD не требует соединения. Датаграммы (по аналогии с пакетами данных) гарантированы только на уровне датаграммы. Датаграммы могут быть доставлены в другом порядке (отличном от того, в котором они были отправлены), либо не доставлены совсем. UDP не поддерживает контроля перегрузок. Из-за отсутствия гарантий TCP, обычно UDP является более эффективным.
+
+UDP поддеживает широковещательную передачу данных, отправляя датаграммы всем устройствам подсети. Это полезно использовать вместе с [DHCP](https://ru.wikipedia.org/wiki/DHCP), так как с клиентом, который еще не получил IP адрес, нельзя установить TCP соединение.
+
+UPD менее надежный, но работает хорошо для приложений реального времени, например, VoIP, видеочатов, потоковой передачи данных и мультиплеерных игр реального времени.
+
+Используйте UPD (а не TCP) в случаях, когда:
+
+* вам необходима минимальная задержка передачи данных
+* данных, которые пришли поздно, хуже, чем потеря данных
+* вы хотите сами реализовать исправление ошибок
 
 <!-- l10n:p
 ### Remote procedure call (RPC)
@@ -3220,7 +3256,46 @@ l10n:p -->
 
 ### Remote procedure call (RPC)
 
-TBD
+<p align="center">
+  <img src="http://i.imgur.com/iF4Mkb5.png"/>
+  <br/>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Источник: Crack the system design interview</a></i>
+</p>
+
+При использовании RPC, клиент вызывает выполнение процедуры в другом адрессном пространстве, обычно на удаленном сервере. Эта процедура запрограммирована для использования, как локальный вызова, абстрагируя детали взаимодействия сервера и клиенского приложения. Удаленные вызовы обычно медленее и менее надежны, чем локальные вызовы. Поэтому полезно различать удаленные вызовы от локальных. Популярными RPC фреймворками являются [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), и [Avro](https://avro.apache.org/docs/current/).
+
+RPC - это протокол на основе запроса и ответа:
+
+* **Клиентское приоложение** - вызывает клиентскую процедуру-заглушку. Параметры передаются в стек, также как и с вызовом локальной процедуры.
+* **Клиентская процедура-заглушка** - собирает идентификатор процедуры и её аргументы в сообщение для запроса.
+* **Клиентский модуль взаимодействия** - ОС отправляет сообщение с клиента на сервер.
+* **Серверный модуль взаимодействия** - ОС передает входящие пакеты серверной процедуре-заглушке.
+* **Серверная процедура-заглушка** - разбирает входящее сообщение, вызывает процедуру по полученному идентификатору и передаёт ей полученные аргументы.
+* Таким же образом, только в обратном порядке, идет ответ от сервера клиенту.
+
+Примеры вызовов RPC:
+
+```
+GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+  "data":"anId";
+  "anotherdata": "another value"
+}
+```
+
+RPC сфокусированы на поведении системы. RPC обычно используются для достижения высокой производительности при внутренней передаче данных, так как можно использовать нативные вызовы, подходящие для ваших сценариев использования.
+
+Используйте нативные библиотеки (SDK), когда:
+
+* вы знаете целевую платформу
+* вы хотите контролировать доступ к вашей логике
+* вы хотите контролировать работу с ошибками в вашей библиотеке
+* производительность и опыт конечного пользователя является вашим основным интересом.
+
+REST API на основе HTTP часто используются для публичных API.
+
 
 <!-- l10n:p
 #### Disadvantage(s): RPC
@@ -3233,7 +3308,10 @@ l10n:p -->
 
 #### Disadvantage(s): RPC
 
-TBD
+* клиентские приложения RPC становятся сильно связанными с сервисной реализацией.
+* необходимо делать новое API для каждой новой операции или сценария использования.
+* отладка (debug) вызов RPC может быть непростой.
+* вы, возможно, не сможете использовать существующие технологии как есть "из коробки". Например, могут понадобиться дополнительные действия для того, чтобы убедиться, что [RPC запросы закэшированы]((http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)) на серверах системах кэширования таких, как [Squid](http://www.squid-cache.org/).
 
 <!-- l10n:p
 ### Representational state transfer (REST)
@@ -3261,7 +3339,25 @@ l10n:p -->
 
 ### Representational state transfer (REST)
 
-TBD
+REST - это архитектурный стиль взаимодействия клиента и сервера, где клиент работает с ресурсами, управляемыми сервером. Сервер предоставляет представление ресурсов и действия для их управления, или получения нового представления. Любое взаимодействие не должно иметь состояния и быть кэшируемым.
+
+Существует четыре характеристики REST-интерфейса:
+
+* **Определение ресурса (URI в HTTP)** - независимо от операции используется один и тот же URI.
+* **Изменение представления** - используйте методы, заголовки и тело.
+* **Самодостаточное сообщение об ошибке (код состояния в HTTP)** - используйте коды состояния и не изобретайте велосипед.
+* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML интерфейс для HTTP)** - ваш веб-сервис должен быть доступен через браузер.
+
+Пример REST запроса:
+
+```
+GET /someresources/anId
+
+PUT /someresources/anId
+{"anotherdata": "another value"}
+```
+
+REST ориентирован на предоставление данных. Он снижает связанность между клиентом и сервером и часто используется для публичных API. REST использует обобщенный и унифицированный метод предоставления ресурсов через URI, [представление через заголовки](https://github.com/for-GET/know-your-http-well/blob/master/headers.md), и действия с помощью методов, таких как GET, POST, PUT, DELETE и PATCH. Не имея состояния, REST хорошо подходит для горизонтального масштабирования и партицирования.
 
 <!-- l10n:p
 #### Disadvantage(s): REST
@@ -3274,7 +3370,10 @@ l10n:p -->
 
 #### Disadvantage(s): REST
 
-TBD
+* Учитывая, что REST ориентирован на предоставление данных, этот подход может не подойти, если ресурсы не достаточно организовоны или их можно получить в виде простой иерархии. Например, возвращение всех обновленных за последних час записей, соответствующих определенному набору событий не так просто представить в виде пути. Скорее всего, в таком случае реализация будет включать сочетание пути URI, параметров запросы и, возможно, тело запроса.
+* REST обычно полагается на несколько методов (GET, POST, PUT, DELETE и PATCH), что не всегда может подходить для вашего сценария использования. Например, нет определенного метода для представления перемещения документов с истекшим сроком в архивную папку.
+* Получение сложных ресурсов с вложенными иерархиями требует нескольких повторных запросов между клиентов и сервером, например, получение контента записи в блоге и комментариев к этой записи. Для мобильных приложений, которые функционируют в условиях переменного качества сети, эти повторные запросы являюется крайне нежелательными.
+* С течением времени, больше полей может добавляться в ответ API, и более старые клиенты будут получать все новые поля, даже те, которые не нужны. В результате, увеличивается размер пересылаемых данных, что приводит к увеличению задержки передачи данных.
 
 <!-- l10n:p
 ### RPC and REST calls comparison
@@ -3296,7 +3395,19 @@ l10n:p -->
 
 ### RPC and REST calls comparison
 
-TBD
+| Действие                                       | RPC                                                                                       | REST                                                         |
+|------------------------------------------------|-------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| Регистрация                                    | **POST** /signup                                                                          | **POST** /persons                                            |
+| Удаление пользователя                          | **POST** /resign<br/>{<br/>"personid": "1234"<br/>}                                       | **DELETE** /persons/1234                                     |
+| Получение пользователя (person)                | **GET** /readPerson?personid=1234                                                         | **GET** /persons/1234                                        |
+| Получения списка элементов (item) пользователя | **GET** /readUsersItemsList?personid=1234                                                 | **GET** /persons/1234/items                                  |
+| Добавления элемента в список пользователя      | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| Обновления элемента                            | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>}                  | **PUT** /items/456<br/>{<br/>"key": "value"<br/>}            |
+| Удаление элемента                              | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>}                                      | **DELETE** /items/456                                        |
+
+<p align="center">
+  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+</p>
 
 <!-- l10n:p
 #### Source(s) and further reading: REST and RPC
@@ -3313,7 +3424,14 @@ l10n:p -->
 
 #### Source(s) and further reading: REST and RPC
 
-TBD
+* [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
+* [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
+* [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
+* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
+* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [Thrift](https://code.facebook.com/posts/1468950976659943/)
+* [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
 <!-- l10n:p
 ## Security
@@ -3330,7 +3448,7 @@ l10n:p -->
 
 ## Security
 
-Этот параграф было бы хорошо дополнить. [contributing](#contributing)!
+Эта секция нуждается в дополнении. [contributing](#contributing)!
 
 Обеспечение безопасноcти - это обширная тема. Если у вас нет значительного опыта в безопасности, либо вы не подаётесь на вакансию, которая требует знаний по безопасности, возможно вам будет достаточно основ:
 
