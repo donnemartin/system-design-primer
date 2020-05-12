@@ -66,7 +66,7 @@ class Director(Employee):
         super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
 
     def escalate_call(self):
-        raise NotImplemented('Directors must be able to handle any call')
+        raise NotImplementedError('Directors must be able to handle any call')
 
 
 class CallState(Enum):
@@ -112,6 +112,11 @@ class CallCenter(object):
                 return employee
         return None
 
-    def notify_call_escalated(self, call):  # ...
-    def notify_call_completed(self, call):  # ...
-    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):  # ...
+    def notify_call_escalated(self, call):
+        pass
+
+    def notify_call_completed(self, call):
+        pass
+
+    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
+        pass

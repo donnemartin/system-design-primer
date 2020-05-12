@@ -95,7 +95,7 @@ An alternative to a relational database acting as a large hash table, we could u
 
 * The **Client** sends a create paste request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Write API** server
-* The **Write API** server does does the following:
+* The **Write API** server does the following:
     * Generates a unique url
         * Checks if the url is unique by looking at the **SQL Database** for a duplicate
         * If the url is not unique, it generates another url
@@ -126,11 +126,11 @@ To generate the unique url, we could:
     * Alternatively, we could also take the MD5 hash of randomly-generated data
 * [**Base 62**](https://www.kerstner.at/2012/07/shortening-strings-using-base-62-encoding/) encode the MD5 hash
     * Base 62 encodes to `[a-zA-Z0-9]` which works well for urls, eliminating the need for escaping special characters
-    * There is only one hash result for the original input and and Base 62 is deterministic (no randomness involved)
+    * There is only one hash result for the original input and Base 62 is deterministic (no randomness involved)
     * Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
     * The following [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) runs in O(k) time where k is the number of digits = 7:
 
-```
+```python
 def base_encode(num, base=62):
     digits = []
     while num > 0
@@ -142,7 +142,7 @@ def base_encode(num, base=62):
 
 * Take the first 7 characters of the output, which results in 62^7 possible values and should be sufficient to handle our constraint of 360 million shortlinks in 3 years:
 
-```
+```python
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
@@ -194,7 +194,7 @@ Since realtime analytics are not a requirement, we could simply **MapReduce** th
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-```
+```python
 class HitCounts(MRJob):
 
     def extract_url(self, line):
@@ -218,7 +218,7 @@ class HitCounts(MRJob):
         period = self.extract_year_month(line)
         yield (period, url), 1
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """Sum values for each key.
 
         (2016-01, url0), 2
@@ -239,7 +239,7 @@ To delete expired pastes, we could just scan the **SQL Database** for all entrie
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
-State you would do this iteratively: 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+State you would do this iteratively: 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
 

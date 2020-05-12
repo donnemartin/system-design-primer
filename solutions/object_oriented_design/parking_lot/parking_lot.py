@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from enum import Enum
 
 
 class VehicleSize(Enum):
@@ -44,7 +45,7 @@ class Car(Vehicle):
         super(Car, self).__init__(VehicleSize.COMPACT, license_plate, spot_size=1)
 
     def can_fit_in_spot(self, spot):
-        return True if (spot.size == LARGE or spot.size == COMPACT) else False
+        return spot.size in (VehicleSize.LARGE, VehicleSize.COMPACT)
 
 
 class Bus(Vehicle):
@@ -53,7 +54,7 @@ class Bus(Vehicle):
         super(Bus, self).__init__(VehicleSize.LARGE, license_plate, spot_size=5)
 
     def can_fit_in_spot(self, spot):
-        return True if spot.size == LARGE else False
+        return spot.size == VehicleSize.LARGE
 
 
 class ParkingLot(object):
@@ -63,7 +64,7 @@ class ParkingLot(object):
         self.levels = []  # List of Levels
 
     def park_vehicle(self, vehicle):
-        for level in levels:
+        for level in self.levels:
             if level.park_vehicle(vehicle):
                 return True
         return False
@@ -92,11 +93,11 @@ class Level(object):
 
     def _find_available_spot(self, vehicle):
         """Find an available spot where vehicle can fit, or return None"""
-        # ...
+        pass
 
     def _park_starting_at_spot(self, spot, vehicle):
         """Occupy starting at spot.spot_number to vehicle.spot_size."""
-        # ...
+        pass
 
 
 class ParkingSpot(object):
@@ -117,5 +118,8 @@ class ParkingSpot(object):
             return False
         return vehicle.can_fit_in_spot(self)
 
-    def park_vehicle(self, vehicle):  # ...
-    def remove_vehicle(self):  # ...
+    def park_vehicle(self, vehicle):
+        pass
+
+    def remove_vehicle(self):
+        pass
