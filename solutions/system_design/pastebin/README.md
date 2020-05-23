@@ -126,11 +126,11 @@ To generate the unique url, we could:
     * Alternatively, we could also take the MD5 hash of randomly-generated data
 * [**Base 62**](https://www.kerstner.at/2012/07/shortening-strings-using-base-62-encoding/) encode the MD5 hash
     * Base 62 encodes to `[a-zA-Z0-9]` which works well for urls, eliminating the need for escaping special characters
-    * There is only one hash result for the original input and and Base 62 is deterministic (no randomness involved)
+    * There is only one hash result for the original input and Base 62 is deterministic (no randomness involved)
     * Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
     * The following [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) runs in O(k) time where k is the number of digits = 7:
 
-```
+```python
 def base_encode(num, base=62):
     digits = []
     while num > 0
@@ -142,7 +142,7 @@ def base_encode(num, base=62):
 
 * Take the first 7 characters of the output, which results in 62^7 possible values and should be sufficient to handle our constraint of 360 million shortlinks in 3 years:
 
-```
+```python
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
@@ -194,7 +194,7 @@ Since realtime analytics are not a requirement, we could simply **MapReduce** th
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-```
+```python
 class HitCounts(MRJob):
 
     def extract_url(self, line):

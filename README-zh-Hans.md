@@ -1,22 +1,16 @@
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-> * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)
+> * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)、[根号三](https://github.com/sqrthree)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
+
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [韓國語](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # 系统设计入门
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png">
+  <img src="http://i.imgur.com/jj3A5N8.png"/>
   <br/>
 </p>
-
-## 翻译
-
-有兴趣参与[翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
-
-* [巴西葡萄牙语](https://github.com/donnemartin/system-design-primer/issues/40)
-* [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
-* [土耳其语](https://github.com/donnemartin/system-design-primer/issues/39)
 
 ## 目的
 
@@ -55,7 +49,7 @@
 ## 抽认卡
 
 <p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png">
+  <img src="http://i.imgur.com/zdCAkB3.png"/>
   <br/>
 </p>
 
@@ -72,7 +66,7 @@
 你正在寻找资源以准备[**编程面试**](https://github.com/donnemartin/interactive-coding-challenges)吗？
 
 <p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png">
+  <img src="http://i.imgur.com/b4YtAEN.png"/>
   <br/>
 </p>
 
@@ -89,6 +83,7 @@
 * 修复错误
 * 完善章节
 * 添加章节
+* [帮助翻译](https://github.com/donnemartin/system-design-primer/issues/28)
 
 一些还需要完善的内容放在了[正在完善中](#正在完善中)。
 
@@ -98,17 +93,17 @@
 
 > 各种系统设计主题的摘要，包括优点和缺点。**每一个主题都面临着取舍和权衡**。
 >
-> 每个章节都包含着更的资源的链接。
+> 每个章节都包含着更多的资源的链接。
 
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png">
+  <img src="http://i.imgur.com/jrUBAF7.png"/>
   <br/>
 </p>
 
 * [系统设计主题：从这里开始](#系统设计主题从这里开始)
     * [第一步：回顾可扩展性的视频讲座](#第一步回顾可扩展性scalability的视频讲座)
-    * [第二步： 回顾可扩展性的文章](#第二步回顾可扩展性文章)
+    * [第二步：回顾可扩展性的文章](#第二步回顾可扩展性文章)
     * [接下来的步骤](#接下来的步骤)
 * [性能与拓展性](#性能与可扩展性)
 * [延迟与吞吐量](#延迟与吞吐量)
@@ -207,11 +202,11 @@
 
 那些有经验的候选人通常会被期望了解更多的系统设计的知识。架构师或者团队负责人则会被期望了解更多除了个人贡献之外的知识。顶级的科技公司通常也会有一次或者更多的系统设计面试。
 
-面试会很宽泛的展开并在几个领域深入。这回帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
+面试会很宽泛的展开并在几个领域深入。这会帮助你了解一些关于系统设计的不同的主题。基于你的时间线，经验，面试的职位和面试的公司对下面的指导做出适当的调整。
 
 * **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
 * **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
-* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来联系。
+* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来练习。
 
 |                                          | 短期   | 中期   | 长期   |
 | ---------------------------------------- | ---- | ---- | ---- |
@@ -242,9 +237,9 @@
 * 我们希望每秒钟处理多少请求？
 * 我们希望的读写比率？
 
-### 第二步：创造一个高级的设计
+### 第二步：创造一个高层级的设计
 
-使用所有重要的组件来描绘出一个高级的设计。
+使用所有重要的组件来描绘出一个高层级的设计。
 
 * 画出主要的组件和连接
 * 证明你的想法
@@ -262,22 +257,22 @@
     * 数据库查找
 * API 和面向对象设计
 
-### 第四步：度量设计
+### 第四步：扩展设计
 
-确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成拓展性的议题吗？
+确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成扩展性的议题吗？
 
 * 负载均衡
-* 水平拓展
+* 水平扩展
 * 缓存
 * 数据库分片
 
-论述可能的解决办法和代价。每件事情需要取舍。可以使用[可拓展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
+论述可能的解决办法和代价。每件事情需要取舍。可以使用[可扩展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
 
-### 信封背面的计算
+### 预估计算量
 
-你或许会被要求通过手算进行一些估算。涉及到的[附录](#附录)涉及到的是下面的这些资源：
+你或许会被要求通过手算进行一些估算。[附录](#附录)涉及到的是下面的这些资源：
 
-* [使用信封的背面做计算](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2 的次方表](#2-的次方表)
 * [每个程序员都应该知道的延迟数](#每个程序员都应该知道的延迟数)
 
@@ -298,7 +293,7 @@
 
 | 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
-| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
+| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README-zh-Hans.md) |
 | 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
 | 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
 | 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
@@ -395,7 +390,7 @@
 
 ### 第二步：回顾可扩展性文章
 
-[可扩展性](http://www.lecloud.net/tagged/scalability)
+[可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
 * 主题涵盖：
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
@@ -446,7 +441,7 @@
 ### CAP 理论
 
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png">
+  <img src="http://i.imgur.com/bgLMI2u.png"/>
   <br/>
   <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
@@ -541,7 +536,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ## 域名系统
 
 <p align="center">
-  <img src="http://i.imgur.com/IOyLj4i.jpg">
+  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
   <br/>
   <strong><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">来源：DNS 安全介绍</a></strong>
 </p>
@@ -568,7 +563,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 * 虽说缓存可以减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
 * 虽然它们通常由[政府，网络服务提供商和大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)管理，但 DNS 服务管理仍可能是复杂的。
-* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twtter IP 地址的用户访问 Twiiter。
+* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twitter IP 地址的用户访问 Twitter。
 
 ### 来源及延伸阅读
 
@@ -579,7 +574,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ## 内容分发网络（CDN）
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg">
+  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
   <br/>
   <strong><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">来源：为什么使用 CDN</a></strong>
 </p>
@@ -618,7 +613,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 负载均衡器
 
 <p align="center">
-  <img src="http://i.imgur.com/h81n9iK.png">
+  <img src="http://i.imgur.com/h81n9iK.png"/>
   <br/>
   <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">来源：可扩展的系统设计模式</a></strong>
 </p>
@@ -687,7 +682,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 反向代理（web 服务器）
 
 <p align="center">
-  <img src="http://i.imgur.com/n41Azff.png">
+  <img src="http://i.imgur.com/n41Azff.png"/>
   <br/>
   <strong><a href="https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg">资料来源：维基百科</a></strong>
   <br/>
@@ -731,7 +726,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 应用层
 
 <p align="center">
-  <img src="http://i.imgur.com/yB5SYwm.png">
+  <img src="http://i.imgur.com/yB5SYwm.png"/>
   <br/>
   <strong><a href="http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">资料来源：可缩放系统构架介绍</a></strong>
 </p>
@@ -761,7 +756,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 - [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
-- [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+- [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 - [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 - [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 - [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -769,9 +764,9 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 数据库
 
 <p align="center">
-  <img src="http://i.imgur.com/Xkm5CXz.png">
+  <img src="http://i.imgur.com/Xkm5CXz.png"/>
   <br/>
-  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩展你的用户数到第一个一千万</a></strong>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
 ### 关系型数据库管理系统（RDBMS）
@@ -790,7 +785,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 关系型数据库扩展包括许多技术：**主从复制**、**主主复制**、**联合**、**分片**、**非规范化**和 **SQL调优**。
 
 <p align="center">
-  <img src="http://i.imgur.com/C9ioGtn.png">
+  <img src="http://i.imgur.com/C9ioGtn.png"/>
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -805,7 +800,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 - 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 <p align="center">
-  <img src="http://i.imgur.com/krAHLGg.png">
+  <img src="http://i.imgur.com/krAHLGg.png"/>
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -840,9 +835,9 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 #### 联合
 
 <p align="center">
-  <img src="http://i.imgur.com/U3qV33e.png">
+  <img src="http://i.imgur.com/U3qV33e.png"/>
   <br/>
-  <strong><a href="https://www.youtube.com/watch?v=vg5onp8TU6Q">资料来源：扩展你的用户数到第一个一千万</a></strong>
+  <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
 
 联合（或按功能划分）将数据库按对应功能分割。例如，你可以有三个数据库：**论坛**、**用户**和**产品**，而不仅是一个单体数据库，从而减少每个数据库的读取和写入流量，减少复制延迟。较小的数据库意味着更多适合放入内存的数据，进而意味着更高的缓存命中几率。没有只能串行写入的中心化主库，你可以并行写入，提高负载能力。
@@ -857,12 +852,12 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ##### 来源及延伸阅读：联合
 
-- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [扩展你的用户数到第一个一千万](https://www.youtube.com/watch?v=w95murBkYmU)
 
 #### 分片
 
 <p align="center">
-  <img src="http://i.imgur.com/wU8x5Id.png">
+  <img src="http://i.imgur.com/wU8x5Id.png"/>
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -889,7 +884,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 #### 非规范化
 
-非规范化试图以写入性能为代价来换取读取性能。在多个表中冗余数据副本，以避免高成本的联结操作。一些关系型数据库，比如 [PostgreSQl](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支持[物化视图](https://en.wikipedia.org/wiki/Materialized_view)，可以处理冗余信息存储和保证冗余副本一致。
+非规范化试图以写入性能为代价来换取读取性能。在多个表中冗余数据副本，以避免高成本的联结操作。一些关系型数据库，比如 [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) 和 Oracle 支持[物化视图](https://en.wikipedia.org/wiki/Materialized_view)，可以处理冗余信息存储和保证冗余副本一致。
 
 当数据使用诸如[联合](#联合)和[分片](#分片)等技术被分割，进一步提高了处理跨数据中心的联结操作复杂度。非规范化可以规避这种复杂的联结操作。
 
@@ -924,7 +919,7 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 - 使用 `TEXT` 类型存储大块的文本，例如博客正文。`TEXT` 还允许布尔搜索。使用 `TEXT` 字段需要在磁盘上存储一个用于定位文本块的指针。
 - 使用 `INT` 类型存储高达 2^32 或 40 亿的较大数字。
 - 使用 `DECIMAL` 类型存储货币可以避免浮点数表示错误。
-- 避免使用 `BLOBS` 存储对象，存储存放对象的位置。
+- 避免使用 `BLOBS` 存储实际对象，而是用来存储存放对象的位置。
 - `VARCHAR(255)` 是以 8 位数字存储的最大字符数，在某些关系型数据库中，最大限度地利用字节。
 - 在适用场景中设置 `NOT NULL` 约束来[提高搜索性能](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)。
 
@@ -1006,7 +1001,7 @@ MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的�
 #### 列型存储
 
 <p align="center">
-  <img src="http://i.imgur.com/n16iOGk.png">
+  <img src="http://i.imgur.com/n16iOGk.png"/>
   <br/>
   <strong><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html">资料来源: SQL 和 NoSQL，一个简短的历史</a></strong>
 </p>
@@ -1029,9 +1024,9 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 #### 图数据库
 
 <p align="center">
-  <img src="http://i.imgur.com/fNcl65g.png">
+  <img src="http://i.imgur.com/fNcl65g.png"/>
   <br/>
-  <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png">资料来源：图数据库</a></strong>
+  <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png"/>资料来源：图数据库</a></strong>
 </p>
 
 > 抽象模型： 图
@@ -1056,7 +1051,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 ### SQL 还是 NoSQL
 
 <p align="center">
-  <img src="http://i.imgur.com/wXGqG5f.png">
+  <img src="http://i.imgur.com/wXGqG5f.png"/>
   <br/>
   <strong><a href="https://www.infoq.com/articles/Transition-RDBMS-NoSQL/">资料来源：从 RDBMS 转换到 NoSQL</a></strong>
 </p>
@@ -1092,12 +1087,12 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ##### 来源及延伸阅读：SQL 或 NoSQL
 
-- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=vg5onp8TU6Q)
+- [扩展你的用户数到第一个千万](https://www.youtube.com/watch?v=w95murBkYmU)
 - [SQL 和 NoSQL 的不同](https://www.sitepoint.com/sql-vs-nosql-differences/)
 ## 缓存
 
 <p align="center">
-  <img src="http://i.imgur.com/Q6z24La.png">
+  <img src="http://i.imgur.com/Q6z24La.png"/>
   <br/>
   <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">资料来源：可扩展的系统设计模式</a></strong>
 </p>
@@ -1168,7 +1163,7 @@ Redis 有下列附加功能：
 #### 缓存模式
 
 <p align="center">
-  <img src="http://i.imgur.com/ONjORqk.png">
+  <img src="http://i.imgur.com/ONjORqk.png"/>
   <br/>
   <strong><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">资料来源：从缓存到内存数据网格</a></strong>
 </p>
@@ -1180,7 +1175,7 @@ Redis 有下列附加功能：
 - 将查找到的结果存储到缓存中
 - 返回所需内容
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1204,7 +1199,7 @@ def get_user(self, user_id):
 #### 直写模式
 
 <p align="center">
-  <img src="http://i.imgur.com/0vBc0hN.png">
+  <img src="http://i.imgur.com/0vBc0hN.png"/>
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -1223,7 +1218,7 @@ set_user(12345, {"foo":"bar"})
 
 缓存代码：
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)
@@ -1239,7 +1234,7 @@ def set_user(user_id, values):
 #### 回写模式
 
 <p align="center">
-  <img src="http://i.imgur.com/rgSrvjG.png">
+  <img src="http://i.imgur.com/rgSrvjG.png"/>
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -1257,7 +1252,7 @@ def set_user(user_id, values):
 #### 刷新
 
 <p align="center">
-  <img src="http://i.imgur.com/kxtjqgE.png">
+  <img src="http://i.imgur.com/kxtjqgE.png"/>
   <br/>
   <strong><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>资料来源：从缓存到内存数据网格</a></strong>
 </p>
@@ -1289,7 +1284,7 @@ def set_user(user_id, values):
 ## 异步
 
 <p align="center">
-  <img src="http://i.imgur.com/54GYsSx.png">
+  <img src="http://i.imgur.com/54GYsSx.png"/>
   <br/>
   <strong><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>资料来源：可缩放系统构架介绍</a></strong>
 </p>
@@ -1319,7 +1314,7 @@ def set_user(user_id, values):
 
 ### 背压
 
-如果队列开始明显增长，那么队列大小可能会超过内存大小，导致高速缓存未命中，磁盘读取，甚至性能更慢。[背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)可以通过限制队列大小来帮助我们，从而为队列中的作业保持高吞吐率和良好的响应时间。一旦队列填满，客户端将得到服务器忙活着 HTTP 503 状态码，以便稍后重试。客户端可以在稍后时间重试该请求，也许是[指数退避](https://en.wikipedia.org/wiki/Exponential_backoff)。
+如果队列开始明显增长，那么队列大小可能会超过内存大小，导致高速缓存未命中，磁盘读取，甚至性能更慢。[背压](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)可以通过限制队列大小来帮助我们，从而为队列中的作业保持高吞吐率和良好的响应时间。一旦队列填满，客户端将得到服务器忙或者 HTTP 503 状态码，以便稍后重试。客户端可以在稍后时间重试该请求，也许是[指数退避](https://en.wikipedia.org/wiki/Exponential_backoff)。
 
 ### 异步的缺点：
 
@@ -1335,7 +1330,7 @@ def set_user(user_id, values):
 ## 通讯
 
 <p align="center">
-  <img src="http://i.imgur.com/5KeocQs.jpg">
+  <img src="http://i.imgur.com/5KeocQs.jpg"/>
   <br/>
   <strong><a href=http://www.escotal.com/osilayer.html>资料来源：OSI 7层模型</a></strong>
 </p>
@@ -1370,7 +1365,7 @@ HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议�
 ### 传输控制协议（TCP）
 
 <p align="center">
-  <img src="http://i.imgur.com/JdAsdvG.jpg">
+  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
   <br/>
   <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/">资料来源：如何制作多人游戏</a></strong>
 </p>
@@ -1394,7 +1389,7 @@ TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包
 ### 用户数据报协议（UDP）
 
 <p align="center">
-  <img src="http://i.imgur.com/yzDrJtA.jpg">
+  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
   <br/>
   <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1">资料来源：如何制作多人游戏</a></strong>
 </p>
@@ -1423,7 +1418,7 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实�
 ### 远程过程调用协议（RPC）
 
 <p align="center">
-  <img src="http://i.imgur.com/iF4Mkb5.png">
+  <img src="http://i.imgur.com/iF4Mkb5.png"/>
   <br/>
   <strong><a href="http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview">Source: Crack the system design interview</a></strong>
 </p>
@@ -1521,7 +1516,7 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1572,7 +1567,7 @@ Latency Comparison Numbers
 L1 cache reference                           0.5 ns
 Branch mispredict                            5   ns
 L2 cache reference                           7   ns                      14x L1 cache
-Mutex lock/unlock                          100   ns
+Mutex lock/unlock                           25   ns
 Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
 Compress 1K bytes with Zippy            10,000   ns       10 us
 Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
@@ -1618,10 +1613,10 @@ Notes
 | 问题                      | 引用                                       |
 | ----------------------- | ---------------------------------------- |
 | 设计类似于 Dropbox 的文件同步服务   | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| 设计类似于 Google 的搜索引擎      | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| 设计类似于 Google 的搜索引擎      | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | 设计类似于 Google 的可扩展网络爬虫   | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
 | 设计 Google 文档            | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| 设计类似 Redis 的建值存储        | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| 设计类似 Redis 的键值存储        | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | 设计类似 Memcached 的缓存系统    | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | 设计类似亚马逊的推荐系统            | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
 | 设计类似 Bitly 的短链接系统       | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
@@ -1645,7 +1640,7 @@ Notes
 > 关于现实中真实的系统是怎么设计的文章。
 
 <p align="center">
-  <img src="http://i.imgur.com/TcUo2fw.png">
+  <img src="http://i.imgur.com/TcUo2fw.png"/>
   <br/>
   <strong><a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability">Source: Twitter timelines at scale</a></strong>
 </p>
@@ -1782,7 +1777,7 @@ Notes
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## 联系方式
 

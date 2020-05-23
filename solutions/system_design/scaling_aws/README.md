@@ -83,7 +83,7 @@ Handy conversion guide:
 
 * **Web server** on EC2
     * Storage for user data
-    * [**MySQL Database**](https://github.com/donnemartin/system-design-primer#sql)
+    * [**MySQL Database**](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
 
 Use **Vertical Scaling**:
 
@@ -344,7 +344,7 @@ We can further separate out our [**Application Servers**](https://github.com/don
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
