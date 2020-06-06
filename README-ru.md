@@ -12,19 +12,6 @@ l10n:p -->
 
 <!-- l10n:ignore start -->
 [![l10n-sync-ru](https://github.com/voitau/system-design-primer/workflows/l10n-sync-ru/badge.svg)](https://github.com/voitau/system-design-primer/actions?query=workflow:l10n-sync-ru)
-[![Gitter](https://badges.gitter.im/system-design-primer-Russian/community.svg)](https://gitter.im/system-design-primer-Russian/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-> ## Contributing: Russian translation
->
-> **WARNING**: the document is currently being translated.
->
-> Thank you for your interest in contributing to Russian translation! If you want to contribute, please do the following:
->
-> * choose a task for a section which you want to translate in the [Project](https://github.com/voitau/system-design-primer/projects/4)
-> * assign it to yourself and move it to `In progress`
-> * text in comments is copied from original and is kept in sync. you can use it as a source for translation, but **do not change it**
-> * make PR to this fork. When translation is complete, all changes will go into one PR to main repository
-> * **do not change Header names and internal links, keep them original**. To avoid broken links, they all will be updated after document is completely translated before final PR to main repository
->
 <!-- l10n:ignore end -->
 
 <p align="center">
@@ -76,7 +63,7 @@ l10n:p -->
 
 Это постоянно обновляемый проект с открытым исходным кодом.
 
-[Contributions](#contributing) очень приветствуются!
+[Содействие](#содействуйте) очень приветствуется!
 
 <!-- l10n:p
 ### Prep for the system design interview
@@ -94,7 +81,7 @@ Additional topics for interview prep:
 * [Additional system design interview questions](#additional-system-design-interview-questions)
 l10n:p -->
 
-### Подготовка к собеседованию по проектированию системы
+### Подготовка к собеседованию по проектированию систем
 
 В дополнение к интервью по написанию кода, проектирование систем является **обязательным компонентом процесса технического интервью** во многих технологических компаниях.
 
@@ -102,11 +89,11 @@ l10n:p -->
 
 Дополнительные темы для подготовки к собеседованию:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Руководство](#руководство)
+* [Как отвечать на вопросы на интервью по проектированию систем](#как-отвечать-на-вопросы-на-интервью-по-проектированию-систем)
+* [Вопросы на интервью по проектированию систем с решениями](#вопросы-на-интервью-по-проектированию-систем-с-решениями)
+* [Вопросы на интервью по объектно-ориентированному программированию с решениями](#вопросы-на-интервью-по-объектно-ориентированному-программированию-с-решениями)
+* [Дополнительные вопросы на интервью по проектированию систем](#дополнительные-вопросы-на-интервью-по-проектированию-систем)
 
 <!-- l10n:p
 ## Anki flashcards
@@ -125,12 +112,12 @@ The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repeti
 Great for use while on-the-go.
 l10n:p -->
 
-## Anki flashcards
+## Карточки Anki
 
 <p align="center">
   <img src="http://i.imgur.com/zdCAkB3.png"/>
   <br/>
-</p>
+</p>motivation
 
 Предоставленные [карточки Anki](https://apps.ankiweb.net/) могут быть использованы для повторения и запоминания ключевых концепций проектирования систем.
 
@@ -155,7 +142,7 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 l10n:p -->
 
-### Coding Resource: Interactive Coding Challenges
+### Ресурсы по программированию: интерактивные задачи
 
 Ищете ресурсы для подготовки к [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
@@ -185,7 +172,7 @@ Content that needs some polishing is placed [under development](#under-developme
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 l10n:p -->
 
-## Contributing
+## Содействуйте
 
 > Учитесь у сообщества.
 
@@ -196,9 +183,9 @@ l10n:p -->
 * Добавление новых разделов
 * [Перевод](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Контент, который нуждается в некоторой полировке, помещается в раздел [В разработке](#under-development).
+Контент, который нуждается в некоторой полировке, помещается в раздел [В разработке](#в-разработке).
 
-Ознакомьтесь с [Принципами Содействия](CONTRIBUTING.md).
+Ознакомьтесь с [Принципами содействия](CONTRIBUTING.md).
 
 <!-- l10n:p
 ## Index of system design topics
@@ -296,7 +283,7 @@ l10n:p -->
 * [License](#license)
 l10n:p -->
 
-## Index of system design topics
+## Содержание
 
 > Обобщение различных тем по проектирования систем, включая преимущества и недостатки.  **Любое решение требует компромисса**.
 >
@@ -307,88 +294,101 @@ l10n:p -->
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
-    * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
-    * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+- [Темы про проектированию систем: начало](#темы-про-проектированию-систем-начало)
+  - [Шаг 1: Посмотрите видео-лекцию по масштабированию](#шаг-1-посмотрите-видео-лекцию-по-масштабированию)
+  - [Шаг 2: Прочитайте статьи по масштабированию](#шаг-2-прочитайте-статьи-по-масштабированию)
+  - [Следующие шаги](#следующие-шаги)
+- [Производительность и масштабируемость](#производительность-и-масштабируемость)
+- [Задержка и пропускная способность](#задержка-и-пропускная-способность)
+- [Доступность и согласованность данных](#доступность-и-согласованность-данных)
+  - [Теорема CAP](#теорема-cap)
+    - [CP - Согласованность данных и Устойчивость к разделению](#cp---согласованность-данных-и-устойчивость-к-разделению)
+    - [AP - Доступность и Устойчивость к разделению](#ap---доступность-и-устойчивость-к-разделению)
+- [Шаблоны реализации согласованности](#шаблоны-реализации-согласованности)
+  - [Слабая согласованность](#слабая-согласованность)
+  - [Согласованность в конечном счете](#согласованность-в-конечном-счете)
+  - [Сильная согласованность](#сильная-согласованность)
+- [Шаблоны доступности](#шаблоны-доступности)
+  - [Отказоустойчивость](#отказоустойчивость)
+    - [Активный-пассивный](#активный-пассивный)
+    - [Активный-активный](#активный-активный)
+  - [Репликация](#репликация)
+    - [Master-Slave и Master-Master](#master-slave-и-master-master)
+  - [Доступность в цифрах](#доступность-в-цифрах)
+    - [Доступность 99.9% - 3 девятки](#доступность-999---3-девятки)
+    - [Доступность 99.99% - четыре девятки](#доступность-9999---четыре-девятки)
+    - [Параллельная и последовательная доступность](#параллельная-и-последовательная-доступность)
+        - [Последовательная доступность](#последовательная-доступность)
+        - [Параллельная доступность](#параллельная-доступность)
+- [Систем доменных имен](#систем-доменных-имен)
+- [Сеть доставки содержимого (CDN)](#сеть-доставки-содержимого-cdn)
+  - [Push CDN](#push-cdn)
+  - [Pull CDN](#pull-cdn)
+- [Балансировщик нагрузки](#балансировщик-нагрузки)
+  - [Layer 4 балансировка](#layer-4-балансировка)
+  - [Layer 7 балансировка](#layer-7-балансировка)
+  - [Горизонтальное масштабирование](#горизонтальное-масштабирование)
+- [Обратный прокси-сервер (Reverse proxy)](#обратный-прокси-сервер-reverse-proxy)
+  - [Сравнение балансировщика нагрузки и обратного прокси-сервера](#сравнение-балансировщика-нагрузки-и-обратного-прокси-сервера)
+- [Уровень приложений](#уровень-приложений)
+  - [Микросервисы](#микросервисы)
+  - [Обнаружение сервисов (Service Discovery)](#обнаружение-сервисов-service-discovery)
+- [Базы данных](#базы-данных)
+  - [Реляционные системы управления базами данных](#реляционные-системы-управления-базами-данных)
+    - [Репликация Master-Slave](#репликация-master-slave)
+    - [Репликация Master-Master](#репликация-master-master)
+    - [Федерализация](#федерализация)
+    - [Шардирование](#шардирование)
+    - [Денормализация](#денормализация)
+    - [SQL тюнинг](#sql-тюнинг)
+      - [Пересмотрите схему](#пересмотрите-схему)
+      - [Используйте хорошие индексы](#используйте-хорошие-индексы)
+      - [Избегайте больших объединений](#избегайте-больших-объединений)
+      - [Разбиение таблиц](#разбиение-таблиц)
+      - [Настройте кэширование запросов](#настройте-кэширование-запросов)
+  - [NoSQL](#nosql)
+    - [Хранилище типа ключ-значение](#хранилище-типа-ключ-значение)
+    - [Хранилище документов](#хранилище-документов)
+    - [Колоночное хранилище](#колоночное-хранилище)
+    - [Графовая база данных](#графовая-база-данных)
+  - [SQL или NoSQL](#sql-или-nosql)
+- [Кэширование](#кэширование)
+  - [Кэширование на клиенте](#кэширование-на-клиенте)
+  - [Кэширование в CDN](#кэширование-в-cdn)
+  - [Кэширование на веб-сервере](#кэширование-на-веб-сервере)
+  - [Кэширование в Базах данных](#кэширование-в-базах-данных)
+  - [Кэширование в приложениях](#кэширование-в-приложениях)
+  - [Кэширование на уровне запросов в базу данных](#кэширование-на-уровне-запросов-в-базу-данных)
+  - [Кэширование на уровне объектов](#кэширование-на-уровне-объектов)
+  - [Когда обновлять кэш](#когда-обновлять-кэш)
+    - [Кэширование Cache-aside (кэш отдельно)](#кэширование-cache-aside-кэш-отдельно)
+    - [Кэширование Write-through (сквозное)](#кэширование-write-through-сквозное)
+    - [Кэширование Write-behind / write-back (отложенная запись)](#кэширование-write-behind--write-back-отложенная-запись)
+    - [Кэширование Refresh-ahead (предварительное обновление)](#кэширование-refresh-ahead-предварительное-обновление)
+- [Асинхронность](#асинхронность)
+  - [Очереди сообщений](#очереди-сообщений)
+  - [Очереди задач](#очереди-задач)
+  - [Обратное давление](#обратное-давление)
+- [Взаимодействие](#взаимодействие)
+  - [HTTP (Hypertext transfer protocol)](#http-hypertext-transfer-protocol)
+  - [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
+  - [User datagram protocol (UDP)](#user-datagram-protocol-udp)
+  - [Удалённый вызов процедур (Remote procedure call, RPC)](#удалённый-вызов-процедур-remote-procedure-call-rpc)
+  - [REST (Representational state transfer)](#rest-representational-state-transfer)
+  - [Сравнение вызовов RPC и REST](#сравнение-вызовов-rpc-и-rest)
+- [Безопасность](#безопасность)
+- [Приложение](#приложение)
+  - [Таблица степеней двойки](#таблица-степеней-двойки)
+  - [Время выполнения, которое должен знать каждый программист](#время-выполнения-которое-должен-знать-каждый-программист)
+    - [Визуализация выполнения](#визуализация-выполнения)
+  - [Дополнительные вопросы на интервью по проектированию систем](#дополнительные-вопросы-на-интервью-по-проектированию-систем)
+  - [Архитектуры действующих систем](#архитектуры-действующих-систем)
+  - [Архитектуры компаний](#архитектуры-компаний)
+  - [Блоги инженерных компаний](#блоги-инженерных-компаний)
+- [В разработке](#в-разработке)
+- [Благодарность](#благодарность)
+- [Контактная информация](#контактная-информация)
+- [License](#license)
 
 <!-- l10n:p
 ## Study guide
@@ -428,7 +428,7 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 l10n:p -->
 
-## Study guide
+## Руководство
 
 > Предлагаемые темы для повторения в зависимости от того, сколько у вас есть времени для подготовки к интервью (мало, средне, много)
 
@@ -445,23 +445,23 @@ l10n:p -->
 * Компания, в которую вы собеседуетесь
 * Удача
 
-Ожидается, что более опытные кандидаты в общем случае знают больше о проектировании систем, а архитекторы и руководители комманд знают больше, чем индивидуальные разработчики. Топовые IT компании скорее всего будут проводить один или более этапов собеседования по проектированию систем.
+Ожидается, что более опытные кандидаты в общем случае знают больше о проектировании систем, а архитекторы и руководители команд знают больше, чем индивидуальные разработчики. Топовые IT компании скорее всего будут проводить один или более этапов собеседования по проектированию систем.
 
-Начинайте широко, и углубляейтесь в некоторые области. Это поможет узнать больше о различных темах по проектированию систем. Корректируйте ваш план в зависомости от того, сколько у вас есть времени, какой у вас опыт, на какую должность вы собеседуетесь и в какие компании.
+Начинайте широко, и углубляйтесь в некоторые области. Это поможет узнать больше о различных темах по проектированию систем. Корректируйте ваш план в зависимости от того, сколько у вас есть времени, какой у вас опыт, на какую должность вы собеседуетесь и в какие компании.
 
-* **Короткий срок** - настраиватесь на **широту** покрытия тем. Тренируйтесь отвечать на **некоторые** вопросы.
-* **Средний срок** - настраиватесь на **широту** и **немного глубины** покрытия тем. Тренируйтесь отвечать на **многие** вопросы.
-* **Длительный срок** - настраиватесь на **широту** и **больше глубины** покрытия тем. Тренируйтесь отвечать на **большинство** вопросов.
+* **Короткий срок** - настраивайтесь на **широту** покрытия тем. Тренируйтесь отвечать на **некоторые** вопросы.
+* **Средний срок** - настраивайтесь на **широту** и **немного глубины** покрытия тем. Тренируйтесь отвечать на **многие** вопросы.
+* **Длительный срок** - настраивайтесь на **широту** и **больше глубины** покрытия тем. Тренируйтесь отвечать на **большинство** вопросов.
 
 | | Малый срок | Средний срок | Длительный срок |
 |---|---|---|---|
-| Читайте [System design topics](#index-of-system-design-topics), чтобы получить общее понимание, как работают системы | :+1: | :+1: | :+1: |
-| Почитайте несколько статей из блогов компаний, в который вы собеседуетесь [Company engineering blogs](#company-engineering-blogs)  | :+1: | :+1: | :+1: |
-| Посмотрите несколько [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Немного | Много | Большинство |
-| [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Немного | Много | Большинство |
-| [Additional system design interview questions](#additional-system-design-interview-questions) | Немного | Много | Большинство |
+| Смотрите [Содержание](#содержание), чтобы получить общее понимание, как работают системы | :+1: | :+1: | :+1: |
+| Почитайте несколько статей из блогов компаний, в который вы собеседуетесь - [Блоги инженерных компаний](#блоги-инженерных-компаний)  | :+1: | :+1: | :+1: |
+| Посмотрите несколько [Архитектур действующих систем](#архитектуры-действующих-систем) | :+1: | :+1: | :+1: |
+| [Как отвечать на вопросы на интервью по проектированию систем](#как-отвечать-на-вопросы-на-интервью-по-проектированию-систем) | :+1: | :+1: | :+1: |
+| [Вопросы на интервью по проектированию систем с решениями](#вопросы-на-интервью-по-проектированию-систем-с-решениями) | Немного | Много | Большинство |
+| [Вопросы на интервью по объектно-ориентированному программированию с решениями](#вопросы-на-интервью-по-объектно-ориентированному-программированию-с-решениями) | Немного | Много | Большинство |
+| [Дополнительные вопросы на интервью по проектированию систем](#дополнительные-вопросы-на-интервью-по-проектированию-систем) | Немного | Много | Большинство |
 
 <!-- l10n:p
 ## How to approach a system design interview question
@@ -473,13 +473,11 @@ The system design interview is an **open-ended conversation**.  You are expected
 You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
 l10n:p -->
 
-## How to approach a system design interview question
-
-> Как отвечать на вопросы на интерьвю по проектированию систем
+## Как отвечать на вопросы на интервью по проектированию систем
 
 Это интервью является **открытой беседой**. Ожидается, что вы возьмете инициативу по его ведению на себя.
 
-Изучите раздел [System design interview questions with solutions](#system-design-interview-questions-with-solutions) и используйте шаги, описанные ниже.
+Изучите раздел [Вопросов на интервью по проектированию систем с решениями](#вопросы-на-интервью-по-проектированию-систем-с-решениями) и используйте шаги, описанные ниже.
 
 
 <!-- l10n:p
@@ -497,7 +495,7 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 * What is the expected read to write ratio?
 l10n:p -->
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Шаг 1: определите сценарии использования, ограничения и допущения
 
 Соберите требование и оцените рамки задачи. Задавайте вопросы, чтобы уточнить варианты использования и ограничения. Обсудите допущения.
 
@@ -519,7 +517,7 @@ Outline a high level design with all important components.
 * Justify your ideas
 l10n:p -->
 
-### Step 2: Create a high level design
+### Шаг 2: Создайте высокоуровневый проект
 
 Сделайте набросок проекта с наиболее важными компонентами:
 
@@ -541,7 +539,7 @@ Dive into details for each core component.  For example, if you were asked to [d
 * API and object-oriented design
 l10n:p -->
 
-### Step 3: Design core components
+### Шаг 3: Спроектируйте основные компоненты
 
 Детализируйте каждый компонент. Например, если вас попросили разработать [design a url shortening service](solutions/system_design/pastebin/README.md), обсудите следующие моменты:
 
@@ -567,16 +565,16 @@ Identify and address bottlenecks, given the constraints.  For example, do you ne
 Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
 l10n:p -->
 
-### Step 4: Scale the design
+### Шаг 4: Увеличьте масштаб проекта
 
 Определите узкие места и разберитесь с ними, учитывая данные ограничения. Например, для решение проблем с масштабируемостью, может ли вам понадобиться что-то из:
 
 * Балансировщик нагрузки
-* Горизонтальное машстабирование
+* Горизонтальное масштабирование
 * Кэширование
 * Шардинг (sharding) базы данных
 
-Обсудите потенциальные варианты и компромиссы. Разберитесь с узкими местами используя [principles of scalable system design](#index-of-system-design-topics).
+Обсудите потенциальные варианты и компромиссы. Разберитесь с узкими местами используя [принципы проектирования масштабируемых систем](#содержание).
 
 <!-- l10n:p
 ### Back-of-the-envelope calculations
@@ -588,13 +586,13 @@ You might be asked to do some estimates by hand.  Refer to the [Appendix](#appen
 * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 l10n:p -->
 
-### Back-of-the-envelope calculations
+### Вычисления "на салфетке"
 
-Вас могу спросить сделать оценку решения по некоторые параметрам. Некоторые разделы [Appendix](#appendix) могут с этим помочь:
+Вас могут попросить сделать оценку решения по некоторым параметрам. Разделы [Приложения](#приложение) могут с этим помочь:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Таблица степеней двойки](#таблица-степеней-двойки)
+* [Время выполнения, которое должен знать каждый программист](#время-выполнения-которое-должен-знать-каждый-программист)
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -606,13 +604,13 @@ Check out the following links to get a better idea of what to expect:
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и другие ссылки
 
 Посмотрите следующие ссылки, чтобы понять, что можно ожидать (внешние ссылки без перевода):
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Таблица степеней двойки](#таблица-степеней-двойки)
+* [Время выполнения, которое должен знать каждый программист](#время-выполнения-которое-должен-знать-каждый-программист)
 
 <!-- l10n:p
 ## System design interview questions with solutions
@@ -634,7 +632,7 @@ l10n:p -->
 | Add a system design question | [Contribute](#contributing) |
 l10n:p -->
 
-## System design interview questions with solutions
+## Вопросы на интервью по проектированию систем с решениями
 
 > Распространенные задачи с обсуждением, кодом и диаграммами.
 >
@@ -650,7 +648,7 @@ l10n:p -->
 | Хранилище типа ключ-значение для поисковика | [Решение](solutions/system_design/query_cache/README.md) |
 | Рейтинг продаж по категориям в Amazon | [Решение](solutions/system_design/sales_rank/README.md) |
 | Система, которая масштабируется до миллиона пользователей на AWS | [Решение](solutions/system_design/scaling_aws/README.md) |
-| Добавьте задачу | [Решение](#contributing) |
+| Добавьте задачу | [Добавить](#содействуйте) |
 
 <!-- l10n:p
 ### Design Pastebin.com (or Bit.ly)
@@ -660,7 +658,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 l10n:p -->
 
-### Design Pastebin.com (or Bit.ly)
+### Спроектируйте Pastebin.com (or Bit.ly)
 
 [Требования и решение](solutions/system_design/pastebin/README.md)
 
@@ -674,7 +672,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/jrUBAF7.png)
 l10n:p -->
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Спроектируйте ленту Twitter или Facebook и поиск
 
 [Требования и решение](solutions/system_design/twitter/README.md)
 
@@ -688,7 +686,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/bWxPtQA.png)
 l10n:p -->
 
-### Design a web crawler
+### Спроектируйте веб-сканер
 
 [Требования и решение](solutions/system_design/web_crawler/README.md)
 
@@ -702,7 +700,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/V5q57vU.png)
 l10n:p -->
 
-### Design Mint.com
+### Спроектируйте Mint.com
 
 [Требования и решение](solutions/system_design/mint/README.md)
 
@@ -716,7 +714,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
 l10n:p -->
 
-### Design the data structures for a social network
+### Спроектируйте структуру данных для социальной сети
 
 [Требования и решение](solutions/system_design/social_graph/README.md)
 
@@ -730,7 +728,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/4j99mhe.png)
 l10n:p -->
 
-### Design a key-value store for a search engine
+### Спроектируйте хранилище типа "ключ-значение" для поисковика
 
 [Требования и решение](solutions/system_design/query_cache/README.md)
 
@@ -744,7 +742,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/MzExP06.png)
 l10n:p -->
 
-### Design Amazon's sales ranking by category feature
+### Спроектируйте ранжированирование товаров Amazon по категориям
 
 [Требование и решение](solutions/system_design/sales_rank/README.md)
 
@@ -758,7 +756,7 @@ l10n:p -->
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 l10n:p -->
 
-### Design a system that scales to millions of users on AWS
+### Спроектируйте систему, которая масштабируются на миллионы пользователей с помощью AWS
 
 [Требования и решение](solutions/system_design/scaling_aws/README.md)
 
@@ -785,7 +783,7 @@ l10n:p -->
 | Add an object-oriented design question | [Contribute](#contributing) |
 l10n:p -->
 
-## Object-oriented design interview questions with solutions
+## Вопросы на интервью по объектно-ориентированному программированию с решениями
 
 > Распространенные задачи с обсуждением, кодом и диаграммами.
 >
@@ -801,8 +799,8 @@ l10n:p -->
 | Колода карт | [Решение](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
 | Парковка | [Решение](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | Чат сервер | [Решение](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Циклический массив | [Contribute](#contributing)  |
-| Добавьте задачу | [Contribute](#contributing) |
+| Циклический массив | [Добавить](#содействуйте)  |
+| Добавьте задачу | [Добавить](#содействуйте) |
 
 <!-- l10n:p
 ## System design topics: start here
@@ -812,7 +810,7 @@ New to system design?
 First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
 l10n:p -->
 
-## System design topics: start here
+## Темы про проектированию систем: начало
 
 Только начинайте изучать проектирование систем?
 
@@ -832,7 +830,7 @@ l10n:p -->
     * Database partitioning
 l10n:p -->
 
-### Step 1: Review the scalability video lecture
+### Шаг 1: Посмотрите видео-лекцию по масштабированию
 
 [Лекция по масштабированию в Гарварде](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
@@ -842,7 +840,7 @@ l10n:p -->
   * Кэширование
   * Балансировка нагрузки
   * Репликация баз данных
-  * Секцирование (Partitioning) баз данных
+  * Партицирование баз данных
 
 <!-- l10n:p
 ### Step 2: Review the scalability article
@@ -856,15 +854,15 @@ l10n:p -->
     * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 l10n:p -->
 
-### Step 2: Review the scalability article
+### Шаг 2: Прочитайте статьи по масштабированию
 
-[Масштабирование](http://www.lecloud.net/tagged/scalability/chrono)
+[Scalability](http://www.lecloud.net/tagged/scalability/chrono)
 
 * Темы:
-  * [Клонирование](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-  * [Базы данных](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-  * [Кэши](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-  * [Асинхронность](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 <!-- l10n:p
 ### Next steps
@@ -880,7 +878,7 @@ Keep in mind that **everything is a trade-off**.
 Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
 l10n:p -->
 
-### Next steps
+### Следующие шаги
 
 Далее, изучим компромиссы в общем виде:
 
@@ -903,7 +901,7 @@ Another way to look at performance vs scalability:
 * If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
 l10n:p -->
 
-## Performance vs scalability
+## Производительность и масштабируемость
 
 Сервис считается **масштабируемым**, если его **производительность** растет пропорционально добавленным ресурсам. Обычно под увеличением производительности подразумевают увеличение количества обрабатываемых единиц работы. Однако, это может быть и обработка более крупных единиц работы, как, например, при росте объема данных.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
@@ -919,7 +917,7 @@ l10n:p -->
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
@@ -934,13 +932,13 @@ l10n:p -->
 Generally, you should aim for **maximal throughput** with **acceptable latency**.
 l10n:p -->
 
-## Latency vs throughput
+## Задержка и пропускная способность
 
 **Задержка** - это время, необходимое для выполнения действия или достижения некоторого результата.
 
 **Пропускная способность** - это количество такие действий или результататов в единицу времени.
 
-Обычно следует стремиться к **максимальной пропускной способности**, при этом сохраняя **задержку приемлимой**.
+Обычно следует стремиться к **максимальной пропускной способности**, при этом сохраняя **задержку приемлемой**.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -948,7 +946,7 @@ l10n:p -->
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
@@ -956,7 +954,7 @@ l10n:p -->
 ## Availability vs consistency
 l10n:p -->
 
-## Availability vs consistency
+## Доступность и согласованность данных
 
 <!-- l10n:p
 ### CAP theorem
@@ -976,7 +974,7 @@ In a distributed computer system, you can only support two of the following guar
 *Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
 l10n:p -->
 
-### CAP theorem
+### Теорема CAP
 
 <p align="center">
   <img src="http://i.imgur.com/bgLMI2u.png"/>
@@ -992,7 +990,7 @@ l10n:p -->
 * **Доступность (Availability)** - любой запрос возвращает результат, но без гарантии, что он содержит самую актуальную версию данных.
 * **Устойчивость к разделению (Partition Tolerance)** - система продолжает работать, несмотря на произвольное разделение узлов системы из-за проблем с сетью.
 
-*Сетевые соединения ненадеждны, поэтому поддерживать **устойчивость к разделению** необходимо. Выбор придется делать между **согласованностью данных** и **доступностью**.*
+*Сетевые соединения ненадежны, поэтому поддерживать **устойчивость к разделению** необходимо. Выбор придется делать между **согласованностью данных** и **доступностью**.*
 
 <!-- l10n:p
 #### CP - consistency and partition tolerance
@@ -1000,7 +998,7 @@ l10n:p -->
 Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
 l10n:p -->
 
-#### CP - consistency and partition tolerance
+#### CP - Согласованность данных и Устойчивость к разделению
 
 При таком подходе ожидание ответа от узла может привести к ошибке - истечению времени ожидания (timeout error). CP решение хорошо подходит для систем, где необходима атомарность операций чтения и записи.
 
@@ -1012,11 +1010,11 @@ Responses return the most recent version of the data available on a node, which 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 l10n:p -->
 
-#### AP - availability and partition tolerance
+#### AP - Доступность и Устойчивость к разделению
 
 При таком решении ответы на запросы возвращают данные, которые могут быть не самыми актуальными. Операция на запись может занять некоторое время, если придется ожидать восстановления потерянного соединения с одним из узлов распределённой системы.
 
-AP решение подходит для систем, где система должна продолжать работать несмотря на внешние ошибки и допустима [eventual consistency](#eventual-consistency).
+AP решение подходит для систем, где система должна продолжать работать несмотря на внешние ошибки и допустима [Согласованность в конечном счете](#согласованность-в-конечном-счете).
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1026,7 +1024,7 @@ AP решение подходит для систем, где система д
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
@@ -1038,9 +1036,9 @@ l10n:p -->
 With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
 l10n:p -->
 
-## Consistency patterns
+## Шаблоны реализации согласованности
 
-В распределённой системе можете существовать несколько копий одних и тех же данных. Для достижения согласованности данных, получаемых клиенстким приложением, существует несколько подходов синхронизации этих копий.
+В распределённой системе можете существовать несколько копий одних и тех же данных. Для достижения согласованности данных, получаемых клиентским приложением, существует несколько подходов синхронизации этих копий. Вспомните определение согласованности из [Теоремы CAP](#теорема-cap) - каждая операция чтения возвращает либо самую записанную версию, либо ошибку.
 
 <!-- l10n:p
 ### Weak consistency
@@ -1050,11 +1048,11 @@ After a write, reads may or may not see it.  A best effort approach is taken.
 This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
 l10n:p -->
 
-### Weak consistency
+### Слабая согласованность
 
 После операции записи данных, операция чтения может увидеть эти данные, а может и не увидеть. Используется подход, при котором можно сделать как можно лучше, но с учетом данной ситуации.
 
-Этот подход используеются в таких системах, как memcached. Слабая согласованность применяется в таких системах как VoIP, видео чаты и игры реального времени на несколько игроков.
+Этот подход используется в таких системах, как memcached. Слабая согласованность применяется в таких системах как VoIP, видео чаты и игры реального времени на несколько игроков.
 
 <!-- l10n:p
 ### Eventual consistency
@@ -1064,7 +1062,7 @@ After a write, reads will eventually see it (typically within milliseconds).  Da
 This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
 l10n:p -->
 
-### Eventual consistency
+### Согласованность в конечном счете
 
 После операции записи данных, операция чтения в конечном счете увидит эти данные (обычно в течение нескольких миллисекунд). Данных в таком случае реплицируются асинхронно.
 
@@ -1078,11 +1076,11 @@ After a write, reads will see it.  Data is replicated synchronously.
 This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
 l10n:p -->
 
-### Strong consistency
+### Сильная согласованность
 
 После операции записи данных, операция чтения увидит эти данны. Данные реплицируются синхронно.
 
-Такой подход используеются в файловых системаях и реляционных БД. Сильная согласованность хорошо подходит для систем, где требуются транзакции.
+Такой подход используется в файловых системах и реляционных БД. Сильная согласованность хорошо подходит для систем, где требуются транзакции.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -1090,7 +1088,7 @@ l10n:p -->
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
@@ -1100,7 +1098,7 @@ l10n:p -->
 There are two main patterns to support high availability: **fail-over** and **replication**.
 l10n:p -->
 
-## Availability patterns
+## Шаблоны доступности
 
 Для обеспечения высокой доступности существует два основных паттерна: **отказоустойчивость** и **репликация**.
 
@@ -1108,7 +1106,7 @@ l10n:p -->
 ### Fail-over
 l10n:p -->
 
-### Fail-over
+### Отказоустойчивость
 
 <!-- l10n:p
 #### Active-passive
@@ -1120,7 +1118,7 @@ The length of downtime is determined by whether the passive server is already ru
 Active-passive failover can also be referred to as master-slave failover.
 l10n:p -->
 
-#### Active-passive
+#### Активный-пассивный
 
 В таком режиме, активный и пассивный сервер, находящийся в режиме ожидания, обмениваются специальными сообщениями - heartbeats. Если такой сообщение не приходит, то пассивный сервер получает IP адрес активного сервера и восстанавливает работу сервера.
 
@@ -1141,13 +1139,13 @@ If the servers are public-facing, the DNS would need to know about the public IP
 Active-active failover can also be referred to as master-master failover.
 l10n:p -->
 
-#### Active-active
+#### Активный-активный
 
 В таком режиме, оба сервера обрабатывают клиентские запросы, распределяют нагрузку между собой.
 
 Если сервера имеют общий доступ, то публичные IP адреса обоих серверов должны быть зарегистрированы в DNS. Если сервера находятся во внутренней сети, то клиентское приложение знать про оба сервера.
 
-Режим "активный-активный" также известен как "ведущий-ведущий".
+Режим "активный-активный" также известен как "Master-Master".
 
 <!-- l10n:p
 ### Disadvantage(s): failover
@@ -1156,7 +1154,7 @@ l10n:p -->
 * There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
 l10n:p -->
 
-### Disadvantage(s): failover
+### Недостатки отказоустойчивости
 
 * Отказоустойчивость делает систему более сложной и требует большего количества аппаратного обеспечения.
 * Существует вероятность потери данных, если данных не успели реплицироваться во время переключения активного и пассивного серверов.
@@ -1165,7 +1163,7 @@ l10n:p -->
 ### Replication
 l10n:p -->
 
-### Replication
+### Репликация
 
 <!-- l10n:p
 #### Master-slave and master-master
@@ -1176,12 +1174,12 @@ This topic is further discussed in the [Database](#database) section:
 * [Master-master replication](#master-master-replication)
 l10n:p -->
 
-#### Master-slave and master-master
+#### Master-Slave и Master-Master
 
-Эта тема обсуждается далее в разделе [Database](#database):
+Эта тема обсуждается далее в разделе [Базы данных](#базы-данных):
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Репликация Master-Slave](#репликация-master-slave)
+* [Репликация Master-Master](#репликация-master-master)
 
 <!-- l10n:p
 ### Availability in numbers
@@ -1189,9 +1187,9 @@ l10n:p -->
 Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
 l10n:p -->
 
-### Availability in numbers
+### Доступность в цифрах
 
-Доступность обычно измеряется как сотношение времени, когда система доступна ко всему промежутку времени измерения. Обычно это количество девяток. Говорят, что сервис с доступностью 99.99%, имеет доступность в четыре девятки.
+Доступность обычно измеряется как соотношение времени, когда система доступна ко всему промежутку времени измерения. Обычно это количество девяток. Говорят, что сервис с доступностью 99.99%, имеет доступность в четыре девятки.
 
 <!-- l10n:p
 #### 99.9% availability - three 9s
@@ -1204,7 +1202,7 @@ l10n:p -->
 | Downtime per day    | 1m 26.4s           |
 l10n:p -->
 
-#### 99.9% availability - three 9s
+#### Доступность 99.9% - 3 девятки
 
 | Длительность           | Допустимое время простоя |
 |------------------------|--------------------------|
@@ -1224,7 +1222,7 @@ l10n:p -->
 | Downtime per day    | 8.6s               |
 l10n:p -->
 
-#### 99.99% availability - four 9s
+#### Доступность 99.99% - четыре девятки
 
 | Длительность           | Допустимое время простоя |
 |------------------------|--------------------------|
@@ -1239,7 +1237,7 @@ l10n:p -->
 If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
 l10n:p -->
 
-#### Availability in parallel vs in sequence
+#### Параллельная и последовательная доступность
 
 Если сервис состоит из нескольких компонентов, которые могут отказать в обслуживании, доступность сервиса зависит от того, как связаны эти компоненты - последовательно или параллельно.
 
@@ -1255,7 +1253,7 @@ Availability (Total) = Availability (Foo) * Availability (Bar)
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
 l10n:p -->
 
-###### In sequence
+###### Последовательная доступность
 
 Общая доступность уменьшается, если два компонента (например, Foo и Bar) с доступностью менее 100% связаны последовательно:
 
@@ -1275,7 +1273,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
 l10n:p -->
 
-###### In parallel
+###### Параллельная доступность
 
 Общая доступность увеличивается, если два компонента с доступностью менее 100% связаны параллельно:
 
@@ -1311,7 +1309,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 * Geolocation-based
 l10n:p -->
 
-## Domain name system
+## Систем доменных имен
 
 <p align="center">
   <img src="http://i.imgur.com/IOyLj4i.jpg"/>
@@ -1319,7 +1317,7 @@ l10n:p -->
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Источник: DNS security presentation</a></i>
 </p>
 
-Система домменных имен (DNS) преобразует доменное имя (например, www.example.com) в IP адрес.
+Система доменных имен (DNS) преобразует доменное имя (например, www.example.com) в IP адрес.
 
 DNS иерархична и имеет несколько корневых серверов. Информацию о том, какой DNS сервер надо использовать, предоставляется вашим маршрутизатором или интернет-провайдером. Нижестоящие DNS сервера кэшируют таблицы соответствия хостов и IP адресов, которые могут устаревать из-за задержки обновления. Результаты преобразования могут быть закэшированы браузером или операционной системой на определенное [Время жизни (Time to live - TTL)](https://ru.wikipedia.org/wiki/Time_to_live)
 
@@ -1330,14 +1328,14 @@ DNS иерархична и имеет несколько корневых се�
 * **Запись A (address)** - связывает имя с IP адресом.
 * **CNAME (canonical)** - связывает имя с другим именем, записью CNAME (example.com to www.example.com) или записью А.
 
-Такие сервисы, как [CloudFlare](https://www.cloudflare.com/dns/) и [Route 53](https://aws.amazon.com/route53/) предоставляют управлемые DNS сервисы. Некоторые DNS сервисы могут направлять трафик, используя различные методы:
+Такие сервисы, как [CloudFlare](https://www.cloudflare.com/dns/) и [Route 53](https://aws.amazon.com/ru/route53/) предоставляют полностью управляемые сервис DNS сервисы. Некоторые DNS сервисы могут направлять трафик, используя различные методы:
 
-* взвешенный циклический ([Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)):
+* взвешенный цикличекий ([Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)):
   * предотвращает попадания трафика на сервера, находящиеся на обслуживании
   * балансирует трафик для кластера, размер которого может меняться
   * может использоваться для A/B тестирования
 * на основе задержки отклика серверов
-* на основе геораспределения серверов
+* на основе гео-распределения серверов
 
 <!-- l10n:p
 ### Disadvantage(s): DNS
@@ -1347,7 +1345,7 @@ DNS иерархична и имеет несколько корневых се�
 * DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
 l10n:p -->
 
-### Disadvantage(s): DNS
+### Недостатки DNS
 
 * Запрос на DNS сервер занимает некоторое время, которое может быть сокращено, используя кэширование, описанное выше.
 * Управление DNS серверами может быть трудоёмким и поэтому обычно они управляются [правительствами государств, интернет-провайдерами и большими компаниями](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)
@@ -1361,7 +1359,7 @@ l10n:p -->
 * [DNS articles](https://support.dnsimple.com/categories/dns/)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia (ru)](https://ru.wikipedia.org/wiki/DNS)
@@ -1384,7 +1382,7 @@ Serving content from CDNs can significantly improve performance in two ways:
 * Your servers do not have to serve requests that the CDN fulfills
 l10n:p -->
 
-## Content delivery network
+## Сеть доставки содержимого (CDN)
 
 <p align="center">
   <img src="http://i.imgur.com/h9TAuGI.jpg"/>
@@ -1402,9 +1400,9 @@ Push CDNs receive new content whenever changes occur on your server.  You take f
 Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
 l10n:p -->
 
-### Push CDNs
+### Push CDN
 
-Содержимое Pull CDN обновляется тогда, когда оно обновлеятся на сервере. Разработчик сайта загружает содержимое на CDN и обновляет соотвествующие URL адреса, чтобы они указывали на CDN. Далее, можно сконфигурировать время жизни содержимого в CDN и когда оно должно быть обновлено. Загружается только новое или обновленное содержимое, минимизируя трафик и увеличивая объем хранящихся данных в CDN.
+Содержимое Push CDN обновляется тогда, когда оно обновляется на сервере. Разработчик сайта загружает содержимое на CDN и обновляет соответствующие URL адреса, чтобы они указывали на CDN. Далее, можно сконфигурировать время жизни содержимого в CDN и когда оно должно быть обновлено. Загружается только новое или обновленное содержимое, минимизируя трафик и увеличивая объем хранящихся данных в CDN.
 
 <!-- l10n:p
 ### Pull CDNs
@@ -1416,9 +1414,9 @@ A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines ho
 Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
 l10n:p -->
 
-### Pull CDNs
+### Pull CDN
 
-Pull CDN загружает новое содержимое при первом обращении пользователя. Разработчик сайта оставляет содержимое на своем сервере, но обновляет адреса, чтобы они указывали на CDN. В результате, запрос обрабатывается медленее, ожидая пока содержимое будет закэшировано в CDN.
+Pull CDN загружает новое содержимое при первом обращении пользователя. Разработчик сайта оставляет содержимое на своем сервере, но обновляет адреса, чтобы они указывали на CDN. В результате, запрос обрабатывается медленнее, ожидая пока содержимое будет закэшировано в CDN.
 
 [Время жизни (Time to live - TTL)](https://ru.wikipedia.org/wiki/Time_to_live) определяет как долго содержимое будет закэшировано. Pull CDN минимизирует объем хранящихся данных в CDN, но может привести к дополнительному трафику, если время жизни в CDN истекло, а файл на сервере изменен не был.
 
@@ -1432,10 +1430,10 @@ Pull CDN подходит для загруженных сайтов. Трафи
 * CDNs require changing URLs for static content to point to the CDN.
 l10n:p -->
 
-### Disadvantage(s): CDN
+### Недостатки CDN
 
 * Стоимость CDN может быть высока и зависит от объема трафика, но стоит иметь в виду и дополнительные расходы, которые будут если CDN не использовать.
-* Содежимое в CDN может оказаться устаревшим, если оно будет обновлено до того, как истечет время жизни (TTL).
+* Содержимое в CDN может оказаться устаревшим, если оно будет обновлено до того, как истечет время жизни (TTL).
 * Исходные URL ссылки должны быть изменены и указывать на CDN.
 
 <!-- l10n:p
@@ -1446,7 +1444,7 @@ l10n:p -->
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
 * [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
@@ -1487,7 +1485,7 @@ Load balancers can route traffic based on various metrics, including:
 * [Layer 7](#layer-7-load-balancing)
 l10n:p -->
 
-## Load balancer
+## Балансировщик нагрузки
 
 <p align="center">
   <img src="http://i.imgur.com/h81n9iK.png"/>
@@ -1507,18 +1505,18 @@ l10n:p -->
 
 * **SSL-терминация** - расшифровка входящих запросов и шифровка ответов; в таком случае бэкенд-сервера не тратят свои ресурсы на эти потенциально трудоемкие операции
   * нет необходимости устанавливать [X.509 сертификаты](https://ru.wikipedia.org/wiki/X.509)
-* **Сохранение сессии** - выдает куки и перенаправляет клиенсткий запрос на тот же сервер в случае, если сами веб-приложения не хранят сессии.
+* **Сохранение сессии** - выдает куки и перенаправляет клиентский запрос на тот же сервер в случае, если сами веб-приложения не хранят сессии.
 
-Для защиты от сбоев, можно использовать вместе несколько балансировщиков в [active-passive](#active-passive) или [active-active](#active-active) режиме.
+Для защиты от сбоев, можно использовать вместе несколько балансировщиков в режимах [Активный-Пассивный](#активный-пассивный) или [Активный-Активный](#активный-активный).
 
-Балансировщики могут направлять трафик опираюсь на различные метрики, включая:
+Балансировщики могут направлять трафик опираясь на различные метрики, включая:
 
 * случайно
 * наименее загруженные сервер
 * сессия/куки
 * взвешенный циклический ([Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb))
-* [Layer 4](#layer-4-load-balancing)
-* [Layer 7](#layer-7-load-balancing)
+* [Layer 4](#layer-4-балансировка)
+* [Layer 7](#layer-7-балансировка)
 
 <!-- l10n:p
 ### Layer 4 load balancing
@@ -1526,9 +1524,9 @@ l10n:p -->
 Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
 l10n:p -->
 
-### Layer 4 load balancing
+### Layer 4 балансировка
 
-Для распределения запросов балансировщики 4го уровня используют транспортный уровень модели OSI [transport layer](#communication). Обычно, используются IP адрес и порт источника и получателя из заголовков пакетов, но не из их содержимого. Балансировщики этого уровня перенаправляют сетевые пакеты с серверов, используя [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+Для распределения запросов балансировщики 4го уровня используют [Транспортный уровень](#взаимодействие) модели OSI. Обычно, используются IP адрес и порт источника и получателя из заголовков пакетов, но не из их содержимого. Балансировщики этого уровня перенаправляют сетевые пакеты с серверов, используя [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
 
 <!-- l10n:p
 ### Layer 7 load balancing
@@ -1538,11 +1536,11 @@ Layer 7 load balancers look at the [application layer](#communication) to decide
 At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
 l10n:p -->
 
-### Layer 7 load balancing
+### Layer 7 балансировка
 
-Для распределения запросов балансировщики 7го уровня используют прикладной уровень модели OSI [application layer](#communication). Для этого могут быть задействованы заголовок, сообщение и куки. Балансировщики на этом уровне прерывают сетевой трафик, сканируют сообщение, принимают решение, куда отправить запрос и открывают соединение с выбранным сервером. Например, они могут отправить запрос на видео на видео-сервер, а запрос на биллинг - на сервера с усиленной безопасностью.
+Для распределения запросов балансировщики 7го уровня используют [Прикладной уровень](#взаимодействие) модели OSI. Для этого могут быть задействованы заголовок, сообщение и куки. Балансировщики на этом уровне прерывают сетевой трафик, сканируют сообщение, принимают решение, куда отправить запрос и открывают соединение с выбранным сервером. Например, они могут отправить запрос на видео на видео-сервер, а запрос на биллинг - на сервера с усиленной безопасностью.
 
-Балансировка на 4м уровне быстрее и требует меньше ресусров, чем на 7м уровне, но имеет меньшую гибкость. Хотя на современном аппаратном обеспечении эта разница может быть незаметна.
+Балансировка на 4м уровне быстрее и требует меньше ресурсов, чем на 7м уровне, но имеет меньшую гибкость. Хотя на современном аппаратном обеспечении эта разница может быть незаметна.
 
 <!-- l10n:p
 ### Horizontal scaling
@@ -1550,7 +1548,7 @@ l10n:p -->
 Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
 l10n:p -->
 
-### Horizontal scaling
+### Горизонтальное масштабирование
 
 Балансировщики нагрузки могут быть использованы для горизонтального масштабирования, улучшая производительность и доступность. "Масштабирование вширь" используя стандартные сервера дешевле и приводит к более высокой доступности, чем "масштабирование вверх" одного сервера с более дорогим аппаратным обеспечением (**Вертикальное масштабирование**). Так же проще найти и специалиста, который умеет работать со стандартным аппаратным обеспечением, чем со специализированными Enterprise-системами.
 
@@ -1563,11 +1561,11 @@ l10n:p -->
 * Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
 l10n:p -->
 
-#### Disadvantage(s): horizontal scaling
+#### Недостатки горизонтального масштабирования
 
-* Горизонтальное масштабирование увеливает сложность система и предполагает клонирование серверов:
+* Горизонтальное масштабирование увеличивает сложность системы и предполагает клонирование серверов:
   * Сервера не должны хранить состояние, например сессию или изображение пользователя
-  * Сессии должны хранится в центразиванном хранилище, например в [database](#database) (SQL, NoSQL) или в [cache](#cache) (Redis, Memcached)
+  * Сессии должны хранится в централизованном хранилище, например в [Базе данных](#базы-данных) (SQL, NoSQL) или в [Кэше](#кэширование) (Redis, Memcached)
 * С увеличением количества серверов, принимающие сервера на следующем уровне должны обрабатывать больше одновременных запросов
 
 <!-- l10n:p
@@ -1578,9 +1576,9 @@ l10n:p -->
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
 l10n:p -->
 
-### Disadvantage(s): load balancer
+### Недостатки балансировщика
 
-* Балансировщик нагрузки может стать узким место в производительности системы, если он неправильно сконфигурирован или его аппаратное обеспечение слишком слабое.
+* Балансировщик нагрузки может стать узким местом в производительности системы, если он неправильно настроен или его аппаратное обеспечение слишком слабое.
 * Балансировщик нагрузки позволяет избежать единой точки отказа, но увеличивает совокупную сложность всей системы.
 * Единственный балансировщик становится единой точкой отказа, использование нескольких балансировщиком еще больше усложняет систему.
 
@@ -1596,7 +1594,7 @@ l10n:p -->
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
@@ -1633,7 +1631,7 @@ Additional benefits include:
     * Etc
 l10n:p -->
 
-## Reverse proxy (web server)
+## Обратный прокси-сервер (Reverse proxy)
 
 <p align="center">
   <img src="http://i.imgur.com/n41Azff.png"/>
@@ -1642,12 +1640,12 @@ l10n:p -->
   <br/>
 </p>
 
-Обратный прокси-сервер - это веб-сервер, который централизует внутренние сервисы и предоставляет уницифицированный интерфейс для доступа из публичной сети. Клиенсткие запросы перенаправляются на сервер, который их будет обрабабывать, и затем обратный прокси возвращает ответ клиенту.
+Обратный прокси-сервер - это веб-сервер, который централизует внутренние сервисы и предоставляет унифицированный интерфейс для доступа из публичной сети. Клиентские запросы перенаправляются на сервер, который их будет обрабатывать, и затем обратный прокси возвращает ответ клиенту.
 
 Дополнительные преимущества:
 
 * **повышенная безопасность** - скрывает информацию о бэкенд-серверах, блокирует IP адреса, ограничивает допустимое количество соединений на клиента
-* **повешенная масштабируемость и гибкость** - клиенсткое приложение знает только IP адрес прокси-сервера, таким образом можно менять количество серверов или изменять их конфигурацию
+* **повышенная масштабируемость и гибкость** - клиентское приложение знает только IP адрес прокси-сервера, таким образом можно менять количество серверов или изменять их конфигурацию
 * **SSL терминация** - расшифровка входящих запросов и шифровка ответов; в таком случае бэкенд-сервера не тратят свои ресурсы на эти потенциально трудоемкие операции
   * нет необходимости устанавливать [X.509 сертификаты](https://ru.wikipedia.org/wiki/X.509)
 * **Сжатие** - сжатие ответов сервера клиенту
@@ -1666,10 +1664,10 @@ l10n:p -->
 * Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
 l10n:p -->
 
-### Load balancer vs reverse proxy
+### Сравнение балансировщика нагрузки и обратного прокси-сервера
 
 * Использование балансировщика нагрузки полезно при наличии нескольких серверов. Часто балансировщики направляют трафик на сервера, выполняющие одинаковую функцию.
-* Обратный прокси-сервер может быть полезен даже при использовании одного веб-сервера или сервера приложений, предоставляе преимущества, описанные в предыдущей секции
+* Обратный прокси-сервер может быть полезен даже при использовании одного веб-сервера или сервера приложений, предоставляет преимущества, описанные в предыдущей секции
 * Такие решения, как NGINX и HAProxy могут поддерживать как реверс-прокси 7го уровня, так и балансировку нагрузки
 
 <!-- l10n:p
@@ -1679,9 +1677,9 @@ l10n:p -->
 * A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
 l10n:p -->
 
-### Disadvantage(s): reverse proxy
+### Недостатки обратного прокси-сервера
 
-* Использование обратного прокси-сервера увиличивает сложность системы в целом
+* Использование обратного прокси-сервера увеличивает сложность системы в целом
 * Использование одного прокси-сервера создает единую точку отказа. Настройка нескольких обратных прокси-серверов ([Аварийное переключение](https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%B0%D1%80%D0%B8%D0%B9%D0%BD%D0%BE%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)) еще больше усложняет систему.
 
 <!-- l10n:p
@@ -1693,7 +1691,7 @@ l10n:p -->
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
@@ -1714,7 +1712,7 @@ Separating out the web layer from the application layer (also known as platform 
 Workers in the application layer also help enable [asynchronism](#asynchronism).
 l10n:p -->
 
-## Application layer
+## Уровень приложений
 
 <p align="center">
   <img src="http://i.imgur.com/yB5SYwm.png"/>
@@ -1722,9 +1720,9 @@ l10n:p -->
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Разделение веб-уровня и уровня приложение (так же известного как уровень платформы) позволяет масштабировать и настраивать оба уровня независимо. Для добавления нового API может понадобиться добавление нового сервера на уровне приложение, но необязатльно на веб-уровне. **Принцип единой отвественности** подразумевает созданте небольших и автономных сервисов, который работают вместе. Небольшие команды с небольшими сервисами могут быстрее расти.
+Разделение веб-уровня и уровня приложения (так же известного как уровень платформы) позволяет масштабировать и настраивать оба уровня независимо. Для добавления нового API может понадобиться добавление нового сервера на уровне приложение, но необязательно на веб-уровне. **Принцип единой ответственности** подразумевает создание небольших и автономных сервисов, который работают вместе. Небольшие команды с небольшими сервисами могут быстрее расти.
 
-Worker-сервера на уровне приложений позволяют поддерживать [asynchronism](#asynchronism).
+Worker-сервера на уровне приложений позволяют поддерживать [Асинхронность](#асинхронность).
 
 <!-- l10n:p
 ### Microservices
@@ -1734,11 +1732,11 @@ Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Mic
 Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
 l10n:p -->
 
-### Microservices
+### Микросервисы
 
-[Микросервисная архитектура](https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0) может быть описана как набор независимо развёртываемых, небольших, модульных сервисов. Каждый сервис работает как независый процесс и взаимодействует на основе предустановленного легковесного протокола для обслуживания бизнес задачи. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+[Микросервисная архитектура](https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0) может быть описана как набор независимо развёртываемых, небольших, модульных сервисов. Каждый сервис работает как независимый процесс и взаимодействует на основе предустановленного легковесного протокола для обслуживания бизнес задачи. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-Микросервисы Pinterest могут включать: профиль пользователя, подписчик, лента, поиск, загрущка фото и т.д.
+Микросервисы Pinterest могут включать: профиль пользователя, подписчик, лента, поиск, загрузка фото и т.д.
 
 <!-- l10n:p
 ### Service Discovery
@@ -1746,9 +1744,9 @@ l10n:p -->
 Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
 l10n:p -->
 
-### Service Discovery
+### Обнаружение сервисов (Service Discovery)
 
-Ведя учет зарегистрованных имен, адресов и порто, такие системы как [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), и [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) помогают сервисам находит друг друга. Проверки состояния [Health checks](https://www.consul.io/intro/getting-started/checks.html) позволяют убедиться в работоспособности сервера с помощью [HTTP](#hypertext-transfer-protocol-http) запросы. Consul и Etcd имеют [key-value store](#key-value-store), которое может быть полезно для хранения конфигурации и других общих данных.
+Ведя учет зарегистрированных имен, адресов и портов, такие системы как [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), и [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) помогают сервисам находит друг друга. Проверки состояния [Health checks](https://www.consul.io/intro/getting-started/checks.html) позволяют убедиться в работоспособности сервера с помощью [HTTP](#http-hypertext-transfer-protocol) запросы. Consul и Etcd имеют [Хранилище типа ключ-значение](#хранилище-типа-ключ-значение), которое может быть полезно для хранения конфигурации и других общих данных.
 
 <!-- l10n:p
 ### Disadvantage(s): application layer
@@ -1757,9 +1755,9 @@ l10n:p -->
 * Microservices can add complexity in terms of deployments and operations.
 l10n:p -->
 
-### Disadvantage(s): application layer
+### Недостатки уровня приложений
 
-* Добавление уровня приложений со слабосвязанными сервисами требует другого подхода для архитектуры и процессов (в отличие от монолитной системы).
+* Добавление уровня приложений со слабо связанными сервисами требует другого подхода для архитектуры и процессов (в отличие от монолитной системы).
 * Микросервисная архитектура усложняет развертывание и эксплуатацию сервисов.
 
 <!-- l10n:p
@@ -1772,7 +1770,7 @@ l10n:p -->
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
@@ -1790,7 +1788,7 @@ l10n:p -->
 </p>
 l10n:p -->
 
-## Database
+## Базы данных
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png"/>
@@ -1813,11 +1811,11 @@ A relational database like SQL is a collection of data items organized in tables
 There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 l10n:p -->
 
-### Relational database management system (RDBMS)
+### Реляционные системы управления базами данных
 
-Реляционная база данных (SQL) - это набор данных, организованных в виде таблиц.
+Реляционная база данных (Relational database management system, RDBMS, SQL) - это набор данных, организованных в виде таблиц.
 
-**ACID** - описывает набор свойст [транзакций для реляционных баз данных](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D1%8F_(%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)).
+**ACID** - описывает набор свойств [транзакций для реляционных баз данных](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D1%8F_(%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)).
 
 * **Атомарность (Atomicity)** - каждая транзакция выполняется либо целиком, либо не выполняется совсем (откатывается)
 * **Согласованность (Consistency)** - любая транзакция переводит базу данных из одного правильного состояния в другое правильное состояние, сохраняя согласованность данных
@@ -1826,8 +1824,8 @@ l10n:p -->
 
 Существует ряд подходов для масштабирования реляционных баз данных:
 
-* репликация "ведущий-ведомый"
-* репликация "ведущий-ведущий"
+* репликация "Master-Slave"
+* репликация "Master-Master"
 * федерализация
 * шардирование
 * денормализация
@@ -1845,7 +1843,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 </p>
 l10n:p -->
 
-#### Master-slave replication
+#### Репликация Master-Slave
 
 Ведущий сервер работает на чтение и запись, реплицируя записи на один или более ведомых серверов. Ведомый сервер работает только на чтение. Ведомые сервера могу реплицировать на дополнительные ведомые сервера (как в древовидной структуре). Если ведущий сервер перестает работать, система продолжает работать в режиме только на чтение до тех пор, пока один из ведомых серверов не станет ведущим, или пока новый ведущий сервер не будет создан.
 
@@ -1863,10 +1861,10 @@ l10n:p -->
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 l10n:p -->
 
-##### Disadvantage(s): master-slave replication
+##### Недостатки репликации master-slave
 
 * Для переключения ведомого сервера в ведущий необходима дополнительная логика
-* См. [Disadvantage(s): replication](#disadvantages-replication) для пунктом, характерных для подходов "ведущий-ведомый" и "ведущий-ведущий".
+* См. [Недостатки репликации](#недостатки-репликации) для пунктом, характерных для подходов "Master-Slave" и "Master-Master".
 
 <!-- l10n:p
 #### Master-master replication
@@ -1880,7 +1878,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 </p>
 l10n:p -->
 
-#### Master-master replication
+#### Репликация Master-Master
 
 Оба ведущих сервера работают на чтение и запись и координирует операции записи между собою. Если один из ведущих серверов перестают работать, система может продолжать работать на чтение и запись.
 
@@ -1899,12 +1897,12 @@ l10n:p -->
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 l10n:p -->
 
-##### Disadvantage(s): master-master replication
+##### Недостатки репликации Master-Master
 
-* Необходим балансировщик нагрузки или понадобиться изменить логику приложение для опеределения куда будет идти запись.
-* Большинство систем "ведущий-ведущий" либо слабо согласованы (нарушая ACID) либо имеют большую задержку из-за необходимости синхронизации.
+* Необходим балансировщик нагрузки или понадобиться изменить логику приложение для определения куда будет идти запись.
+* Большинство систем "Master-Master" либо слабо согласованы (нарушая ACID) либо имеют большую задержку из-за необходимости синхронизации.
 * При возрастании количества серверов на запись (ведущих) возрастает задержка и возникает необходимость разрешения конфликтов.
-* См. [Disadvantage(s): replication](#disadvantages-replication) для пунктом, характерных для подходов "ведущий-ведомый" и "ведущий-ведущий".
+* См. [Недостатки репликации](#недостатки-репликации) для пунктом, характерных для подходов "Master-Slave" и "Master-Master".
 
 <!-- l10n:p
 ##### Disadvantage(s): replication
@@ -1916,7 +1914,7 @@ l10n:p -->
 * Replication adds more hardware and additional complexity.
 l10n:p -->
 
-##### Disadvantage(s): replication
+##### Недостатки репликации
 
 * Существует риск потери данных, если ведущий сервер перестает работать до того, как новые данные будут реплицированы на другие сервера.
 * Операции записи реплицируются на ведомый сервера. Если совершается много операций на запись, ведомые сервера могут быть перегружены реплицированием этих операций, влияя на производительность операций на чтение.
@@ -1931,7 +1929,7 @@ l10n:p -->
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 l10n:p -->
 
-##### Source(s) and further reading: replication
+##### Источники и дополнительные ссылки
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
@@ -1948,7 +1946,7 @@ l10n:p -->
 Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
 l10n:p -->
 
-#### Federation
+#### Федерализация
 
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png"/>
@@ -1956,8 +1954,8 @@ l10n:p -->
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Федерализация (или функциальное разделение) разбивает базы данных по функциям. Например, вместо одной монолитной базы данных, можно создать три отдельных базы данных:
-**форум**, **пользоватили** и **товары**, что приведет к меньшему количествую операций чтения и записи в каждую базу данных и, как следствие, сократить задержку репликации. Меньшие базы данных позволяют хранить больше данных в памяти, что приводит к более оптимальному использованию кэширования. Из-за отстуствие единого ведущего сервера, операции записи можно делать параллельно, увеличавая пропускную способность.
+Федерализация (или функциональное разделение) разбивает базы данных по функциям. Например, вместо одной монолитной базы данных, можно создать три отдельных базы данных:
+**форум**, **пользователи** и **товары**, что приведет к меньшему количеству операций чтения и записи в каждую базу данных и, как следствие, сократить задержку репликации. Меньшие базы данных позволяют хранить больше данных в памяти, что приводит к более оптимальному использованию кэширования. Из-за отсутствия единого ведущего сервера, операции записи можно делать параллельно, увеличивая пропускную способность.
 
 <!-- l10n:p
 ##### Disadvantage(s): federation
@@ -1968,10 +1966,10 @@ l10n:p -->
 * Federation adds more hardware and additional complexity.
 l10n:p -->
 
-##### Disadvantage(s): federation
+##### Недостатки федерализации
 
 * Федерализация неэффективна, если схема базы данных требует больших функций или таблиц.
-* Неободимо изменить логику приложения, чтобы определить, с какими базами данных работать.
+* Необходимо изменить логику приложения, чтобы определить, с какими базами данных работать.
 * Операция соединения данных (JOIN) становится сложнее [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
 * Федерализация требует большего количества аппаратного обеспечения и увеличивает общую сложность системы.
 
@@ -1981,7 +1979,7 @@ l10n:p -->
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
 l10n:p -->
 
-##### Source(s) and further reading: federation
+##### Источники и дополнительные ссылки
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
 
@@ -2001,7 +1999,7 @@ Similar to the advantages of [federation](#federation), sharding results in less
 Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
 l10n:p -->
 
-#### Sharding
+#### Шардирование
 
 <p align="center">
   <img src="http://i.imgur.com/wU8x5Id.png"/>
@@ -2009,11 +2007,11 @@ l10n:p -->
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Источник: Scalability, availability, stability, patterns</a></i>
 </p>
 
-Шардирование распределяет данны между разными базами данных так, что каждя база данных управляет только частью данных. Например, с увеличением количества пользователей в базу данных пользователей добавляются новые сервера (шарды).
+Шардирование распределяет данные между разными базами данных так, что каждая база данных управляет только частью данных. Например, с увеличением количества пользователей в базу данных пользователей добавляются новые сервера (шарды).
 
-Аналогично [federation](#federation), шардинг уменьшает количество операций записи и чтения на каждый сервер, уменьшая репликацию и улучшая кэширование. Размер индексов также уменьшается, что приводит к улучшение производительность и более быстрым запросам. Если один из шардов выходит из строя, другие шарды продолжают работать. Во избежание потери данных можно ввести дополнительную репликацию данных. Так же как и с федерализацией, нету централизованного сервера на запись, что позволяет делать запись параллельно, увиличая пропускную способность.
+Аналогично [Федерализации](#федерализация), шардирование уменьшает количество операций записи и чтения на каждый сервер, уменьшая репликацию и улучшая кэширование. Размер индексов также уменьшается, что приводит к улучшение производительность и более быстрым запросам. Если один из шардов выходит из строя, другие шарды продолжают работать. Во избежание потери данных можно ввести дополнительную репликацию данных. Так же как и с федерализацией, нету централизованного сервера на запись, что позволяет делать запись параллельно, увеличивая пропускную способность.
 
-Расптространненый подход шардирования таблицы пользователей основан на разделении по имени или местоположению.
+Распространённый подход шардирования таблицы пользователей основан на разделении по имени или местоположению.
 
 <!-- l10n:p
 ##### Disadvantage(s): sharding
@@ -2025,7 +2023,7 @@ l10n:p -->
 * Sharding adds more hardware and additional complexity.
 l10n:p -->
 
-##### Disadvantage(s): sharding
+##### Недостатки шардирования
 
 * Логика приложения должна быть адаптирована к работе с шардами, что может привести к более сложным SQL запросам.
 * Данные могут неравномерно распределяться среди шардов. Например, использование данных активных пользователей, находящихся на одном шарде, увеличивают нагрузку на него.
@@ -2041,7 +2039,7 @@ l10n:p -->
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 l10n:p -->
 
-##### Source(s) and further reading: sharding
+##### Источники и дополнительные ссылки
 
 * [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
@@ -2057,13 +2055,13 @@ Once data becomes distributed with techniques such as [federation](#federation) 
 In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
 l10n:p -->
 
-#### Denormalization
+#### Денормализация
 
-Денормализация - это попытка улучшить скорость чтения за счет производительности записи. Избыточные копии данных записываюся в несколько таблиц для избежания сложных операций соединения данных. Некоторый СУБД, например [PostgreSQL](https://ru.wikipedia.org/wiki/PostgreSQL) и Oracle поддерживают [материализованное представление](https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5), которые выполнюят задачу хранения избыточных данных и поддержку их согласованности.
+Денормализация - это попытка улучшить скорость чтения за счет производительности записи. Избыточные копии данных записываются в несколько таблиц для избежания сложных операций соединения данных. Некоторый СУБД, например [PostgreSQL](https://ru.wikipedia.org/wiki/PostgreSQL) и Oracle поддерживают [материализованное представление](https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5), которые выполнюят задачу хранения избыточных данных и поддержку их согласованности.
 
-При использовании [federation](#federation) и [sharding](#sharding), данные становятся распределенными. В результате выполнение операций соединения данных усложняется. Денормализация может позволить избавиться от необходимости в сложных JOIN запросах.
+При использовании [Федерализации](#федерализация) и [Шардирования](#шардирование), данные становятся распределенными. В результате выполнение операций соединения данных усложняется. Денормализация может позволить избавиться от необходимости в сложных JOIN запросах.
 
-В большинстве систем, количество операций на чтение значительно больше операций на запись (100:1, или даже 1000:1). Операция на чтение в результате сложного соединения данных может быть очень ресурсоемкой и требованть значительного времени, потраченного на операции c жестким диском.
+В большинстве систем, количество операций на чтение значительно больше операций на запись (100:1, или даже 1000:1). Операция на чтение в результате сложного соединения данных может быть очень ресурсоемкой и требовать значительного времени, потраченного на операции c жестким диском.
 
 <!-- l10n:p
 ##### Disadvantage(s): denormalization
@@ -2073,11 +2071,11 @@ l10n:p -->
 * A denormalized database under heavy write load might perform worse than its normalized counterpart.
 l10n:p -->
 
-##### Disadvantage(s): denormalization
+##### Недостатки денормализации
 
 * Данные дублируются.
-* Ограничения могу помочь поддерживать избыточные копии данных в актуальном состоянии, но увиличивают сложность архитектуры базы данных
-* Денормализованная база данных под большой нагрузкой может работать медленее, чем её нормализованный аналог.
+* Ограничения могут помочь поддерживать избыточные копии данных в актуальном состоянии, но увеличивают сложность архитектуры базы данных
+* Денормализованная база данных под большой нагрузкой может работать медленнее, чем её нормализованный аналог.
 
 <!-- l10n:p
 ###### Source(s) and further reading: denormalization
@@ -2085,7 +2083,7 @@ l10n:p -->
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 l10n:p -->
 
-###### Source(s) and further reading: denormalization
+###### Источники и дополнительные ссылки
 
 * [Денормализация](https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F)
 
@@ -2102,7 +2100,7 @@ It's important to **benchmark** and **profile** to simulate and uncover bottlene
 Benchmarking and profiling might point you to the following optimizations.
 l10n:p -->
 
-#### SQL tuning
+#### SQL тюнинг
 
 SQL тюнинг - это обширная тема, описанная во многих [книгах](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning)).
 
@@ -2127,16 +2125,16 @@ SQL тюнинг - это обширная тема, описанная во м�
 * Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
 l10n:p -->
 
-##### Tighten up the schema
+##### Пересмотрите схему
 
 * Запись в MySQL на смежные блоки для быстрого доступа.
-* Использование `CHAR` вместо `VARCHAR` для полей с фиксированной длиной.
+* Используйте `CHAR` вместо `VARCHAR` для полей с фиксированной длиной.
   * `CHAR` обеспечивает быстрый произвольный доступ, в случае с `VARCHAR` необходимо найти конец строки для перехода на следующую.
-* Использование `TEXT` для больших фрагментов текста (например, блог-посты). `TEXT` позволяет делать булевый поиск. Использование поля типа `TEXT` приводит к хранению указателя на диске, которые иоспользуется для поиска этого блока.
-* Использование `INT` для больших числе до 2^32.
-* Использование `DECIMAL` для денежных едениц для избежания ошибок, связанных с представлением в формате с плавающей точкой.
-* Избежание хранения большиъ `BLOBS`, вместо этого хранение указателя на место хранения объекта.
-* Установка ограничения `NOT NULL`, где возможно, для улучшения производительности ([improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)).
+* Используйте `TEXT` для больших фрагментов текста (например, блог-посты). `TEXT` позволяет делать булевый поиск. Использование поля типа `TEXT` приводит к хранению указателя на диске, которые используется для поиска этого блока.
+* Используйте `INT` для больших чисел до 2^32.
+* Используйте `DECIMAL` для денежных единиц для избежания ошибок, связанных с представлением в формате с плавающей точкой.
+* Избегайте хранения больших `BLOBS`, вместо этого хранение указателя на место хранения объекта.
+* Установите ограничения `NOT NULL`, где возможно, для улучшения производительности ([improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)).
 
 
 <!-- l10n:p
@@ -2149,12 +2147,12 @@ l10n:p -->
 * When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
 l10n:p -->
 
-##### Use good indices
+##### Используйте хорошие индексы
 
 * Запрос столбцов (включая операторы `SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) может быть быстрее с индексами.
 * Индексы обычно представляют собой самобалансирующиеся [B-деревья](https://ru.wikipedia.org/wiki/B-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE), которые хранят данные отсортированными, позволяют поиск, последовательный доступ, вставку и удаление с логарифмической сложностью.
 * Создание индексы может потребовать хранения данных в памяти, требуя больше места.
-* Операции записи могут быть медленне, так как индекс тоже необходимо обновлять.
+* Операции записи могут быть медленнее, так как индекс тоже необходимо обновлять.
 * При загрузке большого объема данных отключение индексов может помочь для ускорения этой операции; индексы в таком случае обновляются после загрузки данных.
 
 <!-- l10n:p
@@ -2163,9 +2161,9 @@ l10n:p -->
 * [Denormalize](#denormalization) where performance demands it.
 l10n:p -->
 
-##### Avoid expensive joins
+##### Избегайте больших объединений
 
-* [Denormalize](#denormalization), если необходимо повысить производительность.
+* [Денормализаруйте](#денормализация), если необходимо повысить производительность.
 
 <!-- l10n:p
 ##### Partition tables
@@ -2173,9 +2171,9 @@ l10n:p -->
 * Break up a table by putting hot spots in a separate table to help keep it in memory.
 l10n:p -->
 
-##### Partition tables
+##### Разбиение таблиц
 
-* Разбиение таблицы, поместив часто используемые данные в отдельную таблицу, для того, чтобы хранить ее в памяти.
+* Разбейте таблицу, поместив часто используемые данные в отдельную таблицу, для того, чтобы хранить ее в памяти.
 
 <!-- l10n:p
 ##### Tune the query cache
@@ -2183,7 +2181,7 @@ l10n:p -->
 * In some cases, the [query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) could lead to [performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
 l10n:p -->
 
-##### Tune the query cache
+##### Настройте кэширование запросов
 
 * В некоторых случаях, кэширование запросов ([query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html)) может привести к проблемам с производительностью ([performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/)).
 
@@ -2196,7 +2194,7 @@ l10n:p -->
 * [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 l10n:p -->
 
-##### Source(s) and further reading: SQL tuning
+##### Источники и дополнительные ссылки
 
 * [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
 * [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
@@ -2219,15 +2217,15 @@ l10n:p -->
 
 ### NoSQL
 
-NoSQL - это набор данных, представленных в виде **базы ключ-значение**, **документориентированной базы данных**, **колоночной базы данных** или **графовой база данных**. Данны денормализованы и операции соединения данных обычно происходят на уровне кода. Большинство NoSQL хранилищ не поддерживают ACID свойств транзакий и характеризуются [согласованностью в конечном счете](https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B2_%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC_%D1%81%D1%87%D1%91%D1%82%D0%B5).
+NoSQL - это набор данных, представленных в виде **базы ключ-значение**, **документориентированной базы данных**, **колоночной базы данных** или **графовой база данных**. Данные денормализованы и операции соединения данных обычно происходят на уровне кода. Большинство NoSQL хранилищ не поддерживают ACID свойств транзакий и характеризуются [согласованностью в конечном счете](https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B2_%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D0%BC_%D1%81%D1%87%D1%91%D1%82%D0%B5).
 
-Для описания свойств NoSQL баз данных используют **BASE** свойства. Согласно [CAP Theorem](#cap-theorem), BASE придерживается доступности данных, а не их согласованности.
+Для описания свойств NoSQL баз данных используют **BASE** свойства. Согласно [Теорема CAP](#теорема-cap), BASE придерживается доступности данных, а не их согласованности.
 
 * **В целом доступные** - система гарантирует доступность.
 * **Неокончательное (soft) удаление** - состояние ситемы может со временем измениться, даже без дополнительный операций.
 * **Согласованность в конечном счете (eventual consistency)** - данные в системе станут согласованными в течение некоторого времени, если в течение этого времени не будут приходить новые данные.
 
-Вместе с выбором между [SQL or NoSQL](#sql-or-nosql), надо сделать выбор типа NoSQL базы данных, которая подходит для вашего сценария использования. В следующей секции представлены **базы ключ-значение**, **документориентированные базы данных**, **колоночные базы данных** или **графовые база данных**.
+Вместе с выбором между [SQL или NoSQL](#sql-или-nosql), надо сделать выбор типа NoSQL базы данных, которая подходит для вашего сценария использования. В следующей секции представлены **базы ключ-значение**, **документориентированные базы данных**, **колоночные базы данных** или **графовые база данных**.
 
 <!-- l10n:p
 #### Key-value store
@@ -2241,15 +2239,15 @@ Key-value stores provide high performance and are often used for simple data mod
 A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
 l10n:p -->
 
-#### Key-value store
+#### Хранилище типа ключ-значение
 
 > Абстракция: хэщ-таблица
 
-База данных типа ключ-значение обычно позволяет выполнять операции чтение и записи со сложностью O(1) и используют оперативную память или SSD. Эти базы данных могут поддерживать [лексикографический порядок](https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BA%D1%81%D0%B8%D0%BA%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA), позволяя эффективно выполнять запросы на диапазон ключей. Базы этого типа позволяют хранить мета-данные вместе с данными.
+Хранилище типа ключ-значение обычно позволяет выполнять операции чтение и записи со сложностью O(1) и используют оперативную память или SSD. Эти хранилища могут поддерживать [лексикографический порядок](https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BA%D1%81%D0%B8%D0%BA%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA), позволяя эффективно выполнять запросы на диапазон ключей. Базы этого типа позволяют хранить мета-данные вместе с данными.
 
-Такие базы данных имеют высокую производительность и обычно используют для простых моделей данных или для быстро изменяющихся данных, таких как кэши, находящиейся в оперативной памяти. Обычно они предоставляют ограниченный набор действий. Поэтому сложность смещается на уровень приложение в том случае, если необходимы дополнительные действия.
+Такие хранилища имеют высокую производительность и обычно используют для простых моделей данных или для быстро изменяющихся данных, таких как кэши, находящейся в оперативной памяти. Обычно они предоставляют ограниченный набор действий. Поэтому сложность смещается на уровень приложение в том случае, если необходимы дополнительные действия.
 
-Базы данных типа ключ-значнеие являются основой для более сложных система, таких как Документоориентированных базы данных, и, в некоторых случаях, графовые базы данных.
+Хранилища типа ключ-значение являются основой для более сложных систем, таких как хранилище документов и, в некоторых случаях, графовые базы данных.
 
 <!-- l10n:p
 ##### Source(s) and further reading: key-value store
@@ -2260,7 +2258,7 @@ l10n:p -->
 * [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 l10n:p -->
 
-##### Source(s) and further reading: key-value store
+##### Источники и дополнительные ссылки
 
 * [База данных "ключ-значение"](https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%C2%AB%D0%BA%D0%BB%D1%8E%D1%87-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%C2%BB)
 * [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
@@ -2281,17 +2279,17 @@ Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture
 Document stores provide high flexibility and are often used for working with occasionally changing data.
 l10n:p -->
 
-#### Document store
+#### Хранилище документов
 
 > Абстракция: база данных "ключ-значение" с документами в качестве значения
 
-Документнориентированная база данных работает с документами (XML, JSON, бинарные и др.), где документ хранит все информацию об объекте. Такие базы данные предоставляют API или язык для запросов по внутренней структуре самих документов. *Обратите внимание, что такая же функциональность может быть доступна и для метаданных, тем самым размывая разницу между этими двумя типа данных.*
+Хранилище документов работает с документами (XML, JSON, бинарные и др.), где документ хранит все информацию об объекте. Такие хранилища предоставляют API или язык для запросов по внутренней структуре самих документов. *Обратите внимание, что такая же функциональность может быть доступна и для метаданных, тем самым размывая разницу между этими двумя типа данных.*
 
 В зависимости от реализации, документы могут быть организованы по коллекциям, меткам, метаданным или директориям. Документы могут быть организованы и сгруппированы вместе, и одновременно иметь поля, которых нет в других документах.
 
 Такие базы данных как [MongoDB](https://www.mongodb.com/mongodb-architecture) и [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) предоставляют SQL-подобный язык для выполнения сложных запросов. [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) работает с данными в виде "ключ-значение" и с документами.
 
-Документоориентированные базы данных предоставляют высокую гибкость и часто используются для работы с данными, структура которых может меняться.
+Хранилища документов предоставляют высокую гибкость и часто используются для работы с данными, структура которых может меняться.
 
 <!-- l10n:p
 ##### Source(s) and further reading: document store
@@ -2302,7 +2300,7 @@ l10n:p -->
 * [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 l10n:p -->
 
-##### Source(s) and further reading: document store
+##### Источники и дополнительные ссылки
 
 * [Документоориентированная СУБД](https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F_%D0%A1%D0%A3%D0%91%D0%94)
 * [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
@@ -2327,7 +2325,7 @@ Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs23
 Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
 l10n:p -->
 
-#### Wide column store
+#### Колоночное хранилище
 
 <p align="center">
   <img src="http://i.imgur.com/n16iOGk.png"/>
@@ -2337,11 +2335,11 @@ l10n:p -->
 
 > Абстракция: вложенная ассоциативная таблица `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
-Основной единицой данных в колоночных базах данных является колонка - пара имя/значение. Колонки могут быть сгруппированы в семейства колонок (по аналогии с SQL таблицей). Следующим уровнем будет супер-семейство колонок. Значение каждой колонки можно получить по ключу строки. Все колонки с одинаковым ключом строки формируют строку. Каждое значение содержит временную метку для версионности и разрешения конфликтов.
+Основной единицей данных в колоночных хранилищах является колонка - пара имя/значение. Колонки могут быть сгруппированы в семейства колонок (по аналогии с SQL таблицей). Следующим уровнем будет супер-семейство колонок. Значение каждой колонки можно получить по ключу строки. Все колонки с одинаковым ключом строки формируют строку. Каждое значение содержит временную метку для версионности и разрешения конфликтов.
 
 Google представили [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf), как первую колоночную базу данных, которая была создана под влиянием [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture), часто используемой в экосистеме Hadoop, и [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) от Facebook. BigTable, HBase, and Cassandra и другие базы данных этого типа хранят ключи в лексикографическом порядке, позволяя делать эффективные запросы по диапазону ключей.
 
-Колоночные базы данных имеют высокую доступность и масштабируемость. Часто они используются для очень больших объемов данных.
+Колоночные хранилища имеют высокую доступность и масштабируемость. Часто они используются для очень больших объемов данных.
 
 <!-- l10n:p
 ##### Source(s) and further reading: wide column store
@@ -2352,7 +2350,7 @@ Google представили [Bigtable](http://www.read.seas.harvard.edu/~kohle
 * [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 l10n:p -->
 
-##### Source(s) and further reading: wide column store
+##### Источники и дополнительные ссылки
 
 * [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
@@ -2375,7 +2373,7 @@ In a graph database, each node is a record and each arc is a relationship betwee
 Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
 l10n:p -->
 
-#### Graph database
+#### Графовая база данных
 
 <p align="center">
   <img src="http://i.imgur.com/fNcl65g.png"/>
@@ -2385,9 +2383,9 @@ l10n:p -->
 
 > Абстракция: граф
 
-В графовой базе данных, каждый узел это запись, а ребра это связь между двумя узлаим. Графовые базы данных оптимизированы для представление сложных связей с множеством внешних ключей или связей многих ко многим.
+В графовой базе данных, каждый узел это запись, а ребра это связь между двумя узлами. Графовые базы данных оптимизированы для представление сложных связей с множеством внешних ключей или связей многих ко многим.
 
-Графовые базы данных имеют высокую производительность для моделей данных со сложными связями, как в социальных сетях. Они относительно новые и не пока не используются широко. Может быть сложно найти средства и ресурсы для их разработки. Получить доступ ко многим графам можно только с помощью [REST APIs](#representational-state-transfer-rest).
+Графовые базы данных имеют высокую производительность для моделей данных со сложными связями, как в социальных сетях. Они относительно новые и не пока не используются широко. Может быть сложно найти средства и ресурсы для их разработки. Получить доступ ко многим графам можно только с помощью [REST API](#rest-representational-state-transfer).
 <!-- l10n:p
 ##### Source(s) and further reading: graph
 
@@ -2396,7 +2394,7 @@ l10n:p -->
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 l10n:p -->
 
-##### Source(s) and further reading: graph
+##### Источники и дополнительные ссылки
 
 * [Графовая база данных](https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B1%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
 * [Neo4j](https://neo4j.com/)
@@ -2412,7 +2410,7 @@ l10n:p -->
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 l10n:p -->
 
-#### Source(s) and further reading: NoSQL
+#### Источники и дополнительные ссылки по NoSQL
 
 * [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
 * [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
@@ -2459,7 +2457,7 @@ Sample data well-suited for NoSQL:
 * Metadata/lookup tables
 l10n:p -->
 
-### SQL or NoSQL
+### SQL или NoSQL
 
 <p align="center">
   <img src="http://i.imgur.com/wXGqG5f.png"/>
@@ -2471,7 +2469,7 @@ l10n:p -->
 
 * Структурированные данные
 * Строгая схема
-* Реаляционные данные
+* Реляционные данные
 * Необходимость сложных соединений (JOIN)
 * Транзакции
 * Понятные шаблоны масштабирования
@@ -2482,11 +2480,11 @@ l10n:p -->
 
 * Частично-структурированные данные
 * Динамическая или гибкая схема данных
-* Нереляицонные данные
+* Нереляционные данные
 * Нет необходимости в сложных соединениях (JOIN)
 * Хранение большого количества данных (TB или PB)
 * Очень большая нагрузка связанная с работой с данными
-* Большая пропуская способность для IOPS (количество операций ввода-вывода в секунду)
+* Большая пропускная способность для IOPS (количество операций ввода-вывода в секунду)
 
 Примеры данных, хорошо подходящих для NoSQL:
 
@@ -2503,7 +2501,7 @@ l10n:p -->
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
 l10n:p -->
 
-##### Source(s) and further reading: SQL or NoSQL
+##### Источники и дополнительные ссылки по SQL or NoSQL
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
@@ -2522,7 +2520,7 @@ Caching improves page load times and can reduce the load on your servers and dat
 Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
 l10n:p -->
 
-## Cache
+## Кэширование
 
 <p align="center">
   <img src="http://i.imgur.com/Q6z24La.png"/>
@@ -2530,7 +2528,7 @@ l10n:p -->
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Источник: Scalable system design patterns</a></i>
 </p>
 
-Кэширование улучшает время загрузки страницы и может уменьшить нагрузку на сервера и базы данных. При таком подходе, диспетчер сначали проверяет, делался ли запрос ране, чтобы найти ответ, который уже на него возвращался, сократив при этом время выполнения текущего запроса.
+Кэширование улучшает время загрузки страницы и может уменьшить нагрузку на сервера и базы данных. При таком подходе, диспетчер вначале проверяет, делался ли запрос ране, чтобы найти ответ, который уже на него возвращался, сократив при этом время выполнения текущего запроса.
 
 Базы данных работают оптимальным образом при равномерном распределении операций чтения и записи между их партициями (partitions). Популярные элементы могут нарушить равномерность распределения, создавая узкие места. Добавление системы кэширование перед базой данных может позволить сгладить неравномерность поступающего трафика.
 
@@ -2540,9 +2538,9 @@ l10n:p -->
 Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
 l10n:p -->
 
-### Client caching
+### Кэширование на клиенте
 
-Системы кэширования могут находиться на клиентской стороне (ОС или браузер), [server side](#reverse-proxy-web-server), или в выделенном уровне для кэширования.
+Системы кэширования могут находиться на клиентской стороне (ОС или браузер), [на сервере](#обратный-прокси-сервер-reverse-proxy), или в выделенном уровне для кэширования.
 
 <!-- l10n:p
 ### CDN caching
@@ -2550,9 +2548,9 @@ l10n:p -->
 [CDNs](#content-delivery-network) are considered a type of cache.
 l10n:p -->
 
-### CDN caching
+### Кэширование в CDN
 
-[CDNs](#content-delivery-network) считаются одним из видов кэширования.
+[Сети доставки содержимого (CDN)](#сеть-доставки-содержимого-cdn) считаются одним из видов кэширования.
 
 <!-- l10n:p
 ### Web server caching
@@ -2560,9 +2558,9 @@ l10n:p -->
 [Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
 l10n:p -->
 
-### Web server caching
+### Кэширование на веб-сервере
 
-[Reverse proxies](#reverse-proxy-web-server) и системы такие системы кэширование как [Varnish](https://www.varnish-cache.org/) могут выдавать как статический, так и динамический контент. Веб-сервера тоже могут кэшировать запросы, возвращая ответы не обращаюсь к серверам приложений.
+[Обратные прокси-сервера](#обратный-прокси-сервер-reverse-proxy) и системы такие системы кэширование как [Varnish](https://www.varnish-cache.org/) могут выдавать как статический, так и динамический контент. Веб-сервера тоже могут кэшировать запросы, возвращая ответы не обращаюсь к серверам приложений.
 
 <!-- l10n:p
 ### Database caching
@@ -2570,7 +2568,7 @@ l10n:p -->
 Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
 l10n:p -->
 
-### Database caching
+### Кэширование в Базах данных
 
 База данных обычно включает какое-то кэширование в конфигурации по умолчанию, которое оптимизировано для стандартных сценариев использования. Настройка этих параметров для конкретных шаблонов использования данных может еще больше увеличить её производительность.
 
@@ -2594,9 +2592,9 @@ There are multiple levels you can cache that fall into two general categories: *
 Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
 l10n:p -->
 
-### Application caching
+### Кэширование в приложениях
 
-Системы кэширования в памяти (например, Memcached и Redis) являются хранилищами типа "ключ-значение", которые находятся между вашим приложением и хранилищем данных. Они обычно быстрее, так как данных хранятся в оперативной памяти, а не на жестком диске, как это обычно бывает в случае с базами данных. Количество оперативной памяти имеет больше ограничений, чем жесткий диск, поэтому [алоритмы очистки кэша](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F), как например [вытеснение давно неиспользуемых (Least recently used, LRU)](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F#Least_recently_used_(%D0%92%D1%8B%D1%82%D0%B5%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B0%D0%B2%D0%BD%D0%BE_%D0%BD%D0%B5%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%D1%8B%D1%85)) помогают удалять из кэша "холодные" записи и оставлять в памяти "горячие".
+Системы кэширования в памяти (например, Memcached и Redis) являются хранилищами типа "ключ-значение", которые находятся между вашим приложением и хранилищем данных. Они обычно быстрее, так как данных хранятся в оперативной памяти, а не на жестком диске, как это обычно бывает в случае с базами данных. Количество оперативной памяти имеет больше ограничений, чем жесткий диск, поэтому [алгоритмы очистки кэша](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F), как например [вытеснение давно неиспользуемых (Least recently used, LRU)](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F#Least_recently_used_(%D0%92%D1%8B%D1%82%D0%B5%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B0%D0%B2%D0%BD%D0%BE_%D0%BD%D0%B5%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%D1%8B%D1%85)) помогают удалять из кэша "холодные" записи и оставлять в памяти "горячие".
 
 Redis включает дополнительную функциональность:
 
@@ -2621,7 +2619,7 @@ Whenever you query the database, hash the query as a key and store the result to
 * If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
 l10n:p -->
 
-### Caching at the database query level
+### Кэширование на уровне запросов в базу данных
 
 При таком подходе результат сохраняется с ключом, которым является вычисленное хэш-значение для запросы в базу данных. Такой подход имеет ряд недостатков:
 
@@ -2644,7 +2642,7 @@ Suggestions of what to cache:
 * User graph data
 l10n:p -->
 
-### Caching at the object level
+### Кэширование на уровне объектов
 
 При таком подходе данные рассматриваются как объекты, аналогично объектам в коде приложения. Приложение собирает данные из базы в объект класса или структуру(ы) данных:
 
@@ -2664,7 +2662,7 @@ l10n:p -->
 Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
 l10n:p -->
 
-### When to update the cache
+### Когда обновлять кэш
 
 Для каждого сценария использования необходимо определять, какая стратегия очистки кэша подходит наилучшим образом, так как количество данных, которые можно хранить в системе кэширования, ограничено.
 
@@ -2700,7 +2698,7 @@ def get_user(self, user_id):
 Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
 l10n:p -->
 
-#### Cache-aside
+#### Кэширование Cache-aside (кэш отдельно)
 
 <p align="center">
   <img src="http://i.imgur.com/ONjORqk.png"/>
@@ -2738,9 +2736,9 @@ def get_user(self, user_id):
 * When a node fails, it is replaced by a new, empty node, increasing latency.
 l10n:p -->
 
-##### Disadvantage(s): cache-aside
+##### Недостатки Сache-aside
 
-* Если запришиваемые данные отсутствуют в кэше, выполняется три дополнительных действия, которые могут привести к заметной задержке
+* Если запрашиваемые данные отсутствуют в кэше, выполняется три дополнительных действия, которые могут привести к заметной задержке
 * Данные могут устареть, если они обновляются в БД. Для смягчение последствий этой проблемы используют время жизни (TTL), которое вызывает обновление элемента в кэше, либо делают сквозную запись
 * Когда выходит из строя сервер кэширования, он заменяется новым сервером с пустым кэшем, что увеличивает задержку.
 
@@ -2776,7 +2774,7 @@ def set_user(user_id, values):
 Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
 l10n:p -->
 
-#### Write-through
+#### Кэширование Write-through (сквозное)
 
 <p align="center">
   <img src="http://i.imgur.com/0vBc0hN.png"/>
@@ -2813,9 +2811,9 @@ def set_user(user_id, values):
 * Most data written might never be read, which can be minimized with a TTL.
 l10n:p -->
 
-##### Disadvantage(s): write through
+##### Недостатки кэширование Write through
 
-* Когда добавляется новый сервер из-за отказа другого, либо масштабироавние, его кэш не содержит никаких элементов, пока данные не будут обновляеться в БД. Использование "отдельного" кэша может помочь смягчить последствия этой проблемы
+* Когда добавляется новый сервер из-за отказа другого, либо масштабирование, его кэш не содержит никаких элементов, пока данные не обновятся в БД. Использование "отдельного" кэша может помочь смягчить последствия этой проблемы
 * Большая часть записываемых данных может вообще не использоваться. Использование времени жизни данных (TTL) может смягчить последствия этой проблемы.
 
 <!-- l10n:p
@@ -2833,7 +2831,7 @@ In write-behind, the application does the following:
 * Asynchronously write entry to the data store, improving write performance
 l10n:p -->
 
-#### Write-behind (write-back)
+#### Кэширование Write-behind / write-back (отложенная запись)
 
 <p align="center">
   <img src="http://i.imgur.com/rgSrvjG.png"/>
@@ -2853,7 +2851,7 @@ l10n:p -->
 * It is more complex to implement write-behind than it is to implement cache-aside or write-through.
 l10n:p -->
 
-##### Disadvantage(s): write-behind
+##### Недостатки кэширования Write-behind
 
 * Возможна потеря данных, если система кэширования выйдет из строя до сохранения данных в БД.
 * Такую систему сложнее реализовать, чем "отдельный" или "сквозной" кэш.
@@ -2872,7 +2870,7 @@ You can configure the cache to automatically refresh any recently accessed cache
 Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
 l10n:p -->
 
-#### Refresh-ahead
+#### Кэширование Refresh-ahead (предварительное обновление)
 
 <p align="center">
   <img src="http://i.imgur.com/kxtjqgE.png"/>
@@ -2890,7 +2888,7 @@ l10n:p -->
 * Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
 l10n:p -->
 
-##### Disadvantage(s): refresh-ahead
+##### Недостатки Refresh-ahead
 
 * Неточное определение элементов, которые могут понадобиться в будущем, может привести к ухудшению производительности.
 
@@ -2902,10 +2900,10 @@ l10n:p -->
 * Need to make application changes such as adding Redis or memcached.
 l10n:p -->
 
-### Disadvantage(s): cache
+### Недостатки кэширования
 
 * Необходимость поддерживать согласованность данных в кэше и источнике данных, таком как БД, с помощью [инвалидации кэша](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F).
-* Инвалидация кэша является сложной задачей, и включаещей дополнительную задаче по определению времени, когда кэш нужно обновлять.
+* Инвалидация кэша является сложной задачей, и включает дополнительную задачу по определению времени, когда кэш нужно обновлять.
 * Необходимы изменения в приложении, например, добавление Redis или Memcached.
 
 <!-- l10n:p
@@ -2920,7 +2918,7 @@ l10n:p -->
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 * [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
@@ -2942,7 +2940,7 @@ l10n:p -->
 Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
 l10n:p -->
 
-## Asynchronism
+## Асинхронность
 
 <p align="center">
   <img src="http://i.imgur.com/54GYsSx.png"/>
@@ -2950,7 +2948,7 @@ l10n:p -->
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Источник: Intro to architecting systems for scale</a></i>
 </p>
 
-Асинхронные процессы позволяют сократить время запросов для трудоёмких операций по сравнению со случаями, когда эти операции выполняются синхронно. Они также могут помочь с выполением времязатратных операций, таких как периодическое агрегирование данных.
+Асинхронные процессы позволяют сократить время запросов для трудоёмких операций по сравнению со случаями, когда эти операции выполняются синхронно. Они также могут помочь с выполнением времязатратных операций, таких как периодическое агрегирование данных.
 
 <!-- l10n:p
 ### Message queues
@@ -2969,20 +2967,20 @@ The user is not blocked and the job is processed in the background.  During this
 **[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
 l10n:p -->
 
-### Message queues
+### Очереди сообщений
 
 Очереди сообщений позволяют принимать, хранить и доставлять сообщения. Если операция слишком медленная для синхронного выполнения, можно использовать очередь сообщений со следующим рабочим процессом:
 
 * Приложение отправляет задачу в очередь, затем оповещает пользователя о состоянии задачи
 * Рабочий процесс (воркер) берет задачу из очереди, выполняет её и посылает сообщение о том, что задача выполнена
 
-При таком подходе пользователь не заблокирован и задача выполняется в фоне. В это время, клиентское приложение может частично обработать данные и сделать видимость выполнения. Например, сразу после публикации вашего сообщения в соц. сети, оно может появится в вашей ленте, но фактическая доставка этого сообщения фоловерам может занять некоторое время.
+При таком подходе пользователь не заблокирован и задача выполняется в фоне. В это время, клиентское приложение может частично обработать данные и сделать видимость выполнения. Например, сразу после публикации вашего сообщения в соц. сети, оно может появится в вашей ленте, но фактическая доставка этого сообщения фолловерам может занять некоторое время.
 
 **[Redis](https://redis.io/)** - может использоваться как простой брокер сообщений (message broker), но сообщения могут быть утеряны.
 
 **[RabbitMQ](https://www.rabbitmq.com/)** - широко распространен, но потребует адаптации к "AMQP" протоколу и поддержки серверов для его развертывания.
 
-**[Amazon SQS](https://aws.amazon.com/sqs/)** - сервис, может иметь большую задержку и возможность доставки сообщений дважды.
+**[Amazon SQS](https://aws.amazon.com/ru/sqs/)** - полностью управляемый сервис, но может иметь большую задержку и возможность доставки сообщений дважды.
 
 
 <!-- l10n:p
@@ -2993,7 +2991,7 @@ Tasks queues receive tasks and their related data, runs them, then delivers thei
 **Celery** has support for scheduling and primarily has python support.
 l10n:p -->
 
-### Task queues
+### Очереди задач
 
 Очереди сообщений принимают задачи и связанные с ними данные, выполняют их, и затем доставляет их результаты. Они могут поддерживать планирование и использоваться для выполнения задач, которые требуют высоких вычислительных мощностей, в фоне.
 
@@ -3005,7 +3003,7 @@ l10n:p -->
 If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 l10n:p -->
 
-### Back pressure
+### Обратное давление
 
 Если очередь достигает больших размеров, ее размер может стать больше памяти, что приведет к запросу элементов, которых нет в кэши, увеличению количества операций чтения с жесткого диска и ухудшению производительности. [Обратное давление](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) может помочь, ограничивая размер очереди и поддерживая высокую пропускную способность и хорошее время отклика для задач, которые уже находятся в очереди. Как только очередь заполнится, клиентские приложения получают 503 код состояния HTTP ("Сервис недоступен"). Клиенты могут повторить запрос позже, в том числе и с [экспоненциальной выдержкой](https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B2%D1%8B%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0).
 
@@ -3015,9 +3013,9 @@ l10n:p -->
 * Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
 l10n:p -->
 
-### Disadvantage(s): asynchronism
+### Недостатки асинхронности
 
-* Для простых вычислений и процессов реального времени лучше подойдут синхронные операции, так как введение очередей добавит задержку и усложнят систему.
+* Для простых вычислений и процессов реального времени лучше подойдут синхронные операции, так как введение очередей добавит задержку и усложняет систему.
 
 <!-- l10n:p
 ### Source(s) and further reading
@@ -3028,7 +3026,7 @@ l10n:p -->
 * [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
 * [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
@@ -3045,7 +3043,7 @@ l10n:p -->
 </p>
 l10n:p -->
 
-## Communication
+## Взаимодействие
 
 <p align="center">
   <img src="http://i.imgur.com/5KeocQs.jpg"/>
@@ -3073,11 +3071,11 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
 l10n:p -->
 
-### Hypertext transfer protocol (HTTP)
+### HTTP (Hypertext transfer protocol)
 
 HTTP - это метод для кодировки и передачи данных между клиентом и серверов. Этот протокол основан на модели запрос/ответ: клиенты делают запросы, сервера отвечают на них с соответствующим контентом и информацией о состоянии завершения запроса. HTTP самодостаточен, позволяя запросам и ответам свободно передаваться через множество маршрутизаторов и серверов посредников, которые выполняют балансировку, кэширование, шифрование и сжатие.
 
-Стандартный HTTP запрос состоний из глагола (метода) и ресурса (конечной точки (endpoint)). Ниже приведены распространенные HTTP методы:
+Стандартный HTTP запрос состоит из глагола (метода) и ресурса (конечной точки (endpoint)). Ниже приведены распространенные HTTP методы:
 
 | Метод  | Описание                                                         | Идемпотентность* | Безопасность | Кэшируемость                                              |
 |--------|------------------------------------------------------------------|------------------|--------------|-----------------------------------------------------------|
@@ -3089,7 +3087,7 @@ HTTP - это метод для кодировки и передачи данн�
 
 *Может быть вызван несколько раз, при этом результат будет всегда одинаковым.
 
-HTTP - это протокол уровня приложений, который построен на более низкоуровненвых протоколах, таких как **TCP** и **UDP**.
+HTTP - это протокол уровня приложений, который построен на более низкоуровневых протоколах, таких как **TCP** и **UDP**.
 
 <!-- l10n:p
 #### Source(s) and further reading: HTTP
@@ -3099,7 +3097,7 @@ HTTP - это протокол уровня приложений, который
 * [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 l10n:p -->
 
-#### Source(s) and further reading: HTTP
+#### Источники и дополнительные ссылки по HTTP
 
 * [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
 * [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
@@ -3144,9 +3142,9 @@ TCP - это протокол с установкой соединения, ра
 * номерах последовательности и [полем контрольной суммы](https://ru.wikipedia.org/wiki/Transmission_Control_Protocol#%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%83%D0%BC%D0%BC%D0%B0_(Checksum))
 * [подтверждении](https://ru.wikipedia.org/wiki/Transmission_Control_Protocol#%D0%9D%D0%BE%D0%BC%D0%B5%D1%80_%D0%BF%D0%BE%D0%B4%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F) пакетов и автоматической повторной передаче.
 
-Если отправитель не получает правильного ответа, пакеты будут отправление повторно. Если время ожидания истекает несколько раз, соединиение разрывается. TCP также реализует [контроль потока](https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) и [отслеживание перегрузок](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control). Такие гарантии вызывают задержки и обычнго приводят к менее эффективной передаче по сравнению с UDP.
+Если отправитель не получает правильного ответа, пакеты будут отправлены повторно. Если время ожидания истекает несколько раз, соединение разрывается. TCP также реализует [контроль потока](https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) и [отслеживание перегрузок](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control). Такие гарантии вызывают задержки и обычно приводят к менее эффективной передаче по сравнению с UDP.
 
-Для поддержики высокой пропускной способности, веб-сервера могут держать большое количество открытых TCP соединений, что приводит к использованию большого количества оперативной памяти. Ресурсозатратным можем быть поддержание большого количества открытых соединений между потоками веб-сервера и, например, сервером [Memcached](https://memcached.org/). В этом случае может помочь использование [пула соединений](https://en.wikipedia.org/wiki/Connection_pool) и UPD там, где он может быть применим.
+Для поддержки высокой пропускной способности, веб-сервера могут содержать большое количество открытых TCP соединений, что приводит к использованию большого количества оперативной памяти. Ресурсозатратным можем быть поддержание большого количества открытых соединений между потоками веб-сервера и, например, сервером [Memcached](https://memcached.org/). В этом случае может помочь использование [пула соединений](https://en.wikipedia.org/wiki/Connection_pool) и UPD там, где он может быть применим.
 
 TCP полезен для приложений, которым необходимы высокая надежная, но менее требовательным ко времени, например веб-серверы, базы данных, SMTP, FTP, SSH.
 
@@ -3196,11 +3194,11 @@ l10n:p -->
 * [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 l10n:p -->
 
-#### Source(s) and further reading: TCP and UDP
+#### Источники и дополнительные ссылки по TCP и UDP
 
 UPD не требует соединения. Датаграммы (по аналогии с пакетами данных) гарантированы только на уровне датаграммы. Датаграммы могут быть доставлены в другом порядке (отличном от того, в котором они были отправлены), либо не доставлены совсем. UDP не поддерживает контроля перегрузок. Из-за отсутствия гарантий TCP, обычно UDP является более эффективным.
 
-UDP поддеживает широковещательную передачу данных, отправляя датаграммы всем устройствам подсети. Это полезно использовать вместе с [DHCP](https://ru.wikipedia.org/wiki/DHCP), так как с клиентом, который еще не получил IP адрес, нельзя установить TCP соединение.
+UDP поддерживает широковещательную передачу данных, отправляя датаграммы всем устройствам подсети. Это полезно использовать вместе с [DHCP](https://ru.wikipedia.org/wiki/DHCP), так как с клиентом, который еще не получил IP адрес, нельзя установить TCP соединение.
 
 UPD менее надежный, но работает хорошо для приложений реального времени, например, VoIP, видеочатов, потоковой передачи данных и мультиплеерных игр реального времени.
 
@@ -3254,7 +3252,7 @@ Choose a native library (aka SDK) when:
 HTTP APIs following **REST** tend to be used more often for public APIs.
 l10n:p -->
 
-### Remote procedure call (RPC)
+### Удалённый вызов процедур (Remote procedure call, RPC)
 
 <p align="center">
   <img src="http://i.imgur.com/iF4Mkb5.png"/>
@@ -3262,11 +3260,11 @@ l10n:p -->
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Источник: Crack the system design interview</a></i>
 </p>
 
-При использовании RPC, клиент вызывает выполнение процедуры в другом адрессном пространстве, обычно на удаленном сервере. Эта процедура запрограммирована для использования, как локальный вызова, абстрагируя детали взаимодействия сервера и клиенского приложения. Удаленные вызовы обычно медленее и менее надежны, чем локальные вызовы. Поэтому полезно различать удаленные вызовы от локальных. Популярными RPC фреймворками являются [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), и [Avro](https://avro.apache.org/docs/current/).
+При использовании RPC, клиент вызывает выполнение процедуры в другом адресном пространстве, обычно на удаленном сервере. Эта процедура запрограммирована для использования, как локальный вызова, абстрагируя детали взаимодействия сервера и клиенского приложения. Удаленные вызовы обычно медленнее и менее надежны, чем локальные вызовы. Поэтому полезно различать удаленные вызовы от локальных. Популярными RPC фреймворками являются [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), и [Avro](https://avro.apache.org/docs/current/).
 
 RPC - это протокол на основе запроса и ответа:
 
-* **Клиентское приоложение** - вызывает клиентскую процедуру-заглушку. Параметры передаются в стек, также как и с вызовом локальной процедуры.
+* **Клиентское приложение** - вызывает клиентскую процедуру-заглушку. Параметры передаются в стек, также как и с вызовом локальной процедуры.
 * **Клиентская процедура-заглушка** - собирает идентификатор процедуры и её аргументы в сообщение для запроса.
 * **Клиентский модуль взаимодействия** - ОС отправляет сообщение с клиента на сервер.
 * **Серверный модуль взаимодействия** - ОС передает входящие пакеты серверной процедуре-заглушке.
@@ -3306,7 +3304,7 @@ REST API на основе HTTP часто используются для пу�
 * You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
 l10n:p -->
 
-#### Disadvantage(s): RPC
+#### Недостатки RPC
 
 * клиентские приложения RPC становятся сильно связанными с сервисной реализацией.
 * необходимо делать новое API для каждой новой операции или сценария использования.
@@ -3337,7 +3335,7 @@ PUT /someresources/anId
 REST is focused on exposing data.  It minimizes the coupling between client/server and is often used for public HTTP APIs.  REST uses a more generic and uniform method of exposing resources through URIs, [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md), and actions through verbs such as GET, POST, PUT, DELETE, and PATCH.  Being stateless, REST is great for horizontal scaling and partitioning.
 l10n:p -->
 
-### Representational state transfer (REST)
+### REST (Representational state transfer)
 
 REST - это архитектурный стиль взаимодействия клиента и сервера, где клиент работает с ресурсами, управляемыми сервером. Сервер предоставляет представление ресурсов и действия для их управления, или получения нового представления. Любое взаимодействие не должно иметь состояния и быть кэшируемым.
 
@@ -3368,11 +3366,11 @@ REST ориентирован на предоставление данных. О
 * Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
 l10n:p -->
 
-#### Disadvantage(s): REST
+#### Недостатки REST
 
-* Учитывая, что REST ориентирован на предоставление данных, этот подход может не подойти, если ресурсы не достаточно организовоны или их можно получить в виде простой иерархии. Например, возвращение всех обновленных за последних час записей, соответствующих определенному набору событий не так просто представить в виде пути. Скорее всего, в таком случае реализация будет включать сочетание пути URI, параметров запросы и, возможно, тело запроса.
+* Учитывая, что REST ориентирован на предоставление данных, этот подход может не подойти, если ресурсы недостаточно организованы или их можно получить в виде простой иерархии. Например, возвращение всех обновленных за последних час записей, соответствующих определенному набору событий не так просто представить в виде пути. Скорее всего, в таком случае реализация будет включать сочетание пути URI, параметров запросы и, возможно, тело запроса.
 * REST обычно полагается на несколько методов (GET, POST, PUT, DELETE и PATCH), что не всегда может подходить для вашего сценария использования. Например, нет определенного метода для представления перемещения документов с истекшим сроком в архивную папку.
-* Получение сложных ресурсов с вложенными иерархиями требует нескольких повторных запросов между клиентов и сервером, например, получение контента записи в блоге и комментариев к этой записи. Для мобильных приложений, которые функционируют в условиях переменного качества сети, эти повторные запросы являюется крайне нежелательными.
+* Получение сложных ресурсов с вложенными иерархиями требует нескольких повторных запросов между клиентов и сервером, например, получение контента записи в блоге и комментариев к этой записи. Для мобильных приложений, которые функционируют в условиях переменного качества сети, эти повторные запросы являются крайне нежелательными.
 * С течением времени, больше полей может добавляться в ответ API, и более старые клиенты будут получать все новые поля, даже те, которые не нужны. В результате, увеличивается размер пересылаемых данных, что приводит к увеличению задержки передачи данных.
 
 <!-- l10n:p
@@ -3393,7 +3391,7 @@ l10n:p -->
 </p>
 l10n:p -->
 
-### RPC and REST calls comparison
+### Сравнение вызовов RPC и REST
 
 | Действие                                       | RPC                                                                                       | REST                                                         |
 |------------------------------------------------|-------------------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -3422,7 +3420,7 @@ l10n:p -->
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 l10n:p -->
 
-#### Source(s) and further reading: REST and RPC
+#### Источники и дополнительные ссылки по REST и RPC
 
 * [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
@@ -3446,11 +3444,11 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 * Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 l10n:p -->
 
-## Security
+## Безопасность
 
-Эта секция нуждается в дополнении. [contributing](#contributing)!
+Эта секция нуждается в дополнении. [Содействуйте](#содействуйте)!
 
-Обеспечение безопасноcти - это обширная тема. Если у вас нет значительного опыта в безопасности, либо вы не подаётесь на вакансию, которая требует знаний по безопасности, возможно вам будет достаточно основ:
+Обеспечение безопасности - это обширная тема. Если у вас нет значительного опыта в безопасности, либо вы не подаётесь на вакансию, которая требует знаний по безопасности, возможно вам будет достаточно основ:
 
 * Шифруйте данные во время передачи и при хранении
 * Очищайте входные данные пользователи и любые параметры, которые доступны пользователю для избежания [межсайтового скриптинга](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%B8%D0%BD%D0%B3) и [внедрения SQL-кода](https://ru.wikipedia.org/wiki/%D0%92%D0%BD%D0%B5%D0%B4%D1%80%D0%B5%D0%BD%D0%B8%D0%B5_SQL-%D0%BA%D0%BE%D0%B4%D0%B0).
@@ -3465,7 +3463,7 @@ l10n:p -->
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 l10n:p -->
 
-### Source(s) and further reading
+### Источники и дополнительные ссылки
 
 * [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
@@ -3477,7 +3475,7 @@ l10n:p -->
 You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
 l10n:p -->
 
-## Appendix
+## Приложение
 
 Вас иногда могут попросить сделать оценку по времени "на салфетке". Например, определить, сколько времени понадобится для генерации 100 миниатюр изображений с жесткого диска, или сколько памяти потребует структура данных. **Степеней двойки** и **Время выполнения задач, которые должен знать любой программист** могут в этом помочь.
 
@@ -3498,7 +3496,7 @@ Power           Exact Value         Approx Value        Bytes
 ```
 l10n:p -->
 
-### Powers of two table
+### Таблица степеней двойки
 
 ```
 Степень           Точное значение   Приблизительное значение    Байты
@@ -3519,7 +3517,7 @@ l10n:p -->
 * [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 l10n:p -->
 
-#### Source(s) and further reading
+#### Источники и дополнительные ссылки
 
 * [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 
@@ -3562,7 +3560,7 @@ Handy metrics based on numbers above:
 * 2,000 round trips per second within a data center
 l10n:p -->
 
-### Latency numbers every programmer should know
+### Время выполнения, которое должен знать каждый программист
 
 ```
 Время выполнения
@@ -3580,7 +3578,7 @@ l10n:p -->
 Считать 1 MB последовательно с SSD*                           1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X памяти
 Поиск на диске                                               10,000,000   ns   10,000 us   10 ms  20x полного обхода дата-центра
 Считать 1 MB последовательно по сети 1 Gbps                  10,000,000   ns   10,000 us   10 ms  40x памяти, 10X SSD
-Считать 1 MB послеодовательно с диска                        30,000,000   ns   30,000 us   30 ms 120x памяти, 30X SSD
+Считать 1 MB последовательно с диска                         30,000,000   ns   30,000 us   30 ms 120x памяти, 30X SSD
 Послать пакет данных Калифорния->Нидерланды->Калифорния     150,000,000   ns  150,000 us  150 ms
 
 Заметки
@@ -3605,7 +3603,7 @@ l10n:p -->
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 l10n:p -->
 
-#### Latency numbers visualized
+#### Визуализация выполнения
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
@@ -3618,7 +3616,7 @@ l10n:p -->
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 l10n:p -->
 
-#### Source(s) and further reading
+#### Источники и дополнительные ссылки
 
 * [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
@@ -3657,7 +3655,7 @@ l10n:p -->
 | Add a system design question | [Contribute](#contributing) |
 l10n:p -->
 
-### Additional system design interview questions
+### Дополнительные вопросы на интервью по проектированию систем
 
 > Распространенные задачи на интервью по проектированию систем со ссылками на решение.
 
@@ -3685,7 +3683,7 @@ l10n:p -->
 | Design an online multiplayer card game | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
-| Add a system design question | [Contribute](#contributing) |
+| Add a system design question | [Добавить](#содействуйте) |
 
 <!-- l10n:p
 ### Real world architectures
@@ -3729,7 +3727,7 @@ l10n:p -->
 | | Add an architecture | [Contribute](#contributing) |
 l10n:p -->
 
-### Real world architectures
+### Архитектуры действующих систем
 
 > Статья о том, как спроектированы действующие системы.
 
@@ -3757,17 +3755,17 @@ l10n:p -->
 | Хранилище данных | **DynamoDB** - Документно-ориенитрованная база данных от Amazon | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
 | Хранилище данных | **MongoDB** - Документно-ориенитрованная база данных | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
 | Хранилище данных | **Spanner** - Глобально-распределённая база данных от Google | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
-| Хранилище данных | **Memcached** - распределённый кэш, хранящийся в памяти | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Хранилище данных | **Redis** - Распеределенная система кэширавния с возможностью сохранения и типами данных | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| Хранилище данных | **Memcached** - Распределённый кэш, хранящийся в памяти | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Хранилище данных | **Redis** - Распределённая система кэширования с возможностью сохранения и типами данных | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | | | |
-| Файловая система | **Google File System (GFS)** - распределённая файловая система | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
+| Файловая система | **Google File System (GFS)** - Распределённая файловая система | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
 | Файловая система | **Hadoop File System (HDFS)** - Реализация GFS с открытым исходным кодом | [apache.org](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) |
 | | | |
 | Другое | **Chubby** - Система блокировки для слабосвязанных распределённых систем от Google | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
 | Другое | **Dapper** - Система отслеживания операций в распределённых системах | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Другое | **Kafka** - Очередь сообщений Pub/sub от LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Другое | **Zookeeper** - Централизованная инфраструктура и сервисы для синхронизации распределённых систем | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | Добавьте архитектуру | [Contribute](#contributing) |
+| | Добавьте архитектуру | [Добавить](#содействуйте) |
 
 <!-- l10n:p
 ### Company architectures
@@ -3799,7 +3797,7 @@ l10n:p -->
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 l10n:p -->
 
-### Company architectures
+### Архитектуры компаний
 
 | Компания | Ссылки |
 |---|---|
@@ -3876,7 +3874,7 @@ l10n:p -->
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 l10n:p -->
 
-### Company engineering blogs
+### Блоги инженерных компаний
 
 > Вопросы могут быть связаны с архитектурой компаний, в которые вы собеседуетесь.
 
@@ -3929,7 +3927,7 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 l10n:p -->
 
-#### Source(s) and further reading
+#### Источники и дополнительные ссылки
 
 Хотите добавить блог? Во избежание дублирования, добавьте его в этот репозиторий:
 
@@ -3946,14 +3944,14 @@ Interested in adding a section or helping complete one in-progress?  [Contribute
 * [Contribute](#contributing)
 l10n:p -->
 
-## Under development
+## В разработке
 
-Заинтересованы в добавлении раздела или в завершении того, что уже в процессе? [Содействуйте!](#contributing)!
+Заинтересованы в добавлении раздела или в завершении того, что уже в процессе? [Содействуйте!](#содействуйте)!
 
 * распределённые вычисления с MapReduce
 * Согласованное хеширование
 * Scatter gather
-* [Содействие](#contributing)
+* [Содействие](#содействуйте)
 
 <!-- l10n:p
 ## Credits
@@ -3973,7 +3971,7 @@ Special thanks to:
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 l10n:p -->
 
-## Credits
+## Благодарность
 
 Источники указаны в самом документе.
 
@@ -3997,7 +3995,7 @@ Feel free to contact me to discuss any issues, questions, or comments.
 My contact info can be found on my [GitHub page](https://github.com/donnemartin).
 l10n:p -->
 
-## Contact info
+## Контактная информация
 
 Сообщайте мне, если вы хотите обсудить любые проблемы, вопросы или комментарии к этому документу.
 
