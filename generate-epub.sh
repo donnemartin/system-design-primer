@@ -6,7 +6,7 @@ generate_from_stdin() {
 
   echo "Generating '$language' ..."
 
-  pandoc --metadata-file=epub-metadata.yaml --metadata=lang:$2 --from=markdown -o $1 <&0
+  pandoc --epub-metadata=epub-metadata.yaml --metadata=lang:$2 --from=markdown -o $1 <&0
 
   echo "Done! You can find the '$language' book at ./$outfile"
 }
