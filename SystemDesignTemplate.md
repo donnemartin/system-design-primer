@@ -88,3 +88,7 @@
 2. Latency caused between each layer
 3. Overall latency justification
 ```
+
+References:
+
+1. https://leetcode.com/discuss/career/229177/My-System-Design-Template
