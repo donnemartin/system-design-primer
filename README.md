@@ -665,7 +665,7 @@ Load balancers distribute incoming client requests to computing resources such a
 
 * Preventing requests from going to unhealthy servers
 * Preventing overloading resources
-* Helping eliminate single points of failure
+* Helping to eliminate a single point of failure
 
 Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
 
@@ -710,7 +710,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ### Disadvantage(s): load balancer
 
 * The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
+* Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
 
 ### Source(s) and further reading
