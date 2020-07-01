@@ -242,7 +242,7 @@ class Budget(object):
     def create_budget_template(self):
         return {
             'DefaultCategories.HOUSING': income * .4,
-            'DefaultCategories.FOOD': income * .2
+            'DefaultCategories.FOOD': income * .2,
             'DefaultCategories.GAS': income * .1,
             'DefaultCategories.SHOPPING': income * .2
             ...
