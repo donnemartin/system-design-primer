@@ -462,11 +462,16 @@ Responses return the most recent version of the data available on a node, which 
 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 
+#### Limitations of CAP theorem
+
+Note that the original CAP theorem uses a very narrow  and specific definition of 'consistency' and 'availability'. Modern system design is often more nuanced than simply selecting CP vs AP. The NoSQL key value store Cassandra, for example, offers tunable consistency for any given read or write operation. See [Martin Kleppman's blog post](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html) for more details.
+
 ### Source(s) and further reading
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
+* [Criticism of CAP theorem](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html)
 
 ## Consistency patterns
 
