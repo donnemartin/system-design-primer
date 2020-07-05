@@ -496,7 +496,7 @@ This approach is seen in file systems and RDBMSes.  Strong consistency works wel
 
 ## Availability patterns
 
-There are two main patterns to support high availability: **fail-over** and **replication**.
+There are two complementary patterns to support high availability: **fail-over** and **replication**.
 
 ### Fail-over
 
