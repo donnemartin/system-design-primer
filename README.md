@@ -5,7 +5,8 @@
 # The System Design Primer
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png"/>
+  <img src="https://i.imgur.com/M6t0ED7.png"/>
+  <a href="https://whimsical.com/367gj7nvSVeZoAa3Tb9NXJ">Link to Interactive Diagram</a>
   <br/>
 </p>
 
