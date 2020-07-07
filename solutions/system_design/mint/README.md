@@ -202,7 +202,7 @@ For sellers not initially seeded in the map, we could use a crowdsourcing effort
 ```python
 class Categorizer(object):
 
-    def __init__(self, seller_category_map, self.seller_category_crowd_overrides_map):
+    def __init__(self, seller_category_map, seller_category_crowd_overrides_map):
         self.seller_category_map = seller_category_map
         self.seller_category_crowd_overrides_map = \
             seller_category_crowd_overrides_map
@@ -223,7 +223,7 @@ Transaction implementation:
 class Transaction(object):
 
     def __init__(self, created_at, seller, amount):
-        self.timestamp = timestamp
+        self.created_at = created_at
         self.seller = seller
         self.amount = amount
 ```
@@ -241,10 +241,10 @@ class Budget(object):
 
     def create_budget_template(self):
         return {
-            'DefaultCategories.HOUSING': income * .4,
-            'DefaultCategories.FOOD': income * .2,
-            'DefaultCategories.GAS': income * .1,
-            'DefaultCategories.SHOPPING': income * .2
+            DefaultCategories.HOUSING: self.income * .4,
+            DefaultCategories.FOOD: self.income * .2,
+            DefaultCategories.GAS: self.income * .1,
+            DefaultCategories.SHOPPING: self.income * .2,
             ...
         }
 
@@ -373,9 +373,9 @@ Instead of keeping the `monthly_spending` aggregate table in the **SQL Database*
 
 We might only want to store a month of `transactions` data in the database, while storing the rest in a data warehouse or in an **Object Store**.  An **Object Store** such as Amazon S3 can comfortably handle the constraint of 250 GB of new content per month.
 
-To address the 2,000 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
+To address the 200 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
 
-200 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
+2,000 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
 
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
