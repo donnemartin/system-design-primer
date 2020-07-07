@@ -26,7 +26,7 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 #### Out of scope
 
 * **Service** pushes tweets to the Twitter Firehose and other streams
-* **Service** strips out tweets based on user's visibility settings
+* **Service** strips out tweets based on users' visibility settings
     * Hide @reply if the user is not also following the person being replied to
     * Respect 'hide retweets' setting
 * Analytics
@@ -80,6 +80,7 @@ Search
 * 60 thousand tweets delivered on fanout per second
     * 150 billion tweets delivered on fanout per month * (400 requests per second / 1 billion requests per month)
 * 4,000 search requests per second
+    * 10 billion searches per month * (400 requests per second / 1 billion requests per month)
 
 Handy conversion guide:
 
@@ -128,7 +129,7 @@ If our **Memory Cache** is Redis, we could use a native Redis list with the foll
 | tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |
 ```
 
-The new tweet would be placed in the **Memory Cache**, which populates user's home timeline (activity from people the user is following).
+The new tweet would be placed in the **Memory Cache**, which populates the user's home timeline (activity from people the user is following).
 
 We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
 
