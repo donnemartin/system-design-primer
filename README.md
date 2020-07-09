@@ -1342,7 +1342,7 @@ The user is not blocked and the job is processed in the background.  During this
 
 **[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
 
-**[Apache kafka](https://kafka.apache.org/)** is run as a highly available cluster (managed by zookeeper) and is built for realtime data streaming which can be leveraged for event messaging.
+**[Apache kafka](https://kafka.apache.org/)** is run as a highly available cluster (managed by zookeeper) and is built for realtime data streaming which can be leveraged for event messaging but comes with configurational complexity, a steep learning curve and lack of native monitoring tools.
 
 ### Task queues
 
