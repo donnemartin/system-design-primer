@@ -628,7 +628,7 @@ A content delivery network (CDN) is a globally distributed network of proxy serv
 
 Serving content from CDNs can significantly improve performance in two ways:
 
-* Users receive content at data centers close to them
+* Users receive content from data centers close to them
 * Your servers do not have to serve requests that the CDN fulfills
 
 ### Push CDNs
