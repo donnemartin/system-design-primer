@@ -1627,10 +1627,6 @@ Notes
 
 Handy metrics based on numbers above:
 
-* Read sequentially from disk at 30 MB/s
-* Read sequentially from 1 Gbps Ethernet at 100 MB/s
-* Read sequentially from SSD at 1 GB/s
-* Read sequentially from main memory at 4 GB/s
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
 
