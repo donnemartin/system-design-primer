@@ -1322,7 +1322,7 @@ def set_user(user_id, values):
 ## 通訊
 
 <p align="center">
-  <img src="images/L6q6R9V.jpg"/>
+  <img src="images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>來源：OSI 七層模型</a></i>
 </p>

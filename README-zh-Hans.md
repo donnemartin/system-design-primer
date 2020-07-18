@@ -1330,7 +1330,7 @@ def set_user(user_id, values):
 ## 通讯
 
 <p align="center">
-  <img src="images/L6q6R9V.jpg"/>
+  <img src="images/5KeocQs.jpg">
   <br/>
   <strong><a href=http://www.escotal.com/osilayer.html>资料来源：OSI 7层模型</a></strong>
 </p>

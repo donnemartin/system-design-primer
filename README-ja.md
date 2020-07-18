@@ -1321,7 +1321,7 @@ def set_user(user_id, values):
 ## 通信
 
 <p align="center">
-  <img src="images/L6q6R9V.jpg"/>
+  <img src="images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
