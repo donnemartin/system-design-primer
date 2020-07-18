@@ -66,7 +66,7 @@ class Director(Employee):
         super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
 
     def escalate_call(self):
-        raise NotImplemented('Directors must be able to handle any call')
+        raise NotImplementedError('Directors must be able to handle any call')
 
 
 class CallState(Enum):

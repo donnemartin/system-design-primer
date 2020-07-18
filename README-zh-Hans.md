@@ -1,7 +1,9 @@
 > * 原文地址：[github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-> * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)
+> * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)、[根号三](https://github.com/sqrthree)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
+
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # 系统设计入门
 
@@ -9,14 +11,6 @@
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
-
-## 翻译
-
-有兴趣参与[翻译](https://github.com/donnemartin/system-design-primer/issues/28)?  以下是正在进行中的翻译:
-
-* [巴西葡萄牙语](https://github.com/donnemartin/system-design-primer/issues/40)
-* [简体中文](https://github.com/donnemartin/system-design-primer/issues/38)
-* [土耳其语](https://github.com/donnemartin/system-design-primer/issues/39)
 
 ## 目的
 
@@ -89,6 +83,7 @@
 * 修复错误
 * 完善章节
 * 添加章节
+* [帮助翻译](https://github.com/donnemartin/system-design-primer/issues/28)
 
 一些还需要完善的内容放在了[正在完善中](#正在完善中)。
 
@@ -211,7 +206,7 @@
 
 * **短期** - 以系统设计主题的**广度**为目标。通过解决**一些**面试题来练习。
 * **中期** - 以系统设计主题的**广度**和**初级深度**为目标。通过解决**很多**面试题来练习。
-* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来联系。
+* **长期** - 以系统设计主题的**广度**和**高级深度**为目标。通过解决**大部分**面试题来练习。
 
 |                                          | 短期   | 中期   | 长期   |
 | ---------------------------------------- | ---- | ---- | ---- |
@@ -262,20 +257,20 @@
     * 数据库查找
 * API 和面向对象设计
 
-### 第四步：度量设计
+### 第四步：扩展设计
 
-确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成拓展性的议题吗？
+确认和处理瓶颈以及一些限制。举例来说就是你需要下面的这些来完成扩展性的议题吗？
 
 * 负载均衡
-* 水平拓展
+* 水平扩展
 * 缓存
 * 数据库分片
 
-论述可能的解决办法和代价。每件事情需要取舍。可以使用[可拓展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
+论述可能的解决办法和代价。每件事情需要取舍。可以使用[可扩展系统的设计原则](#系统设计主题的索引)来处理瓶颈。
 
 ### 预估计算量
 
-你或许会被要求通过手算进行一些估算。涉及到的[附录](#附录)涉及到的是下面的这些资源：
+你或许会被要求通过手算进行一些估算。[附录](#附录)涉及到的是下面的这些资源：
 
 * [使用预估计算量](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [2 的次方表](#2-的次方表)
@@ -298,7 +293,7 @@
 
 | 问题                                       |                                          |
 | ---------------------------------------- | ---------------------------------------- |
-| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README.md) |
+| 设计 Pastebin.com (或者 Bit.ly)              | [解答](solutions/system_design/pastebin/README-zh-Hans.md) |
 | 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索) | [解答](solutions/system_design/twitter/README.md) |
 | 设计一个网页爬虫                                 | [解答](solutions/system_design/web_crawler/README.md) |
 | 设计 Mint.com                              | [解答](solutions/system_design/mint/README.md) |
@@ -395,7 +390,7 @@
 
 ### 第二步：回顾可扩展性文章
 
-[可扩展性](http://www.lecloud.net/tagged/scalability)
+[可扩展性](http://www.lecloud.net/tagged/scalability/chrono)
 
 * 主题涵盖：
     * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
@@ -568,7 +563,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 * 虽说缓存可以减轻 DNS 延迟，但连接 DNS 服务器还是带来了轻微的延迟。
 * 虽然它们通常由[政府，网络服务提供商和大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)管理，但 DNS 服务管理仍可能是复杂的。
-* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twtter IP 地址的用户访问 Twiiter。
+* DNS 服务最近遭受 [DDoS 攻击](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)，阻止不知道 Twitter IP 地址的用户访问 Twitter。
 
 ### 来源及延伸阅读
 
@@ -761,7 +756,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 - [可缩放系统构架介绍](http://lethain.com/introduction-to-architecting-systems-for-scale)
-- [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+- [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 - [面向服务架构](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 - [Zookeeper 介绍](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 - [构建微服务，你所需要知道的一切](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -924,7 +919,7 @@ SQL 调优是一个范围很广的话题，有很多相关的[书](https://www.a
 - 使用 `TEXT` 类型存储大块的文本，例如博客正文。`TEXT` 还允许布尔搜索。使用 `TEXT` 字段需要在磁盘上存储一个用于定位文本块的指针。
 - 使用 `INT` 类型存储高达 2^32 或 40 亿的较大数字。
 - 使用 `DECIMAL` 类型存储货币可以避免浮点数表示错误。
-- 避免使用 `BLOBS` 存储对象，存储存放对象的位置。
+- 避免使用 `BLOBS` 存储实际对象，而是用来存储存放对象的位置。
 - `VARCHAR(255)` 是以 8 位数字存储的最大字符数，在某些关系型数据库中，最大限度地利用字节。
 - 在适用场景中设置 `NOT NULL` 约束来[提高搜索性能](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)。
 
@@ -1031,7 +1026,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 <p align="center">
   <img src="images/fNcl65g.png">
   <br/>
-  <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png">资料来源：图数据库</a></strong>
+  <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png"/>资料来源：图数据库</a></strong>
 </p>
 
 > 抽象模型： 图
@@ -1180,7 +1175,7 @@ Redis 有下列附加功能：
 - 将查找到的结果存储到缓存中
 - 返回所需内容
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1223,7 +1218,7 @@ set_user(12345, {"foo":"bar"})
 
 缓存代码：
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)
@@ -1521,7 +1516,7 @@ REST 关注于暴露数据。它减少了客户端／服务端的耦合程度，
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [揭开 RPC 和 REST 的神秘面纱](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺点是什么](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [破解系统设计面试](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [破解系统设计面试](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [为什么在内部使用 REST 而不是 RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1572,7 +1567,7 @@ Latency Comparison Numbers
 L1 cache reference                           0.5 ns
 Branch mispredict                            5   ns
 L2 cache reference                           7   ns                      14x L1 cache
-Mutex lock/unlock                          100   ns
+Mutex lock/unlock                           25   ns
 Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
 Compress 1K bytes with Zippy            10,000   ns       10 us
 Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
@@ -1618,10 +1613,10 @@ Notes
 | 问题                      | 引用                                       |
 | ----------------------- | ---------------------------------------- |
 | 设计类似于 Dropbox 的文件同步服务   | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| 设计类似于 Google 的搜索引擎      | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| 设计类似于 Google 的搜索引擎      | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | 设计类似于 Google 的可扩展网络爬虫   | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
 | 设计 Google 文档            | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| 设计类似 Redis 的建值存储        | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| 设计类似 Redis 的键值存储        | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | 设计类似 Memcached 的缓存系统    | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | 设计类似亚马逊的推荐系统            | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
 | 设计类似 Bitly 的短链接系统       | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
@@ -1782,7 +1777,7 @@ Notes
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## 联系方式
 

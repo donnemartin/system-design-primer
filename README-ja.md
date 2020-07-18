@@ -1,4 +1,4 @@
-*[English](README.md) ∙ [简体中文](README-zh-Hans.md) | [Brazilian Portuguese](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Polish](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [Russian](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Turkish](https://github.com/donnemartin/system-design-primer/issues/39) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # システム設計入門
 
@@ -38,7 +38,7 @@
 * [学習指針](#学習指針)
 * [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか)
 * [システム設計課題例 **とその解答**](#システム設計課題例とその解答)
-* [オブジェクト思考設計課題例、 **とその解答**](#オブジェクト志向設計問題と解答)
+* [オブジェクト指向設計課題例、 **とその解答**](#オブジェクト指向設計問題と解答)
 * [その他のシステム設計面接課題例](#他のシステム設計面接例題)
 
 ## 暗記カード
@@ -48,11 +48,11 @@
   <br/>
 </p>
 
-この[暗記カードアプリケーション](https://apps.ankiweb.net/) は、システム設計の主要な概念を学ぶのに役立つアプリケーションです。程よい間隔で同じ問題を繰り返し出題してくれます。
+この[Anki用フラッシュカードデッキ](https://apps.ankiweb.net/) は、間隔反復を活用して、システム設計のキーコンセプトの学習を支援します。
 
 * [システム設計デッキ](resources/flash_cards/System%20Design.apkg)
 * [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [オブジェクト思考練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
+* [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
 
 外出先や移動中の勉強に役立つでしょう。
 
@@ -209,7 +209,7 @@
 | 次のリンク先のいくつかのページを読む [実世界でのアーキテクチャ](#実世界のアーキテクチャ) | :+1: | :+1: | :+1: |
 | 復習する [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか) | :+1: | :+1: | :+1: |
 | とりあえず一周する [システム設計課題例](#システム設計課題例とその解答) | Some | Many | Most |
-| とりあえず一周する [オブジェクト志向設計問題と解答](#オブジェクト志向設計問題と解答) | Some | Many | Most |
+| とりあえず一周する [オブジェクト指向設計問題と解答](#オブジェクト指向設計問題と解答) | Some | Many | Most |
 | 復習する [その他システム設計面接での質問例](#他のシステム設計面接例題) | Some | Many | Most |
 
 ## システム設計面接にどのようにして臨めばいいか
@@ -346,9 +346,9 @@
 
 ![Imgur](images/jj3A5N8.png)
 
-## オブジェクト志向設計問題と解答
+## オブジェクト指向設計問題と解答
 
-> 頻出のオブジェクト志向システム設計面接課題と参考解答、コード及びダイアグラム
+> 頻出のオブジェクト指向システム設計面接課題と参考解答、コード及びダイアグラム
 >
 > 解答は `solutions/` フォルダ以下にリンクが貼られている
 
@@ -363,7 +363,7 @@
 | 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | 円形配列の設計 | [Contribute](#contributing)  |
-| オブジェクト志向システム設計問題を追加する | [Contribute](#contributing) |
+| オブジェクト指向システム設計問題を追加する | [Contribute](#contributing) |
 
 ## システム設計トピックス: まずはここから
 
@@ -385,7 +385,7 @@
 
 ### ステップ 2: スケーラビリティに関する資料を読んで復習する
 
-[スケーラビリティ](http://www.lecloud.net/tagged/scalability)
+[スケーラビリティ](http://www.lecloud.net/tagged/scalability/chrono)
 
 * ここで触れられているトピックス:
     * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
@@ -471,9 +471,9 @@
 
 ### 弱い一貫性
 
-書き込み後の読み取りでは、その最新の書き込みを読めたり読めなかったりする。一番良いアプローチが選択される。
+書き込み後の読み取りでは、その最新の書き込みを読めたり読めなかったりする。ベストエフォート型のアプローチに基づく。
 
-メムキャッシュなどのシステムにおいてこのアプローチは取られる。弱い一貫性はリアルタイム性が必要な使用例、例えばVoIP、ビデオチャット、リアルタイムマルチプレイヤーゲームなどと相性がいいでしょう。例えば、電話に出ていて、受信を数秒受け取れなかったとして、その後に接続回復してもその接続が切断されていた間に話されていたことは聞き取れないというような感じです。
+このアプローチはmemcachedなどのシステムに見られます。弱い一貫性はリアルタイム性が必要なユースケース、例えばVoIP、ビデオチャット、リアルタイムマルチプレイヤーゲームなどと相性がいいでしょう。例えば、電話に出ているときに数秒間音声が受け取れなくなったとしたら、その後に接続が回復してもその接続が切断されていた間に話されていたことは聞き取れないというような感じです。
 
 ### 結果整合性
 
@@ -582,7 +582,7 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 
 ### プッシュCDN
 
-プッシュCDNではサーバーデータに更新があった時には必ず、新しいコンテンツを受け取る方式です。コンテンツを配信し、CDNに直接アップロードし、URLをCDNを指すように指定するところまで全ての責任を負う形です。コンテンツがいつ期限切れになるのか更新されるのかを設定することができます。コンテンツは新規作成時、更新時のみアップロードされることでトラフィックは最小化される一方、ストレージは最大限消費されてしまいます。
+プッシュCDNではサーバーデータに更新があった時には必ず、新しいコンテンツを受け取る方式です。コンテンツを用意し、CDNに直接アップロードし、URLをCDNを指すように指定するところまで、全て自分で責任を負う形です。コンテンツがいつ期限切れになるのか更新されるのかを設定することができます。コンテンツは新規作成時、更新時のみアップロードされることでトラフィックは最小化される一方、ストレージは最大限消費されてしまいます。
 
 トラフィックの少ない、もしくは頻繁にはコンテンツが更新されないサイトの場合にはプッシュCDNと相性がいいでしょう。コンテンツは定期的に再びプルされるのではなく、CDNに一度のみ配置されます。
 
@@ -651,7 +651,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 ### 水平スケーリング
 
-ロードバランサーでは水平スケーリングによってパフォーマンスと可用性を向上させることができます。手頃な汎用マシンを追加することによってスケーリングさせる方が、 **垂直スケーリング** と言って、サーバーをよりハイパフォーマンスなマシンに載せ替えることよりもずっと費用対効果も可用性も高いでしょう。また、汎用ハードウェアを扱える人材を雇う方が、特化型の商用ハードウェアを扱える人材を雇うよりも簡単でしょう。
+ロードバランサーでは水平スケーリングによってパフォーマンスと可用性を向上させることができます。手頃な汎用マシンを追加することによってスケールアウトさせる方が、一つのサーバーをより高価なマシンにスケールアップする（**垂直スケーリング**）より費用対効果も高くなり、結果的に可用性も高くなります。また、汎用ハードウェアを扱える人材を雇う方が、特化型の商用ハードウェアを扱える人材を雇うよりも簡単でしょう。
 
 #### 欠点: 水平スケーリング
 
@@ -664,7 +664,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 * ロードバランサーはリソースが不足していたり、設定が適切でない場合、システム全体のボトルネックになる可能性があります。
 * 単一障害点を除こうとしてロードバランサーを導入した結果、複雑さが増してしまうことになります。
-* 単一ロードバランサーでは単一障害点が除かれたことにはなりませんが、複数のロードバランサーはそれすなわち複雑化です。
+* ロードバランサーが一つだけだとそこが単一障害点になってしまいます。一方で、ロードバランサーを複数にすると、さらに複雑さが増してしまいます。
 
 ### その他の参考資料、ページ
 
@@ -689,7 +689,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 他には以下のような利点があります:
 
-* **より堅牢なセキュリティ** - バックエンドサーバーの情報、ブラックリストIP、クライアントごとの接続数などの情報を隠すことができます。
+* **より堅牢なセキュリティ** - バックエンドサーバーの情報を隠したり、IPアドレスをブラックリスト化したり、クライアントごとの接続数を制限したりできます。
 * **スケーラビリティや柔軟性が増します** - クライアントはリバースプロキシのIPしか見ないので、裏でサーバーをスケールしたり、設定を変えやすくなります。
 * **SSL termination** - 入力されるリクエストを解読し、サーバーのレスポンスを暗号化することでサーバーがこのコストのかかりうる処理をしなくて済むようになります。
     * [X.509 証明書](https://en.wikipedia.org/wiki/X.509) を各サーバーにインストールする必要がなくなります。
@@ -741,7 +741,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 ### サービスディスカバリー
 
-[Consul](https://www.consul.io/docs/index.html)、 [Etcd](https://coreos.com/etcd/docs/latest)、 そして [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) などのシステムはそれぞれを見つけやすいように、登録された名前、アドレス、そしてポート番号などを監視しています。[Health checks](https://www.consul.io/intro/getting-started/checks.html) はサービスの統一性を証明するのに有用ですが、しばしば[HTTP](#hypertext-transfer-protocol-http) エンドポイントを用いています。  Consul と Etcd のいずれも組み込みの [key-value store](#キーバリューストア) を持っており、設定データや共有データなどのデータを保存しておくことに使われます。
+[Consul](https://www.consul.io/docs/index.html)、 [Etcd](https://coreos.com/etcd/docs/latest)、 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) などのシステムでは、登録されているサービスの名前、アドレス、ポートの情報を監視することで、サービス同士が互いを見つけやすくしています。サービスの完全性の確認には [Health checks](https://www.consul.io/intro/getting-started/checks.html) が便利で、これには [HTTP](#hypertext-transfer-protocol-http) エンドポイントがよく使われます。 Consul と Etcd のいずれも組み込みの [key-value store](#キーバリューストア) を持っており、設定データや共有データなどのデータを保存しておくことに使われます。
 
 ### 欠点: アプリケーション層
 
@@ -751,7 +751,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 ### その他の参考資料、ページ
 
 * [スケールするシステムアーキテクチャを設計するためのイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [サービス指向アーキテクチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
@@ -830,7 +830,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-フェデレーション (もしくは機能分割化とも言う) はデータベースを機能ごとに分割する。例えば、モノリシックな単一データベースの代わりに三つのデータベースを持つことができます: **フォーラム**、 **ユーザー** そして **プロダクト**です。各データベースへの書き込み読み取りのトラフィックが減ることで複製ラグも短くなります。より小さなデータベースを用いることで、メモリーに収まるデータが増えます。ローカルキャッシュに保存できる量が増えることで、キャッシュヒット率も上がります。単一の中央マスターが書き込みの処理をしなくても、並列で書き込みを処理することができ、スループットの向上が期待できます。
+フェデレーション (もしくは機能分割化とも言う) はデータベースを機能ごとに分割する。例えば、モノリシックな単一データベースの代わりに、データベースを **フォーラム**、 **ユーザー**、 **プロダクト** のように三つにすることで、データベース一つあたりの書き込み・読み取りのトラフィックが減り、その結果レプリケーションのラグも短くなります。データベースが小さくなることで、メモリーに収まるデータが増えます。キャッシュの局所性が高まるため、キャッシュヒット率も上がります。単一の中央マスターで書き込みを直列化したりしないため、並列で書き込みを処理することができ、スループットの向上が期待できます。
 
 ##### 欠点: federation
 
@@ -902,31 +902,31 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 
 ##### スキーマを絞る
 
-* より早い接続を得るために、連続したブロックの中のディスクにMySQLをダンプする。
-* 長さの決まったフィールドに対しては `CHAR` よりも `VARCHAR` を使うようにしましょう。
+* MySQLはアクセス速度向上のため、ディスク上の連続したブロックへデータを格納しています。
+* 長さの決まったフィールドに対しては `VARCHAR` よりも `CHAR` を使うようにしましょう。
     * `CHAR` の方が効率的に速くランダムにデータにアクセスできます。 一方、 `VARCHAR` では次のデータに移る前にデータの末尾を検知しなければならないために速度が犠牲になります。
-* ブログ投稿などの大きなテキスト `TEXT` を使いましょう。 `TEXT` ではブーリアン型の検索も可能です。 `TEXT` フィールドを使うことは、テキストブロックを配置するのに用いたポインターをディスク上に保存することになります。
-* 2の32乗や40億を超えてくる数に関しては `INT` を使いましょう
+* ブログの投稿など、大きなテキストには TEXT を使いましょう。 TEXT ではブーリアン型の検索も可能です。 TEXT フィールドには、テキストブロックが配置されている、ディスク上の場所へのポインターが保存されます。
+* 2の32乗や40億以下を超えない程度の大きな数には INT を使いましょう。
 * 通貨に関しては小数点表示上のエラーを避けるために `DECIMAL` を使いましょう。
 * 大きな `BLOBS` を保存するのは避けましょう。どこからそのオブジェクトを取ってくることができるかの情報を保存しましょう。
-* `VARCHAR(255)` は8ビットで数えることができる中で最大の文字数ですが、このフィールドがしばしばRDBMSの中で大きな容量を食います。
-* [検索性能を向上させる](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) ことが可能な箇所については `NOT NULL` 制約を設定しましょう
+* `VARCHAR(255)` は8ビットで数えられる最大の文字数です。一部のDBMSでは、1バイトの利用効率を最大化するためにこの文字数がよく使われます。
+* [検索性能向上のため](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) 、可能であれば `NOT NULL` 制約を設定しましょう。
 
 ##### インデックスを効果的に用いる
 
-* クエリ(`SELECT`、 `GROUP BY`、 `ORDER BY`、 `JOIN`) を用いて取得する列はインデックスを用いると速度を向上できる。
-* インデックスは通常、対数的にデータを検索、挿入、削除する際に用いる[B-tree](https://en.wikipedia.org/wiki/B-tree)として表現されています。
+* クエリ(`SELECT`、 `GROUP BY`、 `ORDER BY`、 `JOIN`) の対象となる列にインデックスを使うことで速度を向上できるかもしれません。
+* インデックスは通常、平衡探索木である[B木](https://en.wikipedia.org/wiki/B-tree)の形で表されます。B木によりデータは常にソートされた状態になります。また検索、順次アクセス、挿入、削除を対数時間で行えます。
 * インデックスを配置することはデータをメモリーに残すことにつながりより容量を必要とします。
 * インデックスの更新も必要になるため書き込みも遅くなります。
-* 大きなデータを読み込む際には、インデックスを切ってからデータをロードして再びインデックスをビルドした方が速いことがあります。
+* 大量のデータをロードする際には、インデックスを切ってからデータをロードして再びインデックスをビルドした方が速いことがあります。
 
 ##### 高負荷なジョインを避ける
 
-* パフォーマンスが必要なところには[非正規化](#非正規化)を適用する
+* パフォーマンス上必要なところには[非正規化](#非正規化)を適用する
 
 ##### テーブルのパーティション
 
-* メモリー内に保つために、分離されたテーブルを分割してそれぞれにホットスポットを設定する。
+* テーブルを分割し、ホットスポットを独立したテーブルに分離してメモリーに乗せられるようにする。
 
 ##### クエリキャッシュを調整する
 
@@ -935,7 +935,7 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 ##### その他の参考資料、ページ: SQLチューニング
 
 * [MySQLクエリを最適化するためのTips](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-* [VARCHAR(255)をそんなにたくさん使う必要ある？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [VARCHAR(255)をやたらよく見かけるのはなんで？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
 * [null値はどのようにパフォーマンスに影響するのか？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 * [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
@@ -955,7 +955,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 > 概要: ハッシュテーブル
 
-キーバリューストアでは一般的に0、1の読み、書きができ、それらはメモリないしSSDで裏付けられています。データストアはキーを [辞書的順序](https://en.wikipedia.org/wiki/Lexicographical_order) で保持することでキーの効率的な取得を可能にしています。キーバリューストアではメタデータを値とともに保持することが可能です。
+キーバリューストアでは一般的にO(1)の読み書きができ、それらはメモリないしSSDで裏付けられています。データストアはキーを [辞書的順序](https://en.wikipedia.org/wiki/Lexicographical_order) で保持することでキーの効率的な取得を可能にしています。キーバリューストアではメタデータを値とともに保持することが可能です。
 
 キーバリューストアはハイパフォーマンスな挙動が可能で、単純なデータモデルやインメモリーキャッシュレイヤーなどのデータが急速に変わる場合などに使われます。単純な処理のみに機能が制限されているので、追加の処理機能が必要な場合にはその複雑性はアプリケーション層に載せることになります。
 
@@ -982,7 +982,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ##### その他の参考資料、ページ:  ドキュメントストア
 
-* [ドキュメント志向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [ドキュメント指向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB アーキテクチャ](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB アーキテクチャ](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch アーキテクチャ](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
@@ -1166,7 +1166,7 @@ Redisはさらに以下のような機能を備えています:
 * エントリをキャッシュに追加します
 * エントリを返します
 
-```
+```python
 def get_user(self, user_id):
     user = cache.get("user.{0}", user_id)
     if user is None:
@@ -1209,7 +1209,7 @@ set_user(12345, {"foo":"bar"})
 
 キャッシュコード:
 
-```
+```python
 def set_user(user_id, values):
     user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
     cache.set(user_id, user)
@@ -1408,7 +1408,7 @@ TCPよりもUDPを使うのは:
 <p align="center">
   <img src="images/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/>Source: Crack the system design interview</a></i>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
 RPCではクライアントがリモートサーバーなどの異なるアドレス空間でプロシージャーが処理されるようにします。プロシージャーはローカルでのコールのように、クライアントからサーバーにどのように通信するかという詳細を省いた状態でコードが書かれます。リモートのコールは普通、ローカルのコールよりも遅く、信頼性に欠けるため、RPCコールをローカルコールと区別させておくことが好ましいでしょう。人気のRPCフレームワークは以下です。[Protobuf](https://developers.google.com/protocol-buffers/)、 [Thrift](https://thrift.apache.org/)、[Avro](https://avro.apache.org/docs/current/)
@@ -1504,7 +1504,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
 * [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
@@ -1555,7 +1555,7 @@ Latency Comparison Numbers
 L1 cache reference                           0.5 ns
 Branch mispredict                            5   ns
 L2 cache reference                           7   ns                      14x L1 cache
-Mutex lock/unlock                          100   ns
+Mutex lock/unlock                           25   ns
 Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
 Compress 1K bytes with Zippy            10,000   ns       10 us
 Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
@@ -1602,7 +1602,7 @@ Notes
 | 質問 | 解答 |
 |---|---|
 | Dropboxのようなファイル同期サービスを設計する | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Googleのような検索エンジンの設計 | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Googleのような検索エンジンの設計 | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | Googleのようなスケーラブルなwebクローラーの設計 | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
 | Google docsの設計 | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
 | Redisのようなキーバリューストアの設計 | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
@@ -1768,7 +1768,7 @@ Special thanks to:
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 ## Contact info
 
