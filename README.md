@@ -1348,7 +1348,6 @@ Tasks queues receive tasks and their related data, runs them in background, then
 
 **[Celery](http://www.celeryproject.org/)** has support for scheduling and primarily has python support.
 
-**[Queues.io](http://queues.io/)** - Collection of all task queues and their info.
 
 ### Back pressure
 
