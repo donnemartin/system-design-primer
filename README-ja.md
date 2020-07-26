@@ -1522,6 +1522,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 
 ### その他の参考資料、ページ:
 
+* [APIセキュリティチェックリスト](https://github.com/shieldfy/API-Security-Checklist)
 * [開発者のためのセキュリティガイド](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
