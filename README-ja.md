@@ -762,7 +762,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 <p align="center">
   <img src="images/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
 ### リレーショナルデータベースマネジメントシステム (RDBMS)
@@ -828,7 +828,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 <p align="center">
   <img src="images/U3qV33e.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
 フェデレーション (もしくは機能分割化とも言う) はデータベースを機能ごとに分割する。例えば、モノリシックな単一データベースの代わりに、データベースを **フォーラム**、 **ユーザー**、 **プロダクト** のように三つにすることで、データベース一つあたりの書き込み・読み取りのトラフィックが減り、その結果レプリケーションのラグも短くなります。データベースが小さくなることで、メモリーに収まるデータが増えます。キャッシュの局所性が高まるため、キャッシュヒット率も上がります。単一の中央マスターで書き込みを直列化したりしないため、並列で書き込みを処理することができ、スループットの向上が期待できます。
@@ -842,7 +842,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 ##### その他の参考資料、ページ: federation
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
 #### シャーディング
 
@@ -1078,7 +1078,7 @@ NoSQLに適するサンプルデータ:
 
 ##### その他の参考資料、ページ:  　SQLもしくはNoSQL
 
-* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=w95murBkYmU)
+* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQLとNoSQLの違い](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## キャッシュ
