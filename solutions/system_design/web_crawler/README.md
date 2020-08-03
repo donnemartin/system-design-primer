@@ -77,7 +77,7 @@ Handy conversion guide:
 
 ### Use case: Service crawls a list of urls
 
-We'll assume we have an initial list of `links_to_crawl` ranked initially based on overall site popularity.  If this is not a reasonable assumption, we can seed the crawler with popular sites that link to outside content such as [Yahoo](https://www.yahoo.com/), [DMOZ](http://www.dmoz.org/), etc
+We'll assume we have an initial list of `links_to_crawl` ranked initially based on overall site popularity.  If this is not a reasonable assumption, we can seed the crawler with popular sites that link to outside content such as [Yahoo](https://www.yahoo.com/), [DMOZ](http://www.dmoz.org/), etc.
 
 We'll use a table `crawled_links` to store processed links and their page signatures.
 
@@ -100,7 +100,7 @@ We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Datab
 
 `PagesDataStore` is an abstraction within the **Crawler Service** that uses the **NoSQL Database**:
 
-```
+```python
 class PagesDataStore(object):
 
     def __init__(self, db);
@@ -134,7 +134,7 @@ class PagesDataStore(object):
 
 `Page` is an abstraction within the **Crawler Service** that encapsulates a page, its contents, child urls, and signature:
 
-```
+```python
 class Page(object):
 
     def __init__(self, url, contents, child_urls, signature):
@@ -146,7 +146,7 @@ class Page(object):
 
 `Crawler` is the main class within **Crawler Service**, composed of `Page` and `PagesDataStore`.
 
-```
+```python
 class Crawler(object):
 
     def __init__(self, data_store, reverse_index_queue, doc_index_queue):
@@ -187,7 +187,7 @@ We'll want to remove duplicate urls:
 * For smaller lists we could use something like `sort | unique`
 * With 1 billion links to crawl, we could use **MapReduce** to output only entries that have a frequency of 1
 
-```
+```python
 class RemoveDuplicateUrls(MRJob):
 
     def mapper(self, _, line):
@@ -282,7 +282,7 @@ Some searches are very popular, while others are only executed once.  Popular qu
 
 Below are a few other optimizations to the **Crawling Service**:
 
-* To handle the data size and request load, the **Reverse Index Service** and **Document Service** will likely need to make heavy use sharding and replication.
+* To handle the data size and request load, the **Reverse Index Service** and **Document Service** will likely need to make heavy use sharding and federation.
 * DNS lookup can be a bottleneck, the **Crawler Service** can keep its own DNS lookup that is refreshed periodically
 * The **Crawler Service** can improve performance and reduce memory usage by keeping many open connections at a time, referred to as [connection pooling](https://en.wikipedia.org/wiki/Connection_pool)
     * Switching to [UDP](https://github.com/donnemartin/system-design-primer#user-datagram-protocol-udp) could also boost performance

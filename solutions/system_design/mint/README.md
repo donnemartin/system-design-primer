@@ -182,7 +182,7 @@ For the **Category Service**, we can seed a seller-to-category dictionary with t
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-```
+```python
 class DefaultCategories(Enum):
 
     HOUSING = 0
@@ -199,10 +199,10 @@ seller_category_map['Target'] = DefaultCategories.SHOPPING
 
 For sellers not initially seeded in the map, we could use a crowdsourcing effort by evaluating the manual category overrides our users provide.  We could use a heap to quickly lookup the top manual override per seller in O(1) time.
 
-```
+```python
 class Categorizer(object):
 
-    def __init__(self, seller_category_map, self.seller_category_crowd_overrides_map):
+    def __init__(self, seller_category_map, seller_category_crowd_overrides_map):
         self.seller_category_map = seller_category_map
         self.seller_category_crowd_overrides_map = \
             seller_category_crowd_overrides_map
@@ -219,11 +219,11 @@ class Categorizer(object):
 
 Transaction implementation:
 
-```
+```python
 class Transaction(object):
 
     def __init__(self, created_at, seller, amount):
-        self.timestamp = timestamp
+        self.created_at = created_at
         self.seller = seller
         self.amount = amount
 ```
@@ -232,7 +232,7 @@ class Transaction(object):
 
 To start, we could use a generic budget template that allocates category amounts based on income tiers.  Using this approach, we would not have to store the 100 million budget items identified in the constraints, only those that the user overrides.  If a user overrides a budget category, which we could store the override in the `TABLE budget_overrides`.
 
-```
+```python
 class Budget(object):
 
     def __init__(self, income):
@@ -241,10 +241,10 @@ class Budget(object):
 
     def create_budget_template(self):
         return {
-            'DefaultCategories.HOUSING': income * .4,
-            'DefaultCategories.FOOD': income * .2
-            'DefaultCategories.GAS': income * .1,
-            'DefaultCategories.SHOPPING': income * .2
+            DefaultCategories.HOUSING: self.income * .4,
+            DefaultCategories.FOOD: self.income * .2,
+            DefaultCategories.GAS: self.income * .1,
+            DefaultCategories.SHOPPING: self.income * .2,
             ...
         }
 
@@ -273,7 +273,7 @@ user_id   timestamp   seller  amount
 
 **MapReduce** implementation:
 
-```
+```python
 class SpendingByCategory(MRJob):
 
     def __init__(self, categorizer):
@@ -373,9 +373,9 @@ Instead of keeping the `monthly_spending` aggregate table in the **SQL Database*
 
 We might only want to store a month of `transactions` data in the database, while storing the rest in a data warehouse or in an **Object Store**.  An **Object Store** such as Amazon S3 can comfortably handle the constraint of 250 GB of new content per month.
 
-To address the 2,000 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
+To address the 200 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
 
-200 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
+2,000 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
 
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
