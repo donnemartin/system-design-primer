@@ -39,7 +39,7 @@
 * [কিভাবে সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন মোকাবেলা করবেন](#how-to-approach-a-system-design-interview-question)
 * [সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন, **সমাধানসহ**](#system-design-interview-questions-with-solutions)
 * [অবজেক্ট ওরিয়েন্টেড ডিজাইন ইন্টারভিউ প্রশ্ন, **সমাধানসহ**](#object-oriented-design-interview-questions-with-solutions)
-* [আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন](#additional-system-design-interview-questions)
+* [আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন](#আরও-সিস্টেম-ডিজাইন-ইন্টারভিউ-প্রশ্ন)
 
 ## Anki flashcards
 
@@ -167,7 +167,7 @@
 * [পরিশিষ্ট](#appendix)
     * [দুটি টেবিলের পাওয়ারস](#powers-of-two-table)
     * [লেটেন্সি সংখ্যা যা সব প্রোগ্রামারের জানা উচিত](#latency-numbers-every-programmer-should-know)
-    * [আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন](#additional-system-design-interview-questions)
+    * [আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন](#আরও-সিস্টেম-ডিজাইন-ইন্টারভিউ-প্রশ্ন)
     * [বাস্তব জীবনের আর্কিটেকচার](#real-world-architectures)
     * [কোম্পানির আর্কিটেকচার](#company-architectures)
     * [কোম্পানির ইঞ্জিনিয়ারিং ব্লগ](#company-engineering-blogs)
@@ -210,7 +210,7 @@
 | পর্যালোচনা করুন [কিভাবে সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন মোকাবেলা করবেন](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
 | [সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন, সমাধানসহ](#system-design-interview-questions-with-solutions) নিয়ে কাজ করুন | কিছু | অনেক | প্রায় সব |
 | [অবজেক্ট ওরিয়েন্টেড ডিজাইন ইন্টারভিউ প্রশ্ন, সমাধানসহ](#object-oriented-design-interview-questions-with-solutions) নিয়ে কাজ করুন | কিছু | অনেক | প্রায় সব |
-| পর্যালোচনা করুন [আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন](#additional-system-design-interview-questions) | কিছু | অনেক | প্রায় সব |
+| পর্যালোচনা করুন [আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন](#আরও-সিস্টেম-ডিজাইন-ইন্টারভিউ-প্রশ্ন) | কিছু | অনেক | প্রায় সব |
 
 ## কিভাবে সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন মোকাবেলা করবেন
 
@@ -364,3 +364,34 @@
 | Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
+
+### আরও সিস্টেম ডিজাইন ইন্টারভিউ প্রশ্ন
+
+> সিস্টেম ডিজাইনের প্রচলিত ইন্টারভিউ প্রশ্নগুলি, কীভাবে প্রতিটি সমাধান করতে হবে তার সহায়গুলির লিঙ্ক রয়েছে। 
+
+| প্রশ্ন | সন্ধানপুস্তক |
+|---|---|
+| ড্রপবক্সের মতো একটি ফাইল সিঙ্ক পরিষেবা ডিজাইন করুন | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| গুগলের মতো সার্চ ইঞ্জিন ডিজাইন করুন | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| গুগলের মতো একটি স্কেলেবল ওয়েব ক্রলার ডিজাইন করুন | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
+| গুগল ডক্স ডিজাইন করুন | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| রেডিসের মতো কী-ভ্যালু স্টোর ডিজাইন করুন| [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| ম্যামক্যাশড এর মতো একটি ক্যাশড সিস্টেম ডিজাইন করুন | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| অ্যামাজনের মতো একটি সুপারিশ সিস্টেম ডিজাইন করুন | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
+| বিটলির মতো একটি টিনিইউআরএল সিস্টেম ডিজাইন করুন | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
+| হোয়াটসঅ্যাপের মতো একটি চ্যাট অ্যাপ্লিকেশন ডিজাইন করুন | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
+| ইনস্টাগ্রামের মতো একটি ছবি শেয়ারিং সিস্টেম ডিজাইন করুন | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
+| ফেসবুক নিউজ ফিড ফাংশন ডিজাইন করুন | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
+| ফেসবুক টাইমলাইন ফাংশন ডিজাইন করুন | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
+| ফেসবুক চ্যাট ফাংশন ডিজাইন করুন | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
+| ফেসবুকের মতো একটি গ্রাফ অনুসন্ধান ফাংশন ডিজাইন করুন | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| ক্লাউডফ্লেয়ারের মতো একটি সামগ্রী বিতরণ নেটওয়ার্ক ডিজাইন করুন | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
+| টুইটারের মতো একটি ট্রেন্ডিং টপিক সিস্টেম ডিজাইন করুন | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
+| একটি এলোমেলো আইডি জেনারেশন সিস্টেম ডিজাইন করুন | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
+| একটি সময়ের ব্যবধানে শীর্ষ ক অনুরোধগুলি ফেরত দিন | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/docs/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
+| এমন একটি সিস্টেম ডিজাইন করুন যা একাধিক ডেটা সেন্টার থেকে ডেটা পরিবেশন করে | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
+| একটি অনলাইন মাল্টিপ্লেয়ার কার্ড গেম ডিজাইন করুন | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| একটি গারবেজ কালেকশন সিস্টেম ডিজাইন করুন | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| একটি এপিআই রেট লিমিটার ডিজাইন করুন | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| স্টক এক্সচেঞ্জের ডিজাইন করুন (নাসডাক বা বাইনান্সের মতো) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
+| একটি সিস্টেম ডিজাইন প্রশ্ন যুক্ত করুন | [Contribute](#contributing) |
