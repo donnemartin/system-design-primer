@@ -966,7 +966,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 * [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database)
 * [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 * [Redisアーキテクチャ](http://qnimate.com/overview-of-redis-architecture/)
-* [メムキャッシュアーキテクチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [アーキテクチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### ドキュメントストア
 
@@ -1110,7 +1110,7 @@ NoSQLに適するサンプルデータ:
 
 ### アプリケーションキャッシング
 
-メムキャッシュなどのIn-memoryキャッシュやRedisはアプリケーションとデータストレージの間のキーバリューストアです。データはRAMで保持されるため、データがディスクで保存される一般的なデータベースよりもだいぶ速いです。RAM容量はディスクよりも限られているので、[least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used)などの[cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) アルゴリズムが 'コールド' なエントリを弾き、'ホット' なデータをRAMに保存します。
+memcachedなどのIn-memoryキャッシュやRedisはアプリケーションとデータストレージの間のキーバリューストアです。データはRAMで保持されるため、データがディスクで保存される一般的なデータベースよりもだいぶ速いです。RAM容量はディスクよりも限られているので、[least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used)などの[cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) アルゴリズムが 'コールド' なエントリを弾き、'ホット' なデータをRAMに保存します。
 
 Redisはさらに以下のような機能を備えています:
 
@@ -1401,7 +1401,7 @@ TCPよりもUDPを使うのは:
 * [TCP と UDPの違い](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
 * [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Facebookのメムキャッシュスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [Facebookのmemcacheスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
 ### 遠隔手続呼出 (RPC)
 
