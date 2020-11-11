@@ -27,7 +27,9 @@ class Employee(metaclass=ABCMeta):
 
     def complete_call(self):
         self.call.state = CallState.COMPLETE
-        self.call_center.notify_call_completed(self.call)
+        call = self.call
+        self.call = None
+        self.call_center.notify_call_completed(call)
 
     @abstractmethod
     def escalate_call(self):
@@ -42,28 +44,31 @@ class Employee(metaclass=ABCMeta):
 
 class Operator(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR)
+    def __init__(self, employee_id, name, call_center):
+        super(Operator, self).__init__(
+            employee_id, name, Rank.OPERATOR, call_center)
 
     def escalate_call(self):
-        self.call.level = Rank.SUPERVISOR
+        self.call.rank = Rank.SUPERVISOR
         self._escalate_call()
 
 
 class Supervisor(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+    def __init__(self, employee_id, name, call_center):
+        super(Supervisor, self).__init__(
+            employee_id, name, Rank.SUPERVISOR, call_center)
 
     def escalate_call(self):
-        self.call.level = Rank.DIRECTOR
+        self.call.rank = Rank.DIRECTOR
         self._escalate_call()
 
 
 class Director(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
+    def __init__(self, employee_id, name, call_center):
+        super(Director, self).__init__(
+            employee_id, name, Rank.DIRECTOR, call_center)
 
     def escalate_call(self):
         raise NotImplementedError('Directors must be able to handle any call')
