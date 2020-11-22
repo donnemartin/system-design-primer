@@ -1010,7 +1010,7 @@ MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的�
 
 类型存储的基本数据单元是列（名／值对）。列可以在列族（类似于 SQL 的数据表）中被分组。超级列族再分组普通列族。你可以使用行键独立访问每一列，具有相同行键值的列组成一行。每个值都包含版本的时间戳用于解决版本冲突。
 
-Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，它影响了 Hadoop 生态系统中活跃的开源数据库 [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。像 Bigtable，HBase 和 Cassandra 这样的存储系统将键以字母顺序存储，可以高效地读取键列。
+Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，它影响了 Hadoop 生态系统中活跃的开源数据库 [HBase](https://www.edureka.co/blog/hbase-architecture/) 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。像 Bigtable，HBase 和 Cassandra 这样的存储系统将键以字母顺序存储，可以高效地读取键列。
 
 列型存储具备高可用性和高可扩展性。通常被用于大数据相关存储。
 
@@ -1018,7 +1018,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 - [SQL 与 NoSQL 简史](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 - [Bigtable 架构](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-- [HBase 架构](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+- [HBase 架构](https://www.edureka.co/blog/hbase-architecture/)
 - [Cassandra 架构](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
 #### 图数据库

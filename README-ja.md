@@ -999,7 +999,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ワイドカラムストアのデータの基本単位はカラム（ネーム・バリューのペア）です。それぞれのカラムはカラムファミリーとして（SQLテーブルのように）グループ化することができます。スーパーカラムファミリーはカラムファミリーの集合です。それぞれのカラムには行キーでアクセスすることができます。同じ行キーを持つカラムは同じ行として認識されます。それぞれの値は、バージョン管理とコンフリクトが起きた時のために、タイムスタンプを含みます。
 
-Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)を初のワイドカラムストアとして発表しました。それがオープンソースでHadoopなどでよく使われる[HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) やFacebookによる[Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) などのプロジェクトに影響を与えました。Bigtable、HBaseやCassandraなどのストアはキーを辞書形式で保持することで選択したキーレンジでのデータ取得を効率的にします。
+Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)を初のワイドカラムストアとして発表しました。それがオープンソースでHadoopなどでよく使われる[HBase](https://www.edureka.co/blog/hbase-architecture/) やFacebookによる[Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) などのプロジェクトに影響を与えました。Bigtable、HBaseやCassandraなどのストアはキーを辞書形式で保持することで選択したキーレンジでのデータ取得を効率的にします。
 
 ワイドカラムストアは高い可用性とスケーラビリティを担保します。これらはとても大規模なデータセットを扱うことによく使われます。
 
@@ -1007,7 +1007,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 
 * [SQL & NoSQL簡単に歴史をさらう](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable アーキテクチャ](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase アーキテクチャ](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [HBase アーキテクチャ](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra アーキテクチャ](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
 #### グラフデータベース

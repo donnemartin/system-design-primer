@@ -1000,7 +1000,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 
 列儲存型資料庫的基本單元是一列 (名稱/值為一組)。每一列可以被分到一個列的族群中(類似於 SQL 中的資料表)。而每個列族群之上還可以有一個超級列群。你可以透過列的鍵值來存取每一列，每個值都有一個時間戳記來解決版本問題。
 
-Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，這影響了用於 Hadoop 系統中開源的 [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) often-used in the Hadoop ecosystem, 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。這些資料庫的儲存系統把鍵值利用字母順序來儲存，可以有效率的來讀取。
+Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，這影響了用於 Hadoop 系統中開源的 [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。這些資料庫的儲存系統把鍵值利用字母順序來儲存，可以有效率的來讀取。
 
 列儲存型態的資料的提供了高可用和高擴展性，通常被用在大量資料的儲存上。
 
@@ -1008,7 +1008,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 * [SQL 和 NoSQL 歷史簡介](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable 架構](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase 架構](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [HBase 架構](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra 架構](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
 #### 圖形資料庫
