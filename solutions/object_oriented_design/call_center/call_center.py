@@ -9,6 +9,7 @@ class Rank(Enum):
     SUPERVISOR = 20
     DIRECTOR = 10
 
+
 class Employee(metaclass=ABCMeta):
 
     def __init__(self, employee_id, name, rank, call_center):
