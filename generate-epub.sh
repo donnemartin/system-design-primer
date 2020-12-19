@@ -34,18 +34,29 @@ generate () {
   cat $name.md | generate_from_stdin $name.epub $language
 }
 
+
 # Check if depencies exist
 check_dependencies () {
+  ITER=-1
   for dependency in "${dependencies[@]}"
   do
+    ITER=$(expr $ITER + 1)
     if ! [ -x "$(command -v $dependency)" ]; then
       echo "Error: $dependency is not installed." >&2
       exit 1
+    else
+      requiredver="${dependencies_minimun_version[ITER]}"
+      currentver=$($dependency --version | head -1 | cut -d " " -f 2)
+      if [ "$(printf '%s\n' "$requiredver" "$currentver" | sort -V | head -n1)" != "$requiredver" ]; then
+      echo "$dependency verion must be >= ${requiredver}"
+      exit 1
+      fi
     fi
   done
 }
 
 dependencies=("pandoc")
+dependencies_minimun_version=("2.3")
 
 check_dependencies
 generate_with_solutions
