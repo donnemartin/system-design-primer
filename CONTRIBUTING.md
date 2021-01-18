@@ -45,27 +45,33 @@ If you are not familiar with pull requests, review the [pull request docs](https
 We'd like for the guide to be available in many languages. Here is the process for maintaining translations:
 
 * This original version and content of the guide is maintained in English.
-* Translations follow the content of the original. Unfortunately, contributors must speak at least some English, so that translations do not diverge.
-* Each translation has a maintainer to update the translation as the original evolves and to review others' changes. This doesn't require a lot of time, but review by the maintainer is important to maintain quality.
+* Translations follow the content of the original. Contributors must speak at least some English, so that translations do not diverge.
+* Each translation has a maintainer to update the translation as the original evolves and to review others' changes. This doesn't require a lot of time, but a review by the maintainer is important to maintain quality.
+
+See [Translations](TRANSLATIONS.md).
 
 ### Changes to translations
 
 * Changes to content should be made to the English version first, and then translated to each other language.
-* Changes that improve translations should be made directly on the file for that language. PRs should only modify one language at a time.
-* Submit a PR with changes to the file in that language. Each language has a maintainer, who reviews changes in that language. Then the primary maintainer @donnemartin merges it in.
-* Prefix PRs and issues with language codes if they are for that translation only, e.g. "es: Improve grammar", so maintainers can find them easily.
+* Changes that improve translations should be made directly on the file for that language. Pull requests should only modify one language at a time.
+* Submit a pull request with changes to the file in that language. Each language has a maintainer, who reviews changes in that language. Then the primary maintainer [@donnemartin](https://github.com/donnemartin) merges it in.
+* Prefix pull requests and issues with language codes if they are for that translation only, e.g. "es: Improve grammar", so maintainers can find them easily.
+* Tag the translation maintainer for a code review, see the list of [translation maintainers](TRANSLATIONS.md).
+    * You will need to get a review from a native speaker (preferably the language maintainer) before your pull request is merged.
 
 ### Adding translations to new languages
 
-Translations to new languages are always welcome, especially if you can maintain the translation!
+Translations to new languages are always welcome! Keep in mind a transation must be maintained.
 
-* Check existing issues to see if a translation is in progress or stalled. If so, offer to help.
-* If it is not in progress, file an issue for your language so people know you are working on it and we can arrange. Confirm you are native level in the language and are willing to maintain the translation, so it's not orphaned.
-* To get it started, fork the repo, then submit a PR with the single file README-xx.md added, where xx is the language code. Use standard [IETF language tags](https://www.w3.org/International/articles/language-tags/), i.e. the same as is used by Wikipedia, *not* the code for a single country. These are usually just the two-letter lowercase code, for example, `fr` for French and `uk` for Ukrainian (not `ua`, which is for the country). For languages that have variations, use the shortest tag, such as `zh-Hant`.
-* Invite friends to review if possible. If desired, feel free to invite friends to help your original translation by letting them fork your repo, then merging their PRs.
-* Add links to your translation at the top of every README*.md file. (For consistency, the link should be added in alphabetical order by ISO code, and the anchor text should be in the native language.)
-* When done, indicate on the PR that it's ready to be merged into the main repo.
-* Once accepted, your PR will be squashed into a single commit into the `master` branch.
+* Do you have time to be a maintainer for a new language? Please see the list of [translations](TRANSLATIONS.md) and tell us so we know we can count on you in the future.
+* Check the [translations](TRANSLATIONS.md), issues, and pull requests to see if a translation is in progress or stalled. If it's in progress, offer to help.  If it's stalled, consider becoming the maintainer if you can commit to it.
+* If a translation has not yet been started, file an issue for your language so people know you are working on it and we'll coordinate. Confirm you are native level in the language and are willing to maintain the translation, so it's not orphaned.
+* To get started, fork the repo, then submit a pull request to the main repo with the single file README-xx.md added, where xx is the language code. Use standard [IETF language tags](https://www.w3.org/International/articles/language-tags/), i.e. the same as is used by Wikipedia, *not* the code for a single country. These are usually just the two-letter lowercase code, for example, `fr` for French and `uk` for Ukrainian (not `ua`, which is for the country). For languages that have variations, use the shortest tag, such as `zh-Hant`.
+* Feel free to invite friends to help your original translation by having them fork your repo, then merging their pull requests to your forked repo. Translations are difficult and usually have errors that others need to find.
+* Add links to your translation at the top of every README-XX.md file. For consistency, the link should be added in alphabetical order by ISO code, and the anchor text should be in the native language.
+* When you've fully translated the English README.md, comment on the pull request in the main repo that it's ready to be merged.
+    * You'll need to have a complete and reviewed translation of the English README.md before your translation will be merged into the `master` branch.
+    * Once accepted, your pull request will be squashed into a single commit into the `master` branch.
 
 ### Translation template credits
 

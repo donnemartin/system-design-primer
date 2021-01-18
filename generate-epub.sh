@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
 generate_from_stdin() {
   outfile=$1
@@ -34,6 +34,20 @@ generate () {
   cat $name.md | generate_from_stdin $name.epub $language
 }
 
+# Check if depencies exist
+check_dependencies () {
+  for dependency in "${dependencies[@]}"
+  do
+    if ! [ -x "$(command -v $dependency)" ]; then
+      echo "Error: $dependency is not installed." >&2
+      exit 1
+    fi
+  done
+}
+
+dependencies=("pandoc")
+
+check_dependencies
 generate_with_solutions
 generate README-ja ja
 generate README-zh-Hans zh-Hans
