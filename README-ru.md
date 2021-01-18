@@ -609,15 +609,17 @@ Check out the following links to get a better idea of what to expect:
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 l10n:p -->
 
 ### Источники и другие ссылки
 
-Посмотрите следующие ссылки, чтобы понять, что можно ожидать (внешние ссылки без перевода):
+Посмотрите следующие ссылки, чтобы лучше понимать, что можно ожидать (внешние ссылки без перевода):
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Таблица степеней двойки](#таблица-степеней-двойки)
-* [Время выполнения, которое должен знать каждый программист](#время-выполнения-которое-должен-знать-каждый-программист)
+* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [The system design interview](http://www.hiredintech.com/system-design)
+* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
 <!-- l10n:p
 ## System design interview questions with solutions
@@ -1012,14 +1014,14 @@ l10n:p -->
 <!-- l10n:p
 #### AP - availability and partition tolerance
 
-Responses return the most recent version of the data available on a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 l10n:p -->
 
 #### AP - Доступность и Устойчивость к разделению
 
-При таком решении ответы на запросы возвращают данные, которые могут быть не самыми актуальными. Операция на запись может занять некоторое время, если придется ожидать восстановления потерянного соединения с одним из узлов распределённой системы.
+При таком решении запросы возвращают готовую версию данных, доступную на каком-либо узле распределённой системы на данный момент, хотя она может быть не самой актуальной. Операция записи может занять некоторое время, если придется ожидать восстановления потерянного соединения с одним из узлов.
 
 AP решение подходит для систем, где система должна продолжать работать несмотря на внешние ошибки и допустима [Согласованность в конечном счете](#согласованность-в-конечном-счете).
 
@@ -1029,6 +1031,7 @@ AP решение подходит для систем, где система д
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
+* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 l10n:p -->
 
 ### Источники и дополнительные ссылки
@@ -1036,6 +1039,7 @@ l10n:p -->
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
+* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
 <!-- l10n:p
 ## Consistency patterns
@@ -1102,12 +1106,12 @@ l10n:p -->
 <!-- l10n:p
 ## Availability patterns
 
-There are two main patterns to support high availability: **fail-over** and **replication**.
+There are two complementary patterns to support high availability: **fail-over** and **replication**.
 l10n:p -->
 
 ## Шаблоны доступности
 
-Для обеспечения высокой доступности существует два основных паттерна: **отказоустойчивость** и **репликация**.
+Для обеспечения высокой доступности существует два паттерна: **отказоустойчивость** и **репликация**.
 
 <!-- l10n:p
 ### Fail-over
@@ -1312,8 +1316,8 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
     * Prevent traffic from going to servers under maintenance
     * Balance between varying cluster sizes
     * A/B testing
-* Latency-based
-* Geolocation-based
+* [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency)
+* [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo)
 l10n:p -->
 
 ## Систем доменных имен
@@ -1341,8 +1345,8 @@ DNS иерархична и имеет несколько корневых се�
   * предотвращает попадания трафика на сервера, находящиеся на обслуживании
   * балансирует трафик для кластера, размер которого может меняться
   * может использоваться для A/B тестирования
-* на основе задержки отклика серверов
-* на основе гео-распределения серверов
+* [на основе задержки отклика серверов](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency)
+* [на основе гео-распределения серверов](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo)
 
 <!-- l10n:p
 ### Disadvantage(s): DNS
@@ -1385,7 +1389,7 @@ A content delivery network (CDN) is a globally distributed network of proxy serv
 
 Serving content from CDNs can significantly improve performance in two ways:
 
-* Users receive content at data centers close to them
+* Users receive content from data centers close to them
 * Your servers do not have to serve requests that the CDN fulfills
 l10n:p -->
 
@@ -1398,6 +1402,11 @@ l10n:p -->
 </p>
 
 Сеть доставки содержимого (Content Delivery Network, CDN) - это глобальная распределённая сеть прокси-серверов, которые доставляют содержимое с серверов, наиболее близко находящихся к пользователю. Обычно в CDN размещаются статические файлы, такие как HTML/CSS/JS, фотографии и видео. Некоторые сервисы, как, например Amazon CloudFront, поддерживают доставку динамического содержимого. DNS запрос на сайт даст ответ на какой DNS сервер клиент должен делать запрос.
+
+Раздача содержимого из CDN может значительно улучшить производительность по двум причинам:
+
+* Пользователи будут получать содержимое из дата-центров, которые находятся ближе к ним
+* Вашим серверам не придется обрабатывать запросы, которые может обработать CDN
 
 <!-- l10n:p
 ### Push CDNs
@@ -1470,7 +1479,7 @@ Load balancers distribute incoming client requests to computing resources such a
 
 * Preventing requests from going to unhealthy servers
 * Preventing overloading resources
-* Helping eliminate single points of failure
+* Helping to eliminate a single point of failure
 
 Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
 
@@ -1538,7 +1547,7 @@ l10n:p -->
 <!-- l10n:p
 ### Layer 7 load balancing
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
 
 At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
 l10n:p -->
@@ -1579,7 +1588,7 @@ l10n:p -->
 ### Disadvantage(s): load balancer
 
 * The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
+* Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
 l10n:p -->
 
@@ -2066,7 +2075,7 @@ l10n:p -->
 
 Денормализация - это попытка улучшить скорость чтения за счет производительности записи. Избыточные копии данных записываются в несколько таблиц для избежания сложных операций соединения данных. Некоторый СУБД, например [PostgreSQL](https://ru.wikipedia.org/wiki/PostgreSQL) и Oracle поддерживают [материализованное представление](https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5), которые выполнюят задачу хранения избыточных данных и поддержку их согласованности.
 
-При использовании [Федерализации](#федерализация) и [Шардирования](#шардирование), данные становятся распределенными. В результате выполнение операций соединения данных усложняется. Денормализация может позволить избавиться от необходимости в сложных JOIN запросах.
+При использовании [Федерализации](#федерализация) и [Шардирования](#шардирование), данные становятся распределенными. В результате выполнение операций соединения данных, которые могут находится в разных дата-центрах, усложняется. Денормализация может позволить избавиться от необходимости в сложных JOIN запросах.
 
 В большинстве систем, количество операций на чтение значительно больше операций на запись (100:1, или даже 1000:1). Операция на чтение в результате сложного соединения данных может быть очень ресурсоемкой и требовать значительного времени, потраченного на операции c жестким диском.
 
@@ -2327,7 +2336,7 @@ l10n:p -->
 
 A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
 
-Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
+Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
 
 Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
 l10n:p -->
@@ -2344,7 +2353,7 @@ l10n:p -->
 
 Основной единицей данных в колоночных хранилищах является колонка - пара имя/значение. Колонки могут быть сгруппированы в семейства колонок (по аналогии с SQL таблицей). Следующим уровнем будет супер-семейство колонок. Значение каждой колонки можно получить по ключу строки. Все колонки с одинаковым ключом строки формируют строку. Каждое значение содержит временную метку для версионности и разрешения конфликтов.
 
-Google представили [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf), как первую колоночную базу данных, которая была создана под влиянием [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture), часто используемой в экосистеме Hadoop, и [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) от Facebook. BigTable, HBase, and Cassandra и другие базы данных этого типа хранят ключи в лексикографическом порядке, позволяя делать эффективные запросы по диапазону ключей.
+Google представили [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf), как первую колоночную базу данных, которая была создана под влиянием [HBase](https://www.edureka.co/blog/hbase-architecture/), часто используемой в экосистеме Hadoop, и [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) от Facebook. BigTable, HBase, and Cassandra и другие базы данных этого типа хранят ключи в лексикографическом порядке, позволяя делать эффективные запросы по диапазону ключей.
 
 Колоночные хранилища имеют высокую доступность и масштабируемость. Часто они используются для очень больших объемов данных.
 
@@ -2353,7 +2362,7 @@ Google представили [Bigtable](http://www.read.seas.harvard.edu/~kohle
 
 * [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 l10n:p -->
 
@@ -2361,7 +2370,7 @@ l10n:p -->
 
 * [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
 <!-- l10n:p
@@ -2995,14 +3004,14 @@ l10n:p -->
 
 Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
 
-**Celery** has support for scheduling and primarily has python support.
+**[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
 l10n:p -->
 
 ### Очереди задач
 
 Очереди сообщений принимают задачи и связанные с ними данные, выполняют их, и затем доставляет их результаты. Они могут поддерживать планирование и использоваться для выполнения задач, которые требуют высоких вычислительных мощностей, в фоне.
 
-Планирование есть в **Celery**, который в основном поддерживается на Python.
+Планирование есть в **[Celery](https://docs.celeryproject.org/en/stable/)**, который в основном поддерживается на Python.
 
 <!-- l10n:p
 ### Back pressure
@@ -3545,9 +3554,9 @@ Read 4 KB randomly from SSD*           150,000   ns      150 us          ~1GB/se
 Read 1 MB sequentially from memory     250,000   ns      250 us
 Round trip within same datacenter      500,000   ns      500 us
 Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
-Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
+HDD seek                            10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
 Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
-Read 1 MB sequentially from disk    30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
+Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
 Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
 Notes
@@ -3559,7 +3568,7 @@ Notes
 
 Handy metrics based on numbers above:
 
-* Read sequentially from disk at 30 MB/s
+* Read sequentially from HDD at 30 MB/s
 * Read sequentially from 1 Gbps Ethernet at 100 MB/s
 * Read sequentially from SSD at 1 GB/s
 * Read sequentially from main memory at 4 GB/s
@@ -3583,9 +3592,9 @@ l10n:p -->
 Считать 1 MB последовательно из памяти                          250,000   ns      250 us
 Полный обход внутри дата-центра                                 500,000   ns      500 us
 Считать 1 MB последовательно с SSD*                           1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X памяти
-Поиск на диске                                               10,000,000   ns   10,000 us   10 ms  20x полного обхода дата-центра
+Поиск на HDD                                                 10,000,000   ns   10,000 us   10 ms  20x полного обхода дата-центра
 Считать 1 MB последовательно по сети 1 Gbps                  10,000,000   ns   10,000 us   10 ms  40x памяти, 10X SSD
-Считать 1 MB последовательно с диска                         30,000,000   ns   30,000 us   30 ms 120x памяти, 30X SSD
+Считать 1 MB последовательно с HDD                           30,000,000   ns   30,000 us   30 ms 120x памяти, 30X SSD
 Послать пакет данных Калифорния->Нидерланды->Калифорния     150,000,000   ns  150,000 us  150 ms
 
 Заметки
@@ -3597,7 +3606,7 @@ l10n:p -->
 
 Некоторые значения на основе данных выше
 
-* Последовательное чтение с диска - скорость 30 MB/s
+* Последовательное чтение с HDD - скорость 30 MB/s
 * Последовательное чтение из канала 1 Gbps сети Ethernet - скорость 100 MB/s
 * Последовательное чтение с SSD - скорость 1 GB/s
 * Последовательное чтение из основной памяти - скоростью 4 GB/s
@@ -3659,6 +3668,7 @@ l10n:p -->
 | Design an online multiplayer card game | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | Add a system design question | [Contribute](#contributing) |
 l10n:p -->
 
@@ -3690,6 +3700,7 @@ l10n:p -->
 | Design an online multiplayer card game | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | Add a system design question | [Добавить](#содействуйте) |
 
 <!-- l10n:p
@@ -3846,7 +3857,7 @@ l10n:p -->
 * [Box Blogs](https://blog.box.com/blog/category/engineering)
 * [Cloudera Developer Blog](http://blog.cloudera.com/)
 * [Dropbox Tech Blog](https://tech.dropbox.com/)
-* [Engineering at Quora](http://engineering.quora.com/)
+* [Engineering at Quora](https://www.quora.com/q/quoraengineering)
 * [Ebay Tech Blog](http://www.ebaytechblog.com/)
 * [Evernote Tech Blog](https://blog.evernote.com/tech/)
 * [Etsy Code as Craft](http://codeascraft.com/)
@@ -3866,9 +3877,8 @@ l10n:p -->
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
+* [Paypal Developer Blog](https://medium.com/paypal-engineering)
 * [Pinterest Engineering Blog](https://medium.com/@Pinterest_Engineering)
-* [Quora Engineering](https://engineering.quora.com/)
 * [Reddit Blog](http://www.redditblog.com/)
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
@@ -3892,7 +3902,7 @@ l10n:p -->
 * [Box Blogs](https://blog.box.com/blog/category/engineering)
 * [Cloudera Developer Blog](http://blog.cloudera.com/)
 * [Dropbox Tech Blog](https://tech.dropbox.com/)
-* [Engineering at Quora](http://engineering.quora.com/)
+* [Engineering at Quora](https://www.quora.com/q/quoraengineering)
 * [Ebay Tech Blog](http://www.ebaytechblog.com/)
 * [Evernote Tech Blog](https://blog.evernote.com/tech/)
 * [Etsy Code as Craft](http://codeascraft.com/)
@@ -3912,9 +3922,8 @@ l10n:p -->
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
+* [Paypal Developer Blog](https://medium.com/paypal-engineering)
 * [Pinterest Engineering Blog](https://medium.com/@Pinterest_Engineering)
-* [Quora Engineering](https://engineering.quora.com/)
 * [Reddit Blog](http://www.redditblog.com/)
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
