@@ -3,12 +3,12 @@
 > * 译者：[XatMassacrE](https://github.com/XatMassacrE)、[L9m](https://github.com/L9m)、[Airmacho](https://github.com/Airmacho)、[xiaoyusilen](https://github.com/xiaoyusilen)、[jifaxu](https://github.com/jifaxu)、[根号三](https://github.com/sqrthree)
 > * 这个 [链接](https://github.com/xitu/system-design-primer/compare/master...donnemartin:master) 用来查看本翻译与英文版是否有差别（如果你没有看到 README.md 发生变化，那就意味着这份翻译文档是最新的）。
 
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [韓國語](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 # 系统设计入门
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png"/>
+  <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -49,7 +49,7 @@
 ## 抽认卡
 
 <p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png"/>
+  <img src="images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -66,7 +66,7 @@
 你正在寻找资源以准备[**编程面试**](https://github.com/donnemartin/interactive-coding-challenges)吗？
 
 <p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png"/>
+  <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -97,7 +97,7 @@
 
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png"/>
+  <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
@@ -186,7 +186,7 @@
 
 > 基于你面试的时间线（短、中、长）去复习那些推荐的主题。
 
-![Imgur](http://i.imgur.com/OfVllex.png)
+![Imgur](images/OfVllex.png)
 
 **问：对于面试来说，我需要知道这里的所有知识点吗？**
 
@@ -307,49 +307,49 @@
 
 [查看实践与解答](solutions/system_design/pastebin/README.md)
 
-![Imgur](http://i.imgur.com/4edXG0T.png)
+![Imgur](images/4edXG0T.png)
 
 ### 设计 Twitter 时间线和搜索 (或者 Facebook feed 和搜索)
 
 [查看实践与解答](solutions/system_design/twitter/README.md)
 
-![Imgur](http://i.imgur.com/jrUBAF7.png)
+![Imgur](images/jrUBAF7.png)
 
 ### 设计一个网页爬虫
 
 [查看实践与解答](solutions/system_design/web_crawler/README.md)
 
-![Imgur](http://i.imgur.com/bWxPtQA.png)
+![Imgur](images/bWxPtQA.png)
 
 ### 设计 Mint.com
 
 [查看实践与解答](solutions/system_design/mint/README.md)
 
-![Imgur](http://i.imgur.com/V5q57vU.png)
+![Imgur](images/V5q57vU.png)
 
 ### 为一个社交网络设计数据结构
 
 [查看实践与解答](solutions/system_design/social_graph/README.md)
 
-![Imgur](http://i.imgur.com/cdCv5g7.png)
+![Imgur](images/cdCv5g7.png)
 
 ### 为搜索引擎设计一个 key-value 储存
 
 [查看实践与解答](solutions/system_design/query_cache/README.md)
 
-![Imgur](http://i.imgur.com/4j99mhe.png)
+![Imgur](images/4j99mhe.png)
 
 ### 设计按类别分类的 Amazon 销售排名
 
 [查看实践与解答](solutions/system_design/sales_rank/README.md)
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](images/MzExP06.png)
 
 ### 在 AWS 上设计一个百万用户级别的系统
 
 [查看实践与解答](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](http://i.imgur.com/jj3A5N8.png)
+![Imgur](images/jj3A5N8.png)
 
 ## 面向对象设计的面试问题及解答
 
@@ -441,7 +441,7 @@
 ### CAP 理论
 
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png"/>
+  <img src="images/bgLMI2u.png">
   <br/>
   <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
@@ -536,7 +536,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ## 域名系统
 
 <p align="center">
-  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
+  <img src="images/IOyLj4i.jpg">
   <br/>
   <strong><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">来源：DNS 安全介绍</a></strong>
 </p>
@@ -574,7 +574,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 ## 内容分发网络（CDN）
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
+  <img src="images/h9TAuGI.jpg">
   <br/>
   <strong><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">来源：为什么使用 CDN</a></strong>
 </p>
@@ -613,7 +613,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 负载均衡器
 
 <p align="center">
-  <img src="http://i.imgur.com/h81n9iK.png"/>
+  <img src="images/h81n9iK.png">
   <br/>
   <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">来源：可扩展的系统设计模式</a></strong>
 </p>
@@ -682,7 +682,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 反向代理（web 服务器）
 
 <p align="center">
-  <img src="http://i.imgur.com/n41Azff.png"/>
+  <img src="images/n41Azff.png">
   <br/>
   <strong><a href="https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg">资料来源：维基百科</a></strong>
   <br/>
@@ -726,7 +726,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 应用层
 
 <p align="center">
-  <img src="http://i.imgur.com/yB5SYwm.png"/>
+  <img src="images/yB5SYwm.png">
   <br/>
   <strong><a href="http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">资料来源：可缩放系统构架介绍</a></strong>
 </p>
@@ -764,7 +764,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ## 数据库
 
 <p align="center">
-  <img src="http://i.imgur.com/Xkm5CXz.png"/>
+  <img src="images/Xkm5CXz.png">
   <br/>
   <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
@@ -785,7 +785,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 关系型数据库扩展包括许多技术：**主从复制**、**主主复制**、**联合**、**分片**、**非规范化**和 **SQL调优**。
 
 <p align="center">
-  <img src="http://i.imgur.com/C9ioGtn.png"/>
+  <img src="images/C9ioGtn.png">
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -800,7 +800,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 - 参考[不利之处：复制](#不利之处复制)中，主从复制和主主复制**共同**的问题。
 
 <p align="center">
-  <img src="http://i.imgur.com/krAHLGg.png"/>
+  <img src="images/krAHLGg.png">
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -835,7 +835,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 #### 联合
 
 <p align="center">
-  <img src="http://i.imgur.com/U3qV33e.png"/>
+  <img src="images/U3qV33e.png">
   <br/>
   <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">资料来源：扩展你的用户数到第一个一千万</a></strong>
 </p>
@@ -857,7 +857,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 #### 分片
 
 <p align="center">
-  <img src="http://i.imgur.com/wU8x5Id.png"/>
+  <img src="images/wU8x5Id.png">
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -1001,7 +1001,7 @@ MongoDB 和 CouchDB 等一些文档类型存储还提供了类似 SQL 语言的�
 #### 列型存储
 
 <p align="center">
-  <img src="http://i.imgur.com/n16iOGk.png"/>
+  <img src="images/n16iOGk.png">
   <br/>
   <strong><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html">资料来源: SQL 和 NoSQL，一个简短的历史</a></strong>
 </p>
@@ -1024,7 +1024,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 #### 图数据库
 
 <p align="center">
-  <img src="http://i.imgur.com/fNcl65g.png"/>
+  <img src="images/fNcl65g.png">
   <br/>
   <strong><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png"/>资料来源：图数据库</a></strong>
 </p>
@@ -1051,7 +1051,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 ### SQL 还是 NoSQL
 
 <p align="center">
-  <img src="http://i.imgur.com/wXGqG5f.png"/>
+  <img src="images/wXGqG5f.png">
   <br/>
   <strong><a href="https://www.infoq.com/articles/Transition-RDBMS-NoSQL/">资料来源：从 RDBMS 转换到 NoSQL</a></strong>
 </p>
@@ -1092,7 +1092,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 ## 缓存
 
 <p align="center">
-  <img src="http://i.imgur.com/Q6z24La.png"/>
+  <img src="images/Q6z24La.png">
   <br/>
   <strong><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">资料来源：可扩展的系统设计模式</a></strong>
 </p>
@@ -1163,7 +1163,7 @@ Redis 有下列附加功能：
 #### 缓存模式
 
 <p align="center">
-  <img src="http://i.imgur.com/ONjORqk.png"/>
+  <img src="images/ONjORqk.png">
   <br/>
   <strong><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">资料来源：从缓存到内存数据网格</a></strong>
 </p>
@@ -1199,7 +1199,7 @@ def get_user(self, user_id):
 #### 直写模式
 
 <p align="center">
-  <img src="http://i.imgur.com/0vBc0hN.png"/>
+  <img src="images/0vBc0hN.png">
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -1234,7 +1234,7 @@ def set_user(user_id, values):
 #### 回写模式
 
 <p align="center">
-  <img src="http://i.imgur.com/rgSrvjG.png"/>
+  <img src="images/rgSrvjG.png">
   <br/>
   <strong><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">资料来源：可扩展性、可用性、稳定性、模式</a></strong>
 </p>
@@ -1252,7 +1252,7 @@ def set_user(user_id, values):
 #### 刷新
 
 <p align="center">
-  <img src="http://i.imgur.com/kxtjqgE.png"/>
+  <img src="images/kxtjqgE.png">
   <br/>
   <strong><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>资料来源：从缓存到内存数据网格</a></strong>
 </p>
@@ -1284,7 +1284,7 @@ def set_user(user_id, values):
 ## 异步
 
 <p align="center">
-  <img src="http://i.imgur.com/54GYsSx.png"/>
+  <img src="images/54GYsSx.png">
   <br/>
   <strong><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>资料来源：可缩放系统构架介绍</a></strong>
 </p>
@@ -1330,7 +1330,7 @@ def set_user(user_id, values):
 ## 通讯
 
 <p align="center">
-  <img src="http://i.imgur.com/5KeocQs.jpg"/>
+  <img src="images/5KeocQs.jpg">
   <br/>
   <strong><a href=http://www.escotal.com/osilayer.html>资料来源：OSI 7层模型</a></strong>
 </p>
@@ -1365,7 +1365,7 @@ HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议�
 ### 传输控制协议（TCP）
 
 <p align="center">
-  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
+  <img src="images/JdAsdvG.jpg">
   <br/>
   <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/">资料来源：如何制作多人游戏</a></strong>
 </p>
@@ -1389,7 +1389,7 @@ TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包
 ### 用户数据报协议（UDP）
 
 <p align="center">
-  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
+  <img src="images/yzDrJtA.jpg">
   <br/>
   <strong><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1">资料来源：如何制作多人游戏</a></strong>
 </p>
@@ -1418,7 +1418,7 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实�
 ### 远程过程调用协议（RPC）
 
 <p align="center">
-  <img src="http://i.imgur.com/iF4Mkb5.png"/>
+  <img src="images/iF4Mkb5.png">
   <br/>
   <strong><a href="http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview">Source: Crack the system design interview</a></strong>
 </p>
@@ -1640,7 +1640,7 @@ Notes
 > 关于现实中真实的系统是怎么设计的文章。
 
 <p align="center">
-  <img src="http://i.imgur.com/TcUo2fw.png"/>
+  <img src="images/TcUo2fw.png">
   <br/>
   <strong><a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability">Source: Twitter timelines at scale</a></strong>
 </p>
