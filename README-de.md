@@ -8,3 +8,34 @@
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
+
+
+
+## Anki Karteikarten
+
+<p align="center">
+  <img src="images/zdCAkB3.png">
+  <br/>
+</p>
+
+Die hier zur Verfügung gestellten [Anki Karteikarten](https://apps.ankiweb.net/) nutzen das Konzept der verteilten Wiederholung. Damit sollst du beim Behalten der Schlüsselkonzepte des System Designs zu unterstützt werden.
+
+* [Karteikarten System Design](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Übungskarteikarten System Design](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Übungskarteikarten Objektorientiertes Design](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+
+Super um unterwegs zu üben!
+
+### Coding Ressourcen: Interaktive Coding Herausforderungen
+
+Auf der Suche nach Ressourcen um dich bei der Vorbereitung auf ein [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges) vorzubereiten?
+
+<p align="center">
+  <img src="images/b4YtAEN.png">
+  <br/>
+</p>
+
+Schau dir das Partner Repo [**Interactive Coding Herausforderungen**](https://github.com/donnemartin/interactive-coding-challenges) mit einem zusätzlichen Anki Deck:
+
+* [Coding Deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+
