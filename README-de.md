@@ -35,7 +35,7 @@ Auf der Suche nach Ressourcen um dich bei der Vorbereitung auf ein [**Coding Int
   <br/>
 </p>
 
-Schau dir das Partner Repo [**Interactive Coding Herausforderungen**](https://github.com/donnemartin/interactive-coding-challenges) mit einem zusätzlichen Anki Deck:
+Schau dir das Partner Repo [**Interactive Coding Herausforderungen**](https://github.com/donnemartin/interactive-coding-challenges) mit einem zusätzlichen Anki Deck an:
 
 * [Coding Deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
