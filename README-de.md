@@ -39,3 +39,28 @@ Schau dir das Partner Repo [**Interactive Coding Herausforderungen**](https://gi
 
 * [Coding Deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
+
+
+## Beitragungen
+
+> Lernen Sie von der Gemeinschaft.
+
+Fühlen Sie frei zum Pull Requests vorlegen zum helfen:
+
+* Fehler beheben
+* Abschnitte verbessern
+* Abschnitte hinzufügen
+* [Übersetzen](https://github.com/donnemartin/system-design-primer/issues/28)
+
+Inhalte dass etwa aufpolieren braucht finden sich [in Entwicklung](#in-entwicklung).
+
+Inspizieren Sie die [Beitragende Richtlinien](CONTRIBUTING.md).
+
+## In Entwicklung
+
+Interessiert Sie sich auf ein Abschnitt hinzufügen oder ein dass in Bearbeitung ist ergänzen?  [Beitragen](#beitragungen)!
+
+* Distributed computing with MapReduce
+* Consistent hashing
+* Scatter gather
+* [Beitragen](#beitragungen)
