@@ -41,26 +41,26 @@ Schau dir das Partner Repo [**Interactive Coding Herausforderungen**](https://gi
 
 
 
-## Beitragungen
+## Mitwirken
 
 > Lernen Sie von der Gemeinschaft.
 
-Fühlen Sie frei zum Pull Requests vorlegen zum helfen:
+Zögere nicht durch Pull Requests zu helfen:
 
 * Fehler beheben
 * Abschnitte verbessern
 * Abschnitte hinzufügen
 * [Übersetzen](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Inhalte dass etwa aufpolieren braucht finden sich [in Entwicklung](#in-entwicklung).
+Inhalte die etwas verbessert werden können finden sich [in Entwicklung](#in-entwicklung).
 
-Inspizieren Sie die [Beitragende Richtlinien](CONTRIBUTING.md).
+Beachte die [Richtlinien zum Mitwirken](CONTRIBUTING.md).
 
 ## In Entwicklung
 
-Interessiert Sie sich auf ein Abschnitt hinzufügen oder eins dass in Bearbeitung ist ergänzen?  [Beitragen](#beitragungen)!
+Interessiert ein Abschnitt Hinzufügen oder einen in Bearbeitung zu ergänzen?  [Mitwirken](#mitwirken)!
 
 * Verteiltes Rechnen mit MapReduce (Distributed computing with MapReduce)
 * Konsistentes Streuspeicherverfahren (Consistent hashing)
 * Streuung sammeln (Scatter gather)
-* [Beitragen](#beitragungen)
+* [Mitwirken](#mitwirken)
