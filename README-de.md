@@ -60,7 +60,7 @@ Inspizieren Sie die [Beitragende Richtlinien](CONTRIBUTING.md).
 
 Interessiert Sie sich auf ein Abschnitt hinzufügen oder ein dass in Bearbeitung ist ergänzen?  [Beitragen](#beitragungen)!
 
-* Distributed computing with MapReduce
-* Consistent hashing
-* Scatter gather
+* Verteiltes Rechnen mit MapReduce (Distributed computing with MapReduce)
+* Konsistentes Streuspeicherverfahren (Consistent hashing)
+* Streuung sammeln (Scatter gather)
 * [Beitragen](#beitragungen)
