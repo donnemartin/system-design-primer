@@ -58,7 +58,7 @@ Inspizieren Sie die [Beitragende Richtlinien](CONTRIBUTING.md).
 
 ## In Entwicklung
 
-Interessiert Sie sich auf ein Abschnitt hinzufügen oder ein dass in Bearbeitung ist ergänzen?  [Beitragen](#beitragungen)!
+Interessiert Sie sich auf ein Abschnitt hinzufügen oder eins dass in Bearbeitung ist ergänzen?  [Beitragen](#beitragungen)!
 
 * Verteiltes Rechnen mit MapReduce (Distributed computing with MapReduce)
 * Konsistentes Streuspeicherverfahren (Consistent hashing)
