@@ -61,6 +61,6 @@ Beachte die [Richtlinien zum Mitwirken](CONTRIBUTING.md).
 Interessiert ein Abschnitt Hinzufügen oder einen in Bearbeitung zu ergänzen?  [Mitwirken](#mitwirken)!
 
 * Verteiltes Rechnen mit MapReduce (Distributed computing with MapReduce)
-* Konsistentes Streuspeicherverfahren (Consistent hashing)
+* Konsistentes Hashing (Consistent hashing)
 * Streuung sammeln (Scatter gather)
 * [Mitwirken](#mitwirken)
