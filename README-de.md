@@ -35,7 +35,44 @@ Auf der Suche nach Ressourcen um dich bei der Vorbereitung auf ein [**Coding Int
   <br/>
 </p>
 
-Schau dir das Partner Repo [**Interactive Coding Herausforderungen**](https://github.com/donnemartin/interactive-coding-challenges) mit einem zusätzlichen Anki Deck an:
+Schau dir das Partner Repo [**Interaktive Coding Herausforderungen**](https://github.com/donnemartin/interactive-coding-challenges) mit einem zusätzlichen Anki Deck an:
 
 * [Coding Deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
+## Studienführer
+
+> Empfohlene Themen basierend auf deinen Zeithorizont zum Interview (kurz, mittel, lang).
+
+![Imgur](images/OfVllex.png)
+
+**F: Muss ich für Interviews alles von hier wissen?**
+
+**A: Nein, du musst nicht alles hier wissen um dich auf ein Interview vorzubereiten**.
+
+Was man dich bei einem Interview frägt hängt von verschiedenen Variablen ab:
+
+* Wie viel Erfahrung hast du
+* Welchen technischen Hintergrund hast du
+* Auf welche Position bewirbst du dich
+* Bei welcher Firma ist das Interview
+* Glück
+
+Von erfahreneren Kandidaten wird allgemein mehr Wissen im Bereich System Design erwartet. Von Architekten oder Teamleitern wird mehr Wissen als vom individuellen Teammitglied erwartet. Moderne Tech-Unternehmen haben häufig multiple Vorstellungsrunden.
+
+Beginne breit und fokussiere dich auf einige wenige Bereiche. Es hilft wenn man ein wenig über verschiedene Schlüsselthemen des System Designs. Passe den folgenden Studienführer basierend auf deinem Zeithorizont, deiner Erfahrung, die Position auf die du dich bewirbst und die Firma bei der du dich bewirbst, an.
+
+* **Kurzer Zeithorizont** - Strebe ein **breites** Wissen über System Design Themen an. Übe mit dem Lösen **einiger** Interview Fragen.
+* **Mittlerer Zeithorizont** - Strebe ein **breites** Wissen und **etwas** Tiefe über System Design Themen. Übe mit dem Lösen **vieler** Interview Fragen.
+* **Langer Zeithorizont** - Strebe ein **breites** Wissen und **weit mehr** Tiefe über System Design Themen. Übe mit dem Lösen der **meisten** Interview Fragen.
+
+# TODO Links überarbeiten
+
+| | Kurzfristig | Mittelfristig | Langfristig |
+|---|---|---|---|
+| Lese dir [System design topics](#index-of-system-design-topics) durch um ein breites Verständnis vom Zusammenspiel von Systemen zu bekommen | :+1: | :+1: | :+1: |
+| Lese dir ein paar Artikel von [Company engineering blogs](#company-engineering-blogs) zu den Firmen bei denen du dich vorstellst durch | :+1: | :+1: | :+1: |
+| Lese dir ein paar Artikel von [Real world architectures](#real-world-architectures) durch | :+1: | :+1: | :+1: |
+| Beschäftige dich mit [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| Arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Einige | Viele | Alle |
+| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
+| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Einige | Viele | Alle |
