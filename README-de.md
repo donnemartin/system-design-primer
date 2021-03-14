@@ -162,9 +162,9 @@ Beginne breit und fokussiere dich auf einige wenige Bereiche. Es hilft wenn man 
 
 | | Kurzfristig | Mittelfristig | Langfristig |
 |---|---|---|---|
-| Lese dir [System design topics](#index-of-system-design-topics) durch um ein breites Verständnis vom Zusammenspiel von Systemen zu bekommen | :+1: | :+1: | :+1: |
-| Lese dir ein paar Artikel von [Company engineering blogs](#company-engineering-blogs) zu den Firmen bei denen du dich vorstellst durch | :+1: | :+1: | :+1: |
-| Lese dir ein paar Artikel von [Real world architectures](#real-world-architectures) durch | :+1: | :+1: | :+1: |
+| Lese dir [System Design Themen: Starte hier](#system-desing-themen-starte-hier) durch um ein breites Verständnis vom Zusammenspiel von Systemen zu bekommen | :+1: | :+1: | :+1: |
+| Lese dir ein paar Artikel von [Engineering Blogs von Unternehmen](#engineering-blogs-von-unternehmen) zu den Firmen bei denen du dich vorstellst durch | :+1: | :+1: | :+1: |
+| Lese dir ein paar Artikel von [Architekturen aus der echten Welt](#architekturen-aus-der-echten-welt) durch | :+1: | :+1: | :+1: |
 | Beschäftige dich mit [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
 | Arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Einige | Viele | Alle |
 | Arbeite dich durch [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
