@@ -74,5 +74,5 @@ Beginne breit und fokussiere dich auf einige wenige Bereiche. Es hilft wenn man 
 | Lese dir ein paar Artikel von [Real world architectures](#real-world-architectures) durch | :+1: | :+1: | :+1: |
 | Beschäftige dich mit [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
 | Arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Einige | Viele | Alle |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Einige | Viele | Alle |
+| Arbeite dich durch [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
+| Beschäftige dich mit [Additional system design interview questions](#additional-system-design-interview-questions) | Einige | Viele | Alle |
