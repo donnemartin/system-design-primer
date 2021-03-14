@@ -18,17 +18,17 @@ The single responsibility principle advocates for small and autonomous service
 
 Workers in the application layer also help enable [asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism) .
 
-### [](https://github.com/donnemartin/system-design-primer#microservices) Microservices
+### Microservices
 
 Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices) , which can be described as a suite of independently deployable, small, modular services. Each service runs a unique process and communicates through a well-definied, lightweight mechanism to serve a business goal. [1](https://smartbear.com/learn/api-design/what-are-microservices) 
 
 Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
 
-### [](https://github.com/donnemartin/system-design-primer#service-discovery) Service Discovery
+### Service Discovery
 
 Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)  can help services find each other by keeping track of registered names, addresses, ports, etc.
 
-### [](https://github.com/donnemartin/system-design-primer#disadvantages-application-layer) Disadvantage(s) : application layer
+### Disadvantage(s) : application layer
 
 *   Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system) .
 *   Microservices can add complexity in terms of deployments and operations.
