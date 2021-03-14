@@ -1,4 +1,4 @@
-# Design Pastebin.com (or Bit.ly)
+# Design Pastebin.com (or Bit.ly) 
 
 *Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
@@ -79,7 +79,7 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/BKsBnmG.png)
+![Imgur](http://i.imgur.com/BKsBnmG.png) 
 
 ## Step 3: Design core components
 
@@ -89,17 +89,17 @@ Handy conversion guide:
 
 We could use a [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) as a large hash table, mapping the generated url to a file server and path containing the paste file.
 
-Instead of managing a file server, we could use a managed **Object Store** such as Amazon S3 or a [NoSQL document store](https://github.com/donnemartin/system-design-primer#document-store).
+Instead of managing a file server, we could use a managed **Object Store** such as Amazon S3 or a [NoSQL document store](https://github.com/donnemartin/system-design-primer#document-store) .
 
-An alternative to a relational database acting as a large hash table, we could use a [NoSQL key-value store](https://github.com/donnemartin/system-design-primer#key-value-store).  We should discuss the [tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).  The following discussion uses the relational database approach.
+An alternative to a relational database acting as a large hash table, we could use a [NoSQL key-value store](https://github.com/donnemartin/system-design-primer#key-value-store) .  We should discuss the [tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) .  The following discussion uses the relational database approach.
 
-* The **Client** sends a create paste request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Client** sends a create paste request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 
 * The **Web Server** forwards the request to the **Write API** server
 * The **Write API** server does the following:
     * Generates a unique url
         * Checks if the url is unique by looking at the **SQL Database** for a duplicate
         * If the url is not unique, it generates another url
-        * If we supported a custom url, we could use the user-supplied (also check for a duplicate)
+        * If we supported a custom url, we could use the user-supplied (also check for a duplicate) 
     * Saves to the **SQL Database** `pastes` table
     * Saves the paste data to the **Object Store**
     * Returns the url
@@ -113,7 +113,7 @@ shortlink char(7) NOT NULL
 expiration_length_in_minutes int NOT NULL
 created_at datetime NOT NULL
 paste_path varchar(255) NOT NULL
-PRIMARY KEY(shortlink)
+PRIMARY KEY(shortlink) 
 ```
 
 Setting the primary key to be based on the `shortlink` column creates an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) that the database uses to enforce uniqueness. We'll create an additional index on `created_at` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
@@ -126,17 +126,17 @@ To generate the unique url, we could:
     * Alternatively, we could also take the MD5 hash of randomly-generated data
 * [**Base 62**](https://www.kerstner.at/2012/07/shortening-strings-using-base-62-encoding/) encode the MD5 hash
     * Base 62 encodes to `[a-zA-Z0-9]` which works well for urls, eliminating the need for escaping special characters
-    * There is only one hash result for the original input and Base 62 is deterministic (no randomness involved)
+    * There is only one hash result for the original input and Base 62 is deterministic (no randomness involved) 
     * Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
     * The following [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) runs in O(k) time where k is the number of digits = 7:
 
 ```python
-def base_encode(num, base=62):
+def base_encode(num, base=62) :
     digits = []
     while num > 0
-      remainder = modulo(num, base)
-      digits.push(remainder)
-      num = divide(num, base)
+      remainder = modulo(num, base) 
+      digits.push(remainder) 
+      num = divide(num, base) 
     digits = digits.reverse
 ```
 
@@ -146,7 +146,7 @@ def base_encode(num, base=62):
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
-We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) :
 
 ```
 $ curl -X POST --data '{ "expiration_length_in_minutes": "60", \
@@ -161,7 +161,7 @@ Response:
 }
 ```
 
-For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc) .
 
 ### Use case: User enters a paste's url and views the contents
 
@@ -195,36 +195,36 @@ Since realtime analytics are not a requirement, we could simply **MapReduce** th
 **Clarify with your interviewer how much code you are expected to write**.
 
 ```python
-class HitCounts(MRJob):
+class HitCounts(MRJob) :
 
-    def extract_url(self, line):
+    def extract_url(self, line) :
         """Extract the generated url from the log line."""
         ...
 
-    def extract_year_month(self, line):
+    def extract_year_month(self, line) :
         """Return the year and month portions of the timestamp."""
         ...
 
-    def mapper(self, _, line):
+    def mapper(self, _, line) :
         """Parse each log line, extract and transform relevant lines.
 
         Emit key value pairs of the form:
 
-        (2016-01, url0), 1
-        (2016-01, url0), 1
-        (2016-01, url1), 1
+        (2016-01, url0) , 1
+        (2016-01, url0) , 1
+        (2016-01, url1) , 1
         """
-        url = self.extract_url(line)
-        period = self.extract_year_month(line)
-        yield (period, url), 1
+        url = self.extract_url(line) 
+        period = self.extract_year_month(line) 
+        yield (period, url) , 1
 
-    def reducer(self, key, values):
+    def reducer(self, key, values) :
         """Sum values for each key.
 
-        (2016-01, url0), 2
-        (2016-01, url1), 1
+        (2016-01, url0) , 2
+        (2016-01, url1) , 1
         """
-        yield key, sum(values)
+        yield key, sum(values) 
 ```
 
 ### Use case: Service deletes expired pastes
@@ -235,7 +235,7 @@ To delete expired pastes, we could just scan the **SQL Database** for all entrie
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/4edXG0T.png)
+![Imgur](http://i.imgur.com/4edXG0T.png) 
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
@@ -247,31 +247,31 @@ We'll introduce some components to complete the design and to address scalabilit
 
 *To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system) 
+* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network) 
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer) 
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling) 
+* [Web server (reverse proxy) ](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 
+* [API server (application layer) ](https://github.com/donnemartin/system-design-primer#application-layer) 
+* [Cache](https://github.com/donnemartin/system-design-primer#cache) 
+* [Relational database management system (RDBMS) ](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 
+* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over) 
+* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication) 
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns) 
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns) 
 
 The **Analytics Database** could use a data warehousing solution such as Amazon Redshift or Google BigQuery.
 
 An **Object Store** such as Amazon S3 can comfortably handle the constraint of 12.7 GB of new content per month.
 
-To address the 40 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
+To address the 40 *average* read requests per second (higher at peak) , traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
 
 4 *average* paste writes per second (with higher at peak) should be do-able for a single **SQL Write Master-Slave**.  Otherwise, we'll need to employ additional SQL scaling patterns:
 
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation) 
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding) 
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization) 
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning) 
 
 We should also consider moving some data to a **NoSQL Database**.
 
@@ -281,50 +281,50 @@ We should also consider moving some data to a **NoSQL Database**.
 
 #### NoSQL
 
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store) 
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store) 
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store) 
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database) 
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) 
 
 ### Caching
 
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching) 
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching) 
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching) 
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching) 
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching) 
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level) 
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level) 
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside) 
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through) 
+    * [Write-behind (write-back) ](https://github.com/donnemartin/system-design-primer#write-behind-write-back) 
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead) 
 
 ### Asynchronism and microservices
 
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues) 
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues) 
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure) 
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices) 
 
 ### Communications
 
 * Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) 
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc) 
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery) 
 
 ### Security
 
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security) .
 
 ### Latency numbers
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know) .
 
 ### Ongoing
 

@@ -1,6 +1,6 @@
 # 设计推特时间轴与搜索功能
 
-**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
+**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
 **设计 Facebook 的 feed** 与**设计 Facebook 搜索**与此为同一类型问题。
 
@@ -74,11 +74,11 @@
     * 每条推特 10 KB  * 每天 5 亿条推特 * 每月 30 天
     * 3 年产生新推特的内容为 5.4 PB
 * 每秒需要处理 10 万次读取请求
-    * 每个月需要处理 2500 亿次请求 * (每秒 400 次请求 / 每月 10 亿次请求)
+    * 每个月需要处理 2500 亿次请求 * (每秒 400 次请求 / 每月 10 亿次请求) 
 * 每秒发布 6000 条推特
-    * 每月发布 150 亿条推特 * (每秒 400 次请求 / 每月 10 次请求)
+    * 每月发布 150 亿条推特 * (每秒 400 次请求 / 每月 10 次请求) 
 * 每秒推送 6 万条推特
-    * 每月推送 1500 亿条推特 * (每秒 400 次请求 / 每月 10 亿次请求)
+    * 每月推送 1500 亿条推特 * (每秒 400 次请求 / 每月 10 亿次请求) 
 * 每秒 4000 次搜索请求
 
 便利换算指南：
@@ -92,7 +92,7 @@
 
 > 列出所有重要组件以规划概要设计。
 
-![Imgur](http://i.imgur.com/48tEA2j.png)
+![Imgur](http://i.imgur.com/48tEA2j.png) 
 
 ## 第三步：设计核心组件
 
@@ -100,13 +100,13 @@
 
 ### 用例：用户发表了一篇推特
 
-我们可以将用户自己发表的推特存储在[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)中。我们也可以讨论一下[究竟是用 SQL 还是用 NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
+我们可以将用户自己发表的推特存储在[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 中。我们也可以讨论一下[究竟是用 SQL 还是用 NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 。
 
-构建用户主页时间轴（查看关注用户的活动）以及推送推特是件麻烦事。将特推传播给所有关注者（每秒约递送 6 万条推特）这一操作有可能会使传统的[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)超负载。因此，我们可以使用 **NoSQL 数据库**或**内存数据库**之类的更快的数据存储方式。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
+构建用户主页时间轴（查看关注用户的活动）以及推送推特是件麻烦事。将特推传播给所有关注者（每秒约递送 6 万条推特）这一操作有可能会使传统的[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 超负载。因此，我们可以使用 **NoSQL 数据库**或**内存数据库**之类的更快的数据存储方式。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
 
 我们可以将照片、视频之类的媒体存储于**对象存储**中。
 
-* **客户端**向应用[反向代理](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)的**Web 服务器**发送一条推特
+* **客户端**向应用[反向代理](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 的**Web 服务器**发送一条推特
 * **Web 服务器**将请求转发给**写 API**服务器
 * **写 API**服务器将推特使用 **SQL 数据库**存储于用户时间轴中
 * **写 API**调用**消息输出服务**，进行以下操作：
@@ -130,7 +130,7 @@
 
 新发布的推特将被存储在对应用户（关注且活跃的用户）的主页时间轴的**内存缓存**中。
 
-我们可以调用一个公共的 [REST API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
+我们可以调用一个公共的 [REST API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) ：
 
 ```
 $ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123", \
@@ -150,16 +150,16 @@ $ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123", \
 }
 ```
 
-而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
+而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 。
 
 ### 用例：用户浏览主页时间轴
 
 * **客户端**向 **Web 服务器**发起一次读取主页时间轴的请求
 * **Web 服务器**将请求转发给**读取 API**服务器
 * **读取 API**服务器调用**时间轴服务**进行以下操作：
-    * 从**内存缓存**读取时间轴数据，其中包括推特 id 与用户 id - O(1)
-    * 通过 [multiget](http://redis.io/commands/mget) 向**推特信息服务**进行查询，以获取相关 id 推特的额外信息 - O(n)
-    * 通过 muiltiget 向**用户信息服务**进行查询，以获取相关 id 用户的额外信息 - O(n)
+    * 从**内存缓存**读取时间轴数据，其中包括推特 id 与用户 id - O(1) 
+    * 通过 [multiget](http://redis.io/commands/mget) 向**推特信息服务**进行查询，以获取相关 id 推特的额外信息 - O(n) 
+    * 通过 muiltiget 向**用户信息服务**进行查询，以获取相关 id 用户的额外信息 - O(n) 
 
 REST API：
 
@@ -206,8 +206,8 @@ REST API 与前面的主页时间轴类似，区别只在于取出的推特是�
         * 修正拼写错误
         * 规范字母大小写
         * 将查询转换为布尔操作
-    * 查询**搜索集群**（例如[Lucene](https://lucene.apache.org/)）检索结果：
-        * 对集群内的所有服务器进行查询，将有结果的查询进行[发散聚合（Scatter gathers）](https://github.com/donnemartin/system-design-primer#under-development)
+    * 查询**搜索集群**（例如[Lucene](https://lucene.apache.org/) ）检索结果：
+        * 对集群内的所有服务器进行查询，将有结果的查询进行[发散聚合（Scatter gathers）](https://github.com/donnemartin/system-design-primer#under-development) 
         * 合并取到的条目，进行评分与排序，最终返回结果
 
 REST API：
@@ -222,7 +222,7 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 
 > 根据限制条件，找到并解决瓶颈。
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](http://i.imgur.com/MzExP06.png) 
 
 **重要提示：不要从最初设计直接跳到最终设计中！**
 
@@ -232,19 +232,19 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 
 我们将会介绍一些组件来完成设计，并解决架构扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
 
-**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
+**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
-* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
-* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
-* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
-* [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
-* [SQL 故障主从切换](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
-* [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
+* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统) 
+* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器) 
+* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展) 
+* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 
+* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层) 
+* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存) 
+* [关系型数据库管理系统 (RDBMS) ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms) 
+* [SQL 故障主从切换](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换) 
+* [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制) 
+* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式) 
+* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式) 
 
 **消息输出服务**有可能成为性能瓶颈。那些有着百万数量关注着的用户可能发一条推特就需要好几分钟才能完成消息输出进程。这有可能使 @回复 这种推特时出现竞争条件，因此需要根据服务时间对此推特进行重排序来降低影响。
 
@@ -267,10 +267,10 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 
 高容量的写入将淹没单个的 **SQL 写主从**模式，因此需要更多的拓展技术。
 
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
+* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合) 
+* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片) 
+* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化) 
+* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优) 
 
 我们也可以考虑将一些数据移至 **NoSQL 数据库**。
 
@@ -280,50 +280,50 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 
 #### NoSQL
 
-* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
-* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
+* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储) 
+* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储) 
+* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储) 
+* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库) 
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 
 
 ### 缓存
 
 * 在哪缓存
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
-    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
+    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存) 
+    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存) 
+    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存) 
+    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存) 
+    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存) 
 * 什么需要缓存
-    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
-    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
+    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存) 
+    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存) 
 * 何时更新缓存
-    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
-    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
-    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
-    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
+    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式) 
+    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式) 
+    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式) 
+    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新) 
 
 ### 异步与微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
+* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列) 
+* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列) 
+* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压) 
+* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务) 
 
 ### 通信
 
 * 可权衡选择的方案：
-    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
+    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) 
+    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 
+* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现) 
 
 ### 安全性
 
-请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)一章。
+请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全) 一章。
 
 ### 延迟数值
 
-请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
+请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数) 。
 
 ### 持续探讨
 

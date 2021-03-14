@@ -1,6 +1,6 @@
 # 设计一个网页爬虫
 
-**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
+**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
 ## 第一步：简述用例与约束条件
 
@@ -67,7 +67,7 @@
 
 > 列出所有重要组件以规划概要设计。
 
-![Imgur](http://i.imgur.com/xjdAAUv.png)
+![Imgur](http://i.imgur.com/xjdAAUv.png) 
 
 ## 第三步：设计核心组件
 
@@ -75,11 +75,11 @@
 
 ### 用例：爬虫服务抓取一系列网页
 
-假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用 [Yahoo](https://www.yahoo.com/)、[DMOZ](http://www.dmoz.org/) 等知名门户网站作为种子链接来进行扩散 。
+假设我们有一个初始列表 `links_to_crawl`（待抓取链接），它最初基于网站整体的知名度来排序。当然如果这个假设不合理，我们可以使用 [Yahoo](https://www.yahoo.com/) 、[DMOZ](http://www.dmoz.org/) 等知名门户网站作为种子链接来进行扩散 。
 
 我们将用表 `crawled_links` （已抓取链接 ）来记录已经处理过的链接以及相应的页面签名。
 
-我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型 **NoSQL 数据库**中。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
+我们可以将 `links_to_crawl` 和 `crawled_links` 记录在键-值型 **NoSQL 数据库**中。对于 `crawled_links` 中已排序的链接，我们可以使用 [Redis](https://redis.io/) 的有序集合来维护网页链接的排名。我们应当在 [选择 SQL 还是 NoSQL 的问题上，讨论有关使用场景以及利弊 ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 。
 
 *  **爬虫服务**按照以下流程循环处理每一个页面链接：
     * 选取排名最靠前的待抓取链接
@@ -88,7 +88,7 @@
                 * 这样做可以避免陷入死循环
                 * 继续（进入下一次循环）
             * 若不存在，则抓取该链接
-                * 在**倒排索引服务**任务队列中，新增一个生成[倒排索引](https://en.wikipedia.org/wiki/Search_engine_indexing)任务。
+                * 在**倒排索引服务**任务队列中，新增一个生成[倒排索引](https://en.wikipedia.org/wiki/Search_engine_indexing) 任务。
                 * 在**文档服务**任务队列中，新增一个生成静态标题和摘要的任务。
                 * 生成页面签名
                 * 在 **NoSQL 数据库**的 `links_to_crawl` 中删除该链接
@@ -99,33 +99,33 @@
 `PagesDataStore` 是**爬虫服务**中的一个抽象类，它使用 **NoSQL 数据库**进行存储。
 
 ```python
-class PagesDataStore(object):
+class PagesDataStore(object) :
 
-    def __init__(self, db);
+    def __init__(self, db) ;
         self.db = db
         ...
 
-    def add_link_to_crawl(self, url):
+    def add_link_to_crawl(self, url) :
         """将指定链接加入 `links_to_crawl`。"""
         ...
 
-    def remove_link_to_crawl(self, url):
+    def remove_link_to_crawl(self, url) :
         """从 `links_to_crawl` 中删除指定链接。"""
         ...
 
-    def reduce_priority_link_to_crawl(self, url)
+    def reduce_priority_link_to_crawl(self, url) 
         """在 `links_to_crawl` 中降低一个链接的优先级以避免死循环。"""
         ...
 
-    def extract_max_priority_page(self):
+    def extract_max_priority_page(self) :
         """返回 `links_to_crawl` 中优先级最高的链接。"""
         ...
 
-    def insert_crawled_link(self, url, signature):
+    def insert_crawled_link(self, url, signature) :
         """将指定链接加入 `crawled_links`。"""
         ...
 
-    def crawled_similar(self, signature):
+    def crawled_similar(self, signature) :
         """判断待抓取页面的签名是否与某个已抓取页面的签名相似。"""
         ...
 ```
@@ -133,9 +133,9 @@ class PagesDataStore(object):
 `Page` 是**爬虫服务**的一个抽象类，它封装了网页对象，由页面链接、页面内容、子链接和页面签名构成。
 
 ```python
-class Page(object):
+class Page(object) :
 
-    def __init__(self, url, contents, child_urls, signature):
+    def __init__(self, url, contents, child_urls, signature) :
         self.url = url
         self.contents = contents
         self.child_urls = child_urls
@@ -145,33 +145,33 @@ class Page(object):
 `Crawler` 是**爬虫服务**的主类，由`Page` 和 `PagesDataStore` 组成。
 
 ```python
-class Crawler(object):
+class Crawler(object) :
 
-    def __init__(self, data_store, reverse_index_queue, doc_index_queue):
+    def __init__(self, data_store, reverse_index_queue, doc_index_queue) :
         self.data_store = data_store
         self.reverse_index_queue = reverse_index_queue
         self.doc_index_queue = doc_index_queue
 
-    def create_signature(self, page):
+    def create_signature(self, page) :
         """基于页面链接与内容生成签名。"""
         ...
 
-    def crawl_page(self, page):
+    def crawl_page(self, page) :
         for url in page.child_urls:
-            self.data_store.add_link_to_crawl(url)
-        page.signature = self.create_signature(page)
-        self.data_store.remove_link_to_crawl(page.url)
-        self.data_store.insert_crawled_link(page.url, page.signature)
+            self.data_store.add_link_to_crawl(url) 
+        page.signature = self.create_signature(page) 
+        self.data_store.remove_link_to_crawl(page.url) 
+        self.data_store.insert_crawled_link(page.url, page.signature) 
 
-    def crawl(self):
+    def crawl(self) :
         while True:
-            page = self.data_store.extract_max_priority_page()
+            page = self.data_store.extract_max_priority_page() 
             if page is None:
                 break
-            if self.data_store.crawled_similar(page.signature):
-                self.data_store.reduce_priority_link_to_crawl(page.url)
+            if self.data_store.crawled_similar(page.signature) :
+                self.data_store.reduce_priority_link_to_crawl(page.url) 
             else:
-                self.crawl_page(page)
+                self.crawl_page(page) 
 ```
 
 ### 处理重复内容
@@ -186,18 +186,18 @@ class Crawler(object):
 * 假设有 10 亿条数据，我们应该使用 **MapReduce** 来输出只出现 1 次的记录。
 
 ```python
-class RemoveDuplicateUrls(MRJob):
+class RemoveDuplicateUrls(MRJob) :
 
-    def mapper(self, _, line):
+    def mapper(self, _, line) :
         yield line, 1
 
-    def reducer(self, key, values):
-        total = sum(values)
+    def reducer(self, key, values) :
+        total = sum(values) 
         if total == 1:
             yield key, total
 ```
 
-比起处理重复内容，检测重复内容更为复杂。我们可以基于网页内容生成签名，然后对比两者签名的相似度。可能会用到的算法有 [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) 以及 [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)。
+比起处理重复内容，检测重复内容更为复杂。我们可以基于网页内容生成签名，然后对比两者签名的相似度。可能会用到的算法有 [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) 以及 [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity) 。
 
 ### 抓取结果更新策略
 
@@ -209,7 +209,7 @@ class RemoveDuplicateUrls(MRJob):
 
 ### 用例：用户输入搜索词后，可以看到相关的搜索结果列表，列表每一项都包含由网页爬虫生成的页面标题及摘要
 
-*  **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
+*  **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 的 **Web 服务器**发送一个请求
 * **Web 服务器** 发送请求到 **Query API** 服务器
 * **查询 API** 服务将会做这些事情：
     * 解析查询参数
@@ -248,14 +248,14 @@ $ curl https://search.com/api/v1/search?query=hello+world
 },
 ```
 
-对于服务器内部通信，我们可以使用 [远程过程调用协议（RPC）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
+对于服务器内部通信，我们可以使用 [远程过程调用协议（RPC）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 
 
 
 ## 第四步：架构扩展
 
 > 根据限制条件，找到并解决瓶颈。
 
-![Imgur](http://i.imgur.com/bWxPtQA.png)
+![Imgur](http://i.imgur.com/bWxPtQA.png) 
 
 **重要提示：不要直接从最初设计跳到最终设计！**
 
@@ -265,17 +265,17 @@ $ curl https://search.com/api/v1/search?query=hello+world
 
 我们将会介绍一些组件来完成设计，并解决架构规模扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
 
-**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及替代方案。
+**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 相关部分来了解其要点、方案的权衡取舍以及替代方案。
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
-* [水平扩展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
-* [Web 服务器（反向代理）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
-* [API 服务器（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
-* [NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#nosql)
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
+* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统) 
+* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器) 
+* [水平扩展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展) 
+* [Web 服务器（反向代理）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 
+* [API 服务器（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层) 
+* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存) 
+* [NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#nosql) 
+* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式) 
+* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式) 
 
 有些搜索词非常热门，有些则非常冷门。热门的搜索词可以通过诸如 Redis 或者 Memcached 之类的**内存缓存**来缩短响应时间，避免**倒排索引服务**以及**文档服务**过载。**内存缓存**同样适用于流量分布不均匀以及流量短时高峰问题。从内存中读取 1 MB  连续数据大约需要 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数">1</a></sup>
 
@@ -284,7 +284,7 @@ $ curl https://search.com/api/v1/search?query=hello+world
 
 * 为了处理数据大小问题以及网络请求负载，**倒排索引服务**和**文档服务**可能需要大量应用数据分片和数据复制。
 * DNS 查询可能会成为瓶颈，**爬虫服务**最好专门维护一套定期更新的 DNS 查询服务。
-* 借助于[连接池](https://en.wikipedia.org/wiki/Connection_pool)，即同时维持多个开放网络连接，可以提升**爬虫服务**的性能并减少内存使用量。
+* 借助于[连接池](https://en.wikipedia.org/wiki/Connection_pool) ，即同时维持多个开放网络连接，可以提升**爬虫服务**的性能并减少内存使用量。
     * 改用 [UDP](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#用户数据报协议udp) 协议同样可以提升性能
 * 网络爬虫受带宽影响较大，请确保带宽足够维持高吞吐量。
 
@@ -294,61 +294,61 @@ $ curl https://search.com/api/v1/search?query=hello+world
 
 ### SQL 扩展模式
 
-* [读取复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
+* [读取复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制) 
+* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合) 
+* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片) 
+* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化) 
+* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优) 
 
 #### NoSQL
 
-* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
-* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
+* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储) 
+* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储) 
+* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储) 
+* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库) 
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 
 
 
 ### 缓存
 
 * 在哪缓存
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
-    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
+    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存) 
+    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存) 
+    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存) 
+    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存) 
+    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存) 
 * 什么需要缓存
-    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
-    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
+    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存) 
+    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存) 
 * 何时更新缓存
-    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
-    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
-    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
-    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
+    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式) 
+    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式) 
+    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式) 
+    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新) 
 
 ### 异步与微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
+* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列) 
+* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列) 
+* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压) 
+* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务) 
 
 ### 通信
 
 * 可权衡选择的方案：
-    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-    * 内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
+    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) 
+    * 内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 
+* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现) 
 
 
 ### 安全性
 
-请参阅[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)。
+请参阅[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全) 。
 
 
 ### 延迟数值
 
-请参阅[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
+请参阅[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数) 。
 
 ### 持续探讨
 

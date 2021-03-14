@@ -1,6 +1,6 @@
 # 设计一个键-值缓存来存储最近 web 服务查询的结果
 
-**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
+**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
 ## 第一步：简述用例与约束条件
 
@@ -58,7 +58,7 @@
 
 > 列出所有重要组件以规划概要设计。
 
-![Imgur](http://i.imgur.com/KqZ3dSx.png)
+![Imgur](http://i.imgur.com/KqZ3dSx.png) 
 
 ## 第三步：设计核心组件
 
@@ -70,7 +70,7 @@
 
 由于缓存容量有限，我们将使用 LRU（近期最少使用算法）来控制缓存的过期。
 
-* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
+* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 的 **Web 服务器**发送一个请求
 * 这个 **Web 服务器**将请求转发给**查询 API** 服务
 * **查询 API** 服务将会做这些事情：
     * 分析查询
@@ -98,33 +98,33 @@
 实现**查询 API 服务**：
 
 ```python
-class QueryApi(object):
+class QueryApi(object) :
 
-    def __init__(self, memory_cache, reverse_index_service):
+    def __init__(self, memory_cache, reverse_index_service) :
         self.memory_cache = memory_cache
         self.reverse_index_service = reverse_index_service
 
-    def parse_query(self, query):
+    def parse_query(self, query) :
         """移除多余内容，将文本分割成词组，修复拼写错误，
         规范化字母大小写，转换布尔运算。
         """
         ...
 
-    def process_query(self, query):
-        query = self.parse_query(query)
-        results = self.memory_cache.get(query)
+    def process_query(self, query) :
+        query = self.parse_query(query) 
+        results = self.memory_cache.get(query) 
         if results is None:
-            results = self.reverse_index_service.process_search(query)
-            self.memory_cache.set(query, results)
+            results = self.reverse_index_service.process_search(query) 
+            self.memory_cache.set(query, results) 
         return results
 ```
 
 实现**节点**：
 
 ```python
-class Node(object):
+class Node(object) :
 
-    def __init__(self, query, results):
+    def __init__(self, query, results) :
         self.query = query
         self.results = results
 ```
@@ -132,34 +132,34 @@ class Node(object):
 实现**链表**：
 
 ```python
-class LinkedList(object):
+class LinkedList(object) :
 
-    def __init__(self):
+    def __init__(self) :
         self.head = None
         self.tail = None
 
-    def move_to_front(self, node):
+    def move_to_front(self, node) :
         ...
 
-    def append_to_front(self, node):
+    def append_to_front(self, node) :
         ...
 
-    def remove_from_tail(self):
+    def remove_from_tail(self) :
         ...
 ```
 
 实现**缓存**：
 
 ```python
-class Cache(object):
+class Cache(object) :
 
-    def __init__(self, MAX_SIZE):
+    def __init__(self, MAX_SIZE) :
         self.MAX_SIZE = MAX_SIZE
         self.size = 0
         self.lookup = {}  # key: query, value: node
-        self.linked_list = LinkedList()
+        self.linked_list = LinkedList() 
 
-    def get(self, query)
+    def get(self, query) 
         """从缓存取得存储的内容
 
         将入口节点位置更新为 LRU 链表的头部。
@@ -167,10 +167,10 @@ class Cache(object):
         node = self.lookup[query]
         if node is None:
             return None
-        self.linked_list.move_to_front(node)
+        self.linked_list.move_to_front(node) 
         return node.results
 
-    def set(self, results, query):
+    def set(self, results, query) :
         """将所给查询键的结果存在缓存中。
 
         当更新缓存记录的时候，将它的位置指向 LRU 链表的头部。
@@ -181,18 +181,18 @@ class Cache(object):
         if node is not None:
             # 键存在于缓存中，更新它对应的值
             node.results = results
-            self.linked_list.move_to_front(node)
+            self.linked_list.move_to_front(node) 
         else:
             # 键不存在于缓存中
             if self.size == self.MAX_SIZE:
                 # 在链表中查找并删除最老的记录
-                self.lookup.pop(self.linked_list.tail.query, None)
-                self.linked_list.remove_from_tail()
+                self.lookup.pop(self.linked_list.tail.query, None) 
+                self.linked_list.remove_from_tail() 
             else:
                 self.size += 1
             # 添加新的键值对
-            new_node = Node(query, results)
-            self.linked_list.append_to_front(new_node)
+            new_node = Node(query, results) 
+            self.linked_list.append_to_front(new_node) 
             self.lookup[query] = new_node
 ```
 
@@ -206,13 +206,13 @@ class Cache(object):
 
 解决这些问题的最直接的方法，就是为缓存记录设置一个它在被更新前能留在缓存中的最长时间，这个时间简称为存活时间（TTL）。
 
-参考 [「何时更新缓存」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#何时更新缓存)来了解其权衡取舍及替代方案。以上方法在[缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)一章中详细地进行了描述。
+参考 [「何时更新缓存」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#何时更新缓存) 来了解其权衡取舍及替代方案。以上方法在[缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式) 一章中详细地进行了描述。
 
 ## 第四步：架构扩展
 
 > 根据限制条件，找到并解决瓶颈。
 
-![Imgur](http://i.imgur.com/4j99mhe.png)
+![Imgur](http://i.imgur.com/4j99mhe.png) 
 
 **重要提示：不要从最初设计直接跳到最终设计中！**
 
@@ -222,16 +222,16 @@ class Cache(object):
 
 我们将会介绍一些组件来完成设计，并解决架构扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
 
-**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
+**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
-* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
-* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
-* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
+* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统) 
+* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器) 
+* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展) 
+* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 
+* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层) 
+* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存) 
+* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式) 
+* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式) 
 
 ### 将内存缓存扩大到多台机器
 
@@ -239,7 +239,7 @@ class Cache(object):
 
 * **缓存集群中的每一台机器都有自己的缓存** - 简单，但是它会降低缓存命中率。
 * **缓存集群中的每一台机器都有缓存的拷贝** - 简单，但是它的内存使用效率太低了。
-* **对缓存进行[分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)，分别部署在缓存集群中的所有机器中** - 更加复杂，但是它是最佳的选择。我们可以使用哈希，用查询语句 `machine = hash(query)` 来确定哪台机器有需要缓存。当然我们也可以使用[一致性哈希](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#正在完善中)。
+* **对缓存进行[分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片) ，分别部署在缓存集群中的所有机器中** - 更加复杂，但是它是最佳的选择。我们可以使用哈希，用查询语句 `machine = hash(query) ` 来确定哪台机器有需要缓存。当然我们也可以使用[一致性哈希](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#正在完善中) 。
 
 ## 其它要点
 
@@ -247,58 +247,58 @@ class Cache(object):
 
 ### SQL 缩放模式
 
-* [读取复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
+* [读取复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制) 
+* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合) 
+* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片) 
+* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化) 
+* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优) 
 
 #### NoSQL
 
-* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
-* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
+* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储) 
+* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储) 
+* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储) 
+* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库) 
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 
 
 ### 缓存
 
 * 在哪缓存
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
-    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
+    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存) 
+    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存) 
+    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存) 
+    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存) 
+    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存) 
 * 什么需要缓存
-    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
-    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
+    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存) 
+    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存) 
 * 何时更新缓存
-    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
-    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
-    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
-    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
+    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式) 
+    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式) 
+    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式) 
+    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新) 
 
 ### 异步与微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
+* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列) 
+* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列) 
+* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压) 
+* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务) 
 
 ### 通信
 
 * 可权衡选择的方案：
-    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
+    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) 
+    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 
+* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现) 
 
 ### 安全性
 
-请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)一章。
+请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全) 一章。
 
 ### 延迟数值
 
-请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
+请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数) 。
 
 ### 持续探讨
 

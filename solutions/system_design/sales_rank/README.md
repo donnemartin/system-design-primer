@@ -70,7 +70,7 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/vwMa1Qu.png)
+![Imgur](http://i.imgur.com/vwMa1Qu.png) 
 
 ## Step 3: Design core components
 
@@ -95,93 +95,93 @@ t5          product4    category1      1        5.00         5            6
 ...
 ```
 
-The **Sales Rank Service** could use **MapReduce**, using the **Sales API** server log files as input and writing the results to an aggregate table `sales_rank` in a **SQL Database**.  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
+The **Sales Rank Service** could use **MapReduce**, using the **Sales API** server log files as input and writing the results to an aggregate table `sales_rank` in a **SQL Database**.  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) .
 
 We'll use a multi-step **MapReduce**:
 
-* **Step 1** - Transform the data to `(category, product_id), sum(quantity)`
+* **Step 1** - Transform the data to `(category, product_id) , sum(quantity) `
 * **Step 2** - Perform a distributed sort
 
 ```python
-class SalesRanker(MRJob):
+class SalesRanker(MRJob) :
 
-    def within_past_week(self, timestamp):
+    def within_past_week(self, timestamp) :
         """Return True if timestamp is within past week, False otherwise."""
         ...
 
-    def mapper(self, _ line):
+    def mapper(self, _ line) :
         """Parse each log line, extract and transform relevant lines.
 
         Emit key value pairs of the form:
 
-        (category1, product1), 2
-        (category2, product1), 2
-        (category2, product1), 1
-        (category1, product2), 3
-        (category2, product3), 7
-        (category1, product4), 1
+        (category1, product1) , 2
+        (category2, product1) , 2
+        (category2, product1) , 1
+        (category1, product2) , 3
+        (category2, product3) , 7
+        (category1, product4) , 1
         """
         timestamp, product_id, category_id, quantity, total_price, seller_id, \
-            buyer_id = line.split('\t')
-        if self.within_past_week(timestamp):
-            yield (category_id, product_id), quantity
+            buyer_id = line.split('\t') 
+        if self.within_past_week(timestamp) :
+            yield (category_id, product_id) , quantity
 
-    def reducer(self, key, value):
+    def reducer(self, key, value) :
         """Sum values for each key.
 
-        (category1, product1), 2
-        (category2, product1), 3
-        (category1, product2), 3
-        (category2, product3), 7
-        (category1, product4), 1
+        (category1, product1) , 2
+        (category2, product1) , 3
+        (category1, product2) , 3
+        (category2, product3) , 7
+        (category1, product4) , 1
         """
-        yield key, sum(values)
+        yield key, sum(values) 
 
-    def mapper_sort(self, key, value):
+    def mapper_sort(self, key, value) :
         """Construct key to ensure proper sorting.
 
         Transform key and value to the form:
 
-        (category1, 2), product1
-        (category2, 3), product1
-        (category1, 3), product2
-        (category2, 7), product3
-        (category1, 1), product4
+        (category1, 2) , product1
+        (category2, 3) , product1
+        (category1, 3) , product2
+        (category2, 7) , product3
+        (category1, 1) , product4
 
         The shuffle/sort step of MapReduce will then do a
         distributed sort on the keys, resulting in:
 
-        (category1, 1), product4
-        (category1, 2), product1
-        (category1, 3), product2
-        (category2, 3), product1
-        (category2, 7), product3
+        (category1, 1) , product4
+        (category1, 2) , product1
+        (category1, 3) , product2
+        (category2, 3) , product1
+        (category2, 7) , product3
         """
         category_id, product_id = key
         quantity = value
-        yield (category_id, quantity), product_id
+        yield (category_id, quantity) , product_id
 
-    def reducer_identity(self, key, value):
+    def reducer_identity(self, key, value) :
         yield key, value
 
-    def steps(self):
+    def steps(self) :
         """Run the map and reduce steps."""
         return [
             self.mr(mapper=self.mapper,
-                    reducer=self.reducer),
+                    reducer=self.reducer) ,
             self.mr(mapper=self.mapper_sort,
-                    reducer=self.reducer_identity),
+                    reducer=self.reducer_identity) ,
         ]
 ```
 
 The result would be the following sorted list, which we could insert into the `sales_rank` table:
 
 ```
-(category1, 1), product4
-(category1, 2), product1
-(category1, 3), product2
-(category2, 3), product1
-(category2, 7), product3
+(category1, 1) , product4
+(category1, 2) , product1
+(category1, 3) , product2
+(category2, 3) , product1
+(category2, 7) , product3
 ```
 
 The `sales_rank` table could have the following structure:
@@ -191,20 +191,20 @@ id int NOT NULL AUTO_INCREMENT
 category_id int NOT NULL
 total_sold int NOT NULL
 product_id int NOT NULL
-PRIMARY KEY(id)
-FOREIGN KEY(category_id) REFERENCES Categories(id)
-FOREIGN KEY(product_id) REFERENCES Products(id)
+PRIMARY KEY(id) 
+FOREIGN KEY(category_id) REFERENCES Categories(id) 
+FOREIGN KEY(product_id) REFERENCES Products(id) 
 ```
 
 We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id `, `category_id`, and `product_id` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 
 ### Use case: User views the past week's most popular products by category
 
-* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 
 * The **Web Server** forwards the request to the **Read API** server
 * The **Read API** server reads from the **SQL Database** `sales_rank` table
 
-We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) :
 
 ```
 $ curl https://amazon.com/api/v1/popular?category_id=1234
@@ -233,13 +233,13 @@ Response:
 },
 ```
 
-For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc) .
 
 ## Step 4: Scale the design
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](http://i.imgur.com/MzExP06.png) 
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
@@ -251,33 +251,33 @@ We'll introduce some components to complete the design and to address scalabilit
 
 *To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system) 
+* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network) 
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer) 
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling) 
+* [Web server (reverse proxy) ](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 
+* [API server (application layer) ](https://github.com/donnemartin/system-design-primer#application-layer) 
+* [Cache](https://github.com/donnemartin/system-design-primer#cache) 
+* [Relational database management system (RDBMS) ](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 
+* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over) 
+* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication) 
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns) 
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns) 
 
 The **Analytics Database** could use a data warehousing solution such as Amazon Redshift or Google BigQuery.
 
 We might only want to store a limited time period of data in the database, while storing the rest in a data warehouse or in an **Object Store**.  An **Object Store** such as Amazon S3 can comfortably handle the constraint of 40 GB of new content per month.
 
-To address the 40,000 *average* read requests per second (higher at peak), traffic for popular content (and their sales rank) should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  With the large volume of reads, the **SQL Read Replicas** might not be able to handle the cache misses.  We'll probably need to employ additional SQL scaling patterns.
+To address the 40,000 *average* read requests per second (higher at peak) , traffic for popular content (and their sales rank) should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  With the large volume of reads, the **SQL Read Replicas** might not be able to handle the cache misses.  We'll probably need to employ additional SQL scaling patterns.
 
 400 *average* writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques.
 
 SQL scaling patterns include:
 
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation) 
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding) 
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization) 
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning) 
 
 We should also consider moving some data to a **NoSQL Database**.
 
@@ -287,50 +287,50 @@ We should also consider moving some data to a **NoSQL Database**.
 
 #### NoSQL
 
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store) 
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store) 
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store) 
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database) 
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) 
 
 ### Caching
 
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching) 
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching) 
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching) 
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching) 
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching) 
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level) 
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level) 
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside) 
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through) 
+    * [Write-behind (write-back) ](https://github.com/donnemartin/system-design-primer#write-behind-write-back) 
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead) 
 
 ### Asynchronism and microservices
 
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues) 
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues) 
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure) 
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices) 
 
 ### Communications
 
 * Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) 
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc) 
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery) 
 
 ### Security
 
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security) .
 
 ### Latency numbers
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know) .
 
 ### Ongoing
 

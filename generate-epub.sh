@@ -38,7 +38,7 @@ generate () {
 check_dependencies () {
   for dependency in "${dependencies[@]}"
   do
-    if ! [ -x "$(command -v $dependency)" ]; then
+    if ! [ -x "$(command -v $dependency) " ]; then
       echo "Error: $dependency is not installed." >&2
       exit 1
     fi

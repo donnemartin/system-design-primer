@@ -1,4 +1,4 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28) *
 
 # システム設計入門
 
@@ -35,11 +35,11 @@
 
 面接準備に役立つその他のトピック:
 
-* [学習指針](#学習指針)
-* [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか)
-* [システム設計課題例 **とその解答**](#システム設計課題例とその解答)
-* [オブジェクト指向設計課題例、 **とその解答**](#オブジェクト指向設計問題と解答)
-* [その他のシステム設計面接課題例](#他のシステム設計面接例題)
+* [学習指針](#学習指針) 
+* [システム設計面接課題にどのように準備するか](#システム設計面接にどのようにして臨めばいいか) 
+* [システム設計課題例 **とその解答**](#システム設計課題例とその解答) 
+* [オブジェクト指向設計課題例、 **とその解答**](#オブジェクト指向設計問題と解答) 
+* [その他のシステム設計面接課題例](#他のシステム設計面接例題) 
 
 ## 暗記カード
 
@@ -50,24 +50,24 @@
 
 この[Anki用フラッシュカードデッキ](https://apps.ankiweb.net/) は、間隔反復を活用して、システム設計のキーコンセプトの学習を支援します。
 
-* [システム設計デッキ](resources/flash_cards/System%20Design.apkg)
-* [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
+* [システム設計デッキ](resources/flash_cards/System%20Design.apkg) 
+* [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg) 
+* [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg) 
 
 外出先や移動中の勉強に役立つでしょう。
 
 ### コーディング技術課題用の問題: 練習用インタラクティブアプリケーション
 
-コード技術面接用の問題を探している場合は[**こちら**](https://github.com/donnemartin/interactive-coding-challenges)
+コード技術面接用の問題を探している場合は[**こちら**](https://github.com/donnemartin/interactive-coding-challenges) 
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-姉妹リポジトリの [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges)も見てみてください。追加の暗記デッキカードも入っています。
+姉妹リポジトリの [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges) も見てみてください。追加の暗記デッキカードも入っています。
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg) 
 
 ## コントリビュート
 
@@ -78,11 +78,11 @@
 * エラー修正
 * セクション内容改善
 * 新規セクション追加
-* [翻訳する](https://github.com/donnemartin/system-design-primer/issues/28)
+* [翻訳する](https://github.com/donnemartin/system-design-primer/issues/28) 
 
-現在、内容の改善が必要な作業中のコンテンツは[こちら](#進行中の作業)です。
+現在、内容の改善が必要な作業中のコンテンツは[こちら](#進行中の作業) です。
 
-コントリビュートの前に[Contributing Guidelines](CONTRIBUTING.md)を読みましょう。
+コントリビュートの前に[Contributing Guidelines](CONTRIBUTING.md) を読みましょう。
 
 ## システム設計目次
 
@@ -95,92 +95,92 @@
   <br/>
 </p>
 
-* [システム設計トピック: まずはここから](#システム設計トピックス-まずはここから)
-    * [Step 1: スケーラビリティに関する動画を見る](#ステップ-1-スケーラビリティに関する動画を観て復習する)
-    * [Step 2: スケーラビリティに関する記事を読む](#ステップ-2-スケーラビリティに関する資料を読んで復習する)
-    * [次のステップ](#次のステップ)
-* [パフォーマンス vs スケーラビリティ](#パフォーマンス-vs-スケーラビリティ)
-* [レイテンシー vs スループット](#レイテンシー-vs-スループット)
-* [可用性 vs 一貫性](#可用性-vs-一貫性)
-    * [CAP理論](#cap-理論)
-        * [CP - 一貫性(consistency)と分割性(partition)耐性](#cp---一貫性と分断耐性consistency-and-partition-tolerance)
-        * [AP - 可用性(availability)と分割性(partition)耐性](#ap---可用性と分断耐性availability-and-partition-tolerance)
-* [一貫性 パターン](#一貫性パターン)
-    * [弱い一貫性](#弱い一貫性)
-    * [結果整合性](#結果整合性)
-    * [強い一貫性](#強い一貫性)
-* [可用性 パターン](#可用性パターン)
-    * [フェイルオーバー](#フェイルオーバー)
-    * [レプリケーション](#レプリケーション)
-* [ドメインネームシステム(DNS)](#ドメインネームシステム)
-* [コンテンツデリバリーネットワーク(CDN)](#コンテンツデリバリーネットワークcontent-delivery-network)
-    * [プッシュCDN](#プッシュcdn)
-    * [プルCDN](#プルcdn)
-* [ロードバランサー](#ロードバランサー)
-    * [アクティブ/パッシブ構成](#アクティブパッシブ)
-    * [アクティブ/アクティブ構成](#アクティブアクティブ)
-    * [Layer 4 ロードバランシング](#layer-4-ロードバランシング)
-    * [Layer 7 ロードバランシング](#layer-7-ロードバランシング)
-    * [水平スケーリング](#水平スケーリング)
-* [リバースプロキシ (WEBサーバー)](#リバースプロキシwebサーバー)
-    * [ロードバランサー vs リバースプロキシ](#ロードバランサー-vs-リバースプロキシ)
-* [アプリケーションレイヤー](#アプリケーション層)
-    * [マイクロサービス](#マイクロサービス)
-    * [サービスディスカバリー](#service-discovery)
-* [データベース](#データベース)
-    * [リレーショナルデータベースマネジメントシステム (RDBMS)](#リレーショナルデータベースマネジメントシステム-rdbms)
-        * [マスター/スレーブ レプリケーション](#マスタースレーブ-レプリケーション)
-        * [マスター/マスター レプリケーション](#マスターマスター-レプリケーション)
-        * [フェデレーション](#federation)
-        * [シャーディング](#シャーディング)
-        * [デノーマライゼーション](#非正規化)
-        * [SQL チューニング](#sqlチューニング)
-    * [NoSQL](#nosql)
-        * [キー/バリューストア](#キーバリューストア)
-        * [ドキュメントストア](#ドキュメントストア)
-        * [ワイドカラムストア](#ワイドカラムストア)
-        * [グラフ データベース](#グラフデータベース)
-    * [SQL or NoSQL](#sqlかnosqlか)
-* [キャッシュ](#キャッシュ)
-    * [クライアントキャッシング](#クライアントキャッシング)
-    * [CDNキャッシング](#cdnキャッシング)
-    * [Webサーバーキャッシング](#webサーバーキャッシング)
-    * [データベースキャッシング](#データベースキャッシング)
-    * [アプリケーションキャッシング](#アプリケーションキャッシング)
-    * [データベースクエリレベルでキャッシングする](#データベースクエリレベルでのキャッシング)
-    * [オブジェクトレベルでキャッシングする](#オブジェクトレベルでのキャッシング)
-    * [いつキャッシュを更新するのか](#いつキャッシュを更新するか)
-        * [キャッシュアサイド](#キャッシュアサイド)
-        * [ライトスルー](#ライトスルー)
-        * [ライトビハインド (ライトバック)](#ライトビハインド-ライトバック)
-        * [リフレッシュアヘッド](#リフレッシュアヘッド)
-* [非同期処理](#非同期処理)
-    * [メッセージキュー](#メッセージキュー)
-    * [タスクキュー](#タスクキュー)
-    * [バックプレッシャー](#バックプレッシャー)
-* [通信](#通信)
-    * [伝送制御プロトコル (TCP)](#伝送制御プロトコル-tcp)
-    * [ユーザデータグラムプロトコル (UDP)](#ユーザデータグラムプロトコル-udp)
-    * [遠隔手続呼出 (RPC)](#遠隔手続呼出-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [セキュリティ](#セキュリティ)
-* [補遺](#補遺)
-    * [2の乗数表](#2の乗数表)
-    * [全てのプログラマーが知るべきレイテンシー値](#全てのプログラマーが知るべきレイテンシー値)
-    * [他のシステム設計面接例題](#他のシステム設計面接例題)
-    * [実世界でのアーキテクチャ](#実世界のアーキテクチャ)
-    * [各企業のアーキテクチャ](#各企業のアーキテクチャ)
-    * [企業のエンジニアブログ](#企業のエンジニアブログ)
-* [作業中](#進行中の作業)
-* [クレジット](#クレジット)
-* [連絡情報](#contact-info)
-* [ライセンス](#license)
+* [システム設計トピック: まずはここから](#システム設計トピックス-まずはここから) 
+    * [Step 1: スケーラビリティに関する動画を見る](#ステップ-1-スケーラビリティに関する動画を観て復習する) 
+    * [Step 2: スケーラビリティに関する記事を読む](#ステップ-2-スケーラビリティに関する資料を読んで復習する) 
+    * [次のステップ](#次のステップ) 
+* [パフォーマンス vs スケーラビリティ](#パフォーマンス-vs-スケーラビリティ) 
+* [レイテンシー vs スループット](#レイテンシー-vs-スループット) 
+* [可用性 vs 一貫性](#可用性-vs-一貫性) 
+    * [CAP理論](#cap-理論) 
+        * [CP - 一貫性(consistency) と分割性(partition) 耐性](#cp---一貫性と分断耐性consistency-and-partition-tolerance) 
+        * [AP - 可用性(availability) と分割性(partition) 耐性](#ap---可用性と分断耐性availability-and-partition-tolerance) 
+* [一貫性 パターン](#一貫性パターン) 
+    * [弱い一貫性](#弱い一貫性) 
+    * [結果整合性](#結果整合性) 
+    * [強い一貫性](#強い一貫性) 
+* [可用性 パターン](#可用性パターン) 
+    * [フェイルオーバー](#フェイルオーバー) 
+    * [レプリケーション](#レプリケーション) 
+* [ドメインネームシステム(DNS) ](#ドメインネームシステム) 
+* [コンテンツデリバリーネットワーク(CDN) ](#コンテンツデリバリーネットワークcontent-delivery-network) 
+    * [プッシュCDN](#プッシュcdn) 
+    * [プルCDN](#プルcdn) 
+* [ロードバランサー](#ロードバランサー) 
+    * [アクティブ/パッシブ構成](#アクティブパッシブ) 
+    * [アクティブ/アクティブ構成](#アクティブアクティブ) 
+    * [Layer 4 ロードバランシング](#layer-4-ロードバランシング) 
+    * [Layer 7 ロードバランシング](#layer-7-ロードバランシング) 
+    * [水平スケーリング](#水平スケーリング) 
+* [リバースプロキシ (WEBサーバー) ](#リバースプロキシwebサーバー) 
+    * [ロードバランサー vs リバースプロキシ](#ロードバランサー-vs-リバースプロキシ) 
+* [アプリケーションレイヤー](#アプリケーション層) 
+    * [マイクロサービス](#マイクロサービス) 
+    * [サービスディスカバリー](#service-discovery) 
+* [データベース](#データベース) 
+    * [リレーショナルデータベースマネジメントシステム (RDBMS) ](#リレーショナルデータベースマネジメントシステム-rdbms) 
+        * [マスター/スレーブ レプリケーション](#マスタースレーブ-レプリケーション) 
+        * [マスター/マスター レプリケーション](#マスターマスター-レプリケーション) 
+        * [フェデレーション](#federation) 
+        * [シャーディング](#シャーディング) 
+        * [デノーマライゼーション](#非正規化) 
+        * [SQL チューニング](#sqlチューニング) 
+    * [NoSQL](#nosql) 
+        * [キー/バリューストア](#キーバリューストア) 
+        * [ドキュメントストア](#ドキュメントストア) 
+        * [ワイドカラムストア](#ワイドカラムストア) 
+        * [グラフ データベース](#グラフデータベース) 
+    * [SQL or NoSQL](#sqlかnosqlか) 
+* [キャッシュ](#キャッシュ) 
+    * [クライアントキャッシング](#クライアントキャッシング) 
+    * [CDNキャッシング](#cdnキャッシング) 
+    * [Webサーバーキャッシング](#webサーバーキャッシング) 
+    * [データベースキャッシング](#データベースキャッシング) 
+    * [アプリケーションキャッシング](#アプリケーションキャッシング) 
+    * [データベースクエリレベルでキャッシングする](#データベースクエリレベルでのキャッシング) 
+    * [オブジェクトレベルでキャッシングする](#オブジェクトレベルでのキャッシング) 
+    * [いつキャッシュを更新するのか](#いつキャッシュを更新するか) 
+        * [キャッシュアサイド](#キャッシュアサイド) 
+        * [ライトスルー](#ライトスルー) 
+        * [ライトビハインド (ライトバック) ](#ライトビハインド-ライトバック) 
+        * [リフレッシュアヘッド](#リフレッシュアヘッド) 
+* [非同期処理](#非同期処理) 
+    * [メッセージキュー](#メッセージキュー) 
+    * [タスクキュー](#タスクキュー) 
+    * [バックプレッシャー](#バックプレッシャー) 
+* [通信](#通信) 
+    * [伝送制御プロトコル (TCP) ](#伝送制御プロトコル-tcp) 
+    * [ユーザデータグラムプロトコル (UDP) ](#ユーザデータグラムプロトコル-udp) 
+    * [遠隔手続呼出 (RPC) ](#遠隔手続呼出-rpc) 
+    * [Representational state transfer (REST) ](#representational-state-transfer-rest) 
+* [セキュリティ](#セキュリティ) 
+* [補遺](#補遺) 
+    * [2の乗数表](#2の乗数表) 
+    * [全てのプログラマーが知るべきレイテンシー値](#全てのプログラマーが知るべきレイテンシー値) 
+    * [他のシステム設計面接例題](#他のシステム設計面接例題) 
+    * [実世界でのアーキテクチャ](#実世界のアーキテクチャ) 
+    * [各企業のアーキテクチャ](#各企業のアーキテクチャ) 
+    * [企業のエンジニアブログ](#企業のエンジニアブログ) 
+* [作業中](#進行中の作業) 
+* [クレジット](#クレジット) 
+* [連絡情報](#contact-info) 
+* [ライセンス](#license) 
 
 ## 学習指針
 
-> 学習スパンに応じてみるべきトピックス (short, medium, long)
+> 学習スパンに応じてみるべきトピックス (short, medium, long) 
 
-![Imgur](images/OfVllex.png)
+![Imgur](images/OfVllex.png) 
 
 **Q: 面接のためには、ここにあるものすべてをやらないといけないのでしょうか？**
 
@@ -216,7 +216,7 @@
 
 > システム設計面接試験問題にどのように取り組むか
 
-システム設計面接は **open-ended conversation(Yes/Noでは答えられない口頭質問)です**。 自分で会話を組み立てることを求められます。
+システム設計面接は **open-ended conversation(Yes/Noでは答えられない口頭質問) です**。 自分で会話を組み立てることを求められます。
 
 以下のステップに従って議論を組み立てることができるでしょう。この過程を確かなものにするために、次のセクション[システム設計課題例とその解答](#system-design-interview-questions-with-solutions) を以下の指針に従って読み込むといいでしょう。
 
@@ -242,10 +242,10 @@
 
 ### ステップ 3: 核となるコンポーネントを設計する
 
-それぞれの主要なコンポーネントについての詳細を学ぶ。例えば、[url短縮サービス](solutions/system_design/pastebin/README.md)の設計を問われた際には次のようにするといいでしょう:
+それぞれの主要なコンポーネントについての詳細を学ぶ。例えば、[url短縮サービス](solutions/system_design/pastebin/README.md) の設計を問われた際には次のようにするといいでしょう:
 
 * 元のURLのハッシュ化したものを作り、それを保存する
-    * [MD5](solutions/system_design/pastebin/README.md) と [Base62](solutions/system_design/pastebin/README.md)
+    * [MD5](solutions/system_design/pastebin/README.md) と [Base62](solutions/system_design/pastebin/README.md) 
     * ハッシュ衝突
     * SQL もしくは NoSQL
     * データベーススキーマ
@@ -262,23 +262,23 @@
 * キャッシング
 * データベースシャーディング
 
-取りうる解決策とそのトレードオフについて議論をしよう。全てのことはトレードオフの関係にある。ボトルネックについては[スケーラブルなシステム設計の原理](#システム設計目次)を読むといいでしょう。
+取りうる解決策とそのトレードオフについて議論をしよう。全てのことはトレードオフの関係にある。ボトルネックについては[スケーラブルなシステム設計の原理](#システム設計目次) を読むといいでしょう。
 
 ### ちょっとした暗算問題
 
-ちょっとした推計値を手計算ですることを求められることもあるかもしれません。[補遺](#補遺)の以下の項目が役に立つでしょう:
+ちょっとした推計値を手計算ですることを求められることもあるかもしれません。[補遺](#補遺) の以下の項目が役に立つでしょう:
 
-* [チラ裏計算でシステム設計する](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [2の乗数表](#2の乗数表)
-* [全てのプログラマーが知っておくべきレイテンシの参考値](#全てのプログラマーが知るべきレイテンシー値)
+* [チラ裏計算でシステム設計する](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html) 
+* [2の乗数表](#2の乗数表) 
+* [全てのプログラマーが知っておくべきレイテンシの参考値](#全てのプログラマーが知るべきレイテンシー値) 
 
 ### 文献とその他の参考資料
 
 以下のリンク先ページを見てどのような質問を投げかけられるか概要を頭に入れておきましょう:
 
-* [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [システム設計面接](http://www.hiredintech.com/system-design)
-* [アーキテクチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/) 
+* [システム設計面接](http://www.hiredintech.com/system-design) 
+* [アーキテクチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70) 
 
 ## システム設計課題例とその解答
 
@@ -289,7 +289,7 @@
 | 問題 | |
 |---|---|
 | Pastebin.com (もしくは Bit.ly) を設計する| [解答](solutions/system_design/pastebin/README.md) |
-| Twitterタイムライン (もしくはFacebookフィード)を設計する<br/>Twitter検索(もしくはFacebook検索)機能を設計する | [解答](solutions/system_design/twitter/README.md) |
+| Twitterタイムライン (もしくはFacebookフィード) を設計する<br/>Twitter検索(もしくはFacebook検索) 機能を設計する | [解答](solutions/system_design/twitter/README.md) |
 | ウェブクローラーを設計する | [解答](solutions/system_design/web_crawler/README.md) |
 | Mint.comを設計する | [解答](solutions/system_design/mint/README.md) |
 | SNSサービスのデータ構造を設計する | [解答](solutions/system_design/social_graph/README.md) |
@@ -300,51 +300,51 @@
 
 ### Pastebin.com (もしくは Bit.ly) を設計する
 
-[問題と解答を見る](solutions/system_design/pastebin/README.md)
+[問題と解答を見る](solutions/system_design/pastebin/README.md) 
 
-![Imgur](images/4edXG0T.png)
+![Imgur](images/4edXG0T.png) 
 
-### Twitterタイムライン&検索 (もしくはFacebookフィード&検索)を設計する
+### Twitterタイムライン&検索 (もしくはFacebookフィード&検索) を設計する
 
-[問題と解答を見る](solutions/system_design/twitter/README.md)
+[問題と解答を見る](solutions/system_design/twitter/README.md) 
 
-![Imgur](images/jrUBAF7.png)
+![Imgur](images/jrUBAF7.png) 
 
 ### ウェブクローラーの設計
 
-[問題と解答を見る](solutions/system_design/web_crawler/README.md)
+[問題と解答を見る](solutions/system_design/web_crawler/README.md) 
 
-![Imgur](images/bWxPtQA.png)
+![Imgur](images/bWxPtQA.png) 
 
 ### Mint.comの設計
 
-[問題と解答を見る](solutions/system_design/mint/README.md)
+[問題と解答を見る](solutions/system_design/mint/README.md) 
 
-![Imgur](images/V5q57vU.png)
+![Imgur](images/V5q57vU.png) 
 
 ### SNSサービスのデータ構造を設計する
 
-[問題と解答を見る](solutions/system_design/social_graph/README.md)
+[問題と解答を見る](solutions/system_design/social_graph/README.md) 
 
-![Imgur](images/cdCv5g7.png)
+![Imgur](images/cdCv5g7.png) 
 
 ### 検索エンジンのキー/バリュー構造を設計する
 
-[問題と解答を見る](solutions/system_design/query_cache/README.md)
+[問題と解答を見る](solutions/system_design/query_cache/README.md) 
 
-![Imgur](images/4j99mhe.png)
+![Imgur](images/4j99mhe.png) 
 
 ### Amazonのカテゴリ毎の売り上げランキングを設計する
 
-[問題と解答を見る](solutions/system_design/sales_rank/README.md)
+[問題と解答を見る](solutions/system_design/sales_rank/README.md) 
 
-![Imgur](images/MzExP06.png)
+![Imgur](images/MzExP06.png) 
 
 ### AWS上で100万人規模のユーザーを捌くサービスを設計する
 
-[問題と解答を見る](solutions/system_design/scaling_aws/README.md)
+[問題と解答を見る](solutions/system_design/scaling_aws/README.md) 
 
-![Imgur](images/jj3A5N8.png)
+![Imgur](images/jj3A5N8.png) 
 
 ## オブジェクト指向設計問題と解答
 
@@ -356,13 +356,13 @@
 
 | 問題 | |
 |---|---|
-| ハッシュマップの設計 | [解答](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| LRUキャッシュの設計 | [解答](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| コールセンターの設計 | [解答](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| カードのデッキの設計 | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| 円形配列の設計 | [Contribute](#contributing)  |
+| ハッシュマップの設計 | [解答](solutions/object_oriented_design/hash_table/hash_map.ipynb)   |
+| LRUキャッシュの設計 | [解答](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)   |
+| コールセンターの設計 | [解答](solutions/object_oriented_design/call_center/call_center.ipynb)   |
+| カードのデッキの設計 | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)   |
+| 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)   |
+| チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)   |
+| 円形配列の設計 | [Contribute](#contributing)   |
 | オブジェクト指向システム設計問題を追加する | [Contribute](#contributing) |
 
 ## システム設計トピックス: まずはここから
@@ -373,7 +373,7 @@
 
 ### ステップ 1: スケーラビリティに関する動画を観て復習する
 
-[Harvardでのスケーラビリティの講義](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Harvardでのスケーラビリティの講義](https://www.youtube.com/watch?v=-W9F__D3oY4) 
 
 * ここで触れられているトピックス:
     * 垂直スケーリング
@@ -385,13 +385,13 @@
 
 ### ステップ 2: スケーラビリティに関する資料を読んで復習する
 
-[スケーラビリティ](http://www.lecloud.net/tagged/scalability/chrono)
+[スケーラビリティ](http://www.lecloud.net/tagged/scalability/chrono) 
 
 * ここで触れられているトピックス:
-    * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [データベース](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [キャッシュ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [非同期](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones) 
+    * [データベース](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database) 
+    * [キャッシュ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache) 
+    * [非同期](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism) 
 
 ### 次のステップ
 
@@ -416,8 +416,8 @@
 
 ### その他の参考資料、ページ
 
-* [スケーラビリティについて](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [スケーラビリティについて](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html) 
+* [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/) 
 
 ## レイテンシー vs スループット
 
@@ -429,7 +429,7 @@
 
 ### その他の参考資料、ページ
 
-* [レイテンシー vs スループットを理解する](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [レイテンシー vs スループットを理解する](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput) 
 
 ## 可用性 vs 一貫性
 
@@ -449,21 +449,21 @@
 
 *ネットワークは信頼できないので、分断耐性は必ず保証しなければなりません。つまりソフトウェアシステムとしてのトレードオフは、一貫性を取るか、可用性を取るかを考えなければなりません。*
 
-#### CP - 一貫性と分断耐性(consistency and partition tolerance)
+#### CP - 一貫性と分断耐性(consistency and partition tolerance) 
 
 分断されたノードからのレスポンスを待ち続けているとタイムアウトエラーに陥る可能性があります。CPはあなたのサービスがアトミックな読み書き（不可分操作）を必要とする際にはいい選択肢でしょう。
 
-#### AP - 可用性と分断耐性(availability and partition tolerance)
+#### AP - 可用性と分断耐性(availability and partition tolerance) 
 
 レスポンスはノード上にあるデータで最新のものを返します。つまり、最新版のデータが返されるとは限りません。分断が解消された後も、書き込みが反映されるのには時間がかかります。
 
-[結果整合性](#結果整合性)　を求めるサービスの際にはAPを採用するのがいいでしょう。もしくは、外部エラーに関わらずシステムが稼働する必要がある際にも同様です。
+[結果整合性](#結果整合性) 　を求めるサービスの際にはAPを採用するのがいいでしょう。もしくは、外部エラーに関わらずシステムが稼働する必要がある際にも同様です。
 
 ### その他の参考資料、ページ
 
-* [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
-* [CAP FAQ](https://github.com/henryr/cap-faq)
+* [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/) 
+* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/) 
+* [CAP FAQ](https://github.com/henryr/cap-faq) 
 
 ## 一貫性パターン
 
@@ -477,7 +477,7 @@
 
 ### 結果整合性
 
-書き込みの後、読み取りは最終的にはその結果を読み取ることができる(ミリ秒ほど遅れてというのが一般的です)。データは非同期的に複製されます。
+書き込みの後、読み取りは最終的にはその結果を読み取ることができる(ミリ秒ほど遅れてというのが一般的です) 。データは非同期的に複製されます。
 
 このアプローチはDNSやメールシステムなどに採用されています。結果整合性は多くのリクエストを捌くサービスと相性がいいでしょう。
 
@@ -489,7 +489,7 @@
 
 ### その他の参考資料、ページ
 
-* [データセンター間でのトランザクション](http://snarfed.org/transactions_across_datacenters_io.html)
+* [データセンター間でのトランザクション](http://snarfed.org/transactions_across_datacenters_io.html) 
 
 ## 可用性パターン
 
@@ -524,8 +524,8 @@
 
 このトピックは [データベース](#データベース) セクションにおいてより詳細に解説されています:
 
-* [マスター・スレーブ レプリケーション](#マスタースレーブ-レプリケーション)
-* [マスター・マスター レプリケーション](#マスターマスター-レプリケーション)
+* [マスター・スレーブ レプリケーション](#マスタースレーブ-レプリケーション) 
+* [マスター・マスター レプリケーション](#マスターマスター-レプリケーション) 
 
 ## ドメインネームシステム
 
@@ -537,16 +537,16 @@
 
 ドメインネームシステム (DNS) は www.example.com などのドメインネームをIPアドレスへと翻訳します。
 
-DNSは少数のオーソライズされたサーバーが上位に位置する階層的構造です。あなたのルーターもしくはISPは検索をする際にどのDNSサーバーに接続するかという情報を提供します。低い階層のDNSサーバーはその経路マップをキャッシュします。ただ、この情報は伝搬遅延によって陳腐化する可能性があります。DNSの結果はあなたのブラウザもしくはOSに一定期間（[time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live)に設定された期間）キャッシュされます。
+DNSは少数のオーソライズされたサーバーが上位に位置する階層的構造です。あなたのルーターもしくはISPは検索をする際にどのDNSサーバーに接続するかという情報を提供します。低い階層のDNSサーバーはその経路マップをキャッシュします。ただ、この情報は伝搬遅延によって陳腐化する可能性があります。DNSの結果はあなたのブラウザもしくはOSに一定期間（[time to live (TTL) ](https://en.wikipedia.org/wiki/Time_to_live) に設定された期間）キャッシュされます。
 
-* **NS record (name server)** - あなたのドメイン・サブドメインでのDNSサーバーを特定します。
-* **MX record (mail exchange)** - メッセージを受け取るメールサーバーを特定します。
-* **A record (address)** - IPアドレスに名前をつけます。
-* **CNAME (canonical)** - 他の名前もしくは　`CNAME` (example.com を www.example.com) もしくは `A` recordへと名前を指し示す。
+* **NS record (name server) ** - あなたのドメイン・サブドメインでのDNSサーバーを特定します。
+* **MX record (mail exchange) ** - メッセージを受け取るメールサーバーを特定します。
+* **A record (address) ** - IPアドレスに名前をつけます。
+* **CNAME (canonical) ** - 他の名前もしくは　`CNAME` (example.com を www.example.com) もしくは `A` recordへと名前を指し示す。
 
 [CloudFlare](https://www.cloudflare.com/dns/) や [Route 53](https://aws.amazon.com/route53/) などのサービスはマネージドDNSサービスを提供しています。いくつかのDNSサービスでは様々な手法を使ってトラフィックを捌くことができます:
 
-* [加重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
+* [加重ラウンドロビン](http://g33kinfo.com/info/archives/2657) 
     * トラフィックがメンテナンス中のサーバーに行くのを防ぎます
     * 様々なクラスターサイズに応じて調整します
     * A/B テスト
@@ -556,16 +556,16 @@ DNSは少数のオーソライズされたサーバーが上位に位置する�
 ### 欠点: DNS
 
 * 上記で示されているようなキャッシングによって緩和されているとはいえ、DNSサーバーへの接続には少し遅延が生じる。
-* DNSサーバーは、[政府、ISP企業,そして大企業](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729)に管理されているが、それらの管理は複雑である。
-* DNSサービスは[DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/)の例で、IPアドレスなしにユーザーがTwitterなどにアクセスできなくなったように、攻撃を受ける可能性がある。
+* DNSサーバーは、[政府、ISP企業,そして大企業](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729) に管理されているが、それらの管理は複雑である。
+* DNSサービスは[DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) の例で、IPアドレスなしにユーザーがTwitterなどにアクセスできなくなったように、攻撃を受ける可能性がある。
 
 ### その他の参考資料、ページ
 
-* [DNS アーキテクチャ](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
-* [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
-* [DNS 記事](https://support.dnsimple.com/categories/dns/)
+* [DNS アーキテクチャ](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10) .aspx) 
+* [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System) 
+* [DNS 記事](https://support.dnsimple.com/categories/dns/) 
 
-## コンテンツデリバリーネットワーク(Content delivery network)
+## コンテンツデリバリーネットワーク(Content delivery network) 
 
 <p align="center">
   <img src="images/h9TAuGI.jpg">
@@ -573,7 +573,7 @@ DNSは少数のオーソライズされたサーバーが上位に位置する�
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
 
-コンテンツデリバリーネットワーク(CDN)は世界中に配置されたプロキシサーバーのネットワークがユーザーに一番地理的に近いサーバーからコンテンツを配信するシステムのことです。AmazonのCloudFrontなどは例外的にダイナミックなコンテンツも配信しますが、一般的に、HTML/CSS/JS、写真、そして動画などの静的ファイルがCDNを通じて配信されます。そのサイトのDNSがクライアントにどのサーバーと交信するかという情報を伝えます。
+コンテンツデリバリーネットワーク(CDN) は世界中に配置されたプロキシサーバーのネットワークがユーザーに一番地理的に近いサーバーからコンテンツを配信するシステムのことです。AmazonのCloudFrontなどは例外的にダイナミックなコンテンツも配信しますが、一般的に、HTML/CSS/JS、写真、そして動画などの静的ファイルがCDNを通じて配信されます。そのサイトのDNSがクライアントにどのサーバーと交信するかという情報を伝えます。
 
 CDNを用いてコンテンツを配信することで以下の二つの理由でパフォーマンスが劇的に向上します:
 
@@ -590,7 +590,7 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 
 プルCDNでは一人目のユーザーがリクエストした時に、新しいコンテンツをサービスのサーバーから取得します。コンテンツは自分のサーバーに保存して、CDNを指すURLを書き換えます。結果として、CDNにコンテンツがキャッシュされるまではリクエスト処理が遅くなります。
 
-[time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) はコンテンツがどれだけの期間キャッシュされるかを規定します。プルCDNはCDN 上でのストレージスペースを最小化しますが、有効期限が切れたファイルが更新前にプルされてしまうことで冗長なトラフィックに繋がってしまう可能性があります。
+[time-to-live (TTL) ](https://en.wikipedia.org/wiki/Time_to_live) はコンテンツがどれだけの期間キャッシュされるかを規定します。プルCDNはCDN 上でのストレージスペースを最小化しますが、有効期限が切れたファイルが更新前にプルされてしまうことで冗長なトラフィックに繋がってしまう可能性があります。
 
 大規模なトラフィックのあるサイトではプルCDNが相性がいいでしょう。というのも、トラフィックの大部分は最近リクエストされ、CDNに残っているコンテンツにアクセスするものであることが多いからです。
 
@@ -602,9 +602,9 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 
 ### その他の参考資料、ページ
 
-* [グローバルに分散されたコンテンツデリバリーネットワーク](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
-* [プッシュCDNとプルCDNの違い](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
-* [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
+* [グローバルに分散されたコンテンツデリバリーネットワーク](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci) 
+* [プッシュCDNとプルCDNの違い](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/) 
+* [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network) 
 
 ## ロードバランサー
 
@@ -635,13 +635,13 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 * ランダム
 * Least loaded
 * セッション/クッキー
-* [ラウンドロビンもしくは加重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
-* [Layer 4](#layer-4-ロードバランシング)
-* [Layer 7](#layer-7-ロードバランシング)
+* [ラウンドロビンもしくは加重ラウンドロビン](http://g33kinfo.com/info/archives/2657) 
+* [Layer 4](#layer-4-ロードバランシング) 
+* [Layer 7](#layer-7-ロードバランシング) 
 
 ### Layer 4 ロードバランシング
 
-Layer 4 ロードバランサーは [トランスポートレイヤー](#通信) を参照してどのようにリクエストを配分するか判断します。一般的に、トランスポートレイヤーとしては、ソース、送信先IPアドレス、ヘッダーに記述されたポート番号が含まれますが、パケットの中身のコンテンツは含みません。 Layer 4 ロードバランサーはネットワークパケットを上流サーバーへ届け、上流サーバーから配信することでネットワークアドレス変換 [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/) を実現します。
+Layer 4 ロードバランサーは [トランスポートレイヤー](#通信) を参照してどのようにリクエストを配分するか判断します。一般的に、トランスポートレイヤーとしては、ソース、送信先IPアドレス、ヘッダーに記述されたポート番号が含まれますが、パケットの中身のコンテンツは含みません。 Layer 4 ロードバランサーはネットワークパケットを上流サーバーへ届け、上流サーバーから配信することでネットワークアドレス変換 [Network Address Translation (NAT) ](https://www.nginx.com/resources/glossary/layer-4-load-balancing/) を実現します。
 
 ### Layer 7 ロードバランシング
 
@@ -657,7 +657,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 * 水平的にスケーリングしていくと、複雑さが増す上に、サーバーのクローニングが必要になる。
     * サーバーはステートレスである必要がある: ユーザーに関連するセッションや、プロフィール写真などのデータを持ってはいけない
-    * セッションは一元的な[データベース](#データベース) (SQL、 NoSQL)などのデータストアにストアされるか [キャッシュ](#キャッシュ) (Redis、 Memcached)に残す必要があります。
+    * セッションは一元的な[データベース](#データベース) (SQL、 NoSQL) などのデータストアにストアされるか [キャッシュ](#キャッシュ) (Redis、 Memcached) に残す必要があります。
 * キャッシュやデータベースなどの下流サーバーは上流サーバーがスケールアウトするにつれてより多くの同時接続を保たなければなりません。
 
 ### 欠点: ロードバランサー
@@ -668,15 +668,15 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 ### その他の参考資料、ページ
 
-* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy アーキテクチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [スケーラビリティ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/) 
+* [HAProxy アーキテクチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt) 
+* [スケーラビリティ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones) 
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 ロードバランシング](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 ロードバランシング](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [Layer 4 ロードバランシング](https://www.nginx.com/resources/glossary/layer-4-load-balancing/) 
+* [Layer 7 ロードバランシング](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) 
+* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html) 
 
-## リバースプロキシ(webサーバー)
+## リバースプロキシ(webサーバー) 
 
 <p align="center">
   <img src="images/n41Azff.png">
@@ -714,10 +714,10 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 ### その他の参考資料、ページ
 
-* [リバースプロキシ vs ロードバランサー](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy アーキテクチャ ガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+* [リバースプロキシ vs ロードバランサー](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/) 
+* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/) 
+* [HAProxy アーキテクチャ ガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt) 
+* [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy) 
 
 ## アプリケーション層
 
@@ -731,17 +731,17 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
  **単一責任の原則** では、小さい自律的なサービスが協調して動くように提唱しています。小さいサービスの小さいチームが急成長のためにより積極的な計画を立てられるようにするためです。
 
-アプリケーション層は[非同期処理](#非同期処理)もサポートします。
+アプリケーション層は[非同期処理](#非同期処理) もサポートします。
 
 ### マイクロサービス
 
-独立してデプロイできる、小規模なモジュール様式である[マイクロサービス](https://en.wikipedia.org/wiki/Microservices)もこの議論に関係してくる技術でしょう。それぞれのサービスは独自のプロセスを処理し、明確で軽量なメカニズムで通信して、その目的とする機能を実現します。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+独立してデプロイできる、小規模なモジュール様式である[マイクロサービス](https://en.wikipedia.org/wiki/Microservices) もこの議論に関係してくる技術でしょう。それぞれのサービスは独自のプロセスを処理し、明確で軽量なメカニズムで通信して、その目的とする機能を実現します。<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
 例えばPinterestでは以下のようなマイクロサービスに分かれています。ユーザープロフィール、フォロワー、フィード、検索、写真アップロードなどです。
 
 ### サービスディスカバリー
 
-[Consul](https://www.consul.io/docs/index.html)、 [Etcd](https://coreos.com/etcd/docs/latest)、 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) などのシステムでは、登録されているサービスの名前、アドレス、ポートの情報を監視することで、サービス同士が互いを見つけやすくしています。サービスの完全性の確認には [Health checks](https://www.consul.io/intro/getting-started/checks.html) が便利で、これには [HTTP](#hypertext-transfer-protocol-http) エンドポイントがよく使われます。 Consul と Etcd のいずれも組み込みの [key-value store](#キーバリューストア) を持っており、設定データや共有データなどのデータを保存しておくことに使われます。
+[Consul](https://www.consul.io/docs/index.html) 、 [Etcd](https://coreos.com/etcd/docs/latest) 、 [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) などのシステムでは、登録されているサービスの名前、アドレス、ポートの情報を監視することで、サービス同士が互いを見つけやすくしています。サービスの完全性の確認には [Health checks](https://www.consul.io/intro/getting-started/checks.html) が便利で、これには [HTTP](#hypertext-transfer-protocol-http) エンドポイントがよく使われます。 Consul と Etcd のいずれも組み込みの [key-value store](#キーバリューストア) を持っており、設定データや共有データなどのデータを保存しておくことに使われます。
 
 ### 欠点: アプリケーション層
 
@@ -750,11 +750,11 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 ### その他の参考資料、ページ
 
-* [スケールするシステムアーキテクチャを設計するためのイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale)
-* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
-* [サービス指向アーキテクチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-* [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+* [スケールするシステムアーキテクチャを設計するためのイントロ](http://lethain.com/introduction-to-architecting-systems-for-scale) 
+* [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview) 
+* [サービス指向アーキテクチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture) 
+* [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) 
+* [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/) 
 
 ## データベース
 
@@ -764,11 +764,11 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-### リレーショナルデータベースマネジメントシステム (RDBMS)
+### リレーショナルデータベースマネジメントシステム (RDBMS) 
 
 SQLなどのリレーショナルデータベースはテーブルに整理されたデータの集合である。
 
-**ACID** はリレーショナルデータベースにおける[トランザクション](https://en.wikipedia.org/wiki/Database_transaction)のプロパティの集合である
+**ACID** はリレーショナルデータベースにおける[トランザクション](https://en.wikipedia.org/wiki/Database_transaction) のプロパティの集合である
 
 * **不可分性** - それぞれのトランザクションはあるかないかのいずれかである
 * **一貫性** - どんなトランザクションもデータベースをある確かな状態から次の状態に遷移させる。
@@ -790,7 +790,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 ##### 欠点: マスタースレーブ レプリケーション
 
 * スレーブをマスターに昇格させるには追加のロジックが必要になる。
-* マスタースレーブ レプリケーション、マスターマスター レプリケーションの **両方** の欠点は[欠点: レプリケーション](#欠点-マスタースレーブ-レプリケーション)を参照
+* マスタースレーブ レプリケーション、マスターマスター レプリケーションの **両方** の欠点は[欠点: レプリケーション](#欠点-マスタースレーブ-レプリケーション) を参照
 
 #### マスターマスター レプリケーション
 
@@ -819,8 +819,8 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 ##### その他の参考資料、ページ: レプリケーション
 
-* [スケーラビリティ、 可用性、 スタビリティ パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [マルチマスター レプリケーション](https://en.wikipedia.org/wiki/Multi-master_replication)
+* [スケーラビリティ、 可用性、 スタビリティ パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/) 
+* [マルチマスター レプリケーション](https://en.wikipedia.org/wiki/Multi-master_replication) 
 
 #### Federation
 
@@ -836,12 +836,12 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 * 大規模な処理やテーブルを要するスキーマの場合、フェデレーションは効果的とは言えないでしょう。
 * どのデータベースに読み書きをするのかを指定するアプリケーションロジックを更新しなければなりません。
-* [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers)で二つのデータベースからのデータを連結するのはより複雑になるでしょう。
+* [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers) で二つのデータベースからのデータを連結するのはより複雑になるでしょう。
 * フェデレーションでは追加のハードウェアが必要になり、複雑性も増します。
 
 ##### その他の参考資料、ページ: federation
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU) 
 
 #### シャーディング
 
@@ -853,7 +853,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 シャーディングでは異なるデータベースにそれぞれがデータのサブセット断片のみを持つようにデータを分割します。ユーザーデータベースを例にとると、ユーザー数が増えるにつれてクラスターにはより多くの断片が加えられることになります。
 
-[federation](#federation)の利点に似ていて、シャーディングでは読み書きのトラフィックを減らし、レプリケーションを減らし、キャッシュヒットを増やすことができます。インデックスサイズも減らすことができます。一般的にはインデックスサイズを減らすと、パフォーマンスが向上しクエリ速度が速くなります。なにがしかのデータを複製する機能がなければデータロスにつながりますが、もし、一つのシャードが落ちても、他のシャードが動いていることになります。フェデレーションと同じく、単一の中央マスターが書き込みの処理をしなくても、並列で書き込みを処理することができ、スループットの向上が期待できます。
+[federation](#federation) の利点に似ていて、シャーディングでは読み書きのトラフィックを減らし、レプリケーションを減らし、キャッシュヒットを増やすことができます。インデックスサイズも減らすことができます。一般的にはインデックスサイズを減らすと、パフォーマンスが向上しクエリ速度が速くなります。なにがしかのデータを複製する機能がなければデータロスにつながりますが、もし、一つのシャードが落ちても、他のシャードが動いていることになります。フェデレーションと同じく、単一の中央マスターが書き込みの処理をしなくても、並列で書き込みを処理することができ、スループットの向上が期待できます。
 
 ユーザーテーブルをシャードする一般的な方法は、ユーザーのラストネームイニシャルでシャードするか、ユーザーの地理的配置でシャードするなどです。
 
@@ -867,15 +867,15 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 ##### その他の参考資料、ページ: シャーディング
 
-* [シャードの登場](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+* [シャードの登場](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html) 
 * [シャードデータベースアーキテクチャ](https://en.wikipedia.org/wiki/Shard_(database_architecture))
-* [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+* [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) 
 
 #### 非正規化
 
 非正規化では、書き込みのパフォーマンスをいくらか犠牲にして読み込みのパフォーマンスを向上させようとします。計算的に重いテーブルの結合などをせずに、複数のテーブルに冗長なデータのコピーが書き込まれるのを許容します。いくつかのRDBMS例えば、[PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) やOracleはこの冗長な情報を取り扱い、一貫性を保つための[materialized views](https://en.wikipedia.org/wiki/Materialized_view) という機能をサポートしています。
 
-[フェデレーション](#federation) や [シャーディング](#シャーディング)などのテクニックによってそれぞれのデータセンターに分配されたデータを合一させることはとても複雑な作業です。非正規化によってそのような複雑な処理をしなくて済むようになります。
+[フェデレーション](#federation) や [シャーディング](#シャーディング) などのテクニックによってそれぞれのデータセンターに分配されたデータを合一させることはとても複雑な作業です。非正規化によってそのような複雑な処理をしなくて済むようになります。
 
 多くのシステムで、100対1あるいは1000対1くらいになるくらい読み取りの方が、書き込みのトラフィックよりも多いことでしょう。読み込みを行うために、複雑なデータベースのジョイン処理が含まれるものは計算的に高価につきますし、ディスクの処理時間で膨大な時間を費消してしまうことになります。
 
@@ -887,7 +887,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 ###### その他の参考資料、ページ: 非正規化
 
-* [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+* [Denormalization](https://en.wikipedia.org/wiki/Denormalization) 
 
 #### SQLチューニング
 
@@ -895,7 +895,7 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 
 ボトルネックを明らかにし、シミュレートする上で、 **ベンチマーク** を定め、 **プロファイル** することはとても重要です。
 
-* **ベンチマーク** - [ab](http://httpd.apache.org/docs/2.2/programs/ab.html)などのツールを用いて、高負荷の状況をシミュレーションしてみましょう。
+* **ベンチマーク** - [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) などのツールを用いて、高負荷の状況をシミュレーションしてみましょう。
 * **プロファイル** - [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) などのツールを用いて、パフォーマンス状況の確認をしましょう。
 
 ベンチマークとプロファイルをとることで以下のような効率化の選択肢をとることになるでしょう。
@@ -909,20 +909,20 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 * 2の32乗や40億以下を超えない程度の大きな数には INT を使いましょう。
 * 通貨に関しては小数点表示上のエラーを避けるために `DECIMAL` を使いましょう。
 * 大きな `BLOBS` を保存するのは避けましょう。どこからそのオブジェクトを取ってくることができるかの情報を保存しましょう。
-* `VARCHAR(255)` は8ビットで数えられる最大の文字数です。一部のDBMSでは、1バイトの利用効率を最大化するためにこの文字数がよく使われます。
+* `VARCHAR(255) ` は8ビットで数えられる最大の文字数です。一部のDBMSでは、1バイトの利用効率を最大化するためにこの文字数がよく使われます。
 * [検索性能向上のため](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) 、可能であれば `NOT NULL` 制約を設定しましょう。
 
 ##### インデックスを効果的に用いる
 
 * クエリ(`SELECT`、 `GROUP BY`、 `ORDER BY`、 `JOIN`) の対象となる列にインデックスを使うことで速度を向上できるかもしれません。
-* インデックスは通常、平衡探索木である[B木](https://en.wikipedia.org/wiki/B-tree)の形で表されます。B木によりデータは常にソートされた状態になります。また検索、順次アクセス、挿入、削除を対数時間で行えます。
+* インデックスは通常、平衡探索木である[B木](https://en.wikipedia.org/wiki/B-tree) の形で表されます。B木によりデータは常にソートされた状態になります。また検索、順次アクセス、挿入、削除を対数時間で行えます。
 * インデックスを配置することはデータをメモリーに残すことにつながりより容量を必要とします。
 * インデックスの更新も必要になるため書き込みも遅くなります。
 * 大量のデータをロードする際には、インデックスを切ってからデータをロードして再びインデックスをビルドした方が速いことがあります。
 
 ##### 高負荷なジョインを避ける
 
-* パフォーマンス上必要なところには[非正規化](#非正規化)を適用する
+* パフォーマンス上必要なところには[非正規化](#非正規化) を適用する
 
 ##### テーブルのパーティション
 
@@ -934,10 +934,10 @@ SQLチューニングは広範な知識を必要とする分野で多くの [本
 
 ##### その他の参考資料、ページ: SQLチューニング
 
-* [MySQLクエリを最適化するためのTips](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck)
-* [VARCHAR(255)をやたらよく見かけるのはなんで？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-* [null値はどのようにパフォーマンスに影響するのか？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+* [MySQLクエリを最適化するためのTips](http://20bits.com/article/10-tips-for-optimizing-mysql-queries-that-dont-suck) 
+* [VARCHAR(255) をやたらよく見かけるのはなんで？](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l) 
+* [null値はどのようにパフォーマンスに影響するのか？](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) 
+* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) 
 
 ### NoSQL
 
@@ -955,7 +955,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 > 概要: ハッシュテーブル
 
-キーバリューストアでは一般的にO(1)の読み書きができ、それらはメモリないしSSDで裏付けられています。データストアはキーを [辞書的順序](https://en.wikipedia.org/wiki/Lexicographical_order) で保持することでキーの効率的な取得を可能にしています。キーバリューストアではメタデータを値とともに保持することが可能です。
+キーバリューストアでは一般的にO(1) の読み書きができ、それらはメモリないしSSDで裏付けられています。データストアはキーを [辞書的順序](https://en.wikipedia.org/wiki/Lexicographical_order) で保持することでキーの効率的な取得を可能にしています。キーバリューストアではメタデータを値とともに保持することが可能です。
 
 キーバリューストアはハイパフォーマンスな挙動が可能で、単純なデータモデルやインメモリーキャッシュレイヤーなどのデータが急速に変わる場合などに使われます。単純な処理のみに機能が制限されているので、追加の処理機能が必要な場合にはその複雑性はアプリケーション層に載せることになります。
 
@@ -963,16 +963,16 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ##### その他の参考資料、ページ: キーバリューストア
 
-* [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database)
-* [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redisアーキテクチャ](http://qnimate.com/overview-of-redis-architecture/)
-* [メムキャッシュアーキテクチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database) 
+* [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or) 
+* [Redisアーキテクチャ](http://qnimate.com/overview-of-redis-architecture/) 
+* [メムキャッシュアーキテクチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/) 
 
 #### ドキュメントストア
 
 > 概要: ドキュメントがバリューとして保存されたキーバリューストア
 
-ドキュメントストアはオブジェクトに関する全ての情報を持つドキュメント(XML、 JSON、 binaryなど)を中心に据えたシステムです。ドキュメントストアでは、ドキュメント自身の内部構造に基づいた、APIもしくはクエリ言語を提供します。 *メモ：多くのキーバリューストアでは、値のメタデータを扱う機能を含んでいますが、そのことによって二つドキュメントストアとの境界線が曖昧になってしまっています。*
+ドキュメントストアはオブジェクトに関する全ての情報を持つドキュメント(XML、 JSON、 binaryなど) を中心に据えたシステムです。ドキュメントストアでは、ドキュメント自身の内部構造に基づいた、APIもしくはクエリ言語を提供します。 *メモ：多くのキーバリューストアでは、値のメタデータを扱う機能を含んでいますが、そのことによって二つドキュメントストアとの境界線が曖昧になってしまっています。*
 
 以上のことを実現するために、ドキュメントはコレクション、タグ、メタデータやディレクトリなどとして整理されています。ドキュメント同士はまとめてグループにできるものの、それぞれで全く異なるフィールドを持つ可能性があります。
 
@@ -982,10 +982,10 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ##### その他の参考資料、ページ:  ドキュメントストア
 
-* [ドキュメント指向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database)
-* [MongoDB アーキテクチャ](https://www.mongodb.com/mongodb-architecture)
-* [CouchDB アーキテクチャ](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-* [Elasticsearch アーキテクチャ](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+* [ドキュメント指向 データベース](https://en.wikipedia.org/wiki/Document-oriented_database) 
+* [MongoDB アーキテクチャ](https://www.mongodb.com/mongodb-architecture) 
+* [CouchDB アーキテクチャ](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) 
+* [Elasticsearch アーキテクチャ](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up) 
 
 #### ワイドカラムストア
 
@@ -999,16 +999,16 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 ワイドカラムストアのデータの基本単位はカラム（ネーム・バリューのペア）です。それぞれのカラムはカラムファミリーとして（SQLテーブルのように）グループ化することができます。スーパーカラムファミリーはカラムファミリーの集合です。それぞれのカラムには行キーでアクセスすることができます。同じ行キーを持つカラムは同じ行として認識されます。それぞれの値は、バージョン管理とコンフリクトが起きた時のために、タイムスタンプを含みます。
 
-Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)を初のワイドカラムストアとして発表しました。それがオープンソースでHadoopなどでよく使われる[HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) やFacebookによる[Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) などのプロジェクトに影響を与えました。BigTable、HBaseやCassandraなどのストアはキーを辞書形式で保持することで選択したキーレンジでのデータ取得を効率的にします。
+Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) を初のワイドカラムストアとして発表しました。それがオープンソースでHadoopなどでよく使われる[HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) やFacebookによる[Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) などのプロジェクトに影響を与えました。BigTable、HBaseやCassandraなどのストアはキーを辞書形式で保持することで選択したキーレンジでのデータ取得を効率的にします。
 
 ワイドカラムストアは高い可用性とスケーラビリティを担保します。これらはとても大規模なデータセットを扱うことによく使われます。
 
 ##### その他の参考資料、ページ:  ワイドカラムストア
 
-* [SQL & NoSQL簡単に歴史をさらう](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-* [Bigtable アーキテクチャ](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase アーキテクチャ](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
-* [Cassandra アーキテクチャ](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
+* [SQL & NoSQL簡単に歴史をさらう](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html) 
+* [Bigtable アーキテクチャ](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) 
+* [HBase アーキテクチャ](https://www.mapr.com/blog/in-depth-look-hbase-architecture) 
+* [Cassandra アーキテクチャ](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html) 
 
 #### グラフデータベース
 
@@ -1022,21 +1022,21 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 
 グラフデータベースでは、それぞれのノードがレコードで、それぞれのアークは二つのノードを繋ぐ関係性として定義されます。グラフデータベースは多数の外部キーや多対多などの複雑な関係性を表すのに最適です。
 
-グラフデータベースはSNSなどのサービスの複雑な関係性モデルなどについて高いパフォーマンスを発揮します。比較的新しく、まだ一般的には用いられていないので、開発ツールやリソースを探すのが他の方法に比べて難しいかもしれません。多くのグラフは[REST APIs](#representational-state-transfer-rest)を通じてのみアクセスできます。
+グラフデータベースはSNSなどのサービスの複雑な関係性モデルなどについて高いパフォーマンスを発揮します。比較的新しく、まだ一般的には用いられていないので、開発ツールやリソースを探すのが他の方法に比べて難しいかもしれません。多くのグラフは[REST APIs](#representational-state-transfer-rest) を通じてのみアクセスできます。
 
 ##### その他の参考資料、ページ:  グラフ
 
-* [Graphデータベース](https://en.wikipedia.org/wiki/Graph_database)
-* [Neo4j](https://neo4j.com/)
-* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+* [Graphデータベース](https://en.wikipedia.org/wiki/Graph_database) 
+* [Neo4j](https://neo4j.com/) 
+* [FlockDB](https://blog.twitter.com/2010/introducing-flockdb) 
 
 #### その他の参考資料、ページ:  NoSQL
 
-* [基本用語の説明](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQLデータベースについて調査と選択ガイド](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [スケーラビリティ](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [NoSQLのイントロダクション](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQLパターン](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+* [基本用語の説明](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology) 
+* [NoSQLデータベースについて調査と選択ガイド](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq) 
+* [スケーラビリティ](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database) 
+* [NoSQLのイントロダクション](https://www.youtube.com/watch?v=qI_g07C_Q5I) 
+* [NoSQLパターン](http://horicky.blogspot.com/2009/11/nosql-patterns.html) 
 
 ### SQLか？NoSQLか？
 
@@ -1077,8 +1077,8 @@ NoSQLに適するサンプルデータ:
 
 ##### その他の参考資料、ページ:  　SQLもしくはNoSQL
 
-* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=w95murBkYmU)
-* [SQLとNoSQLの違い](https://www.sitepoint.com/sql-vs-nosql-differences/)
+* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=w95murBkYmU) 
+* [SQLとNoSQLの違い](https://www.sitepoint.com/sql-vs-nosql-differences/) 
 
 ## キャッシュ
 
@@ -1110,7 +1110,7 @@ NoSQLに適するサンプルデータ:
 
 ### アプリケーションキャッシング
 
-メムキャッシュなどのIn-memoryキャッシュやRedisはアプリケーションとデータストレージの間のキーバリューストアです。データはRAMで保持されるため、データがディスクで保存される一般的なデータベースよりもだいぶ速いです。RAM容量はディスクよりも限られているので、[least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used)などの[cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) アルゴリズムが 'コールド' なエントリを弾き、'ホット' なデータをRAMに保存します。
+メムキャッシュなどのIn-memoryキャッシュやRedisはアプリケーションとデータストレージの間のキーバリューストアです。データはRAMで保持されるため、データがディスクで保存される一般的なデータベースよりもだいぶ速いです。RAM容量はディスクよりも限られているので、[least recently used (LRU) ](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) などの[cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) アルゴリズムが 'コールド' なエントリを弾き、'ホット' なデータをRAMに保存します。
 
 Redisはさらに以下のような機能を備えています:
 
@@ -1167,12 +1167,12 @@ Redisはさらに以下のような機能を備えています:
 * エントリを返します
 
 ```python
-def get_user(self, user_id):
-    user = cache.get("user.{0}", user_id)
+def get_user(self, user_id) :
+    user = cache.get("user.{0}", user_id) 
     if user is None:
-        user = db.query("SELECT * FROM users WHERE user_id = {0}", user_id)
+        user = db.query("SELECT * FROM users WHERE user_id = {0}", user_id) 
         if user is not None:
-            key = "user.{0}".format(user_id)
+            key = "user.{0}".format(user_id) 
             cache.set(key, json.dumps(user))
     return user
 ```
@@ -1184,7 +1184,7 @@ def get_user(self, user_id):
 ##### 欠点: キャッシュアサイド
 
 * 各キャッシュミスは三つのトリップを呼び出すことになり、体感できるほどの遅延が起きてしまいます。
-* データベースのデータが更新されるとキャッシュデータは古いものになってしまいます。time-to-live (TTL)を設定することでキャッシュエントリの更新を強制的に行う、もしくはライトスルーを採用することでこの問題は緩和できます。
+* データベースのデータが更新されるとキャッシュデータは古いものになってしまいます。time-to-live (TTL) を設定することでキャッシュエントリの更新を強制的に行う、もしくはライトスルーを採用することでこの問題は緩和できます。
 * ノードが落ちると、新規の空のノードで代替されることでレイテンシーが増加することになります。
 
 #### ライトスルー
@@ -1204,15 +1204,15 @@ def get_user(self, user_id):
 アプリケーションコード:
 
 ```
-set_user(12345, {"foo":"bar"})
+set_user(12345, {"foo":"bar"}) 
 ```
 
 キャッシュコード:
 
 ```python
-def set_user(user_id, values):
-    user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
-    cache.set(user_id, user)
+def set_user(user_id, values) :
+    user = db.query("UPDATE Users WHERE id = {0}", user_id, values) 
+    cache.set(user_id, user) 
 ```
 
 ライトスルーは書き込み処理のせいで全体としては遅いオペレーションですが、書き込まれたばかりのデータに関する読み込みは速いです。ユーザー側は一般的にデータ更新時の方が読み込み時よりもレイテンシーに許容的です。キャッシュ内のデータは最新版で保たれます。
@@ -1222,7 +1222,7 @@ def set_user(user_id, values):
 * ノードが落ちたこと、もしくはスケーリングによって新しいノードが作成された時に、新しいノードはデータベース内のエントリーが更新されるまではエントリーをキャッシュしません。キャッシュアサイドとライトスルーを併用することでこの問題を緩和できます。
 * 書き込まれたデータの大部分は一度も読み込まれることはありません。このデータはTTLによって圧縮することができます。
 
-#### ライトビハインド (ライトバック)
+#### ライトビハインド (ライトバック) 
 
 <p align="center">
   <img src="images/rgSrvjG.png">
@@ -1258,18 +1258,18 @@ def set_user(user_id, values):
 
 ### 欠点: キャッシュ
 
-* [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms)などを用いて、データベースなどの真のデータとキャッシュの間の一貫性を保つ必要があります。
+* [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) などを用いて、データベースなどの真のデータとキャッシュの間の一貫性を保つ必要があります。
 * Redisやmemcachedを追加することでアプリケーション構成を変更する必要があります。
 * Cache invalidationも難しいですがそれに加えて、いつキャッシュを更新するかという複雑な問題にも悩まされることになります。
 
 ### その他の参考資料、ページ
 
-* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [スケーラブルなシステムデザインパターン](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [スケールできるシステムを設計するためのイントロダクション](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [スケーラビリティ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-* [AWS ElastiCacheのストラテジー](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast) 
+* [スケーラブルなシステムデザインパターン](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html) 
+* [スケールできるシステムを設計するためのイントロダクション](http://lethain.com/introduction-to-architecting-systems-for-scale/) 
+* [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/) 
+* [スケーラビリティ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache) 
+* [AWS ElastiCacheのストラテジー](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html) 
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
 ## 非同期処理
@@ -1305,7 +1305,7 @@ def set_user(user_id, values):
 
 ### バックプレッシャー
 
-もし、キューが拡大しすぎると、メモリーよりもキューの方が大きくなりキャッシュミスが起こり、ディスク読み出しにつながり、パフォーマンスが低下することにつながります。[バックプレッシャー](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)はキューサイズを制限することで回避することができ、高いスループットを確保しキューにすでにあるジョブについてのレスポンス時間を短縮できます。キューがいっぱいになると、クライアントはサーバービジーもしくはHTTP 503をレスポンスとして受け取りまた後で時間をおいてアクセスするようにメッセージを受け取ります。クライアントは[exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff)などによって後ほど再度時間を置いてリクエストすることができます。
+もし、キューが拡大しすぎると、メモリーよりもキューの方が大きくなりキャッシュミスが起こり、ディスク読み出しにつながり、パフォーマンスが低下することにつながります。[バックプレッシャー](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) はキューサイズを制限することで回避することができ、高いスループットを確保しキューにすでにあるジョブについてのレスポンス時間を短縮できます。キューがいっぱいになると、クライアントはサーバービジーもしくはHTTP 503をレスポンスとして受け取りまた後で時間をおいてアクセスするようにメッセージを受け取ります。クライアントは[exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) などによって後ほど再度時間を置いてリクエストすることができます。
 
 ### 欠点: 非同期処理
 
@@ -1313,10 +1313,10 @@ def set_user(user_id, values):
 
 ### その他の参考資料、ページ
 
-* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [オーバーロードした時にバックプレッシャーを適用する](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
-* [メッセージキューとタスクキューの違いとは？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4) 
+* [オーバーロードした時にバックプレッシャーを適用する](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) 
+* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law) 
+* [メッセージキューとタスクキューの違いとは？](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function) 
 
 ## 通信
 
@@ -1326,11 +1326,11 @@ def set_user(user_id, values):
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
 
-### Hypertext transfer protocol (HTTP)
+### Hypertext transfer protocol (HTTP) 
 
 HTTP はクライアントとサーバー間でのデータをエンコードして転送するための手法です。リクエスト・レスポンスに関わるプロトコルです。クライアントがリクエストをサーバーに投げ、サーバーがリクエストに関係するコンテンツと完了ステータス情報をレスポンスとして返します。HTTPは自己完結するので、間にロードバランサー、キャッシュ、エンクリプション、圧縮などのどんな中間ルーターが入っても動くようにできています。
 
-基本的なHTTPリクエストはHTTP動詞(メソッド)とリソース(エンドポイント)で成り立っています。以下がよくあるHTTP動詞です。:
+基本的なHTTPリクエストはHTTP動詞(メソッド) とリソース(エンドポイント) で成り立っています。以下がよくあるHTTP動詞です。:
 
 | 動詞 | 詳細 | 冪等性* | セーフ | キャッシュできるか |
 |---|---|---|---|---|
@@ -1346,11 +1346,11 @@ HTTPは**TCP** や **UDP** などの低級プロトコルに依存している�
 
 #### その他の参考資料、ページ: HTTP
 
-* [HTTPってなに?](https://www.nginx.com/resources/glossary/http/)
-* [HTTP と TCPの違い](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
-* [PUT と PATCHの違い](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+* [HTTPってなに?](https://www.nginx.com/resources/glossary/http/) 
+* [HTTP と TCPの違い](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol) 
+* [PUT と PATCHの違い](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1) 
 
-### 伝送制御プロトコル (TCP)
+### 伝送制御プロトコル (TCP) 
 
 <p align="center">
   <img src="images/JdAsdvG.jpg">
@@ -1358,14 +1358,14 @@ HTTPは**TCP** や **UDP** などの低級プロトコルに依存している�
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
 
-TCPは[IP network](https://en.wikipedia.org/wiki/Internet_Protocol)の上で成り立つ接続プロトコルです。接続は[handshake](https://en.wikipedia.org/wiki/Handshaking)によって開始、解除されます。全ての送信されたパケットは欠損なしで送信先に送信された順番で到達するように以下の方法で保証されています:
+TCPは[IP network](https://en.wikipedia.org/wiki/Internet_Protocol) の上で成り立つ接続プロトコルです。接続は[handshake](https://en.wikipedia.org/wiki/Handshaking) によって開始、解除されます。全ての送信されたパケットは欠損なしで送信先に送信された順番で到達するように以下の方法で保証されています:
 
-* シーケンス番号と[checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)が全てのパケットに用意されている
+* シーケンス番号と[checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) が全てのパケットに用意されている
 * [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))パケットと自動再送信
 
-もし送信者が正しいレスポンスを受け取らなかったとき、パケットを再送信します。複数のタイムアウトがあったとき、接続は解除されます。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの機能によって速度は低下し、一般的にUDPよりも非効率な転送手段になっています。
+もし送信者が正しいレスポンスを受け取らなかったとき、パケットを再送信します。複数のタイムアウトがあったとき、接続は解除されます。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control) も実装しています。これらの機能によって速度は低下し、一般的にUDPよりも非効率な転送手段になっています。
 
-ハイスループットを実現するために、ウェブサーバーはかなり大きな数のTCP接続を開いておくことがあり、そのことでメモリー使用が圧迫されます。ウェブサーバスレッドと例えば[memcached](#memcached) サーバーの間で多数のコネクションを保っておくことは高くつくかもしれません。可能なところではUDPに切り替えるだけでなく[コネクションプーリング](https://en.wikipedia.org/wiki/Connection_pool)なども役立つかもしれません。
+ハイスループットを実現するために、ウェブサーバーはかなり大きな数のTCP接続を開いておくことがあり、そのことでメモリー使用が圧迫されます。ウェブサーバスレッドと例えば[memcached](#memcached) サーバーの間で多数のコネクションを保っておくことは高くつくかもしれません。可能なところではUDPに切り替えるだけでなく[コネクションプーリング](https://en.wikipedia.org/wiki/Connection_pool) なども役立つかもしれません。
 
 TCPは高い依存性を要し、時間制約が厳しくないものに適しているでしょう。ウェブサーバー、データベース情報、SMTP、FTPやSSHなどの例に適用されます。
 
@@ -1374,7 +1374,7 @@ TCPは高い依存性を要し、時間制約が厳しくないものに適し�
 * 全てのデータが欠損することなしに届いてほしい
 * ネットワークスループットの最適な自動推測をしてオペレーションしたい
 
-### ユーザデータグラムプロトコル (UDP)
+### ユーザデータグラムプロトコル (UDP) 
 
 <p align="center">
   <img src="images/yzDrJtA.jpg">
@@ -1396,14 +1396,14 @@ TCPよりもUDPを使うのは:
 
 #### その他の参考資料、ページ: TCP と UDP
 
-* [ゲームプログラミングのためのネットワーク](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
-* [TCP と UDP プロトコルの主な違い](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
-* [TCP と UDPの違い](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
-* [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
-* [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Facebookのメムキャッシュスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [ゲームプログラミングのためのネットワーク](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/) 
+* [TCP と UDP プロトコルの主な違い](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/) 
+* [TCP と UDPの違い](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp) 
+* [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) 
+* [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol) 
+* [Facebookのメムキャッシュスケーリング](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf) 
 
-### 遠隔手続呼出 (RPC)
+### 遠隔手続呼出 (RPC) 
 
 <p align="center">
   <img src="images/iF4Mkb5.png">
@@ -1411,7 +1411,7 @@ TCPよりもUDPを使うのは:
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
-RPCではクライアントがリモートサーバーなどの異なるアドレス空間でプロシージャーが処理されるようにします。プロシージャーはローカルでのコールのように、クライアントからサーバーにどのように通信するかという詳細を省いた状態でコードが書かれます。リモートのコールは普通、ローカルのコールよりも遅く、信頼性に欠けるため、RPCコールをローカルコールと区別させておくことが好ましいでしょう。人気のRPCフレームワークは以下です。[Protobuf](https://developers.google.com/protocol-buffers/)、 [Thrift](https://thrift.apache.org/)、[Avro](https://avro.apache.org/docs/current/)
+RPCではクライアントがリモートサーバーなどの異なるアドレス空間でプロシージャーが処理されるようにします。プロシージャーはローカルでのコールのように、クライアントからサーバーにどのように通信するかという詳細を省いた状態でコードが書かれます。リモートのコールは普通、ローカルのコールよりも遅く、信頼性に欠けるため、RPCコールをローカルコールと区別させておくことが好ましいでしょう。人気のRPCフレームワークは以下です。[Protobuf](https://developers.google.com/protocol-buffers/) 、 [Thrift](https://thrift.apache.org/) 、[Avro](https://avro.apache.org/docs/current/) 
 
 RPC は リクエストレスポンスプロトコル:
 
@@ -1450,18 +1450,18 @@ RPCは振る舞いを公開することに焦点を当てています。RPCは�
 * RPCクライアントとはサービス実装により厳密に左右されることになります。
 * 新しいオペレーション、使用例があるたびに新しくAPIが定義されなければなりません。
 * RPCをデバッグするのは難しい可能性があります。
-* 既存のテクノロジーをそのまま使ってサービスを構築することはできないかもしれません。例えば、[Squid](http://www.squid-cache.org/)などのサーバーに[RPCコールが正しくキャッシュ](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) されるように追加で骨を折る必要があるかもしれません。
+* 既存のテクノロジーをそのまま使ってサービスを構築することはできないかもしれません。例えば、[Squid](http://www.squid-cache.org/) などのサーバーに[RPCコールが正しくキャッシュ](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) されるように追加で骨を折る必要があるかもしれません。
 
-### Representational state transfer (REST)
+### Representational state transfer (REST) 
 
 RESTは、クライアントがサーバーによってマネージされるリソースに対して処理を行うクライアント・サーバーモデルを支持するアーキテキチャスタイルです。サーバーは操作できるもしくは新しいリソースレプレゼンテーションを受け取ることができるようなリソースやアクションのレプレゼンテーションを提供します。すべての通信はステートレスでキャッシュ可能でなければなりません。
 
 RESTful なインターフェースには次の四つの特徴があります:
 
-* **特徴的なリソース (URI in HTTP)** - どのオペレーションであっても同じURIを使う。
-* **HTTP動詞によって変わる (Verbs in HTTP)** - 動詞、ヘッダー、ボディを使う
-* **自己説明的なエラーメッセージ (status response in HTTP)** - ステータスコードを使い、新しく作ったりしないこと。
-* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML interface for HTTP)** - 自分のwebサービスがブラウザで完全にアクセスできること。
+* **特徴的なリソース (URI in HTTP) ** - どのオペレーションであっても同じURIを使う。
+* **HTTP動詞によって変わる (Verbs in HTTP) ** - 動詞、ヘッダー、ボディを使う
+* **自己説明的なエラーメッセージ (status response in HTTP) ** - ステータスコードを使い、新しく作ったりしないこと。
+* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML interface for HTTP) ** - 自分のwebサービスがブラウザで完全にアクセスできること。
 
 サンプル REST コール:
 
@@ -1472,7 +1472,7 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-RESTはデータを公開することに焦点を当てています。クライアントとサーバーのカップリングを最小限にするもので、パブリックAPIなどによく用いられます。RESTはURI、 [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md)、そして、GET、POST、PUT、 DELETE、PATCHなどのHTTP動詞等のよりジェネリックで統一されたメソッドを用います。ステートレスであるのでRESTは水平スケーリングやパーティショニングに最適です。
+RESTはデータを公開することに焦点を当てています。クライアントとサーバーのカップリングを最小限にするもので、パブリックAPIなどによく用いられます。RESTはURI、 [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md) 、そして、GET、POST、PUT、 DELETE、PATCHなどのHTTP動詞等のよりジェネリックで統一されたメソッドを用います。ステートレスであるのでRESTは水平スケーリングやパーティショニングに最適です。
 
 #### 欠点: REST
 
@@ -1499,30 +1499,30 @@ RESTはデータを公開することに焦点を当てています。クライ�
 
 #### その他の参考資料、ページ: REST と RPC
 
-* [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
-* [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
-* [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
-* [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
-* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
-* [Thrift](https://code.facebook.com/posts/1468950976659943/)
-* [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+* [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/) 
+* [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186) 
+* [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc) 
+* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) 
+* [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs) 
+* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview) 
+* [Thrift](https://code.facebook.com/posts/1468950976659943/) 
+* [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508) 
 
 ## セキュリティ
 
-このセクションは更新が必要です。[contributing](#contributing)してください！
+このセクションは更新が必要です。[contributing](#contributing) してください！
 
 セキュリティは幅広いトピックです。十分な経験、セキュリティ分野のバックグラウンドがなくても、セキュリティの知識を要する職に応募するのでない限り、基本以上のことを知る必要はないでしょう。
 
 * 情報伝達、保存における暗号化
-* [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) や [SQL injection](https://en.wikipedia.org/wiki/SQL_injection)を防ぐために、全てのユーザー入力もしくはユーザーに露出される入力パラメーターをサニタイズする
+* [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) や [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) を防ぐために、全てのユーザー入力もしくはユーザーに露出される入力パラメーターをサニタイズする
 * SQL injectionを防ぐためにパラメータ化されたクエリを用いる。
-* [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)の原理を用いる
+* [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) の原理を用いる
 
 ### その他の参考資料、ページ:
 
-* [開発者のためのセキュリティガイド](https://github.com/FallibleInc/security-guide-for-developers)
-* [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+* [開発者のためのセキュリティガイド](https://github.com/FallibleInc/security-guide-for-developers) 
+* [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet) 
 
 ## 補遺
 
@@ -1545,7 +1545,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 
 #### その他の参考資料、ページ:
 
-* [2の乗数表](https://en.wikipedia.org/wiki/Power_of_two)
+* [2の乗数表](https://en.wikipedia.org/wiki/Power_of_two) 
 
 ### 全てのプログラマーが知るべきレイテンシー値
 
@@ -1586,14 +1586,14 @@ Notes
 
 #### レイテンシーの視覚的表
 
-![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
+![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67) 
 
 #### その他の参考資料、ページ:
 
-* [全てのプログラマーが知るべきレイテンシー値 - 1](https://gist.github.com/jboner/2841832)
-* [全てのプログラマーが知るべきレイテンシー値 - 2](https://gist.github.com/hellerbarde/2843375)
-* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
-* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+* [全てのプログラマーが知るべきレイテンシー値 - 1](https://gist.github.com/jboner/2841832) 
+* [全てのプログラマーが知るべきレイテンシー値 - 2](https://gist.github.com/hellerbarde/2843375) 
+* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf) 
+* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf) 
 
 ### 他のシステム設計面接例題
 
@@ -1602,26 +1602,26 @@ Notes
 | 質問 | 解答 |
 |---|---|
 | Dropboxのようなファイル同期サービスを設計する | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Googleのような検索エンジンの設計 | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Googleのような検索エンジンの設計 | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407) <br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search) <br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/) <br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | Googleのようなスケーラブルなwebクローラーの設計 | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Google docsの設計 | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| Google docsの設計 | [code.google.com](https://code.google.com/p/google-mobwrite/) <br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
 | Redisのようなキーバリューストアの設計 | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | Memcachedのようなキャッシュシステムの設計 | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Amazonのようなレコメンデーションシステムの設計 | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
+| Amazonのようなレコメンデーションシステムの設計 | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html) <br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
 | BitlyのようなURL短縮サービスの設計 | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
-| WhatsAppのようなチャットアプリの設計 | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-| Instagramのような写真共有サービスの設計 | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
-| Facebookニュースフィードの設計 | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
-| Facebookタイムラインの設計 | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
-| Facebookチャットの設計 | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
-| Facebookのようなgraph検索の設計 | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| WhatsAppのようなチャットアプリの設計 | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) 
+| Instagramのような写真共有サービスの設計 | [highscalability.com](http://highscalability.com/flickr-architecture) <br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
+| Facebookニュースフィードの設計 | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed) <br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed) <br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
+| Facebookタイムラインの設計 | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920) <br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
+| Facebookチャットの設計 | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf) <br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
+| Facebookのようなgraph検索の設計 | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920) <br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920) <br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
 | CloudFlareのようなCDNの設計 | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci) |
-| Twitterのトレンド機能の設計 | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
-| ランダムID発行システムの設計 | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
-| 一定のインターバル時間での上位k件を返す | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
+| Twitterのトレンド機能の設計 | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/) <br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
+| ランダムID発行システムの設計 | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake) <br/>[github.com](https://github.com/twitter/snowflake/) |
+| 一定のインターバル時間での上位k件を返す | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf) <br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
 | 複数のデータセンターからデータを配信するサービスの設計 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html) <br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/) <br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | システム設計例題を追加する | [Contribute](#contributing) |
 
 ### 実世界のアーキテクチャ
@@ -1648,18 +1648,18 @@ Notes
 | | | |
 | データストア | **Bigtable** - Googleのカラム指向分散データベース | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
 | データストア | **HBase** - Bigtableのオープンソース実装 | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
-| データストア | **Cassandra** - Facebookのカラム指向分散データベース | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
+| データストア | **Cassandra** - Facebookのカラム指向分散データベース | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666) 
 | データストア | **DynamoDB** - Amazonのドキュメント指向分散データベース | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
 | データストア | **MongoDB** - ドキュメント指向分散データベース | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
 | データストア | **Spanner** - Googleのグローバル分散データベース | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
 | データストア | **Memcached** - 分散メモリーキャッシングシステム | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | データストア | **Redis** - 永続性とバリュータイプを兼ね備えた分散メモリーキャッシングシステム | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | | | |
-| ファイルシステム | **Google File System (GFS)** - 分散ファイルシステム | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
-| ファイルシステム | **Hadoop File System (HDFS)** - GFSのオープンソース実装 | [apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) |
+| ファイルシステム | **Google File System (GFS) ** - 分散ファイルシステム | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
+| ファイルシステム | **Hadoop File System (HDFS) ** - GFSのオープンソース実装 | [apache.org](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) |
 | | | |
 | Misc | **Chubby** - 疎結合の分散システムをロックするGoogleのサービス | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
-| Misc | **Dapper** - 分散システムを追跡するインフラ | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
+| Misc | **Dapper** - 分散システムを追跡するインフラ | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf) 
 | Misc | **Kafka** - LinkedInによるPub/subメッセージキュー | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - 同期を可能にする中央集権インフラとサービス | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | | アーキテクチャを追加する | [Contribute](#contributing) |
@@ -1674,22 +1674,22 @@ Notes
 | DropBox | [How we've scaled Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
 | ESPN | [Operating At 100,000 duh nuh nuhs per second](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
 | Google | [Google architecture](http://highscalability.com/google-architecture) |
-| Instagram | [14 million users, terabytes of photos](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[What powers Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
+| Instagram | [14 million users, terabytes of photos](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) <br/>[What powers Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
 | Justin.tv | [Justin.Tv's live video broadcasting architecture](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
-| Facebook | [Scaling memcached at Facebook](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook’s distributed data store for the social graph](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) |
+| Facebook | [Scaling memcached at Facebook](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf) <br/>[TAO: Facebook’s distributed data store for the social graph](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf) <br/>[Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) |
 | Flickr | [Flickr architecture](http://highscalability.com/flickr-architecture) |
 | Mailbox | [From 0 to one million users in 6 weeks](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
-| Pinterest | [From 0 To 10s of billions of page views a month](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html)<br/>[18 million visitors, 10x growth, 12 employees](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
+| Pinterest | [From 0 To 10s of billions of page views a month](http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html) <br/>[18 million visitors, 10x growth, 12 employees](http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html) |
 | Playfish | [50 million monthly users and growing](http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html) |
 | PlentyOfFish | [PlentyOfFish architecture](http://highscalability.com/plentyoffish-architecture) |
 | Salesforce | [How they handle 1.3 billion transactions a day](http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html) |
 | Stack Overflow | [Stack Overflow architecture](http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html) |
 | TripAdvisor | [40M visitors, 200M dynamic page views, 30TB data](http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html) |
 | Tumblr | [15 billion page views a month](http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html) |
-| Twitter | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster)<br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html)<br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html)<br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)<br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI)<br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
+| Twitter | [Making Twitter 10000 percent faster](http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster) <br/>[Storing 250 million tweets a day using MySQL](http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html) <br/>[150M active users, 300K QPS, a 22 MB/S firehose](http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html) <br/>[Timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability) <br/>[Big and small data at Twitter](https://www.youtube.com/watch?v=5cKTP36HVgI) <br/>[Operations at Twitter: scaling beyond 100 million users](https://www.youtube.com/watch?v=z8LU0Cj6BOU) |
 | Uber | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html) |
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
-| YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
+| YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8) <br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
 ### 企業のエンジニアブログ
 
@@ -1697,62 +1697,62 @@ Notes
 >
 > 投げられる質問は同じ分野から来ることもあるでしょう
 
-* [Airbnb Engineering](http://nerds.airbnb.com/)
-* [Atlassian Developers](https://developer.atlassian.com/blog/)
-* [Autodesk Engineering](http://cloudengineering.autodesk.com/blog/)
-* [AWS Blog](https://aws.amazon.com/blogs/aws/)
-* [Bitly Engineering Blog](http://word.bitly.com/)
-* [Box Blogs](https://www.box.com/blog/engineering/)
-* [Cloudera Developer Blog](http://blog.cloudera.com/blog/)
-* [Dropbox Tech Blog](https://tech.dropbox.com/)
-* [Engineering at Quora](http://engineering.quora.com/)
-* [Ebay Tech Blog](http://www.ebaytechblog.com/)
-* [Evernote Tech Blog](https://blog.evernote.com/tech/)
-* [Etsy Code as Craft](http://codeascraft.com/)
-* [Facebook Engineering](https://www.facebook.com/Engineering)
-* [Flickr Code](http://code.flickr.net/)
-* [Foursquare Engineering Blog](http://engineering.foursquare.com/)
-* [GitHub Engineering Blog](http://githubengineering.com/)
-* [Google Research Blog](http://googleresearch.blogspot.com/)
-* [Groupon Engineering Blog](https://engineering.groupon.com/)
-* [Heroku Engineering Blog](https://engineering.heroku.com/)
-* [Hubspot Engineering Blog](http://product.hubspot.com/blog/topic/engineering)
-* [High Scalability](http://highscalability.com/)
-* [Instagram Engineering](http://instagram-engineering.tumblr.com/)
-* [Intel Software Blog](https://software.intel.com/en-us/blogs/)
-* [Jane Street Tech Blog](https://blogs.janestreet.com/category/ocaml/)
-* [LinkedIn Engineering](http://engineering.linkedin.com/blog)
-* [Microsoft Engineering](https://engineering.microsoft.com/)
-* [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
-* [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
-* [Pinterest Engineering Blog](http://engineering.pinterest.com/)
-* [Quora Engineering](https://engineering.quora.com/)
-* [Reddit Blog](http://www.redditblog.com/)
-* [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
-* [Slack Engineering Blog](https://slack.engineering/)
-* [Spotify Labs](https://labs.spotify.com/)
-* [Twilio Engineering Blog](http://www.twilio.com/engineering)
-* [Twitter Engineering](https://engineering.twitter.com/)
-* [Uber Engineering Blog](http://eng.uber.com/)
-* [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
-* [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
-* [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
+* [Airbnb Engineering](http://nerds.airbnb.com/) 
+* [Atlassian Developers](https://developer.atlassian.com/blog/) 
+* [Autodesk Engineering](http://cloudengineering.autodesk.com/blog/) 
+* [AWS Blog](https://aws.amazon.com/blogs/aws/) 
+* [Bitly Engineering Blog](http://word.bitly.com/) 
+* [Box Blogs](https://www.box.com/blog/engineering/) 
+* [Cloudera Developer Blog](http://blog.cloudera.com/blog/) 
+* [Dropbox Tech Blog](https://tech.dropbox.com/) 
+* [Engineering at Quora](http://engineering.quora.com/) 
+* [Ebay Tech Blog](http://www.ebaytechblog.com/) 
+* [Evernote Tech Blog](https://blog.evernote.com/tech/) 
+* [Etsy Code as Craft](http://codeascraft.com/) 
+* [Facebook Engineering](https://www.facebook.com/Engineering) 
+* [Flickr Code](http://code.flickr.net/) 
+* [Foursquare Engineering Blog](http://engineering.foursquare.com/) 
+* [GitHub Engineering Blog](http://githubengineering.com/) 
+* [Google Research Blog](http://googleresearch.blogspot.com/) 
+* [Groupon Engineering Blog](https://engineering.groupon.com/) 
+* [Heroku Engineering Blog](https://engineering.heroku.com/) 
+* [Hubspot Engineering Blog](http://product.hubspot.com/blog/topic/engineering) 
+* [High Scalability](http://highscalability.com/) 
+* [Instagram Engineering](http://instagram-engineering.tumblr.com/) 
+* [Intel Software Blog](https://software.intel.com/en-us/blogs/) 
+* [Jane Street Tech Blog](https://blogs.janestreet.com/category/ocaml/) 
+* [LinkedIn Engineering](http://engineering.linkedin.com/blog) 
+* [Microsoft Engineering](https://engineering.microsoft.com/) 
+* [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/) 
+* [Netflix Tech Blog](http://techblog.netflix.com/) 
+* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/) 
+* [Pinterest Engineering Blog](http://engineering.pinterest.com/) 
+* [Quora Engineering](https://engineering.quora.com/) 
+* [Reddit Blog](http://www.redditblog.com/) 
+* [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/) 
+* [Slack Engineering Blog](https://slack.engineering/) 
+* [Spotify Labs](https://labs.spotify.com/) 
+* [Twilio Engineering Blog](http://www.twilio.com/engineering) 
+* [Twitter Engineering](https://engineering.twitter.com/) 
+* [Uber Engineering Blog](http://eng.uber.com/) 
+* [Yahoo Engineering Blog](http://yahooeng.tumblr.com/) 
+* [Yelp Engineering Blog](http://engineeringblog.yelp.com/) 
+* [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering) 
 
 #### その他の参考資料、ページ:
 
-* [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
+* [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) 
 
-ここにあるリストは比較的小規模なものにとどめ、[kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)により詳細に記すことで重複しないようにしておくことにする。エンジニアブログへのリンクを追加する場合はここではなく、engineering-blogsレボジトリに追加することを検討してください。
+ここにあるリストは比較的小規模なものにとどめ、[kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) により詳細に記すことで重複しないようにしておくことにする。エンジニアブログへのリンクを追加する場合はここではなく、engineering-blogsレボジトリに追加することを検討してください。
 
 ## 進行中の作業
 
-セクションの追加や、進行中の作業を手伝っていただける場合は[こちら](#contributing)!
+セクションの追加や、進行中の作業を手伝っていただける場合は[こちら](#contributing) !
 
 * MapReduceによる分散コンピューティング
 * Consistent hashing
 * Scatter gather
-* [Contribute](#contributing)
+* [Contribute](#contributing) 
 
 ## クレジット
 
@@ -1760,28 +1760,28 @@ Notes
 
 Special thanks to:
 
-* [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
-* [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
-* [High scalability](http://highscalability.com/)
-* [checkcheckzz/system-design-interview](https://github.com/checkcheckzz/system-design-interview)
-* [shashank88/system_design](https://github.com/shashank88/system_design)
-* [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
-* [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
-* [A distributed systems reading list](http://dancres.github.io/Pages/)
-* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/) 
+* [Cracking the coding interview](https://www.amazon.com/dp/0984782850/) 
+* [High scalability](http://highscalability.com/) 
+* [checkcheckzz/system-design-interview](https://github.com/checkcheckzz/system-design-interview) 
+* [shashank88/system_design](https://github.com/shashank88/system_design) 
+* [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering) 
+* [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f) 
+* [A distributed systems reading list](http://dancres.github.io/Pages/) 
+* [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview) 
 
 ## Contact info
 
 Feel free to contact me to discuss any issues, questions, or comments.
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+My contact info can be found on my [GitHub page](https://github.com/donnemartin) .
 
 ## License
 
-*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook) .*
 
     Copyright 2017 Donne Martin
 
-    Creative Commons Attribution 4.0 International License (CC BY 4.0)
+    Creative Commons Attribution 4.0 International License (CC BY 4.0) 
 
     http://creativecommons.org/licenses/by/4.0/

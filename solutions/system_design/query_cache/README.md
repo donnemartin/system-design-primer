@@ -58,7 +58,7 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/KqZ3dSx.png)
+![Imgur](http://i.imgur.com/KqZ3dSx.png) 
 
 ## Step 3: Design core components
 
@@ -70,7 +70,7 @@ Popular queries can be served from a **Memory Cache** such as Redis or Memcached
 
 Since the cache has limited capacity, we'll use a least recently used (LRU) approach to expire older entries.
 
-* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 
 * The **Web Server** forwards the request to the **Query API** server
 * The **Query API** server does the following:
     * Parses the query
@@ -98,33 +98,33 @@ The cache can use a doubly-linked list: new items will be added to the head whil
 **Query API Server** implementation:
 
 ```python
-class QueryApi(object):
+class QueryApi(object) :
 
-    def __init__(self, memory_cache, reverse_index_service):
+    def __init__(self, memory_cache, reverse_index_service) :
         self.memory_cache = memory_cache
         self.reverse_index_service = reverse_index_service
 
-    def parse_query(self, query):
+    def parse_query(self, query) :
         """Remove markup, break text into terms, deal with typos,
         normalize capitalization, convert to use boolean operations.
         """
         ...
 
-    def process_query(self, query):
-        query = self.parse_query(query)
-        results = self.memory_cache.get(query)
+    def process_query(self, query) :
+        query = self.parse_query(query) 
+        results = self.memory_cache.get(query) 
         if results is None:
-            results = self.reverse_index_service.process_search(query)
-            self.memory_cache.set(query, results)
+            results = self.reverse_index_service.process_search(query) 
+            self.memory_cache.set(query, results) 
         return results
 ```
 
 **Node** implementation:
 
 ```python
-class Node(object):
+class Node(object) :
 
-    def __init__(self, query, results):
+    def __init__(self, query, results) :
         self.query = query
         self.results = results
 ```
@@ -132,34 +132,34 @@ class Node(object):
 **LinkedList** implementation:
 
 ```python
-class LinkedList(object):
+class LinkedList(object) :
 
-    def __init__(self):
+    def __init__(self) :
         self.head = None
         self.tail = None
 
-    def move_to_front(self, node):
+    def move_to_front(self, node) :
         ...
 
-    def append_to_front(self, node):
+    def append_to_front(self, node) :
         ...
 
-    def remove_from_tail(self):
+    def remove_from_tail(self) :
         ...
 ```
 
 **Cache** implementation:
 
 ```python
-class Cache(object):
+class Cache(object) :
 
-    def __init__(self, MAX_SIZE):
+    def __init__(self, MAX_SIZE) :
         self.MAX_SIZE = MAX_SIZE
         self.size = 0
         self.lookup = {}  # key: query, value: node
-        self.linked_list = LinkedList()
+        self.linked_list = LinkedList() 
 
-    def get(self, query)
+    def get(self, query) 
         """Get the stored query result from the cache.
 
         Accessing a node updates its position to the front of the LRU list.
@@ -167,10 +167,10 @@ class Cache(object):
         node = self.lookup[query]
         if node is None:
             return None
-        self.linked_list.move_to_front(node)
+        self.linked_list.move_to_front(node) 
         return node.results
 
-    def set(self, results, query):
+    def set(self, results, query) :
         """Set the result for the given query key in the cache.
 
         When updating an entry, updates its position to the front of the LRU list.
@@ -181,18 +181,18 @@ class Cache(object):
         if node is not None:
             # Key exists in cache, update the value
             node.results = results
-            self.linked_list.move_to_front(node)
+            self.linked_list.move_to_front(node) 
         else:
             # Key does not exist in cache
             if self.size == self.MAX_SIZE:
                 # Remove the oldest entry from the linked list and lookup
-                self.lookup.pop(self.linked_list.tail.query, None)
-                self.linked_list.remove_from_tail()
+                self.lookup.pop(self.linked_list.tail.query, None) 
+                self.linked_list.remove_from_tail() 
             else:
                 self.size += 1
             # Add the new key and value
-            new_node = Node(query, results)
-            self.linked_list.append_to_front(new_node)
+            new_node = Node(query, results) 
+            self.linked_list.append_to_front(new_node) 
             self.lookup[query] = new_node
 ```
 
@@ -204,15 +204,15 @@ The cache should be updated when:
 * The page is removed or a new page is added
 * The page rank changes
 
-The most straightforward way to handle these cases is to simply set a max time that a cached entry can stay in the cache before it is updated, usually referred to as time to live (TTL).
+The most straightforward way to handle these cases is to simply set a max time that a cached entry can stay in the cache before it is updated, usually referred to as time to live (TTL) .
 
-Refer to [When to update the cache](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside).
+Refer to [When to update the cache](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside) .
 
 ## Step 4: Scale the design
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/4j99mhe.png)
+![Imgur](http://i.imgur.com/4j99mhe.png) 
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
@@ -224,14 +224,14 @@ We'll introduce some components to complete the design and to address scalabilit
 
 *To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system) 
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer) 
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling) 
+* [Web server (reverse proxy) ](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server) 
+* [API server (application layer) ](https://github.com/donnemartin/system-design-primer#application-layer) 
+* [Cache](https://github.com/donnemartin/system-design-primer#cache) 
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns) 
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns) 
 
 ### Expanding the Memory Cache to many machines
 
@@ -239,7 +239,7 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
 
 * **Each machine in the cache cluster has its own cache** - Simple, although it will likely result in a low cache hit rate.
 * **Each machine in the cache cluster has a copy of the cache** - Simple, although it is an inefficient use of memory.
-* **The cache is [sharded](https://github.com/donnemartin/system-design-primer#sharding) across all machines in the cache cluster** - More complex, although it is likely the best option.  We could use hashing to determine which machine could have the cached results of a query using `machine = hash(query)`.  We'll likely want to use [consistent hashing](https://github.com/donnemartin/system-design-primer#under-development).
+* **The cache is [sharded](https://github.com/donnemartin/system-design-primer#sharding) across all machines in the cache cluster** - More complex, although it is likely the best option.  We could use hashing to determine which machine could have the cached results of a query using `machine = hash(query) `.  We'll likely want to use [consistent hashing](https://github.com/donnemartin/system-design-primer#under-development) .
 
 ## Additional talking points
 
@@ -247,58 +247,58 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication) 
+* [Federation](https://github.com/donnemartin/system-design-primer#federation) 
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding) 
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization) 
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning) 
 
 #### NoSQL
 
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store) 
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store) 
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store) 
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database) 
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) 
 
 ### Caching
 
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching) 
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching) 
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching) 
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching) 
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching) 
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level) 
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level) 
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside) 
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through) 
+    * [Write-behind (write-back) ](https://github.com/donnemartin/system-design-primer#write-behind-write-back) 
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead) 
 
 ### Asynchronism and microservices
 
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues) 
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues) 
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure) 
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices) 
 
 ### Communications
 
 * Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) 
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc) 
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery) 
 
 ### Security
 
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security) .
 
 ### Latency numbers
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know) .
 
 ### Ongoing
 
