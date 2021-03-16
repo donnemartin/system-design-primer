@@ -9,7 +9,39 @@
   <br/>
 </p>
 
+## Motivation
 
+> Lerne wie man umfangreiche Systeme entwirft.
+>
+> Bereite dich auf ein System Design Interview vor
+
+### Lerne wie man umfangreiche Systeme entwirft
+
+Das Lernen wie man skalierbare Systeme entwrift wird dir helfen ein besserer Engineer zu werden.
+
+System-Design ist ein breites Fach. Es gibt **viele Ressourcen verteilt über das ganze Internet** über System Design Prizipien.
+
+Dieses Repo ist eine **organisierte Sammlung** der Ressourcen um dich beim Lernen wie man Systeme im großen Ausmaß baut zu unterstützen.
+
+### Lerne von der Open-Source Gemeinschaft
+
+Dies ist ein ständig aktualisiertes, Open-Source Projekt.
+
+[Mitwirken](#mitwirken) ist willkommen!
+
+### Bereite dich für das System Design Interview vor
+
+Als Ergänzung zu Coding Interviews, System Design ist eine **erforderliche Komponente** im **technischen Interview Prozess** in viele Tech-Firmen.
+
+**Übe häufige System Design Interview Fragen** und **vergleiche** deine Ergebnisse mit **Beispiellösungen**: Diskussionen, Code, und Diagramme.
+
+Zusätzliche Themen für die Vorbereitung auf ein Coding Interview:
+# TODO links überarbeiten
+* [Studienführer](#studienfuhrer)
+* [Wie man ein Interview Frage System-Design enträtselt](#how-to-approach-a-system-design-interview-question)
+* [Interview Fragen System-Design, **mit Lösungen**](#system-design-interview-questions-with-solutions)
+* [Interview Fragen Objektorientiertes Design, **mit Lösungen**](#object-oriented-design-interview-questions-with-solutions)
+* [Zusätzliche Interview Fragen System-Design](#additional-system-design-interview-questions)
 
 ## Anki Karteikarten
 
@@ -38,6 +70,21 @@ Auf der Suche nach Ressourcen um dich bei der Vorbereitung auf ein [**Coding Int
 Schau dir das Partner Repo [**Interaktive Coding Herausforderungen**](https://github.com/donnemartin/interactive-coding-challenges) mit einem zusätzlichen Anki Deck an:
 
 * [Coding Deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+
+## Mitwirken
+
+> Lerne von der Gemeinschaft.
+
+Zögere nicht durch Pull Requests zu helfen:
+
+* Fehler beheben
+* Abschnitte verbessern
+* Abschnitte hinzufügen
+* [Übersetzen](https://github.com/donnemartin/system-design-primer/issues/28)
+
+Inhalte die etwas verbessert werden können finden sich [in Entwicklung](#in-entwicklung).
+
+Beachte die [Richtlinien zum Mitwirken](CONTRIBUTING.md).
 
 ## Inhaltsverzeichnis der System Design Themen
 
