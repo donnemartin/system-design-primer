@@ -237,7 +237,7 @@ In einem verteilten System können lediglich zwei der folgenden Eigenschaften er
 
 #### CP - Konsistenz und Ausfalltoleranz
 
-Das Warten auf die Antwort eines ausgefallenen Knotens kann in einen Timeout-Fehler führen. CP ist eine gute Wahl, wenn deine Geschäftsanforderungen atomare Lese- und Schreibzugriffe fordern.
+Das Warten auf die Antwort eines ausgefallenen Knotens kann zu einem Timeout-Fehler führen. CP ist eine gute Wahl, wenn deine Geschäftsanforderungen atomare Lese- und Schreibzugriffe fordern.
 
 #### AP - Verfügbarkeit und Ausfalltoleranz
 
