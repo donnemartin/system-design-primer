@@ -241,11 +241,9 @@ Das Warten auf die Antwort eines ausgefallenen Knotens kann zu einem Timeout-Feh
 
 #### AP - Verfügbarkeit und Ausfalltoleranz
 
-Antworten liefern die neueste verfügbare Version der Daten auf einem Knoten, wobei es sich nicht um die tatsächlich neueste Version handeln muss. Schreiboperationen
-können eine Weile brauchen, um sich auf die ausgefallenen Knoten zu verbreiten, sobald sie wieder verfügbar sind.
+Antworten liefern die neueste verfügbare Version der Daten auf einem Knoten, wobei es sich nicht um die tatsächlich neueste Version handeln muss. Schreiboperationen können eine Weile brauchen, um sich auf die ausgefallenen Knoten zu verbreiten, sobald sie wieder verfügbar sind.
 
-AP ist eine gute Wahl, wenn die Geschäftsanforderungen [Eventual Consistency](#eventual-consistency) erlauben oder wenn das System auch trotz Fehlern von Außerhalb
-weiterarbeiten muss.
+AP ist eine gute Wahl, wenn die Geschäftsanforderungen [Eventual Consistency](#eventual-consistency) erlauben oder wenn das System auch trotz Fehlern von Außerhalb weiterarbeiten muss.
 
 ### Quellen und weiterführende Artikel
 
