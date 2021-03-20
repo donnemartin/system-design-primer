@@ -233,7 +233,7 @@ In einem verteilten System können lediglich zwei der folgenden Eigenschaften er
 * **Verfügbarkeit** - Alle Anfragen erhalten eine Antwort, jedoch ohne Garantie, dass diese den neuesten Informationsstand enthält
 * **Ausfalltoleranz** - Das System arbeitet auch dann weiter, wenn es durch den Ausfall von Knoten partitioniert wird
 
-*Netzwerke sind nie zuverlässig, weshalb du Ausfalltoleranz unterstützen und zwischen Konsisten und Verfügbarkeit abwägen müssen wirst.*
+*Netzwerke sind nie zuverlässig, weshalb du Ausfalltoleranz unterstützen und zwischen Konsistenz und Verfügbarkeit abwägen müssen wirst.*
 
 #### CP - Konsistenz und Ausfalltoleranz
 
