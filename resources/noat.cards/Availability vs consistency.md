@@ -7,14 +7,14 @@ isdraft = False
 
 ### CAP theorem
 
-[![](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67) ](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67)    
+[![](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67) ](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67)    
 _[Source: CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited) _
 
 In a distributed computer system, you can only support two of the following guarantees:
 
-- Consistency - Every read receives the most recent write or an error
-- Availability - Every request receives a response, without guarantee that it contains the most recent version of the information
-- Partition Tolerance - The system continues to operate despite arbitrary partitioning due to network failures
+- Consistency - Every read receives the most recent write or an error
+- Availability - Every request receives a response, without guarantee that it contains the most recent version of the information
+- Partition Tolerance - The system continues to operate despite arbitrary partitioning due to network failures
 
 _Networks aren't reliable, so you'll need to support partition tolerance. You'll need to make a software tradeoff between consistency and availability._
 
@@ -26,7 +26,7 @@ Waiting for a response from the partitioned node might result in a timeout error
 
 Responses return the most recent version of the data, which might not be the latest. Writes might take some time to propagate when the partition is resolved.
 
-AP is a good choice if the business needs allow for [eventual consistency](https://github.com/donnemartin/system-design-primer#eventual-consistency)  or when the system needs to continue working despite external errors.
+AP is a good choice if the business needs allow for [eventual consistency](https://github.com/donnemartin/system-design-primer#eventual-consistency)  or when the system needs to continue working despite external errors.
 
 ### Source(s) and further reading
 
