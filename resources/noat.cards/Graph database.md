@@ -10,7 +10,7 @@ isdraft = False
 
 ![](https://camo.githubusercontent.com/bf6508b65e98a7210d9861515833afa0d9434436/687474703a2f2f692e696d6775722e636f6d2f664e636c3635672e706e67) 
 
-_[Source: Graph database](https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png)_
+[Source: Graph database](https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png)
 
 
 In a graph database, each node is a record and each arc is a relationship between two nodes. Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.

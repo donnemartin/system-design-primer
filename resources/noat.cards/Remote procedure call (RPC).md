@@ -4,7 +4,7 @@
 
 ![](https://camo.githubusercontent.com/1a3d7771c0b0a7816d0533fffeb6eeeb442d9945/687474703a2f2f692e696d6775722e636f6d2f6946344d6b62352e706e67) 
 
-_[Source: Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)_
+[Source: Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/)
 
 In an RPC, a client causes a procedure to execute on a different address space, usually a remote server. The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program. Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls. Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/) , [Thrift](https://thrift.apache.org/) , and [Avro](https://avro.apache.org/docs/current/) .
 

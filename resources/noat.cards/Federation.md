@@ -9,7 +9,7 @@ isdraft = False
 
 ![](https://camo.githubusercontent.com/6eb6570a8b6b4e1d52e3d7cc07e7959ea5dac75f/687474703a2f2f692e696d6775722e636f6d2f553371563333652e706e67) 
 
-_[Source: Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)_
+[Source: Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
 Federation (or functional partitioning) splits up databases by function. For example, instead of a single, monolithic database, you could have three databases: forums,users, and products, resulting in less read and write traffic to each database and therefore less replication lag. Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality. With no single central master serializing writes you can write in parallel, increasing throughput.
 

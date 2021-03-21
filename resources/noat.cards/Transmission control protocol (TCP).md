@@ -9,7 +9,7 @@ isdraft = False
 
 ![](https://camo.githubusercontent.com/821620cf6aa83566f4def561e754e5991480ca8d/687474703a2f2f692e696d6775722e636f6d2f4a6441736476472e6a7067) 
 
-_[Source: How to make a multiplayer game](http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/)_
+[Source: How to make a multiplayer game](http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/)
 
 TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol) . Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking) . All packets sent are guaranteed to reach the destination in the original order and without corruption through:
 

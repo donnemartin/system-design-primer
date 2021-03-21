@@ -9,7 +9,7 @@ isdraft = False
 
 ![](https://camo.githubusercontent.com/a66e9f885b04db69638825c6a98f42e5570a83f3/687474703a2f2f692e696d6775722e636f6d2f7037784853345a2e706e67) 
 
-_[Source: Wikipedia](https://commons.wikimedia.org/wiki/File:Proxy_concept_en.svg) _   
+[Source: Wikipedia](https://commons.wikimedia.org/wiki/File:Proxy_concept_en.svg)
 
 A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public. Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
 

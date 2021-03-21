@@ -11,7 +11,7 @@ isdraft = False
 
 ![](https://camo.githubusercontent.com/15a7553727e6da98d0de5e9ca3792f6d2b5e92d4/687474703a2f2f692e696d6775722e636f6d2f586b6d3543587a2e706e67) 
 
-_[Source: Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q) _
+[Source: Scaling up to your first 10 million users](https://www.youtube.com/watch?v=vg5onp8TU6Q)
 
 
 A relational database like SQL is a collection of data items organized in tables.
