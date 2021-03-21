@@ -104,7 +104,7 @@ Beachte die [Richtlinien zum Mitwirken](CONTRIBUTING.md).
 * [Leistung vs Skalierbarkeit](#leistung-vs-skalierbarkeit)
 * [Latenz vs Durchsatz](#latenz-vs-durchsatz)
 * [Verfügbarkeit vs Konsistenz](#verfugbarkeit-vs-konsistenz)
-    * [Der CAP Satz](#der-cap-satz)
+    * [Das CAP-Theorem](#das-cap-theorem)
         * [CP - Konsistenz und Ausfalltoleranz](#cp---konsistenz-und-ausfalltoleranz)
         * [AP - Verfügbarkeit und Ausfalltoleranz](#ap---verfugbarkeit-und-ausfalltoleranz)
 * [Konsistenzklassen](#konsistenzklassen)
@@ -216,3 +216,38 @@ Beginne breit und fokussiere dich auf einige wenige Bereiche. Es hilft wenn man 
 | Arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Einige | Viele | Alle |
 | Arbeite dich durch [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
 | Beschäftige dich mit [Additional system design interview questions](#additional-system-design-interview-questions) | Einige | Viele | Alle |
+
+## Verfügbarkeit vs Konsistenz
+
+### Das CAP-Theorem
+
+<p align="center">
+  <img src="images/bgLMI2u.png">
+  <br/>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+</p>
+
+In einem verteilten System können lediglich zwei der folgenden Eigenschaften erfüllt werden:
+
+* **Konsistenz** - Alle lesenden Zugriffe erhalten den neuesten Stand oder einen Fehler
+* **Verfügbarkeit** - Alle Anfragen erhalten eine Antwort, jedoch ohne Garantie, dass diese den neuesten Informationsstand enthält
+* **Ausfalltoleranz** - Das System arbeitet auch dann weiter, wenn es durch den Ausfall von Knoten partitioniert wird
+
+*Netzwerke sind nie zuverlässig, weshalb du Ausfalltoleranz unterstützen und zwischen Konsistenz und Verfügbarkeit abwägen müssen wirst.*
+
+#### CP - Konsistenz und Ausfalltoleranz
+
+Das Warten auf die Antwort eines ausgefallenen Knotens kann zu einem Timeout-Fehler führen. CP ist eine gute Wahl, wenn deine Geschäftsanforderungen atomare Lese- und Schreibzugriffe fordern.
+
+#### AP - Verfügbarkeit und Ausfalltoleranz
+
+Antworten liefern die neueste verfügbare Version der Daten auf einem Knoten, wobei es sich nicht um die tatsächlich neueste Version handeln muss. Schreiboperationen können eine Weile brauchen, um sich auf die ausgefallenen Knoten zu verbreiten, sobald sie wieder verfügbar sind.
+
+AP ist eine gute Wahl, wenn die Geschäftsanforderungen [Eventual Consistency](#eventual-consistency) erlauben oder wenn das System auch trotz Fehlern von Außerhalb weiterarbeiten muss.
+
+### Quellen und weiterführende Artikel
+
+* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [CAP FAQ](https://github.com/henryr/cap-faq)
+* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
