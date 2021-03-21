@@ -5,7 +5,7 @@ isdraft = False
 
 # Database caching, what to cache
 
-### Introduction
+## Introduction
 
 There are multiple levels you can cache that fall into two general categories: database queries and objects:
 
@@ -16,14 +16,14 @@ There are multiple levels you can cache that fall into two general categories: d
 
 Generaly, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
 
-### Caching at the database query level
+## Caching at the database query level
 
 Whenever you query the database, hash the query as a key and store the result to the cache. This approach suffers from expiration issues:
 
 - Hard to delete a cached result with complex queries
 - If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
 
-### Caching at the object level
+## Caching at the object level
 
 See your data as an object, similar to what you do with your application code. Have your application assemble the dataset from the database into a class instance or a data structure(s) :
 

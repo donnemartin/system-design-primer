@@ -28,13 +28,13 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/)  and [Route 53](h
 - Latency-based
 - Geolocation-based
 
-### Disadvantage(s) : DNS
+## Disadvantage(s) : DNS
 
 - Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
 - DNS server management could be complex, although they are generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729) .
 - DNS services have recently come under DDoS attack, preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es) .
 
-### Source(s) and further reading
+## Source(s) and further reading
 
 - [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10) .aspx) 
 - [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System) 

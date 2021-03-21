@@ -57,8 +57,8 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ## Disadvantage(s) : horizontal scaling
 
 - Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](https://github.com/donnemartin/system-design-primer#database)  (SQL, NoSQL) or a persistent [cache](https://github.com/donnemartin/system-design-primer#cache)  (Redis, Memcached) 
+    - Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
+    - Sessions can be stored in a centralized data store such as a [database](https://github.com/donnemartin/system-design-primer#database)  (SQL, NoSQL) or a persistent [cache](https://github.com/donnemartin/system-design-primer#cache)  (Redis, Memcached) 
 - Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
 
 ## Disadvantage(s) : load balancer

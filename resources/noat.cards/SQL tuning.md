@@ -28,7 +28,7 @@ Benchmarking and profiling might point you to the following optimizations.
 - `VARCHAR(255) ` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
 - Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) .
 
-### Use good indices
+## Use good indices
 
 - Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
 - Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree)  that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.

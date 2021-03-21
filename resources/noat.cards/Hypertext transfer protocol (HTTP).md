@@ -14,7 +14,7 @@ perform load balancing, caching, encryption, and compression.
 
 A basic HTTP request consists of a verb (method) and a resource (endpoint) . Below are common HTTP verbs:
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
+| Verb | Description | Idempotent\* | Safe | Cacheable |
 |---|---|---|---|---|
 | GET | Reads a resource | Yes | Yes | Yes |
 | POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |

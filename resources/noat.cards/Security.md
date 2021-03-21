@@ -10,7 +10,7 @@ Security is a broad topic. Unless you have considerable experience, a security b
 - Use parameterized queries to prevent SQL injection.
 - Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) .
 
-### [](https://github.com/donnemartin/system-design-primer#sources-and-further-reading-12) Source(s) and further reading
+## Source(s) and further reading
 
 - [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers) 
 - [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet) 

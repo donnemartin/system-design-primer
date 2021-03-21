@@ -1,4 +1,4 @@
-### Latency numbers every programmer should know
+## Latency numbers every programmer should know
 ---
     Latency Comparison Numbers
     --------------------------

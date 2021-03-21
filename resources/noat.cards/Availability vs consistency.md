@@ -5,10 +5,11 @@ isdraft = False
 
 # Availability vs consistency
 
-### CAP theorem
+## CAP theorem
 
-[![](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67) ](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67)    
-_[Source: CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited) _
+![](https://camo.githubusercontent.com/13719354da7dcd34cd79ff5f8b6306a67bc18261/687474703a2f2f692e696d6775722e636f6d2f62674c4d4932752e706e67) 
+
+[Source: CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited)
 
 In a distributed computer system, you can only support two of the following guarantees:
 
@@ -28,7 +29,7 @@ Responses return the most recent version of the data, which might not be the lat
 
 AP is a good choice if the business needs allow for [eventual consistency](https://github.com/donnemartin/system-design-primer#eventual-consistency)  or when the system needs to continue working despite external errors.
 
-### Source(s) and further reading
+## Source(s) and further reading
 
 - [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/) 
 - [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem/) 

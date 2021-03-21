@@ -23,16 +23,16 @@ Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Mic
 
 Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
 
-### Service Discovery
+## Service Discovery
 
 Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)  can help services find each other by keeping track of registered names, addresses, ports, etc.
 
-### Disadvantage(s) : application layer
+## Disadvantage(s) : application layer
 
 - Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system) .
 - Microservices can add complexity in terms of deployments and operations.
 
-### Source(s) and further reading
+## Source(s) and further reading
 
 - [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale) 
 - [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/) 
