@@ -7,7 +7,7 @@ isdraft = False
 
 There are two main patterns to support high availability:fail-over and replication.
 
-### Active-passive (Fail-Over)
+## Active-passive (Fail-Over)
 
 With active-passive fail-over, heartbeats are sent between the active and the passive server on standby. If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
 

@@ -5,12 +5,13 @@ isdraft = False
 
 # Asynchronism
 
-[![](https://camo.githubusercontent.com/c01ec137453216bbc188e3a8f16da39ec9131234/687474703a2f2f692e696d6775722e636f6d2f353447597353782e706e67) ](https://camo.githubusercontent.com/c01ec137453216bbc188e3a8f16da39ec9131234/687474703a2f2f692e696d6775722e636f6d2f353447597353782e706e67)   
-_[Source: Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer) _
+![](https://camo.githubusercontent.com/c01ec137453216bbc188e3a8f16da39ec9131234/687474703a2f2f692e696d6775722e636f6d2f353447597353782e706e67) 
+
+[Source: Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer) 
 
 Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line. They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
 
-### Message queues
+## Message queues
 
 Message queues receive, hold, and deliver messages. If an operation is too slow to perform inline, you can use a message queue with the following workflow:
 
@@ -25,21 +26,21 @@ RabbitMQ is popular but requires you to adapt to the 'AMQP' protocol and manage 
 
 Amazon SQS, is hosted but can have high latency and has the possibility of messages being delivered twice.
 
-### Task queues
+## Task queues
 
 Tasks queues receive tasks and their related data, runs them, then delivers their results. They can support scheduling and can be used to run computationally-intensive jobs in the background.
 
 Celery has support for scheduling and primarily has python support.
 
-### Back pressure
+## Back pressure
 
 If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance. [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)  can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue. Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later. Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) .
 
-### Disadvantage(s) : asynchronism
+## Disadvantage(s) : asynchronism
 
 - Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
 
-### Source(s) and further reading
+## Source(s) and further reading
 
 - [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4) 
 - [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) 

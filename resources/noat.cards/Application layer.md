@@ -5,9 +5,9 @@ isdraft = False
 
 # Application layer
 
-### Application layer - Introduction
+## Application layer - Introduction
 
-[![](https://camo.githubusercontent.com/feeb549c5b6e94f65c613635f7166dc26e0c7de7/687474703a2f2f692e696d6775722e636f6d2f7942355359776d2e706e67) ](https://camo.githubusercontent.com/feeb549c5b6e94f65c613635f7166dc26e0c7de7/687474703a2f2f692e696d6775722e636f6d2f7942355359776d2e706e67)   
+![](https://camo.githubusercontent.com/feeb549c5b6e94f65c613635f7166dc26e0c7de7/687474703a2f2f692e696d6775722e636f6d2f7942355359776d2e706e67) 
 
 _[Source: Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer) _
 
@@ -17,7 +17,7 @@ The single responsibility principle advocates for small and autonomous services 
 
 Workers in the application layer also help enable [asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism) .
 
-### Microservices
+## Microservices
 
 Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices) , which can be described as a suite of independently deployable, small, modular services. Each service runs a unique process and communicates through a well-definied, lightweight mechanism to serve a business goal. [1](https://smartbear.com/learn/api-design/what-are-microservices) 
 
@@ -32,7 +32,7 @@ Systems such as [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-t
 - Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system) .
 - Microservices can add complexity in terms of deployments and operations.
 
-### [](https://github.com/donnemartin/system-design-primer#sources-and-further-reading-9) Source(s) and further reading
+### Source(s) and further reading
 
 - [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale) 
 - [Crack the system design interview](http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/) 
