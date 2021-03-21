@@ -109,7 +109,7 @@ Beachte die [Richtlinien zum Mitwirken](CONTRIBUTING.md).
         * [AP - Verfügbarkeit und Ausfalltoleranz](#ap---verfugbarkeit-und-ausfalltoleranz)
 * [Konsistenzklassen](#konsistenzklassen)
     * [Schwache Konsistenz](#schwache-konsistenz)
-    * [Eventuelle Konsistenz](#eventuelle-konsistenz)
+    * [Eventual Consistency](#eventual-consistency)
     * [Starke Konsistenz](#starke-konsistenz)
 * [Verfügbarkeitsklassen](#verfugbarkeitsklassen)
     * [Fail-over](#fail-over)
