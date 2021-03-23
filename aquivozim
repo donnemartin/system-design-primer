@@ -1,0 +1,32 @@
+//conjunto 1******************************************
+    int tam1, n;
+    Tconjunto *t;
+    t=NULL;
+    scanf("%d", &tam1);
+    t=cria(tam1);
+    if(tam1<10){
+        for(int i=0;i<tam1; i++){
+            printf("digite o valor do conjunto em: Conjuto[%d]\n",i);
+            scanf("%d", &n);
+            atribuir(t,i,n);
+        }
+    }
+    for(int i=0;i<tam1; i++){
+        printf("%d\n", acessar(t,i));
+    }
+    //*****************************************************
+    //conjunto 2******************************************
+    int tam2, m;
+    Tconjunto *f;
+    f=NULL;
+    scanf("%d", &tam2);
+    f=cria(tam2);
+    for(int i=0;i<tam2; i++){
+        printf("digite o valor do conjunto em: Conjuto[%d]\n",i);
+        scanf("%d", &m);
+        atribuir(f,i,m);
+    }
+    for(int i=0;i<tam2; i++){
+        printf("%d\n", acessar(f,i));
+    }
+    //*****************************************************
