@@ -1,6 +1,6 @@
 # 为 Amazon 设计分类售卖排行
 
-**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
+**注意：这个文档中的链接会直接指向[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)中的有关部分，以避免重复的内容。你可以参考链接的相关内容，来了解其总的要点、方案的权衡取舍以及可选的替代方案。**
 
 ## 第一步：简述用例与约束条件
 
@@ -70,7 +70,7 @@
 
 > 列出所有重要组件以规划概要设计。
 
-![Imgur](http://i.imgur.com/vwMa1Qu.png) 
+![Imgur](http://i.imgur.com/vwMa1Qu.png)
 
 ## 第三步：设计核心组件
 
@@ -95,94 +95,94 @@ t5          product4    category1      1        5.00         5            6
 ...
 ```
 
-**售卖排行服务** 需要用到 **MapReduce**，并使用 **售卖 API** 服务进行日志记录，同时将结果写入 **SQL 数据库**中的总表 `sales_rank` 中。我们也可以讨论一下[究竟是用 SQL 还是用 NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 。
+**售卖排行服务** 需要用到 **MapReduce**，并使用 **售卖 API** 服务进行日志记录，同时将结果写入 **SQL 数据库**中的总表 `sales_rank` 中。我们也可以讨论一下[究竟是用 SQL 还是用 NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
 
 我们需要通过以下步骤使用 **MapReduce**：
 
-* **第 1 步** - 将数据转换为 `(category, product_id) , sum(quantity) ` 的形式
+* **第 1 步** - 将数据转换为 `(category, product_id), sum(quantity)` 的形式
 * **第 2 步** - 执行分布式排序
 
 ```python
-class SalesRanker(MRJob) :
+class SalesRanker(MRJob):
 
-    def within_past_week(self, timestamp) :
+    def within_past_week(self, timestamp):
         """如果时间戳属于过去的一周则返回 True，
         否则返回 False。"""
         ...
 
-    def mapper(self, _ line) :
+    def mapper(self, _ line):
         """解析日志的每一行，提取并转换相关行，
 
         将键值对设定为如下形式：
 
-        (category1, product1) , 2
-        (category2, product1) , 2
-        (category2, product1) , 1
-        (category1, product2) , 3
-        (category2, product3) , 7
-        (category1, product4) , 1
+        (category1, product1), 2
+        (category2, product1), 2
+        (category2, product1), 1
+        (category1, product2), 3
+        (category2, product3), 7
+        (category1, product4), 1
         """
         timestamp, product_id, category_id, quantity, total_price, seller_id, \
-            buyer_id = line.split('\t') 
-        if self.within_past_week(timestamp) :
-            yield (category_id, product_id) , quantity
+            buyer_id = line.split('\t')
+        if self.within_past_week(timestamp):
+            yield (category_id, product_id), quantity
 
-    def reducer(self, key, value) :
+    def reducer(self, key, value):
         """将每个 key 的值加起来。
 
-        (category1, product1) , 2
-        (category2, product1) , 3
-        (category1, product2) , 3
-        (category2, product3) , 7
-        (category1, product4) , 1
+        (category1, product1), 2
+        (category2, product1), 3
+        (category1, product2), 3
+        (category2, product3), 7
+        (category1, product4), 1
         """
-        yield key, sum(values) 
+        yield key, sum(values)
 
-    def mapper_sort(self, key, value) :
+    def mapper_sort(self, key, value):
         """构造 key 以确保正确的排序。
 
         将键值对转换成如下形式：
 
-        (category1, 2) , product1
-        (category2, 3) , product1
-        (category1, 3) , product2
-        (category2, 7) , product3
-        (category1, 1) , product4
+        (category1, 2), product1
+        (category2, 3), product1
+        (category1, 3), product2
+        (category2, 7), product3
+        (category1, 1), product4
 
         MapReduce 的随机排序步骤会将键
         值的排序打乱，变成下面这样：
 
-        (category1, 1) , product4
-        (category1, 2) , product1
-        (category1, 3) , product2
-        (category2, 3) , product1
-        (category2, 7) , product3
+        (category1, 1), product4
+        (category1, 2), product1
+        (category1, 3), product2
+        (category2, 3), product1
+        (category2, 7), product3
         """
         category_id, product_id = key
         quantity = value
-        yield (category_id, quantity) , product_id
+        yield (category_id, quantity), product_id
 
-    def reducer_identity(self, key, value) :
+    def reducer_identity(self, key, value):
         yield key, value
 
-    def steps(self) :
+    def steps(self):
         """ 此处为 map reduce 步骤"""
         return [
             self.mr(mapper=self.mapper,
-                    reducer=self.reducer) ,
+                    reducer=self.reducer),
             self.mr(mapper=self.mapper_sort,
-                    reducer=self.reducer_identity) ,
+                    reducer=self.reducer_identity),
         ]
 ```
 
 得到的结果将会是如下的排序列，我们将其插入 `sales_rank` 表中：
 
 ```
-(category1, 1) , product4
-(category1, 2) , product1
-(category1, 3) , product2
-(category2, 3) , product1
-(category2, 7) , product3
+(category1, 1), product4
+(category1, 2), product1
+(category1, 3), product2
+(category2, 3), product1
+(category2, 7), product3
 ```
 
 `sales_rank` 表的数据结构如下：
@@ -192,20 +192,20 @@ id int NOT NULL AUTO_INCREMENT
 category_id int NOT NULL
 total_sold int NOT NULL
 product_id int NOT NULL
-PRIMARY KEY(id) 
-FOREIGN KEY(category_id) REFERENCES Categories(id) 
-FOREIGN KEY(product_id) REFERENCES Products(id) 
+PRIMARY KEY(id)
+FOREIGN KEY(category_id) REFERENCES Categories(id)
+FOREIGN KEY(product_id) REFERENCES Products(id)
 ```
 
-我们会以 `id`、`category_id` 与 `product_id` 创建一个 [索引](https://github.com/donnemartin/system-design-primer#use-good-indices) 以加快查询速度（只需要使用读取日志的时间，不再需要每次都扫描整个数据表）并让数据常驻内存。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
+我们会以 `id`、`category_id` 与 `product_id` 创建一个 [索引](https://github.com/donnemartin/system-design-primer#use-good-indices)以加快查询速度（只需要使用读取日志的时间，不再需要每次都扫描整个数据表）并让数据常驻内存。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
 
 ### 用例：用户需要根据分类浏览上周中最受欢迎的商品
 
-* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 的 **Web 服务器**发送一个请求
+* **客户端**向运行[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)的 **Web 服务器**发送一个请求
 * 这个 **Web 服务器**将请求转发给**查询 API** 服务
 * The **查询 API** 服务将从 **SQL 数据库**的 `sales_rank` 表中读取数据
 
-我们可以调用一个公共的 [REST API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) ：
+我们可以调用一个公共的 [REST API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
 
 ```
 $ curl https://amazon.com/api/v1/popular?category_id=1234
@@ -234,13 +234,13 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 },
 ```
 
-而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 。
+而对于服务器内部的通信，我们可以使用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
 
 ## 第四步：架构扩展
 
 > 根据限制条件，找到并解决瓶颈。
 
-![Imgur](http://i.imgur.com/MzExP06.png) 
+![Imgur](http://i.imgur.com/MzExP06.png)
 
 **重要提示：不要从最初设计直接跳到最终设计中！**
 
@@ -250,19 +250,19 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 
 我们将会介绍一些组件来完成设计，并解决架构扩张问题。内置的负载均衡器将不做讨论以节省篇幅。
 
-**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引) 相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
+**为了避免重复讨论**，请参考[系统设计主题索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)相关部分来了解其要点、方案的权衡取舍以及可选的替代方案。
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统) 
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器) 
-* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展) 
-* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器) 
-* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层) 
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存) 
-* [关系型数据库管理系统 (RDBMS) ](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms) 
-* [SQL 故障主从切换](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换) 
-* [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制) 
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式) 
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式) 
+* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
+* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
+* [水平拓展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
+* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
+* [API 服务（应用层）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
+* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
+* [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
+* [SQL 故障主从切换](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
+* [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
+* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
+* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
 
 **分析数据库** 可以用现成的数据仓储系统，例如使用 Amazon Redshift 或者 Google BigQuery 的解决方案。
 
@@ -274,10 +274,10 @@ $ curl https://amazon.com/api/v1/popular?category_id=1234
 
 SQL 缩放模式包括：
 
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合) 
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片) 
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化) 
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优) 
+* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
+* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
+* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
+* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-调优)
 
 我们也可以考虑将一些数据移至 **NoSQL 数据库**。
 
@@ -287,50 +287,50 @@ SQL 缩放模式包括：
 
 #### NoSQL
 
-* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储) 
-* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储) 
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储) 
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库) 
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql) 
+* [键-值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
+* [文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
+* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
+* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
 
 ### 缓存
 
 * 在哪缓存
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存) 
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存) 
-    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存) 
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存) 
-    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存) 
+    * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
+    * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
+    * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
+    * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
+    * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
 * 什么需要缓存
-    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存) 
-    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存) 
+    * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
+    * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
 * 何时更新缓存
-    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式) 
-    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式) 
-    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式) 
-    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新) 
+    * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
+    * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
+    * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
+    * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
 
 ### 异步与微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列) 
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列) 
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压) 
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务) 
+* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
+* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
+* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
+* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
 
 ### 通信
 
 * 可权衡选择的方案：
-    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest) 
-    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc) 
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现) 
+    * 与客户端的外部通信 - [使用 REST 作为 HTTP API](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
+    * 服务器内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
+* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
 
 ### 安全性
 
-请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全) 一章。
+请参阅[「安全」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)一章。
 
 ### 延迟数值
 
-请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数) 。
+请参阅[「每个程序员都应该知道的延迟数」](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
 
 ### 持续探讨
 
