@@ -1,3 +1,25 @@
+# Appendix
+
+## Powers of two table
+
+```
+Power           Exact Value         Approx Value        Bytes
+---------------------------------------------------------------
+7                             128
+8                             256
+10                           1024   1 thousand           1 KB
+16                         65,536                       64 KB
+20                      1,048,576   1 million            1 MB
+30                  1,073,741,824   1 billion            1 GB
+32                  4,294,967,296                        4 GB
+40              1,099,511,627,776   1 trillion           1 TB
+```
+
+## Source(s) and further reading
+
+- [Powers of two](https://en.wikipedia.org/wiki/Power_of_two) 
+
+
 ## Latency numbers every programmer should know
 ---
     Latency Comparison Numbers
@@ -44,3 +66,14 @@ Handy metrics based on numbers above:
 - [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375) 
 - [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf) 
 - [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf) 
+
+
+## Introduction of base 62
+- Encodes to `[a-zA-Z0-9]` which works well for urls, eliminating the need for escaping special characters
+- Only one hash result for the original input and and the operation is deterministic (no randomness involved) 
+- Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
+
+## MD5
+
+- Widely used hashing function that produces a 128-bit hash value
+- Uniformly distributed
