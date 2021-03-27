@@ -1,3 +1,8 @@
++++
+noatcards = True
+isdraft = False
+weight = 170
++++
 Security
 --------
 ---

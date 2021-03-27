@@ -1,3 +1,9 @@
++++
+noatcards = True
+isdraft = False
+weight = 180
++++
+
 # Appendix
 
 ## Powers of two table
@@ -21,7 +27,8 @@ Power           Exact Value         Approx Value        Bytes
 
 
 ## Latency numbers every programmer should know
----
+
+```    
     Latency Comparison Numbers
     --------------------------
     L1 cache reference                           0.5 ns
@@ -45,7 +52,7 @@ Power           Exact Value         Approx Value        Bytes
     1 ns = 10^-9 seconds
     1 us = 10^-6 seconds = 1,000 ns
     1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
-    
+```
 
 Handy metrics based on numbers above:
 
@@ -56,17 +63,16 @@ Handy metrics based on numbers above:
 - 6-7 world-wide round trips per second
 - 2,000 round trips per second within a data center
 
-#### [](https://github.com/donnemartin/system-design-primer#latency-numbers-visualized) Latency numbers visualized
+### Latency numbers visualized
 
-[![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67) ](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67) 
+![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67) 
 
-#### [](https://github.com/donnemartin/system-design-primer#sources-and-further-reading-14) Source(s) and further reading
+## Latency numbers: Source(s) and further reading for 
 
 - [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832) 
 - [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375) 
 - [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf) 
 - [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf) 
-
 
 ## Introduction of base 62
 - Encodes to `[a-zA-Z0-9]` which works well for urls, eliminating the need for escaping special characters

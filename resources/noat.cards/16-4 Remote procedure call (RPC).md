@@ -1,3 +1,8 @@
++++
+noatcards = True
+isdraft = False
+weight = 164
++++
 # Remote procedure call (RPC) 
 
 ## Remote procedure call introduction

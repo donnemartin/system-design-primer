@@ -1,6 +1,7 @@
 +++
 noatcards = True
 isdraft = False
+weight = 30
 +++
 
 # Availability vs consistency

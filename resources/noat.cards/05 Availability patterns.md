@@ -1,7 +1,7 @@
 +++
 noatcards = True
 isdraft = False
-weight = 120
+weight = 50:weight
 +++
 
 # Availability patterns

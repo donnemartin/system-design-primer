@@ -1,6 +1,7 @@
 +++
 noatcards = True
 isdraft = False
+weight = 60
 +++
 
 # Domain name system
@@ -8,6 +9,7 @@ isdraft = False
 ## Introduction Domain Name System
 
 ![](https://camo.githubusercontent.com/fae27d1291ed38dd120595d692eacd2505cd3a9c/687474703a2f2f692e696d6775722e636f6d2f494f794c6a34692e6a7067)
+
 [Source: DNS security presentation](http://www.slideshare.net/srikrupa5/dns-security-presentation-issa)
 
 A Domain Name System (DNS) translates a domain name such as [www.example.com](http://www.example.com/)  to an IP address.

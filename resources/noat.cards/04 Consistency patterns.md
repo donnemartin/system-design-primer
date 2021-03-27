@@ -1,6 +1,7 @@
 +++
 noatcards = True
 isdraft = False
+weight = 40
 +++
 
 # Consistency patterns
