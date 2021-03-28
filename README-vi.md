@@ -37,8 +37,8 @@ Những chủ đề khác chuẩn bị cho việc phỏng vấn:
 
 * [Hướng dẫn học tập](#h%c6%b0%e1%bb%9bng-d%e1%ba%abn-h%e1%bb%8dc-t%e1%ba%adp)
 * [Tiếp cận câu hỏi phỏng vấn thiết kế hệ thống như thế nào](#ti%e1%ba%bfp-c%e1%ba%adn-c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng-nh%c6%b0-th%e1%ba%bf-n%c3%a0o)
-* [Câu hỏi phỏng vấn thiết kế hệ thống với đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n)
-* [Câu hỏi phỏng vấn thiết kế đối tượng với đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-%c4%91%e1%bb%91i-t%c6%b0%e1%bb%a3ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n)
+* [Câu hỏi phỏng vấn thiết kế hệ thống có đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n)
+* [Câu hỏi phỏng vấn thiết kế hướng đối tượng có đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-%c4%91%e1%bb%91i-t%c6%b0%e1%bb%a3ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n)
 * [Câu hỏi bổ sung về phỏng vấn thiết kế hệ thống](#additional-system-design-interview-questions)
 
 ## Thẻ Anki
@@ -54,7 +54,7 @@ Những chủ đề khác chuẩn bị cho việc phỏng vấn:
 * [Thẻ luyện tập thiết kế hệ thống](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
 * [Thẻ luyện tập thiết kế hướng đối tượng](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Tuyệt vời cho sử dụng trong khi di chuyển.
+Phù hợp cho những người bận rộn.
 
 ### Tài liệu luyện tập lập trình
 
@@ -80,13 +80,13 @@ Thoải mái gửi yêu cầu đóng góp của bạn về:
 * Thêm các mục mới
 * [Dịch tài liệu](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Nội dung cần được sửa chữa, bổ sung được đặt ở [đang cập nhật](#đang cập nhật).
 
 Xem lại [Hướng dẫn đóng góp](CONTRIBUTING.md).
 
 ## Danh mục các chủ đề về thiết kế hệ thống
 
-> Tóm tắt các chủ đề thiết kế hệ thống khác nhau, bao gồm ưu và nhược điểm.  **Mọi thứ đều là sự đánh đổi**.
+> Tóm tắt các chủ đề thiết kế hệ thống khác nhau, bao gồm ưu và nhược điểm.  **Mọi thứ đều là sự đánh đổi** (được cái lọ, mất cái chai).
 >
 > Mỗi mục chứa các liên kết tới những tài nguyên chuyên sâu hơn.
 
@@ -111,31 +111,25 @@ Xem lại [Hướng dẫn đóng góp](CONTRIBUTING.md).
   * [Tính nhất quán cuối cùng](#t%c3%adnh-nh%e1%ba%a5t-qu%c3%a1n-cu%e1%bb%91i-c%c3%b9ng)
   * [Tính nhất quán mạnh](#t%c3%adnh-nh%e1%ba%a5t-qu%c3%a1n-m%e1%ba%a1nh)
   * [Nguồn và đọc thêm](#ngu%e1%bb%93n-v%c3%a0-%c4%91%e1%bb%8dc-th%c3%aam-3)
-* [Availability patterns](#availability-patterns)
-  * [Fail-over](#fail-over)
-  * [Disadvantage(s): failover](#disadvantages-failover)
-  * [Replication](#replication)
+* [Các mô hình về tính sẵn sàng](#các-mô-hình-về-tính-sẵn-sàng)
+  * [Giải pháp chịu lỗi](#giải-pháp-chịu-lỗi)
+  * [Nhân bản](#nhân-bản)
   * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-  * [Disadvantage(s): DNS](#disadvantages-dns)
+* [Hệ thống phân giải tên miền](#hệ-thống-phân-giải-tên-miền)
 * [Content delivery network](#content-delivery-network)
   * [Push CDNs](#push-cdns)
   * [Pull CDNs](#pull-cdns)
-  * [Disadvantage(s): CDN](#disadvantages-cdn)
 * [Load balancer](#load-balancer)
   * [Active-passive](#active-passive)
   * [Active-active](#active-active)
   * [Layer 4 load balancing](#layer-4-load-balancing)
   * [Layer 7 load balancing](#layer-7-load-balancing)
   * [Horizontal scaling](#horizontal-scaling)
-  * [Disadvantage(s): load balancer](#disadvantages-load-balancer)
 * [Reverse proxy (web server)](#reverse-proxy-web-server)
   * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-  * [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
 * [Application layer](#application-layer)
   * [Microservices](#microservices)
   * [Service Discovery](#service-discovery)
-  * [Disadvantage(s): application layer](#disadvantages-application-layer)
 * [Database](#database)
   * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
     * [Master-slave replication](#master-slave-replication)
@@ -159,12 +153,14 @@ Xem lại [Hướng dẫn đóng góp](CONTRIBUTING.md).
   * [Caching at the database query level](#caching-at-the-database-query-level)
   * [Caching at the object level](#caching-at-the-object-level)
   * [When to update the cache](#when-to-update-the-cache)
-  * [Disadvantage(s): cache](#disadvantages-cache)
+        * [Cache-aside](#cache-aside)
+        * [Write-through](#write-through)
+        * [Write-behind (write-back)](#write-behind-write-back)
+        * [Refresh-ahead](#refresh-ahead)
 * [Asynchronism](#asynchronism)
   * [Message queues](#message-queues)
   * [Task queues](#task-queues)
   * [Back pressure](#back-pressure)
-  * [Disadvantage(s): asynchronism](#disadvantages-asynchronism)
 * [Communication](#communication)
   * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
   * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
@@ -177,8 +173,8 @@ Xem lại [Hướng dẫn đóng góp](CONTRIBUTING.md).
   * [Powers of two table](#powers-of-two-table)
   * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
   * [Additional system design interview questions](#additional-system-design-interview-questions)
-  * [Real world architectures](#real-world-architectures)
-  * [Company architectures](#company-architectures)
+  * [Kiến trúc phần mềm trong thật tế](#real-world-architectures)
+  * [Kiến trúc phần mềm của các công ty](#company-architectures)
   * [Blog kỹ thuật của các công ty](#blog-k%e1%bb%b9-thu%e1%ba%adt-c%e1%bb%a7a-c%c3%a1c-c%c3%b4ng-ty)
 * [Under development](#under-development)
 * [Credits](#credits)
@@ -203,7 +199,7 @@ Những thứ mà bạn sẽ được hỏi khi phỏng vấn dựa vào nhiều
 * Bạn phỏng vấn ở công ty nào
 * May mắn nữa
 
-Những ứng viên nhiều kinh nghiệm cơ bản thì thường được mong đợi hiểu biết nhiều về thiết kế hệ thống. Những kiến trúc sư hệ thống hoặc trưởng nhóm có thể được mong đợi biết nhiều hơn những cá nhân khác. Các công ty công nghệ hàng đầu có khả năng có nhiều hơn một vòng phỏng vấn về thiết kế hệ thống.
+Những ứng viên nhiều kinh nghiệm thì thường được mong đợi hiểu biết nhiều về thiết kế hệ thống. Những kiến trúc sư hệ thống hoặc trưởng nhóm có thể được mong đợi biết nhiều hơn những cá nhân khác. Các công ty công nghệ hàng đầu có khả năng có nhiều hơn một vòng phỏng vấn về thiết kế hệ thống.
 
 Bắt đầu theo chiều rộng và đi sâu hơn trong một vài lĩnh vực. Nó giúp bạn biết thêm một chút về các chủ đề thiết kế hệ thống khác nhau. Điều chỉnh hướng dẫn sau dựa vào lộ trình, kinh nghiệm của bạn, vị trí và công ty bạn phỏng vấn.
 
@@ -217,9 +213,9 @@ Bắt đầu theo chiều rộng và đi sâu hơn trong một vài lĩnh vực.
 | Đọc qua một vài bài viết ở trong [Blog kỹ thuật của các công ty](#blog-k%e1%bb%b9-thu%e1%ba%adt-c%e1%bb%a7a-c%c3%a1c-c%c3%b4ng-ty) về các công ty mà bạn sẽ hướng đến phỏng vấn | :+1: | :+1: | :+1: |
 | Đọc qua một vài [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
 | Xem lại [Tiếp cận câu hỏi phỏng vấn thiết kế hệ thống như thế nào](#ti%e1%ba%bfp-c%e1%ba%adn-c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng-nh%c6%b0-th%e1%ba%bf-n%c3%a0o) | :+1: | :+1: | :+1: |
-| Làm qua [Câu hỏi phỏng vấn thiết kế hệ thống với đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n) | Một vài | Nhiều | Hầu hết |
-| Làm qua [Câu hỏi phỏng vấn thiết kế đối tượng với đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-%c4%91%e1%bb%91i-t%c6%b0%e1%bb%a3ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n) | Một vài | Nhiều | Hầu hết |
-| Xem lại [Additional system design interview questions](#additional-system-design-interview-questions) | Một vài | Nhiều | Hầu hết |
+| Làm qua [Câu hỏi phỏng vấn thiết kế hệ thống có đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n) | Một vài | Nhiều | Hầu hết |
+| Làm qua [Câu hỏi phỏng vấn thiết kế hướng đối tượng có đáp án](#c%c3%a2u-h%e1%bb%8fi-ph%e1%bb%8fng-v%e1%ba%a5n-thi%e1%ba%bft-k%e1%ba%bf-%c4%91%e1%bb%91i-t%c6%b0%e1%bb%a3ng-v%e1%bb%9bi-%c4%91%c3%a1p-%c3%a1n) | Một vài | Nhiều | Hầu hết |
+| Xem lại [Câu hỏi bổ sung về phỏng vấn thiết kế hệ thống](#additional-system-design-interview-questions) | Một vài | Nhiều | Hầu hết |
 
 ## Tiếp cận câu hỏi phỏng vấn thiết kế hệ thống như thế nào
 
@@ -256,9 +252,9 @@ Phác thảo một thiết kế tổng quát với tất cả các thành phần
 * Tạo và lưu trữ một hàm băm của url đầy đủ
     * [MD5](solutions/system_design/pastebin/README.md) và [Base62](solutions/system_design/pastebin/README.md)
     * Sự xung đột khi băm
-    * SQL or NoSQL
-    * Schema của cơ sở dữ liệu
-* Dịch một url được băm thành một url đầy đủ
+    * SQL hay NoSQL
+    * Lược đồ của cơ sở dữ liệu
+* Dịch một url đã được băm thành một url đầy đủ
     * Tra cứu vào cơ sở dữ liệu
 * API và thiết kế hướng đối tượng
 
@@ -269,11 +265,11 @@ Xác định và giải quyết các tắc nghẽn, đưa ra các ràng buộc. 
 * Cân bằng tải
 * Mở rộng hệ thống theo chiều ngang
 * Bộ nhớ đệm
-* Sharding Cơ sở dữ liệu
+* Phân đoạn Cơ sở dữ liệu
 
 Thảo luận về các giải pháp tiềm năng và sự đánh đổi. Mọi thứ đều là sự đánh đổi. Giải quyết việc tắc nghẽn của hệ thống bằng cách sử dụng [Danh mục các chủ đề về thiết kế hệ thống](#danh-m%e1%bb%a5c-c%c3%a1c-ch%e1%bb%a7-%c4%91%e1%bb%81-v%e1%bb%81-thi%e1%ba%bft-k%e1%ba%bf-h%e1%bb%87-th%e1%bb%91ng).
 
-### Back-of-the-envelope calculations
+### Phép tính mặt sau phong bì (Ước tính/ tính nhẩm)
 
 Bạn có thể được yêu cầu làm một số ước tính bằng tay. Tham khảo [Phụ lục](#appendix) cho các tài nguyên sau:
 
@@ -291,14 +287,14 @@ Kiểm tra các liên kết sau để có cái nhìn tốt hơn về những gì
 
 ## Câu hỏi phỏng vấn thiết kế hệ thống với đáp án
 
-> Các câu hỏi phỏng vấn thiết kế hệ thống phổ biến với thảo luận mẫu, mã và sơ đồ thiết kế.
+> Các câu hỏi phỏng vấn thiết kế hệ thống phổ biến với thảo luận mẫu, mã nguồn và sơ đồ thiết kế.
 >
 > Các đáp án được lưu trữ trong thư mục `solutions/`.
 
 | Câu hỏi | |
 |---|---|
 | Thiết kế Pastebin.com (hoặc Bit.ly) | [Đáp án](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Đáp án](solutions/system_design/twitter/README.md) |
+| Thiết kế dòng thời gian và tìm kiếm cho Twitter (hoặc bảng tin và tìm kiếm cho Facebook) | [Đáp án](solutions/system_design/twitter/README.md) |
 | Thiết kế ứng dựng cào nội dung web | [Đáp án](solutions/system_design/web_crawler/README.md) |
 | Thiết kế Mint.com | [Đáp án](solutions/system_design/mint/README.md) |
 | Thiết kế cấu trúc dữ liệu cho một mạng xã hội | [Đáp án](solutions/system_design/social_graph/README.md) |
@@ -313,7 +309,7 @@ Kiểm tra các liên kết sau để có cái nhìn tốt hơn về những gì
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Thiết kế dòng thời gian và tìm kiếm cho Twitter (hoặc bảng tin và tìm kiếm cho Facebook
 
 [Xem bài tập và đáp án](solutions/system_design/twitter/README.md)
 
@@ -355,24 +351,24 @@ Kiểm tra các liên kết sau để có cái nhìn tốt hơn về những gì
 
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
-## Câu hỏi phỏng vấn thiết kế đối tượng với đáp án
+## Câu hỏi phỏng vấn thiết kế hướng đối tượng có đáp án
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Các câu hỏi phỏng vấn thiết kế hệ thống phổ biến với thảo luận mẫu, mã nguồn và sơ đồ thiết kế.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Các đáp án được lưu trữ trong thư mục `solutions/`.
 
->**Note: This section is under development**
+>**Chú ý: Mục này đang được cập nhật**
 
 | Question | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Thiết kế bảng băm | [Giải pháp](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Thiết kế bộ đệm được sử dụng gần đây nhất | [Giải pháp](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Thiết kế một tổng đài điện thoại | [Giải pháp](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Thiết kế một bộ bài | [Giải pháp](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Thiết kế bãi đỗ xe | [Giải pháp](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Thiết kế máy chủ chat | [Giải pháp](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Thiết kế một mảng vòng | [Đóng góp](#contributing)  |
+| Thêm câu hỏi phỏng vấn thiết kế hướng đối tượng | [Đóng góp](#contributing) |
 
 ## Chủ đề thiết kế hệ thống: bắt đầu từ đây
 
@@ -430,7 +426,7 @@ Một cách khác để xem xét hiệu suất so với khả năng mở rộng:
 
 ## Độ trễ so với công suất
 
-**Độ trễ** là thời gian đề thực hiện một tác vụ nào đó hoặc cung cấp kết quả.
+**Độ trễ** là thời gian để thực hiện một tác vụ nào đó hoặc trả về kết quả.
 
 **Công suất** là số lượng hành động hoặc kết quả trên mỗi đơn vị thời gian.
 
@@ -504,11 +500,11 @@ Cách tiếp cận này có thể thấy trong trong các hệ thống tập tin
 
 Có hai mẫu chính để hỗ trợ tính sẵn sàng cao: **Mô hình chịu lỗi** và **sao chép**.
 
-### Mô hình chịu lỗi
+### Giải pháp chịu lỗi
 
-#### Active-passive
+#### Hoạt động-Thụ Động
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+Với giải pháp chịu lỗi Hoạt động-Bị Động, tín hiệu được gửi giữ máy chủ đang hoạt động và máy chủ thụ động ở chế độ chờ. Nếu tín hiệu bị gián đoạn, máy chủ thụ động sẽ tiếp quản địa chỉ IP của máy chủ đang hoạt động và tiếp tục dịch vụ.
 
 The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
 
@@ -525,13 +521,13 @@ Active-active failover can also be referred to as master-master failover.
 ### Bất lợi của mô hình chịu lỗi
 
 * Mô hình chịu lỗi thêm nhiều phần cứng và vì thế tăng thêm độ phức tạp.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* Có khả năng mất mát dữ liệu nếu hệ thống hoạt động bị lỗi khi mà có bất cứ dữ liệu mới nào chưa được sao chép sang hệ thống thụ động.
 
-### Sao chép
+### Nhân bản
 
 #### Master-slave and master-master
 
-This topic is further discussed in the [Database](#database) section:
+Chủ đề này được thảo luận thêm trong phần [Cơ sở dữ liệu] (# cơ-sở-dữ-liệu):
 
 * [Master-slave replication](#master-slave-replication)
 * [Master-master replication](#master-master-replication)
@@ -582,7 +578,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
 
-## Domain name system
+## Hệ thống phân giải tên miền
 
 <p align="center">
   <img src="http://i.imgur.com/IOyLj4i.jpg"/>
@@ -590,7 +586,7 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+A Hệ thống phân giải tên miền (DNS) phiên dich một tên miền ví dụ như www.example.com thành địa chỉ IP.
 
 DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
 
@@ -601,7 +597,7 @@ DNS is hierarchical, with a few authoritative servers at the top level.  Your ro
 
 Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
 
-* [Weighted round robin](http://g33kinfo.com/info/archives/2657)
+* [Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
     * Prevent traffic from going to servers under maintenance
     * Balance between varying cluster sizes
     * A/B testing
@@ -673,7 +669,7 @@ Load balancers distribute incoming client requests to computing resources such a
 
 * Preventing requests from going to unhealthy servers
 * Preventing overloading resources
-* Helping eliminate single points of failure
+* Helping to eliminate a single point of failure
 
 Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
 
@@ -690,7 +686,7 @@ Load balancers can route traffic based on various metrics, including:
 * Random
 * Least loaded
 * Session/cookies
-* [Round robin or weighted round robin](http://g33kinfo.com/info/archives/2657)
+* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
 
@@ -700,7 +696,7 @@ Layer 4 load balancers look at info at the [transport layer](#communication) to 
 
 ### Layer 7 load balancing
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
 
 At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
 
@@ -718,7 +714,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ### Disadvantage(s): load balancer
 
 * The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
+* Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
 
 ### Nguồn và đọc thêm
@@ -809,12 +805,12 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## Cơ sở dữ liệu
 
 <p align="center">
   <img src="http://i.imgur.com/Xkm5CXz.png"/>
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
 ### Relational database management system (RDBMS)
@@ -880,7 +876,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 <p align="center">
   <img src="http://i.imgur.com/U3qV33e.png"/>
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
 Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
@@ -894,7 +890,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 
 ##### Nguồn và đọc thêm: federation
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
 #### Sharding
 
@@ -1130,7 +1126,7 @@ Sample data well-suited for NoSQL:
 
 ##### Nguồn và đọc thêm: SQL or NoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## Cache
@@ -1574,6 +1570,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 
 ### Nguồn và đọc thêm
 
+* [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
