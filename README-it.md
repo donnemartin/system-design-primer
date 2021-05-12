@@ -1,47 +1,47 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](README-it.md) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-**Help [translate](TRANSLATIONS.md) this guide!**
+**Aiuta a [tradurre](TRANSLATIONS.md) questa guida!**
 
-# The System Design Primer
+# Manuale Introduttivo alla Progettazione dei Sistemi
 
 <p align="center">
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
-## Motivation
+## Motivazione
 
-> Learn how to design large-scale systems.
+> Imparare a progettare sistemi su larga scala.
 >
-> Prep for the system design interview.
+> Come preparazione per il colloquio sulla progettazione dei sistemi.
 
-### Learn how to design large-scale systems
+### Impara come progettare sistemi su larga
 
-Learning how to design scalable systems will help you become a better engineer.
+Imparare come progettare sistemi su larga scala ti aiuterà a diventare un ingegnere migliore.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+La progettazione di sistemi è un argomento molto ampio.  C'è **un enorme quantità di risorse sparse nel web** sui principi di progettazione di sistemi.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Questo repository è una **collezione organizzata** di risorse per aiutarti a imparare a costruire sistemi su larga scala.
 
-### Learn from the open source community
+### Impara dalla comunità open source
 
-This is a continually updated, open source project.
+Questo è un progetto open source continuamente aggiornato.
 
-[Contributions](#contributing) are welcome!
+[Contributi](#contributing) a questo manuale sono be accetti!
 
-### Prep for the system design interview
+### Preparati per il colloquio sulla progettazione dei sistemi
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+In aggiunta ai colloqui di programmazione, molte aziende in ambito tecnologico **richiedono** un colloquio sulla progettazione dei sistemi come parte del loro **processo di colloqui tecnici**.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Esercitati con domande comuni sulla progettazione dei sistemi** e confronta le tue risposte con le **soluzioni del manuale**: discussioni, codice e diagrammi.
 
-Additional topics for interview prep:
+Argomenti addizionali per la preparazione al colloquio:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Guida allo studio](#study-guide)
+* [Come affrontare le domande sulla progettazione dei sistemi](#how-to-approach-a-system-design-interview-question)
+* [Domande di colloquio sulla progettazione dei sistemi, **con soluzioni**](#system-design-interview-questions-with-solutions)
+* [Domande di colloquio sulla progettazione orientata agli oggetti, **con soluzioni**](#object-oriented-design-interview-questions-with-solutions)
+* [Domande di colloquio addizionali sulla progettazione dei sistemi](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -50,13 +50,13 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+La collezione di [Anki flashcards]https://apps.ankiweb.net/) fornita utilizza la ripetizione distanziata per aiutarti ad apprendere i concetti chiave sulla progettazione dei sistemi.
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Collezione sulla progettazione dei sistemi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Collezione di esercizi sulla progettazione dei sistemi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Collezione sulla progettazione orientata agli oggetti](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Ottime per l'utilizzo in viaggio.
 
 ### Coding Resource: Interactive Coding Challenges
 
