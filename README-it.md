@@ -58,33 +58,33 @@ La collezione di [schede di Anki]https://apps.ankiweb.net/) fornita utilizza la 
 
 Ottime per l'utilizzo in viaggio.
 
-### Coding Resource: Interactive Coding Challenges
+### Risorse sulla Programmazione: Quesiti di Programmazione Interattivi
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+Stai cercando risorse per aiutarti a preparare il [**Colloquio di Programmazione**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Controlla anche il relativo repository [**Quesiti di Programmazione Interattivi**](https://github.com/donnemartin/interactive-coding-challenges), che contiene una collezione di schede di Anki aggiuntiva:
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Schede sulla Programmazione](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## Contribuire
 
-> Learn from the community.
+> Impara dalla comunità.
 
-Feel free to submit pull requests to help:
+Sentiti libero di creare pull requests per aiutare con:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* Correzione di error
+* Migliorare le sezioni
+* Aggiungere nuove sezioni
+* [Tradurre](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Il contenuto che richiede ancora qualche ritocco si trova nella sezione [in via di sviluppo](#under-development).
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
 
 ## Index of system design topics
 
