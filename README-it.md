@@ -43,14 +43,14 @@ Argomenti addizionali per la preparazione al colloquio:
 * [Domande di colloquio sulla progettazione orientata agli oggetti, **con soluzioni**](#object-oriented-design-interview-questions-with-solutions)
 * [Domande di colloquio addizionali sulla progettazione dei sistemi](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## Schede di Anki
 
 <p align="center">
   <img src="images/zdCAkB3.png">
   <br/>
 </p>
 
-La collezione di [Anki flashcards]https://apps.ankiweb.net/) fornita utilizza la ripetizione distanziata per aiutarti ad apprendere i concetti chiave sulla progettazione dei sistemi.
+La collezione di [schede di Anki]https://apps.ankiweb.net/) fornita utilizza la ripetizione distanziata per aiutarti ad apprendere i concetti chiave sulla progettazione dei sistemi.
 
 * [Collezione sulla progettazione dei sistemi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
 * [Collezione di esercizi sulla progettazione dei sistemi](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
