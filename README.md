@@ -794,7 +794,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 
 ### Architecture Patterns
 
-When designing a system, a software architect may be put before a challenging task of satisfying the criteria such as those defined by business goals or project constraints. There exists a whole variety of concrete architecture patterns that can be used alone or in a combination. [This](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/dn589799(v=pandp.10)) guide by Microsoft is a very good overview of 24 such patterns as well as an in-depth look at each.  Each serves a concrete engineering purpose and is worth getting acquainted with.  
+When designing a system, a software architect may be put before a challenging task of satisfying the criteria such as those defined by business goals or project constraints. There exists a whole variety of concrete architecture patterns that can be used alone or in a combination. [This]( https://docs.microsoft.com/en-us/previous-versions/msp-n-p/dn600223(v=pandp.10)) guide by Microsoft is a very good overview of 24 such patterns as well as an in-depth look at each.  Each serves a concrete engineering purpose and is worth getting acquainted with.  
 
 ### Disadvantage(s): application layer
 
