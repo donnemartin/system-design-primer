@@ -130,6 +130,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Application layer](#application-layer)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
+    * [Architecture patterns](#architecture-patterns)
 * [Database](#database)
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
         * [Master-slave replication](#master-slave-replication)
@@ -790,6 +791,10 @@ Pinterest, for example, could have the following microservices: user profile, fo
 ### Service Discovery
 
 Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+
+### Architecture Patterns
+
+When designing a system, a software architect may be put before a challenging task of satisfying the criteria such as those defined by business goals or project constraints. There exists a whole variety of concrete architecture patterns that can be used alone or in a combination. [This]( https://docs.microsoft.com/en-us/previous-versions/msp-n-p/dn600223(v=pandp.10)) guide by Microsoft is a very good overview of 24 such patterns as well as an in-depth look at each.  Each serves a concrete engineering purpose and is worth getting acquainted with.  
 
 ### Disadvantage(s): application layer
 
