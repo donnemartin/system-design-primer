@@ -86,21 +86,21 @@ Il contenuto che richiede ancora qualche ritocco si trova nella sezione [in via 
 
 Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
 
-## Index of system design topics
+## Indice dei temi sulla progettazione dei sistemi
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Riepilogo dei vari temi sulla progettazione dei sistemi, con pro e contro.  **Qualsiasi scelta è un compromesso**.
 >
-> Each section contains links to more in-depth resources.
+> Ogni sezione contiene collegamenti a risorse di approfondimento.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
+* [Temi sulla progettazione dei sistemi: inizia da qui](#system-design-topics-start-here)
+    * [Primo passo: Guarda la lezione sulla scalabilità](#step-1-review-the-scalability-video-lecture)
+    * [Secondo passo: Leggi l'articolo sulla scalabilità](#step-2-review-the-scalability-article)
+    * [Prossimi passi](#next-steps)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
@@ -369,45 +369,45 @@ Check out the following links to get a better idea of what to expect:
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
-## System design topics: start here
+## Temi sulla progettazione dei sistemi: inizia da qui
 
-New to system design?
+Prime esperienze sulla progettazione dei sistemi?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Per prima cosa dovrai imparare i principi base, imparare quali sono, come sono utilizzati e quali sono i loro pro e contro.
 
-### Step 1: Review the scalability video lecture
+### Primo passo: Guarda la lezione sulla scalabilità
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Lezione sulla scalabilità tenuta ad Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
+* Temi trattati::
+    * Scalabilità verticale
+    * Scalabilità orizzontale
     * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+    * Bilanciamento del carico
+    * Replicazione del database
+    * Partizionamento del database
 
-### Step 2: Review the scalability article
+### Secondo passo: Leggi l'articolo sulla scalabilità
 
-[Scalability](http://www.lecloud.net/tagged/scalability/chrono)
+[Scalabilità](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* Temi trattati:
+    * [Cloni](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Tipi di database](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Tipi di cache](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asincronismo](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Prossimi passi
 
-Next, we'll look at high-level trade-offs:
+Analizzeremo ad alto livello i vari compromessi:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Prestazioni** vs **scalabilità**
+* **Latenza** vs **portata**
+* **Disponibilità** vs **consistenza**
 
-Keep in mind that **everything is a trade-off**.
+Tieni a mente che **qualsiasi scelta è un compromesso**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Successivamente andremo in profondità su argomenti specifici come DNS, CDNs, e bilanciatori di carico.
 
 ## Performance vs scalability
 
