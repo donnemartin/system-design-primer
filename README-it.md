@@ -86,7 +86,7 @@ Il contenuto che richiede ancora qualche ritocco si trova nella sezione [in via 
 
 Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
 
-## Indice dei temi sulla progettazione dei sistemi
+## Indice degli argomenti sulla progettazione dei sistemi
 
 > Riepilogo dei vari temi sulla progettazione dei sistemi, con pro e contro.  **Qualsiasi scelta è un compromesso**.
 >
@@ -98,8 +98,8 @@ Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
 </p>
 
 * [Temi sulla progettazione dei sistemi: inizia da qui](#system-design-topics-start-here)
-    * [Primo passo: Guarda la lezione sulla scalabilità](#step-1-review-the-scalability-video-lecture)
-    * [Secondo passo: Leggi l'articolo sulla scalabilità](#step-2-review-the-scalability-article)
+    * [Prima parte: Guarda la lezione sulla scalabilità](#step-1-review-the-scalability-video-lecture)
+    * [Seconda parte: Leggi l'articolo sulla scalabilità](#step-2-review-the-scalability-article)
     * [Prossimi passi](#next-steps)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
@@ -371,11 +371,11 @@ Check out the following links to get a better idea of what to expect:
 
 ## Temi sulla progettazione dei sistemi: inizia da qui
 
-Prime esperienze sulla progettazione dei sistemi?
+Nessuna esperienza sulla progettazione dei sistemi?
 
 Per prima cosa dovrai imparare i principi base, imparare quali sono, come sono utilizzati e quali sono i loro pro e contro.
 
-### Primo passo: Guarda la lezione sulla scalabilità
+### Prima parte: Guarda la lezione sulla scalabilità
 
 [Lezione sulla scalabilità tenuta ad Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
@@ -387,7 +387,7 @@ Per prima cosa dovrai imparare i principi base, imparare quali sono, come sono u
     * Replicazione del database
     * Partizionamento del database
 
-### Secondo passo: Leggi l'articolo sulla scalabilità
+### Seconda parte: Leggi l'articolo sulla scalabilità
 
 [Scalabilità](http://www.lecloud.net/tagged/scalability/chrono)
 
