@@ -46,7 +46,7 @@ class Operator(Employee):
         super(Operator, self).__init__(employee_id, name, Rank.OPERATOR)
 
     def escalate_call(self):
-        self.call.level = Rank.SUPERVISOR
+        self.call.rank = Rank.SUPERVISOR
         self._escalate_call()
 
 
@@ -56,7 +56,7 @@ class Supervisor(Employee):
         super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
 
     def escalate_call(self):
-        self.call.level = Rank.DIRECTOR
+        self.call.rank = Rank.DIRECTOR
         self._escalate_call()
 
 
