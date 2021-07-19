@@ -217,6 +217,75 @@ Beginne breit und fokussiere dich auf einige wenige Bereiche. Es hilft wenn man 
 | Arbeite dich durch [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
 | Beschäftige dich mit [Additional system design interview questions](#additional-system-design-interview-questions) | Einige | Viele | Alle |
 
+## Wie man eine System-Design Interview Frage angehen soll
+
+> Wie man eine System-Design Interview Frage anzupacken hat.
+
+Das System-Design Interview ist ein **offenenes Gespräch**. Die Führung des Gesprächs wird von dir erwartet.
+
+Du kannst die folgende Schritte nutzen um die Diskussion zu leiten.  Zur Festigung dieses Prozesses, arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) Abschnitt mit den folgenden Schritten.
+
+### Schritt 1: Umreiße Anwendungsfälle, Grenzen, und Annahmen
+
+Sammle Anforderungen und erfasse das Problem.  Stelle Fragen um Anwendungsfälle und Grenzen zu klarmachen.  Diskutiere die Annahmen.
+
+* Wer wird es nutzen?
+* Wie werden sie es nutzen?
+* Wie viele Nutzer wird es geben?
+* Was macht das System?
+* Was sind die Eingaben und Ausgaben des Systems?
+* Wie viele Daten, welches das System verarbeitet, werden erwartet?
+* Wie viele Anfragen erwarten wir pro Sekunde?
+* Was ist das erwartete Lese/Schreib-Verhältnis?
+
+### Schritt 2: Entwurfe ein Grobdesign
+
+Umreiße einen groben Entwurf mit alle wichtige Komponenten.
+
+* Skizziere die Entwerfe Kernkomponenten und Verbindungen
+* Beründe deine Ideen
+
+### Schritt 3: Entwurfe Kernkomponenten
+
+Gehe für jede Kernkomponente ins Detail.  Zum Beispiel, wenn du zum [design a url shortening service](solutions/system_design/pastebin/README.md) gefragt wird, dann erläutere:
+
+* Generierung und Speicherung von hashes einer vollen URL
+    * [MD5](solutions/system_design/pastebin/README.md) und [Base62](solutions/system_design/pastebin/README.md)
+    * Hashkollisionen
+    * SQL oder NoSQL
+    * Datenbankschema
+* Zuordnung einer hashed URL zu einer vollen URL
+    * Datenbankabfragen
+* API and Objektorientiertes Design
+
+### Schritt 4: Skaliere den Entwurf
+
+Identifiziere und adressiere Engpässe angesichts der Einschränkungen. Brauchst du zum Beispiel die folgenden Komponenten um ein Problem der Skalierbarkeit zu adressieren?
+
+* Load Balancer
+* Horizontale Skalierung
+* Caching
+* Datenbank Sharding
+
+Diskutiere potentielle Lösungen und trade-offs.  Alles ist ein trade-off.  Addressiere Engpässe mit [principles of scalable system design](#index-of-system-design-topics).
+
+### Überschlagsrechnung
+
+Du wirst vielleicht einige Schätzungen aus dem Kopf vornehmen müssen.  Schaue dir das [Appendix](#appendix) für folgende Quellen an:
+
+* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Powers of two table](#powers-of-two-table)
+* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+
+### Quellen und weiterführende Artikel
+
+Schaue dir die folgenden Links an um eine bessere Idee von dem was dich erwartet zu bekommen:
+
+* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [The system design interview](http://www.hiredintech.com/system-design)
+* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+
 ## Verfügbarkeit vs Konsistenz
 
 ### Das CAP-Theorem
