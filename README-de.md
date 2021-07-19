@@ -217,59 +217,59 @@ Beginne breit und fokussiere dich auf einige wenige Bereiche. Es hilft wenn man 
 | Arbeite dich durch [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Alle |
 | Beschäftige dich mit [Additional system design interview questions](#additional-system-design-interview-questions) | Einige | Viele | Alle |
 
-## Wie ein System-Design Interview Frage zu angehen
+## Wie man eine System-Design Interview Frage angehen soll
 
-> Wie ein System-Design Interview Frage zu anpacken.
+> Wie man eine System-Design Interview Frage anzupacken hat.
 
-Das System-Design Interview ist ein **unbegrenzt Gespräch**.  Du solltest es bestimmen.
+Das System-Design Interview ist ein **offenenes Gespräch**. Die Führung des Gesprächs wird von dir erwartet.
 
-Du kannst die folgende Schritte nutzen um die Diskussion zu leiten.  Um sich diese Vorgang zu festigen, arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) Abschnitt mit die folgende Schritte.
+Du kannst die folgende Schritte nutzen um die Diskussion zu leiten.  Zur Festigung dieses Prozesses, arbeite dich durch [System design interview questions with solutions](#system-design-interview-questions-with-solutions) Abschnitt mit den folgenden Schritten.
 
 ### Schritt 1: Umreiße Anwendungsfälle, Grenzen, und Annahmen
 
-Sammelt Anforderungen und Weit das Problem aus.  Stelle Fragen um Anwendungsfälle und Grenzen zu klarmachen.  Diskutiert die Annahmen.
+Sammle Anforderungen und erfasse das Problem.  Stelle Fragen um Anwendungsfälle und Grenzen zu klarmachen.  Diskutiere die Annahmen.
 
 * Wer wird es nutzen?
 * Wie werden sie es nutzen?
 * Wie viele Nutzer wird es geben?
 * Was macht das System?
 * Was sind die Eingaben und Ausgaben des Systems?
-* Wie viel Daten erwarten wir zu handeln?
-* Wie viele Ersuchen erwarten wir pro Sekunde?
-* Was ist die erwartete Lese-zu-Schreib-Verhältnis?
+* Wie viele Daten, welches das System verarbeitet, werden erwartet?
+* Wie viele Anfragen erwarten wir pro Sekunde?
+* Was ist das erwartete Lese/Schreib-Verhältnis?
 
-### Schritt 2: Schafft ein höher Entwurf
+### Schritt 2: Entwurfe ein Grobdesign
 
-Umreiße ein höher Entwurf mit alle wichtige Komponenten.
+Umreiße einen groben Entwurf mit alle wichtige Komponenten.
 
-* Skizziere die Hauptkomponenten und Verbindungen
-* Gründen deine Ideen
+* Skizziere die Entwerfe Kernkomponenten und Verbindungen
+* Beründe deine Ideen
 
-### Schritt 3: Entwurft wichtige Komponenten
+### Schritt 3: Entwurfe Kernkomponenten
 
-Einzutaucht in den Einzelheiten für jedes wichtiges Komponent.  Zum Beispiel, wenn du musst [design a url shortening service](solutions/system_design/pastebin/README.md), diskutiert:
+Gehe für jede Kernkomponente ins Detail.  Zum Beispiel, wenn du zum [design a url shortening service](solutions/system_design/pastebin/README.md) gefragt wird, dann erläutere:
 
-* Ein hash des volles url generieren und speichern
+* Generierung und Speicherung von hashes einer vollen URL
     * [MD5](solutions/system_design/pastebin/README.md) und [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Ein hashed url zu volles url übersetzen
-    * Database lookup
+    * Hashkollisionen
+    * SQL oder NoSQL
+    * Datenbankschema
+* Zuordnung einer hashed URL zu einer vollen URL
+    * Datenbankabfragen
 * API and Objektorientiertes Design
 
-### Schritt 4: Skaliert den Entwurf
+### Schritt 4: Skaliere den Entwurf
 
-Identifiziert und addressiert Engpassen, angesichts der Grenzen.  Zum Beispiel, brauchst du die folgende um Probleme der Skalierung addressieren?
+Identifiziere und adressiere Engpässe angesichts der Einschränkungen. Brauchst du zum Beispiel die folgenden Komponenten um ein Problem der Skalierbarkeit zu adressieren?
 
 * Load Balancer
 * Horizontale Skalierung
 * Caching
 * Datenbank Sharding
 
-Diskutiert potentielle Lösungen und Abtauschen.  Alles ist ein Abtausch.  Addressiert Engpassen mit [principles of scalable system design](#index-of-system-design-topics).
+Diskutiere potentielle Lösungen und trade-offs.  Alles ist ein trade-off.  Addressiere Engpässe mit [principles of scalable system design](#index-of-system-design-topics).
 
-### Back-of-the-envelope calculations
+### Überschlagsrechnung
 
 Du wirst vielleicht einige Schätzungen von Hand vorzunehmen gebeten.  Hinweist zu [Appendix](#appendix) um die folgende Ressourcen zu sehen:
 
@@ -279,7 +279,7 @@ Du wirst vielleicht einige Schätzungen von Hand vorzunehmen gebeten.  Hinweist 
 
 ### Quellen und weiterführende Artikel
 
-Schau die folgende Links um eine bessere Idee was erwarten zu haben:
+Schaue dir die folgenden Links an um eine bessere Idee von dem was dich erwartet zu bekommen:
 
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
