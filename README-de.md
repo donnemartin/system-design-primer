@@ -271,7 +271,7 @@ Diskutiere potentielle Lösungen und trade-offs.  Alles ist ein trade-off.  Addr
 
 ### Überschlagsrechnung
 
-Du wirst vielleicht einige Schätzungen von Hand vorzunehmen gebeten.  Hinweist zu [Appendix](#appendix) um die folgende Ressourcen zu sehen:
+Du wirst vielleicht einige Schätzungen aus dem Kopf vornehmen müssen.  Schaue dir das [Appendix](#appendix) für folgende Quellen an:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [Powers of two table](#powers-of-two-table)
