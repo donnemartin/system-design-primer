@@ -19,7 +19,6 @@
 
 Học cách thiết kế hệ thống scalable giúp bạn trở thành một kỹ sư tốt hơn.
 
-
 Thiết kế hệ thống là một chủ đề rộng. Có rất nhiều tài liệu rải rác trên web về các nguyên tắc thiết kế hệ thống.
 
 Repo này là góp nhặt từ nhiều nguồn tài liệu một cách có **sắp xếp* để giúp bạn học được cách xây dựng nên những hệ thống cả khả năng scale được.
@@ -1871,7 +1870,6 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     http://creativecommons.org/licenses/by/4.0/
 
 
-
 # Huy 
 
 ## Things that are hard to translate
@@ -1879,6 +1877,6 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - large-scale system: "hệ thống lớn"?
 - scalable: "phát triển được**?
 
-## Vietnamese specific notes
-- Có những dạng từ khoá chuyên ngành khó mà dịch được một cách thoát nghĩa mà không gượng gạo. Nên bản dịch này sẽ giữ một số từ ngữ ở nguyên bản tiếng Anh, chẳng hạng: "scale", "code" (xem như từ mượn, "mã" nghe không đúng lắm) TODO
-- 
+## Vietnamese-specific notes
+
+- Có những dạng từ khoá chuyên ngành khó mà dịch được một cách thoát nghĩa mà không gượng gạo. Nên bản dịch này sẽ giữ một số từ ngữ ở nguyên bản tiếng Anh, chẳng hạng: "scale", "code" (xem như từ mượn, "mã" nghe không đúng lắm)
