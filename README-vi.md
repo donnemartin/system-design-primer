@@ -218,10 +218,13 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 ![Imgur](images/OfVllex.png)
 
 **Q: For interviews, do I need to know everything here?**
+**Hỏi: Cho việc phỏng vấn thì tôi có cần biết tất cả mọi thứ ở đây?**
 
 **A: No, you don't need to know everything here to prepare for the interview**.
+**Đáp: Không, bạn không cần biết tất cả mọi thứ ở đây để chuẩn bị cho phỏng vấn.**
 
 What you are asked in an interview depends on variables such as:
+Những gì bạn được hỏi trong buổi phỏng vấn sẽ tuỳ thuộc vào những yếu tố sau:
 
 * How much experience you have
 * What your technical background is
@@ -229,13 +232,25 @@ What you are asked in an interview depends on variables such as:
 * Which companies you are interviewing with
 * Luck
 
+* Bạn có bao lâu kinh nghiệm
+* Nền kiến thức kỹ thuật của bạn là gfi
+* Vị trí mà bạn phỏng vấn vào
+* Bạn phỏng vấn với công ty nào
+* May mắn
+
 More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Ứng cử viên càng có bề dày kinh nghiệm thì càng được mong dợi là sẽ biết nhiều hơn về thiết kế hệ thống.  Architects hoặc team leads có được mong là biết nhiều hơn những cá nhân khác.  Các công ty hàng đầu thì khả năng cao là có nhiều phỏng vấn về thiết kế hơn.
 
 Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Bắt đầu ở bề rộng và đi sâu hơn vào từng vùng.  Biết một chút cho nhiều chủ đề khác nhau thì thường sẽ giúp ít bạn hơn.  Điều chỉnh những hướng dẫn trong đây tùy vào thời gian, kinh nghiệm, và vị trí nào mà bạn đang phỏng vấn vào, và công ty nào mà bạn phỏng vấn với.
 
 * **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
 * **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
 * **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+
+* **Thời gian ngắn** - Nhắm vào bề rộng của các chủ đề thiết kế hệ thống. Tập luyện bằng cách giải quyết **một số** câu hỏi phỏng vấn.
+* **Thời gian trung bình** - Nhắm vào bề rộng và một chút phần sâu với các chủ đều thiết kế hệ thống. Tập luyện giải quyết **nhiều** câu hỏi phỏng vấn.
+* ** Thời gian dài** - Nhắm vào bề rộng và nhiều phần sâu với các chủ đề thiết ké hệ thống. Tập luyện giải quyết **hầu hết** các câu hỏi phỏng vấn.
 
 | | Short | Medium | Long |
 |---|---|---|---|
