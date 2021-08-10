@@ -11,7 +11,7 @@
 
 ## Động Lực
 
-> Học được cách thiết kế những hệ thống lớn.  # @huy TODO
+> Học được cách thiết kế những hệ thống lớn.
 >
 > Chuẩn bị trước khi phỏng vấn thiết kế hệ thống.
 
@@ -127,16 +127,25 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 </p>
 
 * [System design topics: start here](#system-design-topics-start-here)
+* [Các chủ đề thiết kế hệ thống: bắt đầu ở đây](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
+    * [Bước 1: Xem qua các video bài giảng về scalability](#step-1-review-the-scalability-video-lecture)
     * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
+    * [Bước 2: Xem qua các bài viết về scalability](#step-2-review-the-scalability-article)
     * [Next steps](#next-steps)
-* [Các chủ đề thiết kế hệ thống: bắt đầu từ đây](#system-design-topics-start-here)
+    * [Bước tiếp theo](#next-steps)
 * [Performance vs scalability](#performance-vs-scalability)
+* [Hiệu suất và scalability]
 * [Latency vs throughput](#latency-vs-throughput)
+* [Độ trễ và công suất](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
+* [Availability và tính nhất quán](#availability-vs-consistency)
     * [CAP theorem](#cap-theorem)
+    * [Định lý CAP](#cap-theorem)
         * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+        * [CP - tính nhất quán và partition tolerance](#cp---consistency-and-partition-tolerance)
         * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+        * [AP - availability và partition tolerance](#ap---availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
     * [Weak consistency](#weak-consistency)
     * [Eventual consistency](#eventual-consistency)
@@ -233,7 +242,7 @@ Những gì bạn được hỏi trong buổi phỏng vấn sẽ tuỳ thuộc v
 * Luck
 
 * Bạn có bao lâu kinh nghiệm
-* Nền kiến thức kỹ thuật của bạn là gfi
+* Nền kiến thức kỹ thuật của bạn là gì
 * Vị trí mà bạn phỏng vấn vào
 * Bạn phỏng vấn với công ty nào
 * May mắn
@@ -1885,13 +1894,11 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     http://creativecommons.org/licenses/by/4.0/
 
 
-# Huy 
-
-## Things that are hard to translate
-
-- large-scale system: "hệ thống lớn"?
-- scalable: "phát triển được**?
-
 ## Vietnamese-specific notes
 
-- Có những dạng từ khoá chuyên ngành khó mà dịch được một cách thoát nghĩa mà không gượng gạo. Nên bản dịch này sẽ giữ một số từ ngữ ở nguyên bản tiếng Anh, chẳng hạng: "scale", "code" (xem như từ mượn, "mã" nghe không đúng lắm)
+## Words that I haven't figured out how to translate yet
+
+- large-scale system: "hệ thống lớn"?
+- scalable/scalability: "mở rộng được"?
+- availability
+- partition tolerance
