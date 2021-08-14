@@ -1,0 +1,16 @@
+name: Lint Markdown and Generate PDF
+
+on: [ push ]
+
+jobs:
+  lint-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Lint Markdown files
+        uses: lint-md/github-action@v0.0.2
+
+      - name: Markdown to PDF and HTML
+        uses: BaileyJM02/markdown-to-pdf@v1
