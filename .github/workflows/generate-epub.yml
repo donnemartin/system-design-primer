@@ -1,0 +1,18 @@
+name: Generate Epub
+on: [push,pull_request]
+jobs:
+  generate-epub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Installing Pandoc
+        run: sudo apt-get install pandoc
+      - name: Generating Epub
+        run: ./generate-epub.sh
+        shell: bash
+      - name: Uploading Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: system-design-primer-epubs
+          path: ./*.epub
