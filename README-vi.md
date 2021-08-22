@@ -135,7 +135,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Next steps](#next-steps)
     * [Bước tiếp theo](#next-steps)
 * [Performance vs scalability](#performance-vs-scalability)
-* [Hiệu suất và scalability]
+* [Hiệu suất và scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Độ trễ và công suất](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
@@ -181,19 +181,34 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
 * [Database](#database)
+* [Cơ sở dữ liệu](#database)
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+    * [Cơ sở dữ liệu quan hệ (RDBMS)](#relational-database-management-system-rdbms)
         * [Master-slave replication](#master-slave-replication)
+        * [Tái tạo Master-slaver](#master-slave-replication) # FIXME: bad translation
         * [Master-master replication](#master-master-replication)
+        * [Tái tạo master-master](#master-master-replication)
         * [Federation](#federation)
+        * [Liên đoàn](#federation)
         * [Sharding](#sharding)
+        * [Phân mảnh](#sharding)
         * [Denormalization](#denormalization)
+        * [Phản tiêu chuẩn](#demonomalization) # FIXME: really bad translation
         * [SQL tuning](#sql-tuning)
+        * [Tinh chỉnh SQL](#sql-tuning)
+    * [NoSQL](#nosql)
     * [NoSQL](#nosql)
         * [Key-value store](#key-value-store)
+        * [Kho khoá-trị](#key-value-store)
         * [Document store](#document-store)
+        * [Kho tài liệu](#document-store) # FIXME: bad translation
         * [Wide column store](#wide-column-store)
+        * [Kho cột rộng](#wide-column-store)
         * [Graph Database](#graph-database)
+        * [Cơ sở dữ liệu đồ thị](#graph-database)
     * [SQL or NoSQL](#sql-or-nosql)
+    * [SQL hay NoSQL](#sql-or-nosql)
+* [Cache](#cache)
 * [Cache](#cache)
     * [Client caching](#client-caching)
     * [CDN caching](#cdn-caching)
@@ -208,16 +223,23 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
 * [Asynchronism](#asynchronism)
+* [Bất đồng bộ]
     * [Message queues](#message-queues)
+    * [Hàng đợi tin](#message-queues)
     * [Task queues](#task-queues)
+    * [Hàng đợi nhiệm vụ](#task-queues)
     * [Back pressure](#back-pressure)
+    * [Giảm tải nghịch](#back-pressure) # FIXME: probably bad translation
 * [Communication](#communication)
+* [Giao tiếp](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
 * [Security](#security)
+* [An ninh](#security)
 * [Appendix](#appendix)
+* [Phụ lục](#security)
     * [Powers of two table](#powers-of-two-table)
     * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
     * [Additional system design interview questions](#additional-system-design-interview-questions)
@@ -283,14 +305,19 @@ Bắt đầu ở bề rộng và đi sâu hơn vào từng vùng.  Biết một 
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
 ## How to approach a system design interview question
+## Cách tiếp cận câu hỏi phỏng vấn thiết kế hệ thống
 
 > How to tackle a system design interview question.
+> Cách xử trí một câu hỏi thiết kế hệ thống.
 
 The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Phỏng vấn thiết kế hệ thống là đối thoại mở.  Bạn được trông đợi là người dẫn dắt.
 
 You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Bạn có thể dùng những bước sao để lái cuộc thảo luận.  Để củng cố, hãy đi qua phần [Các câu hỏi phỏng vấn thiết kế hệ thống kèm lời giải](#system-design-interview-questions-with-solutions) sử dụng các bước sau.
 
 ### Step 1: Outline use cases, constraints, and assumptions
+### Bước 1: Phác thảo các trường hợp sử dụng, ràng buộc, và các giả định
 
 Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
 
