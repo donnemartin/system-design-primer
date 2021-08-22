@@ -139,13 +139,13 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Latency vs throughput](#latency-vs-throughput)
 * [Độ trễ và công suất](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
-* [Availability và tính nhất quán](#availability-vs-consistency)
+* [Tính hiện có và tính nhất quán](#availability-vs-consistency)
     * [CAP theorem](#cap-theorem)
     * [Định lý CAP](#cap-theorem)
         * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [CP - tính nhất quán và partition tolerance](#cp---consistency-and-partition-tolerance)
+        * [CP - tính nhất quán và dung sai phân vùng](#cp---consistency-and-partition-tolerance)
         * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-        * [AP - availability và partition tolerance](#ap---availability-and-partition-tolerance)
+        * [AP - tính hiện có và dung sai phân vùng](#ap---availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
 * [Các mẫu về nhất quán](#consistency-patterns)  # FIXME: bad translation
     * [Weak consistency](#weak-consistency)
@@ -154,7 +154,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Hậu nhất quán](#eventual-consistency)  # FIXME: bad translation
     * [Nhất quán mạnh](#strong-consistency)  # FIXME: bad translation
 * [Availability patterns](#availability-patterns)
-* [Các mẫu về availability](#availability-patterns)
+* [Các mẫu hình của tính hiện có](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replication](#replication)
     * [Availability in numbers](#availability-in-numbers)
@@ -530,6 +530,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
 ## Availability vs consistency
+## Tính hiện có so với tính nhất quán
 
 ### CAP theorem
 
@@ -542,8 +543,11 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 In a distributed computer system, you can only support two of the following guarantees:
 
 * **Consistency** - Every read receives the most recent write or an error
+* **Tính nhất quán** - Mọi thao tác đọc nhận được kết quả ghi gần nhất hoặc lỗi
 * **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
+* **Tính hiện có** - Mọi yêu cầu đều nhận được hồi đáp, nhưng không bảo đảm là chứa phiên bản gần nhất.
 * **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **Dung sai phân vùng** - Hệ thống tiếp tục hoạt động mặc dù bị phân vùng do lỗi mạng lưới.
 
 *Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
 
@@ -1939,4 +1943,4 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - large-scale system: "hệ thống lớn"?
 - scalable/scalability: "mở rộng được"?
 - availability
-- partition tolerance
+- partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
