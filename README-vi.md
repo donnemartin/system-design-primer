@@ -1466,18 +1466,27 @@ If queues start to grow significantly, the queue size can become larger than mem
 * [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
 ## Communication
+## Giao tiếp
 
 <p align="center">
   <img src="images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
+<p align="center">
+  <img src="images/5KeocQs.jpg">
+  <br/>
+  <i><a href=http://www.escotal.com/osilayer.html>Nguồn: OSI 7 layer model</a></i>
+</p>
 
 ### Hypertext transfer protocol (HTTP)
+### Giao thức truyền tải siêu văn bản (HTTP)  # FIXME: @huy: this is one of those things that sounds really weird if literally translated
 
 HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP là một phương thức mã hoá và truyền tải dữ liệu giữa một client và một server. Là một giao thức yêu cầu/hồi đáp (request/response): client phát yêu cầu và server phát hồi đáp với nội dung tương ứng kèm theo thông tin về trạng thái hoàn tất của yêu cầu. HTTP là độc lập (self-contained), chấp nhận yêu cầu và hồi đáp đi qua nhiều router và server trung gian, cân bằng tải; cache, mã hoá, và nén có thể được thực hiện ở các chặng giữa này.
 
 A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+Một yêu cầu HTTP cơ bản bao gồm một động từ (phương thức) và một tài nguyên (điểm cuối).  Dưới đây là các động từ HTTP phổ biến:
 
 | Verb | Description | Idempotent* | Safe | Cacheable |
 |---|---|---|---|---|
@@ -1944,3 +1953,5 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - scalable/scalability: "mở rộng được"?
 - availability
 - partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
+- client/server
+- request/response
