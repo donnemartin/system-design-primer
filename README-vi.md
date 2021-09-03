@@ -1430,11 +1430,15 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
 
 ### Message queues
+### Hàng đợi tin
 
 Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+Hàng đợi tin nhận, giữ và giao tin nhắn. Nếu một thao tác quá chậm để thực hiện tại tại chỗ, bạn có thể dùng một hàng đợi với các tiến trình sau:
 
 * An application publishes a job to the queue, then notifies the user of job status
+* Một ứng dụng xuất bản một tác vụ đến hàng đợi, rồi thông báo cho các người dùng về trạng thái của công việc
 * A worker picks up the job from the queue, processes it, then signals the job is complete
+* Worker lấy một tác vụ từng hàng đợi, xử lí, rồi báo hiệu là tác vụ đã hoàn thành
 
 The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
 
@@ -1445,8 +1449,10 @@ The user is not blocked and the job is processed in the background.  During this
 **[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
 
 ### Task queues
+### Hàng đợi tác vụ
 
 Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+Hàng đợi nhận tác vụ và các dữ liệu liên quan, thực thi và giao kết quả.  Hàng đợi có thể hỗ trợ lên thời gian biểu và có thể được dùng cho các công việc ngầm.
 
 **[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
 
@@ -1459,6 +1465,7 @@ If queues start to grow significantly, the queue size can become larger than mem
 * Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
 
 ### Source(s) and further reading
+### Tài liệu bổ sung
 
 * [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
 * [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
@@ -1488,13 +1495,13 @@ HTTP là một phương thức mã hoá và truyền tải dữ liệu giữa m�
 A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
 Một yêu cầu HTTP cơ bản bao gồm một động từ (phương thức) và một tài nguyên (điểm cuối).  Dưới đây là các động từ HTTP phổ biến:
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
-|---|---|---|---|---|
-| GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
-| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
-| DELETE | Deletes a resource | Yes | No | No |
+| Verb   | Description                                               | Idempotent* | Safe | Cacheable                               |
+|--------|-----------------------------------------------------------|-------------|------|-----------------------------------------|
+| GET    | Reads a resource                                          | Yes         | Yes  | Yes                                     |
+| POST   | Creates a resource or trigger a process that handles data | No          | No   | Yes if response contains freshness info |
+| PUT    | Creates or replace a resource                             | Yes         | No   | No                                      |
+| PATCH  | Partially updates a resource                              | No          | No   | Yes if response contains freshness info |
+| DELETE | Deletes a resource                                        | Yes         | No   | No                                      |
 
 *Can be called many times without different outcomes.
 
@@ -1949,9 +1956,11 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 ## Words that I haven't figured out how to translate yet
 
-- large-scale system: "hệ thống lớn"?
-- scalable/scalability: "mở rộng được"?
-- availability
-- partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
-- client/server
-- request/response
+- Large-scale system: "hệ thống lớn"?
+- Scalable/scalability: "mở rộng được"?
+- Availability
+- Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
+- Client/server
+- Request/response
+- Worker: "công nhân" sounds off.
+- Tasks vs. jobs vs. operations: should be translated consistently (tác vụ, công việc, thao tác?).
