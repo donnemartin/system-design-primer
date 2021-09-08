@@ -379,10 +379,13 @@ Check out the following links to get a better idea of what to expect:
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
 ## System design interview questions with solutions
+## Các câu hỏi phỏng vấn thiết kế hệ thống và lời giải
 
 > Common system design interview questions with sample discussions, code, and diagrams.
+> Các câu hỏi phỏng vấn thiết kế hệ thống phổ biến kèm với các đối thoại mẫu, mã nguồn, và biểu đồ.
 >
 > Solutions linked to content in the `solutions/` folder.
+> Đường dẫn bài giải nằm trong thư mục `solutions/`.
 
 | Question | |
 |---|---|
@@ -1749,10 +1752,12 @@ Handy metrics based on numbers above:
 * 2,000 round trips per second within a data center
 
 #### Latency numbers visualized
+#### Hình tượng hoá các độ trễ khác nhau  # FIXME: bad translation
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
 #### Source(s) and further reading
+#### Các tài liệu đọc thêm
 
 * [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
@@ -1760,8 +1765,10 @@ Handy metrics based on numbers above:
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
 ### Additional system design interview questions
+### Các câu hỏi phỏng vấn thiết kế hệ thống bổ sung
 
 > Common system design interview questions, with links to resources on how to solve each.
+> Các câu hỏi phỏng vấn thiết kế hệ thống phổ biến, với đường dẫn đến tài liệu hướng dẫn giải.
 
 | Question | Reference(s) |
 |---|---|
