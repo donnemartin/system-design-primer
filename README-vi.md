@@ -656,20 +656,30 @@ Availability is often quantified by uptime (or downtime) as a percentage of time
 | Downtime per day    | 8.6s               |
 
 #### Availability in parallel vs in sequence
+#### Tính hiện có trong thực thi song song so với trình tự
 
 If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+Nếu một dịch vụ bao gồm nhiều thành phần dễ mắc lỗi, thì tính hiện có toàn phần của dịch vụ này phụ thuộc vào các thành phần nằm trong một trình tự hay nằm song song.
 
 ###### In sequence
+###### Trong trình tự
 
 Overall availability decreases when two components with availability < 100% are in sequence:
+Tính hiện có toàn phần giảm đi khi có 2 thành phần với tính hiện có < 100% nằm theo trình tự:
+
 
 ```
 Availability (Total) = Availability (Foo) * Availability (Bar)
 ```
+```
+Tính hiện có (Tổng) = Tính hiện có (A) * Tính hiện có (B)
+```
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
+Nếu cả hai `A` và `B`, có 99,9% "hiện có", tổng hiện có trong trình tự sẽ là 99,8%.
 
 ###### In parallel
+###### Trong song song  # FIXME: bad translation
 
 Overall availability increases when two components with availability < 100% are in parallel:
 
@@ -1965,9 +1975,10 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 - Large-scale system: "hệ thống lớn"?
 - Scalable/scalability: "mở rộng được"?
-- Availability
+- Availability: currently be translated as "tính hiện có", but that sounds weird to me right now. Probably will replace them with "tính sẵn sàng", or "tính hiệu lực".
 - Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
 - Client/server
 - Request/response
+- Service: "dịch vụ"?
 - Worker: "công nhân" sounds off.
 - Tasks vs. jobs vs. operations: should be translated consistently (tác vụ, công việc, thao tác?).
