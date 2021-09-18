@@ -1546,9 +1546,12 @@ To ensure high throughput, web servers can keep a large number of TCP connection
 TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.
 
 Use TCP over UDP when:
+Sử dụng TCP thay vì UDP khi:
 
 * You need all of the data to arrive intact
+* Bạn cần tất cả dữ liệu nguyện vẹn khi nhận
 * You want to automatically make a best estimate use of the network throughput
+* Bạn muốn ước lượng tốt nhất có thể về công suất đường truyền
 
 ### User datagram protocol (UDP)
 
@@ -1685,10 +1688,13 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
 ## Security
+## An ninh
 
 This section could use some updates.  Consider [contributing](#contributing)!
+Phần cần được bổ sung thêm.  Hãy [đóng góp](#contributing)!
 
 Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+An ninh là một chủ đề rộng. Trừ khi bạn có kinh nghiệm đáng kể, một nền tảng về an ninh, hoặc đang ứng tuyển vào một ví trí đòi hỏi kiến thức về an ninh, hầu như bạn sẽ không cần biết nhiều hơn ở mức cơ bản này:
 
 * Encrypt in transit and at rest.
 * Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
