@@ -1814,8 +1814,10 @@ Handy metrics based on numbers above:
 | Add a system design question | [Contribute](#contributing) |
 
 ### Real world architectures
+### Kiến trúc ở đời thực
 
 > Articles on how real world systems are designed.
+> Các bài viết về cách các hệ thống thực tế được thiết kế như thế nào
 
 <p align="center">
   <img src="images/TcUo2fw.png">
@@ -1824,10 +1826,14 @@ Handy metrics based on numbers above:
 </p>
 
 **Don't focus on nitty gritty details for the following articles, instead:**
+**Đừng tập trung quá và các tiểu tiết của những bài dưới đây, thay vì đó:**
 
 * Identify shared principles, common technologies, and patterns within these articles
+* Nhận dạng cách nguyên tắc chung, các công nghệ phổ biến, và những mẫu hình trong các bài viết này
 * Study what problems are solved by each component, where it works, where it doesn't
+* Học các vấn đề được giải quyết ở từng thành phần, chỗ nào tốt, chỗ nào chưa
 * Review the lessons learned
+* Duyệt lại những bài học trước
 
 |Type | System | Reference(s) |
 |---|---|---|
