@@ -132,8 +132,8 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Service discovery](#service-discovery)
 * [Database](#database)
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
+        * [Leader-follower replication](#leader-follower-replication)
+        * [Leader-leader replication](#leader-leader-replication)
         * [Federation](#federation)
         * [Sharding](#sharding)
         * [Denormalization](#denormalization)
@@ -508,7 +508,7 @@ With active-passive fail-over, heartbeats are sent between the active and the pa
 
 The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
 
-Active-passive failover can also be referred to as master-slave failover.
+Active-passive failover can also be referred to as leader-follower failover.
 
 #### Active-active
 
@@ -516,7 +516,7 @@ In active-active, both servers are managing traffic, spreading the load between 
 
 If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
 
-Active-active failover can also be referred to as master-master failover.
+Active-active failover can also be referred to as leader-leader failover.
 
 ### Disadvantage(s): failover
 
@@ -525,12 +525,12 @@ Active-active failover can also be referred to as master-master failover.
 
 ### Replication
 
-#### Master-slave and master-master
+#### Leader-follower and leader-leader
 
 This topic is further discussed in the [Database](#database) section:
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Leader-leader replication](#leader-follower-replication)
+* [Leader-leader replication](#leader-leader-replication)
 
 ### Availability in numbers
 
@@ -824,11 +824,11 @@ A relational database like SQL is a collection of data items organized in tables
 * **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
 * **Durability** - Once a transaction has been committed, it will remain so
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+There are many techniques to scale a relational database: **leader-follower replication**, **leader-leader replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 
-#### Master-slave replication
+#### Master-leader replication
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+The leader serves reads and writes, replicating writes to one or more leaders, which serve only reads.  Slaves can also replicate to additional leaders in a tree-like fashion.  If the leader goes offline, the system can continue to operate in read-only mode until a leader is promoted to a leader or a new leader is provisioned.
 
 <p align="center">
   <img src="images/C9ioGtn.png">
@@ -836,14 +836,14 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### Disadvantage(s): leader-follower replication
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Additional logic is needed to promote a leader to a leader.
+* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** leader-follower and leader-leader.
 
-#### Master-master replication
+#### Leader-leader replication
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+Both leaders serve reads and writes and coordinate with each other on writes.  If either leader goes down, the system can continue to operate with both reads and writes.
 
 <p align="center">
   <img src="images/krAHLGg.png">
@@ -851,25 +851,25 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### Disadvantage(s): leader-leader replication
 
 * You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
+* Most leader-leader systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
 * Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** leader-follower and leader-leader.
 
 ##### Disadvantage(s): replication
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
+* There is a potential for loss of data if the leader fails before any newly written data can be replicated to other nodes.
 * Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
+* The more read leaders, the more you have to replicate, which leads to greater replication lag.
+* On some systems, writing to the leader can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
 * Replication adds more hardware and additional complexity.
 
 ##### Source(s) and further reading: replication
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+* [Multi-leader replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
 #### Federation
 
@@ -879,7 +879,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central leader serializing writes you can write in parallel, increasing throughput.
 
 ##### Disadvantage(s): federation
 
@@ -902,7 +902,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 
 Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central leader serializing writes, allowing you to write in parallel with increased throughput.
 
 Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
 
