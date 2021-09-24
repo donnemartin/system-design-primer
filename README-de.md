@@ -1,8 +1,8 @@
 *[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-**Help [translate](TRANSLATIONS.md) this guide!**
+**Helfen Sie bei der [Übersetzung](TRANSLATIONS.md) dieses Leitfadens!**
 
-# The System Design Primer
+# The System Design Primer (System Design Fibel)
 
 <p align="center">
   <img src="images/jj3A5N8.png">
@@ -38,11 +38,11 @@ Neben der Interviews zur Softwareentwicklung ist das Systemdesign bei vielen Tec
 
 Weitere Themen für die Interviewvorbereitung:
 
-* [Studienführer](#study-guide)
-* [Wie man sich für eine Interviewfrage zum Systemdesign vorbereitet](#how-to-approach-a-system-design-interview-question)
-* [Interviewfragen zum Systemdesign, **mit Lösungen**](#system-design-interview-questions-with-solutions)
-* [Fragen zu Objektorientiertem Design, **mit Lösungen**](#object-oriented-design-interview-questions-with-solutions)
-* [Zusätzliche Fragen zum Systemdesign](#additional-system-design-interview-questions)
+* [Studienführer](#Studienführer)
+* [Wie man sich für eine Interviewfrage zum Systemdesign vorbereitet](#Wie-man-sich-für-eine-Interviewfrage-zum-Systemdesign-vorbereitet)
+* [Interviewfragen zum Systemdesign, **mit Lösungen**](#Systemdesign-Interview-Fragen-mit-Lösungen)
+* [Fragen zu Objektorientiertem Design, **mit Lösungen**](#Objektorientierte-Design-Interview-Fragen-mit-Lösungen)
+* [Zusätzliche Fragen zum Systemdesign Interview](#Zusätzliche-Fragen-zum-Systemdesign-Interview)
 
 ## Anki flashcards
 
@@ -83,7 +83,7 @@ Hilfe erwünscht, um beizutragen können sie pull requests einreichen:
 * Neue Abschnitte hinzufügen
 * [Übersetzen](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Inhalte, die noch überarbeitet werden müssen werden [in Entwicklung](#under-development) eingestellt.
+Inhalte, die noch überarbeitet werden müssen werden [in Entwicklung](#In-Entwicklung) eingestellt.
 
 Beachten Sie die [Beitragsrichtlinien](CONTRIBUTING.md).
 
@@ -98,87 +98,87 @@ Beachten Sie die [Beitragsrichtlinien](CONTRIBUTING.md).
   <br/>
 </p>
 
-* [Systemdesign Themen: hier beginnen](#system-design-topics-start-here)
-    * [Schritt 1: Skalierbarkeits-Videovorlesung ansehen lecture](#step-1-review-the-scalability-video-lecture)
-    * [Schritt 2: Artikel zur Skalierbarkeit lesen](#step-2-review-the-scalability-article)
-    * [Nächste Schritte](#next-steps)
-* [Leistung vs. Skalierbarkeit](#performance-vs-scalability)
-* [Latenz vs. Durchsatz](#latency-vs-throughput)
-* [Verfügbarkeit vs. Konsistenz](#availability-vs-consistency)
-    * [CAP Theorem](#cap-theorem)
-        * [CP - Konsistenz und Partitionstoleranz](#cp---consistency-and-partition-tolerance)
-        * [AP - Verfügbarkeits und Partitionstoleranz](#ap---availability-and-partition-tolerance)
-* [Konsistenz Muster](#consistency-patterns)
-    * [Schwache Konsistenz](#weak-consistency)
-    * [Eventuelle Konsistenz](#eventual-consistency)
-    * [Starke Konsistenz](#strong-consistency)
-* [VErfügbarkeits Muster](#availability-patterns)
-    * [Ausfallsicherung](#fail-over)
-    * [Replikation](#replication)
-    * [Verfügbarkeit in Zahlen](#availability-in-numbers)
-* [Domain Namen System](#domain-name-system)
-* [Kontent distributions Netzwerk](#content-delivery-network)
+* [Systemdesign Themen: hier beginnen](#Systemdesign-Themen-hier-beginnen)
+    * [Schritt 1: Skalierbarkeits-Videovorlesung](#Schritt-1-Skalierbarkeits-Videovorlesung)
+    * [Schritt 2: Artikel zur Skalierbarkeit lesen](#Schritt-2-Artikel-zur-Skalierbarkeit-lesen)
+    * [Nächste Schritte](#Nächste-Schritte)
+* [Leistung vs. Skalierbarkeit](#Leistung-vs-Skalierbarkeit)
+* [Latenz vs. Durchsatz](#Latenz-vs-Durchsatz)
+* [Verfügbarkeit vs. Konsistenz](#Verfügbarkeit-vs-Konsistenz)
+    * [CAP Theorem](#CAP-Theorem)
+        * [CP - Konsistenz und Partitionstoleranz](#CP---Konsistenz-und-Partitionstoleranz)
+        * [AP - Verfügbarkeits und Partitionstoleranz](#AP---Verfügbarkeits-und-Partitionstoleranz)
+* [Konsistenz Muster](#Konsistenz-Muster)
+    * [Schwache Konsistenz](#Schwache-Konsistenz)
+    * [Eventuelle Konsistenz](#Eventuelle-Konsistenz)
+    * [Starke Konsistenz](#Starke-Konsistenz)
+* [Verfügbarkeits Muster](#Verfügbarkeits-Muster)
+    * [Ausfallsicherung](#Ausfallsicherung)
+    * [Replikation](#Replikation)
+    * [Verfügbarkeit in Zahlen](#Verfügbarkeit-in-Zahlen)
+* [Domain Namen System](#Domain-Namen-System)
+* [Kontent distributions Netzwerk](#Kontent-distributions-Netzwerk)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
 * [Lastverteilung](#load-balancer)
-    * [Aktiv-Passiv](#active-passive)
-    * [Aktiv-Aktiv](#active-active)
-    * [Schicht 4 lastverteilung](#layer-4-load-balancing)
-    * [Schicht 7 lastverteilung](#layer-7-load-balancing)
-    * [Horizontales skalieren](#horizontal-scaling)
-* [Umkehr Proxy (Web Server)](#reverse-proxy-web-server)
-    * [Lastverteilung vs Umkehr Proxy](#load-balancer-vs-reverse-proxy)
-* [Applikatins Schicht](#application-layer)
-    * [Mikrodienste](#microservices)
+    * [Aktiv-Passiv](#Aktiv-Passiv)
+    * [Aktiv-Aktiv](#Aktiv-Aktiv)
+    * [Schicht 4 lastverteilung](#Schicht-4-Lastverteilung)
+    * [Schicht 7 lastverteilung](#Schicht-4-Lastverteilung)
+    * [Horizontales skalieren](#Horizontales-skalieren)
+* [Umkehr Proxy Web Server](#Umkehr-Proxy-Web-Server)
+    * [Lastverteilung vs Umkehr Proxy](#Lastverteilung-vs-Umkehr-Proxy)
+* [Applikatins Schicht](#Applikatins-Schicht)
+    * [Mikrodienste](#Mikrodienste)
     * [Service Discovery](#service-discovery)
-* [Datenbanken](#database)
-    * [Relationales Datenbank Management System (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-Slave Replikation](#master-slave-replication)
-        * [Master-Master Replikation](#master-master-replication)
-        * [Föderation](#federation)
-        * [Fragmentierung](#sharding)
-        * [Denormalisierung](#denormalization)
-        * [SQL Abstimmung](#sql-tuning)
+* [Datenbanken](#Datenbanken)
+    * [Relationales Datenbank Management System (RDBMS)](#Relationales-Datenbank-Management-System-rdbms)
+        * [Master-Slave Replikation](#Master-Slave-Replikation)
+        * [Master-Master Replikation](#Master-Master-Replikation)
+        * [Föderation](#Föderation)
+        * [Fragmentierung](#Fragmentierung)
+        * [Denormalisierung](#Denormalisierung)
+        * [SQL Abstimmung](#SQL-Abstimmung)
     * [NoSQL](#nosql)
-        * [Schlüsselwertspeicher](#key-value-store)
-        * [Dokumentspeicher ](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Diagramm Datenbank](#graph-database)
-    * [SQL oder NoSQL](#sql-or-nosql)
-* [Zwischenspeicher - Cache](#cache)
-    * [Client Zwischenspeicher](#client-caching)
-    * [CDN Zwischenspeicher](#cdn-caching)
-    * [Web Server Zwischenspeicher](#web-server-caching)
-    * [Datanbank-Zwischenspeicherung](#database-caching)
-    * [Anwendungs- Zwischenspeicher](#application-caching)
-    * [Zwischenspeicherung auf der Ebene der Datenbankabfrage](#caching-at-the-database-query-level)
-    * [Zwischenspeicher auf Objekt Ebene](#caching-at-the-object-level)
-    * [Wann wird der Cache aktualisiert](#when-to-update-the-cache)
-        * [Zwischenspeicher](#cache-aside)
-        * [Write-through](#write-through)
-        * [Hinterher schreiben (write-back)](#write-behind-write-back)
-        * [Aktualisieren im Voraus](#refresh-ahead)
-* [Asynchronität](#asynchronism)
-    * [Nachrichtenwarteschlangen](#message-queues)
+        * [Schlüsselwertspeicher](#Schlüsselwertspeicher)
+        * [Dokumentspeicher](#Dokumentspeicher)
+        * [Spaltenorientierte Datenbank](#Spaltenorientierte-Datenbank)
+        * [Diagramm Datenbank](#Diagramm-Datenbank)
+    * [SQL oder NoSQL](#SQL-oder-NoSQL)
+* [Zwischenspeicher - Cache](#Zwischenspeicher---Cache)
+    * [Client Zwischenspeicher](#Client-Zwischenspeicher)
+    * [CDN Zwischenspeicher](#CDN-Zwischenspeicher)
+    * [Web Server Zwischenspeicher](#Web-Server-Zwischenspeicher)
+    * [Datanbank Zwischenspeicher](#Datanbank-Zwischenspeicher)
+    * [Anwendungs Zwischenspeicher](#Anwendungs-Zwischenspeicher)
+    * [Zwischenspeicherung auf der Ebene der Datenbankabfrage](#Zwischenspeicherung-auf-der-Ebene-der-Datenbankabfrage)
+    * [Zwischenspeicher auf Objekt Ebene](#Zwischenspeicher-auf-Objekt-Ebene)
+    * [Wann wird der Zwischenspeicher aktualisiert?](#Wann-wird-der-Zwischenspeicher-aktualisiert?)
+        * [Zwischenspeicher Auslagerung](#Zwischenspeicher-Auslagerung)
+        * [Durchschreiben](#Durchschreiben)
+        * [Hinterher schreiben (write-back)](#Hinterher-schreiben-write-back)
+        * [Aktualisieren im Voraus](#Aktualisieren-im-Voraus)
+* [Asynchronität](#Asynchronität)
+    * [Nachrichtenwarteschlangen](#Nachrichtenwarteschlangen)
     * [Aufgabenwarteschlangen](#task-queues)
-    * [Gegendruck](#back-pressure)
-* [Kommunikation](#communication)
-    * [Übertragungskontrollprotokoll (TCP)](#transmission-control-protocol-tcp)
-    * [Benutzer Datagramm Protokoll (UDP)](#user-datagram-protocol-udp)
-    * [Ferngesteuerter Prozeduraufruf (RPC)](#remote-procedure-call-rpc)
-    * [Representative Zustandsübertragung (REST)](#representational-state-transfer-rest)
-* [Sicherheit](#security)
-* [Anhang](#appendix)
+    * [Gegendruck](#Kommunikation)
+* [Kommunikation](#Kommunikation)
+    * [Übertragungskontrollprotokoll (TCP)](#Übertragungskontrollprotokoll-TCP)
+    * [Benutzer Datagramm Protokoll (UDP)](#Benutzer-Datagramm-Protokoll-UDP)
+    * [Ferngesteuerter Prozeduraufruf (RPC)](#Ferngesteuerter-Prozeduraufruf-RPC)
+    * [Representative Zustandsübertragung (REST)](#Representative-Zustandsübertragung-rest)
+* [Sicherheit](#Sicherheit)
+* [Anhang](#Anhang)
     * [Tabelle der Zweierpotenzen](#powers-of-two-table)
-    * [Latenzzeiten, die jeder Programmierer kennen sollte](#latency-numbers-every-programmer-should-know)
-    * [Zusätzliche Systemdesign Interview Fragen](#additional-system-design-interview-questions)
-    * [Anwendungs Architekturen](#real-world-architectures)
-    * [Unternehmensarchitekturen](#company-architectures)
-    * [Unternehmensblogs zur Technik](#company-engineering-blogs)
-* [In Entwicklung](#under-development)
+    * [Latenzzeiten, die jeder Programmierer kennen sollte](#Latenzzeiten-die-jeder-Programmierer-kennen-sollte])
+    * [Zusätzliche Fragen zum Systemdesign Interview](#Zusätzliche-Fragen-zum-Systemdesign-Interview)
+    * [Anwendungs Architekturen](#Anwendungs-Architekturen)
+    * [Unternehmensarchitekturen](#Unternehmensarchitekturen)
+    * [Unternehmensblogs zur Technik](#Unternehmensblogs-zur-Technik)
+* [In Entwicklung](#In-Entwicklung)
 * [Credits](#credits)
-* [Kontakt Info](#contact-info)
-* [Lizenz](#license)
+* [Kontakt Info](#Kontakt-Info)
+* [Lizenz](#Lizenz)
 
 ## Studienführer
 
@@ -208,21 +208,21 @@ Beginnen Sie mit einem breiten Spektrum und vertiefen Sie es in einigen Bereiche
 
 | | Kurz | Mittel | Lang |
 |---|---|---|---|
-| Lesen Sie sich die [Systemdesign Themen](#index-of-system-design-topics) tdurch, um ein umfassendes Verständnis der Funktionsweise von Systemen zu erlangen. | :+1: | :+1: | :+1: |
-| Lesen Sie einige Artikel in den [Unternehmensblogs für Ingenieure](#company-engineering-blogs) für die Unternehmen, bei denen Sie sich bewerben | :+1: | :+1: | :+1: |
-| Lesen Sie einige der [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Übersicht [Wie geht man an eine Frage in einem Systemdesign-Interview heran](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Arbeiten Sie durch [Systemdesign-Interviewfragen mit Lösungen](#system-design-interview-questions-with-solutions) | Einige | Viele | Großteil |
-| Arbeiten Sie durch [objektorientierte Design-Interview-Fragen mit Lösungen](#object-oriented-design-interview-questions-with-solutions) | Einige | Viele | Großteil |
-| Überprüfung [Zusätzliche Fragen zum Systementwurf](#additional-system-design-interview-questions) | Einige | Viele | Großteil |
+| Lesen Sie sich die [Systemdesign Themen](#Index-der-Systemdesign-Themen) tdurch, um ein umfassendes Verständnis der Funktionsweise von Systemen zu erlangen. | :+1: | :+1: | :+1: |
+| Lesen Sie einige Artikel in den [Unternehmensblogs zur Technik](#Unternehmensblogs-zur-Technik) für die Unternehmen, bei denen Sie sich bewerben | :+1: | :+1: | :+1: |
+| Lesen Sie einige der [Anwendungs Architekturen](#Anwendungs-Architekturen) | :+1: | :+1: | :+1: |
+| Übersicht [Wie man sich für eine Interviewfrage zum Systemdesign vorbereitet](#Wie-man-sich-für-eine-Interviewfrage-zum-Systemdesign-vorbereitet) | :+1: | :+1: | :+1: |
+| Arbeiten Sie durch [Systemdesign Interview Fragen mit Lösungen](#Systemdesign-Interview-Fragen-mit-Lösungen) | Einige | Viele | Großteil |
+| Arbeiten Sie durch [objektorientierte Design-Interview-Fragen mit Lösungen](#Objektorientierte-Design-Interview-Fragen-mit-Lösungen) | Einige | Viele | Großteil |
+| Überprüfung [Zusätzliche Fragen zum Systemdesign Interview](#Zusätzliche-Fragen-zum-Systemdesign-Interview) | Einige | Viele | Großteil |
 
-## Wie geht man eine Frage im Vorstellungsgespräch zum Systemdesign an
+## Wie man sich für eine Interviewfrage zum Systemdesign vorbereitet
 
 > Wie man eine Frage im Vorstellungsgespräch zum Systemdesign angeht.
 
 Das Systemdesign Gespräch ist ein **Gespräch mit offenem Ausgang**.  Es wird von Ihnen erwartet, dass Sie es führen.
 
-Sie können die folgenden Schritte als Leitfaden für die Diskussion verwenden.  Um diesen Prozess zu festigen, arbeiten Sie den Abschnitt [Systemdesign-Interview-Fragen mit Lösungen](#system-design-interview-questions-with-solutions) anhand der folgenden Schritte durch.
+Sie können die folgenden Schritte als Leitfaden für die Diskussion verwenden.  Um diesen Prozess zu festigen, arbeiten Sie den Abschnitt [Systemdesign-Interview-Fragen mit Lösungen](#Systemdesign-Interview-Fragen-mit-Lösungen) anhand der folgenden Schritte durch.
 
 ### Schritt 1: Skizzieren Sie Anwendungsfälle, Beschränkungen und Annahmen
 
@@ -267,15 +267,15 @@ Identifizieren Sie Engpässe und beheben Sie diese, wenn die Einschränkungen di
 * Caching
 * Database sharding
 
-Diskutieren Sie mögliche Lösungen und Kompromisse.  Alles ist ein Kompromiss.  Beheben Sie Engpässe mit Hilfe von [Prinzipien des skalierbaren Systemdesigns](#index-of-system-design-topics).
+Diskutieren Sie mögliche Lösungen und Kompromisse.  Alles ist ein Kompromiss.  Beheben Sie Engpässe mit Hilfe von [Prinzipien des skalierbaren Systemdesigns](#Index-der-Systemdesign-Themen).
 
 ### Back-of-the-envelope Berechnungen
 
 Möglicherweise werden Sie aufgefordert, einige Schätzungen von Hand vorzunehmen.  Im [Anhang](#Anhang) finden Sie die folgenden Ressourcen:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Tabelle der Zweierpotenzen](#Tabelle-der-Zweierpotenzen)
+* [Latenzzeiten, die jeder Programmierer kennen sollte](#Latenzzeiten,-die-jeder-Programmierer-kennen-sollte)
 
 ### Quelle(n) und weiterführende Literatur
 
@@ -301,53 +301,53 @@ Schauen Sie sich die folgenden Links an, um eine bessere Vorstellung davon zu be
 | Entwurf eines Key-Value-Speichers für eine Suchmaschine | [Lösung](solutions/system_design/query_cache/README.md) |
 | Gestaltung der Amazon-Verkaufsrangliste nach Kategorie | [Lösung](solutions/system_design/sales_rank/README.md) |
 | Entwerfen Sie ein System, das für Millionen von Benutzern auf AWS skalierbar ist. | [Lösung](solutions/system_design/scaling_aws/README.md) |
-| Eine Frage zum Systemdesign hinzufügen | [Contribute](#contributing) |
+| Eine Frage zum Systemdesign hinzufügen | [Beitragen](#Beitragen) |
 
 ### Entwerfen Sie Pastebin.com (or Bit.ly)
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Übung und Lösung ansehen](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
 ### Entwerfen Sie die Twitter-Timeline und die Suche (oder den Facebook-Feed und die Suche)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Übung und Lösung ansehen](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
 ### Entwerfen Sie einen Webcrawler
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Übung und Lösung ansehen](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
 ### Entwerfen Sie Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Übung und Lösung ansehen](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
 ### Entwerfen Sie die Datenstrukturen für ein soziales Netzwerk
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Übung und Lösung ansehen](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
 ### Entwurf eines Key-Value-Speichers für eine Suchmaschine
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Übung und Lösung ansehen](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
 ### Gestaltung der Amazon-Verkaufsrangliste nach Kategorie
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Übung und Lösung ansehen](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
 ### Entwerfen Sie ein System, das für Millionen von Benutzern auf AWS skalierbar ist.
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Übung und Lösung ansehen](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
@@ -367,16 +367,16 @@ Schauen Sie sich die folgenden Links an, um eine bessere Vorstellung davon zu be
 | Entwurf eines Kartenspiels | [Lösung](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
 | Entwurf eines Parkplatzes | [Lösung](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | Entwurf eines Chatservers  | [Lösung](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Entwurf eines kreisförmigen Arrays | [Contribute](#contributing)  |
-| Hinzufügen einer objektorientierten Entwurfsfrage | [Contribute](#contributing) |
+| Entwurf eines kreisförmigen Arrays | [Beitragen](#Beitragen)  |
+| Hinzufügen einer objektorientierten Entwurfsfrage | [Beitragen](#Beitragen) |
 
-## Systemdesign-Themen: Beginnen Sie hier
+## Systemdesign Themen: hier beginnen
 
 Sind Sie neu im Systemdesign?
 
 Zunächst benötigen Sie ein grundlegendes Verständnis der allgemeinen Prinzipien, um zu erfahren, was sie sind, wie sie verwendet werden und welche Vor- und Nachteile sie haben.
 
-### Schritt 1: Sehen Sie sich den Videovortrag zur Skalierbarkeit an.
+### Schritt 1: Skalierbarkeits-Videovorlesung
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
@@ -388,17 +388,17 @@ Zunächst benötigen Sie ein grundlegendes Verständnis der allgemeinen Prinzipi
     * Datenbankreplikation
     * Datenbank-Partitionierung
 
-### Schritt 2: Überprüfen Sie den Artikel zur Skalierbarkeit
+### Schritt 2: Artikel zur Skalierbarkeit lesen
 
 [Skalierbarkeit](http://www.lecloud.net/tagged/scalability/chrono)
 
 * Behandelte Themen:
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Klones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Datenbanken](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [Asynchronität](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Nächste SChritte
+### Nächste Schritte
 
 Als Nächstes werden wir uns die Kompromisse auf höchster Ebene ansehen:
 
@@ -445,7 +445,7 @@ Im Allgemeinen sollten Sie einen **maximalen Durchsatz** bei **akzeptabler Laten
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Quelle: Das CAP-Theorem überarbeitet</a></i>
 </p>
 
 In einem verteilten Computersystem können Sie nur zwei der folgenden Garantien unterstützen:
@@ -462,22 +462,22 @@ In einem verteilten Computersystem können Sie nur zwei der folgenden Garantien 
 
 Das Warten auf eine Antwort vom partitionierten Knoten kann zu einem Timeout-Fehler führen.  CP ist eine gute Wahl, wenn Ihre Geschäftsanforderungen atomare Lese- und Schreibvorgänge erfordern.
 
-#### AP - Verfügbarkeit und Partitionstoleranz
+#### AP - Verfügbarkeits und Partitionstoleranz
 
 Antworten geben die am leichtesten verfügbare Version der Daten zurück, die auf jedem Knoten verfügbar ist, was nicht unbedingt die neueste ist.  Bei Schreibvorgängen kann es einige Zeit dauern, bis die Daten übertragen werden, wenn die Partition aufgelöst ist.
 
-AP ist eine gute Wahl, wenn die geschäftlichen Anforderungen eine [eventuelle Konsistenz](#eventual-consistency) zulassen oder wenn das System trotz externer Fehler weiterarbeiten muss.
+AP ist eine gute Wahl, wenn die geschäftlichen Anforderungen eine [eventuelle Konsistenz](#Eventuelle-Konsistenz) zulassen oder wenn das System trotz externer Fehler weiterarbeiten muss.
 
 ### Quelle(n) und weiterführende Literatur
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [Das CAP-Theorem überarbeitet](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [Eine einfache englische Einführung in das CAP-Theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
-* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+* [Das CAP-Theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Konsistenzmuster
+## Konsistenz Muster
 
-Bei mehreren Kopien der gleichen Daten stehen wir vor der Frage, wie wir sie synchronisieren können, damit die Clients eine konsistente Sicht auf die Daten haben.  Erinnern Sie sich an die Definition von Konsistenz aus dem [CAP-Theorem](#cap-theorem) - Jeder Lesevorgang erhält den letzten Schreibvorgang oder einen Fehler.
+Bei mehreren Kopien der gleichen Daten stehen wir vor der Frage, wie wir sie synchronisieren können, damit die Clients eine konsistente Sicht auf die Daten haben.  Erinnern Sie sich an die Definition von Konsistenz aus dem [CAP-Theorem](#CAP-Theorem) - Jeder Lesevorgang erhält den letzten Schreibvorgang oder einen Fehler.
 
 ### Schwache Konsistenz
 
@@ -499,23 +499,23 @@ Dieser Ansatz findet sich in Dateisystemen und RDBMS.  Starke Konsistenz funktio
 
 ### Quelle(n) und weiterführende Literatur
 
-* [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [Rechenzentrumsübergreifende Transaktionen](http://snarfed.org/transactions_across_datacenters_io.html)
 
 ## Verfügbarkeits Muster
 
 Es gibt zwei sich ergänzende Muster zur Unterstützung der Hochverfügbarkeit: **Fail-over** und **Replikation**.
 
-### Fail-over
+### Ausfallsicherung
 
-#### Aktiv-passiv
+#### Aktiv-Passiv
 
 Bei aktiv-passivem Failover werden Heartbeats zwischen dem aktiven und dem passiven Server im Standby-Modus gesendet.  Wird der Heartbeat unterbrochen, übernimmt der passive Server die IP-Adresse des aktiven und nimmt den Dienst wieder auf.
 
 Die Länge der Ausfallzeit hängt davon ab, ob der passive Server bereits im "heißen" Standby-Modus läuft oder ob er aus dem "kalten" Standby-Modus gestartet werden muss.  Nur der aktive Server wickelt den Datenverkehr ab.
 
-Aktiv-passiv Failover kann auch als Master-Slave Failover bezeichnet werden.
+Aktiv-Passiv Failover kann auch als Master-Slave Failover bezeichnet werden.
 
-#### Activ-activ
+#### Aktiv-Aktiv
 
 Bei aktiv-aktiv verwalten beide Server den Datenverkehr und verteilen die Last auf beide.
 
@@ -532,10 +532,10 @@ Aktiv-aktive Ausfallsicherung kann auch als Master-Master-Ausfallsicherung bezei
 
 #### Master-Slave und Master-Master
 
-Dieses Thema wird im Abschnitt [Datenbank](#database) weiter behandelt:
+Dieses Thema wird im Abschnitt [Datenbanken](#Datenbanken) weiter behandelt:
 
-* [Master-Slave-Replikation](#master-slave-replication)
-* [Master-Master-Replikation](#master-master-replication)
+* [Master-Slave-Replikation](#Master-Slave-Replikation)
+* [Master-Master-Replikation](#Master-Master-Replikation)
 
 ### Verfügbarkeit in Zahlen
 
@@ -583,12 +583,12 @@ Verfügbarkeit (Gesamt) = 1 - (1 - Verfügbarkeit (Foo)) * (1 - Verfügbarkeit (
 
 Wenn sowohl `Foo` als auch `Bar` jeweils eine Verfügbarkeit von 99,9% hätten, würde ihre Gesamtverfügbarkeit parallel 99,9999% betragen.
 
-## Domänen Namen System
+## Domain Namen System
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Quelle: DNS-Sicherheitspräsentation</a></i>
 </p>
 
 Ein Domain Name System (DNS) übersetzt einen Domain-Namen wie www.example.com in eine IP-Adresse.
@@ -600,7 +600,7 @@ DNS ist hierarchisch aufgebaut, mit einigen wenigen autoritativen Servern auf de
 * **A-Eintrag (Adresse)** - Verweist einen Namen auf eine IP-Adresse.
 **CNAME (kanonisch)** - Verweist einen Namen auf einen anderen Namen oder `CNAME` (example.com auf www.example.com) oder auf einen `A`-Eintrag.
 
-Dienste wie [CloudFlare] (https://www.cloudflare.com/dns/) und [Route 53] (https://aws.amazon.com/route53/) bieten verwaltete DNS-Dienste an.  Einige DNS-Dienste können den Datenverkehr über verschiedene Methoden weiterleiten:
+Dienste wie [CloudFlare](https://www.cloudflare.com/dns/) und [Route 53](https://aws.amazon.com/route53/) bieten verwaltete DNS-Dienste an.  Einige DNS-Dienste können den Datenverkehr über verschiedene Methoden weiterleiten:
 
 * [Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
     * Verhindern, dass Datenverkehr zu Servern gelangt, die gewartet werden
@@ -621,12 +621,12 @@ Dienste wie [CloudFlare] (https://www.cloudflare.com/dns/) und [Route 53] (https
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [DNS-Artikel](https://support.dnsimple.com/categories/dns/)
 
-## Content delivery network
+## Kontent distributions Netzwerk
 
 <p align="center">
   <img src="images/h9TAuGI.jpg">
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
+  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Quelle: Warum ein CDN verwenden</a></i>
 </p>
 
 Ein Content-Delivery-Network (CDN) ist ein weltweit verteiltes Netz von Proxy-Servern, die Inhalte von Orten aus bereitstellen, die näher am Nutzer liegen.  Im Allgemeinen werden statische Dateien wie HTML/CSS/JS, Fotos und Videos von einem CDN bereitgestellt, obwohl einige CDNs wie Amazons CloudFront dynamische Inhalte unterstützen.  Die DNS-Auflösung der Website teilt den Clients mit, welcher Server zu kontaktieren ist.
@@ -667,7 +667,7 @@ Websites mit hohem Datenverkehr eignen sich gut für Pull-CDNs, da der Datenverk
 <p align="center">
   <img src="images/h81n9iK.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Quelle: Entwurfsmuster für skalierbare Systeme</a></i>
 </p>
 
 Load Balancer (Lastverteiler) verteilen eingehende Client-Anfragen an Rechenressourcen wie Anwendungsserver und Datenbanken.  In jedem Fall gibt der Load Balancer die Antwort der Rechenressource an den entsprechenden Client zurück.  Load Balancer sind wirksam bei:
@@ -684,7 +684,7 @@ Weitere Vorteile sind:
   * Macht die Installation von [X.509-Zertifikaten](https://en.wikipedia.org/wiki/X.509) auf jedem Server überflüssig
 * **Sitzungspersistenz** - Ausgabe von Cookies und Weiterleitung der Anfragen eines bestimmten Clients an dieselbe Instanz, wenn die Webanwendungen die Sitzungen nicht aufzeichnen
 
-Um sich gegen Ausfälle zu schützen, ist es üblich, mehrere Load Balancer einzurichten, entweder im Modus [aktiv-passiv](#active-passive) oder [aktiv-aktiv](#active-active).
+Um sich gegen Ausfälle zu schützen, ist es üblich, mehrere Load Balancer einzurichten, entweder im Modus [aktiv-passiv](#Aktiv-Passiv) oder [aktiv-aktiv](#Aktive-Aktiv).
 
 Lastverteiler (Load Balancer) können den Datenverkehr auf der Grundlage verschiedener Metriken weiterleiten, darunter:
 
@@ -692,8 +692,8 @@ Lastverteiler (Load Balancer) können den Datenverkehr auf der Grundlage verschi
 * Geringste Belastung
 * Sitzung/Cookies
 * [Round robin oder weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
-* [Schicht 4](#layer-4-load-balancing)
-* [Schicht 7](#layer-7-load-balancing)
+* [Schicht 4](#Schicht-4-Lastverteilung)
+* [Schicht 7](#Schicht-7-Lastverteilung)
 
 ### Schicht 4 Lastverteilung
 
@@ -713,7 +713,7 @@ Load Balancer können auch bei der horizontalen Skalierung helfen und die Leistu
 
 * Horizontale Skalierung führt zu Komplexität und erfordert das Klonen von Servern.
     * Server sollten zustandslos sein: sie sollten keine benutzerbezogenen Daten wie Sitzungen oder Profilbilder enthalten
-    * Sitzungen können in einem zentralisierten Datenspeicher wie einer [Datenbank](#database) (SQL, NoSQL) oder einem persistenten [Cache](#cache) (Redis, Memcached) gespeichert werden
+    * Sitzungen können in einem zentralisierten Datenspeicher wie einer [Datenbanken](#Datenbanken) (SQL, NoSQL) oder einem persistenten [Zwischenspeicher](#Zwischenspeicher) (Redis, Memcached) gespeichert werden
 * Downstream-Server wie Caches und Datenbanken müssen mehr gleichzeitige Verbindungen verarbeiten, wenn die Upstream-Server verkleinert werden
 
 ### Nachteil(e): Lastverteiler
@@ -724,15 +724,15 @@ Load Balancer können auch bei der horizontalen Skalierung helfen und die Leistu
 
 ### Quelle(n) und weiterführende Literatur
 
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [NGINX Architektur](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy-Architektur-Leitfaden](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [Skalierbarkeit](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [ELB-Listener-Konfiguration](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
-## Umgekehrter Proxy (Webserver)
+## Umkehr Proxy (web server)
 
 <p align="center">
   <img src="images/n41Azff.png">
@@ -757,7 +757,7 @@ Weitere Vorteile sind:
     * Videos
     * Etc
 
-### Load Balancer vs. Reverse Proxy
+### Lastverteilung vs Umkehr Proxy
 
 * Der Einsatz eines Load Balancers ist sinnvoll, wenn Sie mehrere Server haben.  Die Load Balancer leiten den Datenverkehr an eine Reihe von Servern weiter, die die gleiche Funktion erfüllen.
 * Reverse Proxies können auch bei nur einem Web- oder Anwendungsserver nützlich sein und bieten die im vorherigen Abschnitt beschriebenen Vorteile.
@@ -775,7 +775,7 @@ Weitere Vorteile sind:
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Anwendungsebene
+## Applikatins Schicht
 
 <p align="center">
   <img src="images/yB5SYwm.png">
@@ -785,7 +785,7 @@ Weitere Vorteile sind:
 
 Durch die Trennung der Webschicht von der Anwendungsschicht (auch als Plattformschicht bezeichnet) können Sie beide Schichten unabhängig voneinander skalieren und konfigurieren.  Das Hinzufügen einer neuen API führt zum Hinzufügen von Anwendungsservern, ohne notwendigerweise zusätzliche Webserver hinzuzufügen.  Das **Prinzip der einzigen Verantwortung** plädiert für kleine und autonome Dienste, die zusammenarbeiten.  Kleine Teams mit kleinen Diensten können aggressiver für schnelles Wachstum planen.
 
-Worker in der Anwendungsschicht tragen ebenfalls dazu bei, [Asynchronismus](#asynchronism) zu ermöglichen.
+Worker in der Anwendungsschicht tragen ebenfalls dazu bei, [Asynchronität](#Asynchronität) zu ermöglichen.
 
 ### Mikrodienste
 
@@ -795,7 +795,7 @@ Pinterest könnte zum Beispiel folgende Mikrodienste haben: Benutzerprofil, Foll
 
 ### Service Discovery 
 
-Systeme wie [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest) und [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) können Dienste dabei unterstützen, sich gegenseitig zu finden, indem sie die registrierten Namen, Adressen und Ports verfolgen.  [Health Checks](https://www.consul.io/intro/getting-started/checks.html) helfen bei der Überprüfung der Integrität von Diensten und werden oft über einen [HTTP](#hypertext-transfer-protocol-http) Endpunkt durchgeführt.  Sowohl Consul als auch Etcd haben einen eingebauten [Key-Value-Store](#key-value-store), der für die Speicherung von Konfigurationswerten und anderen gemeinsamen Daten nützlich sein kann.
+Systeme wie [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest) und [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) können Dienste dabei unterstützen, sich gegenseitig zu finden, indem sie die registrierten Namen, Adressen und Ports verfolgen.  [Health Checks](https://www.consul.io/intro/getting-started/checks.html) helfen bei der Überprüfung der Integrität von Diensten und werden oft über einen [HTTP](#hypertext-transfer-protocol-http) Endpunkt durchgeführt.  Sowohl Consul als auch Etcd haben einen eingebauten [Schlüsselwertspeicher](#Schlüsselwertspeicher), der für die Speicherung von Konfigurationswerten und anderen gemeinsamen Daten nützlich sein kann.
 
 ### Nachteil(e): Anwendungsschicht
 
@@ -810,7 +810,7 @@ Systeme wie [Consul](https://www.consul.io/docs/index.html), [Etcd](https://core
 * [Einführung zu Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Was Sie über den Aufbau von Mikrodiensten wissen müssen](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Datenbank
+## Datenbanken
 
 <p align="center">
   <img src="images/Xkm5CXz.png">
@@ -818,7 +818,7 @@ Systeme wie [Consul](https://www.consul.io/docs/index.html), [Etcd](https://core
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Quelle: Die Skalierung auf Ihre ersten 10 Millionen Nutzer</a></i>
 </p>
 
-### Relationales Datenbankmanagementsystem (RDBMS)
+### Relationales Datenbank Management System (RDBMS)
 
 Eine relationale Datenbank wie SQL ist eine Sammlung von Datenelementen, die in Tabellen organisiert sind.
 
@@ -844,7 +844,7 @@ Der Master bedient Lese- und Schreibvorgänge und repliziert Schreibvorgänge an
 ##### Nachteil(e): Master-Slave Replikation
 
 * Zusätzliche Logik ist erforderlich, um einen Slave zu einem Master zu machen.
-* Siehe [Nachteil(e): Replikation](#Nachteile-Replikation) für Punkte, die sich auf **beide** Master-Slave und Master-Master beziehen.
+* Siehe [Nachteil(e): Replikation](#Nachteil(e)-Replikation) für Punkte, die sich auf **beide** Master-Slave und Master-Master beziehen.
 
 #### Master-Master Replikation
 
@@ -860,7 +860,7 @@ Beide Master bedienen Lese- und Schreibvorgänge und koordinieren sich bei Schre
 * Sie benötigen einen Load Balancer oder müssen Änderungen an Ihrer Anwendungslogik vornehmen, um zu bestimmen, wo geschrieben werden soll.
 * Die meisten Master-Master-Systeme sind entweder wenig konsistent (was gegen ACID verstößt) oder haben aufgrund der Synchronisierung eine erhöhte Schreiblatenz.
 * Die Konfliktlösung kommt umso mehr ins Spiel, je mehr Schreibknoten hinzugefügt werden und je größer die Latenz ist.
-* Siehe [Nachteil(e): Replikation](#Nachteile-Replikation) für Punkte, die sich auf **beide** Master-Slave und Master-Master beziehen.
+* Siehe [Nachteil(e): Replikation](#Nachteil(e)-Replikation) für Punkte, die sich auf **beide** Master-Slave und Master-Master beziehen.
 
 ##### Nachteil(e): Replikation
 
@@ -896,7 +896,7 @@ Föderation (oder funktionale Partitionierung) teilt Datenbanken nach Funktionen
 
 * [Skalierung auf Ihre ersten 10 Millionen Nutzer](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
-#### Sharding
+#### Fragmentierung
 
 <p align="center">
   <img src="images/wU8x5Id.png">
@@ -906,11 +906,11 @@ Föderation (oder funktionale Partitionierung) teilt Datenbanken nach Funktionen
 
 Beim Sharding werden die Daten auf verschiedene Datenbanken verteilt, so dass jede Datenbank nur eine Teilmenge der Daten verwalten kann.  Nimmt man eine Benutzerdatenbank als Beispiel, so werden mit zunehmender Anzahl der Benutzer mehr Shards zum Cluster hinzugefügt.
 
-Ähnlich wie bei den Vorteilen von [Federation](#federation) führt das Sharding zu weniger Lese- und Schreibverkehr, weniger Replikation und mehr Cache-Treffern.  Auch die Indexgröße wird reduziert, was im Allgemeinen die Leistung bei schnelleren Abfragen verbessert.  Wenn ein Shard ausfällt, sind die anderen Shards immer noch betriebsbereit, obwohl Sie eine Form der Replikation hinzufügen sollten, um Datenverluste zu vermeiden.  Wie bei der Föderation gibt es keinen zentralen Master, der Schreibvorgänge serialisiert, so dass Sie parallel schreiben und den Durchsatz erhöhen können.
+Ähnlich wie bei den Vorteilen von [Föderation](#Föderation) führt das Sharding zu weniger Lese- und Schreibverkehr, weniger Replikation und mehr Cache-Treffern.  Auch die Indexgröße wird reduziert, was im Allgemeinen die Leistung bei schnelleren Abfragen verbessert.  Wenn ein Shard ausfällt, sind die anderen Shards immer noch betriebsbereit, obwohl Sie eine Form der Replikation hinzufügen sollten, um Datenverluste zu vermeiden.  Wie bei der Föderation gibt es keinen zentralen Master, der Schreibvorgänge serialisiert, so dass Sie parallel schreiben und den Durchsatz erhöhen können.
 
 Üblicherweise wird eine Benutzertabelle entweder nach dem Anfangsbuchstaben des Nachnamens des Benutzers oder nach dem geografischen Standort des Benutzers aufgeteilt.
 
-##### Nachteile(e): sharding
+##### Nachteile(e): Fragmentierung
 
 * Sie müssen Ihre Anwendungslogik für die Arbeit mit Shards aktualisieren, was zu komplexen SQL-Abfragen führen kann.
 * Die Datenverteilung kann in einem Shard einseitig werden.  So kann beispielsweise eine Gruppe von Power-Usern auf einem Shard zu einer höheren Belastung dieses Shards im Vergleich zu anderen führen.
@@ -918,7 +918,7 @@ Beim Sharding werden die Daten auf verschiedene Datenbanken verteilt, so dass je
 * Das Zusammenführen von Daten aus mehreren Shards ist komplexer.
 * Sharding erfordert mehr Hardware und zusätzliche Komplexität.
 
-##### Quelle(n) und weiterführende Literatur: Sharding
+##### Quelle(n) und weiterführende Literatur: Fragmentierung
 
 * [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
@@ -928,7 +928,7 @@ Beim Sharding werden die Daten auf verschiedene Datenbanken verteilt, so dass je
 
 Durch Denormalisierung wird versucht, die Leseleistung auf Kosten einer gewissen Schreibleistung zu verbessern. Redundante Kopien der Daten werden in mehrere Tabellen geschrieben, um teure Verknüpfungen zu vermeiden. Einige RDBMS wie [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) und Oracle unterstützen [materialisierte Ansichten](https://en.wikipedia.org/wiki/Materialized_view), die die Speicherung redundanter Informationen und die Konsistenz der redundanten Kopien übernehmen.
 
-Sobald Daten mit Techniken wie [federation](#federation) und [sharding](#sharding) verteilt werden, erhöht sich die Komplexität der Verwaltung von Joins über verschiedene Rechenzentren hinweg weiter.  Durch Denormalisierung kann die Notwendigkeit solcher komplexen Joins umgangen werden.
+Sobald Daten mit Techniken wie [Föderation](#Föderation) und [Fragmentierung](#Fragmentierung) verteilt werden, erhöht sich die Komplexität der Verwaltung von Joins über verschiedene Rechenzentren hinweg weiter.  Durch Denormalisierung kann die Notwendigkeit solcher komplexen Joins umgangen werden.
 
 In den meisten Systemen können die Lesevorgänge 100:1 oder sogar 1000:1 überwiegen. Ein Lesevorgang, der zu einem komplexen Datenbank-Join führt, kann teuer sein und viel Zeit für Plattenoperationen benötigen.
 
@@ -942,7 +942,7 @@ In den meisten Systemen können die Lesevorgänge 100:1 oder sogar 1000:1 überw
 
 * [Denormalisierung](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL-Tuning.
+#### SQL Abstimmung
 
 SQL-Tuning ist ein breites Thema und viele [Bücher](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) wurden als Referenz geschrieben.
 Es ist wichtig, **Benchmarks** und **Profile** zu erstellen, um Engpässe zu simulieren und aufzudecken.
@@ -975,7 +975,7 @@ Benchmarking und Profiling können Sie auf die folgenden Optimierungen hinweisen
 
 ##### Vermeiden Sie teure Verbindungen
 
-* [Denormalisieren](#denormalization), wenn die Leistung es erfordert.
+* [Denormalisieren](#Denormalisierung), wenn die Leistung es erfordert.
 
 ##### Partitionstabellen
 
@@ -995,15 +995,15 @@ Benchmarking und Profiling können Sie auf die folgenden Optimierungen hinweisen
 
 ### NoSQL
 
-NoSQL ist eine Sammlung von Datenelementen, die in einem **Schlüsselwertspeicher**, **Dokumentenspeicher**, **weiten Spaltenspeicher** oder einer **Graphendatenbank** dargestellt werden.  Die Daten sind denormalisiert, und Verbindungen werden im Allgemeinen im Anwendungscode durchgeführt.  Die meisten NoSQL-Speicher bieten keine echten ACID-Transaktionen und bevorzugen [eventuelle Konsistenz](#eventual-consistency).
+NoSQL ist eine Sammlung von Datenelementen, die in einem **Schlüsselwertspeicher**, **Dokumentenspeicher**, **weiten Spaltenspeicher** oder einer **Graphendatenbank** dargestellt werden.  Die Daten sind denormalisiert, und Verbindungen werden im Allgemeinen im Anwendungscode durchgeführt.  Die meisten NoSQL-Speicher bieten keine echten ACID-Transaktionen und bevorzugen [eventuelle Konsistenz](#Eventuelle-Konsistenz).
 
-**BASE** wird häufig verwendet, um die Eigenschaften von NoSQL-Datenbanken zu beschreiben.  Im Vergleich zum [CAP-Theorem](#cap-theorem) wählt BASE die Verfügbarkeit gegenüber der Konsistenz.
+**BASE** wird häufig verwendet, um die Eigenschaften von NoSQL-Datenbanken zu beschreiben.  Im Vergleich zum [CAP-Theorem](#CAP-Theorem) wählt BASE die Verfügbarkeit gegenüber der Konsistenz.
 
 * **Grundsätzlich verfügbar** - das System garantiert die Verfügbarkeit.
 * **Soft state** - der Zustand des Systems kann sich im Laufe der Zeit ändern, auch ohne Eingaben.
 * **Eventuelle Konsistenz** - das System wird über einen bestimmten Zeitraum hinweg konsistent, vorausgesetzt, dass es in diesem Zeitraum keine Eingaben erhält.
 
-Neben der Entscheidung zwischen [SQL oder NoSQL](#sql-or-nosql) ist es hilfreich zu verstehen, welche Art von NoSQL-Datenbank am besten zu Ihrem Anwendungsfall passt.  Im nächsten Abschnitt werden **Schlüsselwertspeicher**, **Dokumentenspeicher**, **Breitspaltenspeicher** und **Graphendatenbanken** behandelt.
+Neben der Entscheidung zwischen [SQL oder NoSQL](#SQL-oder-NoSQL) ist es hilfreich zu verstehen, welche Art von NoSQL-Datenbank am besten zu Ihrem Anwendungsfall passt.  Im nächsten Abschnitt werden **Schlüsselwertspeicher**, **Dokumentenspeicher**, **Breitspaltenspeicher** und **Graphendatenbanken** behandelt.
 
 #### Schlüsselwertspeicher
 
@@ -1024,7 +1024,7 @@ Ein Schlüsselwertspeicher ist die Grundlage für komplexere Systeme wie einen D
 * [Redis-Architektur](http://qnimate.com/overview-of-redis-architecture/)
 * [Memcached-Architektur](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### Dokumenten Speicher
+#### Dokumentspeicher
 
 > Abstraktion: Schlüsselwertspeicher mit Dokumenten, die als Werte gespeichert werden
 
@@ -1066,7 +1066,7 @@ Breite Spaltenspeicher bieten hohe Verfügbarkeit und hohe Skalierbarkeit.  Sie 
 * [HBase Architektur](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra Architektur](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
-#### Graphdatenbanken
+#### Diagramm Datenbank
 
 <p align="center">
   <img src="images/fNcl65g.png">
@@ -1078,7 +1078,7 @@ Breite Spaltenspeicher bieten hohe Verfügbarkeit und hohe Skalierbarkeit.  Sie 
 
 In einer Graphdatenbank ist jeder Knoten ein Datensatz und jeder Bogen ist eine Beziehung zwischen zwei Knoten.  Graphdatenbanken sind für die Darstellung komplexer Beziehungen mit vielen Fremdschlüsseln oder Many-to-many-Beziehungen optimiert.
 
-Graphdatenbanken bieten eine hohe Leistung für Datenmodelle mit komplexen Beziehungen, wie z. B. ein soziales Netzwerk.  Sie sind relativ neu und noch nicht weit verbreitet; es könnte schwieriger sein, Entwicklungswerkzeuge und Ressourcen zu finden.  Auf viele Graphen kann nur mit [REST-APIs](#representational-state-transfer-rest) zugegriffen werden.
+Graphdatenbanken bieten eine hohe Leistung für Datenmodelle mit komplexen Beziehungen, wie z. B. ein soziales Netzwerk.  Sie sind relativ neu und noch nicht weit verbreitet; es könnte schwieriger sein, Entwicklungswerkzeuge und Ressourcen zu finden.  Auf viele Graphen kann nur mit [REST-APIs](#Representative-Zustandsübertragung-rest) zugegriffen werden.
 
 ##### Quelle(n) und weiterführende Literatur: Graph
 
@@ -1148,23 +1148,23 @@ Die Zwischenspeicherung verbessert die Ladezeiten von Seiten und kann die Belast
 
 Datenbanken profitieren oft von einer gleichmäßigen Verteilung der Lese- und Schreibvorgänge auf ihre Partitionen.  Beliebte Elemente können die Verteilung verzerren und zu Engpässen führen.  Ein Cache vor einer Datenbank kann helfen, ungleichmäßige Lasten und Spitzen im Datenverkehr aufzufangen.
 
-### Client Caching
+### Client Zwischenspeicher
 
-Caches können sich auf der Client-Seite (Betriebssystem oder Browser), auf der [Server-Seite](#reverse-proxy-web-server) oder in einer eigenen Cache-Schicht befinden.
+Caches können sich auf der Client-Seite (Betriebssystem oder Browser), auf der [Server-Seite](#Umkehr-Proxy-Web-Server) oder in einer eigenen Cache-Schicht befinden.
 
-### CDN Caching
+### CDN Zwischenspeicher
 
 [CDNs](#content-delivery-network) werden als eine Art Cache betrachtet.
 
-### Web Server Caching
+### Web Server Zwischenspeicher
 
-[Reverse Proxies](#reverse-proxy-web-server) und Caches wie [Varnish](https://www.varnish-cache.org/) können statische und dynamische Inhalte direkt bereitstellen.  Webserver können auch Anfragen zwischenspeichern und Antworten zurücksenden, ohne Anwendungsserver kontaktieren zu müssen.
+[Umkehr Proxies](#Umkehr-Proxy-Web-Server) und Zwischenspeicher wie [Varnish](https://www.varnish-cache.org/) können statische und dynamische Inhalte direkt bereitstellen.  Webserver können auch Anfragen zwischenspeichern und Antworten zurücksenden, ohne Anwendungsserver kontaktieren zu müssen.
 
-### Datenbank Caching
+### Datenbank Zwischenspeicher
 
 Ihre Datenbank enthält in der Regel ein gewisses Maß an Caching in einer Standardkonfiguration, die für einen allgemeinen Anwendungsfall optimiert ist.  Durch die Anpassung dieser Einstellungen an bestimmte Nutzungsmuster kann die Leistung weiter gesteigert werden.
 
-### Anwendungs Caching
+### Anwendungs Zwischenspeicher
 
 In-Memory-Cachespeicher wie Memcached und Redis sind Key-Value-Speicher zwischen Ihrer Anwendung und Ihrem Datenspeicher.  Da die Daten im RAM gehalten werden, sind sie viel schneller als typische Datenbanken, bei denen die Daten auf der Festplatte gespeichert werden.  Da der Arbeitsspeicher begrenzter ist als die Festplatte, können [Cache-Invalidierungsalgorithmen](https://en.wikipedia.org/wiki/Cache_algorithms) wie [Least Recently Used (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) dabei helfen, "kalte" Einträge zu invalidieren und "heiße" Daten im Arbeitsspeicher zu halten.
 
@@ -1182,14 +1182,14 @@ Es gibt mehrere Ebenen, die Sie zwischenspeichern können und die in zwei allgem
 
 Generell sollten Sie versuchen, dateibasiertes Caching zu vermeiden, da es das Klonen und automatische Skalieren erschwert.
 
-### Caching auf der Ebene der Datenbankabfrage
+### Zwischenspeicherung auf der Ebene der Datenbankabfrage
 
 Bei jeder Datenbankabfrage wird die Abfrage als Schlüssel gehasht und das Ergebnis im Cache gespeichert.  Dieser Ansatz leidet unter Verfallsproblemen:
 
 * Es ist schwierig, ein zwischengespeichertes Ergebnis bei komplexen Abfragen zu löschen.
 * Wenn sich ein Teil der Daten ändert, z. B. eine Tabellenzelle, müssen Sie alle im Cache gespeicherten Abfragen löschen, die die geänderte Zelle enthalten könnten.
 
-### Caching auf Objektebene
+### Zwischenspeicher auf Objekt Ebene
 
 Betrachten Sie Ihre Daten als Objekt, ähnlich wie Sie es mit Ihrem Anwendungscode tun.  Lassen Sie Ihre Anwendung den Datensatz aus der Datenbank in eine Klasseninstanz oder Datenstruktur(en) zusammenstellen:
 
@@ -1203,11 +1203,11 @@ Vorschläge, was zwischengespeichert werden sollte:
 * Aktivitätsströme
 * Benutzerdiagrammdaten
 
-### Wann wird der Cache aktualisiert?
+### Wann wird der Zwischenspeicher aktualisiert?
 
 Da Sie nur eine begrenzte Menge an Daten im Cache speichern können, müssen Sie festlegen, welche Cache-Aktualisierungsstrategie für Ihren Anwendungsfall am besten geeignet ist.
 
-#### Cache-Auslagerung
+#### Zwischenspeicher Auslagerung
 
 <p align="center">
   <img src="images/ONjORqk.png">
@@ -1244,7 +1244,7 @@ Nachfolgende Lesevorgänge von Daten, die dem Cache hinzugefügt wurden, sind sc
   die eine Aktualisierung des Cache-Eintrags erzwingt, oder durch die Verwendung von Write-Through entschärft.
 * Wenn ein Knoten ausfällt, wird er durch einen neuen, leeren Knoten ersetzt, was die Latenzzeit erhöht.
 
-#### Durchschreiben (Write-through)
+#### Durchschreiben
 
 <p align="center">
   <img src="images/0vBc0hN.png">
@@ -1298,7 +1298,7 @@ In write-behind, tut die Anwendung Folgendes:
 * Es könnte zu Datenverlusten kommen, wenn der Cache ausfällt, bevor sein Inhalt in den Datenspeicher gelangt.
 * Es ist komplexer, Write-Behind zu implementieren als Cache-Aside oder Write-Through.
 
-#### Vorausschauende Aktualisierung (Refresh-ahead)
+#### Aktualisieren im Voraus
 
 <p align="center">
   <img src="images/kxtjqgE.png">
@@ -1330,7 +1330,7 @@ Eine vorausschauende Aktualisierung kann die Latenzzeit im Vergleich zum Durchle
 * [AWS ElastiCache Strategien](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
-## Asynchronismus (Asynchronism)
+## Asynchronität
 
 <p align="center">
   <img src="images/54GYsSx.png">
@@ -1340,7 +1340,7 @@ Eine vorausschauende Aktualisierung kann die Latenzzeit im Vergleich zum Durchle
 
 Asynchrone Workflows tragen dazu bei, die Anforderungszeiten für teure Vorgänge zu verkürzen, die sonst inline ausgeführt würden.  Sie können auch helfen, indem sie zeitaufwändige Arbeiten im Voraus erledigen, wie z. B. die regelmäßige Aggregation von Daten.
 
-### Nachrichten-Warteschlangen (Message queues)
+### Nachrichtenwarteschlangen
 
 Nachrichtenwarteschlangen empfangen, halten und liefern Nachrichten. Wenn ein Vorgang zu langsam ist, um ihn inline auszuführen, können Sie eine Nachrichtenwarteschlange mit dem folgenden Arbeitsablauf verwenden:
 
@@ -1355,14 +1355,14 @@ Der Benutzer wird nicht blockiert und der Auftrag wird im Hintergrund verarbeite
 
 **[Amazon SQS](https://aws.amazon.com/sqs/)** wird gehostet, kann aber hohe Latenzzeiten haben und es besteht die Möglichkeit, dass Nachrichten doppelt zugestellt werden.
 
-### Aufgaben Warteschlangen (Task queues)
+### Aufgaben Warteschlangen
 
 Aufgaben Warteschlangen nehmen Aufgaben und die zugehörigen Daten entgegen, führen sie aus und liefern dann ihre Ergebnisse.  
 Sie können die Zeitplanung unterstützen und zur Ausführung rechenintensiver Aufgaben im Hintergrund verwendet werden.
 
 **[Celery](https://docs.celeryproject.org/en/stable/)** hat Unterstützung für Scheduling und bietet vor allem Python-Unterstützung.
 
-### Gegendruck (Back pressure)
+### Gegendruck
 
 Wenn die Warteschlangen stark anwachsen, kann die Größe der Warteschlange den Arbeitsspeicher übersteigen, was zu Fehlern im Cache, Lesevorgängen auf der Festplatte und einer noch langsameren Leistung führt.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) kann helfen, indem es die Größe der Warteschlange begrenzt und so eine hohe Durchsatzrate und gute Antwortzeiten für die bereits in der Warteschlange befindlichen Aufträge aufrechterhält.  Sobald die Warteschlange voll ist, erhalten die Clients einen Server-Busy- oder HTTP 503-Statuscode, um es später erneut zu versuchen.  Die Clients können die Anfrage zu einem späteren Zeitpunkt wiederholen, vielleicht mit [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
@@ -1378,7 +1378,7 @@ Wenn die Warteschlangen stark anwachsen, kann die Größe der Warteschlange den 
 * [Little's Gesetz](https://en.wikipedia.org/wiki/Little%27s_law)
 * [Was ist der Unterschied zwischen einer Nachrichtenwarteschlange und einer Aufgabenwarteschlange?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Kommunikation (Communication)
+## Kommunikation
 
 <p align="center">
   <img src="images/5KeocQs.jpg">
@@ -1410,7 +1410,7 @@ HTTP ist ein Protokoll der Anwendungsschicht, das auf Protokollen der unteren Eb
 * [Unterschied zwischen HTTP und TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 * [Unterschied zwischen PUT und PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
-### Transmission control protocol (TCP)
+### Übertragungskontrollprotokoll (TCP)
 
 <p align="center">
   <img src="images/JdAsdvG.jpg">
@@ -1434,7 +1434,7 @@ Verwenden Sie TCP statt UDP, wenn:
 * Sie wollen, dass alle Daten unversehrt ankommen.
 * Sie möchten den Netzdurchsatz automatisch bestmöglich ausnutzen.
 
-### User datagram protocol (UDP)
+### Benutzer Datagramm Protokoll (UDP)
 
 <p align="center">
   <img src="images/yzDrJtA.jpg">
@@ -1463,7 +1463,7 @@ Verwenden Sie UDP statt TCP, wenn:
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 * [Skalierung des Memcache bei Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Ferngesteuerter Prozeduraufruf (Remote procedure call / RPC)
+### Ferngesteuerter Prozeduraufruf (RPC)
 
 <p align="center">
   <img src="images/iF4Mkb5.png">
@@ -1514,7 +1514,7 @@ HTTP-APIs nach **REST** werden in der Regel häufiger für öffentliche APIs ver
 * Es kann sein, dass Sie die vorhandenen Technologien nicht ohne weiteres nutzen können.  Zum Beispiel könnte es zusätzlichen Aufwand erfordern, um sicherzustellen, 
   dass [RPC-Aufrufe richtig zwischengespeichert werden](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) auf Caching-Servern wie [Squid](http://www.squid-cache.org/).
 
-### Repräsentative Zustandsübertragung (Representational state transfer / REST)
+### Representative Zustandsübertragung (REST)
 
 REST ist ein architektonischer Stil, der ein Client/Server-Modell durchsetzt, bei dem der Client auf eine Reihe von Ressourcen einwirkt, die vom Server verwaltet werden.  Der Server stellt eine Darstellung der Ressourcen und Aktionen bereit, mit denen die Ressourcen entweder manipuliert oder eine neue Darstellung der Ressourcen erhalten werden können.  Die gesamte Kommunikation muss zustandslos und cachefähig sein.
 
@@ -1571,9 +1571,9 @@ wie GET, POST, PUT, DELETE und PATCH.  Da REST zustandslos ist, eignet es sich h
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Warum REST für den internen Gebrauch und nicht RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Sicherheit (Security)
+## Sicherheit
 
-Dieser Abschnitt könnte einige Aktualisierungen vertragen.  Erwägen Sie einen [Beitrag](#contributing)!
+Dieser Abschnitt könnte einige Aktualisierungen vertragen.  Erwägen Sie einen [Beitrag](#Beitragen)!
 
 Sicherheit ist ein breites Thema.  Sofern Sie nicht über umfangreiche Erfahrungen verfügen, einen Sicherheitshintergrund haben oder sich für eine Stelle bewerben, die Kenntnisse im Bereich Sicherheit erfordert, müssen Sie wahrscheinlich nicht mehr als die Grundlagen kennen:
 
@@ -1588,7 +1588,7 @@ Sicherheit ist ein breites Thema.  Sofern Sie nicht über umfangreiche Erfahrung
 * [Sicherheitsleitfaden für Entwickler](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP Top Ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
-## Appendix
+## Anhang
 
 Manchmal werden Sie gebeten, Schätzungen vorzunehmen.  So müssen Sie z. B. ermitteln, wie lange es dauert, 100 Miniaturbilder von der Festplatte zu generieren, oder wie viel Speicher eine Datenstruktur benötigt.  Die **Tabelle der Zweierpotenzen** und die **Latenzzahlen, die jeder Programmierer kennen sollte** sind praktische Referenzen.
 
@@ -1688,9 +1688,10 @@ Praktische Messwerte auf der Grundlage der obigen Zahlen:
 | Entwurf eines Müllabfuhrsystems | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Entwurf eines API-Ratenbegrenzers | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Entwerfen Sie eine Börse (wie NASDAQ oder Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
-| Eine Frage zum Systementwurf hinzufügen | [Contribute](#contributing) |
+| Eine Frage zum Systementwurf hinzufügen | [Beitragen](#Beitragen) |
 
-### Real world Architekturen
+### Anwendungs Architekturen
+
 
 > Artikel darüber, wie Systeme in der realen Welt entworfen werden.
 
@@ -1728,7 +1729,7 @@ Praktische Messwerte auf der Grundlage der obigen Zahlen:
 | Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | Add an architecture | [Contribute](#contributing) |
+| | Add an architecture | [Beitragen](#Beitragen) |
 
 ### Unternehmensarchitekturen
 
@@ -1758,7 +1759,7 @@ Praktische Messwerte auf der Grundlage der obigen Zahlen:
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
-### Blogs zum Thema Technik im Unternehmen
+### Unternehmensblogs zur Technik
 
 > Architekturen von Unternehmen, mit denen Sie sich bewerben.
 >
@@ -1812,12 +1813,12 @@ Möchten Sie einen Blog hinzufügen?  Um doppelte Arbeit zu vermeiden, sollten S
 
 ## In Entwicklung
 
-Sind Sie daran interessiert, einen Abschnitt hinzuzufügen oder bei der Fertigstellung eines laufenden Abschnitts zu helfen?  [Contribute](#contributing)!
+Sind Sie daran interessiert, einen Abschnitt hinzuzufügen oder bei der Fertigstellung eines laufenden Abschnitts zu helfen?  [Beitragen](#Beitragen)!
 
 * Verteiltes Rechnen mit MapReduce
 * Konsistentes Hashing
 * Verteiltes Sammeln
-* [Contribute](#contributing)
+* [Beitragen](#Beitragen)
 
 ## Credits
 
@@ -1835,7 +1836,7 @@ Besonderen Dank an:
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Kontaktinformationen
+## Kontakt Info
 
 Sie können mich gerne kontaktieren, um Probleme, Fragen oder Kommentare zu besprechen.
 
