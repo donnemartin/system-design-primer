@@ -1764,6 +1764,7 @@ Handy metrics based on numbers above:
 * [Facebook Engineering](https://www.facebook.com/Engineering)
 * [Flickr Code](http://code.flickr.net/)
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
+* [Freshworks Blog](https://www.freshworks.com/blog/)
 * [GitHub Engineering Blog](http://githubengineering.com/)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
