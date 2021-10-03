@@ -507,13 +507,18 @@ Keep in mind that **everything is a trade-off**.
 Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
 
 ## Performance vs scalability
+## Hiệu năng và tính mở rộng
 
 A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Một dịch vụ có tính mở rộng nếu đạt tăng được hiệu năng tỷ lệ thuận với tài nguyên được thêm vào. Tăng hiệu năng đồng nghĩa với phục vụ được nhiều đơn vị công việc hơn, nhưng cũng có nghĩa là xử lý được công việc lớn hơn, chẳng hạn như dataset tăng.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
 Another way to look at performance vs scalability:
+Một cách nhìn khác về hiệu năng và tính mở rộng:
 
 * If you have a **performance** problem, your system is slow for a single user.
+* Nếu bạn có vấn đề về **hiệu năng**, hệ thống của bạn chậm cho một người dùng.
 * If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Nếu bạn có vấn đề về *tính mở rộng*, hệ thống của bạn nhanh cho một người dùng nhưng chậm khi chịu tải nhiều.
 
 ### Source(s) and further reading
 
@@ -521,12 +526,16 @@ Another way to look at performance vs scalability:
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
 ## Latency vs throughput
+## Độ trễ và lưu lượng
 
 **Latency** is the time to perform some action or to produce some result.
+**Độ trễ** là thời gian thực hiện một tác vụ và cho ra kết quả.
 
 **Throughput** is the number of such actions or results per unit of time.
+**Lưu lượng** là số lượng tác vụ và kết quả trong một đơn vị thời gian.
 
 Generally, you should aim for **maximal throughput** with **acceptable latency**.
+Nhìn chung là bận cần nhắm vào **tối đa hoá lưu lượng** với **độ trễ ở mức chấp nhận**
 
 ### Source(s) and further reading
 
