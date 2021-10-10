@@ -1258,7 +1258,7 @@ Sample data well-suited for NoSQL:
 </p>
 
 Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
-Cache cải thiện thời gian tải trang và giảm tải lên máy chủ và cơ sở dữ liệu. Trong mô hình này, bộ điều phối sẽ tra cứ nếu yêu cầu đã được làm trước đây và thử tìm kết quả trước đó để trả về, nhằm mục đích tiết kiệm thời gian thực thi.
+Cache cải thiện thời gian tải trang và giảm tải lên máy chủ và cơ sở dữ liệu. Trong mô hình này, bộ điều phối sẽ tra cứu nếu yêu cầu đã được làm trước đây và thử tìm kết quả trước đó để trả về, nhằm mục đích tiết kiệm thời gian thực thi.
 
 Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
 Cơ sở dữ liệu thường được lợi từ sự phân phối đồng đều giữa đọc và ghi giữa các phân vùng.  Các mục phổ biến có thể xiên khả năng phân phối, gây nên tắc nghẽn.  Đặt cache trước cơ sở dữ liệu có thể giúp hấp thu mất cân bằng tải và "gai" liên lạc thông tin. # FIXME: bad translation, I'm not sure if whether "gai" as "spike" is an acceptable analogy in Vietnamese.
