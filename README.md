@@ -3,6 +3,16 @@
 **Help [translate](TRANSLATIONS.md) this guide!**
 
 # The System Design Primer
+In the first section we'll give you an intro to systems design, guidance on how to prepare your studies and how to approach the interview. 
+
+We then dive into the actual content. First talking about concepts around system design, like scalability, latency, throughput, availability/consistency, etc. The next big chunk of content is talking about the specificy components of system design: DNSs, CDNs, databases, load balancers, communication, cache, asynchronimm, among others.
+
+After that, there are examples of system design interview questions, along with their answers. We also have suggestion on how to practice, like using Anki flashcards.
+
+If you haven't had enough, toward the end there are references to real world architectures and companies' blogs, and some additional information that might be useful.
+
+The last bit is administrativia: what's under construction, credits, contact info and license information.
+
 # Index
 - [The System Design Primer](#the-system-design-primer)
 - [Index](#index)
