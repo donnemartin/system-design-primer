@@ -3,17 +3,194 @@
 **Help [translate](TRANSLATIONS.md) this guide!**
 
 # The System Design Primer
+# Index
+- [The System Design Primer](#the-system-design-primer)
+- [Index](#index)
+- [Intro](#intro)
+  - [Motivation](#motivation)
+  - [Study guide](#study-guide)
+  - [Learn how to design large-scale systems](#learn-how-to-design-large-scale-systems)
+    - [Learn from the open source community](#learn-from-the-open-source-community)
+  - [Prep for the system design interview](#prep-for-the-system-design-interview)
+  - [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
+    - [Step 1: Outline use cases, constraints, and assumptions](#step-1-outline-use-cases-constraints-and-assumptions)
+    - [Step 2: Create a high level design](#step-2-create-a-high-level-design)
+    - [Step 3: Design core components](#step-3-design-core-components)
+    - [Step 4: Scale the design](#step-4-scale-the-design)
+    - [Back-of-the-envelope calculations](#back-of-the-envelope-calculations)
+    - [Source(s) and further reading](#sources-and-further-reading)
+- [System Design Concepts](#system-design-concepts)
+  - [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
+  - [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
+  - [Performance vs scalability](#performance-vs-scalability)
+    - [Source(s) and further reading](#sources-and-further-reading-1)
+  - [Latency vs throughput](#latency-vs-throughput)
+    - [Source(s) and further reading](#sources-and-further-reading-2)
+  - [Availability vs consistency](#availability-vs-consistency)
+    - [CAP theorem](#cap-theorem)
+      - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+      - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+      - [Source(s) and further reading](#sources-and-further-reading-3)
+    - [Consistency patterns](#consistency-patterns)
+      - [Weak consistency](#weak-consistency)
+      - [Eventual consistency](#eventual-consistency)
+      - [Strong consistency](#strong-consistency)
+      - [Source(s) and further reading](#sources-and-further-reading-4)
+    - [Availability patterns](#availability-patterns)
+      - [Fail-over](#fail-over)
+        - [Active-passive](#active-passive)
+        - [Active-active](#active-active)
+        - [Disadvantage(s): failover](#disadvantages-failover)
+      - [Replication](#replication)
+        - [Master-slave and master-master](#master-slave-and-master-master)
+    - [Availability in numbers](#availability-in-numbers)
+      - [99.9% availability - three 9s](#999-availability---three-9s)
+      - [99.99% availability - four 9s](#9999-availability---four-9s)
+      - [Availability in parallel vs in sequence](#availability-in-parallel-vs-in-sequence)
+        - [In sequence](#in-sequence)
+        - [In parallel](#in-parallel)
+- [Systems Design Components](#systems-design-components)
+  - [Domain name system](#domain-name-system)
+    - [Disadvantage(s): DNS](#disadvantages-dns)
+    - [Source(s) and further reading](#sources-and-further-reading-5)
+  - [Content delivery network](#content-delivery-network)
+    - [Push CDNs](#push-cdns)
+    - [Pull CDNs](#pull-cdns)
+    - [Disadvantage(s): CDN](#disadvantages-cdn)
+    - [Source(s) and further reading](#sources-and-further-reading-6)
+  - [Load balancer](#load-balancer)
+    - [Layer 4 load balancing](#layer-4-load-balancing)
+    - [Layer 7 load balancing](#layer-7-load-balancing)
+    - [Horizontal scaling](#horizontal-scaling)
+      - [Disadvantage(s): horizontal scaling](#disadvantages-horizontal-scaling)
+    - [Disadvantage(s): load balancer](#disadvantages-load-balancer)
+    - [Source(s) and further reading](#sources-and-further-reading-7)
+  - [Reverse proxy (web server)](#reverse-proxy-web-server)
+  - [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
+    - [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
+    - [Source(s) and further reading](#sources-and-further-reading-8)
+  - [Application layer](#application-layer)
+    - [Microservices](#microservices)
+    - [Service Discovery](#service-discovery)
+    - [Disadvantage(s): application layer](#disadvantages-application-layer)
+    - [Source(s) and further reading](#sources-and-further-reading-9)
+  - [Database](#database)
+    - [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+      - [Master-slave replication](#master-slave-replication)
+        - [Disadvantage(s): master-slave replication](#disadvantages-master-slave-replication)
+      - [Master-master replication](#master-master-replication)
+        - [Disadvantage(s): master-master replication](#disadvantages-master-master-replication)
+      - [Disadvantage(s): replication](#disadvantages-replication)
+        - [Source(s) and further reading: replication](#sources-and-further-reading-replication)
+      - [Federation](#federation)
+        - [Disadvantage(s): federation](#disadvantages-federation)
+        - [Source(s) and further reading: federation](#sources-and-further-reading-federation)
+      - [Sharding](#sharding)
+        - [Disadvantage(s): sharding](#disadvantages-sharding)
+        - [Source(s) and further reading: sharding](#sources-and-further-reading-sharding)
+    - [Denormalization](#denormalization)
+      - [Disadvantage(s): denormalization](#disadvantages-denormalization)
+      - [Source(s) and further reading: denormalization](#sources-and-further-reading-denormalization)
+    - [SQL tuning](#sql-tuning)
+      - [Tighten up the schema](#tighten-up-the-schema)
+      - [Use good indices](#use-good-indices)
+      - [Avoid expensive joins](#avoid-expensive-joins)
+      - [Partition tables](#partition-tables)
+      - [Tune the query cache](#tune-the-query-cache)
+      - [Source(s) and further reading: SQL tuning](#sources-and-further-reading-sql-tuning)
+    - [NoSQL](#nosql)
+      - [Key-value store](#key-value-store)
+        - [Source(s) and further reading: key-value store](#sources-and-further-reading-key-value-store)
+      - [Document store](#document-store)
+        - [Source(s) and further reading: document store](#sources-and-further-reading-document-store)
+    - [Wide column store](#wide-column-store)
+      - [Source(s) and further reading: wide column store](#sources-and-further-reading-wide-column-store)
+    - [Graph database](#graph-database)
+      - [Source(s) and further reading: graph](#sources-and-further-reading-graph)
+      - [Source(s) and further reading: NoSQL](#sources-and-further-reading-nosql)
+    - [SQL or NoSQL](#sql-or-nosql)
+      - [Source(s) and further reading: SQL or NoSQL](#sources-and-further-reading-sql-or-nosql)
+  - [Cache](#cache)
+    - [Client caching](#client-caching)
+      - [CDN caching](#cdn-caching)
+      - [Web server caching](#web-server-caching)
+    - [Database caching](#database-caching)
+    - [Application caching](#application-caching)
+    - [Caching at the database query level](#caching-at-the-database-query-level)
+    - [Caching at the object level](#caching-at-the-object-level)
+    - [When to update the cache](#when-to-update-the-cache)
+      - [Cache-aside](#cache-aside)
+        - [Disadvantage(s): cache-aside](#disadvantages-cache-aside)
+      - [Write-through](#write-through)
+        - [Disadvantage(s): write through](#disadvantages-write-through)
+      - [Write-behind (write-back)](#write-behind-write-back)
+        - [Disadvantage(s): write-behind](#disadvantages-write-behind)
+      - [Refresh-ahead](#refresh-ahead)
+        - [Disadvantage(s): refresh-ahead](#disadvantages-refresh-ahead)
+    - [Disadvantage(s): cache](#disadvantages-cache)
+    - [Source(s) and further reading](#sources-and-further-reading-10)
+  - [Asynchronism](#asynchronism)
+    - [Message queues](#message-queues)
+    - [Task queues](#task-queues)
+    - [Back pressure](#back-pressure)
+    - [Disadvantage(s): asynchronism](#disadvantages-asynchronism)
+    - [Source(s) and further reading](#sources-and-further-reading-11)
+  - [Communication](#communication)
+    - [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
+      - [Source(s) and further reading: HTTP](#sources-and-further-reading-http)
+    - [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
+    - [User datagram protocol (UDP)](#user-datagram-protocol-udp)
+      - [Source(s) and further reading: TCP and UDP](#sources-and-further-reading-tcp-and-udp)
+    - [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+      - [Disadvantage(s): RPC](#disadvantages-rpc)
+    - [Representational state transfer (REST)](#representational-state-transfer-rest)
+      - [Disadvantage(s): REST](#disadvantages-rest)
+    - [RPC and REST calls comparison](#rpc-and-rest-calls-comparison)
+    - [Source(s) and further reading: REST and RPC](#sources-and-further-reading-rest-and-rpc)
+- [Security](#security)
+  - [Source(s) and further reading](#sources-and-further-reading-12)
+- [Examples](#examples)
+  - [System design interview questions with solutions](#system-design-interview-questions-with-solutions)
+    - [Design Pastebin.com (or Bit.ly)](#design-pastebincom-or-bitly)
+    - [Design the Twitter timeline and search (or Facebook feed and search)](#design-the-twitter-timeline-and-search-or-facebook-feed-and-search)
+    - [Design a web crawler](#design-a-web-crawler)
+    - [Design Mint.com](#design-mintcom)
+    - [Design the data structures for a social network](#design-the-data-structures-for-a-social-network)
+    - [Design a key-value store for a search engine](#design-a-key-value-store-for-a-search-engine)
+    - [Design Amazon's sales ranking by category feature](#design-amazons-sales-ranking-by-category-feature)
+    - [Design a system that scales to millions of users on AWS](#design-a-system-that-scales-to-millions-of-users-on-aws)
+- [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions)
+- [Practice](#practice)
+  - [Anki flashcards](#anki-flashcards)
+  - [Additional system design interview questions](#additional-system-design-interview-questions)
+- [Real world architectures](#real-world-architectures)
+- [Company architectures](#company-architectures)
+  - [Coding Resource: Interactive Coding Challenges](#coding-resource-interactive-coding-challenges)
+- [Additional Resources](#additional-resources)
+  - [Contributing](#contributing)
+  - [Appendix](#appendix)
+    - [Powers of two table](#powers-of-two-table)
+      - [Source(s) and further reading](#sources-and-further-reading-13)
+    - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+      - [Latency numbers visualized](#latency-numbers-visualized)
+      - [Source(s) and further reading](#sources-and-further-reading-14)
+    - [Company engineering blogs](#company-engineering-blogs)
+      - [Source(s) and further reading](#sources-and-further-reading-15)
+- [Under development](#under-development)
+- [Credits](#credits)
+- [Contact info](#contact-info)
+- [License](#license)
 
 # Intro
 ## Motivation
 
-> Learn how to design large-scale systems.
->
-> Prep for the system design interview.
+Learn how to design large-scale systems.
+
+Prep for the system design interview.
 
 ## Study guide
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+Suggested topics to review based on your interview timeline (short, medium, long).
 
 ![Imgur](images/OfVllex.png)
 
@@ -47,7 +224,7 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-### Learn how to design large-scale systems
+## Learn how to design large-scale systems
 
 Learning how to design scalable systems will help you become a better engineer.
 
@@ -61,20 +238,13 @@ This is a continually updated, open source project.
 
 [Contributions](#contributing) are welcome!
 
-# Approaching the interview
-### Prep for the system design interview
+## Prep for the system design interview
 
 In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
 
 **Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
 
 Additional topics for interview prep:
-
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
 
 ## How to approach a system design interview question
 
@@ -145,45 +315,21 @@ Check out the following links to get a better idea of what to expect:
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-# Systems Design
-## Index of system design topics
-
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
->
-> Each section contains links to more in-depth resources.
-
-<p align="center">
-  <img src="images/jrUBAF7.png">
-  <br/>
-</p>
-
-# Concepts
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-
-## System design topics: start here
-
-New to system design?
+# System Design Concepts
 
 First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
 
-### Step 1: Review the scalability video lecture
+Next, we'll look at high-level trade-offs:
+
+* **Performance** vs **scalability**
+* **Latency** vs **throughput**
+* **Availability** vs **consistency**
+
+Keep in mind that **everything is a trade-off**.
+
+Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+
+## Step 1: Review the scalability video lecture
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
@@ -195,7 +341,7 @@ First, you'll need a basic understanding of common principles, learning about wh
     * Database replication
     * Database partitioning
 
-### Step 2: Review the scalability article
+## Step 2: Review the scalability article
 
 [Scalability](http://www.lecloud.net/tagged/scalability/chrono)
 
@@ -204,18 +350,6 @@ First, you'll need a basic understanding of common principles, learning about wh
     * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
-
-### Next steps
-
-Next, we'll look at high-level trade-offs:
-
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
-
-Keep in mind that **everything is a trade-off**.
-
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
 
 ## Performance vs scalability
 
@@ -271,46 +405,46 @@ Responses return the most readily available version of the data available on any
 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 
-### Source(s) and further reading
+#### Source(s) and further reading
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Consistency patterns
+### Consistency patterns
 
 With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
 
-### Weak consistency
+#### Weak consistency
 
 After a write, reads may or may not see it.  A best effort approach is taken.
 
 This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
 
-### Eventual consistency
+#### Eventual consistency
 
 After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
 
 This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
 
-### Strong consistency
+#### Strong consistency
 
 After a write, reads will see it.  Data is replicated synchronously.
 
 This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
 
-### Source(s) and further reading
+#### Source(s) and further reading
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+### Availability patterns
 
 There are two complementary patterns to support high availability: **fail-over** and **replication**.
 
-### Fail-over
+#### Fail-over
 
-#### Active-passive
+##### Active-passive
 
 With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
 
@@ -318,7 +452,7 @@ The length of downtime is determined by whether the passive server is already ru
 
 Active-passive failover can also be referred to as master-slave failover.
 
-#### Active-active
+##### Active-active
 
 In active-active, both servers are managing traffic, spreading the load between them.
 
@@ -326,14 +460,14 @@ If the servers are public-facing, the DNS would need to know about the public IP
 
 Active-active failover can also be referred to as master-master failover.
 
-### Disadvantage(s): failover
+##### Disadvantage(s): failover
 
 * Fail-over adds more hardware and additional complexity.
 * There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
 
-### Replication
+#### Replication
 
-#### Master-slave and master-master
+##### Master-slave and master-master
 
 This topic is further discussed in the [Database](#database) section:
 
@@ -366,7 +500,7 @@ Availability is often quantified by uptime (or downtime) as a percentage of time
 
 If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
 
-###### In sequence
+##### In sequence
 
 Overall availability decreases when two components with availability < 100% are in sequence:
 
@@ -376,7 +510,7 @@ Availability (Total) = Availability (Foo) * Availability (Bar)
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
 
-###### In parallel
+##### In parallel
 
 Overall availability increases when two components with availability < 100% are in parallel:
 
@@ -386,66 +520,13 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
 
-# Components
+# Systems Design Components
+Here's a high level conceptual design of the components of a typical system. They will be detailed in the following sections
 
 <p align="center">
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
-
-
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
-    * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
 
 ## Domain name system
 
@@ -621,7 +702,7 @@ Additional benefits include:
     * Videos
     * Etc
 
-### Load balancer vs reverse proxy
+## Load balancer vs reverse proxy
 
 * Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
 * Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
@@ -727,7 +808,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 * Conflict resolution comes more into play as more write nodes are added and as latency increases.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 
-##### Disadvantage(s): replication
+#### Disadvantage(s): replication
 
 * There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
 * Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
@@ -789,7 +870,7 @@ Common ways to shard a table of users is either through the user's last name ini
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+### Denormalization
 
 Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
 
@@ -797,17 +878,17 @@ Once data becomes distributed with techniques such as [federation](#federation) 
 
 In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
 
-##### Disadvantage(s): denormalization
+#### Disadvantage(s): denormalization
 
 * Data is duplicated.
 * Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
 * A denormalized database under heavy write load might perform worse than its normalized counterpart.
 
-###### Source(s) and further reading: denormalization
+#### Source(s) and further reading: denormalization
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+### SQL tuning
 
 SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
 
@@ -818,7 +899,7 @@ It's important to **benchmark** and **profile** to simulate and uncover bottlene
 
 Benchmarking and profiling might point you to the following optimizations.
 
-##### Tighten up the schema
+#### Tighten up the schema
 
 * MySQL dumps to disk in contiguous blocks for fast access.
 * Use `CHAR` instead of `VARCHAR` for fixed-length fields.
@@ -830,7 +911,7 @@ Benchmarking and profiling might point you to the following optimizations.
 * `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
 * Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
 
-##### Use good indices
+#### Use good indices
 
 * Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
 * Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
@@ -838,19 +919,19 @@ Benchmarking and profiling might point you to the following optimizations.
 * Writes could also be slower since the index also needs to be updated.
 * When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
 
-##### Avoid expensive joins
+#### Avoid expensive joins
 
 * [Denormalize](#denormalization) where performance demands it.
 
-##### Partition tables
+#### Partition tables
 
 * Break up a table by putting hot spots in a separate table to help keep it in memory.
 
-##### Tune the query cache
+#### Tune the query cache
 
 * In some cases, the [query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) could lead to [performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
 
-##### Source(s) and further reading: SQL tuning
+#### Source(s) and further reading: SQL tuning
 
 * [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
 * [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
@@ -905,7 +986,7 @@ Document stores provide high flexibility and are often used for working with occ
 * [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
-#### Wide column store
+### Wide column store
 
 <p align="center">
   <img src="images/n16iOGk.png">
@@ -921,14 +1002,14 @@ Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs23
 
 Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
 
-##### Source(s) and further reading: wide column store
+#### Source(s) and further reading: wide column store
 
 * [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
 * [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
-#### Graph database
+### Graph database
 
 <p align="center">
   <img src="images/fNcl65g.png">
@@ -942,7 +1023,7 @@ In a graph database, each node is a record and each arc is a relationship betwee
 
 Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
 
-##### Source(s) and further reading: graph
+#### Source(s) and further reading: graph
 
 * [Graph database](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
@@ -993,7 +1074,7 @@ Sample data well-suited for NoSQL:
 * Frequently accessed ('hot') tables
 * Metadata/lookup tables
 
-##### Source(s) and further reading: SQL or NoSQL
+#### Source(s) and further reading: SQL or NoSQL
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
@@ -1014,11 +1095,11 @@ Databases often benefit from a uniform distribution of reads and writes across i
 
 Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
 
-### CDN caching
+#### CDN caching
 
 [CDNs](#content-delivery-network) are considered a type of cache.
 
-### Web server caching
+#### Web server caching
 
 [Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
 
@@ -1415,7 +1496,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
 </p>
 
-#### Source(s) and further reading: REST and RPC
+### Source(s) and further reading: REST and RPC
 
 * [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
@@ -1426,7 +1507,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Security
+# Security
 
 This section could use some updates.  Consider [contributing](#contributing)!
 
@@ -1437,7 +1518,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 * Use parameterized queries to prevent SQL injection.
 * Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-### Source(s) and further reading
+## Source(s) and further reading
 
 * [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
@@ -1510,7 +1591,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+# Object-oriented design interview questions with solutions
 
 > Common object-oriented design interview questions with sample discussions, code, and diagrams.
 >
@@ -1529,8 +1610,55 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
+# Practice
+## Anki flashcards
 
-### Real world architectures
+<p align="center">
+  <img src="images/zdCAkB3.png">
+  <br/>
+</p>
+
+The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+
+* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+
+Great for use while on-the-go.
+
+## Additional system design interview questions
+
+> Common system design interview questions, with links to resources on how to solve each.
+
+| Question | Reference(s) |
+|---|---|
+| Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
+| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Design a recommendation system like Amazon's | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
+| Design a tinyurl system like Bitly | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
+| Design a chat app like WhatsApp | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
+| Design a picture sharing system like Instagram | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
+| Design the Facebook news feed function | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
+| Design the Facebook timeline function | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
+| Design the Facebook chat function | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
+| Design a graph search function like Facebook's | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| Design a content delivery network like CloudFlare | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
+| Design a trending topic system like Twitter's | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
+| Design a random ID generation system | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
+| Return the top k requests during a time interval | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/docs/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
+| Design a system that serves data from multiple data centers | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
+| Design an online multiplayer card game | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
+| Add a system design question | [Contribute](#contributing) |
+
+
+# Real world architectures
 
 > Articles on how real world systems are designed.
 
@@ -1570,7 +1698,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | | Add an architecture | [Contribute](#contributing) |
 
-### Company architectures
+# Company architectures
 
 | Company | Reference(s) |
 |---|---|
@@ -1598,54 +1726,7 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
-# Practice
-## Anki flashcards
-
-<p align="center">
-  <img src="images/zdCAkB3.png">
-  <br/>
-</p>
-
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
-
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
-
-Great for use while on-the-go.
-
-### Additional system design interview questions
-
-> Common system design interview questions, with links to resources on how to solve each.
-
-| Question | Reference(s) |
-|---|---|
-| Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
-| Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
-| Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Design a recommendation system like Amazon's | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
-| Design a tinyurl system like Bitly | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
-| Design a chat app like WhatsApp | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-| Design a picture sharing system like Instagram | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
-| Design the Facebook news feed function | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
-| Design the Facebook timeline function | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
-| Design the Facebook chat function | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
-| Design a graph search function like Facebook's | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| Design a content delivery network like CloudFlare | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
-| Design a trending topic system like Twitter's | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
-| Design a random ID generation system | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
-| Return the top k requests during a time interval | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/docs/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
-| Design a system that serves data from multiple data centers | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| Design an online multiplayer card game | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
-| Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
-| Add a system design question | [Contribute](#contributing) |
-
-### Coding Resource: Interactive Coding Challenges
+## Coding Resource: Interactive Coding Challenges
 
 Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
@@ -1674,19 +1755,6 @@ Feel free to submit pull requests to help:
 Content that needs some polishing is placed [under development](#under-development).
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
-
-
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
 
 ## Appendix
 
@@ -1759,9 +1827,6 @@ Handy metrics based on numbers above:
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-
-
-
 ### Company engineering blogs
 
 > Architectures for companies you are interviewing with.
@@ -1814,7 +1879,7 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+# Under development
 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
 
@@ -1823,7 +1888,7 @@ Interested in adding a section or helping complete one in-progress?  [Contribute
 * Scatter gather
 * [Contribute](#contributing)
 
-## Credits
+# Credits
 
 Credits and sources are provided throughout this repo.
 
@@ -1839,13 +1904,13 @@ Special thanks to:
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Contact info
+# Contact info
 
 Feel free to contact me to discuss any issues, questions, or comments.
 
 My contact info can be found on my [GitHub page](https://github.com/donnemartin).
 
-## License
+# License
 
 *I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
 
