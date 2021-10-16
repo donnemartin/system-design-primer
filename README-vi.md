@@ -581,26 +581,35 @@ AP is a good choice if the business needs allow for [eventual consistency](#even
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
 ## Consistency patterns
+## Các khuôn mẫu về tính nhất quán
 
 With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+Với nhiều phiên bản của cùng một dữ liệu, chúng ta đối mặt với những cách thức đồng bộ để các client nhìn dữ liệu một cách nhất quán.  Gợi nhớ lại định nghĩa của tính nhất quán [Định lý CAP](#cap-theorem) - Mọi hành vi đọc nhận được phiên bản ghi gần nhất hoặc là một lỗi.
 
 ### Weak consistency
+### Nhất quán kém
 
 After a write, reads may or may not see it.  A best effort approach is taken.
+Sau một sự kiện ghi, các lần đọc sau có thể hoặc không thấy được sự thay đổi.  Phương cách "tốt nhất có thể" được áp dụng.  # FIXME: bad translation
 
 This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+Phương cách này thấy áp dụng ở nhiều hệ thống như memcached.  Nhất quán kém làm việc tốt trong cách nhu cầu cần thời gian thực như VoIP, video chat, và game thời gian thực nhiều người chơi.  Ví dụ nếu trong một cuộc gọi, ta bị mất tín hiệu một vài giây, khi lấy lại được kết nối thì bạn không nghe lại cuộc nói chuyện trong quá trình đứt kết nối.
 
 ### Eventual consistency
 
 After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+Sau một sự kiện ghi, các lần đọc sau sẽ dần thấy được (thường thì trong một vài milli giây).  Dự liệu được tái tạo một cách bất đồng bộ.
 
 This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+Cách tiếp cận này được thấy trong các hệ thống như là DNS hay email. Eventual consistency làm việc tốt trong các hệ thống với availability cao.
 
 ### Strong consistency
 
 After a write, reads will see it.  Data is replicated synchronously.
+Sau một sự kiện ghi, các lần đọc sau sẽ (chắc chắn) thấy.  Dữ liệu được tái tạo một cách đồng bộ.
 
 This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+Cách tiếp cận này được thấy trong file systems và RDBMS.  Strong consistency làm việc tốt trong các hệ thống cần transactions.
 
 ### Source(s) and further reading
 
@@ -2010,7 +2019,14 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Tasks vs. jobs vs. operations: should be translated consistently (tác vụ, công việc, thao tác?).
 - Cache: "tiền bộ nhớ"?
 - Item: highly contextual, it doesn't really have a parlance on the Vietnamese side.
+- Client
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
 - Database: "cơ sở dữ liệu", but virtually no one use them.
+
+
+### Words that I'm deciding keep as-is for now
+
+- Availability
+- Consistency
