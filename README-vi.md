@@ -503,8 +503,10 @@ Next, we'll look at high-level trade-offs:
 * **Availability** vs **consistency**
 
 Keep in mind that **everything is a trade-off**.
+Nên nhớ rằng **mọi thứ đều là đánh đổi**
 
 Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Sau đó chung ta sẽ đi sâu vào từng chủ đề cụ thể như là DNS, CDNs và cân bằng tải.
 
 ## Performance vs scalability
 ## Hiệu năng và tính mở rộng
@@ -570,10 +572,13 @@ Waiting for a response from the partitioned node might result in a timeout error
 #### AP - availability and partition tolerance
 
 Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Các câu trả lời trả về phiên bản đang có của dữ liệu trên node, có thể không phải là bản mới nhất.  Việc ghi có thể mất thời gian để lan truyền khi các partition được phân giải.  # FIXME: "phân giải" doesn't sound right.
 
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+AP là một lựa chọn tốt cho các nhu cầu cần [eventual consistency](#eventual-consistency) hoặc các hệ thống cần tiếp tục vận hành khi đối mặt với các lỗi hỏng bên ngoài.
 
 ### Source(s) and further reading
+### Các nguồn tài liệu đọc thêm
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
