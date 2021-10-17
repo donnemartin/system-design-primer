@@ -134,10 +134,9 @@ To generate the unique url, we could:
 def base_encode(num, base=62):
     digits = []
     while num > 0:
-        remainder = num % base
+        num, remainder = divmod(num, base)
         digits.append(remainder)
-        num = num // base
-    digits = digits.reverse()
+    digits.reverse()
     return digits
 ```
 
