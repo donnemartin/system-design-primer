@@ -106,7 +106,7 @@ c = Obj("c")
 d = Obj("d")
 a.adj_nodes = {"b":b, "c":c}
 b.adj_nodes = {"a":a}
-c.adj_nodes = {"a":a,"d":d}
+c.adj_nodes = {"a":a, "d":d}
 d.adj_nodes = {"c":c}
 print(obj.shortest_path(a, d))
 """
