@@ -133,11 +133,12 @@ To generate the unique url, we could:
 ```python
 def base_encode(num, base=62):
     digits = []
-    while num > 0
-      remainder = modulo(num, base)
-      digits.push(remainder)
-      num = divide(num, base)
-    digits = digits.reverse
+    while num > 0:
+        remainder = num % base
+        digits.append(remainder)
+        num = num // base
+    digits = digits.reverse()
+    return digits
 ```
 
 * Take the first 7 characters of the output, which results in 62^7 possible values and should be sufficient to handle our constraint of 360 million shortlinks in 3 years:
