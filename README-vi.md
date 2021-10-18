@@ -792,6 +792,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
 ## Load balancer
+## Cân bằng tải
 
 <p align="center">
   <img src="images/h81n9iK.png">
@@ -800,12 +801,18 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 </p>
 
 Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+Cân bằng tải phân phối các yêu cầu từ máy khách đến các tài nguyên tính toán như là máy chủ ứng dụng và cơ sở dữ liệu.  Trong mỗi trường hợp, các cân bằng tải trả hồi đáp từ các tài nguyên tính toán về cho máy khách thích hợp.  Cân bằng tải hiệu quả cho:
+
 
 * Preventing requests from going to unhealthy servers
+* Tránh gửi yêu cầu đến các máy chủ không khoẻ mạnh  # FIXME: although unhealthy is literally "không khoẻ**, but the translation in this context sounds unusual.
 * Preventing overloading resources
+* Tránh làm quá tải tài nguyên
 * Helping to eliminate a single point of failure
+* Giúp triệt tiêu "single point of failure"  # FIXME: any parlance in Vietnamese?
 
 Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+Cân bằng tải có thể được hiện thực hoá với phân cứng (đắt đỏ) hoặc với phần mềm như là HAProxy.
 
 Additional benefits include:
 
@@ -2004,9 +2011,6 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
     http://creativecommons.org/licenses/by/4.0/
-
-
-## Vietnamese-specific notes
 
 
 ## Vietnamese Meta Notes (will remove after the translation is done)
