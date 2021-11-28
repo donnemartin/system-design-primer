@@ -159,7 +159,7 @@ $ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123", \
 * **读取 API**服务器调用**时间轴服务**进行以下操作：
     * 从**内存缓存**读取时间轴数据，其中包括推特 id 与用户 id - O(1)
     * 通过 [multiget](http://redis.io/commands/mget) 向**推特信息服务**进行查询，以获取相关 id 推特的额外信息 - O(n)
-    * 通过 muiltiget 向**用户信息服务**进行查询，以获取相关 id 用户的额外信息 - O(n)
+    * 通过 multiget 向**用户信息服务**进行查询，以获取相关 id 用户的额外信息 - O(n)
 
 REST API：
 
