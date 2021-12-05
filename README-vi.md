@@ -926,8 +926,10 @@ Workers in the application layer also help enable [asynchronism](#asynchronism).
 ### Microservices
 
 Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+Liên quan đến chủ đề này là [microservices](https://en.wikipedia.org/wiki/Microservices), có thể được diễn đạt là một bộ của những service được deploy độc lập, nhỏ, tách rời. Mỗi service chạy một process duy nhất và liên lạc thông qua một cơ chế đơn giản, được định nghĩa rõ ràng. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>  # FIXME: incomplete translation
 
 Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
+Ví dụ, Pinterest, có thể có những microservices sau: thông tin người dùng, theo dõi, feed, tìm kiếm, tải hình, vâng vâng.
 
 ### Service Discovery
 
