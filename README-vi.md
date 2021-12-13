@@ -483,8 +483,16 @@ First, you'll need a basic understanding of common principles, learning about wh
     * Load balancing
     * Database replication
     * Database partitioning
+* Các chủ đề bao gồm:
+    * Vertical scaling
+    * Horizontal scaling
+    * Caching
+    * Cân bằng tải
+    * Bản sao cơ sở dữ liệu
+    * Phân vùng cơ sở dữ liệu
 
 ### Step 2: Review the scalability article
+### Bước 2: Xem qua các bài báo về scalability
 
 [Scalability](http://www.lecloud.net/tagged/scalability/chrono)
 
@@ -566,10 +574,13 @@ In a distributed computer system, you can only support two of the following guar
 *Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
 
 #### CP - consistency and partition tolerance
+#### CP - consistency và partition tolerance
 
 Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+Việc đợi phản hồi từ một node bị phân vùng (mạng) có thể mang lại kết quả lỗi timeout. CP là một lựa chọn tốt nếu nhu cầu đòi hỏi đọc và ghi phải atomic.
 
 #### AP - availability and partition tolerance
+#### AP - availability và partition tolerance
 
 Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
 Các câu trả lời trả về phiên bản đang có của dữ liệu trên node, có thể không phải là bản mới nhất.  Việc ghi có thể mất thời gian để lan truyền khi các partition được phân giải.  # FIXME: "phân giải" doesn't sound right.
@@ -2031,6 +2042,7 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Cache: "tiền bộ nhớ"?
 - Item: highly contextual, it doesn't really have a parlance on the Vietnamese side.
 - Client
+- Replication/replica
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
