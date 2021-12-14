@@ -448,12 +448,18 @@ Check out the following links to get a better idea of what to expect:
 ![Imgur](images/jj3A5N8.png)
 
 ## Object-oriented design interview questions with solutions
+## Các câu hỏi về thiết kế hướng đối với bài giải
 
 > Common object-oriented design interview questions with sample discussions, code, and diagrams.
 >
 > Solutions linked to content in the `solutions/` folder.
 
+> Các câu hỏi phỏng vấn phổ biến về thiết kế hướng đối tượng với các thảo luận mẫu, code, và biểu đồ.
+>
+> Bài giải với các nội dung liên kết nằm trong thư mục `solutions/`
+
 >**Note: This section is under development**
+>**Chú thích: Phần này vẫn đang được phát triển**
 
 | Question | |
 |---|---|
@@ -465,6 +471,18 @@ Check out the following links to get a better idea of what to expect:
 | Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
+
+
+| Câu hỏi | |
+|---|---|
+| Thiết kế một hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Thiết kế một LRU cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Thiết kế một tổng đài | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Thiết kế một bộ bài | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Thiết kế một bãi đổ xe | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Thiết kế một server cho chat | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Thiết kế một mảng vòng | [Contribute](#contributing)  |
+| Bổ sung một câu hỏi về thiết kế hướng đối tượng | [Contribute](#contributing) |
 
 ## System design topics: start here
 
