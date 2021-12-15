@@ -882,12 +882,17 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
 
 ### Disadvantage(s): load balancer
+### Bất lợi của cân bằng tải
 
 * The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
+* Cân bằng tải có thể trở thành một điểm nghẽn hiệu suất nếu nó không có đủ tài nguyên hoặc nếu không được cấu hình phù hợp.
 * Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
+* Việc đưa vào một cân bằng tải sẽ giúp triệt tiêu "single point of failure" sẽ làm tăng thêm tính phức tạp.  # FIXME: incomplete translation
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+* Bản thân một cân bằng tải là một "single point of failure", cấu hình thêm nhiều cân bằng tải càng tăng thêm tính phức tạp.
 
 ### Source(s) and further reading
+### Nguồn đọc thêm
 
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
