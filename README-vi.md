@@ -851,7 +851,7 @@ Các lợi ích thêm:  # FIXME: bad translation
     * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
     * Bớt đi nhu cầu phải cài đặt [chứng thực X.509](https://en.wikipedia.org/wiki/X.509) trên mỗi máy chủ
 * **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
-* **Lưu phiên** - Cấp phát cookie và dẫn yêu cầu của máy khách đến đúng bản máy chủ nếu ứng dụng web không phiên  # FIXME: bad translation
+* **Lưu phiên** - Phát hành cookie và điều hướng yêu cầu từ máy khách đến đúng nơi (máy chủ, ứng dụng) mà máy khách đang làm việc nếu các ứng dụng web không theo dõi phiên.
 
 To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
 Để bảo vệ failure, thường sẽ nhiều cân bằng tải sẽ được dựng, hoặc dùng mô hình [active-passive](#active-passive) hoặc [active-active](#active-active).
