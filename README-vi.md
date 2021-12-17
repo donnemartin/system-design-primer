@@ -847,7 +847,7 @@ Additional benefits include:
 Các lợi ích thêm:  # FIXME: bad translation
 
 * **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-* **Triệt tiêu SSL** - Giải mã các requests đi đến và mã hoá responses từ máy chủ, để các máy chủ không phải thực hiện các thao tác chi chí (tính toán) cao này.
+* **Triệt tiêu SSL** - Giải mã các requests đi đến và mã hoá responses từ máy chủ, để các máy chủ không phải thực hiện các thao tác chi phí (tính toán) cao này.
     * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
     * Bớt đi nhu cầu phải cài đặt [chứng thực X.509](https://en.wikipedia.org/wiki/X.509) trên mỗi máy chủ
 * **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
