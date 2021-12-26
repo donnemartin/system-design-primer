@@ -58,7 +58,7 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/KqZ3dSx.png)
+![High level of a key-value cache to save the results of the most recent web server queries](https://i.imgur.com/KqZ3dSx.png)
 
 ## Step 3: Design core components
 
@@ -212,7 +212,7 @@ Refer to [When to update the cache](https://github.com/donnemartin/system-design
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/4j99mhe.png)
+![Scaled design of a key-value store for a search engine](https://i.imgur.com/4j99mhe.png)
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
