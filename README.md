@@ -5,7 +5,7 @@ _[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh
 # The System Design Primer
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png"/>
+  <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -46,7 +46,7 @@ Additional topics for interview prep:
 ## Anki flashcards
 
 <p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png"/>
+  <img src="images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -63,7 +63,7 @@ Great for use while on-the-go.
 Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png"/>
+  <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -93,7 +93,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 > Each section contains links to more in-depth resources.
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png"/>
+  <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
@@ -183,7 +183,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
-![Imgur](http://i.imgur.com/OfVllex.png)
+![Imgur](images/OfVllex.png)
 
 **Q: For interviews, do I need to know everything here?**
 
@@ -306,49 +306,49 @@ Check out the following links to get a better idea of what to expect:
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
 
-![Imgur](http://i.imgur.com/4edXG0T.png)
+![Imgur](images/4edXG0T.png)
 
 ### Design the Twitter timeline and search (or Facebook feed and search)
 
 [View exercise and solution](solutions/system_design/twitter/README.md)
 
-![Imgur](http://i.imgur.com/jrUBAF7.png)
+![Imgur](images/jrUBAF7.png)
 
 ### Design a web crawler
 
 [View exercise and solution](solutions/system_design/web_crawler/README.md)
 
-![Imgur](http://i.imgur.com/bWxPtQA.png)
+![Imgur](images/bWxPtQA.png)
 
 ### Design Mint.com
 
 [View exercise and solution](solutions/system_design/mint/README.md)
 
-![Imgur](http://i.imgur.com/V5q57vU.png)
+![Imgur](images/V5q57vU.png)
 
 ### Design the data structures for a social network
 
 [View exercise and solution](solutions/system_design/social_graph/README.md)
 
-![Imgur](http://i.imgur.com/cdCv5g7.png)
+![Imgur](images/cdCv5g7.png)
 
 ### Design a key-value store for a search engine
 
 [View exercise and solution](solutions/system_design/query_cache/README.md)
 
-![Imgur](http://i.imgur.com/4j99mhe.png)
+![Imgur](images/4j99mhe.png)
 
 ### Design Amazon's sales ranking by category feature
 
 [View exercise and solution](solutions/system_design/sales_rank/README.md)
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](images/MzExP06.png)
 
 ### Design a system that scales to millions of users on AWS
 
 [View exercise and solution](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](http://i.imgur.com/jj3A5N8.png)
+![Imgur](images/jj3A5N8.png)
 
 ## Object-oriented design interview questions with solutions
 
@@ -440,7 +440,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### CAP theorem
 
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png"/>
+  <img src="images/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
@@ -464,6 +464,7 @@ Responses return the most readily available version of the data available on any
 AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 
 ### Source(s) and further reading
+
 
 - [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 - [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
@@ -580,7 +581,7 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
 ## Domain name system
 
 <p align="center">
-  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
+  <img src="images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
@@ -596,12 +597,14 @@ DNS is hierarchical, with a few authoritative servers at the top level. Your rou
 
 Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services. Some DNS services can route traffic through various methods:
 
+
 - [Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
   - Prevent traffic from going to servers under maintenance
   - Balance between varying cluster sizes
   - A/B testing
 - Latency-based
 - Geolocation-based
+
 
 ### Disadvantage(s): DNS
 
@@ -618,7 +621,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 ## Content delivery network
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
+  <img src="images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
@@ -627,8 +630,10 @@ A content delivery network (CDN) is a globally distributed network of proxy serv
 
 Serving content from CDNs can significantly improve performance in two ways:
 
+
 - Users receive content at data centers close to them
 - Your servers do not have to serve requests that the CDN fulfills
+
 
 ### Push CDNs
 
@@ -659,7 +664,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 ## Load balancer
 
 <p align="center">
-  <img src="http://i.imgur.com/h81n9iK.png"/>
+  <img src="images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -729,7 +734,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ## Reverse proxy (web server)
 
 <p align="center">
-  <img src="http://i.imgur.com/n41Azff.png"/>
+  <img src="images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
@@ -772,7 +777,7 @@ Additional benefits include:
 ## Application layer
 
 <p align="center">
-  <img src="http://i.imgur.com/yB5SYwm.png"/>
+  <img src="images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -807,7 +812,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 ## Database
 
 <p align="center">
-  <img src="http://i.imgur.com/Xkm5CXz.png"/>
+  <img src="images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -830,7 +835,7 @@ There are many techniques to scale a relational database: **master-slave replica
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads. Slaves can also replicate to additional slaves in a tree-like fashion. If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
 <p align="center">
-  <img src="http://i.imgur.com/C9ioGtn.png"/>
+  <img src="images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -845,7 +850,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 Both masters serve reads and writes and coordinate with each other on writes. If either master goes down, the system can continue to operate with both reads and writes.
 
 <p align="center">
-  <img src="http://i.imgur.com/krAHLGg.png"/>
+  <img src="images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -873,7 +878,7 @@ Both masters serve reads and writes and coordinate with each other on writes. If
 #### Federation
 
 <p align="center">
-  <img src="http://i.imgur.com/U3qV33e.png"/>
+  <img src="images/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -894,7 +899,7 @@ Federation (or functional partitioning) splits up databases by function. For exa
 #### Sharding
 
 <p align="center">
-  <img src="http://i.imgur.com/wU8x5Id.png"/>
+  <img src="images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1038,7 +1043,7 @@ Document stores provide high flexibility and are often used for working with occ
 #### Wide column store
 
 <p align="center">
-  <img src="http://i.imgur.com/n16iOGk.png"/>
+  <img src="images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1047,21 +1052,25 @@ Document stores provide high flexibility and are often used for working with occ
 
 A wide column store's basic unit of data is a column (name/value pair). A column can be grouped in column families (analogous to a SQL table). Super column families further group column families. You can access each column independently with a row key, and columns with the same row key form a row. Each value contains a timestamp for versioning and for conflict resolution.
 
+
 Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook. Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
+
 
 Wide column stores offer high availability and high scalability. They are often used for very large data sets.
 
 ##### Source(s) and further reading: wide column store
+
 
 - [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 - [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
 - [HBase architecture](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
 - [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
+
 #### Graph database
 
 <p align="center">
-  <img src="http://i.imgur.com/fNcl65g.png"/>
+  <img src="images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1089,7 +1098,7 @@ Graphs databases offer high performance for data models with complex relationshi
 ### SQL or NoSQL
 
 <p align="center">
-  <img src="http://i.imgur.com/wXGqG5f.png"/>
+  <img src="images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1131,7 +1140,7 @@ Sample data well-suited for NoSQL:
 ## Cache
 
 <p align="center">
-  <img src="http://i.imgur.com/Q6z24La.png"/>
+  <img src="images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -1158,7 +1167,9 @@ Your database usually includes some level of caching in a default configuration,
 
 ### Application caching
 
+
 In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage. Since the data is held in RAM, it is much faster than typical databases where data is stored on disk. RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+
 
 Redis has the following additional features:
 
@@ -1202,7 +1213,7 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 #### Cache-aside
 
 <p align="center">
-  <img src="http://i.imgur.com/ONjORqk.png"/>
+  <img src="images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1238,7 +1249,7 @@ Subsequent reads of data added to cache are fast. Cache-aside is also referred t
 #### Write-through
 
 <p align="center">
-  <img src="http://i.imgur.com/0vBc0hN.png"/>
+  <img src="images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1273,7 +1284,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 #### Write-behind (write-back)
 
 <p align="center">
-  <img src="http://i.imgur.com/rgSrvjG.png"/>
+  <img src="images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1291,7 +1302,7 @@ In write-behind, the application does the following:
 #### Refresh-ahead
 
 <p align="center">
-  <img src="http://i.imgur.com/kxtjqgE.png"/>
+  <img src="images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1323,7 +1334,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ## Asynchronism
 
 <p align="center">
-  <img src="http://i.imgur.com/54GYsSx.png"/>
+  <img src="images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -1349,7 +1360,7 @@ The user is not blocked and the job is processed in the background. During this 
 
 Tasks queues receive tasks and their related data, runs them, then delivers their results. They can support scheduling and can be used to run computationally-intensive jobs in the background.
 
-**Celery** has support for scheduling and primarily has python support.
+**[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
 
 ### Back pressure
 
@@ -1369,7 +1380,7 @@ If queues start to grow significantly, the queue size can become larger than mem
 ## Communication
 
 <p align="center">
-  <img src="http://i.imgur.com/5KeocQs.jpg"/>
+  <img src="images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
@@ -1401,7 +1412,7 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 ### Transmission control protocol (TCP)
 
 <p align="center">
-  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
+  <img src="images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1425,7 +1436,7 @@ Use TCP over UDP when:
 ### User datagram protocol (UDP)
 
 <p align="center">
-  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
+  <img src="images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1454,7 +1465,7 @@ Use UDP over TCP when:
 ### Remote procedure call (RPC)
 
 <p align="center">
-  <img src="http://i.imgur.com/iF4Mkb5.png"/>
+  <img src="images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
@@ -1612,9 +1623,9 @@ Read 4 KB randomly from SSD*           150,000   ns      150 us          ~1GB/se
 Read 1 MB sequentially from memory     250,000   ns      250 us
 Round trip within same datacenter      500,000   ns      500 us
 Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
-Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
+HDD seek                            10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
 Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
-Read 1 MB sequentially from disk    30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
+Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
 Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
 Notes
@@ -1625,6 +1636,7 @@ Notes
 ```
 
 Handy metrics based on numbers above:
+
 
 - Read sequentially from disk at 30 MB/s
 - Read sequentially from 1 Gbps Ethernet at 100 MB/s
@@ -1647,6 +1659,7 @@ Handy metrics based on numbers above:
 ### Additional system design interview questions
 
 > Common system design interview questions, with links to resources on how to solve each.
+
 
 | Question                                                    | Reference(s)                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1674,12 +1687,13 @@ Handy metrics based on numbers above:
 | Design an API rate limiter                                  | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters)                                                                                                                                                                                                                                                                                                                                                                                           |
 | Add a system design question                                | [Contribute](#contributing)                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
+
 ### Real world architectures
 
 > Articles on how real world systems are designed.
 
 <p align="center">
-  <img src="http://i.imgur.com/TcUo2fw.png"/>
+  <img src="images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
@@ -1716,6 +1730,7 @@ Handy metrics based on numbers above:
 
 ### Company architectures
 
+
 | Company        | Reference(s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Amazon         | [Amazon architecture](http://highscalability.com/amazon-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -1742,11 +1757,13 @@ Handy metrics based on numbers above:
 | WhatsApp       | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | YouTube        | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
+
 ### Company engineering blogs
 
 > Architectures for companies you are interviewing with.
 >
 > Questions you encounter might be from the same domain.
+
 
 - [Airbnb Engineering](http://nerds.airbnb.com/)
 - [Atlassian Developers](https://developer.atlassian.com/blog/)
@@ -1788,6 +1805,7 @@ Handy metrics based on numbers above:
 - [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
 - [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 - [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
+
 
 #### Source(s) and further reading
 
