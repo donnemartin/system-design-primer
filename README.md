@@ -27,7 +27,7 @@ This repo is an **organized collection** of resources to help you learn how to b
 
 This is a continually updated, open source project.
 
-[Contributions](#contributing) are welcome!
+[Contributions](#contributing) are welcome but need at least amount 5$!
 
 ### Prep for the system design interview
 
