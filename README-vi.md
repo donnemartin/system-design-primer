@@ -933,10 +933,14 @@ Additional benefits include:
     * Etc
 
 ### Load balancer vs reverse proxy
+### Cân bằng tải và proxy đảo  # FIXME: need to check if "proxy đảo** is a word.
 
 * Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
+* Việc triển khai một cân bằng tải là hữu dụng khi bạn có nhiều máy trạm. Thông thường thì cân bằng tải điều hướng lưu thông đến một tập máy trạm phục vụ chung một chức năng.
 * Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
+* Proxy đảo có thể hữu dụng ngay cả với chỉ một máy trạm web, hoặc một máy trạm ứng dung, mở ra những ưu thế được mô tả ở phần trước.
 * Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
+* Các giải pháp như là NGINX và HAProxy có thể hỗ trợ cả proxy đảo ở lớp 7 và cân bằng tải.
 
 ### Disadvantage(s): reverse proxy
 
