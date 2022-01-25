@@ -1330,20 +1330,29 @@ Databases often benefit from a uniform distribution of reads and writes across i
 Cơ sở dữ liệu thường được lợi từ sự phân phối đồng đều giữa đọc và ghi giữa các phân vùng.  Các mục phổ biến có thể xiên khả năng phân phối, gây nên tắc nghẽn.  Đặt cache trước cơ sở dữ liệu có thể giúp hấp thu mất cân bằng tải và "gai" liên lạc thông tin. # FIXME: bad translation, I'm not sure if whether "gai" as "spike" is an acceptable analogy in Vietnamese.
 
 ### Client caching
+### Cache ở máy khách
 
 Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
+Cache có thể được đặt ở phía máy khách (hệ điều hành hoặc trình duyệt), [máy chủ](#reverse-proxy-web-server), hoặc ở một lớp cache riêng biệt
 
 ### CDN caching
+### Cache ở CDN
 
 [CDNs](#content-delivery-network) are considered a type of cache.
+[CDNs](#content-delivery-network) được coi là một dạng cache.
 
 ### Web server caching
+### Cache ở máy chủ web
 
 [Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+[Reverse proxy](#reverse-proxy-web-server) và cache như là [Varnish](https://www.varnish-cache.org/) có thể trực tiếp cung cấp nội dung tĩnh hoặc động.  Máy chủ web có thể cache request, trả về response mà không cần liên lạc với máy chủ ứng dụng.
 
 ### Database caching
+### Cache ở cơ sở dữ liệu
 
 Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+Cơ sở dữ liệu có thể bao gồm một vài mức độ cache ở cấu hình mặc định, tối ưu hoá cho những mục chung.  Chỉnh sửa những cấu hình này cho những kiểu sử dụng đặc thù có thể làm tăng được hiệu suất.  # FIXME: bad translation
+
 
 ### Application caching
 
