@@ -227,7 +227,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Message queues](#message-queues)
     * [Hàng đợi tin](#message-queues)
     * [Task queues](#task-queues)
-    * [Hàng đợi nhiệm vụ](#task-queues)
+    * [Hàng đợi việc](#task-queues)
     * [Back pressure](#back-pressure)
     * [Giảm tải nghịch](#back-pressure) # FIXME: probably bad translation
 * [Communication](#communication)
@@ -320,6 +320,7 @@ Bạn có thể dùng những bước sao để lái cuộc thảo luận.  Đ�
 ### Bước 1: Phác thảo các trường hợp sử dụng, ràng buộc, và các giả định
 
 Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Thu thập nhu cầu và phạm vi của vấn đề.  Đặt các câu hỏi làm rõ các nhu cầu sử dụng và ràng buộc.  Bàn bạc các giả định.
 
 * Who is going to use it?
 * How are they going to use it?
@@ -330,6 +331,12 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 * How many requests per second do we expect?
 * What is the expected read to write ratio?
 
+* Ai là người sử dụng?
+* Họ sử dụng với cách nào?
+* Có bao nhiêu người dùng?
+* Hệ thống này làm gì?
+    * Đầu vào và đ
+
 ### Step 2: Create a high level design
 
 Outline a high level design with all important components.
@@ -338,8 +345,10 @@ Outline a high level design with all important components.
 * Justify your ideas
 
 ### Step 3: Design core components
+### Bước 3: Thiết kế các thành phần lõi
 
 Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+
 
 * Generating and storing a hash of the full url
     * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
@@ -351,23 +360,37 @@ Dive into details for each core component.  For example, if you were asked to [d
 * API and object-oriented design
 
 ### Step 4: Scale the design
+### Bước 4: "Scale" thiết kế
 
 Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Nhận diện và xử lý cổ chai, với các ràng buộc được đưa ra.  Ví du, bạn có cần những thứ sau để giải quyết vấn đề về scalability?
 
 * Load balancer
 * Horizontal scaling
 * Caching
 * Database sharding
 
+* Cân bằng tải
+* Scale ngang
+* Caching
+* Database sharding  # FIXME: I don't know how to translate this
+
 Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Thảo luận các phương án khả thi và đánh đổi.  Mọi thứ đều là đánh đổi.  Giải quyết cổ chai bằng cách dùng [các nguyên tắc của thiết kế hệ thống scalable](#index-of-system-design-topics)
 
 ### Back-of-the-envelope calculations
+### Tính toán nháp
 
 You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Bạn có thể được yêu cầu làm một số ước lượng bằng tay.  Tham khảo phần [Phụ lục](#appendix) cho một số tài liệu sau:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [Powers of two table](#powers-of-two-table)
 * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+
+* [Tính toán nháp](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Bảng mũ hai](#powers-of-two-table)
+* [Những độ trễ mà mọi lập trình viên nên biết](#latency-numbers-every-programmer-should-know)
 
 ### Source(s) and further reading
 
