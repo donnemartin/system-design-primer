@@ -422,21 +422,41 @@ Check out the following links to get a better idea of what to expect:
 | Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
 | Add a system design question | [Contribute](#contributing) |
 
+
+| Câu hỏi | |
+|---|---|
+| Thiết kế Pastebin.com (or Bit.ly) | [Lời giải](solutions/system_design/pastebin/README.md) |
+| Thiết kế Twitter timeline và tìm kiếm (or Facebook feed and tìm kiếm) | [Lời giải](solutions/system_design/twitter/README.md) |
+| Thiết kế một web crawler | [Lời giải](solutions/system_design/web_crawler/README.md) |
+| Thiết kế Mint.com | [Lời giải](solutions/system_design/mint/README.md) |
+| Thiết kế the data structures for a social network | [Lời giải](solutions/system_design/social_graph/README.md) |
+| Thiết kế a key-value store for a tìm kiếm engine | [Lời giải](solutions/system_design/query_cache/README.md) |
+| Thiết kế Amazon's sales ranking by category feature | [Lời giải](solutions/system_design/sales_rank/README.md) |
+| Thiết kế a system that scales to millions of users on AWS | [Lời giải](solutions/system_design/scaling_aws/README.md) |
+| Add a system design question | [Contribute](#contributing) |
+
+
 ### Design Pastebin.com (or Bit.ly)
+### Thiết kế Pastebin.com (hoặc Bit.ly)
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
+[Xem bài tập và lời giải](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
 ### Design the Twitter timeline and search (or Facebook feed and search)
+### Thiết kế Twitter timeline và tìm kiếm (hoặc Facebook feed và tìm kiếm)
 
 [View exercise and solution](solutions/system_design/twitter/README.md)
+[Xem bài tập và lời giải](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
 ### Design a web crawler
+### Thiết kế một web crawler
 
 [View exercise and solution](solutions/system_design/web_crawler/README.md)
+[](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
