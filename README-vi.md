@@ -88,10 +88,8 @@ Hãy xem qua repo "em" [**Coding Tương Tác**](https://github.com/donnemartin/
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
 ## Đóng góp
 
-> Learn from the community.
 > Học hỏi từ cộng đồng.
 
 Feel free to submit pull requests to help:
@@ -609,33 +607,34 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 Nhìn chung là bận cần nhắm vào **tối đa hoá lưu lượng** với **độ trễ ở mức chấp nhận**
 
 ### Source(s) and further reading
+### Nguồn đọc thêm
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [Hiểu về độ trễ và lưu lượng](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Availability vs consistency
 ## Tính hiện có so với tính nhất quán
 
-### CAP theorem
+### Định lý CAP
 
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Nguồn: CAP theorem revisited</a></i>
 </p>
 
 In a distributed computer system, you can only support two of the following guarantees:
+Trong một hệ thống máy tính phân tán, ta chỉ có thể hỗ trợ hai trong số những bảo toàn sau đây:
 
 * **Consistency** - Every read receives the most recent write or an error
-* **Tính nhất quán** - Mọi thao tác đọc nhận được kết quả ghi gần nhất hoặc lỗi
 * **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Tính hiện có** - Mọi yêu cầu đều nhận được hồi đáp, nhưng không bảo đảm là chứa phiên bản gần nhất.
 * **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+
+* **Tính nhất quán** - Mọi thao tác đọc nhận được kết quả ghi gần nhất hoặc lỗi
+* **Tính hiện có** - Mọi yêu cầu đều nhận được hồi đáp, nhưng không bảo đảm là chứa phiên bản gần nhất.
 * **Dung sai phân vùng** - Hệ thống tiếp tục hoạt động mặc dù bị phân vùng do lỗi mạng lưới.
 
 *Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
 
-#### CP - consistency and partition tolerance
-#### CP - consistency và partition tolerance
+#### CP - tính nhất quán và dung sai phân vùng
 
 Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
 Việc đợi phản hồi từ một node bị phân vùng (mạng) có thể mang lại kết quả lỗi timeout. CP là một lựa chọn tốt nếu nhu cầu đòi hỏi đọc và ghi phải atomic.
