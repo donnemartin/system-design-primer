@@ -784,6 +784,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
 
 ## Domain name system
+## Hệ thống tên miền
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
@@ -792,13 +793,21 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
 </p>
 
 A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+Hệ thống tên miền (DNS) dịch một tên miền như là www.example.com sang một địa chỉ IP.
 
 DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+DNS được phân cấp, với một vài máy chủ ở cấp cao nhất.  Router hoặc ISP cung cấp thông tin về máy chủ DNS để liên lạc khi cần tra cứu tên miền. Máy chủ DNS cấp thấp sẽ lưu nhớ kết quả, kết quả này có thể trở nên lạc hậu do độ trễ lan truyền của DNS.  Kết quả DNS cũng có thể được lưu nhớ ở trình duyệt hoặc hệ điều hành trong một khoảng thời gian xác định, được quyết định bởi ["thời gian tồn tại" (TTL)](https://en.wikipedia.org/wiki/Time_to_live) # FIXME: incomplete and bad translation
 
 * **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
 * **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
 * **A record (address)** - Points a name to an IP address.
 * **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+
+* **Record NS (name server)** - Chỉ định máy chủ DNS cho tên miền chính và tên miền con của bạn.
+* **Record MX (mail exchange)** - Chỉ định máy chủ mai để tiếp nhận thư.
+* **Record A (address)** - Chỉ từ tên miền sang một địa chỉ IP.
+* **CNAME (canonical)** - Chỉ từ một tên miền sang một tên miền khác hoặc một `CNAME` khác (example.com đến www.example.com) hoặc đến một record `A`.
+
 
 Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
 
