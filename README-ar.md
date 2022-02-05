@@ -2,89 +2,88 @@
 
 **ساعد [بترجمة](TRANSLATIONS.md) هذه الإرشادة!**
 
-# The System Design Primer
+# تمهيد لتصميم النظام
 
 <p align="center">
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
-## Motivation
+## الدافع
 
-> Learn how to design large-scale systems.
+> التعرف على كيفية تصميم أنظمة واسعة النطاق.
 >
-> Prep for the system design interview.
+> التحضير لمقابلة تصميم النظام.
 
-### Learn how to design large-scale systems
+### التعرف على كيفية تصميم أنظمة واسعة النطاق
 
-Learning how to design scalable systems will help you become a better engineer.
+سيساعدك تعلم كيفية تصميم أنظمة قابلة للتطوير على أن تصبح مهندسًا أفضل.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+تصميم النظام هو موضوع واسع. هناك ** قدر هائل من الموارد المنتشرة في جميع أنحاء الويب ** حول مبادئ تصميم النظام.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+هذا المستودع عبارة عن ** مجموعة منظمة ** من الموارد لمساعدتك على تعلم كيفية إنشاء أنظمة على نطاق واسع.
 
-### Learn from the open source community
+### تعلم من مجتمع المصادر المفتوحة
 
-This is a continually updated, open source project.
+هذا مشروع مفتوح المصدر يتم تحديثه باستمرار.
 
-[Contributions](#contributing) are welcome!
+[المساهمات](#contributing) مُرحب بها!
 
-### Prep for the system design interview
+### التحضير لمقابلة تصميم النظام
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+بالإضافة إلى مقابلات البرمجة ، يعد تصميم النظام ** عنصرًا مطلوبًا ** من ** عملية المقابلة الفنية ** في العديد من شركات التكنولوجيا.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+** تدرب على أسئلة المقابلة العامة لتصميم النظام ** و ** قارن ** نتائجك مع ** نماذج الحلول **: المناقشات ، والتعليمات البرمجية ، والرسوم التخطيطية.
 
-Additional topics for interview prep:
+مواضيع إضافية للتحضير للمقابلة:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [دليل الدراسة](#study-guide)
+* [كيفية التعامل مع سؤال مقابلة تصميم النظام](#how-to-approach-a-system-design-interview-question)
+* [أسئلة مقابلة تصميم النظام ** مع حلول **](#system-design-interview-questions-with-solutions)
+* [أسئلة مقابلة التصميم الموجه للكائنات ، ** مع حلول **](#object-oriented-design-interview-questions-with-solutions)
+* [أسئلة مقابلة تصميم النظام الإضافية](#additional-system-design-interview-questions)
 
-## Anki flashcards
+## بطاقات أنكي التعليمية
 
 <p align="center">
   <img src="images/zdCAkB3.png">
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+ [بطاقات أنكي التعليمية](https://apps.ankiweb.net/) المقدمة تستخدم التكرار المتباعد لمساعدتك في الاحتفاظ بمفاهيم تصميم النظام الرئيسية.
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [سطح تصميم النظام](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [سطح تمارين تصميم النظام](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [تمارين التصميم الكينوني على سطح السفينة](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+عظيم للاستخدام أثناء التنقل.
 
-### Coding Resource: Interactive Coding Challenges
-
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+### مصادر البرمجة : تحديات البرمجة التفاعلية
+تلبحث عن موارد لمساعدتك على التحضير لـ [** مقابلة البرمجة **](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+تحقق من المستودع المناظر [** تحديات البرمجة التفاعلية **](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [سطح البرمجة](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## المساهمة
 
-> Learn from the community.
+> تعلم من المجتمع.
 
-Feel free to submit pull requests to help:
+لا تتردد في إرسال طلبات السحب للمساعدة:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* إصلاح الأخطاء
+* تحسين الأجزاء
+* إضافة أجزاء جديدة
+* [الترجمة](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+يتم وضع المحتوى الذي يحتاج إلى بعض التلميع [تحت التطوير](#under-development).
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+راجع ال [المبادئ التوجيهية للمساهمة](CONTRIBUTING.md).
 
 ## Index of system design topics
 
