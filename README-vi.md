@@ -1035,6 +1035,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * Microservices can add complexity in terms of deployments and operations.
 
 ### Source(s) and further reading
+### Nguồn đọc thêm
 
 * [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
@@ -1043,6 +1044,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
 ## Database
+## Cơ Sở Dữ Liệu
 
 <p align="center">
   <img src="images/Xkm5CXz.png">
@@ -1051,15 +1053,21 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 </p>
 
 ### Relational database management system (RDBMS)
+### Hệ thống quản lí cơ sở dữ liệu quan hệ (RDBMS)
 
-A relational database like SQL is a collection of data items organized in tables.
+Cơ sử dữ liệu quan hệ như SQL là một tập các mục dữ liệu được tổ chức vào trong các bảng.
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+**ACID** là một tập hợp những tính chất của [giao dịch](https://en.wikipedia.org/wiki/Database_transaction) trong cơ sở dữ liệu quan hệ.
 
 * **Atomicity** - Each transaction is all or nothing
 * **Consistency** - Any transaction will bring the database from one valid state to another
 * **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
 * **Durability** - Once a transaction has been committed, it will remain so
+
+* **Atomicity** - Mỗi giao dịch hoặc là hoàn thành tất cả, hoặc là không gì cả
+* **Consistency** - Bất kỳ giao dịch nào sẽ chuyển cơ sở dữ liệu từ một trạng thái đúng đắn này sang một trạng thái đúng đắn khác  # FIXME: bad translation
+* **Isolation** - Thực thi các giao dịch sẽ mang lại kết quả y như là nếu các giao dịch được thực thi một cách tuần tự
+* **Durability** - Một khi giao dịch đã được cam kết (commit), nó sẽ tồn tại như nguyên
 
 There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 
