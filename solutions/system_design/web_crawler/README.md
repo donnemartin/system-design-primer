@@ -103,7 +103,7 @@ We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Datab
 ```python
 class PagesDataStore(object):
 
-    def __init__(self, db);
+    def __init__(self, db):
         self.db = db
         ...
 
