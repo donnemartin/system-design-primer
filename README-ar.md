@@ -85,358 +85,358 @@
 
 راجع ال [المبادئ التوجيهية للمساهمة](CONTRIBUTING.md).
 
-## Index of system design topics
+## فهرس موضوعات تصميم النظام
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> ملخصات لموضوعات تصميم النظام المختلفة ، بما في ذلك الإيجابيات والسلبيات. ** كل شيء هو مقايضة **.
 >
-> Each section contains links to more in-depth resources.
+> يحتوي كل قسم على روابط لمزيد من الموارد المتعمقة.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
-    * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [مواضيع تصميم النظام: ابدأ من هنا](#system-design-topics-start-here)
+    * [الخطوة 1: راجع محاضرة فيديو قابلية التوسع](#step-1-review-the-scalability-video-lecture)
+    * [الخطوة 2: راجع مقالة قابلية التوسع](#step-2-review-the-scalability-article)
+    * [الخطوات التالية](#next-steps)
+* [الأداء مقابل قابلية التوسع](#performance-vs-scalability)
+* [الكمون مقابل الإنتاجية](#latency-vs-throughput)
+* [التوافر مقابل الاتساق](#availability-vs-consistency)
+    * [نظرية CAP](#cap-theorem)
+        * [CP - الاتساق والتسامح في التقسيم](#cp---consistency-and-partition-tolerance)
+        * [AP - التوافر والتسامح في التقسيم](#ap---availability-and-partition-tolerance)
+* [أنماط الاتساق](#consistency-patterns)
+    * [تناسق ضعيف](#weak-consistency)
+    * [الاتساق في نهاية المطاف](#eventual-consistency)
+    * [اتساق قوي](#strong-consistency)
+* [أنماط التوفر](#availability-patterns)
+    * [تجاوز الفشل](#fail-over)
+    * [تكرار](#replication)
+    * [التوافر بالأرقام](#availability-in-numbers)
+* [نظام اسم المجال](#domain-name-system)
+* [شبكة توصيل المحتوى](#content-delivery-network)
+    * [دفع CDNs](#push-cdns)
+    * [سحب شبكات CDN](#pull-cdns)
+* [موازن الحمل](#load-balancer)
+    * [نشط سلبي](#active-passive)
+    * [نشط نشط](#active-active)
+    * [موازنة حمل الطبقة الرابعة](#layer-4-load-balancing)
+    * [موازنة تحميل الطبقة السابعة](#layer-7-load-balancing)
+    * [التحجيم الأفقي](#horizontal-scaling)
+* [وكيل عكسي (خادم الويب)](#reverse-proxy-web-server)
+    * [موازن التحميل مقابل الوكيل العكسي](#load-balancer-vs-reverse-proxy)
+* [طبقة التطبيقات](#application-layer)
+    * [الخدمات المصغرة](#microservices)
+    * [اكتشاف الخدمة](#service-discovery)
+* [قاعدة البيانات](#database)
+    * [نظام إدارة قواعد البيانات الارتباطية (RDBMS)](#relational-database-management-system-rdbms)
+        * [تكرار السيد والخادم](#master-slave-replication)
+        * [تكرار السيد السيد](#master-master-replication)
+        * [الاتحاد](#federation)
+        * [التشرذم](#sharding)
+        * [عدم التطابق](#denormalization)
+        * [ضبط SQL](#sql-tuning)
+    * [لا SQL](#nosql)
+        * [مخزن مفتاح-قيمة](#key-value-store)
+        * [مخزن المستندات](#document-store)
+        * [مخزن العمود الواسع](#wide-column-store)
+        * [قاعدة بيانات الرسم البياني](#graph-database)
+    * [SQL أو لا SQL](#sql-or-nosql)
+* [مخزن مؤقت](#cache)
+    * [التخزين المؤقت للعميل](#client-caching)
+    * [تخزين CDN المؤقت](#cdn-caching)
+    * [التخزين المؤقت لخادم الويب](#web-server-caching)
+    * [التخزين المؤقت لقاعدة البيانات](#database-caching)
+    * [التخزين المؤقت للتطبيق](#application-caching)
+    * [التخزين المؤقت على مستوى استعلام قاعدة البيانات](#caching-at-the-database-query-level)
+    * [التخزين المؤقت على مستوى الكائن](#caching-at-the-object-level)
+    * [متى يتم تحديث ذاكرة التخزين المؤقت](#when-to-update-the-cache)
+        * [تخزين مؤقت جانبي](#cache-aside)
+        * [الكتابة من خلال](#write-through)
+        * [الكتابة الخلفية (إعادة الكتابة)](#write-behind-write-back)
+        * [تحديث للأمام](#refresh-ahead)
+* [عدم التزامن](#asynchronism)
+    * [قوائم انتظار الرسائل](#message-queues)
+    * [قوائم انتظار المهام](#task-queues)
+    * [الضغط الخلفي](#back-pressure)
+* [تواصل](#communication)
+    * [بروتوكول التحكم في الإرسال (TCP)](#transmission-control-protocol-tcp)
+    * [بروتوكول مخطط بيانات المستخدم (UDP)](#user-datagram-protocol-udp)
+    * [استدعاء الإجراء البعيد (RPC)](#remote-procedure-call-rpc)
+    * [نقل الحالة التمثيلية (REST)](#representational-state-transfer-rest)
+* [حماية](#security)
+* [زائدة](#appendix)
+    * [صلاحيات اثنين من الجدول](#powers-of-two-table)
+    * [أرقام التأخير يجب أن يعرفها كل مبرمج](#latency-numbers-every-programmer-should-know)
+    * [أسئلة مقابلة تصميم النظام الإضافية](#additional-system-design-interview-questions)
+    * [أبنية العالم الحقيقي](#real-world-architectures)
+    * [معماريات الشركة](#company-architectures)
+    * [مدونات هندسة الشركة](#company-engineering-blogs)
+* [تحت التطوير](#under-development)
+* [الاعتمادات](#credits)
+* [معلومات الاتصال](#contact-info)
+* [ترخيص](#license)
 
-## Study guide
+## دليل الدراسة
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> الموضوعات المقترحة للمراجعة بناءً على الجدول الزمني للمقابلة (قصير ، متوسط ، طويل).
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**س: لإجراء المقابلات ، هل أحتاج إلى معرفة كل شيء هنا؟ **
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**ج: لا ، لست بحاجة إلى معرفة كل شيء هنا للاستعداد للمقابلة **.
 
-What you are asked in an interview depends on variables such as:
+يعتمد ما يُطلب منك في المقابلة على متغيرات مثل:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* ما مدى خبرتك
+* ما هي خلفيتك التقنية
+* ما هي المواقف التي تجري مقابلات معها
+* ما هي الشركات التي تجري مقابلات معها
+* حظ
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+من المتوقع عمومًا أن يعرف المرشحون الأكثر خبرة المزيد عن تصميم النظام. من المتوقع أن يعرف المهندسون المعماريون أو قادة الفريق أكثر من المساهمين الفرديين. من المرجح أن تجري شركات التكنولوجيا الكبرى جولة أو أكثر من مقابلات التصميم.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+ابدأ على نطاق واسع وتعمق في مناطق قليلة. من المفيد معرفة القليل عن مواضيع تصميم النظام الرئيسية المختلفة. اضبط الدليل التالي بناءً على جدولك الزمني وخبرتك والوظائف التي تجري مقابلة معها والشركات التي تجري مقابلات معها.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* ** جدول زمني قصير ** - استهدف ** اتساع نطاق ** بمواضيع تصميم النظام. تدرب على حل ** بعض ** أسئلة المقابلة.
+* ** مخطط زمني متوسط ​​** - استهدف ** اتساع نطاق ** و ** بعض العمق ** مع مواضيع تصميم النظام. الممارسة عن طريق حل ** العديد ** أسئلة المقابلة.
+* ** جدول زمني طويل ** - استهدف ** اتساع نطاق ** و ** مزيد من العمق ** مع مواضيع تصميم النظام. تدرب على حل ** معظم ** أسئلة المقابلة.
 
-| | Short | Medium | Long |
+| | قصيرة | وسط | طويلة |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| اقرأ من خلال [موضوعات تصميم النظام](#index-of-system-design-topics) للحصول على فهم واسع لكيفية عمل الأنظمة | :+1: | :+1: | :+1: |
+| اقرأ بعض المقالات في [مدونات الشركة الهندسية](#company-engineering-blogs) للشركات التي تجري مقابلات معها | :+1: | :+1: | :+1: |
+| اقرأ بعضًا من [أبنية العالم الحقيقي](#real-world-architectures) | :+1: | :+1: | :+1: |
+| مراجعة [كيفية التعامل مع سؤال مقابلة تصميم النظام](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| العمل من خلال [أسئلة مقابلة تصميم النظام مع الحلول](#system-design-interview-questions-with-solutions) | بعض | كثير | أغلب |
+| العمل من خلال [أسئلة مقابلة التصميم الموجه للكائنات مع الحلول](#object-oriented-design-interview-questions-with-solutions) | بعض | كثير | أغلب |
+| مراجعة [أسئلة مقابلة تصميم النظام الإضافية](#additional-system-design-interview-questions) | بعض | كثير | أغلب |
 
-## How to approach a system design interview question
+## كيفية التعامل مع سؤال مقابلة تصميم النظام
 
-> How to tackle a system design interview question.
+> كيفية معالجة سؤال مقابلة تصميم النظام.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+مقابلة تصميم النظام هي ** محادثة مفتوحة **. من المتوقع أن تقودها.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+يمكنك استخدام الخطوات التالية لتوجيه المناقشة. للمساعدة في ترسيخ هذه العملية ، اعمل من خلال [أسئلة مقابلة تصميم النظام مع حلول](#system-design-interview-questions-with-solutions) باستخدام الخطوات التالية.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### الخطوة الأولى: حدد حالات الاستخدام والقيود والافتراضات
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+اجمع المتطلبات وحدد نطاق المشكلة. اطرح أسئلة لتوضيح حالات الاستخدام والقيود. ناقش الافتراضات.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* من سيستخدمها؟
+* كيف سيستخدمونها؟
+* كم عدد المستخدمين هناك؟
+* ماذا يفعل النظام؟
+* ما هي مداخل ومخرجات النظام؟
+* ما مقدار البيانات التي نتوقع معالجتها؟
+* كم عدد الطلبات التي نتوقعها في الثانية؟
+* ما هي نسبة القراءة إلى الكتابة المتوقعة؟
 
-### Step 2: Create a high level design
+### الخطوة الثانية: إنشاء تصميم عالي المستوى
 
-Outline a high level design with all important components.
+حدد تصميمًا عالي المستوى مع جميع المكونات المهمة.
 
-* Sketch the main components and connections
-* Justify your ideas
+* رسم المكونات والتوصيلات الرئيسية
+* برر أفكارك
 
-### Step 3: Design core components
+### الخطوة الثالثة: تصميم المكونات الأساسية
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+الغوص في التفاصيل لكل مكون أساسي. على سبيل المثال ، إذا طُلب منك [تصميم خدمة تقصير عناوين url](solutions/system_design/pastebin/README.md), ناقش:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* إنشاء وتخزين تجزئة عنوان url الكامل
+     * [MD5](Solutions/system_design/pastebin/README.md) و [Base62](Solutions/system_design/pastebin/README.md)
+     * تجزئة الاصطدامات
+     * SQL أو NoSQL
+     * مخطط قاعدة البيانات
+* ترجمة عنوان url مجزأ إلى عنوان url الكامل
+     * البحث في قاعدة البيانات
+* API والتصميم الشيئي
 
-### Step 4: Scale the design
+### الخطوة 4: قياس التصميم
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+تحديد ومعالجة الاختناقات ، في ضوء القيود. على سبيل المثال ، هل تحتاج إلى ما يلي لمعالجة مشكلات قابلية التوسع؟
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+* موازن التحميل
+* التحجيم الأفقي
+* التخزين المؤقت
+* تقسيم قاعدة البيانات
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+ناقش الحلول والمفاضلات المحتملة. كل شيء هو مقايضة. قم بمعالجة الاختناقات باستخدام [مبادئ تصميم النظام القابل للتطوير](#index-of-system-design-topics).
 
-### Back-of-the-envelope calculations
+### حسابات ظهر المغلف
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+قد يُطلب منك القيام ببعض التقديرات يدويًا. راجع [الملحق] (# الملحق) للحصول على الموارد التالية:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [استخدم الجزء الخلفي من حسابات المغلف] (http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [صلاحيات جدولين](#powers-of-two-table)
+* [أرقام زمن الانتقال التي يجب على كل مبرمج معرفتها](# latency-number-every-programmer-should-know)
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-Check out the following links to get a better idea of what to expect:
+تحقق من الروابط التالية للحصول على فكرة أفضل عما يمكن توقعه:
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+* [كيفية الحصول على مقابلة تصميم الأنظمة](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [مقابلة تصميم النظام](http://www.hiredintech.com/system-design)
+* [مقدمة لمقابلات تصميم النظم والنظم المعمارية](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [نموذج تصميم النظام](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## أسئلة مقابلة تصميم النظام مع الحلول
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> أسئلة مقابلة تصميم النظام الشائعة مع نماذج المناقشات ، والتعليمات البرمجية ، والرسوم التخطيطية.
 >
-> Solutions linked to content in the `solutions/` folder.
+> حلول مرتبطة بالمحتوى في مجلد `` Solutions / `.
 
-| Question | |
+| سؤال | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| صمم Pastebin.com (or Bit.ly) | [الحل](solutions/system_design/pastebin/README.md) |
+| صمم الجدول الزمني والبحث في Twitter (أو موجز Facebook والبحث) | [الحل](solutions/system_design/twitter/README.md) |
+| صمم web crawler | [الحل](solutions/system_design/web_crawler/README.md) |
+| صمم Mint.com | [الحل](solutions/system_design/mint/README.md) |
+| صمم هياكل البيانات لشبكة اجتماعية | [الحل](solutions/system_design/social_graph/README.md) |
+| صمم مخزن مفتاح-قيمة لمحرك بحث | [الحل](solutions/system_design/query_cache/README.md) |
+| صمم ترتيب مبيعات أمازون حسب ميزة الفئة | [الحل](solutions/system_design/sales_rank/README.md) |
+| صمم نظام يتسع لملايين المستخدمين على AWS | [الحل](solutions/system_design/scaling_aws/README.md) |
+| أضف سؤال تصميم النظام | [المساهمة](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### تصميم Pastebin.com (أو Bit.ly)
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[عرض التمرين والحل](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### تصميم الجدول الزمني على Twitter والبحث (أو موجز Facebook والبحث)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[عرض التمرين والحل](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### تصميم زاحف الويب
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[عرض التمرين والحل](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### صمم Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[عرض التمرين والحل](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### تصميم هياكل البيانات لشبكة اجتماعية
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[عرض التمرين والحل](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### تصميم متجر ذي قيمة رئيسية لمحرك بحث
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[عرض التمرين والحل](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### تصميم ترتيب مبيعات أمازون حسب ميزة الفئة
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[عرض التمرين والحل](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### تصميم نظام يتسع لملايين المستخدمين على AWS
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[عرض التمرين والحل](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## أسئلة مقابلة التصميم الموجه مع الحلول
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> أسئلة مقابلة التصميم الموجه للكائنات الشائعة مع نماذج المناقشات ، والتعليمات البرمجية ، والرسوم التخطيطية.
 >
-> Solutions linked to content in the `solutions/` folder.
+> حلول مرتبطة بالمحتوى في مجلد `` Solutions / `.
 
->**Note: This section is under development**
+> ** ملاحظة: هذا القسم قيد التطوير **
 
 | Question | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| تصميم خريطة التجزئة | [الحل](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| تصميم ذاكرة التخزين المؤقت الأقل استخدامًا مؤخرًا | [الحل](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| تصميم مركز اتصال | [الحل](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| صمم مجموعة من البطاقات | [الحل](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| تصميم موقف للسيارات | [الحل](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| صمم خادم دردشة | [الحل](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| تصميم مصفوفة دائرية | [المساهمة](#contributing)  |
+| أضف سؤال تصميم موجه للكائنات | [المساهمة](#contributing) |
 
-## System design topics: start here
+## مواضيع تصميم النظام: ابدأ من هنا
 
-New to system design?
+جديد في تصميم النظام؟
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+أولاً ، ستحتاج إلى فهم أساسي للمبادئ المشتركة ، والتعرف على ماهيتها وكيفية استخدامها ومزاياها وعيوبها.
 
-### Step 1: Review the scalability video lecture
+### الخطوة الأولى: مراجعة محاضرة الفيديو حول قابلية التوسع
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[محاضرة حول قابلية التوسع في جامعة هارفارد](https://www.youtube.com/watch?v=-W9F__D3oY4)
+
+* المواضيع التي تمت تغطيتها:
+     * التحجيم العمودي
+     * التحجيم الأفقي
+     * التخزين المؤقت
+     * توزيع الحمل
+     * تكرار قاعدة البيانات
+     * تقسيم قاعدة البيانات
+
+### الخطوة الثانية: مراجعة مقالة قابلية التوسع
+
+[قابلية التوسع](http://www.lecloud.net/tagged/scalability/chrono)
 
 * Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+    * [النُسَخ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [قواعد البيانات](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [تخزينات مؤقتة](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [عدم التزامن](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Step 2: Review the scalability article
+### الخطوات التالية
 
-[Scalability](http://www.lecloud.net/tagged/scalability/chrono)
+بعد ذلك ، سنلقي نظرة على المقايضات عالية المستوى:
 
-* Topics covered:
-    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* ** الأداء ** مقابل ** قابلية التوسع **
+* ** الكمون ** مقابل ** الإنتاجية **
+* ** التوفر ** مقابل ** الاتساق **
 
-### Next steps
+ضع في اعتبارك أن ** كل شيء هو مقايضة **.
 
-Next, we'll look at high-level trade-offs:
+ثم سنغوص في مواضيع أكثر تحديدًا مثل DNS و CDNs وموازنات التحميل.
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+## الأداء مقابل قابلية التوسع
 
-Keep in mind that **everything is a trade-off**.
+تكون الخدمة ** قابلة للتطوير ** إذا أدت إلى زيادة ** الأداء ** بطريقة تتناسب مع الموارد المضافة. بشكل عام ، تعني زيادة الأداء خدمة المزيد من وحدات العمل ، ولكن يمكن أيضًا التعامل مع وحدات عمل أكبر ، مثل عندما تنمو مجموعات البيانات. <sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+طريقة أخرى للنظر إلى الأداء مقابل قابلية التوسع:
 
-## Performance vs scalability
+* إذا كانت لديك مشكلة ** في الأداء ** ، فهذا يعني أن نظامك بطيء لمستخدم واحد.
+* إذا كانت لديك مشكلة ** قابلية التوسع ** ، فإن نظامك سريع لمستخدم واحد ولكنه بطيء في ظل الحمل الثقيل.
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+### المصدر (المصادر) وقراءات أخرى
 
-Another way to look at performance vs scalability:
+* [كلمة عن قابلية التوسع](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [قابلية التوسع ، التوافر ، الاستقرار ، الأنماط](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+## الكمون مقابل الإنتاجية
 
-### Source(s) and further reading
+** الكمون ** هو الوقت المناسب للقيام ببعض الإجراءات أو لإنتاج بعض النتائج.
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+** الإنتاجية ** هي عدد هذه الإجراءات أو النتائج لكل وحدة زمنية.
 
-## Latency vs throughput
+بشكل عام ، يجب أن تهدف إلى تحقيق ** أقصى قدر من الإنتاجية ** مع ** زمن انتقال مقبول **.
 
-**Latency** is the time to perform some action or to produce some result.
+### المصدر (المصادر) وقراءات أخرى
 
-**Throughput** is the number of such actions or results per unit of time.
+* [فهم وقت الاستجابة مقابل الإنتاجية](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+## التوافر مقابل الاتساق
 
-### Source(s) and further reading
-
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
-
-## Availability vs consistency
-
-### CAP theorem
+### نظرية CAP
 
 <p align="center">
   <img src="images/bgLMI2u.png">
@@ -444,140 +444,140 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+في نظام الكمبيوتر الموزع ، يمكنك فقط دعم اثنين من الضمانات التالية:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* ** الاتساق ** - تتلقى كل قراءة أحدث كتابة أو خطأ
+* ** التوفر ** - يتلقى كل طلب استجابة ، دون ضمان احتوائه على أحدث نسخة من المعلومات
+* ** التسامح التقسيم ** - يستمر النظام في العمل على الرغم من التقسيم التعسفي بسبب أعطال الشبكة
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+* الشبكات ليست موثوقة ، لذا ستحتاج إلى دعم تسامح التقسيم. ستحتاج إلى مقايضة البرامج بين الاتساق والتوافر. *
 
-#### CP - consistency and partition tolerance
+#### CP - الاتساق والتسامح في التقسيم
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+قد يؤدي انتظار استجابة من العقدة المقسمة إلى حدوث خطأ انتهاء المهلة. يعد CP خيارًا جيدًا إذا كانت احتياجات عملك تتطلب قراءة وكتابة ذرية.
 
-#### AP - availability and partition tolerance
+#### AP - التوافر والتسامح في القسم
 
-Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+تُرجع الردود النسخة الأكثر توفرًا من البيانات المتاحة على أي عقدة ، والتي قد لا تكون الأحدث. قد يستغرق نشر عمليات الكتابة عند حل القسم بعض الوقت.
 
-AP is a good choice if the business needs allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+AP هو اختيار جيد إذا سمحت احتياجات العمل بذلك [الاتساق في نهاية المطاف](#eventual-consistency) أو عندما يحتاج النظام إلى مواصلة العمل بالرغم من الأخطاء الخارجية.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
-* [CAP FAQ](https://github.com/henryr/cap-faq)
-* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+* [إعادة النظر في نظرية CAP](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [مقدمة إنجليزية بسيطة لنظرية CAP](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [الأسئلة الشائعة حول CAP](https://github.com/henryr/cap-faq)
+* [نظرية CAP](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Consistency patterns
+## أنماط الاتساق
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+من خلال نسخ متعددة من نفس البيانات ، نواجه خيارات حول كيفية مزامنتها بحيث يكون لدى العملاء عرض متسق للبيانات. تذكر تعريف التناسق من [نظرية CAP](#cap-theorem) - كل قراءة تتلقى أحدث كتابة أو خطأ.
 
-### Weak consistency
+### تناسق ضعيف
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+بعد الكتابة ، قد تراه أو لا تراه. يتم اتباع نهج أفضل جهد.
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+يظهر هذا النهج في أنظمة مثل memcached. يعمل التناسق الضعيف بشكل جيد في حالات الاستخدام في الوقت الفعلي مثل VoIP ودردشة الفيديو والألعاب متعددة اللاعبين في الوقت الفعلي. على سبيل المثال ، إذا كنت تجري مكالمة هاتفية وفقدت الاستقبال لبضع ثوان ، فعند استعادة الاتصال ، لا تسمع ما تم التحدث به أثناء فقدان الاتصال.
 
-### Eventual consistency
+### الاتساق في نهاية المطاف
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+بعد الكتابة ، ستراها القراءات في النهاية (عادةً في غضون مللي ثانية). يتم نسخ البيانات بشكل غير متزامن.
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+يظهر هذا النهج في أنظمة مثل DNS والبريد الإلكتروني. يعمل الاتساق النهائي بشكل جيد في الأنظمة المتاحة للغاية.
 
-### Strong consistency
+### الاتساق القوي
 
-After a write, reads will see it.  Data is replicated synchronously.
+بعد الكتابة ، ستراها القراءات. يتم نسخ البيانات بشكل متزامن.
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+يظهر هذا النهج في أنظمة الملفات و RDBMSes. يعمل الاتساق القوي بشكل جيد في الأنظمة التي تحتاج إلى معاملات.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [المعاملات عبر مراكز البيانات](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+## أنماط التوفر
 
-There are two complementary patterns to support high availability: **fail-over** and **replication**.
+هناك نوعان من الأنماط التكميلية لدعم الإتاحة العالية: ** تجاوز الفشل ** و ** النسخ المتماثل **.
 
-### Fail-over
+### الفشل
 
-#### Active-passive
+#### المبني للمجهول
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+مع تجاوز الفشل السلبي النشط ، يتم إرسال دقات القلب بين الخادم النشط والخادم الخامل في وضع الاستعداد. في حالة مقاطعة نبضات القلب ، يتولى الخادم الخامل عنوان IP الخاص بالنشط ويستأنف الخدمة.
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+يتم تحديد مدة التعطل من خلال ما إذا كان الخادم الخامل يعمل بالفعل في وضع الاستعداد "الساخن" أو ما إذا كان يحتاج إلى بدء التشغيل من وضع الاستعداد "البارد". فقط الخادم النشط يتعامل مع حركة المرور.
 
-Active-passive failover can also be referred to as master-slave failover.
+يمكن أيضًا الإشارة إلى تجاوز الفشل النشط والسلبي باسم تجاوز الفشل الرئيسي والعبد.
 
-#### Active-active
+#### النشط النشط
 
-In active-active, both servers are managing traffic, spreading the load between them.
+في حالة النشاط النشط ، يقوم كلا الخادمين بإدارة حركة المرور ، وتوزيع الحمل بينهما.
 
-If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+إذا كانت الخوادم تواجه الجمهور ، فسيحتاج DNS إلى معرفة عناوين IP العامة لكلا الخادمين. إذا كانت الخوادم مواجهة داخلية ، فسيحتاج منطق التطبيق إلى معرفة كلا الخادمين.
 
-Active-active failover can also be referred to as master-master failover.
+يمكن أيضًا الإشارة إلى تجاوز الفشل النشط النشط باسم تجاوز الفشل الرئيسي / الرئيسي.
 
-### Disadvantage(s): failover
+### العيوب: تجاوز الفشل
 
-* Fail-over adds more hardware and additional complexity.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* يضيف تجاوز الفشل مزيدًا من الأجهزة وتعقيدًا إضافيًا.
+* هناك احتمال لفقدان البيانات في حالة فشل النظام النشط قبل نسخ أي بيانات مكتوبة حديثًا إلى الخامل.
 
-### Replication
+### تكرار
 
-#### Master-slave and master-master
+#### السيد والخادم والسيد السيد
 
-This topic is further discussed in the [Database](#database) section:
+تمت مناقشة هذا الموضوع بمزيد من التفصيل في فصل [قاعدة البيانات](#database):
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [إستنساخ السيد والخادم](#master-slave-replication)
+* [إستنساخ السيد السيد](#master-master-replication)
 
-### Availability in numbers
+### التوافرية بالأعداد
 
-Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
+غالبًا ما يتم تحديد مدى التوفر حسب وقت التشغيل (أو وقت التوقف عن العمل) كنسبة مئوية من الوقت الذي تتوفر فيه الخدمة. يُقاس التوافر عمومًا بعدد 9 ثوانٍ - توصف خدمة توفر بنسبة 99.99٪ بأنها تحتوي على أربع 9 ثوانٍ.
 
-#### 99.9% availability - three 9s
+#### توفر بنسبة 99.9٪ - ثلاث 9 ثوانٍ
 
-| Duration            | Acceptable downtime|
+| المدة               |  وقت التوقف المقبول|
 |---------------------|--------------------|
-| Downtime per year   | 8h 45min 57s       |
-| Downtime per month  | 43m 49.7s          |
-| Downtime per week   | 10m 4.8s           |
-| Downtime per day    | 1m 26.4s           |
+| التوقف عن العمل في السنة | 8 س 45 د 57 ث |
+| تعطل في الشهر      |         43 م 49.7 ث |
+| التوقف في الأسبوع   |          10 م 4.8 ث |
+| التوقف عن العمل في اليوم |  1 م و 26.4 ث |
 
-#### 99.99% availability - four 9s
+#### التوفر بنسبة 99.99٪ - أربع 9 ثوانٍ
 
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 52min 35.7s        |
-| Downtime per month  | 4m 23s             |
-| Downtime per week   | 1m 5s              |
-| Downtime per day    | 8.6s               |
+| المدة   |      وقت التوقف المقبول                |
+| ---------------------    |   -------------------- |
+| التوقف عن العمل في السنة | 52 دقيقة و 35.7 ثانية |
+| تعطل في الشهر          |                4 م 23 ث |
+| التوقف في الأسبوع |                 1 م 5 ث       |
+| التوقف عن العمل في اليوم |             8.6 ثانية |
 
-#### Availability in parallel vs in sequence
+#### التوفر بالتوازي مقابل التسلسل
 
-If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+إذا كانت الخدمة تتكون من مكونات متعددة معرضة للفشل ، فإن التوافر الكلي للخدمة يعتمد على ما إذا كانت المكونات متسلسلة أو متوازية.
 
-###### In sequence
+###### في تسلسل
 
-Overall availability decreases when two components with availability < 100% are in sequence:
+يتناقص التوافر الإجمالي عندما يكون هناك مكونان بتوفر <100٪ في تسلسل:
 
-```
-Availability (Total) = Availability (Foo) * Availability (Bar)
-```
+""
+التوفر (الإجمالي) = التوفر (Foo) * التوفر (Bar)
+""
 
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
+إذا كان لكل من "Foo" و "Bar" توفرًا بنسبة 99.9٪ ، فسيكون إجمالي الإتاحة في التسلسل 99.8٪.
 
-###### In parallel
+###### بالتوازي
 
-Overall availability increases when two components with availability < 100% are in parallel:
+يزداد التوافر الإجمالي عندما يتوازى مكونان مع توفر <100٪:
 
-```
-Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
-```
+""
+التوفر (الإجمالي) = 1 - (1 - التوفر (Foo)) * (1 - التوفر (Bar))
+""
 
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+إذا كان لكل من "Foo" و "Bar" توفرًا بنسبة 99.9٪ ، فإن الإتاحة الإجمالية على التوازي ستكون 99.9999٪.
 
-## Domain name system
+## نظام اسم المجال
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
@@ -585,35 +585,35 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+يترجم نظام اسم المجال (DNS) اسم مجال مثل www.example.com إلى عنوان IP.
 
-DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوقة في المستوى الأعلى. يوفر جهاز التوجيه أو موفر خدمة الإنترنت معلومات حول خادم (خوادم) DNS الذي يجب الاتصال به عند إجراء بحث. تعيينات ذاكرة التخزين المؤقت لخوادم DNS ذات المستوى الأدنى ، والتي قد تصبح قديمة بسبب تأخيرات انتشار DNS. يمكن أيضًا تخزين نتائج نظام أسماء النطاقات مؤقتًا بواسطة المتصفح أو نظام التشغيل لفترة زمنية معينة ، يتم تحديدها بواسطة [وقت البقاء (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
 
-* **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
-* **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
-* **A record (address)** - Points a name to an IP address.
-* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+* ** سجل NS (خادم الاسم) ** - يحدد خوادم DNS للمجال / المجال الفرعي الخاص بك.
+* ** سجل MX (تبادل البريد) ** - يحدد خوادم البريد لقبول الرسائل.
+* ** سجل (العنوان) ** - يشير اسمًا إلى عنوان IP.
+* ** CNAME (أساسي) ** - يشير اسمًا إلى اسم آخر أو "CNAME" (example.com إلى www.example.com) أو إلى سجل "A".
 
-Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
+خدمات مثل[CloudFlare](https://www.cloudflare.com/dns/) و [Route 53](https://aws.amazon.com/route53/) تقدم خدمات DNS المُدارة. يمكن لبعض خدمات DNS توجيه حركة المرور من خلال طرق مختلفة:
 
-* [Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
-    * Prevent traffic from going to servers under maintenance
-    * Balance between varying cluster sizes
-    * A/B testing
-* [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency)
-* [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo)
+* [بمعيار round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+     * منع حركة المرور من الذهاب إلى الخوادم تحت الصيانة
+     * التوازن بين أحجام الكتلة المختلفة
+     * اختبار أ / ب
+* [معتمدة على التأخير](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency)
+* [معتمدة عالموقع الجغرافي](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo)
 
-### Disadvantage(s): DNS
+### العيوب: DNS
 
-* Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* يؤدي الوصول إلى خادم DNS إلى تأخير طفيف ، على الرغم من التخفيف من حدته عن طريق التخزين المؤقت الموضح أعلاه.
+* قد تكون إدارة خادم DNS معقدة وتتم إدارتها بشكل عام بواسطة [الحكومات ومزودي خدمة الإنترنت والشركات الكبيرة](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
+* تعرضت خدمات DNS مؤخرًا إلى [هجوم DDoS](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) ، مما يمنع المستخدمين من الوصول إلى مواقع الويب مثل Twitter دون معرفة عنوان (عناوين) IP الخاص بتويتر.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
-* [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
-* [DNS articles](https://support.dnsimple.com/categories/dns/)
+* [هندسة DNS](https://technet.microsoft.com/en-us/library/dd197427 (v = ws.10) .aspx)
+* [ويكيبيديا](https://en.wikipedia.org/wiki/Domain_Name_System)
+* [مقالات DNS](https://support.dnsimple.com/categories/dns/)
 
 ## Content delivery network
 
@@ -1673,7 +1673,7 @@ Handy metrics based on numbers above:
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
-| Add a system design question | [Contribute](#contributing) |
+| Add a system design question | [المساهمة](#contributing) |
 
 ### Real world architectures
 
@@ -1713,7 +1713,7 @@ Handy metrics based on numbers above:
 | Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | Add an architecture | [Contribute](#contributing) |
+| | Add an architecture | [المساهمة](#contributing) |
 
 ### Company architectures
 
@@ -1797,12 +1797,12 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 
 ## Under development
 
-Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+Interested in adding a section or helping complete one in-progress?  [المساهمة](#contributing)!
 
 * Distributed computing with MapReduce
 * Consistent hashing
 * Scatter gather
-* [Contribute](#contributing)
+* [المساهمة](#contributing)
 
 ## Credits
 
