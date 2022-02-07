@@ -268,11 +268,11 @@
 
 ### حسابات ظهر المغلف
 
-قد يُطلب منك القيام ببعض التقديرات يدويًا. راجع [الملحق] (# الملحق) للحصول على الموارد التالية:
+قد يُطلب منك القيام ببعض التقديرات يدويًا. راجع [الملحق](#appendix) للحصول على الموارد التالية:
 
-* [استخدم الجزء الخلفي من حسابات المغلف] (http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [استخدم الجزء الخلفي من حسابات المغلف](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [صلاحيات جدولين](#powers-of-two-table)
-* [أرقام زمن الانتقال التي يجب على كل مبرمج معرفتها](# latency-number-every-programmer-should-know)
+* [أرقام زمن الانتقال التي يجب على كل مبرمج معرفتها](#latency-number-every-programmer-should-know)
 
 ### المصدر (المصادر) وقراءات أخرى
 
@@ -331,7 +331,7 @@
 
 ![Imgur](images/cdCv5g7.png)
 
-### تصميم متجر ذي قيمة رئيسية لمحرك بحث
+### تصميم مخزن مفتاح-قيمة لمحرك بحث
 
 [عرض التمرين والحل](solutions/system_design/query_cache/README.md)
 
@@ -390,7 +390,7 @@
 
 [قابلية التوسع](http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* المواضيع مالتاحة:
     * [النُسَخ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [قواعد البيانات](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [تخزينات مؤقتة](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
@@ -611,7 +611,7 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
 
 ### المصدر (المصادر) وقراءات أخرى
 
-* [هندسة DNS](https://technet.microsoft.com/en-us/library/dd197427 (v = ws.10) .aspx)
+* [هندسة DNS](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [ويكيبيديا](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [مقالات DNS](https://support.dnsimple.com/categories/dns/)
 
