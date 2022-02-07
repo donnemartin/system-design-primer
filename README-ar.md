@@ -5,7 +5,7 @@
 # تمهيد لتصميم النظام
 
 <p align="center">
-  <img src="images/jj3A5N8.png">
+  <img src="images/arabic/jj3A5N8.png">
   <br/>
 </p>
 
@@ -46,7 +46,7 @@
 ## بطاقات أنكي التعليمية
 
 <p align="center">
-  <img src="images/zdCAkB3.png">
+  <img src="images/arabic/zdCAkB3.png">
   <br/>
 </p>
 
@@ -62,7 +62,7 @@
 تلبحث عن موارد لمساعدتك على التحضير لـ [** مقابلة البرمجة **](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="images/b4YtAEN.png">
+  <img src="images/arabic/b4YtAEN.png">
   <br/>
 </p>
 
@@ -92,7 +92,7 @@
 > يحتوي كل قسم على روابط لمزيد من الموارد المتعمقة.
 
 <p align="center">
-  <img src="images/jrUBAF7.png">
+  <img src="images/arabic/jrUBAF7.png">
   <br/>
 </p>
 
@@ -439,7 +439,7 @@
 ### نظرية CAP
 
 <p align="center">
-  <img src="images/bgLMI2u.png">
+  <img src="images/arabic/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
@@ -580,7 +580,7 @@ AP هو اختيار جيد إذا سمحت احتياجات العمل بذلك
 ## نظام اسم المجال
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg">
+  <img src="images/arabic/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
@@ -618,7 +618,7 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
 ## Content delivery network
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg">
+  <img src="images/arabic/arabic/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
@@ -659,7 +659,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 ## Load balancer
 
 <p align="center">
-  <img src="images/h81n9iK.png">
+  <img src="images/arabic/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -729,7 +729,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ## Reverse proxy (web server)
 
 <p align="center">
-  <img src="images/n41Azff.png">
+  <img src="images/arabic/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
@@ -772,7 +772,7 @@ Additional benefits include:
 ## Application layer
 
 <p align="center">
-  <img src="images/yB5SYwm.png">
+  <img src="images/arabic/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -807,7 +807,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 ## Database
 
 <p align="center">
-  <img src="images/Xkm5CXz.png">
+  <img src="images/arabic/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -830,7 +830,7 @@ There are many techniques to scale a relational database: **master-slave replica
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
 <p align="center">
-  <img src="images/C9ioGtn.png">
+  <img src="images/arabic/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -845,7 +845,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
 
 <p align="center">
-  <img src="images/krAHLGg.png">
+  <img src="images/arabic/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -873,7 +873,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 #### Federation
 
 <p align="center">
-  <img src="images/U3qV33e.png">
+  <img src="images/arabic/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -894,7 +894,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 #### Sharding
 
 <p align="center">
-  <img src="images/wU8x5Id.png">
+  <img src="images/arabic/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1038,7 +1038,7 @@ Document stores provide high flexibility and are often used for working with occ
 #### Wide column store
 
 <p align="center">
-  <img src="images/n16iOGk.png">
+  <img src="images/arabic/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1061,7 +1061,7 @@ Wide column stores offer high availability and high scalability.  They are often
 #### Graph database
 
 <p align="center">
-  <img src="images/fNcl65g.png">
+  <img src="images/arabic/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1089,7 +1089,7 @@ Graphs databases offer high performance for data models with complex relationshi
 ### SQL or NoSQL
 
 <p align="center">
-  <img src="images/wXGqG5f.png">
+  <img src="images/arabic/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1131,7 +1131,7 @@ Sample data well-suited for NoSQL:
 ## Cache
 
 <p align="center">
-  <img src="images/Q6z24La.png">
+  <img src="images/arabic/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -1202,7 +1202,7 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 #### Cache-aside
 
 <p align="center">
-  <img src="images/ONjORqk.png">
+  <img src="images/arabic/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1238,7 +1238,7 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 #### Write-through
 
 <p align="center">
-  <img src="images/0vBc0hN.png">
+  <img src="images/arabic/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1273,7 +1273,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 #### Write-behind (write-back)
 
 <p align="center">
-  <img src="images/rgSrvjG.png">
+  <img src="images/arabic/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1291,7 +1291,7 @@ In write-behind, the application does the following:
 #### Refresh-ahead
 
 <p align="center">
-  <img src="images/kxtjqgE.png">
+  <img src="images/arabic/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1323,7 +1323,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ## Asynchronism
 
 <p align="center">
-  <img src="images/54GYsSx.png">
+  <img src="images/arabic/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -1369,7 +1369,7 @@ If queues start to grow significantly, the queue size can become larger than mem
 ## Communication
 
 <p align="center">
-  <img src="images/5KeocQs.jpg">
+  <img src="images/arabic/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
@@ -1401,7 +1401,7 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 ### Transmission control protocol (TCP)
 
 <p align="center">
-  <img src="images/JdAsdvG.jpg">
+  <img src="images/arabic/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1425,7 +1425,7 @@ Use TCP over UDP when:
 ### User datagram protocol (UDP)
 
 <p align="center">
-  <img src="images/yzDrJtA.jpg">
+  <img src="images/arabic/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1454,7 +1454,7 @@ Use UDP over TCP when:
 ### Remote procedure call (RPC)
 
 <p align="center">
-  <img src="images/iF4Mkb5.png">
+  <img src="images/arabic/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
@@ -1680,7 +1680,7 @@ Handy metrics based on numbers above:
 > Articles on how real world systems are designed.
 
 <p align="center">
-  <img src="images/TcUo2fw.png">
+  <img src="images/arabic/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
