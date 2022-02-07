@@ -184,7 +184,7 @@
 
 ![Imgur](images/OfVllex.png)
 
-**س: لإجراء المقابلات ، هل أحتاج إلى معرفة كل شيء هنا؟ **
+**س: لإجراء المقابلات ، هل أحتاج إلى معرفة كل شيء هنا? **
 
 **ج: لا ، لست بحاجة إلى معرفة كل شيء هنا للاستعداد للمقابلة **.
 
@@ -226,14 +226,14 @@
 
 اجمع المتطلبات وحدد نطاق المشكلة. اطرح أسئلة لتوضيح حالات الاستخدام والقيود. ناقش الافتراضات.
 
-* من سيستخدمها؟
-* كيف سيستخدمونها؟
-* كم عدد المستخدمين هناك؟
-* ماذا يفعل النظام؟
-* ما هي مداخل ومخرجات النظام؟
-* ما مقدار البيانات التي نتوقع معالجتها؟
-* كم عدد الطلبات التي نتوقعها في الثانية؟
-* ما هي نسبة القراءة إلى الكتابة المتوقعة؟
+* من سيستخدمها?
+* كيف سيستخدمونها?
+* كم عدد المستخدمين هناك?
+* ماذا يفعل النظام?
+* ما هي مداخل ومخرجات النظام?
+* ما مقدار البيانات التي نتوقع معالجتها?
+* كم عدد الطلبات التي نتوقعها في الثانية?
+* ما هي نسبة القراءة إلى الكتابة المتوقعة?
 
 ### الخطوة الثانية: إنشاء تصميم عالي المستوى
 
@@ -257,7 +257,7 @@
 
 ### الخطوة 4: قياس التصميم
 
-تحديد ومعالجة الاختناقات ، في ضوء القيود. على سبيل المثال ، هل تحتاج إلى ما يلي لمعالجة مشكلات قابلية التوسع؟
+تحديد ومعالجة الاختناقات ، في ضوء القيود. على سبيل المثال ، هل تحتاج إلى ما يلي لمعالجة مشكلات قابلية التوسع?
 
 * موازن التحميل
 * التحجيم الأفقي
@@ -370,7 +370,7 @@
 
 ## مواضيع تصميم النظام: ابدأ من هنا
 
-جديد في تصميم النظام؟
+جديد في تصميم النظام?
 
 أولاً ، ستحتاج إلى فهم أساسي للمبادئ المشتركة ، والتعرف على ماهيتها وكيفية استخدامها ومزاياها وعيوبها.
 
@@ -615,7 +615,7 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
 * [ويكيبيديا](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [مقالات DNS](https://support.dnsimple.com/categories/dns/)
 
-## Content delivery network
+## شبكة توصيل المحتوى
 
 <p align="center">
   <img src="images/arabic/h9TAuGI.jpg">
@@ -623,40 +623,40 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
 
-A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.  Generally, static files such as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as Amazon's CloudFront support dynamic content.  The site's DNS resolution will tell clients which server to contact.
+شبكة توصيل المحتوى (CDN) هي شبكة موزعة عالميًا من الخوادم الوكيلة ، تخدم المحتوى من مواقع أقرب إلى المستخدم. بشكل عام ، يتم تقديم الملفات الثابتة مثل HTML / CSS / JS والصور ومقاطع الفيديو من CDN ، على الرغم من أن بعض شبكات CDN مثل Amazon's CloudFront تدعم المحتوى الديناميكي. سيخبر حل DNS الخاص بالموقع العملاء بالخادم الذي يجب الاتصال به.
 
-Serving content from CDNs can significantly improve performance in two ways:
+يمكن أن يؤدي تقديم المحتوى من شبكات CDN إلى تحسين الأداء بشكل ملحوظ بطريقتين:
 
-* Users receive content from data centers close to them
-* Your servers do not have to serve requests that the CDN fulfills
+* يتلقى المستخدمون المحتوى من مراكز البيانات القريبة منهم
+* لا يتعين على الخوادم الخاصة بك أن تخدم الطلبات التي تفي بها شبكة CDN
 
-### Push CDNs
+### دفع CDNs
 
-Push CDNs receive new content whenever changes occur on your server.  You take full responsibility for providing content, uploading directly to the CDN and rewriting URLs to point to the CDN.  You can configure when content expires and when it is updated.  Content is uploaded only when it is new or changed, minimizing traffic, but maximizing storage.
+يتلقى دفع CDNs محتوى جديدًا كلما حدثت تغييرات على الخادم الخاص بك. أنت تتحمل المسؤولية الكاملة عن توفير المحتوى والتحميل مباشرة إلى CDN وإعادة كتابة عناوين URL للإشارة إلى CDN. يمكنك تكوين وقت انتهاء صلاحية المحتوى ووقت تحديثه. يتم تحميل المحتوى فقط عندما يكون جديدًا أو متغيرًا ، مما يقلل من حركة المرور ، مع زيادة التخزين.
 
-Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
+تعمل المواقع التي تحتوي على قدر ضئيل من حركة المرور أو المواقع ذات المحتوى الذي لا يتم تحديثه غالبًا بشكل جيد مع شبكات CDN للدفع. يتم وضع المحتوى على شبكات CDN مرة واحدة ، بدلاً من إعادة سحبه على فترات منتظمة.
 
-### Pull CDNs
+### سحب CDNs
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
+تحصل شبكات CDN على محتوى جديد من الخادم الخاص بك عندما يطلب المستخدم الأول المحتوى. تترك المحتوى على الخادم الخاص بك وتعيد كتابة عناوين URL للإشارة إلى CDN. ينتج عن هذا طلب أبطأ حتى يتم تخزين المحتوى مؤقتًا على CDN.
 
-A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
+تحدد [مدة البقاء (TTL)](https://en.wikipedia.org/wiki/Time_to_live) مدة تخزين المحتوى مؤقتًا. تعمل شبكات CDN على تقليل مساحة التخزين على شبكة CDN ، ولكن يمكنها إنشاء حركة مرور زائدة عن الحاجة إذا انتهت صلاحية الملفات وتم سحبها قبل تغييرها بالفعل.
 
-Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
+تعمل المواقع ذات حركة المرور الكثيفة بشكل جيد مع شبكات CDN ، حيث تنتشر حركة المرور بشكل متساوٍ مع بقاء المحتوى المطلوب مؤخرًا فقط على شبكة CDN.
 
-### Disadvantage(s): CDN
+### العيوب: CDN
 
-* CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
-* Content might be stale if it is updated before the TTL expires it.
-* CDNs require changing URLs for static content to point to the CDN.
+* قد تكون تكاليف CDN كبيرة اعتمادًا على حركة المرور ، على الرغم من أنه يجب موازنة ذلك مع التكاليف الإضافية التي قد تتحملها عند عدم استخدام CDN.
+* قد يكون المحتوى قديمًا إذا تم تحديثه قبل انتهاء مدة البقاء (TTL).
+* تتطلب CDNs تغيير عناوين URL للمحتوى الثابت للإشارة إلى CDN.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
-* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
-* [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
+* [توصيل المحتوى الموزع عالميًا](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
+* [الاختلافات بين شبكات CDN للدفع والسحب](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [ويكيبيديا](https://en.wikipedia.org/wiki/Content_delivery_network)
 
-## Load balancer
+## موازن التحميل
 
 <p align="center">
   <img src="images/arabic/h81n9iK.png">
@@ -664,69 +664,69 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
 
-Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+تقوم موازين التحميل بتوزيع طلبات العميل الواردة على موارد الحوسبة مثل خوادم التطبيقات وقواعد البيانات. في كل حالة ، يُرجع موازن التحميل الاستجابة من مورد الحوسبة إلى العميل المناسب. موازنات التحميل فعالة في:
 
-* Preventing requests from going to unhealthy servers
-* Preventing overloading resources
-* Helping to eliminate a single point of failure
+* منع الطلبات من الذهاب إلى الخوادم غير الصحية
+* منع إثقال الموارد
+* المساعدة في القضاء على نقطة واحدة من الفشل
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+يمكن تنفيذ موازنات التحميل باستخدام أجهزة (باهظة الثمن) أو باستخدام برامج مثل HAProxy.
 
-Additional benefits include:
+تشمل المزايا الإضافية ما يلي:
 
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
+* ** إنهاء SSL ** - فك تشفير الطلبات الواردة واستجابات الخادم المشفرة حتى لا تضطر الخوادم الخلفية إلى إجراء هذه العمليات التي يحتمل أن تكون باهظة الثمن
+    * يزيل الحاجة إلى تثبيت شهادات [X.509](https://en.wikipedia.org/wiki/X.509) على كل خادم
+* ** استمرار الجلسة ** - إصدار ملفات تعريف الارتباط وتوجيه طلبات عميل معين إلى الحالة نفسها إذا كانت تطبيقات الويب لا تتعقب الجلسات
 
-To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
+للحماية من حالات الفشل ، من الشائع إعداد موازين تحميل متعددة ، إما في وضع [نشط-سلبي](#active-passive) أو [نشط-نشط](#active-active) .
 
-Load balancers can route traffic based on various metrics, including:
+يمكن لموازن التحميل توجيه حركة المرور بناءً على مقاييس مختلفة ، بما في ذلك:
 
-* Random
-* Least loaded
-* Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* عشوائي
+* أقل تحميل
+* الجلسة / ملفات تعريف الارتباط
+* [روبن دائري أو روبن دائري مرجح](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
 
-### Layer 4 load balancing
+### موازنة الحمل بالطبقة الرابعة
 
-Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+تنظر موازنات أحمال الطبقة 4 إلى المعلومات الموجودة في [طبقة النقل](#communication) لتحديد كيفية توزيع الطلبات. بشكل عام ، يتضمن هذا المصدر وعناوين IP الوجهة والمنافذ الموجودة في الرأس ، ولكن ليس محتويات الحزمة. تقوم موازنات تحميل الطبقة 4 بإعادة توجيه حزم الشبكة من وإلى الخادم الرئيسي ، مع تنفيذ [ترجمة عنوان الشبكة (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
 
-### Layer 7 load balancing
+### موازنة أحمال الطبقة السابعة
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+تنظر موازن تحميل الطبقة 7 إلى [طبقة التطبيق](#communication) لتحديد كيفية توزيع الطلبات. يمكن أن يشمل ذلك محتويات الرأس والرسالة وملفات تعريف الارتباط. تنهي موازنات تحميل الطبقة 7 حركة مرور الشبكة ، وتقرأ الرسالة ، وتتخذ قرار موازنة التحميل ، ثم تفتح اتصالاً بالخادم المحدد. على سبيل المثال ، يمكن لموازنة تحميل الطبقة 7 توجيه حركة مرور الفيديو إلى الخوادم التي تستضيف مقاطع فيديو مع توجيه حركة مرور فوترة المستخدم الأكثر حساسية إلى خوادم مشددة الأمان.
 
-At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+على حساب المرونة ، تتطلب موازنة تحميل الطبقة 4 وقتًا وموارد حوسبة أقل من الطبقة 7 ، على الرغم من أن تأثير الأداء يمكن أن يكون ضئيلًا على الأجهزة السلعية الحديثة.
 
-### Horizontal scaling
+### القياس الأفقي
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+يمكن أن تساعد موازين التحميل أيضًا في القياس الأفقي ، وتحسين الأداء والتوافر. يعد التوسع في استخدام آلات السلع الأساسية أكثر فعالية من حيث التكلفة وينتج عنه توافر أعلى من توسيع نطاق خادم واحد على أجهزة أكثر تكلفة ، تسمى ** التحجيم الرأسي **. كما أنه من الأسهل توظيف المواهب التي تعمل على الأجهزة السلعية مقارنةً بأنظمة المؤسسات المتخصصة.
 
-#### Disadvantage(s): horizontal scaling
+#### العيوب: القياس الأفقي
 
-* Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
-* Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+* يُدخل التحجيم أفقيًا التعقيد وينطوي على استنساخ الخوادم
+    * يجب أن تكون الخوادم بدون حالة: يجب ألا تحتوي على أي بيانات متعلقة بالمستخدم مثل الجلسات أو صور الملف الشخصي
+    * يمكن تخزين الجلسات في مخزن بيانات مركزي مثل [قاعدة بيانات](#database) (SQL ، NoSQL) أو [ذاكرة تخزين مؤقت](#cache) (Redis ، Memcached)
+* تحتاج الخوادم النهائية مثل ذاكرات التخزين المؤقت وقواعد البيانات إلى التعامل مع المزيد من الاتصالات المتزامنة مع زيادة حجم الخوادم الأولية
 
-### Disadvantage(s): load balancer
+### العيوب: موازن التحميل
 
-* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
-* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+* يمكن أن يصبح موازن التحميل عنق زجاجة في الأداء إذا لم يكن لديه موارد كافية أو إذا لم يتم تكوينه بشكل صحيح.
+* يؤدي إدخال موازن التحميل للمساعدة في التخلص من نقطة فشل واحدة إلى زيادة التعقيد.
+* موازن التحميل الفردي هو نقطة فشل واحدة ، حيث يؤدي تكوين موازين تحميل متعددة إلى زيادة التعقيد.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
-* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
-* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+* [هندسة NGINX](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [دليل هندسة HAProxy](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [قابلية التوسع](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [ويكيبيديا](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+* [موازنة حمل الطبقة 4](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [موازنة تحميل الطبقة 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [تكوين مستمع ELB](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
-## Reverse proxy (web server)
+## وكيل عكسي (خادم الويب)
 
 <p align="center">
   <img src="images/arabic/n41Azff.png">
@@ -735,41 +735,41 @@ Load balancers can also help with horizontal scaling, improving performance and 
   <br/>
 </p>
 
-A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public.  Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
+الوكيل العكسي هو خادم ويب يركز الخدمات الداخلية ويوفر واجهات موحدة للجمهور. يتم إعادة توجيه الطلبات الواردة من العملاء إلى خادم يمكنه الوفاء بها قبل أن يقوم الوكيل العكسي بإرجاع استجابة الخادم للعميل.
 
-Additional benefits include:
+تشمل المزايا الإضافية ما يلي:
 
-* **Increased security** - Hide information about backend servers, blacklist IPs, limit number of connections per client
-* **Increased scalability and flexibility** - Clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Compression** - Compress server responses
-* **Caching** - Return the response for cached requests
-* **Static content** - Serve static content directly
-    * HTML/CSS/JS
-    * Photos
-    * Videos
-    * Etc
+* ** زيادة الأمان ** - إخفاء المعلومات حول خوادم الواجهة الخلفية ، وعناوين IP للقائمة السوداء ، والحد من عدد الاتصالات لكل عميل
+* ** زيادة قابلية التوسع والمرونة ** - يرى العملاء فقط عنوان IP للوكيل العكسي ، مما يسمح لك بتوسيع نطاق الخوادم أو تغيير تكوينها
+* ** إنهاء SSL ** - فك تشفير الطلبات الواردة واستجابات الخادم المشفرة حتى لا تضطر الخوادم الخلفية إلى إجراء هذه العمليات التي يحتمل أن تكون باهظة الثمن
+    * يزيل الحاجة إلى تثبيت شهادات [X.509](https://en.wikipedia.org/wiki/X.509) على كل خادم
+* ** ضغط ** - ضغط استجابات الخادم
+* ** التخزين المؤقت ** - إرجاع الاستجابة للطلبات المخزنة مؤقتًا
+* ** محتوى ثابت ** - لخدمة المحتوى الثابت مباشرة
+    * HTML / CSS / JS
+    * الصور
+    * أشرطة فيديو
+    * إلخ
 
-### Load balancer vs reverse proxy
+### تحميل الموازن مقابل الوكيل العكسي
 
-* Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
-* Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
-* Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
+* يعد نشر موازن التحميل مفيدًا عندما يكون لديك عدة خوادم. في كثير من الأحيان ، توجه موازين التحميل حركة المرور إلى مجموعة من الخوادم التي تخدم نفس الوظيفة.
+* يمكن أن تكون البروكسيات العكسية مفيدة حتى مع خادم ويب أو خادم تطبيق واحد فقط ، مما يفتح الفوائد الموضحة في القسم السابق.
+* يمكن أن تدعم الحلول مثل NGINX و HAProxy كلاً من البروكسي العكسي للطبقة 7 وموازنة الحمل.
 
-### Disadvantage(s): reverse proxy
+### العيوب: عكس الوكيل
 
-* Introducing a reverse proxy results in increased complexity.
-* A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
+* يؤدي إدخال وكيل عكسي إلى زيادة التعقيد.
+* الوكيل العكسي المنفرد هو نقطة فشل واحدة ، حيث يؤدي تكوين العديد من الوكلاء العكسيين (على سبيل المثال ، [تجاوز الفشل](https://en.wikipedia.org/wiki/Failover)) إلى زيادة التعقيد.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+* [عكس الوكيل مقابل موازن التحميل](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+* [هندسة NGINX](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [دليل هندسة HAProxy](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [ويكيبيديا](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+## طبقة التطبيقات
 
 <p align="center">
   <img src="images/arabic/yB5SYwm.png">
@@ -777,34 +777,34 @@ Additional benefits include:
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+يسمح لك فصل طبقة الويب عن طبقة التطبيق (المعروفة أيضًا باسم طبقة النظام الأساسي) بتوسيع نطاق كلتا الطبقتين وتكوينهما بشكل مستقل. تؤدي إضافة واجهة برمجة تطبيقات جديدة إلى إضافة خوادم التطبيقات دون الحاجة إلى إضافة خوادم ويب إضافية. يناصر مبدأ ** المسؤولية الفردية ** الخدمات الصغيرة والمستقلة التي تعمل معًا. يمكن للفرق الصغيرة ذات الخدمات الصغيرة التخطيط بقوة أكبر للنمو السريع.
 
-Workers in the application layer also help enable [asynchronism](#asynchronism).
+يساعد العاملون في طبقة التطبيق أيضًا في تمكين [عدم التزامن](#asynchronism).
 
-### Microservices
+### الخدمات المصغرة
 
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+تتعلق بهذه المناقشة [microservices](https://en.wikipedia.org/wiki/Microservices) ، والتي يمكن وصفها بأنها مجموعة من الخدمات المعيارية الصغيرة والقابلة للنشر بشكل مستقل. تدير كل خدمة عملية فريدة وتتواصل من خلال آلية خفيفة الوزن ومحددة جيدًا لخدمة هدف العمل. <sup><ahref=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
+على سبيل المثال ، يمكن أن يكون لدى Pinterest الخدمات المصغرة التالية: ملف تعريف المستخدم ، والمتابع ، والخلاصة ، والبحث ، وتحميل الصور ، وما إلى ذلك.
 
-### Service Discovery
+### اكتشاف الخدمة
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+أنظمة مثل [Consul](https://www.consul.io/docs/index.html) و [Etcd](https://coreos.com/etcd/docs/latest) و [Zookeeper](http: //www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) يمكن أن تساعد الخدمات في العثور على بعضها البعض من خلال تتبع الأسماء والعناوين والمنافذ المسجلة. تساعد [الفحوصات الصحية](https://www.consul.io/intro/getting-started/checks.html) في التحقق من سلامة الخدمة ويتم إجراؤها غالبًا باستخدام نقطة نهاية [HTTP](#hypertext-transfer-protocol-http). يحتوي كل من Consul و Etcd على [مخزن قيمة المفتاح](#key-value-store) والذي يمكن أن يكون مفيدًا لتخزين قيم التكوين والبيانات المشتركة الأخرى.
 
-### Disadvantage(s): application layer
+### العيوب: طبقة التطبيق
 
-* Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-* Microservices can add complexity in terms of deployments and operations.
+* تتطلب إضافة طبقة تطبيق بخدمات مقترنة بشكل غير محكم نهجًا مختلفًا عن وجهة نظر معمارية وعملياتية وعملية (مقابل نظام متآلف).
+* يمكن أن تضيف الخدمات المصغرة تعقيدًا من حيث عمليات النشر والعمليات.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
+* [مقدمة عن أنظمة هندسة المقاييس](http://lethain.com/introduction-to-architecting-systems-for-scale)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
-* [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
-* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+* [بنية موجهة للخدمة](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+* [مقدمة إلى Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+* [هذا ما تحتاج إلى معرفته حول إنشاء الخدمات المصغرة](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## قاعدة البيانات
 
 <p align="center">
   <img src="images/arabic/Xkm5CXz.png">
@@ -812,22 +812,22 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-### Relational database management system (RDBMS)
+### نظام إدارة قواعد البيانات الارتباطية (RDBMS)
 
-A relational database like SQL is a collection of data items organized in tables.
+قاعدة البيانات العلائقية مثل SQL هي مجموعة من عناصر البيانات المنظمة في جداول.
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+** ACID ** هي مجموعة من خصائص قاعدة البيانات العلائقية [المعاملات](https://en.wikipedia.org/wiki/Database_transaction).
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+* ** الذرية ** - كل معاملة هي كل شيء أو لا شيء
+* ** الاتساق ** - ستؤدي أي معاملة إلى نقل قاعدة البيانات من حالة صالحة إلى أخرى
+* ** العزل ** - تنفيذ المعاملات بشكل متزامن له نفس النتائج كما لو تم تنفيذ المعاملات بشكل متسلسل
+* ** المتانة ** - بمجرد إتمام الصفقة ، ستظل كذلك
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+هناك العديد من الأساليب لتوسيع نطاق قاعدة البيانات العلائقية: ** النسخ المتماثل الرئيسي والعبد ** ، ** النسخ المتماثل الرئيسي / الرئيسي ** ، ** الاتحاد ** ، ** التجزئة ** ، ** عدم التطابق ** ، و ** SQL ضبط**.
 
-#### Master-slave replication
+#### تكرار السيد والخادم
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+يخدم السيد القراءة والكتابة ، ويكرر الكتابة إلى واحد أو أكثر من الخدم ، والتي تخدم القراءة فقط. يمكن للخدم أيضًا نسخ الخدم الإضافيين بطريقة تشبه الأشجار. إذا كان السيد غير متصل ، يمكن للنظام أن يستمر في العمل في وضع القراءة فقط حتى يتم ترقية العبد إلى سيد أو توفير سيد جديد.
 
 <p align="center">
   <img src="images/arabic/C9ioGtn.png">
@@ -835,14 +835,14 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### العيوب: النسخ المتماثل السيد والعبد
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* هناك حاجة إلى منطق إضافي لترقية عبد إلى سيد.
+* راجع [عيوب (عيوب): النسخ المتماثل](#disadvantages-replication) للنقاط المتعلقة بـ ** كل من ** السيد والعبد والسيد والسيد.
 
-#### Master-master replication
+#### النسخ المتماثل الرئيسي والسيد
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+يعمل كلا السيدين على القراءة والكتابة والتنسيق مع بعضهما البعض في عمليات الكتابة. في حالة تعطل أي منهما ، يمكن للنظام الاستمرار في العمل مع كل من عمليات القراءة والكتابة.
 
 <p align="center">
   <img src="images/arabic/krAHLGg.png">
@@ -850,27 +850,27 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### العيوب: النسخ المتماثل الرئيسي والسيد
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* ستحتاج إلى موازن تحميل أو ستحتاج إلى إجراء تغييرات على منطق التطبيق الخاص بك لتحديد مكان الكتابة.
+* معظم الأنظمة الرئيسية الرئيسية إما متسقة بشكل فضفاض (تنتهك ACID) أو تزيد من زمن انتقال الكتابة بسبب المزامنة.
+* يصبح حل النزاع أكثر فاعلية مع إضافة المزيد من عقد الكتابة وزيادة زمن الوصول.
+* راجع [المساوئ (العيوب): النسخ المتماثل](#disadvantages-replication) للنقاط المتعلقة بـ ** كل من ** السيد والعبد والسيد والسيد.
 
-##### Disadvantage(s): replication
+##### العيوب: النسخ المتماثل
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+* هناك احتمال لفقدان البيانات إذا فشل البرنامج الرئيسي قبل أن يتم نسخ أي بيانات مكتوبة حديثًا إلى العقد الأخرى.
+* يتم إعادة عمليات الكتابة إلى النسخ المتماثلة للقراءة. إذا كان هناك الكثير من عمليات الكتابة ، فيمكن أن تتعثر النسخ المتماثلة للقراءة في إعادة قراءة الكتابات ولا يمكنها إجراء العديد من القراءات.
+* كلما زاد عدد العبيد الذين تمت قراءتهم ، زادت الحاجة إلى التكرار ، مما يؤدي إلى تأخر النسخ المتماثل بشكل أكبر.
+* في بعض الأنظمة ، يمكن أن تؤدي الكتابة إلى المعلم إلى إنتاج خيوط متعددة للكتابة بالتوازي ، بينما تدعم النسخ المتماثلة للقراءة الكتابة بالتسلسل باستخدام مؤشر ترابط واحد.
+* يضيف النسخ المتماثل المزيد من الأجهزة وتعقيدًا إضافيًا.
 
-##### Source(s) and further reading: replication
+##### المصدر (المصادر) وقراءات إضافية: النسخ المتماثل
 
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+* [قابلية التوسع ، التوافر ، الاستقرار ، الأنماط](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [نسخ متعدد الماجستير](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### الاتحاد
 
 <p align="center">
   <img src="images/arabic/U3qV33e.png">
@@ -878,20 +878,20 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+يقسم الاتحاد (أو التقسيم الوظيفي) قواعد البيانات حسب الوظيفة. على سبيل المثال ، بدلاً من قاعدة بيانات واحدة متجانسة ، يمكن أن يكون لديك ثلاث قواعد بيانات: ** المنتديات ** ، ** المستخدمون ** ، و ** المنتجات ** ، مما يؤدي إلى تقليل حركة القراءة والكتابة لكل قاعدة بيانات وبالتالي تقليل النسخ المتماثل بطئ. ينتج عن قواعد البيانات الأصغر حجمًا أكبر من البيانات التي يمكن أن تتسع في الذاكرة ، مما يؤدي بدوره إلى المزيد من نتائج ذاكرة التخزين المؤقت بسبب موقع ذاكرة التخزين المؤقت المحسّن. مع عدم وجود تسلسل رئيسي مركزي واحد للكتابات ، يمكنك الكتابة بالتوازي ، وزيادة الإنتاجية.
 
-##### Disadvantage(s): federation
+##### العيوب: الاتحاد
 
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
+* الاتحاد غير فعال إذا كان مخططك يتطلب وظائف أو جداول ضخمة.
+* ستحتاج إلى تحديث منطق التطبيق الخاص بك لتحديد قاعدة البيانات التي يجب قراءتها وكتابتها.
+* يعد ربط البيانات من قاعدتي بيانات أكثر تعقيدًا باستخدام [رابط الخادم](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different- الخوادم).
+* يضيف الاتحاد المزيد من الأجهزة وتعقيدًا إضافيًا.
 
-##### Source(s) and further reading: federation
+##### المصدر (المصادر) وقراءات إضافية: الفيدرالية
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
+* [زيادة عدد المستخدمين إلى أول 10 ملايين مستخدم](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
-#### Sharding
+#### التجزئة
 
 <p align="center">
   <img src="images/arabic/wU8x5Id.png">
@@ -899,143 +899,143 @@ Federation (or functional partitioning) splits up databases by function.  For ex
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
+تقوم المشاركة بتوزيع البيانات عبر قواعد بيانات مختلفة بحيث يمكن لكل قاعدة بيانات فقط إدارة مجموعة فرعية من البيانات. أخذ قاعدة بيانات المستخدمين كمثال ، مع زيادة عدد المستخدمين ، تتم إضافة المزيد من القطع إلى المجموعة.
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+على غرار مزايا [الاتحاد](#federation) ، ينتج عن التجزئة حركة مرور أقل للقراءة والكتابة ، وتكرار أقل ، والمزيد من نتائج ذاكرة التخزين المؤقت. يتم أيضًا تقليل حجم الفهرس ، مما يؤدي بشكل عام إلى تحسين الأداء باستخدام استعلامات أسرع. إذا تعطلت إحدى القطع ، فإن الأجزاء الأخرى لا تزال تعمل ، على الرغم من أنك سترغب في إضافة شكل من أشكال النسخ المتماثل لتجنب فقد البيانات. مثل الفدرالية ، لا يوجد أي كتابات رئيسية مركزية متسلسلة واحدة ، مما يسمح لك بالكتابة بالتوازي مع زيادة الإنتاجية.
 
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
+الطرق الشائعة لتقسيم جدول المستخدمين هي إما من خلال الاسم الأخير للمستخدم أو الموقع الجغرافي للمستخدم.
 
-##### Disadvantage(s): sharding
+##### العيوب: التجزئة
 
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
+* ستحتاج إلى تحديث منطق التطبيق الخاص بك للعمل مع الأجزاء ، مما قد يؤدي إلى استعلامات SQL معقدة.
+* يمكن أن يصبح توزيع البيانات غير متوازن في جزء. على سبيل المثال ، يمكن أن تؤدي مجموعة من المستخدمين المتمرسين على أحد الأجزاء إلى زيادة التحميل على هذا الجزء مقارنة بالآخرين.
+    * يضيف إعادة التوازن تعقيدًا إضافيًا. يمكن أن تقلل وظيفة التجزئة القائمة على [التجزئة المتسقة](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) من كمية البيانات المنقولة.
+* يعد ربط البيانات من أجزاء متعددة أكثر تعقيدًا.
+* تضيف التجزئة المزيد من الأجهزة وتعقيدًا إضافيًا.
 
-##### Source(s) and further reading: sharding
+##### المصدر (المصادر) وقراءات أخرى: التجزئة
 
-* [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-* [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
-* [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+* [مجيء الجزء](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+* [هندسة قاعدة بيانات Shard](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+* [تجزئة ثابتة](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### عدم التطابق
 
-Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
+تحاول Denormalization تحسين أداء القراءة على حساب بعض أداء الكتابة. تتم كتابة نسخ مكررة من البيانات في جداول متعددة لتجنب الصلات باهظة الثمن. بعض أنظمة RDBMS مثل [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) ودعم أوراكل [المشاهدات المادية](https://en.wikipedia.org/wiki/Materialized_view) التي تتعامل مع عمل التخزين المعلومات الزائدة عن الحاجة والاحتفاظ بالنسخ الزائدة عن الحاجة.
 
-Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
+بمجرد توزيع البيانات باستخدام تقنيات مثل [الاتحاد](#federationالاتحاد) و [التجزئة](#sharding) ، تؤدي إدارة الصلات عبر مراكز البيانات إلى زيادة التعقيد. قد يؤدي عدم التطابق إلى الالتفاف على الحاجة إلى مثل هذه الصلات المعقدة.
 
-In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
+في معظم الأنظمة ، يمكن أن يفوق عدد القراءات عدد عمليات الكتابة 100: 1 أو حتى 1000: 1. يمكن أن تكون القراءة الناتجة عن ربط قاعدة بيانات معقدة باهظة الثمن ، مما يؤدي إلى قضاء قدر كبير من الوقت في عمليات القرص.
 
-##### Disadvantage(s): denormalization
+##### العيوب: عدم التطابق
 
-* Data is duplicated.
-* Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
-* A denormalized database under heavy write load might perform worse than its normalized counterpart.
+* البيانات مكررة.
+* يمكن أن تساعد القيود في بقاء النسخ المتكررة من المعلومات متزامنة ، مما يزيد من تعقيد تصميم قاعدة البيانات.
+* قد تؤدي قاعدة البيانات التي لم تتم تسويتها تحت حمل كتابة ثقيل أداءً أسوأ من نظيرتها الطبيعية.
 
-###### Source(s) and further reading: denormalization
+###### المصدر (المصادر) وقراءات إضافية: عدم التطابق
 
-* [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+* [عدم التطابق](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### ضبط SQL
 
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+يعد ضبط SQL موضوعًا واسعًا وقد تمت كتابة العديد من [الكتب](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias٪3Daps&field-keywords=sql+tuning) كمرجع.
 
-It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
+من المهم إجراء ** قياس الأداء ** و ** الملف الشخصي ** لمحاكاة الاختناقات وكشف النقاب عنها.
 
-* **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
-* **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
+* ** Benchmark ** - محاكاة المواقف عالية الحمل باستخدام أدوات مثل [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
+* ** الملف الشخصي ** - قم بتمكين أدوات مثل [سجل الاستعلام البطيء](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) للمساعدة في تتبع مشكلات الأداء.
 
-Benchmarking and profiling might point you to the following optimizations.
+قد توجهك المقارنة المعيارية والتنميط إلى التحسينات التالية.
 
-##### Tighten up the schema
+##### تشديد المخطط
 
-* MySQL dumps to disk in contiguous blocks for fast access.
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
-* Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
-* Use `INT` for larger numbers up to 2^32 or 4 billion.
-* Use `DECIMAL` for currency to avoid floating point representation errors.
-* Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
+* يتم تفريغ MySQL على القرص في كتل متجاورة للوصول السريع.
+* استخدم "CHAR" بدلاً من "VARCHAR" للحقول ذات الطول الثابت.
+    * يسمح "CHAR" بشكل فعال بالوصول السريع والعشوائي ، بينما مع "VARCHAR" ، يجب أن تجد نهاية سلسلة قبل الانتقال إلى السلسلة التالية.
+* استخدم "TEXT" للكتل الكبيرة من النص مثل مشاركات المدونة. يسمح "TEXT" أيضًا بإجراء عمليات بحث منطقية. يؤدي استخدام حقل "TEXT" إلى تخزين مؤشر على القرص يُستخدم لتحديد موقع كتلة النص.
+* استخدم "INT" للأعداد الأكبر حتى 2 ^ 32 أو 4 مليار.
+* استخدم "DECIMAL" للعملة لتجنب أخطاء تمثيل النقطة العائمة.
+* تجنب تخزين "BLOBS" كبيرة ، قم بتخزين مكان مكان الحصول على الكائن بدلاً من ذلك.
+* `` VARCHAR (255) '' هو أكبر عدد من الأحرف يمكن عده بعدد 8 بت ، وغالبًا ما يزيد استخدام البايت في بعض أنظمة RDBMS.
+* قم بتعيين القيد "NOT NULL" حيثما ينطبق ذلك على [تحسين أداء البحث](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
 
-##### Use good indices
+##### استخدم مؤشرات جيدة
 
-* Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-* Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-* Placing an index can keep the data in memory, requiring more space.
-* Writes could also be slower since the index also needs to be updated.
-* When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+* الأعمدة التي تستعلم عنها (`SELECT` ،` GROUP BY` ، `ORDER BY` ،` JOIN`) يمكن أن تكون أسرع مع الفهارس.
+* يتم تمثيل المؤشرات عادةً على أنها ذاتية التوازن [B-tree](https://en.wikipedia.org/wiki/B-tree) التي تحافظ على البيانات مرتبة وتسمح بعمليات البحث والوصول المتسلسل والإدخالات والحذف في الوقت اللوغاريتمي.
+* يمكن أن يؤدي وضع فهرس إلى الاحتفاظ بالبيانات في الذاكرة ، مما يتطلب مساحة أكبر.
+* يمكن أيضًا أن تكون عمليات الكتابة أبطأ نظرًا لأن الفهرس يحتاج أيضًا إلى التحديث.
+* عند تحميل كميات كبيرة من البيانات ، قد يكون من الأسرع تعطيل الفهارس وتحميل البيانات ثم إعادة بناء المؤشرات.
 
-##### Avoid expensive joins
+##### تجنب الصلات باهظة الثمن
 
-* [Denormalize](#denormalization) where performance demands it.
+* [عدم التطابق](#denormalization) حيث يتطلب ذلك الأداء.
 
-##### Partition tables
+##### جداول التقسيم
 
-* Break up a table by putting hot spots in a separate table to help keep it in memory.
+* قسّم طاولة عن طريق وضع نقاط ساخنة في طاولة منفصلة للمساعدة في الاحتفاظ بها في الذاكرة.
 
-##### Tune the query cache
+##### ضبط ذاكرة التخزين المؤقت للاستعلام
 
-* In some cases, the [query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) could lead to [performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
+* في بعض الحالات ، قد يؤدي [استعلام التخزين المؤقت](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) إلى [مشكلات في الأداء](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
 
-##### Source(s) and further reading: SQL tuning
+##### المصدر (المصادر) وقراءات إضافية: ضبط SQL
 
-* [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
-* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
-* [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
-* [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+* [نصائح لتحسين استعلامات MySQL](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
+* [هل هناك سبب وجيه لاستخدام VARCHAR (255) كثيرًا?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [كيف تؤثر القيم الخالية على الأداء?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+* [سجل الاستعلام البطيء](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
 ### NoSQL
 
-NoSQL is a collection of data items represented in a **key-value store**, **document store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
+NoSQL عبارة عن مجموعة من عناصر البيانات ممثلة في ** متجر القيمة الرئيسية ** أو ** مخزن المستندات ** أو ** مخزن الأعمدة العريض ** أو ** قاعدة بيانات الرسم البياني **. يتم إلغاء تنسيق البيانات ، ويتم إجراء الصلات بشكل عام في رمز التطبيق. تفتقر معظم مخازن NoSQL إلى معاملات حمض صحيح ويفضل [التناسق النهائي](#eventual-consistency).
 
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
+يستخدم ** BASE ** غالبًا لوصف خصائص قواعد بيانات NoSQL. بالمقارنة مع [نظرية CAP](#cap-theorem) ، تختار BASE الإتاحة على التناسق.
 
-* **Basically available** - the system guarantees availability.
-* **Soft state** - the state of the system may change over time, even without input.
-* **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
+* ** متوفر أساسًا ** - يضمن النظام التوافر.
+* ** الحالة الناعمة ** - قد تتغير حالة النظام بمرور الوقت ، حتى بدون إدخال.
+* ** الاتساق النهائي ** - سيصبح النظام متسقًا على مدار فترة زمنية ، نظرًا لأن النظام لا يتلقى مدخلات خلال تلك الفترة.
 
-In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document stores**, **wide column stores**, and **graph databases** in the next section.
+بالإضافة إلى الاختيار بين [SQL أو NoSQL] (#sql-or-nosql) ، من المفيد فهم نوع قاعدة بيانات NoSQL الأنسب لحالة (حالات) الاستخدام الخاصة بك. سنراجع ** مخازن القيمة الرئيسية ** و ** مخازن المستندات ** و ** مخازن الأعمدة الواسعة ** و ** قواعد بيانات الرسم البياني ** في القسم التالي.
 
-#### Key-value store
+#### متجر القيمة الرئيسية
 
-> Abstraction: hash table
+> التجريد: جدول التجزئة
 
-A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
+يسمح مخزن القيمة الرئيسية عمومًا لـ O (1) بالقراءة والكتابة وغالبًا ما يكون مدعومًا بالذاكرة أو SSD. يمكن لمخازن البيانات الاحتفاظ بالمفاتيح في [ترتيب معجمي](https://en.wikipedia.org/wiki/Lexicographical_order) ، مما يسمح بالاسترداد الفعال لنطاقات المفاتيح. يمكن أن تسمح مخازن القيمة الرئيسية بتخزين البيانات الوصفية ذات القيمة.
 
-Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
+توفر مخازن القيمة الرئيسية أداءً عاليًا وغالبًا ما تُستخدم لنماذج البيانات البسيطة أو للبيانات سريعة التغير ، مثل طبقة ذاكرة التخزين المؤقت في الذاكرة. نظرًا لأنها تقدم مجموعة محدودة فقط من العمليات ، يتم نقل التعقيد إلى طبقة التطبيق إذا كانت هناك حاجة لعمليات إضافية.
 
-A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
+مخزن القيمة الرئيسية هو الأساس لأنظمة أكثر تعقيدًا مثل مخزن المستندات ، وفي بعض الحالات ، قاعدة بيانات الرسم البياني.
 
-##### Source(s) and further reading: key-value store
+##### المصدر (المصادر) وقراءات إضافية: متجر القيمة الرئيسية
 
-* [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
-* [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
+* [قاعدة بيانات القيمة الأساسية](https://en.wikipedia.org/wiki/Key-value_database)
+* [عيوب متاجر القيمة الرئيسية](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+* [هندسة ريديس](http://qnimate.com/overview-of-redis-architecture/)
 * [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### Document store
+#### متجر المستندات
 
-> Abstraction: key-value store with documents stored as values
+> التجريد: مخزن ذو قيمة مفتاح مع مستندات مخزنة كقيم
 
-A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
+يتمركز مخزن المستندات حول المستندات (XML ، JSON ، ثنائي ، إلخ) ، حيث يخزن المستند جميع المعلومات الخاصة بكائن معين. توفر مخازن المستندات واجهات برمجة تطبيقات أو لغة استعلام للاستعلام بناءً على البنية الداخلية للمستند نفسه. * ملاحظة ، تتضمن العديد من متاجر القيمة الرئيسية ميزات للعمل مع البيانات الوصفية للقيمة ، مما يؤدي إلى تعتيم الخطوط بين هذين النوعين من التخزين. *
 
-Based on the underlying implementation, documents are organized by collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
+بناءً على التنفيذ الأساسي ، يتم تنظيم المستندات حسب المجموعات أو العلامات أو البيانات الوصفية أو الدلائل. على الرغم من إمكانية تنظيم المستندات أو تجميعها معًا ، فقد تحتوي المستندات على حقول مختلفة تمامًا عن بعضها البعض.
 
-Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
+بعض مخازن المستندات مثل [MongoDB](https://www.mongodb.com/mongodb-architecture) و [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture /) توفر أيضًا لغة شبيهة بلغة SQL لإجراء استعلامات معقدة. [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) يدعم كلاً من القيم الأساسية والمستندات.
 
-Document stores provide high flexibility and are often used for working with occasionally changing data.
+توفر مخازن المستندات مرونة عالية وغالبًا ما تستخدم للعمل مع البيانات المتغيرة أحيانًا.
 
-##### Source(s) and further reading: document store
+##### المصدر (المصادر) وقراءات إضافية: متجر المستندات
 
-* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
-* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
-* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
-* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+* [قاعدة بيانات موجهة للمستندات](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [هندسة MongoDB](https://www.mongodb.com/mongodb-architecture)
+* [هندسة CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+* [هندسة البحث المرنة](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
-#### Wide column store
+#### مخزن واسع الأعمدة
 
 <p align="center">
   <img src="images/arabic/n16iOGk.png">
@@ -1043,22 +1043,22 @@ Document stores provide high flexibility and are often used for working with occ
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
 
-> Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+> الملخص: خريطة متداخلة `ColumnFamily <RowKey، Columns <ColKey، Value، Timestamp >>`
 
-A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
+وحدة البيانات الأساسية لمخزن الأعمدة العريضة هي العمود (زوج الاسم / القيمة). يمكن تجميع العمود في مجموعات الأعمدة (مماثلة لجدول SQL). عائلات الأعمدة الفائقة مجموعات أعمدة المجموعة. يمكنك الوصول إلى كل عمود بشكل مستقل باستخدام مفتاح صف ، وتشكل الأعمدة التي تحتوي على مفتاح الصف نفسه صفًا. تحتوي كل قيمة على طابع زمني لتعيين الإصدار وحل التعارض.
 
-Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
+قدمت Google [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) كأول مخزن عمود عريض ، والذي أثر على المصدر المفتوح [HBase] ( https://www.edureka.co/blog/hbase-architecture/) غالبًا ما تستخدم في نظام Hadoop البيئي ، و [Cassandra] (http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/ archIntro.html) من Facebook. تحتفظ المتاجر مثل BigTable و HBase و Cassandra بالمفاتيح بترتيب معجمي ، مما يسمح بالاسترداد الفعال لنطاقات المفاتيح الانتقائية.
 
-Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
+توفر مخازن الأعمدة العريضة توافرًا عاليًا وقابلية تطوير عالية. غالبًا ما يتم استخدامها لمجموعات البيانات الكبيرة جدًا.
 
-##### Source(s) and further reading: wide column store
+##### المصدر (المصادر) وقراءات إضافية: مخزن الأعمدة العريض
 
-* [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
-* [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
-* [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
+* [SQL و NoSQL ، نبذة تاريخية](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+* [هندسة الطاولة الكبيرة](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+* [HBase هندسة] (https://www.edureka.co/blog/hbase-architecture/)
+* [هندسة كاساندرا] (http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
-#### Graph database
+#### قاعدة بيانات الرسم البياني
 
 <p align="center">
   <img src="images/arabic/fNcl65g.png">
@@ -1066,27 +1066,27 @@ Wide column stores offer high availability and high scalability.  They are often
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
 
-> Abstraction: graph
+> التجريد: رسم بياني
 
-In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.
+في قاعدة بيانات الرسم البياني ، كل عقدة عبارة عن سجل وكل قوس عبارة عن علاقة بين عقدتين. تم تحسين قواعد بيانات الرسم البياني لتمثيل العلاقات المعقدة مع العديد من المفاتيح الخارجية أو علاقات أطراف بأطراف.
 
-Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
+تقدم قواعد بيانات الرسوم البيانية أداءً عاليًا لنماذج البيانات ذات العلاقات المعقدة ، مثل الشبكات الاجتماعية. فهي جديدة نسبيًا ولم يتم استخدامها على نطاق واسع بعد ؛ قد يكون من الصعب العثور على أدوات التطوير والموارد. لا يمكن الوصول إلى العديد من الرسوم البيانية إلا باستخدام [REST APIs](#Representational-state-transfer-rest).
 
-##### Source(s) and further reading: graph
+##### المصدر (المصادر) وقراءات أخرى: الرسم البياني
 
-* [Graph database](https://en.wikipedia.org/wiki/Graph_database)
+* [قاعدة بيانات الرسم البياني](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-#### Source(s) and further reading: NoSQL
+#### المصدر (المصادر) وقراءات أخرى: NoSQL
 
-* [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
-* [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-* [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
-* [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+* [شرح المصطلحات الأساسية](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+* [قواعد بيانات NoSQL - استطلاع وإرشادات قرار](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+* [قابلية التوسع](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [مقدمة إلى NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+* [أنماط NoSQL](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### SQL أو NoSQL
 
 <p align="center">
   <img src="images/arabic/wXGqG5f.png">
@@ -1094,41 +1094,41 @@ Graphs databases offer high performance for data models with complex relationshi
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
 
-Reasons for **SQL**:
+أسباب ** SQL **:
 
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
+* البيانات المنظمة
+* مخطط صارم
+* البيانات العلائقية
+* الحاجة إلى صلات معقدة
+* المعاملات
+* أنماط واضحة للقياس
+* أكثر رسوخًا: المطورون ، المجتمع ، الكود ، الأدوات ، إلخ
+* عمليات البحث حسب الفهرس سريعة جدًا
 
-Reasons for **NoSQL**:
+أسباب ** NoSQL **:
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non-relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+* البيانات شبه المنظمة
+* مخطط ديناميكي أو مرن
+* البيانات غير العلائقية
+* لا حاجة لوصلات معقدة
+* تخزين العديد من تيرابايت (أو PB) من البيانات
+* عبء عمل كثيف البيانات
+* إنتاجية عالية جدًا لـ IOPS
 
-Sample data well-suited for NoSQL:
+عينة بيانات مناسبة تمامًا لـ NoSQL:
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+* استيعاب سريع لبيانات الدخول وتسجيل النقرات
+* المتصدرين أو بيانات التهديف
+* بيانات مؤقتة ، مثل عربة التسوق
+* يتم الوصول إليها بشكل متكرر ("الساخنة") الجداول
+* البيانات الوصفية / جداول البحث
 
-##### Source(s) and further reading: SQL or NoSQL
+##### المصدر (المصادر) وقراءات أخرى: SQL أو NoSQL
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
-* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+* [زيادة عدد المستخدمين إلى أول 10 ملايين مستخدم](https://www.youtube.com/watch?v=kKjm4ehYiMs)
+* [اختلافات SQL مقابل NoSQL](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
-## Cache
+## تخزين مؤقت
 
 <p align="center">
   <img src="images/arabic/Q6z24La.png">
@@ -1136,70 +1136,70 @@ Sample data well-suited for NoSQL:
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
 
-Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
+يعمل التخزين المؤقت على تحسين أوقات تحميل الصفحة ويمكن أن يقلل الحمل على الخوادم وقواعد البيانات الخاصة بك. في هذا النموذج ، سيقوم المرسل أولاً بالبحث عما إذا كان الطلب قد تم تقديمه من قبل ومحاولة العثور على النتيجة السابقة لإرجاعها ، من أجل حفظ التنفيذ الفعلي.
 
-Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
+غالبًا ما تستفيد قواعد البيانات من التوزيع المنتظم للقراءات والكتابة عبر أقسامها. يمكن أن تؤدي العناصر الشائعة إلى انحراف التوزيع ، مما يتسبب في حدوث اختناقات. يمكن أن يساعد وضع ذاكرة التخزين المؤقت أمام قاعدة البيانات على امتصاص الأحمال غير المتكافئة والزيادات المفاجئة في حركة المرور.
 
-### Client caching
+### تخزين العميل المؤقت
 
-Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
+يمكن أن توجد ذاكرات التخزين المؤقت على جانب العميل (نظام التشغيل أو المستعرض) ، [جانب الخادم](#reverse-proxy-web-server) ، أو في طبقة ذاكرة تخزين مؤقت مميزة.
 
-### CDN caching
+### تخزين CDN المؤقت
 
-[CDNs](#content-delivery-network) are considered a type of cache.
+[CDNs](#content-delivery-network) تعتبر نوعًا من ذاكرة التخزين المؤقت.
 
-### Web server caching
+### التخزين المؤقت لخادم الويب
 
-[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+يمكن أن تخدم [الوكلاء العكسيون](#reverse-proxy-web-server) وذاكرة التخزين المؤقت مثل [Varnish](https://www.varnish-cache.org/) محتوى ثابتًا وديناميكيًا بشكل مباشر. يمكن لخوادم الويب أيضًا تخزين الطلبات مؤقتًا ، وإرجاع الردود دون الحاجة إلى الاتصال بخوادم التطبيق.
 
-### Database caching
+### التخزين المؤقت لقاعدة البيانات
 
-Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+تتضمن قاعدة البيانات الخاصة بك عادةً مستوى معينًا من التخزين المؤقت في تكوين افتراضي ، محسّن لحالة استخدام عامة. يمكن أن يؤدي التغيير والتبديل في هذه الإعدادات لأنماط استخدام معينة إلى زيادة تعزيز الأداء.
 
-### Application caching
+### التطبيق التخزين المؤقت
 
-In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+إن ذاكرات التخزين المؤقت في الذاكرة مثل Memcached و Redis هي مخازن ذات قيمة أساسية بين تطبيقك وتخزين البيانات. نظرًا لأن البيانات محفوظة في ذاكرة الوصول العشوائي ، فهي أسرع بكثير من قواعد البيانات النموذجية حيث يتم تخزين البيانات على القرص. ذاكرة الوصول العشوائي محدودة أكثر من القرص ، لذا [إلغاء ذاكرة التخزين المؤقت](https://en.wikipedia.org/wiki/Cache_algorithms) خوارزميات مثل [الأقل استخدامًا مؤخرًا (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) يمكن أن تساعد في إبطال الإدخالات "الباردة" والحفاظ على البيانات "الساخنة" في ذاكرة الوصول العشوائي.
 
-Redis has the following additional features:
+يتمتع Redis بالميزات الإضافية التالية:
 
-* Persistence option
-* Built-in data structures such as sorted sets and lists
+* خيار الثبات
+* هياكل البيانات المضمنة مثل المجموعات والقوائم المصنفة
 
-There are multiple levels you can cache that fall into two general categories: **database queries** and **objects**:
+هناك عدة مستويات يمكنك تخزينها مؤقتًا والتي تنقسم إلى فئتين عامتين: ** استعلامات قاعدة البيانات ** و ** الكائنات **:
 
-* Row level
-* Query-level
-* Fully-formed serializable objects
-* Fully-rendered HTML
+* مستوى الصف
+* على مستوى الاستعلام
+* كائنات قابلة للتسلسل مشكلة بالكامل
+* تم تقديم HTML بالكامل
 
-Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+بشكل عام ، يجب أن تحاول تجنب التخزين المؤقت المستند إلى الملفات ، لأنه يجعل الاستنساخ والتحجيم التلقائي أكثر صعوبة.
 
-### Caching at the database query level
+### التخزين المؤقت على مستوى استعلام قاعدة البيانات
 
-Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+عندما تقوم بالاستعلام عن قاعدة البيانات ، قم بتجزئة الاستعلام كمفتاح وقم بتخزين النتيجة في ذاكرة التخزين المؤقت. هذا النهج يعاني من مشاكل انتهاء الصلاحية:
 
-* Hard to delete a cached result with complex queries
-* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
+* من الصعب حذف نتيجة مخبأة مع استعلامات معقدة
+* إذا تغير جزء واحد من البيانات مثل خلية جدول ، فأنت بحاجة إلى حذف جميع الاستعلامات المخزنة مؤقتًا التي قد تتضمن الخلية التي تم تغييرها
 
-### Caching at the object level
+### التخزين المؤقت على مستوى الكائن
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+انظر إلى بياناتك ككائن ، على غرار ما تفعله برمز التطبيق الخاص بك. اجعل تطبيقك يجمع مجموعة البيانات من قاعدة البيانات إلى مثيل فئة أو بنية (هياكل) بيانات:
 
-* Remove the object from cache if its underlying data has changed
-* Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
+* إزالة الكائن من ذاكرة التخزين المؤقت إذا تغيرت البيانات الأساسية الخاصة به
+* يسمح بالمعالجة غير المتزامنة: يقوم العمال بتجميع الكائنات عن طريق استهلاك أحدث كائن مخزّن مؤقتًا
 
-Suggestions of what to cache:
+اقتراحات لما سيتم تخزينه مؤقتًا:
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+* جلسات المستخدم
+* صفحات الويب المقدمة بالكامل
+* تيارات النشاط
+* بيانات الرسم البياني للمستخدم
 
-### When to update the cache
+### متى يتم تحديث ذاكرة التخزين المؤقت
 
-Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+نظرًا لأنه لا يمكنك تخزين سوى كمية محدودة من البيانات في ذاكرة التخزين المؤقت ، فستحتاج إلى تحديد استراتيجية تحديث ذاكرة التخزين المؤقت التي تعمل بشكل أفضل لحالة الاستخدام الخاصة بك.
 
-#### Cache-aside
+#### وضع ذاكرة التخزين المؤقت جانبًا
 
 <p align="center">
   <img src="images/arabic/ONjORqk.png">
@@ -1207,12 +1207,12 @@ Since you can only store a limited amount of data in cache, you'll need to deter
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
 
-The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+التطبيق مسؤول عن القراءة والكتابة من التخزين. ذاكرة التخزين المؤقت لا تتفاعل مع التخزين مباشرة. يقوم التطبيق بما يلي:
 
-* Look for entry in cache, resulting in a cache miss
-* Load entry from the database
-* Add entry to cache
-* Return entry
+* ابحث عن الإدخال في ذاكرة التخزين المؤقت ، مما أدى إلى فقدان ذاكرة التخزين المؤقت
+* تحميل دخول من قاعدة البيانات
+* إضافة إدخال إلى ذاكرة التخزين المؤقت
+* عودة الدخول
 
 ```python
 def get_user(self, user_id):
@@ -1225,17 +1225,17 @@ def get_user(self, user_id):
     return user
 ```
 
-[Memcached](https://memcached.org/) is generally used in this manner.
+يتم استخدام [Memcached] (https://memcached.org/) بشكل عام بهذه الطريقة.
 
-Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+تتم القراءات اللاحقة للبيانات المضافة إلى ذاكرة التخزين المؤقت بسرعة. يشار إلى ذاكرة التخزين المؤقت الجانبية أيضًا باسم التحميل البطيء. يتم تخزين البيانات المطلوبة فقط مؤقتًا ، مما يؤدي إلى تجنب ملء ذاكرة التخزين المؤقت بالبيانات غير المطلوبة.
 
-##### Disadvantage(s): cache-aside
+##### العيوب: cache-aside
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
-* When a node fails, it is replaced by a new, empty node, increasing latency.
+* ينتج عن كل خطأ في ذاكرة التخزين المؤقت ثلاث رحلات ، مما قد يتسبب في تأخير ملحوظ.
+* يمكن أن تصبح البيانات قديمة إذا تم تحديثها في قاعدة البيانات. يتم تخفيف هذه المشكلة عن طريق تعيين مدة البقاء (TTL) التي تفرض تحديثًا لإدخال ذاكرة التخزين المؤقت ، أو باستخدام الكتابة.
+* عندما تفشل عقدة ، يتم استبدالها بعقدة جديدة فارغة ، مما يؤدي إلى زيادة زمن الوصول.
 
-#### Write-through
+#### الكتابة عبر
 
 <p align="center">
   <img src="images/arabic/0vBc0hN.png">
@@ -1243,19 +1243,19 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+يستخدم التطبيق ذاكرة التخزين المؤقت كمخزن بيانات رئيسي لقراءة البيانات وكتابتها عليها ، بينما يكون التخزين المؤقت مسؤولاً عن القراءة والكتابة في قاعدة البيانات:
 
-* Application adds/updates entry in cache
-* Cache synchronously writes entry to data store
-* Return
+* يضيف التطبيق / تحديثات الإدخال في ذاكرة التخزين المؤقت
+* ذاكرة التخزين المؤقت تكتب الدخول إلى مخزن البيانات بشكل متزامن
+* عودة
 
-Application code:
+أمر التطبيق:
 
 ```python
 set_user(12345, {"foo":"bar"})
 ```
 
-Cache code:
+أمر التخزين المؤقت:
 
 ```python
 def set_user(user_id, values):
@@ -1263,14 +1263,14 @@ def set_user(user_id, values):
     cache.set(user_id, user)
 ```
 
-Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+الكتابة من خلال عملية إجمالية بطيئة بسبب عملية الكتابة ، لكن القراءات اللاحقة للبيانات المكتوبة للتو تكون سريعة. يتسامح المستخدمون بشكل عام مع وقت الاستجابة عند تحديث البيانات أكثر من قراءة البيانات. البيانات في ذاكرة التخزين المؤقت ليست قديمة.
 
-##### Disadvantage(s): write through
+##### العيوب: اكتب
 
-* When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never be read, which can be minimized with a TTL.
+* عند إنشاء عقدة جديدة بسبب فشل أو تحجيم ، لن تقوم العقدة الجديدة بتخزين الإدخالات مؤقتًا حتى يتم تحديث الإدخال في قاعدة البيانات. يمكن أن يؤدي وضع ذاكرة التخزين المؤقت جنبًا إلى جنب مع الكتابة من خلال إلى التخفيف من هذه المشكلة.
+* قد لا تتم قراءة معظم البيانات المكتوبة مطلقًا ، ويمكن تصغيرها باستخدام TTL.
 
-#### Write-behind (write-back)
+#### الكتابة الخلفية (إعادة الكتابة)
 
 <p align="center">
   <img src="images/arabic/rgSrvjG.png">
@@ -1278,17 +1278,17 @@ Write-through is a slow overall operation due to the write operation, but subseq
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-In write-behind, the application does the following:
+في الكتابة الخلفية ، يقوم التطبيق بما يلي:
 
-* Add/update entry in cache
-* Asynchronously write entry to the data store, improving write performance
+* إضافة / تحديث الإدخال في ذاكرة التخزين المؤقت
+* كتابة الإدخال بشكل غير متزامن إلى مخزن البيانات ، مما يؤدي إلى تحسين أداء الكتابة
 
-##### Disadvantage(s): write-behind
+##### العيوب: الكتابة الخلفية
 
-* There could be data loss if the cache goes down prior to its contents hitting the data store.
-* It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+* قد يكون هناك فقدان للبيانات إذا تعطلت ذاكرة التخزين المؤقت قبل أن تصل محتوياتها إلى مخزن البيانات.
+* يعد تنفيذ الكتابة الخلفية أكثر تعقيدًا من تنفيذ التخزين المؤقت جانبًا أو الكتابة.
 
-#### Refresh-ahead
+#### التحديث إلى الأمام
 
 <p align="center">
   <img src="images/arabic/kxtjqgE.png">
@@ -1296,31 +1296,31 @@ In write-behind, the application does the following:
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
 
-You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+يمكنك تكوين ذاكرة التخزين المؤقت لتحديث أي إدخال مخبأ تم الوصول إليه مؤخرًا تلقائيًا قبل انتهاء صلاحيته.
 
-Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+يمكن أن يؤدي التحديث المسبق إلى تقليل وقت الاستجابة مقابل القراءة الكاملة إذا كان بإمكان ذاكرة التخزين المؤقت التنبؤ بدقة بالعناصر التي من المحتمل أن تكون مطلوبة في المستقبل.
 
-##### Disadvantage(s): refresh-ahead
+##### العيوب: التحديث إلى الأمام
 
-* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+* عدم التنبؤ بدقة بالعناصر التي من المحتمل أن تكون مطلوبة في المستقبل يمكن أن يؤدي إلى انخفاض الأداء مقارنة بغير التحديث المسبق.
 
-### Disadvantage(s): cache
+### العيوب: ذاكرة التخزين المؤقت
 
-* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
-* Need to make application changes such as adding Redis or memcached.
+* تحتاج إلى الحفاظ على الاتساق بين ذاكرات التخزين المؤقت ومصدر الحقيقة مثل قاعدة البيانات من خلال [إبطال ذاكرة التخزين المؤقت](https://en.wikipedia.org/wiki/Cache_algorithms).
+* يعد إبطال ذاكرة التخزين المؤقت مشكلة صعبة ، وهناك تعقيد إضافي مرتبط بموعد تحديث ذاكرة التخزين المؤقت.
+* تحتاج إلى إجراء تغييرات على التطبيق مثل إضافة Redis أو memcached.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
-* [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
-* [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-* [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
-* [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+* [من ذاكرة التخزين المؤقت إلى شبكة البيانات في الذاكرة](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+* [أنماط تصميم النظام القابلة للتطوير](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+* [مقدمة في هندسة أنظمة القياس](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+* [قابلية التوسع ، التوافر ، الاستقرار ، الأنماط](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [قابلية التوسع](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [استراتيجيات AWS ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+* [ويكيبيديا](https://en.wikipedia.org/wiki/Cache_(الحوسبة))
 
-## Asynchronism
+## عدم التزامن
 
 <p align="center">
   <img src="images/arabic/54GYsSx.png">
@@ -1328,45 +1328,45 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
 
-Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+تساعد تدفقات العمل غير المتزامنة على تقليل أوقات الطلب للعمليات الباهظة التي كان من الممكن إجراؤها في نفس الوقت. يمكنهم أيضًا المساعدة من خلال القيام بعمل يستغرق وقتًا طويلاً مسبقًا ، مثل التجميع الدوري للبيانات.
 
-### Message queues
+### قوائم انتظار الرسائل
 
-Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+تقوم قوائم انتظار الرسائل باستلام الرسائل والاحتفاظ بها وتسليمها. إذا كانت العملية بطيئة جدًا بحيث لا يمكن تنفيذها بشكل مضمّن ، فيمكنك استخدام قائمة انتظار الرسائل مع سير العمل التالي:
 
-* An application publishes a job to the queue, then notifies the user of job status
-* A worker picks up the job from the queue, processes it, then signals the job is complete
+* يقوم أحد التطبيقات بنشر وظيفة في قائمة الانتظار ، ثم يقوم بإعلام المستخدم بحالة الوظيفة
+* يلتقط عامل الوظيفة من قائمة الانتظار ، ويعالجها ، ثم يشير إلى اكتمال المهمة
 
-The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
+لا يتم حظر المستخدم وتتم معالجة المهمة في الخلفية. خلال هذا الوقت ، قد يقوم العميل اختياريًا بكمية صغيرة من المعالجة لجعل الأمر يبدو وكأن المهمة قد اكتملت. على سبيل المثال ، في حالة نشر تغريدة ، يمكن نشر التغريدة على الفور على جدولك الزمني ، ولكن قد يستغرق الأمر بعض الوقت قبل أن يتم تسليم تغريدتك فعليًا إلى جميع متابعيك.
 
-**[Redis](https://redis.io/)** is useful as a simple message broker but messages can be lost.
+** [Redis](https://redis.io/) ** مفيد كوسيط رسائل بسيط ولكن يمكن فقد الرسائل.
 
-**[RabbitMQ](https://www.rabbitmq.com/)** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+** [RabbitMQ](https://www.rabbitmq.com/) ** شائعة ولكنها تتطلب منك التكيف مع بروتوكول "AMQP" وإدارة العقد الخاصة بك.
 
-**[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
+** [Amazon SQS](https://aws.amazon.com/sqs/) ** مستضاف ولكن يمكن أن يكون له وقت استجابة مرتفع ولديه إمكانية تسليم الرسائل مرتين.
 
-### Task queues
+### قوائم انتظار المهام
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+تستقبل قوائم انتظار المهام المهام والبيانات المتعلقة بها ، وتقوم بتشغيلها ، ثم تسليم نتائجها. يمكنهم دعم الجدولة ويمكن استخدامها لتشغيل وظائف حسابية مكثفة في الخلفية.
 
-**[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
+** [كرفس](https://docs.celeryproject.org/en/stable/) ** لديه دعم للجدولة ولديه دعم Python بشكل أساسي.
 
-### Back pressure
+### الضغط الخلفي
 
-If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+إذا بدأت قوائم الانتظار في النمو بشكل ملحوظ ، يمكن أن يصبح حجم قائمة الانتظار أكبر من الذاكرة ، مما يؤدي إلى فقد ذاكرة التخزين المؤقت وقراءة القرص وحتى أداء أبطأ. يمكن أن يساعد [الضغط الخلفي](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) في الحد من حجم قائمة الانتظار ، وبالتالي الحفاظ على معدل إنتاجية مرتفع واستجابة جيدة مرات للوظائف الموجودة بالفعل في قائمة الانتظار. بمجرد امتلاء قائمة الانتظار ، يحصل العملاء على خادم مشغول أو رمز حالة HTTP 503 للمحاولة مرة أخرى لاحقًا. يمكن للعملاء إعادة محاولة الطلب في وقت لاحق ، ربما باستخدام [التراجع الأسي](https://en.wikipedia.org/wiki/Exponential_backoff).
 
-### Disadvantage(s): asynchronism
+### العيوب: عدم التزامن
 
-* Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+* قد تكون حالات الاستخدام مثل العمليات الحسابية غير المكلفة وسير العمل في الوقت الفعلي مناسبة بشكل أفضل للعمليات المتزامنة ، حيث يمكن أن يؤدي إدخال قوائم الانتظار إلى زيادة التأخير والتعقيد.
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
-* [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
-* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
-* [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+* [إنها لعبة أرقام](https://www.youtube.com/watch?v=1KRYH75wgy4)
+* [تطبيق الضغط الخلفي عند التحميل الزائد](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+* [قانون ليتل](https://en.wikipedia.org/wiki/Little٪27s_law)
+* [ما الفرق بين قائمة انتظار الرسائل وقائمة انتظار المهام?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue -لماذا تتطلب قائمة انتظار مهمة وسيط رسالة مثل RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
+## تواصل
 
 <p align="center">
   <img src="images/arabic/5KeocQs.jpg">
@@ -1374,11 +1374,11 @@ If queues start to grow significantly, the queue size can become larger than mem
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
 
-### Hypertext transfer protocol (HTTP)
+### بروتوكول نقل النص التشعبي (HTTP)
 
-HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP هي طريقة لتشفير ونقل البيانات بين العميل والخادم. إنه بروتوكول طلب / استجابة: يصدر العملاء طلبات ويصدر الخوادم استجابات بالمحتوى ذي الصلة ومعلومات حالة الإكمال حول الطلب. HTTP قائم بذاته ، مما يسمح للطلبات والاستجابات بالتدفق عبر العديد من أجهزة التوجيه والخوادم الوسيطة التي تقوم بموازنة التحميل والتخزين المؤقت والتشفير والضغط.
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+يتكون طلب HTTP الأساسي من فعل (طريقة) ومورد (نقطة نهاية). فيما يلي أفعال HTTP الشائعة:
 
 | Verb | Description | Idempotent* | Safe | Cacheable |
 |---|---|---|---|---|
@@ -1388,17 +1388,17 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 | PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
 | DELETE | Deletes a resource | Yes | No | No |
 
-*Can be called many times without different outcomes.
+* يمكن استدعاؤه عدة مرات دون نتائج مختلفة.
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
+HTTP هو بروتوكول طبقة تطبيق يعتمد على بروتوكولات المستوى الأدنى مثل ** TCP ** و ** UDP **.
 
-#### Source(s) and further reading: HTTP
+#### المصدر (المصادر) وقراءات أخرى: HTTP
 
-* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
-* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
-* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+* [ما هو HTTP?](https://www.nginx.com/resources/glossary/http/)
+* [الفرق بين HTTP و TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [الفرق بين PUT و PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
-### Transmission control protocol (TCP)
+### بروتوكول التحكم في الإرسال (TCP)
 
 <p align="center">
   <img src="images/arabic/JdAsdvG.jpg">
@@ -1406,23 +1406,23 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
 
-TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
+TCP هو بروتوكول مهيأ للاتصال عبر [شبكة IP](https://en.wikipedia.org/wiki/Internet_Protocol). يتم إنشاء الاتصال وإنهائه باستخدام [المصافحة](https://en.wikipedia.org/wiki/Handshaking). نضمن وصول جميع الحزم المرسلة إلى الوجهة بالترتيب الأصلي وبدون فساد من خلال:
 
-* Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+* أرقام التسلسل و [حقول المجموع الاختباري](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) لكل حزمة
+* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) الحزم وإعادة الإرسال التلقائي
 
-If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally result in less efficient transmission than UDP.
+إذا لم يتلق المرسل استجابة صحيحة ، فسيعيد إرسال الحزم. إذا كانت هناك مهلات متعددة ، فسيتم قطع الاتصال. ينفذ TCP أيضًا [التحكم في التدفق](https://en.wikipedia.org/wiki/Flow_control_(data)) و [التحكم في الازدحام](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control). تتسبب هذه الضمانات في حدوث تأخيرات وتؤدي عمومًا إلى نقل أقل كفاءة من UDP.
 
-To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a [memcached](https://memcached.org/) server.  [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool) can help in addition to switching to UDP where applicable.
+لضمان إنتاجية عالية ، يمكن لخوادم الويب الاحتفاظ بعدد كبير من اتصالات TCP مفتوحة ، مما يؤدي إلى استخدام ذاكرة عالية. قد يكون وجود عدد كبير من الاتصالات المفتوحة بين سلاسل عمليات خادم الويب مكلفًا ، ولنقل ، خادم [memcached](https://memcached.org/). يمكن أن يساعد [تجميع الاتصال](https://en.wikipedia.org/wiki/Connection_pool) بالإضافة إلى التبديل إلى UDP عند الاقتضاء.
 
-TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.
+يعد بروتوكول TCP مفيدًا للتطبيقات التي تتطلب موثوقية عالية ولكنها تستغرق وقتًا أقل أهمية. تتضمن بعض الأمثلة خوادم الويب ومعلومات قاعدة البيانات و SMTP و FTP و SSH.
 
-Use TCP over UDP when:
+استخدم TCP عبر UDP عندما:
 
-* You need all of the data to arrive intact
-* You want to automatically make a best estimate use of the network throughput
+* أنت بحاجة إلى جميع البيانات لتصل سليمة
+* تريد إجراء أفضل تقدير تلقائيًا لاستخدام معدل نقل الشبكة
 
-### User datagram protocol (UDP)
+### بروتوكول مخطط بيانات المستخدم (UDP)
 
 <p align="center">
   <img src="images/arabic/yzDrJtA.jpg">
@@ -1430,28 +1430,28 @@ Use TCP over UDP when:
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
 
-UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.
+UDP غير متصل. يتم ضمان مخططات البيانات (المشابهة للحزم) فقط على مستوى مخطط البيانات. قد تصل مخططات البيانات إلى وجهتها خارج الترتيب أو لا تصل على الإطلاق. لا يدعم UDP التحكم في الازدحام. بدون الضمانات التي يدعمها TCP ، يكون UDP أكثر كفاءة بشكل عام.
 
-UDP can broadcast, sending datagrams to all devices on the subnet.  This is useful with [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address.
+يمكن لـ UDP البث وإرسال مخططات البيانات إلى جميع الأجهزة الموجودة على الشبكة الفرعية. هذا مفيد مع [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) لأن العميل لم يتلق عنوان IP بعد ، وبالتالي يمنع طريقة لبث TCP بدون عنوان IP.
 
-UDP is less reliable but works well in real time use cases such as VoIP, video chat, streaming, and realtime multiplayer games.
+يعد UDP أقل موثوقية ولكنه يعمل بشكل جيد في حالات الاستخدام في الوقت الفعلي مثل VoIP ودردشة الفيديو والبث المباشر والألعاب متعددة اللاعبين في الوقت الفعلي.
 
-Use UDP over TCP when:
+استخدم UDP عبر TCP عندما:
 
-* You need the lowest latency
-* Late data is worse than loss of data
-* You want to implement your own error correction
+* أنت بحاجة إلى أقل زمن انتقال
+* البيانات المتأخرة أسوأ من فقدان البيانات
+* تريد تنفيذ تصحيح الخطأ الخاص بك
 
-#### Source(s) and further reading: TCP and UDP
+#### المصدر (المصادر) وقراءات إضافية: TCP و UDP
 
-* [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
-* [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
-* [Difference between TCP and UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
-* [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
-* [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
-* [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+* [الشبكات لبرمجة الألعاب](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [الاختلافات الرئيسية بين بروتوكولات TCP و UDP](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
+* [الفرق بين TCP و UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
+* [بروتوكول التحكم في الإرسال](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+* [بروتوكول مخطط بيانات المستخدم](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+* [تحجيم memcache على Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Remote procedure call (RPC)
+### استدعاء الإجراء البعيد (RPC)
 
 <p align="center">
   <img src="images/arabic/iF4Mkb5.png">
@@ -1459,18 +1459,18 @@ Use UDP over TCP when:
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
-In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
+في RPC ، يتسبب العميل في تنفيذ إجراء على مساحة عنوان مختلفة ، عادةً ما يكون خادمًا بعيدًا. يتم ترميز الإجراء كما لو كان استدعاء إجراء محلي ، مع استبعاد تفاصيل كيفية الاتصال بالخادم من برنامج العميل. عادةً ما تكون المكالمات عن بُعد أبطأ وأقل موثوقية من المكالمات المحلية ، لذا من المفيد التمييز بين مكالمات RPC والمكالمات المحلية. تتضمن أطر عمل RPC الشائعة [Protobuf](https://developers.google.com/protocol-buffers/) و [Thrift](https://thrift.apache.org/) و [Avro](https://avro.apache.org/docs/current/).
 
-RPC is a request-response protocol:
+RPC هو بروتوكول استجابة للطلب:
 
-* **Client program** - Calls the client stub procedure.  The parameters are pushed onto the stack like a local procedure call.
-* **Client stub procedure** - Marshals (packs) procedure id and arguments into a request message.
-* **Client communication module** - OS sends the message from the client to the server.
-* **Server communication module** - OS passes the incoming packets to the server stub procedure.
-* **Server stub procedure** -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.
-* The server response repeats the steps above in reverse order.
+* ** برنامج العميل ** - استدعاء إجراء كعب العميل. يتم دفع المعلمات إلى المكدس مثل استدعاء إجراء محلي.
+* ** إجراء كعب العميل ** - معرف إجراء المشير (الحزم) والوسيطات في رسالة طلب.
+* ** وحدة اتصالات العميل ** - يرسل نظام التشغيل الرسالة من العميل إلى الخادم.
+* ** وحدة اتصالات الخادم ** - يمرر نظام التشغيل الحزم الواردة إلى إجراء كعب الخادم.
+* ** إجراء كعب الخادم ** - إلغاء تنظيم النتائج ، واستدعاء إجراء الخادم المطابق لمعرف الإجراء وتمرير الوسائط المحددة.
+* تكرر استجابة الخادم الخطوات المذكورة أعلاه بترتيب عكسي.
 
-Sample RPC calls:
+نماذج استدعاءات RPC:
 
 ```
 GET /someoperation?data=anId
@@ -1482,36 +1482,36 @@ POST /anotheroperation
 }
 ```
 
-RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
+يركز RPC على فضح السلوكيات. غالبًا ما يتم استخدام RPCs لأسباب تتعلق بالأداء مع الاتصالات الداخلية ، حيث يمكنك إجراء مكالمات محلية يدويًا لتناسب حالات الاستخدام الخاصة بك بشكل أفضل.
 
-Choose a native library (aka SDK) when:
+اختر مكتبة أصلية (تُعرف أيضًا باسم SDK) عندما:
 
-* You know your target platform.
-* You want to control how your "logic" is accessed.
-* You want to control how error control happens off your library.
-* Performance and end user experience is your primary concern.
+* أنت تعرف النظام الأساسي الذي تستهدفه.
+* تريد التحكم في كيفية الوصول إلى "المنطق" الخاص بك.
+* تريد التحكم في كيفية حدوث التحكم في الأخطاء خارج مكتبتك.
+* يعد الأداء وتجربة المستخدم النهائي شاغلك الأساسي.
 
-HTTP APIs following **REST** tend to be used more often for public APIs.
+تميل واجهات برمجة تطبيقات HTTP التي تتبع ** REST ** إلى الاستخدام في كثير من الأحيان لواجهات برمجة التطبيقات العامة.
 
-#### Disadvantage(s): RPC
+#### العيوب: RPC
 
-* RPC clients become tightly coupled to the service implementation.
-* A new API must be defined for every new operation or use case.
-* It can be difficult to debug RPC.
-* You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
+* يصبح عملاء RPC مرتبطين بإحكام بتنفيذ الخدمة.
+* يجب تحديد واجهة برمجة تطبيقات جديدة لكل عملية أو حالة استخدام جديدة.
+* قد يكون من الصعب تصحيح أخطاء RPC.
+* قد لا تتمكن من الاستفادة من التقنيات الحالية خارج الصندوق. على سبيل المثال ، قد يتطلب الأمر جهدًا إضافيًا للتأكد من أن [مكالمات RPC مخبأة بشكل صحيح](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) على خوادم التخزين المؤقت مثل [Squid ](http://www.squid-cache.org/).
 
-### Representational state transfer (REST)
+### النقل التمثيلي للدولة (REST)
 
-REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server.  The server provides a representation of resources and actions that can either manipulate or get a new representation of resources.  All communication must be stateless and cacheable.
+REST هو أسلوب معماري يفرض نموذج العميل / الخادم حيث يعمل العميل على مجموعة من الموارد التي يديرها الخادم. يوفر الخادم تمثيلاً للموارد والإجراءات التي يمكنها إما معالجة أو الحصول على تمثيل جديد للموارد. يجب أن تكون جميع الاتصالات عديمة الحالة وقابلة للتخزين المؤقت.
 
-There are four qualities of a RESTful interface:
+هناك أربع خصائص لواجهة RESTful:
 
-* **Identify resources (URI in HTTP)** - use the same URI regardless of any operation.
-* **Change with representations (Verbs in HTTP)** - use verbs, headers, and body.
-* **Self-descriptive error message (status response in HTTP)** - Use status codes, don't reinvent the wheel.
-* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML interface for HTTP)** - your web service should be fully accessible in a browser.
+* ** تحديد الموارد (URI في HTTP) ** - استخدم نفس URI بغض النظر عن أي عملية.
+* ** التغيير مع التمثيلات (الأفعال في HTTP) ** - استخدم الأفعال والعناوين والجسم.
+* ** رسالة خطأ وصفية ذاتية (استجابة الحالة في HTTP) ** - استخدم أكواد الحالة ، ولا تعيد اختراع العجلة.
+* ** [HATEOAS](http://restcookbook.com/Basics/hateoas/) (واجهة HTML لـ HTTP) ** - يجب أن تكون خدمة الويب الخاصة بك قابلة للوصول بالكامل في المتصفح.
 
-Sample REST calls:
+عينة مكالمات REST:
 
 ```
 GET /someresources/anId
@@ -1520,16 +1520,16 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-REST is focused on exposing data.  It minimizes the coupling between client/server and is often used for public HTTP APIs.  REST uses a more generic and uniform method of exposing resources through URIs, [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md), and actions through verbs such as GET, POST, PUT, DELETE, and PATCH.  Being stateless, REST is great for horizontal scaling and partitioning.
+يركز REST على كشف البيانات. إنه يقلل من الاقتران بين العميل / الخادم وغالبًا ما يستخدم لواجهات برمجة تطبيقات HTTP العامة. يستخدم REST طريقة أكثر عمومية وموحدة لعرض الموارد من خلال URIs ، [التمثيل من خلال الرؤوس](https://github.com/for-GET/know-your-http-well/blob/master/headers.md) ، و الإجراءات من خلال أفعال مثل GET و POST و PUT و DELETE و PATCH. كونه عديم الحالة ، فإن REST رائع للقياس والتقسيم الأفقي.
 
-#### Disadvantage(s): REST
+#### العيوب: REST
 
-* With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
-* REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.
-* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
-* Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
+* مع تركيز REST على كشف البيانات ، قد لا يكون مناسبًا إذا لم يتم تنظيم الموارد بشكل طبيعي أو الوصول إليها في تسلسل هرمي بسيط. على سبيل المثال ، لا يتم التعبير بسهولة عن إعادة جميع السجلات المحدثة من الساعة الماضية التي تتطابق مع مجموعة معينة من الأحداث كمسار. باستخدام REST ، من المحتمل أن يتم تنفيذه بمجموعة من مسار URI ومعلمات الاستعلام وربما نص الطلب.
+* يعتمد REST عادةً على بعض الأفعال (GET و POST و PUT و DELETE و PATCH) والتي لا تناسب أحيانًا حالة الاستخدام الخاصة بك. على سبيل المثال ، قد لا يتناسب نقل المستندات منتهية الصلاحية إلى مجلد الأرشيف تمامًا مع هذه الأفعال.
+* يتطلب جلب الموارد المعقدة ذات التسلسلات الهرمية المتداخلة رحلات ذهاب وإياب متعددة بين العميل والخادم لعرض طرق عرض فردية ، على سبيل المثال جلب محتوى إدخال مدونة والتعليقات على هذا الإدخال. بالنسبة لتطبيقات الهاتف المحمول التي تعمل في ظروف شبكة متغيرة ، فإن هذه الرحلات المتعددة ذهابًا وإيابًا غير مرغوب فيها إلى حد كبير.
+* بمرور الوقت ، قد تتم إضافة المزيد من الحقول إلى استجابة API وسيتلقى العملاء الأكبر سنًا جميع حقول البيانات الجديدة ، حتى تلك التي لا يحتاجونها ، ونتيجة لذلك ، يؤدي ذلك إلى تضخيم حجم الحمولة ويؤدي إلى زمن انتقال أكبر.
 
-### RPC and REST calls comparison
+### مقارنة مكالمات RPC و REST
 
 | Operation | RPC | REST |
 |---|---|---|
@@ -1545,39 +1545,39 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
   <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
 </p>
 
-#### Source(s) and further reading: REST and RPC
+#### المصدر (المصادر) وقراءات أخرى: REST و RPC
 
-* [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
-* [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
-* [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
-* [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
+* [هل تعرف حقًا سبب تفضيلك لـ REST على RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
+* [متى تكون أساليب RPC-ish أكثر ملاءمة من REST?](http://programmers.stackexchange.com/a/181186)
+* [REST مقابل JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
+* [دحض خرافات RPC و REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [ما هي عيوب استخدام REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
-* [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+* [لماذا REST للاستخدام الداخلي وليس RPC](http://arstechnica.com/civis/viewtopic.php؟t=1190508)
 
-## Security
+## حماية
 
-This section could use some updates.  Consider [contributing](#contributing)!
+هذا القسم يمكن أن يستخدم بعض التحديثات. ضع في اعتبارك [المساهمة](#contributing)!
 
-Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+الأمن موضوع واسع. ما لم تكن لديك خبرة كبيرة ، أو خلفية أمنية ، أو تتقدم لوظيفة تتطلب معرفة بالأمان ، فربما لن تحتاج إلى معرفة أكثر من الأساسيات:
 
-* Encrypt in transit and at rest.
-* Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
-* Use parameterized queries to prevent SQL injection.
-* Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+* تشفير أثناء النقل وأثناء الراحة.
+* قم بتعقيم جميع إدخالات المستخدم أو أي معلمات إدخال معروضة للمستخدم لمنع [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) و [إدخال SQL](https://en.wikipedia.org/wiki/SQL_injection).
+* استخدم الاستعلامات ذات المعلمات لمنع إدخال SQL.
+* استخدم مبدأ [الامتياز الأقل](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
-### Source(s) and further reading
+### المصدر (المصادر) وقراءات أخرى
 
-* [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
-* [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
-* [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+* [قائمة التحقق من أمان واجهة برمجة التطبيقات](https://github.com/shieldfy/API-Security-Checklist)
+* [دليل الأمان للمطورين](https://github.com/FallibleInc/security-guide-for-developers)
+* [OWASP العشرة الأوائل](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
-## Appendix
+## زائدة
 
-You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
+سيُطلب منك أحيانًا عمل تقديرات "ظهر الظرف". على سبيل المثال ، قد تحتاج إلى تحديد المدة التي سيستغرقها إنشاء 100 صورة مصغرة من القرص أو مقدار الذاكرة التي ستستغرقها بنية البيانات. تعد ** صلاحيات الجدولين ** و ** أرقام وقت الاستجابة التي يجب أن يعرفها كل مبرمج ** من المراجع المفيدة.
 
-### Powers of two table
+### صلاحيات طاولتين
 
 ```
 Power           Exact Value         Approx Value        Bytes
@@ -1592,14 +1592,14 @@ Power           Exact Value         Approx Value        Bytes
 40              1,099,511,627,776   1 trillion           1 TB
 ```
 
-#### Source(s) and further reading
+#### المصدر (المصادر) وقراءات أخرى
 
-* [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
+* [صلاحيات اثنين] (https://en.wikipedia.org/wiki/Power_of_two)
 
-### Latency numbers every programmer should know
+### أرقام التأخير التي يجب على كل مبرمج معرفتها
 
 ```
-Latency Comparison Numbers
+أرقام مقارنة زمن الوصول
 --------------------------
 L1 cache reference                           0.5 ns
 Branch mispredict                            5   ns
@@ -1617,14 +1617,14 @@ Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x mem
 Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
 Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
-Notes
+ملاحظات
 -----
 1 ns = 10^-9 seconds
 1 us = 10^-6 seconds = 1,000 ns
 1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
 ```
 
-Handy metrics based on numbers above:
+مقاييس مفيدة تستند إلى الأرقام أعلاه:
 
 * Read sequentially from HDD at 30 MB/s
 * Read sequentially from 1 Gbps Ethernet at 100 MB/s
@@ -1633,20 +1633,20 @@ Handy metrics based on numbers above:
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
 
-#### Latency numbers visualized
+#### عرض أرقام وقت الاستجابة
 
-![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
+! [](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
-#### Source(s) and further reading
+#### المصدر (المصادر) وقراءات أخرى
 
-* [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
-* [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
-* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
-* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+* [أرقام وقت الاستجابة التي يجب على كل مبرمج معرفتها - 1](https://gist.github.com/jboner/2841832)
+* [أرقام وقت الاستجابة التي يجب على كل مبرمج معرفتها - 2](https://gist.github.com/hellerbarde/2843375)
+* [تصاميم ودروس ومشورة من بناء أنظمة موزعة كبيرة](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
+* [نصائح هندسة البرمجيات من بناء أنظمة موزعة كبيرة الحجم](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Additional system design interview questions
+### أسئلة مقابلة تصميم النظام الإضافية
 
-> Common system design interview questions, with links to resources on how to solve each.
+> أسئلة مقابلة تصميم النظام الشائعة ، مع روابط لمصادر حول كيفية حل كل منها.
 
 | Question | Reference(s) |
 |---|---|
@@ -1675,9 +1675,9 @@ Handy metrics based on numbers above:
 | Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | Add a system design question | [المساهمة](#contributing) |
 
-### Real world architectures
+### أبنية العالم الحقيقي
 
-> Articles on how real world systems are designed.
+> مقالات حول كيفية تصميم أنظمة العالم الحقيقي.
 
 <p align="center">
   <img src="images/arabic/TcUo2fw.png">
@@ -1685,11 +1685,11 @@ Handy metrics based on numbers above:
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
 
-**Don't focus on nitty gritty details for the following articles, instead:**
+** لا تركز على التفاصيل الدقيقة للمقالات التالية ، بدلاً من ذلك: **
 
-* Identify shared principles, common technologies, and patterns within these articles
-* Study what problems are solved by each component, where it works, where it doesn't
-* Review the lessons learned
+* تحديد المبادئ المشتركة والتقنيات والأنماط المشتركة في هذه المقالات
+* ادرس المشكلات التي يتم حلها بواسطة كل مكون ، وأين يعمل ، وأين لا يعمل
+* مراجعة الدروس المستفادة
 
 |Type | System | Reference(s) |
 |---|---|---|
@@ -1715,7 +1715,7 @@ Handy metrics based on numbers above:
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | | Add an architecture | [المساهمة](#contributing) |
 
-### Company architectures
+### هندسة الشركة
 
 | Company | Reference(s) |
 |---|---|
@@ -1743,11 +1743,11 @@ Handy metrics based on numbers above:
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
-### Company engineering blogs
+### مدونات هندسة الشركات
 
-> Architectures for companies you are interviewing with.
+> بنى للشركات التي تجري مقابلات معها.
 >
-> Questions you encounter might be from the same domain.
+> الأسئلة التي تواجهها قد تكون من نفس المجال.
 
 * [Airbnb Engineering](http://nerds.airbnb.com/)
 * [Atlassian Developers](https://developer.atlassian.com/blog/)
@@ -1789,46 +1789,46 @@ Handy metrics based on numbers above:
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 
-#### Source(s) and further reading
+#### المصدر (المصادر) وقراءات أخرى
 
-Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+تبحث لإضافة مدونة؟ لتجنب تكرار العمل ، ضع في اعتبارك إضافة مدونة شركتك إلى الريبو التالي:
 
-* [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
+* [kilimchoi / engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+## تحت التطوير
 
-Interested in adding a section or helping complete one in-progress?  [المساهمة](#contributing)!
+هل أنت مهتم بإضافة قسم أو المساعدة في إكمال قسم قيد التنفيذ؟ [مجلّة] (#contributing)!
 
-* Distributed computing with MapReduce
-* Consistent hashing
-* Scatter gather
-* [المساهمة](#contributing)
+* الحوسبة الموزعة باستخدام MapReduce
+* تجزئة متسقة
+* جمع مبعثر
+* [مجلّة](#contributing)
 
-## Credits
+## الاعتمادات
 
-Credits and sources are provided throughout this repo.
+يتم توفير الاعتمادات والمصادر في جميع أنحاء هذا المستودع.
 
-Special thanks to:
+شُكر خاص ل:
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
-* [High scalability](http://highscalability.com/)
-* [checkcheckzz/system-design-interview](https://github.com/checkcheckzz/system-design-interview)
-* [shashank88/system_design](https://github.com/shashank88/system_design)
-* [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
-* [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
-* [A distributed systems reading list](http://dancres.github.io/Pages/)
+* [قابلية عالية للتوسع](http://highscalability.com/)
+* [checkcheckzz / system-design-interview](https://github.com/checkcheckzz/system-design-interview)
+* [shashank88 / system_design](https://github.com/shashank88/system_design)
+* [mmcgrana / services-engineering](https://github.com/mmcgrana/services-engineering)
+* [ورقة ملاحظات تصميم النظام](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
+* [قائمة قراءة الأنظمة الموزعة](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Contact info
+## معلومات الاتصال
 
-Feel free to contact me to discuss any issues, questions, or comments.
+لا تتردد في الاتصال بي لمناقشة أي قضايا أو أسئلة أو تعليقات.
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+يمكن العثور على معلومات الاتصال الخاصة بي على [صفحة GitHub](https://github.com/donnemartin).
 
-## License
+## رخصة
 
-*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+* أقوم بتوفير التعليمات البرمجية والموارد في هذا المستودع لك بموجب ترخيص مفتوح المصدر. نظرًا لأن هذا هو مستودعي الشخصي ، فإن الترخيص الذي تتلقاه للرمز الخاص بي وموارده هو مني وليس من صاحب العمل (Facebook). *
 
     Copyright 2017 Donne Martin
 
