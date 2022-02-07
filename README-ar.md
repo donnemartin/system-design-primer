@@ -618,7 +618,7 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
 ## Content delivery network
 
 <p align="center">
-  <img src="images/arabic/arabic/h9TAuGI.jpg">
+  <img src="images/arabic/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
