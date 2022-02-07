@@ -110,8 +110,7 @@ Nội dung cần cải thiện được đặt ở [đang phát triển](#under-
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 
-## Index of system design topics
-## Danh mục các chủ đề về thiết kế hệ thống
+## Chỉ mục các chủ đề thiết kế hệ thống
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
 > Tóm tắt một loạt chủ đề thiết kế hệ thống, gồm cả mặt mạnh và yếu.  **Tất cả đều là đánh đổi**
@@ -250,17 +249,15 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Contact info](#contact-info)
 * [License](#license)
 
-## Study guide
 ## Hướng dẫn học
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
+> Các chủ đề được đề xuất để ôn tập dựa vào lịch trình phỏng vấn (ngắn, vừa, dài)
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
-**Hỏi: Cho việc phỏng vấn thì tôi có cần biết tất cả mọi thứ ở đây?**
+**Hỏi: Để cho việc phỏng vấn thì tôi có cần biết tất cả mọi thứ ở đây?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
 **Đáp: Không, bạn không cần biết tất cả mọi thứ ở đây để chuẩn bị cho phỏng vấn.**
 
 What you are asked in an interview depends on variables such as:
@@ -399,8 +396,7 @@ Check out the following links to get a better idea of what to expect:
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
-## Các câu hỏi phỏng vấn thiết kế hệ thống và lời giải
+## Các câu hỏi phỏng vấn thiết kế hệ thống kèm lời giải
 
 > Common system design interview questions with sample discussions, code, and diagrams.
 > Các câu hỏi phỏng vấn thiết kế hệ thống phổ biến kèm với các đối thoại mẫu, mã nguồn, và biểu đồ.
@@ -917,12 +913,18 @@ Load balancers can route traffic based on various metrics, including:
 * [Layer 7](#layer-7-load-balancing)
 
 ### Layer 4 load balancing
+### Cân bằng tải lớp 4
 
 Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+Cân bằng tải ở lớp 4 nhìn vào thông tin ở [lớp truyền tải (transport)](#communication) để quyết định cách phân phối yêu cầu.  Nhìn chung thì điều này sẽ liên quan đến nguồn, đích của địa chỉ IP, và cổng (port) trong header, nhưng không dựa vào nội dung của gói tin (packet).  Cân bằng tải lớp 4 truyền tải các gói tin mạng đi đến và từ máy trạm đầu nguồn, thực hiện [biên dịch địa chỉ mạng (Network Address Translation - NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 
 ### Layer 7 load balancing
+### Cân bằng tải lớp 7
 
 Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+
+Cân bằng tải lớp 7 nhìn vào [lớp ứng dụng (application)](#communication) quyết định cách phân phối yêu cầu.  Việc này có thể liên quan đến nội dung của header, gói tin, và cookie.  Cân bằng tải lớp 7 kết thúc liên lạc, đọc tin, thực hiện quyết định về cân bằng tải, sau đó mở một kết nối đến máy trạm được lựa chọn.  Ví dụ một cân bằng tải lớp 7 có thể điều hướng liên lạc hình ảnh đến các máy trạm chứa dữ liệu hình ảnh, trong khi đó, các liên lạc nhạy cảm hơn về thông tin thanh toán của người dùng có thể được điều hướng đến các máy chủ đã được củng cố về an ninh.  # FIXME: bad translation
+
 
 At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
 
