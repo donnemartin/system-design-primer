@@ -1554,7 +1554,7 @@ PUT /someresources/anId
 * [ما هي عيوب استخدام REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
-* [لماذا REST للاستخدام الداخلي وليس RPC](http://arstechnica.com/civis/viewtopic.php؟t=1190508)
+* [لماذا REST للاستخدام الداخلي وليس RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
 ## حماية
 
@@ -1791,13 +1791,13 @@ Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
 #### المصدر (المصادر) وقراءات أخرى
 
-تبحث لإضافة مدونة؟ لتجنب تكرار العمل ، ضع في اعتبارك إضافة مدونة شركتك إلى الريبو التالي:
+تبحث لإضافة مدونة? لتجنب تكرار العمل ، ضع في اعتبارك إضافة مدونة شركتك إلى الريبو التالي:
 
 * [kilimchoi / engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
 ## تحت التطوير
 
-هل أنت مهتم بإضافة قسم أو المساعدة في إكمال قسم قيد التنفيذ؟ [مجلّة] (#contributing)!
+هل أنت مهتم بإضافة قسم أو المساعدة في إكمال قسم قيد التنفيذ? [مجلّة] (#contributing)!
 
 * الحوسبة الموزعة باستخدام MapReduce
 * تجزئة متسقة
