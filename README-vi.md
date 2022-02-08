@@ -688,18 +688,24 @@ Cách tiếp cận này được thấy trong file systems và RDBMS.  Strong co
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
 ## Availability patterns
+## Các mẫu hình về tính hiện có
 
 There are two complementary patterns to support high availability: **fail-over** and **replication**.
+Có hai mẫu hình bổ sung lẫn nhau hỗ trợ khả năng hiện có cao: **fail-over** và **bản tái tạo***  # FIXME: bad translation
 
 ### Fail-over
 
 #### Active-passive
+#### Chủ động - bị động
 
 With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+Với fail-over chủ động - bị động, nhịp tim (heartbeat) sẽ được gửi giữa máy chủ chủ động và máy chủ bị động trực chờ.  Nếu nhịp tim bị ngắt quãng, máy chủ bị động sẽ tiếp quản địa chỉ IP của máy chủ động và tiếp tục dịch vụ.
 
 The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+Độ dài của thời gian dừng sẽ được quyết định bởi việc máy chủ bị động có đang chạy ở chế độ trực chờ sẵn sàng ('hot' standby) hay cần phải được khởi động ('cold' standby).  Chỉ duy nhất máy chủ chủ động xử lí liên lạc.  # FIXME: dull translation
 
 Active-passive failover can also be referred to as master-slave failover.
+Failover chủ động - bị động còn được biết dưới tên failover master-slave.
 
 #### Active-active
 
@@ -779,7 +785,6 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
 
-## Domain name system
 ## Hệ thống tên miền
 
 <p align="center">
@@ -989,10 +994,11 @@ Additional benefits include:
 ### Cân bằng tải và proxy đảo  # FIXME: need to check if "proxy đảo** is a word.
 
 * Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
-* Việc triển khai một cân bằng tải là hữu dụng khi bạn có nhiều máy trạm. Thông thường thì cân bằng tải điều hướng lưu thông đến một tập máy trạm phục vụ chung một chức năng.
 * Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
-* Proxy đảo có thể hữu dụng ngay cả với chỉ một máy trạm web, hoặc một máy trạm ứng dung, mở ra những ưu thế được mô tả ở phần trước.
 * Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
+
+* Việc triển khai một cân bằng tải là hữu dụng khi bạn có nhiều máy trạm. Thông thường thì cân bằng tải điều hướng lưu thông đến một tập máy trạm phục vụ chung một chức năng.
+* Proxy đảo có thể hữu dụng ngay cả với chỉ một máy trạm web, hoặc một máy trạm ứng dung, mở ra những ưu thế được mô tả ở phần trước.
 * Các giải pháp như là NGINX và HAProxy có thể hỗ trợ cả proxy đảo ở lớp 7 và cân bằng tải.
 
 ### Disadvantage(s): reverse proxy
