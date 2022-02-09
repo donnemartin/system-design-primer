@@ -235,6 +235,9 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 * How much data do we expect to handle?
 * How many requests per second do we expect?
 * What is the expected read to write ratio?
+* How available or system need to be?
+* How fast does the system need to process requests?
+* How tolerant of lossy or incorrect data is the business process?
 
 ### Step 2: Create a high level design
 
