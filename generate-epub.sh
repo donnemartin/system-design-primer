@@ -12,7 +12,7 @@ generate_from_stdin() {
 }
 
 generate_with_solutions () {
-  tmpfile=$(mktemp /tmp/sytem-design-primer-epub-generator.XXX)
+  tmpfile=$(mktemp /tmp/system-design-primer-epub-generator.XXX)
 
   cat ./README.md >> $tmpfile
 
