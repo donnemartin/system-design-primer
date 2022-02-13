@@ -144,7 +144,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
         * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
         * [AP - tính hiện có và dung sai phân vùng](#ap---availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
-* [Các mẫu về nhất quán](#consistency-patterns)  # FIXME: bad translation
+* [Các mẫu hình về nhất quán](#consistency-patterns)  # FIXME: bad translation
     * [Weak consistency](#weak-consistency)
     * [Nhất quán yếu](#weak-consistency)  # FIXME: bad translation
     * [Eventual consistency](#eventual-consistency)
@@ -849,12 +849,15 @@ Serving content from CDNs can significantly improve performance in two ways:
 ### Push CDNs
 
 Push CDNs receive new content whenever changes occur on your server.  You take full responsibility for providing content, uploading directly to the CDN and rewriting URLs to point to the CDN.  You can configure when content expires and when it is updated.  Content is uploaded only when it is new or changed, minimizing traffic, but maximizing storage.
+Push CDN nhận nội dung mới khi thay đổi xày ra phía máy chủ của bạn.  Bạn nhận hoàn toàn trách nhiệm của việc cung cấp nội dung, tải trực tiếp lên CDN và viết lại URL trỏ vvào CDN.  Bạn có thể cấu hình khi nội dung hết hạn và khi nào được cập nhật.  Nội dung được tải lên chỉ khi có nội dung mới hoặc được thay đổi, tối thiểu hoá lưu thông mạng, nhưng lại tối đa việc lưu trữ.
 
 Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
+Các trang với với lưu thông nhỏ hoặc với nội dung không được cập nhật thường xuyên thì thường làm việc tốt với push CDN.  Nội dung được đặt lên CDN chỉ một lần, thay vì phải được kéo về đều đặn.
 
 ### Pull CDNs
 
 Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
+Pull CDN kéo nội dung mới từ máy chủ của bạn khi có yêu cầu đầu tiên từ người dùng cho nội dung này.  Bạn để nội dung trên máy chủ và viết lại URL để trỏ đến CDN.  Việc này dẫn đến thời gian thực thi yêu cầu sẽ chậm, cho đến hki nội dung được cache trên CDN.
 
 A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
 
