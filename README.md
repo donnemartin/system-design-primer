@@ -104,7 +104,6 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Performance vs scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
-    * [PACELC theorem](#PACELC-theorem)
     * [CAP theorem](#cap-theorem)
         * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
         * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
@@ -438,21 +437,6 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 
 ## Availability vs consistency
 
-### PACELC theorem
-<p align="center">
-  <img src="images/PACELC.png" width="600" height="300">
-  <br/>
-  <i><a href=https://github.com/Ahmad-alsanie/system-design-examples/blob/main/images/PACELC.png>Source: PACELC theorem </a></i>
-</p>
-
-If there's a partition; a system can trade of between A(availability) and C(Consistency).
-Else the trade of is in between C(consistency) and L(latency)
-
-<p align="center">
-  <img src="images/pacelcDBs.png">
-  <br/>
-  <i><a href=https://en.wikipedia.org/wiki/PACELC_theorem>Source: PACELC theorem </a></i>
-</p>
 
 ### CAP theorem
 
