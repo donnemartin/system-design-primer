@@ -1,6 +1,6 @@
 *[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](README-ar.md) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-**ساعد [بترجمة](TRANSLATIONS.md) هذه الإرشادة!**
+**ساعد [بترجمة](TRANSLATIONS.md) هذا الدليل!**
 
 # تمهيد لتصميم النظام
 
@@ -19,7 +19,7 @@
 
 سيساعدك تعلم كيفية تصميم أنظمة قابلة للتطوير على أن تصبح مهندسًا أفضل.
 
-تصميم النظام هو موضوع واسع. هناك ** قدر هائل من الموارد المنتشرة في جميع أنحاء الويب ** حول مبادئ تصميم النظام.
+تصميم النظام هو موضوع واسع. هنالك ** قدر هائل من الموارد المنتشرة في جميع أنحاء الشبكة ** حول مبادئ تصميم النظام.
 
 هذا المستودع عبارة عن ** مجموعة منظمة ** من الموارد لمساعدتك على تعلم كيفية إنشاء أنظمة على نطاق واسع.
 
@@ -59,16 +59,16 @@
 عظيم للاستخدام أثناء التنقل.
 
 ### مصادر البرمجة : تحديات البرمجة التفاعلية
-تلبحث عن موارد لمساعدتك على التحضير لـ [** مقابلة البرمجة **](https://github.com/donnemartin/interactive-coding-challenges)?
+أتبحث عن موارد لمساعدتك على التحضير لـ [** مقابلة البرمجة **](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="images/arabic/b4YtAEN.png">
   <br/>
 </p>
 
-تحقق من المستودع المناظر [** تحديات البرمجة التفاعلية **](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+تحقق من المستودع النظير [** تحديات البرمجة التفاعلية **](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
-* [سطح البرمجة](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [وِحده واحدة من الرموز](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## المساهمة
 
@@ -81,7 +81,7 @@
 * إضافة أجزاء جديدة
 * [الترجمة](https://github.com/donnemartin/system-design-primer/issues/28)
 
-يتم وضع المحتوى الذي يحتاج إلى بعض التلميع [تحت التطوير](#under-development).
+يتم وضع المحتوى الذي يحتاج إلى بعض التحسين [تحت التطوير](#under-development).
 
 راجع ال [المبادئ التوجيهية للمساهمة](CONTRIBUTING.md).
 
@@ -101,7 +101,7 @@
     * [الخطوة 2: راجع مقالة قابلية التوسع](#step-2-review-the-scalability-article)
     * [الخطوات التالية](#next-steps)
 * [الأداء مقابل قابلية التوسع](#performance-vs-scalability)
-* [الكمون مقابل الإنتاجية](#latency-vs-throughput)
+* [الكمون مقابل معالجة النظام للمعلومات](#latency-vs-throughput)
 * [التوافر مقابل الاتساق](#availability-vs-consistency)
     * [نظرية CAP](#cap-theorem)
         * [CP - الاتساق والتسامح في التقسيم](#cp---consistency-and-partition-tolerance)
@@ -124,7 +124,7 @@
     * [موازنة حمل الطبقة الرابعة](#layer-4-load-balancing)
     * [موازنة تحميل الطبقة السابعة](#layer-7-load-balancing)
     * [التحجيم الأفقي](#horizontal-scaling)
-* [وكيل عكسي (خادم الويب)](#reverse-proxy-web-server)
+* [وكيل عكسي (خادم الشبكة)](#reverse-proxy-web-server)
     * [موازن التحميل مقابل الوكيل العكسي](#load-balancer-vs-reverse-proxy)
 * [طبقة التطبيقات](#application-layer)
     * [الخدمات المصغرة](#microservices)
@@ -137,12 +137,12 @@
         * [التشرذم](#sharding)
         * [عدم التطابق](#denormalization)
         * [ضبط SQL](#sql-tuning)
-    * [لا SQL](#nosql)
+    * [NoSQL](#nosql)
         * [مخزن مفتاح-قيمة](#key-value-store)
         * [مخزن المستندات](#document-store)
         * [مخزن العمود الواسع](#wide-column-store)
         * [قاعدة بيانات الرسم البياني](#graph-database)
-    * [SQL أو لا SQL](#sql-or-nosql)
+    * [SQL أو NoSQL](#sql-or-nosql)
 * [مخزن مؤقت](#cache)
     * [التخزين المؤقت للعميل](#client-caching)
     * [تخزين CDN المؤقت](#cdn-caching)
@@ -196,7 +196,7 @@
 * ما هي الشركات التي تجري مقابلات معها
 * حظ
 
-من المتوقع عمومًا أن يعرف المرشحون الأكثر خبرة المزيد عن تصميم النظام. من المتوقع أن يعرف المهندسون المعماريون أو قادة الفريق أكثر من المساهمين الفرديين. من المرجح أن تجري شركات التكنولوجيا الكبرى جولة أو أكثر من مقابلات التصميم.
+من المتوقع عمومًا أن يعرف المرشحون الأكثر خبرة المزيد عن تصميم النظام. من المتوقع أن يعرف المهندسون ذوي الخبرة أو قادة الفريق أكثر من المساهمين الفرديين. من المرجح أن تجري شركات التكنولوجيا الكبرى جولة أو أكثر من مقابلات التصميم.
 
 ابدأ على نطاق واسع وتعمق في مناطق قليلة. من المفيد معرفة القليل عن مواضيع تصميم النظام الرئيسية المختلفة. اضبط الدليل التالي بناءً على جدولك الزمني وخبرتك والوظائف التي تجري مقابلة معها والشركات التي تجري مقابلات معها.
 
@@ -422,7 +422,7 @@
 * [كلمة عن قابلية التوسع](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [قابلية التوسع ، التوافر ، الاستقرار ، الأنماط](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## الكمون مقابل الإنتاجية
+## الكمون مقابل معالجة النظام للمعلومات
 
 ** الكمون ** هو الوقت المناسب للقيام ببعض الإجراءات أو لإنتاج بعض النتائج.
 
@@ -432,7 +432,7 @@
 
 ### المصدر (المصادر) وقراءات أخرى
 
-* [فهم وقت الاستجابة مقابل الإنتاجية](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [فهم وقت الاستجابة مقابل معالجة النظام للمعلومات](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
 ## التوافر مقابل الاتساق
 
@@ -726,7 +726,7 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
 * [موازنة تحميل الطبقة 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [تكوين مستمع ELB](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
-## وكيل عكسي (خادم الويب)
+## وكيل عكسي (خادم الشبكة)
 
 <p align="center">
   <img src="images/arabic/n41Azff.png">
