@@ -237,7 +237,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [An ninh](#security)
 * [Appendix](#appendix)
 * [Phụ lục](#security)
-    * [Powers of two table](#powers-of-two-table)
+    * [Bảng bình phương](#powers-of-two-table)
     * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
     * [Additional system design interview questions](#additional-system-design-interview-questions)
     * [Real world architectures](#real-world-architectures)
@@ -380,11 +380,11 @@ You might be asked to do some estimates by hand.  Refer to the [Appendix](#appen
 Bạn có thể được yêu cầu làm một số ước lượng bằng tay.  Tham khảo phần [Phụ lục](#appendix) cho một số tài liệu sau:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
+* [Bảng bình phương](#powers-of-two-table)
 * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 
 * [Tính toán nháp](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Bảng mũ hai](#powers-of-two-table)
+* [Bảng bình phương](#powers-of-two-table)
 * [Những độ trễ mà mọi lập trình viên nên biết](#latency-numbers-every-programmer-should-know)
 
 ### Source(s) and further reading
@@ -1867,7 +1867,7 @@ An ninh là một chủ đề rộng. Trừ khi bạn có kinh nghiệm đáng k
 
 You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
 
-### Powers of two table
+### Bảng bình phương
 
 ```
 Power           Exact Value         Approx Value        Bytes
@@ -1884,9 +1884,10 @@ Power           Exact Value         Approx Value        Bytes
 
 #### Source(s) and further reading
 
-* [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
+* [Bảng bình phương](https://en.wikipedia.org/wiki/Power_of_two)
 
 ### Latency numbers every programmer should know
+### Các chỉ số độ trễ mọi LTV nên biết
 
 ```
 Latency Comparison Numbers
@@ -1912,9 +1913,10 @@ Notes
 1 ns = 10^-9 seconds
 1 us = 10^-6 seconds = 1,000 ns
 1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
-```
+``**
 
 Handy metrics based on numbers above:
+Một số tham số hữu dụng từ các con số trên:
 
 * Read sequentially from HDD at 30 MB/s
 * Read sequentially from 1 Gbps Ethernet at 100 MB/s
@@ -1922,6 +1924,13 @@ Handy metrics based on numbers above:
 * Read sequentially from main memory at 4 GB/s
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
+
+* Tốc độ đọc liên tiếp trên ổ cứng từ (HDD) là 30 MB/s
+* Tốc độ đọc liên tiếp trên Ethernet 1Gbps là 100 MB/s
+* Tốc độ đọc liên tiếp trên ổ đĩa bán dẫn (SSD) là 1 GB/s
+* Tốc độ đọc liên tiếp trên bộ nhớ chính (main memory) là 4 GB/s
+* Tốc độ truyền tải mỗi giây có thể đi 6-7 vòng trái đất.
+* Tốc độ truyền tải có thể đạt 2.0000 hành trình xuyên suốt một trung tâm dữ liệu.
 
 #### Latency numbers visualized
 #### Hình tượng hoá các độ trễ khác nhau  # FIXME: bad translation
