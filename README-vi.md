@@ -136,13 +136,13 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Latency vs throughput](#latency-vs-throughput)
 * [Độ trễ và công suất](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
-* [Tính hiện có và tính nhất quán](#availability-vs-consistency)
+* [Tính khả dụng và tính nhất quán](#availability-vs-consistency)
     * [CAP theorem](#cap-theorem)
     * [Định lý CAP](#cap-theorem)
         * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
         * [CP - tính nhất quán và dung sai phân vùng](#cp---consistency-and-partition-tolerance)
         * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-        * [AP - tính hiện có và dung sai phân vùng](#ap---availability-and-partition-tolerance)
+        * [AP - tính khả dụng và dung sai phân vùng](#ap---availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
 * [Các mẫu hình về nhất quán](#consistency-patterns)  # FIXME: bad translation
     * [Weak consistency](#weak-consistency)
@@ -151,7 +151,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Hậu nhất quán](#eventual-consistency)  # FIXME: bad translation
     * [Nhất quán mạnh](#strong-consistency)  # FIXME: bad translation
 * [Availability patterns](#availability-patterns)
-* [Các mẫu hình của tính hiện có](#availability-patterns)
+* [Các mẫu hình của tính khả dụng](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replication](#replication)
     * [Availability in numbers](#availability-in-numbers)
@@ -607,7 +607,7 @@ Nhìn chung là bận cần nhắm vào **tối đa hoá lưu lượng** với *
 
 * [Hiểu về độ trễ và lưu lượng](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
 
-## Tính hiện có so với tính nhất quán
+## Tính khả dụng so với tính nhất quán
 
 ### Định lý CAP
 
@@ -625,7 +625,7 @@ Trong một hệ thống máy tính phân tán, ta chỉ có thể hỗ trợ ha
 * **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
 
 * **Tính nhất quán** - Mọi thao tác đọc nhận được kết quả ghi gần nhất hoặc lỗi
-* **Tính hiện có** - Mọi yêu cầu đều nhận được hồi đáp, nhưng không bảo đảm là chứa phiên bản gần nhất.
+* **Tính khả dụng** - Mọi yêu cầu đều nhận được hồi đáp, nhưng không bảo đảm là chứa phiên bản gần nhất.
 * **Dung sai phân vùng** - Hệ thống tiếp tục hoạt động mặc dù bị phân vùng do lỗi mạng lưới.
 
 *Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
@@ -688,10 +688,10 @@ Cách tiếp cận này được thấy trong file systems và RDBMS.  Strong co
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
 ## Availability patterns
-## Các mẫu hình về tính hiện có
+## Các mẫu hình về tính khả dụng
 
 There are two complementary patterns to support high availability: **fail-over** and **replication**.
-Có hai mẫu hình bổ sung lẫn nhau hỗ trợ khả năng hiện có cao: **fail-over** và **bản tái tạo***  # FIXME: bad translation
+Có hai mẫu hình bổ sung lẫn nhau hỗ trợ khả năng khả dụng cao: **fail-over** và **bản tái tạo***  # FIXME: bad translation
 
 ### Fail-over
 
@@ -752,27 +752,27 @@ Availability is often quantified by uptime (or downtime) as a percentage of time
 | Downtime per day    | 8.6s               |
 
 #### Availability in parallel vs in sequence
-#### Tính hiện có trong thực thi song song so với trình tự
+#### Tính khả dụng trong thực thi song song so với trình tự
 
 If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
-Nếu một dịch vụ bao gồm nhiều thành phần dễ mắc lỗi, thì tính hiện có toàn phần của dịch vụ này phụ thuộc vào các thành phần nằm trong một trình tự hay nằm song song.
+Nếu một dịch vụ bao gồm nhiều thành phần dễ mắc lỗi, thì tính khả dụng toàn phần của dịch vụ này phụ thuộc vào các thành phần nằm trong một trình tự hay nằm song song.
 
 ###### In sequence
 ###### Trong trình tự
 
 Overall availability decreases when two components with availability < 100% are in sequence:
-Tính hiện có toàn phần giảm đi khi có 2 thành phần với tính hiện có < 100% nằm theo trình tự:
+Tính khả dụng toàn phần giảm đi khi có 2 thành phần với tính khả dụng < 100% nằm theo trình tự:
 
 
 ```
 Availability (Total) = Availability (Foo) * Availability (Bar)
 ```
 ```
-Tính hiện có (Tổng) = Tính hiện có (A) * Tính hiện có (B)
+Tính khả dụng (Tổng) = Tính khả dụng (A) * Tính khả dụng (B)
 ```
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
-Nếu cả hai `A` và `B`, có 99,9% "hiện có", tổng hiện có trong trình tự sẽ là 99,8%.
+Nếu cả hai `A` và `B`, có 99,9% "khả dụng", tổng khả dụng trong trình tự sẽ là 99,8%.
 
 ###### In parallel
 ###### Trong song song  # FIXME: bad translation
@@ -2143,7 +2143,6 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 - Large-scale system: "hệ thống lớn"?
 - Scalable/scalability: "mở rộng được"?
-- Availability: currently be translated as "tính hiện có", but that sounds weird to me right now. Probably will replace them with "tính sẵn sàng", or "tính hiệu lực".
 - Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
 - Client/server
 - Request/response
