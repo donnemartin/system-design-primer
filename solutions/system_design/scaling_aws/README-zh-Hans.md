@@ -207,7 +207,7 @@
         * 如果你正在配置自己的 **负载均衡器**, 在多个可用区域中设置多台服务器用于 [双活](https://github.com/donnemartin/system-design-primer#active-active) 或 [主被](https://github.com/donnemartin/system-design-primer#active-passive) 将提高可用性
         * 终止在 **负载平衡器** 上的SSL，以减少后端服务器上的计算负载，并简化证书管理
     * 在多个可用区域中使用多台 **Web服务器**
-    * 在多个可用区域的 [**主-从 故障转移**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 模式中使用多个 **MySQL** 实例来改进冗余
+    * 在多个可用区域的 [**主-从 故障转移**](https://github.com/donnemartin/system-design-primer#primary-replica-replication) 模式中使用多个 **MySQL** 实例来改进冗余
 * 分离 **Web 服务器** 和 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer)
     * 独立扩展和配置每一层
     * **Web 服务器** 可以作为 [**反向代理**](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
@@ -238,7 +238,7 @@
     * 来自 **Web 服务器** 的会话数据
         * **Web 服务器** 变成无状态的, 允许 **自动伸缩**
     * 从内存中读取 1 MB 内存需要大约 250 微秒，而从SSD中读取时间要长 4 倍，从磁盘读取的时间要长 80 倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
-* 添加 [**MySQL 读取副本**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 来减少写主线程的负载
+* 添加 [**MySQL 读取副本**](https://github.com/donnemartin/system-design-primer#primary-replica-replication) 来减少写主线程的负载
 * 添加更多 **Web 服务器** and **应用服务器** 来提高响应
 
 **折中方案, 可选方案, 和其他细节:**
@@ -344,7 +344,7 @@ SQL 扩展模型包括：
 
 ### SQL 扩展模式
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [读取副本](https://github.com/donnemartin/system-design-primer#primary-replica-replication)
 * [集合](https://github.com/donnemartin/system-design-primer#federation)
 * [分区](https://github.com/donnemartin/system-design-primer#sharding)
 * [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)

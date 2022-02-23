@@ -289,7 +289,7 @@ $ curl https://social.com/api/v1/friend_search?person_id=1234
 
 ### SQL 扩展模式
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [读取副本](https://github.com/donnemartin/system-design-primer#primary-replica-replication)
 * [集合](https://github.com/donnemartin/system-design-primer#federation)
 * [分区](https://github.com/donnemartin/system-design-primer#sharding)
 * [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)
