@@ -197,7 +197,7 @@ Quello che stai chiedendo dipende da vari fattori:
 * Da quale compagnia devi fare il colloquio
 * Fortuna
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Ci si aspetta che i candidati con più esperienza abbiamo più esperienza anche con il design di sistemi. Dagli architetti o dai leader di team ci si aspetta una conoscenza maggiore rispetto ai contributori individuali. È probabile che le compagnie migliori abbiamo più colloqui riguardo al design.
 
 Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 
@@ -215,9 +215,9 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## Come affrontare una domanda riguardante il design di sistemi
 
-> How to tackle a system design interview question.
+> Come affrontare una domanda riguardante il design di sistemi durante un colloquio.
 
 The system design interview is an **open-ended conversation**.  You are expected to lead it.
 
@@ -227,16 +227,16 @@ You can use the following steps to guide the discussion.  To help solidify this 
 
 Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Chi lo userà?
+* Come lo useranno?
+* Quanti utenti ci sono?
+* Cosa fa il sistema?
+* Quali sono gli inputs e gli outputs del sistema?
+* Quanti dati dobbiamo aspettarci di gestire?
+* Quante richieste per secondo dobbiamo aspettarci?
+* Qual è il rapporto di lettura/scrittura previsto?
 
-### Step 2: Create a high level design
+### Step 2: Creare un design di alto livello
 
 Outline a high level design with all important components.
 
