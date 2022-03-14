@@ -101,19 +101,19 @@ Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
     * [Prima parte: Guarda la lezione sulla scalabilità](#step-1-review-the-scalability-video-lecture)
     * [Seconda parte: Leggi l'articolo sulla scalabilità](#step-2-review-the-scalability-article)
     * [Prossimi passi](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
+* [Prestazione vs scalabilità](#performance-vs-scalability)
+* [Latenza vs portata](#latency-vs-throughput)
+* [Disponibilità vs consistenza](#availability-vs-consistency)
+    * [Teorema CAP](#cap-theorem)
+        * [CP - cosistenza e tolleranza di partizione](#cp---consistency-and-partition-tolerance)
+        * [AP - disponibilità e tolleranza di partizione](#ap---availability-and-partition-tolerance)
+* [Modelli di consistenza](#consistency-patterns)
+    * [Consistenza debole](#weak-consistency)
+    * [Consistenza eventuale](#eventual-consistency)
+    * [Consistenza forte](#strong-consistency)
+* [Modelli di disponibilità](#availability-patterns)
     * [Fail-over](#fail-over)
-    * [Replication](#replication)
+    * [Replica](#replication)
     * [Availability in numbers](#availability-in-numbers)
 * [Domain name system](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
@@ -179,23 +179,23 @@ Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
 * [Contact info](#contact-info)
 * [License](#license)
 
-## Study guide
+## Guida allo studio
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Gli argomenti suggeriti da rivedere sono basati sulla lunghezza del tuo colloquio (corto, di media lunghezza, lungo).
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Q: Per i colloqui, devo sapere tutto ciò che c'è scritto qui?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**A: No, non devi sapere tutto per  essere pronto al colloquio.**.
 
-What you are asked in an interview depends on variables such as:
+Quello che stai chiedendo dipende da vari fattori:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Quanta esperienza hai
+* Qual è il tuo background tecnico
+* Per quali posizioni stai cercando di fare il colloquio
+* Da quale compagnia devi fare il colloquio
+* Fortuna
 
 More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
 
@@ -1790,13 +1790,13 @@ Handy metrics based on numbers above:
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 
-#### Source(s) and further reading
+#### Fonti e letture sucessive
 
-Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+Stai valutando di aggiungere un blog? Per evitare lavoro duplicato, considera di aggiungere il blog della tua compagnia nella repository seguente:
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+## Sotto sviluppo
 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
 
@@ -1805,11 +1805,11 @@ Interested in adding a section or helping complete one in-progress?  [Contribute
 * Scatter gather
 * [Contribute](#contributing)
 
-## Credits
+## Crediti
 
-Credits and sources are provided throughout this repo.
+Crediti e fonti vengono forniti in questa repository.
 
-Special thanks to:
+Ringraziamenti speciali a:
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
@@ -1821,15 +1821,15 @@ Special thanks to:
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Contact info
+## Contatti
 
-Feel free to contact me to discuss any issues, questions, or comments.
+Sentiti libero di contattarmi per discutere di qualunque problema, domanda o commento.
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+Le informazioni per contattarmi possono essere trovate nella mia [GitHub page](https://github.com/donnemartin).
 
-## License
+## Licenza
 
-*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+*Sto fornendo codice e risorse in questa repository sotto una licenza open source. Siccome questa è la mia repository personale, la licenza che ricevi al mio codice e alle risorse viene da me e non dal mio datore di lavoro (Facebook).*
 
     Copyright 2017 Donne Martin
 
