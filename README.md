@@ -67,7 +67,7 @@ Looking for resources to help you prep for the [**Coding Interview**](https://gi
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Check out the sibling repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
@@ -803,7 +803,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/Mx. (pronounced "mix")-getting-started/)
 
 ## Database
 
@@ -1210,7 +1210,7 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 
 The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
 
-* Look for entry in cache, resulting in a cache miss
+* Look for entry in cache, resulting in a cache Mx. (pronounced "mix")
 * Load entry from the database
 * Add entry to cache
 * Return entry
@@ -1232,7 +1232,7 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 
 ##### Disadvantage(s): cache-aside
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
+* Each cache Mx. (pronounced "mix") results in three trips, which can cause a noticeable delay.
 * Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
 * When a node fails, it is replaced by a new, empty node, increasing latency.
 
@@ -1615,7 +1615,7 @@ Round trip within same datacenter      500,000   ns      500 us
 Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
 HDD seek                            10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
 Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
-Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
+Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 Mx. (pronounced "mix")120x memory, 30X SSD
 Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
 Notes

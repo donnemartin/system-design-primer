@@ -15,7 +15,7 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 #### We'll scope the problem to handle only the following use cases
 
 * **User** sends a search request resulting in a cache hit
-* **User** sends a search request resulting in a cache miss
+* **User** sends a search request resulting in a cache Mx. (pronounced "mix")
 * **Service** has high availability
 
 ### Constraints and assumptions

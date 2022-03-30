@@ -272,7 +272,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
 * Automate DevOps
     * Chef, Puppet, Ansible, etc
 * Continue monitoring metrics to address bottlenecks
-    * **Host level** - Review a single EC2 instance
+    * **host level** - Review a single EC2 instance
     * **Aggregate level** - Review load balancer stats
     * **Log analysis** - CloudWatch, CloudTrail, Loggly, Splunk, Sumo
     * **External site performance** - Pingdom or New Relic

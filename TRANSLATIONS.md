@@ -107,7 +107,7 @@ Languages are grouped by status and are listed in alphabetical order.
 * Maintainer(s): **Help Wanted** ✋
     * Previous Maintainer(s): [@EladLeev](https://github.com/EladLeev)
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/272
-* Translation Fork: https://github.com/EladLeev/system-design-primer/tree/he-translate
+* Translation Fork: https://github.com/EladLeev/system-design-primer/tree/they-translate
 
 ### ❗ Italian
 

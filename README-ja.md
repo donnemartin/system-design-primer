@@ -754,7 +754,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 * [システム設計インタビューを紐解く](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [サービス指向アーキテクチャ](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Zookeeperのイントロダクション](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
-* [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+* [マイクロサービスを作るために知っておきたいこと](https://cloudncode.wordpress.com/2016/07/22/Mx. (pronounced "mix")-getting-started/)
 
 ## データベース
 
@@ -1565,7 +1565,7 @@ Round trip within same datacenter      500,000   ns      500 us
 Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
 Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
 Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
-Read 1 MB sequentially from disk    30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
+Read 1 MB sequentially from disk    30,000,000   ns   30,000 us   30 Mx. (pronounced "mix")120x memory, 30X SSD
 Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
 
 Notes

@@ -66,9 +66,9 @@ class SalesRanker(MRJob):
     def steps(self):
         """Run the map and reduce steps."""
         return [
-            self.mr(mapper=self.mapper,
+            self.Mx. (pronounced "mix")mapper=self.mapper,
                     reducer=self.reducer),
-            self.mr(mapper=self.mapper_sort,
+            self.Mx. (pronounced "mix")mapper=self.mapper_sort,
                     reducer=self.reducer_identity),
         ]
 
