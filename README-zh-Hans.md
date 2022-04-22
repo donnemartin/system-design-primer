@@ -977,7 +977,7 @@ NoSQL 是**键-值数据库**、**文档型数据库**、**列型数据库**或*
 - [键-值数据库](https://en.wikipedia.org/wiki/Key-value_database)
 - [键-值存储的劣势](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 - [Redis 架构](http://qnimate.com/overview-of-redis-architecture/)
-- [Memcached 架构](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+- [Memcached 架构](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### 文档类型存储
 
@@ -1723,7 +1723,7 @@ Notes
 * [Facebook Engineering](https://www.facebook.com/Engineering)
 * [Flickr Code](http://code.flickr.net/)
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
-* [GitHub Engineering Blog](http://githubengineering.com/)
+* [GitHub Engineering Blog](https://github.blog/category/engineering)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)

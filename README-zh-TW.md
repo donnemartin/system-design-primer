@@ -967,7 +967,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 * [鍵值對資料庫](https://en.wikipedia.org/wiki/Key-value_database)
 * [鍵值對資料庫的缺點](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 * [Redis 架構](http://qnimate.com/overview-of-redis-architecture/)
-* [Memcached 架構](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [Memcached 架構](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### 文件類型資料庫
 
@@ -1713,7 +1713,7 @@ Notes
 * [Facebook Engineering](https://www.facebook.com/Engineering)
 * [Flickr Code](http://code.flickr.net/)
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
-* [GitHub Engineering Blog](http://githubengineering.com/)
+* [GitHub Engineering Blog](https://github.blog/category/engineering)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)

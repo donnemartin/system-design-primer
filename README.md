@@ -597,7 +597,7 @@ DNS is hierarchical, with a few authoritative servers at the top level.  Your ro
 
 Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
 
-* [Weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [Weighted round robin](https://www.jscape.com/blog/load-balancing-algorithms)
     * Prevent traffic from going to servers under maintenance
     * Balance between varying cluster sizes
     * A/B testing
@@ -1015,7 +1015,7 @@ A key-value store is the basis for more complex systems such as a document store
 * [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
 * [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 * [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
-* [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [Memcached architecture](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### Document store
 
@@ -1764,7 +1764,7 @@ Handy metrics based on numbers above:
 * [Facebook Engineering](https://www.facebook.com/Engineering)
 * [Flickr Code](http://code.flickr.net/)
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
-* [GitHub Engineering Blog](http://githubengineering.com/)
+* [GitHub Engineering Blog](https://github.blog/category/engineering)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)
