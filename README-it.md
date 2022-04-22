@@ -114,9 +114,9 @@ Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
 * [Modelli di disponibilità](#availability-patterns)
     * [Fail-over](#fail-over)
     * [Replica](#replication)
-    * [Availability in numbers](#availability-in-numbers)
+    * [Disponibilità in numeri](#availability-in-numbers)
 * [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
+* [Rete di distribuzione dei contenuti](#content-delivery-network)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
 * [Load balancer](#load-balancer)
@@ -199,13 +199,13 @@ Quello che stai chiedendo dipende da vari fattori:
 
 Ci si aspetta che i candidati con più esperienza abbiamo più esperienza anche con il design di sistemi. Dagli architetti o dai leader di team ci si aspetta una conoscenza maggiore rispetto ai contributori individuali. È probabile che le compagnie migliori abbiamo più colloqui riguardo al design.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Start broad and go deeper in a few areas. It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 
 * **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
 * **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
 * **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
-| | Short | Medium | Long |
+| | Corto | Medio | Lungo |
 |---|---|---|---|
 | Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
 | Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
@@ -225,7 +225,7 @@ You can use the following steps to guide the discussion.  To help solidify this 
 
 ### Step 1: Outline use cases, constraints, and assumptions
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Raccogli i requisiti e individua il problema. Poni domande per chiarire casi d'uso e vincoli. Discuti delle ipotesi.
 
 * Chi lo userà?
 * Come lo useranno?
@@ -238,7 +238,7 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 
 ### Step 2: Creare un design di alto livello
 
-Outline a high level design with all important components.
+Delinea un design di alto livello con tutti i componenti importanti.
 
 * Sketch the main components and connections
 * Justify your ideas
@@ -275,99 +275,99 @@ You might be asked to do some estimates by hand.  Refer to the [Appendix](#appen
 * [Powers of two table](#powers-of-two-table)
 * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
+### Risorse e letture ulteriori
 
-Check out the following links to get a better idea of what to expect:
+Visita i seguenti link per avere un'idea migliore su cosa aspettarti:
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+* [Come superare un colloquio di progettazione di sistemi](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [Il colloquio sulla progettazione di sistemi](http://www.hiredintech.com/system-design)
+* [Introduzione ai colloqui su Architettura e Progettazione di Sistemi](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [Template per progettazione di sistemi](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## Domande da colloquio di progettazione del sistema con soluzioni
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Domande comuni da colloquio di progettazione del sistema con discussioni, codice e diagrammi di esempio.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Soluzioni collegate al contenuto nella cartella `solutions/`.
 
-| Question | |
+| Domanda | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Progetta Pastebin.com (o Bit.ly) | [Soluzione](solutions/system_design/pastebin/README.md) |
+| Progetta la timeline e la ricerca di Twitter (o il feed/ricerca di Facebook) | [Soluzione](solutions/system_design/twitter/README.md) |
+| Progetta un web crawler | [Soluzione](solutions/system_design/web_crawler/README.md) |
+| Progetta Mint.com | [Soluzione](solutions/system_design/mint/README.md) |
+| Progetta la strutture di dati per un social network | [Soluzione](solutions/system_design/social_graph/README.md) |
+| Progetta un archivio key-value per un motore di ricerca | [Soluzione](solutions/system_design/query_cache/README.md) |
+| Progetta una classifica delle vendite di Amazon per categoria | [Soluzione](solutions/system_design/sales_rank/README.md) |
+| Progetta un sistema che si adatta a milioni di utenti su AWS | [Soluzione](solutions/system_design/scaling_aws/README.md) |
+| Aggiungi una domanda sulla progettazione di sistemi | [Contribuisci](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Progetta Pastebin.com (o Bit.ly)
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Progetta la timeline e la ricerca di Twitter (o il feed/ricerca di Facebook)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### Progetta un web crawler
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### prgetta Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Progetta la strutture di dati per un social network
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Progetta un archivio key-value per un motore di ricerca
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Progetta una classifica delle vendite di Amazon per categoria
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### Progetta un sistema che si adatta a milioni di utenti su AWS
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Visualizza esercizio e soluzione](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Domande da colloquio per la progettazione orientata agli oggetti con soluzioni
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Domande comuni da colloquio di progettazione orientato agli oggetti con discussioni, codice e diagrammi di esempio.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Soluzioni collegate al contenuto nella cartella `solutions/`.
 
->**Note: This section is under development**
+>**Nota: Questa sezione è sotto sviluppo**
 
 | Question | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Progetta una mappa hash | [Soluzione](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Progetta una cache usata meno di recente | [Soluzione](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Progetta un call center | [Soluzione](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Progetta un mazzo di carte | [Soluzione](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Progetta un posteggio  | [Soluzione](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Progetta un server di chat | [Soluzione](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Progetta un array circolare | [Contribuisci](#contributing)  |
+| Aggiungi una domanda di progettazione orientata agli oggetti | [Contribuisci](#contributing) |
 
 ## Temi sulla progettazione dei sistemi: inizia da qui
 
@@ -409,7 +409,7 @@ Tieni a mente che **qualsiasi scelta è un compromesso**.
 
 Successivamente andremo in profondità su argomenti specifici come DNS, CDNs, e bilanciatori di carico.
 
-## Performance vs scalability
+## Prestazioni vs scalabilità
 
 A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
@@ -1250,7 +1250,7 @@ The application uses the cache as the main data store, reading and writing data 
 * Cache synchronously writes entry to data store
 * Return
 
-Application code:
+Codice applicazione:
 
 ```python
 set_user(12345, {"foo":"bar"})
