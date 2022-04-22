@@ -166,7 +166,7 @@ Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
+* [Sicurezza](#security)
 * [Appendix](#appendix)
     * [Powers of two table](#powers-of-two-table)
     * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
@@ -174,10 +174,10 @@ Consulta le [linee guida per Contribuire](CONTRIBUTING.md).
     * [Real world architectures](#real-world-architectures)
     * [Company architectures](#company-architectures)
     * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [Sotto sviluppo](#under-development)
+* [Crediti](#credits)
+* [Contatti](#contact-info)
+* [licenza](#license)
 
 ## Guida allo studio
 
@@ -1798,7 +1798,7 @@ Stai valutando di aggiungere un blog? Per evitare lavoro duplicato, considera di
 
 ## Sotto sviluppo
 
-Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+Interessato ad aggiungere una sezione o ad aiutare a completarne una in corso? [Contribuisci](#contributing)!
 
 * Distributed computing with MapReduce
 * Consistent hashing
