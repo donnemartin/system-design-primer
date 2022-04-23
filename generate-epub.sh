@@ -1,4 +1,5 @@
-#! /usr/bin/env bash
+#! /usr/bin/env bash ------- For mac users.
+#  venv\Scripts\activate------ For windows users.
 
 generate_from_stdin() {
   outfile=$1
