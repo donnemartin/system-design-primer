@@ -545,7 +545,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 [CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 提供了 DNS 的服務。而這些 DNS 服務商透過以下幾種方式來決定流量如何被分派：
 
-* [加權輪詢](http://g33kinfo.com/info/archives/2657)
+* [加權輪詢](https://g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb/)
     * 防止流量進入正在維修中的伺服器
     * 在不同大小的集群中進行負載平衡
     * A/B 測試
@@ -634,7 +634,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 * 隨機
 * 最少負載
 * Session/cookies
-* [輪詢調度或加權輪詢調度](http://g33kinfo.com/info/archives/2657)
+* [輪詢調度或加權輪詢調度](https://g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb/)
 * [第四層負載平衡](#第四層負載平衡)
 * [第七層負載平衡](#第七層負載平衡)
 

@@ -552,7 +552,7 @@ DNS 和 email 等系统使用的是此种方式。最终一致性在高可用性
 
 [CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 等平台提供管理 DNS 的功能。某些 DNS 服务通过集中方式来路由流量:
 
-* [加权轮询调度](http://g33kinfo.com/info/archives/2657)
+* [加权轮询调度](https://g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb/)
     * 防止流量进入维护中的服务器
     * 在不同大小集群间负载均衡
     * A/B 测试
@@ -638,7 +638,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * 随机
 * 最少负载
 * Session/cookie
-* [轮询调度或加权轮询调度算法](http://g33kinfo.com/info/archives/2657)
+* [轮询调度或加权轮询调度算法](https://g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb/)
 * [四层负载均衡](#四层负载均衡)
 * [七层负载均衡](#七层负载均衡)
 
