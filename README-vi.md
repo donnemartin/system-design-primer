@@ -434,19 +434,17 @@ Check out the following links to get a better idea of what to expect:
 ### Thiết kế Pastebin.com (hoặc Bit.ly)
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
-[Xem bài tập và lời giải](solutions/system_design/pastebin/README.md)
+[Xem bài tập và bài giải](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
 ### Design the Twitter timeline and search (or Facebook feed and search)
 ### Thiết kế Twitter timeline và tìm kiếm (hoặc Facebook feed và tìm kiếm)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
-[Xem bài tập và lời giải](solutions/system_design/twitter/README.md)
+[Xem bài tập và bài giải](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
 ### Thiết kế một web crawler
 
 [View exercise and solution](solutions/system_design/web_crawler/README.md)
@@ -454,33 +452,37 @@ Check out the following links to get a better idea of what to expect:
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### Thiết kế Mint.com
 
 [View exercise and solution](solutions/system_design/mint/README.md)
+[Xem bài tập và bài giải](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Thiết kế các cấu trúc dữ liệu cho một mạng xã hội
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Xem bài tập và bài giải](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
 ### Design a key-value store for a search engine
+### Thiết kế một kho khoá-giá trị (key-value store) phục vụ một máy tìm kiếm (search engine)
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Xem bài tập và bài giải](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
 ### Design Amazon's sales ranking by category feature
+### Thiết kế bảng xếp hạng bán hàng theo loại cho Amazon.
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Xem bài tập và bài giải](solutions/system_design/sales_rank/README.md
 
 ![Imgur](images/MzExP06.png)
 
 ### Design a system that scales to millions of users on AWS
+### Thiết kế một hệ thống có thể scale đến hàng triệu người dùng trên AWS
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Xem bài tập và bài giải](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
@@ -2148,10 +2150,10 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 ## Vietnamese Meta Notes (will remove after the translation is done)
 
-### Words that I haven't figured out how to translate yet
+### Words that I haven't figured out how to translate clearly yet
 
+- Scale / scalable / scalability: "mở rộng được"?
 - Large-scale system: "hệ thống lớn"?
-- Scalable/scalability: "mở rộng được"?
 - Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
 - Client/server
 - Request/response
@@ -2162,13 +2164,8 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Item: highly contextual, it doesn't really have a parlance on the Vietnamese side.
 - Client
 - Replication/replica
+- Availability: tính sẵn có / hiện có / khả dụng
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
 - Database: "cơ sở dữ liệu", but virtually no one use them.
-
-
-### Words that I'm deciding keep as-is for now
-
-- Availability
-- Consistency
