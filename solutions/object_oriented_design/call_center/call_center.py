@@ -94,7 +94,7 @@ class CallCenter(object):
 
     def dispatch_call(self, call):
         if call.rank not in (Rank.OPERATOR, Rank.SUPERVISOR, Rank.DIRECTOR):
-            raise ValueError('Invalid call rank: {}'.format(call.rank))
+            raise ValueError(f'Invalid call rank: {call.rank}')
         employee = None
         if call.rank == Rank.OPERATOR:
             employee = self._dispatch_call(call, self.operators)
