@@ -61,7 +61,7 @@ See [Translations](TRANSLATIONS.md).
 
 ### Adding translations to new languages
 
-Translations to new languages are always welcome! Keep in mind a transation must be maintained.
+Translations to new languages are always welcome! Keep in mind a translation must be maintained.
 
 * Do you have time to be a maintainer for a new language? Please see the list of [translations](TRANSLATIONS.md) and tell us so we know we can count on you in the future.
 * Check the [translations](TRANSLATIONS.md), issues, and pull requests to see if a translation is in progress or stalled. If it's in progress, offer to help.  If it's stalled, consider becoming the maintainer if you can commit to it.
