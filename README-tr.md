@@ -59,7 +59,6 @@ Sağlanan [Anki bilgi kartı desteleri](https://apps.ankiweb.net/), temel sistem
 ### Kodlama Kaynağı: Etkileşimli Kodlama Yarışmaları
 
 Kodlama mülakatına hazırlanmakta size yardımcı olacak kaynak mı [arıyorsunuz](https://github.com/donnemartin/interactive-coding-challenges)?
->>>>>>> Stashed changes
 
 <p align="center">
   <img src="images/b4YtAEN.png">
