@@ -65,3 +65,18 @@ Kodlama mülakatına hazırlanmakta size yardımcı olacak kaynak mı [arıyorsu
   <br/>
 </p>
 
+Kardeş repo'ya göz atın: [**Etkileşimli Kodlama Yarışmaları**](https://github.com/donnemartin/interactive-coding-challenges), ayrıca ek bir Anki destesi içerir:
+
+* [Kodlama destesi](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+
+## Katkıda Bulunmak
+
+> Komüniteden öğrenin.
+
+Şu konularda yardımcı olmak için pull request yapmaktan çekinmeyin:
+
+* Hata düzeltmeleri
+* Başlıkların iyileştirilmesi
+* Yeni başlıkların eklenmesi
+* [Çeviri](https://github.com/donnemartin/system-design-primer/issues/28)
+
