@@ -596,7 +596,7 @@ DNS هرمي ، مع وجود عدد قليل من الخوادم الموثوق
 
 خدمات مثل[CloudFlare](https://www.cloudflare.com/dns/) و [Route 53](https://aws.amazon.com/route53/) تقدم خدمات DNS المُدارة. يمكن لبعض خدمات DNS توجيه حركة المرور من خلال طرق مختلفة:
 
-* [بمعيار round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [بمعيار round robin](https://www.jscape.com/blog/load-balancing-algorithms)
      * منع حركة المرور من الذهاب إلى الخوادم تحت الصيانة
      * التوازن بين أحجام الكتلة المختلفة
      * اختبار أ / ب
