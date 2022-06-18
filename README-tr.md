@@ -80,3 +80,6 @@ Kardeş repo'ya göz atın: [**Etkileşimli Kodlama Yarışmaları**](https://gi
 * Yeni başlıkların eklenmesi
 * [Çeviri](https://github.com/donnemartin/system-design-primer/issues/28)
 
+Düzeltilmesi gereken içerik [geliştirme altında](#under-development) başlığındadır.
+
+[Katkıda bulunma](CONTRIBUTING.MD) rehberini inceleyin.
