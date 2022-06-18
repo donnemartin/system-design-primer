@@ -82,4 +82,4 @@ Kardeş repo'ya göz atın: [**Etkileşimli Kodlama Yarışmaları**](https://gi
 
 Düzeltilmesi gereken içerik [geliştirme altında](#under-development) başlığındadır.
 
-[Katkıda bulunma](CONTRIBUTING.MD) rehberini inceleyin.
+[Katkıda bulunma](CONTRIBUTING.md) rehberini inceleyin.
