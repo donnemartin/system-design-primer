@@ -176,3 +176,75 @@ Düzeltilmesi gereken içerik [geliştirme altında](#under-development) başlı
 * [Bitiş](#credits)
 * [İletişim bilgileri](#contact-info)
 * [Lisans](#license)
+
+## Çalışma rehberi
+
+> İncelenmesi önerilen konular sizin mülakat süreniz baz alınarak hazırlanmıştır(kısa, orta, uzun).
+
+![Imgur](images/OfVllex.png)
+
+**S: Mülakatlar için buradaki her şeyi bilmem gerekiyor mu?**
+
+**C: Hayır, mülakat hazırlığı için buradaki herşeyi bilmeniz gerekmiyor.**.
+
+Bir mülakatta size sorulan sorular aşağıdaki değişkenlere bağlıdır:
+
+* Ne kadar tecrübelisiniz
+* Teknik özgeçmişinizin ne olduğu
+* Hangi pozisyonlar için mülakata alındığınız
+* Mülakatı yaptığınız şirketler
+* Şans
+
+Genellikle, daha tecrübeli olan adaylardan sistem tasarımı hakkında daha çok bilgi sahibi olmalaraı beklenir. Mimari tasarımcılarından veya takım liderlerinden, bireysel iştirakçilerden daha bilgili olmaları beklenebilir. Başı çeken teknoloji şirketleri bir veya daha fazla sistem tasarımı mülakatı yapmaya yönelimlidir.
+
+Geniş olarak başlayın ve ardından bazı alanlarda derinlere inin. Bu, sizin çeşitli kilit sistem tasarımı konuları hakkında fikir sahibi olmanıza yardımcı olur. Takip eden rehberi; kendi planlamanıza, tecrübenize, mülakata girdiğiniz pozisyonlara ve hangi şirketlerle mülakat yaptığınza göre kendiniz için uyarlayın.
+
+* **Kısa vadede** - Sistem tasarımı konularının **genelini** hedefleyin. Bunun pratiğini **biraz** mülakat soruları çözerek yapın.
+* **Orta vadede** - Sistem tasarımı konularında **biraz derinlere** inin ve bazılarında **genel** seviyeyi hedefleyin. Bunun pratiğini **biraz** mülakat soruları çözerek yapın.
+* **Uzun vadede** - Sistem tasarımı konularında **daha derinlere** inin ve bazılarında **genel** seviyeyi hedefleyin. Bunun pratiğini **biraz** mülakat soruları çözerek yapın.
+
+| | Kısa | Orta | Uzun |
+|---|---|---|---|
+| Sistemlerin nasıl çalıştığı hakkında genel bir fikir edinmek için [Sistem tasarımı konularını](#index-of-system-design-topics) okuyun | :+1: | :+1: | :+1: |
+| Mülakat yaptığınız şirketler için, [Şirket mühendisliği bloglarından](#company-engineering-blogs) bazı makaleler okuyun | :+1: | :+1: | :+1: |
+| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
+| [Sistem tasarımı mülakat sorularına nasıl yaklaşacağınızı](#how-to-approach-a-system-design-interview-question) inceleyin | :+1: | :+1: | :+1: |
+| [Çözümleriyle beraber sistem tasarımı mülakat soruları](#system-design-interview-questions-with-solutions) üzerinde çalışın | Bazısı | Birçoğu | Çoğunluğu |
+| [Çözümleriyle beraber nesne tabanlı tasarım mülakat soruları](#object-oriented-design-interview-questions-with-solutions) üzerinde çalışın | Bazısı | Birçoğu | Çoğunluğu |
+| [Ek sistem tasarımı mülakat sorularını](#additional-system-design-interview-questions) inceleyin | Bazısı | Birçoğu | Çoğunluğu |
+
+## Sistem tasarımı mülakat sorularına nasıl yaklaşılır
+
+> Bir sistem tasarımı mülakat sorusunun nasıl hakkından gelinir?
+
+Sistem tasarımı mülakatı bir **açık uçlu sohbettir**. Buna önderlik etmeniz beklenir.
+
+Aşağıdaki adımları kullanarak tartışmaya rehberlik edebilirsiniz. İlerlemeyi pekiştirmek için, aşağıdaki adımları kullanarak [çözümleriyle beraber sistem tasarımı mülakat soruları](#system-design-interview-questions-with-solutions) üzerinde çalışın.
+
+### Adım 1: Kullanım senaryolarını, kısıtlamaları ve varsayımları ana hatlarıyla belirtin
+
+Gereklilikleri bir araya getirin ve problemi gözlemleyin. Kullanım senaryolarını ve kısıtlamaları berraklaştırmak için sorular sorun. Varsayımları tartışın.
+
+* Bunu kim kullanacak?
+* Nasıl kullanacaklar?
+* Kaç tane kullanıcı var?
+* Sistem ne işe yarar?
+* Sistemin girdileri ve çıktıları nelerdir?
+* Ne kadar veriyi işlememiz gerekiyor?
+* Saniye başına kaç istek gelmesini bekliyoruz?
+* Okuma yazma oranı ne kadar?
+
+### Adım 2: Yüksek seviye bir tasarım oluşturun
+
+* Yüksek seviye bir tasarımı bütün önemli içeriklerini içererek anahatlarıyla belirtin.
+
+* Ana içerikleri ve onların bağlantılarını kabaca açıklayın
+* Fikirlerinizi doğrulayın
+
+### Adım 3: Merkez çekirdek içerikleri tasarlayın
+
+Her çekirdek içeriğin detaylarına kadar inin. Örneğin, size [bir url kısaltma servisinin tasarlanması](solutions/system_design/pastebin/README.md) sorulduğunda şunları açıklayın:
+
+* Tam url'nin karma değerinin oluşturulması ve depolanması
+    * [MD5](solutions/system_design/pastebin/README.md) ve [Base62](solutions/system_design/pastebin/README.md)
+    *
