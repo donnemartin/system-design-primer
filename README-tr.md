@@ -245,6 +245,29 @@ Gereklilikleri bir araya getirin ve problemi gözlemleyin. Kullanım senaryolar�
 
 Her çekirdek içeriğin detaylarına kadar inin. Örneğin, size [bir url kısaltma servisinin tasarlanması](solutions/system_design/pastebin/README.md) sorulduğunda şunları açıklayın:
 
-* Tam url'nin karma değerinin oluşturulması ve depolanması
+* Tam url'nin şifrelenmiş değerinin oluşturulması ve saklanması
     * [MD5](solutions/system_design/pastebin/README.md) ve [Base62](solutions/system_design/pastebin/README.md)
-    *
+    * Şifreleme çakışmaları
+    * SQL veya NoSQL
+    * Veritabanı şeması
+* Şifrelenmiş url'i tam url'e dönüştürmek
+    * Veritabanı araması
+* API ve nesne tabanlı tasarım
+
+### Adım 4: Tasarımı ölçekleyin
+
+Kısıtlamalar göz önüne alındığında darboğazları belirleyin ve ele alın. Örneğin, ölçeklenebilirlik sorunlarını çözmek için aşağıdakilere ihtiyacınız var mı?
+
+* Yükleme dengeleyicisi
+* Yatay ölçekleme
+* Önbellekleme
+* Veritabanı bölümleme
+
+Potansiyel çözümleri ve takasları tartışın. Her şey bir takastır. [Ölçeklenebilir sistem tasarımı ilkelerini](#index-of-system-design-topics) kullanarak darboğazların üstesinden gelin.
+
+### Zarf hesaplamalarının Diğer Yüzü
+
+Bazı tahminleri elle yapmanız istenebilir. Aşağıdaki kaynaklar için [Ekler](#appendix) bölümüne bakın:
+
+* [Zarf hesaplamalarının diğer yüzünü kullanın](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [İki tablonun gücü](#powers-of-two-table)
