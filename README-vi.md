@@ -2,6 +2,14 @@
 
 **Help [translate](TRANSLATIONS.md) this guide!**
 
+## Ghi chú từ người dịch
+
+Một số từ khoá hoặc thuật ngữ chuyên ngành được giữ nguyên bản tiếng Anh.
+Với hai lí do. Một là không có / khó kiếm từ tiếng Việt tương ứng được đa số chấp nhận.
+Hai là mục tiêu của bài dịch này là để đẩy nhanh, giảm ma sát cho các bạn đọc tiếng Việt.
+Bản này không nhắm vào trở thành một bản dịch hoàn chỉnh.
+Do đó một số từ khoá, dù có thể có từ dịch tiếng Việt nhưng vẫn được để tiếng Anh nhằm mục đích để các bạn có thể dễ dàng tra cứu, research thêm.
+
 # Thiết Kế Hệ Thống Cơ Bản
 
 <p align="center">
@@ -337,22 +345,29 @@ Thu thập nhu cầu và phạm vi của vấn đề.  Đặt các câu hỏi l�
 Outline a high level design with all important components.
 
 * Sketch the main components and connections
+* Phác thảo các thành phần chính và kết nối
 * Justify your ideas
+* Chứng minh ý tưởng
 
 ### Step 3: Design core components
 ### Bước 3: Thiết kế các thành phần lõi
 
 Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
-
+Đào sâu vào chi tiết của từng thành phần lõi.  Ví dụ, nếu bạn được đề nghị [thiết kế một dịch vụ rút ngắn url](solutions/system_design/pastebin/README.md), hãy trình bày:
 
 * Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
+* Tạo và lưu trữ một mã băm từ url đầy đủ
+    * [MD5](solutions/system_design/pastebin/README.md) và [Base62](solutions/system_design/pastebin/README.md)
     * Hash collisions
-    * SQL or NoSQL
+    * Va chạm mã băm
+    * SQL hay NoSQL
     * Database schema
 * Translating a hashed url to the full url
+* Dịch một url đã được băm trở lại url đầy đủ
     * Database lookup
+    * Truy cứu database
 * API and object-oriented design
+* API và thiết kế hướng đối tượng
 
 ### Step 4: Scale the design
 ### Bước 4: "Scale" thiết kế
@@ -760,7 +775,7 @@ If a service consists of multiple components prone to failure, the service's ove
 Nếu một dịch vụ bao gồm nhiều thành phần dễ mắc lỗi, thì tính khả dụng toàn phần của dịch vụ này phụ thuộc vào các thành phần nằm trong một trình tự hay nằm song song.
 
 ###### In sequence
-###### Trong trình tự
+###### Trình tự
 
 Overall availability decreases when two components with availability < 100% are in sequence:
 Tính khả dụng toàn phần giảm đi khi có 2 thành phần với tính khả dụng < 100% nằm theo trình tự:
@@ -777,15 +792,22 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
 Nếu cả hai `A` và `B`, có 99,9% "khả dụng", tổng khả dụng trong trình tự sẽ là 99,8%.
 
 ###### In parallel
-###### Trong song song  # FIXME: bad translation
+###### Song song
 
 Overall availability increases when two components with availability < 100% are in parallel:
+Tính khả dụng tổng thể gia tăng khi hai thành phần có tính khả dụng < 100% được chạy song song:
+
 
 ```
 Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ```
 
+```
+Khả Dụng (tổng) = 1 - (1 - Khả Dụng (Thành Phần A)) * (1 - Khả Dụng (Thành Phần B))
+```
+
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+Nếu cả hai `A` và `B`, mỗi thành phần có 99,9% khả dụng, thì tổng khả dụng khi chạy song song sẽ là 99,9999%.
 
 ## Hệ thống tên miền
 
