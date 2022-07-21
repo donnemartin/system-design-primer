@@ -53,7 +53,7 @@ class Operator(Employee):
 class Supervisor(Employee):
 
     def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+        super(Supervisor, self).__init__(employee_id, name, Rank.SUPERVISOR)
 
     def escalate_call(self):
         self.call.level = Rank.DIRECTOR
@@ -63,7 +63,7 @@ class Supervisor(Employee):
 class Director(Employee):
 
     def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
+        super(Director, self).__init__(employee_id, name, Rank.DIRECTOR)
 
     def escalate_call(self):
         raise NotImplementedError('Directors must be able to handle any call')
