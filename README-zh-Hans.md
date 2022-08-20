@@ -627,7 +627,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * 帮助消除单点故障
 
 负载均衡器可以通过（昂贵的）硬件或 HAProxy 等软件来实现。
-增加的好处包括:
+额外的好处包括:
 
 * **SSL 终结** ─ 解密传入的请求并加密服务器响应，这样的话后端服务器就不必再执行这些潜在高消耗运算了。
     * 不需要再每台服务器上安装 [X.509 证书](https://en.wikipedia.org/wiki/X.509)。
@@ -661,8 +661,8 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 #### 缺陷：水平扩展
 
 * 水平扩展引入了复杂度并涉及服务器复制
-    * 服务器应该是无状态的:它们也不该包含像 session 或资料图片等与用户关联的数据。
-    * session 可以集中存储在数据库或持久化[缓存](#缓存)（Redis、Memcached）的数据存储区中。
+    * 服务器应该是无状态的：它们也不该包含像 session 或资料图片等与用户关联的数据。
+    * Session 可以集中存储在数据库或持久化[缓存](#缓存)（Redis、Memcached）的数据存储区中。
 * 缓存和数据库等下游服务器需要随着上游服务器进行扩展，以处理更多的并发连接。
 
 ### 缺陷：负载均衡器
@@ -1121,7 +1121,7 @@ Google 发布了第一个列型存储数据库 [Bigtable](http://www.read.seas.h
 
 ### 应用缓存
 
-基于内存的缓存比如 Memcached 和 Redis 是应用程序和数据存储之间的一种键值存储。由于数据保存在 RAM 中，它比存储在磁盘上的典型数据库要快多了。RAM 比磁盘限制更多，所以例如 [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) 的[缓存无效算法](https://en.wikipedia.org/wiki/Cache_algorithms)可以将「热门数据」放在 RAM 中，而对一些比较「冷门」的数据不做处理。
+基于内存的缓存比如 Memcached 和 Redis 是应用程序和数据存储之间的一种键值存储。由于数据保存在 RAM 中，它比存储在磁盘上的典型数据库要快多了。RAM 比磁盘限制更多，所以例如 [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used) 的[缓存失效算法](https://en.wikipedia.org/wiki/Cache_algorithms)可以将「热门数据」放在 RAM 中，而对一些比较「冷门」的数据不做处理。
 
 Redis 有下列附加功能：
 
@@ -1269,9 +1269,9 @@ def set_user(user_id, values):
 
 ### 缓存的缺点：
 
-- 需要保持缓存和真实数据源之间的一致性，比如数据库根据[缓存无效](https://en.wikipedia.org/wiki/Cache_algorithms)。
+- 需要保持缓存和真实数据源之间的一致性，比如数据库根据[缓存失效](https://en.wikipedia.org/wiki/Cache_algorithms)。
 - 需要改变应用程序比如增加 Redis 或者 memcached。
-- 无效缓存是个难题，什么时候更新缓存是与之相关的复杂问题。
+- 缓存失效是个难题，什么时候更新缓存是与之相关的复杂问题。
 
 ### 相关资源和延伸阅读
 
