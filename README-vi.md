@@ -168,7 +168,6 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Content delivery network](#content-delivery-network)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
 * [Cân bằng tải](#load-balancer)
     * [Active-passive](#active-passive)
     * [Chủ động - bị động](#active-passive)
@@ -539,14 +538,19 @@ Check out the following links to get a better idea of what to expect:
 | Bổ sung một câu hỏi về thiết kế hướng đối tượng | [Contribute](#contributing) |
 
 ## System design topics: start here
+## Các chủ đề thiết kế hệ thống: bắt đầu ở đây
 
 New to system design?
+Mới tiếp cận với thiết kế hệ thống?
 
 First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Đầu tiên bạn sẽ cần một số hiểu biết cơ bản về các nguyên lý chung, học về định nghĩa, cách sử dụng, cùng với điểm điểm được và mất cả các nguyên lý này.
 
 ### Step 1: Review the scalability video lecture
+### Buốc 1: Xem các video bài giảng về khả năng mở rộng (scalability)
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Bài giảng về tính mở rộng (scalability) tại Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
 * Topics covered:
     * Vertical scaling
@@ -2174,7 +2178,7 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 ### Words that I haven't figured out how to translate clearly yet
 
-- Scale / scalable / scalability: "mở rộng được"?
+- Scale / scalable / scalability: "mở rộng" / "khả năng mở rộng"?
 - Large-scale system: "hệ thống lớn"?
 - Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
 - Client/server
