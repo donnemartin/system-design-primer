@@ -8,7 +8,7 @@ generate_from_stdin() {
 
   pandoc --metadata-file=epub-metadata.yaml --metadata=lang:$2 --from=markdown -o $1 <&0
 
-  echo "Done! You can find the '$language' book at ./$outfile"
+  echo "Completed! You can find the '$language' book at ./$outfile"
 }
 
 generate_with_solutions () {
