@@ -10,7 +10,7 @@ class Suit(Enum):
     CLUBS = 2
     SPADE = 3
 
-# test
+# test 
 
 
 class Card(metaclass=ABCMeta):
