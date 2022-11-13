@@ -888,14 +888,20 @@ Pull CDNs grab new content from your server when the first user requests the con
 Pull CDN kéo nội dung mới từ máy chủ của bạn khi có yêu cầu đầu tiên từ người dùng cho nội dung này.  Bạn để nội dung trên máy chủ và viết lại URL để trỏ đến CDN.  Việc này dẫn đến thời gian thực thi yêu cầu sẽ chậm, cho đến hki nội dung được cache trên CDN.
 
 A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
+TTL (time-to-live - thời gian tồn tại) xác định thời gian mà nội dung sẽ được cache. Pull CDN tối thiểu hoá dụng lượng chứa trên CDN, nhưng có thể tạo ra lưu thông dư thừa nếu các tệp tin bị quá thời hạn cache và được kéo về khi chưa thực sự thay đổi.
 
 Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
+Các trang với lưu lượng cao sẽ hoạt động tốt với pull CDN, vì lẽ lưu thông sẽ được dàn trải cân bằng hơn với nội dung được yêu cầu gần nhất sẽ được lưu tồn trên CDN.
 
 ### Disadvantage(s): CDN
+### Bất lợi của CDN
 
 * CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
+* Chi phí cho CDN phụ thuộc rất nhiều vào lưu thông, mặc dù chi phí này cần được đo đếm so với chi phí phát sinh gây ra nếu bạn không dùng CDN.
 * Content might be stale if it is updated before the TTL expires it.
+* Nội dung có thể là bản cũ nếu được cập nhật trong khi TTL chưa hết hạn.
 * CDNs require changing URLs for static content to point to the CDN.
+* Cần phải thay đổi URL cho các nội dung tĩnh để trỏ về CDN.
 
 ### Source(s) and further reading
 
