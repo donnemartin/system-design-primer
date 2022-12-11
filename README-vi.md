@@ -1157,6 +1157,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 * Replication adds more hardware and additional complexity.
 
 ##### Source(s) and further reading: replication
+##### Nguồn đọc thêm: replication
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
@@ -1172,11 +1173,16 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
 
 ##### Disadvantage(s): federation
+##### Bất lợi của federation
 
 * Federation is not effective if your schema requires huge functions or tables.
+* Federation không hiệu quả nếu schema của bạn đòi hỏi nhiều hàm hoặc bảng.
 * You'll need to update your application logic to determine which database to read and write.
+* Bạn sẽ cần cập nhật logic phía ứng dụng để xác định CSDL nào để đọc và ghi.
 * Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
+* Liên kết dữ liệu giữa hai CSDL là phức tạp hơn với [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers). # FIXME: probably wrong meaning?
 * Federation adds more hardware and additional complexity.
+* Federation cần thêm phần cứng và tăng độ phức tạp.
 
 ##### Source(s) and further reading: federation
 
@@ -2195,7 +2201,7 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Cache: "tiền bộ nhớ"?
 - Item: highly contextual, it doesn't really have a parlance on the Vietnamese side.
 - Client
-- Replication/replica
+- Replication/replica: tái tạo / sao chép?
 - Availability: tính sẵn có / hiện có / khả dụng
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
