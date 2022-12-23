@@ -686,7 +686,7 @@ Load balancers can route traffic based on various metrics, including:
 * Random
 * Least loaded
 * Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [Round robin or weighted round robin](https://constellix.com/news/load-balancing-round-robin-vs-weighted-round-robin)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
 
