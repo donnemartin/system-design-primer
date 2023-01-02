@@ -1763,7 +1763,7 @@ Handy metrics based on numbers above:
 * [Etsy Code as Craft](http://codeascraft.com/)
 * [Facebook Engineering](https://www.facebook.com/Engineering)
 * [Flickr Code](http://code.flickr.net/)
-* [Foursquare Engineering Blog](http://engineering.foursquare.com/)
+* [Foursquare Engineering Blog](https://location.foursquare.com/developer/blog/)
 * [GitHub Engineering Blog](https://github.blog/category/engineering)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
