@@ -280,6 +280,7 @@
 * [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [システム設計面接](http://www.hiredintech.com/system-design)
 * [アーキテクチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [システム設計テンプレート](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
 ## システム設計課題例とその解答
 
@@ -465,6 +466,7 @@
 * [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
+* [CAP 理論](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
 ## 一貫性パターン
 
@@ -1532,6 +1534,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 
 ### その他の参考資料、ページ:
 
+* [API セキュリティチェックリスト](https://github.com/shieldfy/API-Security-Checklist)
 * [開発者のためのセキュリティガイド](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
