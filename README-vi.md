@@ -1149,12 +1149,18 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
 
 ##### Disadvantage(s): replication
+##### Bất lợi: replication
 
 * There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
+* Vẫn có khả năng mất dữ liệu nếu master fail trước khi data mới được replicate lên những node khác.
 * Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
+* Write sẽ được replay trên các read replica.  Nếu có quá nhiều thao tác write, các read replica có thể bị nghẽn cho việc ghi và không thể phục vụ cho việc đọc.
 * The more read slaves, the more you have to replicate, which leads to greater replication lag.
+* Càng có nhiều các read slave thì sẽ càng phải tải nhiều cho replicate hơn, dẫn đến tăng lag của replication.
 * On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
+* Trong một vài hệ thống, việc ghi vào master có thể tạo nhiều thread để ghi song song, trong khi đó thì read replica sẽ chỉ hỗ trợ ghi nối tiếp trong một thread đơn nhất.
 * Replication adds more hardware and additional complexity.
+* Replication cần nhiều tài nguyên phần cứng và tăng độ phức tạp.
 
 ##### Source(s) and further reading: replication
 ##### Nguồn đọc thêm: replication
