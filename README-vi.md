@@ -1173,10 +1173,12 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 <p align="center">
   <img src="images/U3qV33e.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Nguồn: Scaling up to your first 10 million users</a></i>
 </p>
 
 Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+
+Federation (hay còn gọi là functional partitioning) chia cắt database theo tính năng.  Ví dụ thay vì một database đơn nhất (monolithic database), ta có thể có ba database: **forums**, **users**, và **products**, kết quả là sẽ có ít tác vụ đọc và ghi vào mỗi database và từ đó giảm thiểu độ trễ của replication.  Database nhỏ hơn cũng đồng nghĩa với việc sẽ có nhiều dữ liệu có thể chứa vừa trên vùng nhớ hơn, đồng nghĩa với khả năng cache hit (dữ liệu tương ứng có tồn tại trên cache) cao hơn, bởi cache nằm ở cục bộ của database (cache locality).  Với việc không có một master trung tâm để serialize (sắp xếp lại theo thứ tự) tác vụ ghi, ta có thể thực hiện việc ghi này song song, từ đó tăng được công suất (throughput).
 
 ##### Disadvantage(s): federation
 ##### Bất lợi của federation
@@ -2209,6 +2211,7 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Client
 - Replication/replica: tái tạo / sao chép?
 - Availability: tính sẵn có / hiện có / khả dụng
+- Traffic:
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
