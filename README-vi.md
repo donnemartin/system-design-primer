@@ -1243,15 +1243,21 @@ In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A rea
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
 #### SQL tuning
+#### Điều chỉnh (tuning) SQL
 
 SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+Điều chỉnh SQL là một chủ đề rộng và có rất nhiều [quyển sách](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) đã viết về chủ đề này.
 
 It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
+**Benchmark** và **profile** là hai phương pháp quan trọng để tái tạo và phát hiện cổ chai.
 
 * **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
+* **Benchmark** - Giả lập trạng thái tải cao với các công cụ như là [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
 * **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
+* **Profile** - Bật các công cụ như là [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) để theo dõi các vấn đề về hiệu năng.
 
 Benchmarking and profiling might point you to the following optimizations.
+Benchmark và profile có thể sẽ chỉ ra được các phương thức tối ưu hoá sau.
 
 ##### Tighten up the schema
 
