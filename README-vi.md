@@ -1311,14 +1311,20 @@ NoSQL is a collection of data items represented in a **key-value store**, **docu
 In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document stores**, **wide column stores**, and **graph databases** in the next section.
 
 #### Key-value store
+#### Store khoá-trị (key-value store)
 
 > Abstraction: hash table
+> Kiểu dữ liệu khái niệm: hash table  # FIXME
 
 A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
 
+Một store khoá-trị thông thường sẽ chấp nhận đọc và ghi trong O(1) và thường được chứa trong bộ nhớ (memory) hoặc SSD.  Các data stores có thể sắp xếp khoá với thứ tự [lexicographic](https://en.wikipedia.org/wiki/Lexicographical_order), việc này sẽ cho phép truy vấn dải khoá một cách hiệu quả.  Store khoá-trị có thể chấp nhận chứa metadata kèm với giá trị.
+
 Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
+Store khoá trị cung cấp hiệu năng cao và thường được dụng trong các mô hình dữ liệu đơn giản hoặc cho dữ liệu thay đổi liên tục, như ở lớp in-memory cache.  Do sẽ có giới hạn cho tập các tác vụ được hỗ trợ, độ phức tạp sẽ được chuyển sang lớp ứng dụng nếu cần thêm các tác vụ khác.
 
 A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
+Một store khoá-trị là nền tảng cho các hệ thống phức tạp hơn như store document, và trong một vài tường hợp, một CSDL đồ thị (graph database).
 
 ##### Source(s) and further reading: key-value store
 
@@ -2218,6 +2224,7 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Replication/replica: tái tạo / sao chép?
 - Availability: tính sẵn có / hiện có / khả dụng
 - Traffic:
+- (Data) store: "CSDL" is not technically precise.
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
