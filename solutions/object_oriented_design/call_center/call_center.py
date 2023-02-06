@@ -12,12 +12,12 @@ class Rank(Enum):
 
 class Employee(metaclass=ABCMeta):
 
-    def __init__(self, employee_id, name, rank, call_center):
+    def __init__(self, employee_id, name, rank):
         self.employee_id = employee_id
         self.name = name
         self.rank = rank
         self.call = None
-        self.call_center = call_center
+        self.call_center = None
 
     def take_call(self, call):
         """Assume the employee will always successfully take the call."""
@@ -26,6 +26,7 @@ class Employee(metaclass=ABCMeta):
         self.call.state = CallState.IN_PROGRESS
 
     def complete_call(self):
+        assert self.call_center is not None
         self.call.state = CallState.COMPLETE
         self.call_center.notify_call_completed(self.call)
 
@@ -34,10 +35,14 @@ class Employee(metaclass=ABCMeta):
         pass
 
     def _escalate_call(self):
+        assert self.call_center is not None
         self.call.state = CallState.READY
         call = self.call
         self.call = None
         self.call_center.notify_call_escalated(call)
+
+    def set_call_center(self, call_center):
+        self.call_center = call_center
 
 
 class Operator(Employee):
@@ -53,7 +58,7 @@ class Operator(Employee):
 class Supervisor(Employee):
 
     def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+        super(Supervisor, self).__init__(employee_id, name, Rank.SUPERVISOR)
 
     def escalate_call(self):
         self.call.level = Rank.DIRECTOR
@@ -63,7 +68,7 @@ class Supervisor(Employee):
 class Director(Employee):
 
     def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
+        super(Director, self).__init__(employee_id, name, Rank.DIRECTOR)
 
     def escalate_call(self):
         raise NotImplementedError('Directors must be able to handle any call')
@@ -87,10 +92,12 @@ class Call(object):
 class CallCenter(object):
 
     def __init__(self, operators, supervisors, directors):
-        self.operators = operators
-        self.supervisors = supervisors
-        self.directors = directors
+        self.operators = []
+        self.supervisors = []
+        self.directors = []
         self.queued_calls = deque()
+        for employee in operators + supervisors + directors:
+            self.add_employee(employee)
 
     def dispatch_call(self, call):
         if call.rank not in (Rank.OPERATOR, Rank.SUPERVISOR, Rank.DIRECTOR):
@@ -102,6 +109,7 @@ class CallCenter(object):
             employee = self._dispatch_call(call, self.supervisors)
         if call.rank == Rank.DIRECTOR or employee is None:
             employee = self._dispatch_call(call, self.directors)
+
         if employee is None:
             self.queued_calls.append(call)
 
@@ -111,6 +119,18 @@ class CallCenter(object):
                 employee.take_call(call)
                 return employee
         return None
+
+    def add_employee(self, employee: Employee):
+        if isinstance(employee, Operator):
+            self.operators.append(employee)
+        elif isinstance(employee, Supervisor):
+            self.supervisors.append(employee)
+        elif isinstance(employee, Director):
+            self.directors.append(employee)
+        else:
+            raise ValueError('Invalid employee type: {}'.format(type(employee)))
+        employee.set_call_center(self)
+
 
     def notify_call_escalated(self, call):
         pass
