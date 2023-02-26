@@ -615,6 +615,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 * [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [DNS articles](https://support.dnsimple.com/categories/dns/)
+* [How DNS works](https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/)
 
 ## Content delivery network
 
