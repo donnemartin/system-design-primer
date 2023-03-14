@@ -302,6 +302,8 @@ Check out the following links to get a better idea of what to expect:
 | Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
 | Add a system design question | [Contribute](#contributing) |
 
+You can practice a few sample questions and discuss solutions with the community on this [practice platform](https://workat.tech/system-design/practice).
+
 ### Design Pastebin.com (or Bit.ly)
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
