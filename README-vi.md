@@ -1327,6 +1327,7 @@ A key-value store is the basis for more complex systems such as a document store
 Một store khoá-trị là nền tảng cho các hệ thống phức tạp hơn như store document, và trong một vài tường hợp, một CSDL đồ thị (graph database).
 
 ##### Source(s) and further reading: key-value store
+#### Nguồn đọc thêm: store khoá-trị
 
 * [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
 * [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
@@ -1334,18 +1335,25 @@ Một store khoá-trị là nền tảng cho các hệ thống phức tạp hơn
 * [Memcached architecture](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### Document store
+#### Store tài liệu (document store)
 
 > Abstraction: key-value store with documents stored as values
+> Kiểu dũ liệu khái niệm: store khoá-trị với tài liệu là giá trị
 
 A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
+Store tài liệu xoay quanh các loại tài liệu (XML, JSON, binary, vâng vâng), trong đó một tài liệu chứa tất các các thông tin liên quan cho một đối tượng.  Store tài liệu cung cấp API hoặc một ngôn ngữ truy vấn để truy vấn dựa trên cấu trúc bên trong của bản thân tài liệu.  *Lưu ý, có nhiều store khoá-trị đã bao gồm các tính năng cho thao tác với metadata của giá trị, làm mờ đi ranh giới giữa hai store này.**
 
 Based on the underlying implementation, documents are organized by collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
+Dựa trên cách hiện thực bên dưới, các tài liệu được tổ chức theo bộ sưu tập (collection), tags, metadata, hoặc thư mục.  Mặc dù tài liệu có thể được tổ chức hoặc gom nhóm với nhau, tài liệu có thể có các trường hoàn toàn khác biệt với nhau.
 
 Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
+Một vài store tài liệu như là [MongoDB](https://www.mongodb.com/mongodb-architecture và [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) còn cung cấp ngôn ngữ gần SQL để thực thi các câu truy vấn phức tạp.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) hỗ trợ cả hai kiểu khoá-trị và tài liệu.
 
 Document stores provide high flexibility and are often used for working with occasionally changing data.
+Store tài liệu cung cấp độ co giãn cao và thường được sử dụng cho những dữ liệu ít bị thay đổi thường xuyên.
 
 ##### Source(s) and further reading: document store
+##### Nguồn đọc thêm: store tài liệu
 
 * [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
