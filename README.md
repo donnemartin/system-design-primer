@@ -57,6 +57,7 @@ The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repeti
 * [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
 Great for use while on-the-go.
+PS. If you have issues with importing packages - try to download it through github UI "download" button or via "view raw".
 
 ### Coding Resource: Interactive Coding Challenges
 
