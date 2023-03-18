@@ -1314,7 +1314,7 @@ In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to 
 #### Store khoá-trị (key-value store)
 
 > Abstraction: hash table
-> Kiểu dữ liệu khái niệm: hash table  # FIXME
+> Kiểu trừu tượng: hash table  # FIXME
 
 A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
 
@@ -1338,7 +1338,7 @@ Một store khoá-trị là nền tảng cho các hệ thống phức tạp hơn
 #### Store tài liệu (document store)
 
 > Abstraction: key-value store with documents stored as values
-> Kiểu dũ liệu khái niệm: store khoá-trị với tài liệu là giá trị
+> Kiểu trừu tượng: store khoá-trị với tài liệu là giá trị
 
 A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
 Store tài liệu xoay quanh các loại tài liệu (XML, JSON, binary, vâng vâng), trong đó một tài liệu chứa tất các các thông tin liên quan cho một đối tượng.  Store tài liệu cung cấp API hoặc một ngôn ngữ truy vấn để truy vấn dựa trên cấu trúc bên trong của bản thân tài liệu.  *Lưu ý, có nhiều store khoá-trị đã bao gồm các tính năng cho thao tác với metadata của giá trị, làm mờ đi ranh giới giữa hai store này.**
@@ -1361,16 +1361,19 @@ Store tài liệu cung cấp độ co giãn cao và thường được sử dụ
 * [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
 #### Wide column store
+#### Store wide column
 
 <p align="center">
   <img src="images/n16iOGk.png">
   <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Nguồn: SQL & NoSQL, a brief history</a></i>
 </p>
 
 > Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+> Kiểu trừu tượng: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
 A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
+Đơn vị cơ bản của store wide column là cột (một cặp tên/giá trị).  Một cột có thể được nhóm vào một column family (tương ứng với một bảng SQL).  Super column family nhóm lại cái column family.  Ta có thể truy cập vào từng cột một cách độc lập với một khoá hàng (row key), các cột với cùng một khoá hàng tạo thành một hàng.  Mỗi giá trị chứa một timestamp cho việc giữ phiên bản và giải quyết xung đột (conflict resolution) # FIXME: "giải quyết xung đột" hardly yield the right Vietnamese interpretation.
 
 Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
 
