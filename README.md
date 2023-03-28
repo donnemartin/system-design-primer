@@ -1420,6 +1420,8 @@ TCP is useful for applications that require high reliability but are less time c
 
 Use TCP over UDP when:
 
+* You want the guaranteed delivery of your data
+* You want your data to arrive in order to the destination
 * You need all of the data to arrive intact
 * You want to automatically make a best estimate use of the network throughput
 
@@ -1440,6 +1442,8 @@ UDP is less reliable but works well in real time use cases such as VoIP, video c
 Use UDP over TCP when:
 
 * You need the lowest latency
+* You don't need guaranteed delivery of data
+* You can accept out of order delivery of data
 * Late data is worse than loss of data
 * You want to implement your own error correction
 
