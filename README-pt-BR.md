@@ -50,73 +50,73 @@ Assuntos adicionais sobre a preparação para a entrevista:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+O provedor [Anki flashcard decks](https://apps.ankiweb.net/) usa repetição espaçada para você a reter os conceitos-chave de system design.
 
 * [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Deck de exercícios sobre System design](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Deck de exercícios de Design orientado a objeto](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Excelete para utilizar em qualquer lugar que você vá.
 
-### Coding Resource: Interactive Coding Challenges
+### Recursos de código: desafios de código interativo
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+Procurando por recursos para ajudar você a se preparar para a [**entrevista utilizando código**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Olhe também esse repositório sobre [**Desafios de Código Interativo**](https://github.com/donnemartin/interactive-coding-challenges), que contém decks Anki adicionais:
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## Contribuíção
 
-> Learn from the community.
+> Aprenda com a comunidade.
 
-Feel free to submit pull requests to help:
+Fique à vontade para submeter um pull request para ajudar:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* Corrigir erros
+* Melhorar as sessções
+* Adicionar novas sessões
+* [Traduzir](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Conteúdo que precise de algum polimento é colocado [em desenvolvimento](#under-development).
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
 
-## Index of system design topics
+## Índices dos assuntos sobre system design
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Resumos de vários tópicos sobre system design, incluíndo prós e contras. **Tudo é uma troca(trade-off)**.
 >
-> Each section contains links to more in-depth resources.
+> Cara sessão contém links para assuntos mais detalhados.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
+* [Tópicos sobre System design: Comece aqui](#system-design-topics-start-here)
+    * [Passo 1: Analise a palestre sobre escalabilidade](#step-1-review-the-scalability-video-lecture)
+    * [Passo 2: Analise o artigo sobre escalabilidade](#step-2-review-the-scalability-article)
+    * [Próximos passos](#next-steps)
+* [Performance vs escalabilidade](#performance-vs-scalability)
+* [Latência vs throughput](#latency-vs-throughput)
+* [Disponibilidade vs consistência](#availability-vs-consistency)
+    * [Teorema de CAP](#cap-theorem)
+        * [CP - Consistência e tolerância particionada](#cp---consistency-and-partition-tolerance)
+        * [AP - Disponibilidade e tolerância particionada](#ap---availability-and-partition-tolerance)
+* [Padrões de consistência](#consistency-patterns)
+    * [Consistência fraca](#weak-consistency)
+    * [Consistência eventual](#eventual-consistency)
+    * [Consistência forte](#strong-consistency)
+* [Padrões de Disponibilidade](#availability-patterns)
     * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
+    * [Replicas](#replication)
+    * [Disponibilidade em números](#availability-in-numbers)
+* [Ssitema de nome de Domínio](#domain-name-system)
+* [Rede de entrega de conteúdo](#content-delivery-network)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
 * [Load balancer](#load-balancer)
@@ -124,32 +124,32 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Active-active](#active-active)
     * [Layer 4 load balancing](#layer-4-load-balancing)
     * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
+    * [Escalabilidade Horizontal](#horizontal-scaling)
+* [Proxy reverso(web server)](#reverse-proxy-web-server)
+    * [Load balancer vs proxy reverso](#load-balancer-vs-reverse-proxy)
+* [Camada da Aplicação](#application-layer)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
+* [Banco de Dados](#database)
+    * [Sistema de gerenciamento de Banco de dados relacional(RDBMS)](#relational-database-management-system-rdbms)
+        * [Replicas Master-slave](#master-slave-replication)
+        * [Replicas Master-master](#master-master-replication)
         * [Federation](#federation)
         * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
+        * [Desnormalização](#denormalization)
         * [SQL tuning](#sql-tuning)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
+        * [Armazenamento chave-valor](#key-value-store)
+        * [Armazenamento de Documento](#document-store)
         * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
+        * [Banco de dados em Graph](#graph-database)
+    * [SQL ou NoSQL](#sql-or-nosql)
 * [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
+    * [Cliente de caching](#client-caching)
+    * [Cache CDN](#cdn-caching)
+    * [Cache Web server](#web-server-caching)
+    * [Cache de banco de dados](#database-caching)
+    * [Cache de Aplicação](#application-caching)
     * [Caching at the database query level](#caching-at-the-database-query-level)
     * [Caching at the object level](#caching-at-the-object-level)
     * [When to update the cache](#when-to-update-the-cache)
