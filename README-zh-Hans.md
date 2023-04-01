@@ -672,7 +672,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 * [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-* [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [HAProxy 架构指南](https://github.com/haproxy/haproxy/blob/master/doc/architecture.txt)
 * [可扩展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
@@ -720,7 +720,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 - [反向代理与负载均衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
 - [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
-- [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+- [HAProxy 架构指南](https://github.com/haproxy/haproxy/blob/master/doc/architecture.txt)
 - [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
 ## 应用层
