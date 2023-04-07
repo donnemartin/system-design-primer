@@ -276,7 +276,6 @@
 
 以下のリンク先ページを見てどのような質問を投げかけられるか概要を頭に入れておきましょう:
 
-* [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [システム設計面接](http://www.hiredintech.com/system-design)
 * [アーキテクチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
