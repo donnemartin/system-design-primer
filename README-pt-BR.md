@@ -150,113 +150,113 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     * [Cache Web server](#web-server-caching)
     * [Cache de banco de dados](#database-caching)
     * [Cache de Aplicação](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
+    * [Cache a nível de consulta de banco de dados](#caching-at-the-database-query-level)
+    * [Cache a nível de Objeto](#caching-at-the-object-level)
+    * [Quando atualizar o cache](#when-to-update-the-cache)
         * [Cache-aside](#cache-aside)
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
+* [Assincronísmo](#asynchronism)
+    * [Fila de mensagens](#message-queues)
+    * [Fila de tarefas](#task-queues)
+    * [Contrapressão](#back-pressure)
+* [Comunicação](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
     * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [Segurança](#security)
+* [Apêndice](#appendix)
+    * [O poder de duas tabelas](#powers-of-two-table)
+    * [Números de latência que todos programador deveria saber](#latency-numbers-every-programmer-should-know)
+    * [Questões adicionais de entrevistas sobre system design](#additional-system-design-interview-questions)
+    * [Arquiteturas do mundo real](#real-world-architectures)
+    * [Arquitetura de empresas](#company-architectures)
+    * [Blogs de empresas de engenharia](#company-engineering-blogs)
+* [Em desenvolvimeno](#under-development)
+* [Créditos](#credits)
+* [Informações de contato](#contact-info)
+* [Licença](#license)
 
-## Study guide
+## Guia de estudos
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Tópicos sugeridos para revisar baseados na linha do tempo da sua entrevista (curta, média, longa).
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Q: Para o entrevitador, Eu preciso saber tudo que está aqui?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**A: Não, você não precisa saber tudo aqui para se preparar para a entrevista**.
 
-What you are asked in an interview depends on variables such as:
+O que você será perguntado na entrevista depende de variáveis como:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* O quanto você tem de experiência
+* Qual é o seu background técnico
+* Para qual cargo você será entrevistado
+* Com quais empresas você será entrevistado
+* Sorte
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Os candidatos mais experientes espera-se, geralmente, saber mais sobre system design. Arquitetos ou Líderes de time é esperado saber mais do que contribuidores individuais. Empresas Tech líder de mercado são mais prováveis de ter uma ou mais rodadas de entrevistas sobre Design System.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Comece amplo e vá mais fundo em algumas áreas. Isso irá ajudar a saber um pouco mais sobre vários assuntos-chave dos tópicos sobre system design. Ajuste o guia a seguir baseado na sua linha do tempo, experiência, vagas que será entrevistado e que empresas será irão entrevista-lo.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Linha do tempo curta** - Mirar em **ampliar** conhecimentos dos tópicos sobre system design. Pratique resolvendo **algumas** perguntas das entrevistas.
+* **Linha do tempo média** - Mirar em **ampliar** e com **alguma profundidade** dos tópicos sobre system design. Pratique resolvendo **várias** perguntas das entrevistas.
+* **Linha do tempo longa** - Mirar em **amplicar** e **mais a fundo** dos tópicos sobre system design. Pratique resolvendo **a maioria** das perguntas das entrevistas.
 
-| | Short | Medium | Long |
-|---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+|                                                                                                                                              | Curto   | Médio  | Longo   |
+|----------------------------------------------------------------------------------------------------------------------------------------------|---------|--------|---------|
+| Leia os tópicos sobre [System design](#index-of-system-design-topics) para ter um entendimento mais abrangente de como os sistemas funcionam | :+1:    | :+1:   | :+1:    |
+| Leia alguns artigos nos [blogs de engenharia das empresas](#company-engineering-blogs) pelas quais você será entrevistado                    | :+1:    | :+1:   | :+1:    |
+| Leia sobre [Arquiteturas do mundo real](#real-world-architectures)                                                                           | :+1:    | :+1:   | :+1:    |
+| Reveja [como abordar as perguntas de entrevistas sobre system design](#how-to-approach-a-system-design-interview-question)                   | :+1:    | :+1:   | :+1:    |
+| Trabalhe com [as resoluções das perguntas das entrevistas sobre System design](#system-design-interview-questions-with-solutions)            | Algumas | Muitas | Maioria |
+| Trabalhe com [as resoluções das perguntas sobre design orientado a objetos](#object-oriented-design-interview-questions-with-solutions)      | Algumas | Muitas | Maioria |
+| Reveja [questões adicionais em entrevistas sobre system](#additional-system-design-interview-questions)                                      | Algumas | Muitas | Maioria |
 
-## How to approach a system design interview question
+## Como abordar perguntas em entrevistas sobre system design
 
-> How to tackle a system design interview question.
+> Como lidar com uma pergunta de entrevista sobre system design.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Entrevistas sobre system design é uma **conversa aberta**. Espera-se que você a lidere.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Você pode usar os seguintes passos para guiá-lo na discussão. Para ajudar a solidificar este processo, trabalhe [as resoluções das perguntas das entrevistas sobre System design](#system-design-interview-questions-with-solutions) seguindo os passos.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Passo 1: Descrever casos de uso, restrições e suposições
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Reunia os requisitos e os escopos do problema. Faça perguntas para esclarecer os casos de uso e as restrições. Discuta suposições.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Quem irá usá-lo?
+* Como eles irão usá-lo?
+* Quantos usuários existem?
+* O que o sistema faz?
+* Quais serão as entradas e as saídas do sistema?
+* Quantos dados esperamos manipular?
+* Quantos requests por segundos é esperado?
+* Qual é a proporção esperada de leitura para escrita?
 
-### Step 2: Create a high level design
+### Passo 2: Crie um design de alto nível
 
-Outline a high level design with all important components.
+Descreva um design de alto nível com todos os componentes importantes.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Rascunhe os principais componentes e conexões
+* Justifique as suas ideias
 
-### Step 3: Design core components
+### Passo 3: Design os componentes principais(core components)
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Mergulhe nos detalhes de cada component. Por exemplo, se você for perguntado para [desenhar um serviço de encurtador de url](solutions/system_design/pastebin/README.md), discuta sobre:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Gerando e armazenando um hash da url inteira
+    * [MD5](solutions/system_design/pastebin/README.md) e [Base62](solutions/system_design/pastebin/README.md)
+    * Colisões Hash
+    * SQL ou NoSQL
+    * Esquema do banco de dados
+* Traduzindo a url encurtada ma url inteira
+    * Pesquisa de banco de dados
+* API e design orientado a objetos
 
-### Step 4: Scale the design
+### Passo 4: Escale o design
 
 Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
 
