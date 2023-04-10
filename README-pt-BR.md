@@ -252,7 +252,7 @@ Mergulhe nos detalhes de cada component. Por exemplo, se você for perguntado pa
     * Colisões Hash
     * SQL ou NoSQL
     * Esquema do banco de dados
-* Traduzindo a url encurtada ma url inteira
+* Traduzindo a url encurtada na url inteira
     * Pesquisa de banco de dados
 * API e design orientado a objetos
 
