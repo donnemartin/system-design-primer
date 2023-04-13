@@ -258,146 +258,146 @@ Mergulhe nos detalhes de cada component. Por exemplo, se você for perguntado pa
 
 ### Passo 4: Escale o design
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Identifique e direcione gargalos, dadas nas restrições. Por exemplo, você precisa do seguinte para endereças problemas de escalabilidade?
 
 * Load balancer
-* Horizontal scaling
+* Escalabilidade Horizontal
 * Caching
 * Database sharding
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Discuta pontenciais soluções e trade-offs. Tudo é um trade-off. Enderece gargalos usando [princípios de escalabilidade de system design](#index-of-system-design-topics).
 
-### Back-of-the-envelope calculations
+### Cálculo de fundo de envelope(Back-of-the-envelope)
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Você pode ser perguntado para fazer algumas estimativas à mão. Referência para o [Appendix](#appendix) para os seguintes recursos:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Use cálculo de fundo de envelope(back of the envelope)](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [O poder de duas tabelas](#powers-of-two-table)
+* [Número de latência que todo programador deveria saber](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
+### Referência(s) e leitura de aprofundamento
 
-Check out the following links to get a better idea of what to expect:
+Verifique os seguintes links para ter uma ideia melhor do que espera:
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+* [Como passar em uma entrevista de design de sistemas](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [A entrevista de design de sistemas](http://www.hiredintech.com/system-design)
+* [Introdução a Arquitetura e entrevista de design de sistemas](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [Template de design de sistemas](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## Questões de entrevista de design de sistemas com soluções
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Questões comuns em entrevistas de Design de sistemas com discussões simples, código e diagramas.
 >
-> Solutions linked to content in the `solutions/` folder.
+> O conteúdo das soluções estão na pasta `solutions/`.
 
-| Question | |
-|---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Pergunta                                                                       | |
+|--------------------------------------------------------------------------------|---|
+| Design Pastebin.com (ou Bit.ly)                                              | [Solution](solutions/system_design/pastebin/README.md) |
+| Design a timeline do Twitter e a pesquisa (ou o feed do Facebook e a pesquisa) | [Solution](solutions/system_design/twitter/README.md) |
+| Design um web crawler                                                          | [Solution](solutions/system_design/web_crawler/README.md) |
+| Design Mint.com                                                                | [Solution](solutions/system_design/mint/README.md) |
+| Design a estrutura de dados para uma rede social                               | [Solution](solutions/system_design/social_graph/README.md) |
+| Design um armazenamento chave-valor para uma máquina de busca                  | [Solution](solutions/system_design/query_cache/README.md) |
+| Design a funcionalidade de ranking de vendas da Amazon por categoria           | [Solution](solutions/system_design/sales_rank/README.md) |
+| Design um sistema que escala para milhões de usuários na AWS                   | [Solution](solutions/system_design/scaling_aws/README.md) |
+| Adicione uma questão sobre Design de sistema                                   | [Contribute](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Design Pastebin.com (ou Bit.ly)
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Veja exercício e solução](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Design a timeline do Twitter e a pesquisa (ou o feed do Facebook e a pesquisa)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Veja exercício e solução](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### Design um web crawler
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Veja exercício e solução](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
 ### Design Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Veja exercício e solução](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Design a estrutura de dados para uma rede social
 
 [View exercise and solution](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Design um armazenamento chave-valor para uma máquina de busca
 
 [View exercise and solution](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Design a funcionalidade de ranking de vendas da Amazon por categoria
 
 [View exercise and solution](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### Design um sistema que escala para milhões de usuários na AWS
 
 [View exercise and solution](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Adicione uma questão sobre Design de sistema
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Questões comuns em entrevistas de Design de sistemas com discussões simples, código e diagramas.
 >
-> Solutions linked to content in the `solutions/` folder.
+> O conteúdo das soluções estão na pasta `solutions/`.
 
->**Note: This section is under development**
+>**Nota: Essa sessão está em desevolvimento**
 
-| Question | |
-|---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Pergunta                                | |
+|-----------------------------------------|---|
+| Design um hash map                      | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Design um cache usado menos recentemente | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Design um call center                   | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Design um deck de cards                 | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Design um estacionamento                | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Design um servidor de bate-papo         | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Design um array circular          | [Contribute](#contributing)  |
+| Adicione uma questão sobre Design de sistema  | [Contribute](#contributing) |
 
-## System design topics: start here
+## Tópico de design de sistemas: Começa aqui
 
-New to system design?
+Novato em design de sistemas?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Primeiro, você precisará de um entedimento básico de princípios comuns, aprender sobre o que são, como estão usados, e os prós e contras de cada um.
 
-### Step 1: Review the scalability video lecture
+### Passo 1: Revise a palestra em vídeo sobre escalabilidade
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Palestra sobre escalabilidade em Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
+* Tópicos cobertos:
+    * Escalabilidade Vertical
+    * Escalabilidade Horizontal
     * Caching
     * Load balancing
-    * Database replication
-    * Database partitioning
+    * Replicação de Banco de dados
+    * Particionamento de Banco de dados
 
-### Step 2: Review the scalability article
+### Passo 2: Revise artigos sobre escalabilidade
 
-[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+[Escalabilidade](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* Tópicos cobertos:
     * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Banco de dados](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [Assincronísmo](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Próximos passos
 
 Next, we'll look at high-level trade-offs:
 
