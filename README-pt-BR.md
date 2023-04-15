@@ -399,104 +399,104 @@ Primeiro, você precisará de um entedimento básico de princípios comuns, apre
 
 ### Próximos passos
 
-Next, we'll look at high-level trade-offs:
+A seguir, vamos olhar para os trade-offs de alto nível:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Performance** vs **escalabilidade**
+* **Latência** vs **taxa de transferência**
+* **Disponibilidade** vs **consistência**
 
-Keep in mind that **everything is a trade-off**.
+Tenha em mente que **tudo tem um trade-off**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Então iremos mergulhar nos tópicos mais específicos como DNS, CDNs, e load balancers.
 
-## Performance vs scalability
+## Performance vs escalabilidade
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Um serviço é **escalável** se o serviço resulta em crescimento de **performance** de forma proporcional aos recursos adicionados. Geralmente, aumentado a performance significa adicionar mais unidades de trabalho, mas que também pode gerenciar unidade de trabalho em larga escala, como quando datasets aumenta.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Outra forma de olhar para performance vs escalabilidade:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Se você tem um problema de **performance**, seu sistema é lento para um usuário único.
+* Se você tem um problema de **escalabilidade**, seu sistema é rápido para um usuário único, mas é lento sob carga pesada.
 
-### Source(s) and further reading
+### Referência(s) e leitura adicional
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Uma palavra sobre escalabilidade](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [Escalabilidade, disponibilidade, estabilidade, padrões](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## Latência vs taxa de transferência
 
-**Latency** is the time to perform some action or to produce some result.
+**Latência** é o tempo para executar uma ação ou para produzir um resultado.
 
-**Throughput** is the number of such actions or results per unit of time.
+**Taxa de transferência** é o número de ações ou de algum resultado por unidade de tempo.
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+Geralmente, você deveria buscar por uma **taxa de transferência máxima** com uma **latência aceitável**.
 
-### Source(s) and further reading
+### Referência(s) e leitura adicional
 
-* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+* [Entendendo latência vs taxa de transferência](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## Disponibilidade vs consistência
 
-### CAP theorem
+### Teorema de CAP
 
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Referência: Teorema CAP revisitado</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+Em sistemas computacionais distribuídos, você pode atender somente duas das garantias a seguir:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **Consistência** - Cada leitor recebe a escrita mais recente ou um erro
+* **Disponibilidade** - Cada requisição recebe uma resposta, sem garantia que contem a versão mais recente da informação
+* **Tolerância de Partição(Partition Tolerance)** - É o sistema continuar funcionando apesar do particionamento arbitrário devido a falhas de rede
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*Redes não são confiáveis, então você vai precisar se preocupar com a tolerância de partição(Partition Tolerance). Você precisará desenvolver um sistema que compense entre consistência e disponilidade.*
 
-#### CP - consistency and partition tolerance
+#### CP - Consistência e Tolerância de Partição(partition tolerance)
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+Esperar por uma resposta de nós pode resultar em erros de timeout. CP é uma boa escolha se a regra de negócio requerer leituras e escritas atômicas.
 
-#### AP - availability and partition tolerance
+#### AP - Disponiblidade e tolerância de partição
 
-Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+A maoiria das respostas retornam a versão mais recente do dado disponível independente do nó, que pode não ser a mais recente. Escritas podem levar algum tempo para se propagar quando a partição for resolvida.
 
-AP is a good choice if the business needs to allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+AP é uma boa escolha se a regra de negócio permitir [consistência eventual](#eventual-consistency) ou quando o sistema precisa continuar funcionando apesar dos erros externos.
 
-### Source(s) and further reading
+### Referência(s) e leitura adicional
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Consistency patterns
+## Padrões de consistência
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+Com muitas cópias do mesmo dado, nos deparamos com opções de como sincronizá-los para que os clientes tenha uma visão consistente dos dados. Lembre-se da definição de consistência do [teorema de CAP](#cap-theorem) - Cada leitor recebe a versão mais atualizada do dado ou um erro.
 
-### Weak consistency
+### Consistência fraca
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+Depois de uma escrita, os leitores podem ou não vê-la. Uma abordagem de melhor esforço é adotada.
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+Essa abordagem é vista em sistemas como memcached. Consistência fraca funciona bem em casos de uso em tempo real como VoIP, bate-papo em vídeo, e jogos multiplayer em tempo real. Por exemplo, se você está em uma ligação e perder o sinal por alguns segundos, quando a conexão reestabelecer, você não terá ouvido o que foi falado durante a falha de sinal.
 
-### Eventual consistency
+### Consistência eventual
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+Depois da escrita, a leitura eventualmente conseguirá acesssá-lo (tipicamente em millisegundos). O dado é replicado assincronamente.
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+Essa abordagem é vista em sistemas como DNS e email. Consistência eventual funciona bem em sistemas com alta disponibilidade.
 
-### Strong consistency
+### Consistência forte
 
-After a write, reads will see it.  Data is replicated synchronously.
+Depois da escrita, a leitura já pode ser acessada.  O dado é replicado sincronamente.
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+Essa abordagem é vista em sistemas de arquivos e RDBMSes. Consistência forte funciona bem em sistemas que precisam de transação.
 
-### Source(s) and further reading
+### ### Referência(s) e leitura adicional
 
-* [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [Transações através de Data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+## Padrões de disponiblidade
 
 There are two complementary patterns to support high availability: **fail-over** and **replication**.
 
