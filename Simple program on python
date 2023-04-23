@@ -1,0 +1,5 @@
+# WAP to accept a number and print its cube.
+num=int(input("Enter the number"))
+cube=num*num*num
+print("Enter the Number:",num)
+print("It's cube:",cube)
