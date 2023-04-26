@@ -90,7 +90,7 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
 
 > Resumos de vários tópicos sobre system design, incluíndo prós e contras. **Tudo é uma troca(trade-off)**.
 >
-> Cara sessão contém links para assuntos mais detalhados.
+> Cada seção contém links para assuntos mais detalhados.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
@@ -356,7 +356,7 @@ Verifique os seguintes links para ter uma ideia melhor do que espera:
 >
 > O conteúdo das soluções estão na pasta `solutions/`.
 
->**Nota: Essa sessão está em desevolvimento**
+>**Nota: Essa seção está em desevolvimento**
 
 | Pergunta                                | |
 |-----------------------------------------|---|
@@ -488,7 +488,7 @@ Essa abordagem é vista em sistemas como DNS e email. Consistência eventual fun
 
 ### Consistência forte
 
-Depois da escrita, a leitura já pode ser acessada.  O dado é replicado sincronamente.
+Depois da escrita, a leitura já pode ser acessada. O dado é replicado sincronamente.
 
 Essa abordagem é vista em sistemas de arquivos e RDBMSes. Consistência forte funciona bem em sistemas que precisam de transação.
 
@@ -498,97 +498,97 @@ Essa abordagem é vista em sistemas de arquivos e RDBMSes. Consistência forte f
 
 ## Padrões de disponiblidade
 
-There are two complementary patterns to support high availability: **fail-over** and **replication**.
+Existem dois padrões complementares para dar suporte a alta dispobibilidade: **fail-over** e **replication**.
 
 ### Fail-over
 
-#### Active-passive
+#### Ativo-Passivo
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+Com fail-over ativo-passivo, batimentos cardíacos(heartbeats) são enviados entre o servidor ativo e o passivo quando estão em espera. Se o batimento cardíaco é interrompido, o servidor passivo é substituído pelo endereço IP do ativo e que retoma o serviço.
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+A duração do tempo de inatividade é determinado se o servidor passivo já estiver em execução em modo de espera 'quente' ou se precisa inicializar a partir do modo de espera 'frio'. Somente o servidor ativo lida com o tráfego.
 
-Active-passive failover can also be referred to as master-slave failover.
+Failover ativo-passivo pode também ser referenciado como mestre-escravo.
 
-#### Active-active
+#### Ativo-ativo
 
-In active-active, both servers are managing traffic, spreading the load between them.
+No ativo-ativo, ambos os servidores vão gerenciando o tráfego, distribuíndo a carga entre eles.
 
-If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+Se os servidores são expostos pela internet(public-facing), o DNS precisaria saber sobre o IP público de ambos os servidores. Se os servidores são de acesso apenas interno(internal-facing), a lógica da aplicação poderia precisar saber sobre os dois servidores.
 
-Active-active failover can also be referred to as master-master failover.
+Ativo-ativo failover podem também ser referenciados como master-master failover.
 
-### Disadvantage(s): failover
+### Desvantagem(ns): failover
 
-* Fail-over adds more hardware and additional complexity.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* Fail-over adiciona mais hardware e mais complexidade.
+* Existe uma change pontencial de perdad de dados se o sistema ativo falhar antes de qualquer novo dado escrito que precisa ser replicado para o passivo.
 
-### Replication
+### Replicação
 
 #### Master-slave and master-master
 
-This topic is further discussed in the [Database](#database) section:
+Este tópico é mais discutido na seção [Banco de dados](#database):
 
 * [Master-slave replication](#master-slave-replication)
 * [Master-master replication](#master-master-replication)
 
-### Availability in numbers
+### Disponibilidade em números
 
-Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
+Disponibilidade é frequentemente qualificado por atividade(uptime) ou inatividade(downtime) como uma porcentagem de tempo que o serviço está disponível. Disponiblidade é geralmente medido em números 9s--a serviço com 99.99% de disponiblidade é descrito como tendo quartro 9s.
 
-#### 99.9% availability - three 9s
+#### 99.9% de disponibilidade - três 9s
 
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 8h 45min 57s       |
-| Downtime per month  | 43m 49.7s          |
-| Downtime per week   | 10m 4.8s           |
-| Downtime per day    | 1m 26.4s           |
+| Duração                | Inatividade aceitável |
+|------------------------|-----------------------|
+| Inatividade por ano    | 8h 45min 57s          |
+| Inatividade por mês    | 43m 49.7s             |
+| Inatividade por semana | 10m 4.8s              |
+| Inatividade por dia    | 1m 26.4s              |
 
-#### 99.99% availability - four 9s
+#### 99.99% de disponibilidade - quatro 9s
 
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 52min 35.7s        |
-| Downtime per month  | 4m 23s             |
-| Downtime per week   | 1m 5s              |
-| Downtime per day    | 8.6s               |
+| Duração                | Inatividade aceitável |
+|------------------------|-----------------------|
+| Inatividade por ano    | 52min 35.7s           |
+| Inatividade por mês    | 4m 23s                |
+| Inatividade por semana | 1m 5s                 |
+| Inatividade por dia    | 8.6s                  |
 
-#### Availability in parallel vs in sequence
+#### Disponibilidade em parapelo vs Em sequência
 
-If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+Se um serviço consiste em multíplos componentes propensos a falhar, a disponibilidade no geral do serviço depende se os componentes estão em sequêcia ou em paralelo.
 
-###### In sequence
+###### Em sequência
 
-Overall availability decreases when two components with availability < 100% are in sequence:
-
-```
-Availability (Total) = Availability (Foo) * Availability (Bar)
-```
-
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
-
-###### In parallel
-
-Overall availability increases when two components with availability < 100% are in parallel:
+Geralmente disponiblidade diminui quando dois componentes com disponibilidade < 100% estão em sequência:
 
 ```
-Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
+Disponiblidade (Total) = Disponibilidade (Foo) * Disponibilidade (Bar)
 ```
 
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+Se cada um `Foo` e `Bar` tiver 99.9% de disponiblidade, o total da disponilidade deles em sequência seria de 99.8%.
 
-## Domain name system
+###### Em paralelo
+
+Geralmente disponibilidade aumenta quando dois componentes com disponibilidade < 100% estão em paralelo:
+
+```
+Disponiblidade (Total) = 1 - (1 - Disponiblidade (Foo)) * (1 - Disponiblidade (Bar))
+```
+
+Se cada um `Foo` e `Bar` tiver 99.9% de disponibilidade, o total de disponiblidade dles em paralelo seria de 99.9999%.
+
+## Sistema de nome de domínio(Domain name system)
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Fonte: DNS security presentation</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+A Domain Name System (DNS) traduz o nome do domínio como www.example.com para o endereço IP.
 
-DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+DNS é hierárquico, com alguns servidores autorizados no nível superior.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
 
 * **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
 * **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
