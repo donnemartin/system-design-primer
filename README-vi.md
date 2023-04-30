@@ -1415,6 +1415,7 @@ Graphs databases offer high performance for data models with complex relationshi
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
 ### SQL or NoSQL
+### SQL hay NoSQL
 
 <p align="center">
   <img src="images/wXGqG5f.png">
@@ -1422,7 +1423,15 @@ Graphs databases offer high performance for data models with complex relationshi
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
 
+<p align="center">
+  <img src="images/wXGqG5f.png">
+  <br/>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Nguồn: Chuyển đổi từ RDMBS sang NoSQL</a></i>
+</p>
+
+
 Reasons for **SQL**:
+Lí do để dùng **SQL**:**
 
 * Structured data
 * Strict schema
@@ -1432,6 +1441,17 @@ Reasons for **SQL**:
 * Clear patterns for scaling
 * More established: developers, community, code, tools, etc
 * Lookups by index are very fast
+
+* Dữ liệu có cấu trúc
+* Schema chặt chẽ
+* Dữ liệu có quan hệ
+* Có nhu cầu cho join phức tạp
+* Transaction
+* Mô hình rõ ràng cho việc scale
+* Vững chắc hơn về: developer, cộng đồng, code, công cụ, vâng vâng.
+* Truy vấn nhanh trên chỉ mục
+
+
 
 Reasons for **NoSQL**:
 
