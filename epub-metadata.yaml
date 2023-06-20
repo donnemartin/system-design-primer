@@ -1,3 +1,47 @@
 title: System Design Primer
-creator: Donne Martin
+creator: Information related to '102.88.0.0 - 102.95.255.255'
+
+% No abuse contact registered for 102.88.0.0 - 102.95.255.255
+
+inetnum: 102.88.0.0 - 102.95.255.255
+netname: MTN-Nigeria
+descr: MTN Nigeria
+country: NG
+org: ORG-MN1-AFRINIC
+admin-c: BRM1-AFRINIC
+admin-c: II10-AFRINIC
+admin-c: TI13-AFRINIC
+admin-c: CA48-AFRINIC
+tech-c: II10-AFRINIC
+tech-c: TI13-AFRINIC
+tech-c: CA48-AFRINIC
+tech-c: ISP1-AFRINIC
+status: ALLOCATED PA
+mnt-by: AFRINIC-HM-MNT
+mnt-lower: MTNNIGERA1-MNT
+mnt-domains: MTNNIGERA1-MNT
+source: AFRINIC # Filtered
+parent: 102.0.0.0 - 102.255.255.255
+
+organisation: ORG-MN1-AFRINIC
+org-name: MTN Nigeria
+org-type: LIR
+country: NG
+address: Yellodrome building, adeola hopewell street, Victoria island
+address: Victoria island
+phone: tel:+234-803-123-0141
+phone: tel:+234-803-123-0141
+admin-c: BRM1-AFRINIC
+admin-c: II10-AFRINIC
+admin-c: TI13-AFRINIC
+admin-c: CA48-AFRINIC
+tech-c: ISP1-AFRINIC
+tech-c: II10-AFRINIC
+tech-c: TI13-AFRINIC
+tech-c: CA48-AFRINIC
+mnt-ref: AFRINIC-HM-MNT
+mnt-ref: MTNNIGERA1-MNT
+mnt-by: AFRINIC-HM-MNT
+source: AFRINIC # Filtered
+ Martin
 date: 2018
