@@ -8,7 +8,7 @@ See the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## Translation Statuses
 
-* 🎉 **Live**: Merged into `master` branch
+* 🎉 **Live**: Merged into `master` branch.
 * ⏳ **In Progress**: Under active translation for eventual merge into `master` branch
 * ❗ **Stalled***: Needs an active maintainer ✋
 
