@@ -108,6 +108,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
   <br/>
 </p>
 
+[//]: # (ToDo: Update later when finish translation...)
 * [System design topics: start here](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
     * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
