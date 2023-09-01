@@ -95,7 +95,6 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 [//]: #Help (Review the Contributing Guidelines)
 
-
 ## Sistem dizaynı mövzularının indeksi
 
 > Müxtəlif növ sistem dizayn mövzularının xülasəsi, müsbət və mənfi cəhətlərilə birlikdə. **Hər şey bir mübadilədir**.
