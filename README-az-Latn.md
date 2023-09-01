@@ -364,14 +364,15 @@ Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdak
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Həlləri olan obyekt yönümlü dizayn müsahibə sualları
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Nümunə müzakirələr, kodlar və diaqramlarla ümumi sistem dizaynı müsahibə sualları.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Həllər `solutions/` qovluğundakı məzmunla əlaqələndirilir.
 
->**Note: This section is under development**
+>**Qeyd: Bu bölmə development mərhələsindədir**
 
+[//]: # (ToDo: Update later When finish translation...)
 | Question | |
 |---|---|
 | Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
