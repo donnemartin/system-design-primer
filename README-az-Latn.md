@@ -29,7 +29,7 @@ Bu daim yenilənən, open source layihədir.
 
 [Contributions](#contributing) xoş gördük.
 
-[//]: #Help (Contributions)
+[//]: # (ToDo: Help on translation: Contributions)
 
 ### Sistem dizaynı üzrə müsahibəyə hazırlanması.
 
@@ -37,7 +37,7 @@ Bir çox texnoloji şirkətlərin müsahibələrində kodlaşdırmaqla yanaşı,
 
 **Sistem dizaynı üzrə ümumi müsahibə suallarını tətbiq edin** və nəticələrinizi **nümunə həllər** ilə **müqayisə edin**: müzakirələr, kodlar və diaqramlar.
 
-[//]: #Help (**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.)
+[//]: # (ToDo: Help on translation: **Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.)
 
 
 Müsahibəyə hazırlaşmaq üçün əlavə mövzular:
@@ -78,9 +78,11 @@ Bu repo ilə əlaqəli qardaş repo [**İnteraktiv Kodlaşdırma Problemləri**]
 
 ## Contributing
 
-[//]: #Help (Contributing)
+[//]: # (ToDo: Help on translation: Contributing)
 
 > Cəmiyyətdən öyrənin.
+
+[//]: # (ToDo: Help on translation: Community)
 
 Kömək etmək üçün pull requests göndərməkdən çəkinməyin:
 
@@ -93,7 +95,7 @@ Müəyyən qədər dəyişikliyə ehtiyacı olan hissələri [inkişaf mərhəl�
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 
-[//]: #Help (Review the Contributing Guidelines)
+[//]: # (ToDo: Help on translation: Review the Contributing Guidelines)
 
 ## Sistem dizaynı mövzularının indeksi
 
