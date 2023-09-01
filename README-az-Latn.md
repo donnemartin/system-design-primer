@@ -228,13 +228,13 @@ Geniş başlayın və bir neçə sahədə daha dərinə gedin. Bu, müxtəlif ə
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## Sistem dizaynı ilə bağlı müsahibə sualına necə yanaşmaq olar
 
-> How to tackle a system design interview question.
+> Sistem dizaynı ilə bağlı müsahibə sualını necə həll etmək olar.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Sistem dizaynı üzrə müsahibə **açıq söhbətdir**. Sizə rəhbərlik edəcəyiniz gözlənilir.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Müzakirəyə rəhbərlik etmək üçün aşağıdakı addımlardan istifadə edə bilərsiniz. Bu prosesi möhkəmlətməyə kömək etmək üçün aşağıdakı addımlardan istifadə edərək həllər bölməsi ilə [Həlləri olan sistem dizaynı müsahibə sualları](#həlləri-olan-sistem-dizaynı-müsahibə-sualları) üzərində işləyin.
 
 ### Step 1: Outline use cases, constraints, and assumptions
 
