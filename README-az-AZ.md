@@ -31,19 +31,22 @@ Bu daim yenilənən, open source layihədir.
 
 [//]: #Help (Contributions)
 
-### Prep for the system design interview
+### Sistem dizaynı üzrə müsahibəyə hazırlanması.
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Bir çox texnoloji şirkətlərin müsahibələrində kodlaşdırmaqla yanaşı, sistem dizaynı **texniki müsahibə prosesi**nin **tələb olunan komponent**lərindən biridir.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Sistem dizaynı üzrə ümumi müsahibə suallarını tətbiq edin** və nəticələrinizi **nümunə həllər** ilə **müqayisə edin**: müzakirələr, kodlar və diaqramlar.
 
-Additional topics for interview prep:
+[//]: #Help (**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.)
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+
+Müsahibəyə hazırlaşmaq üçün əlavə mövzular:
+
+* [Tədris bələdçisi](#study-guide)
+* [Sistem dizaynı ilə bağlı müsahibə sualına necə yanaşmaq olar](#how-to-approach-a-system-design-interview-question)
+* [Sistem dizaynı ilə bağlı müsahibə sualları, **həllərlə birlikdə**](#system-design-interview-questions-with-solutions)
+* [Obyekt yönümlü dizayn müsahibə sualları, **həllərlə birlikdə**](#object-oriented-design-interview-questions-with-solutions)
+* [Əlavə sistem dizaynı müsahibə sualları](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -52,13 +55,13 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+Təqdim edilən [Anki flashcard decks](https://apps.ankiweb.net/) əsas sistem dizayn konsepsiyalarını saxlamağınıza kömək etmək üçün təkrarlardan istifadə edir.
 
 * [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
 * [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
 * [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Oxuduqca paralel olaraq istifadə etmək məsləhətdir.
 
 ### Coding Resource: Interactive Coding Challenges
 
