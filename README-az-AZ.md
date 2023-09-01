@@ -63,35 +63,38 @@ Təqdim edilən [Anki flashcard decks](https://apps.ankiweb.net/) əsas sistem d
 
 Oxuduqca paralel olaraq istifadə etmək məsləhətdir.
 
-### Coding Resource: Interactive Coding Challenges
+### Kodlaşdırma Resursu: İnteraktiv Kodlaşdırma Problemləri
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+[**Kodlaşdırma Müsahibəsinə**](https://github.com/donnemartin/interactive-coding-challenges) hazırlaşmağınıza kömək edəcək resurslar axtarırsınız?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Bu repo ilə əlaqəli qardaş repo [**İnteraktiv Kodlaşdırma Problemləri**](https://github.com/donnemartin/interactive-coding-challenges) ilə tanış olun hansı ki, əlavə Anki deck-i məlumatlarını tapa bilərsiniz:
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Contributing
 
-> Learn from the community.
+[//]: #Help (Contributing)
 
-Feel free to submit pull requests to help:
+> Cəmiyyətdən öyrənin.
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+Kömək etmək üçün pull requests göndərməkdən çəkinməyin:
 
-Content that needs some polishing is placed [under development](#under-development).
+* Səhvləri düzəldin
+* Bölmələri təkmilləşdirin
+* Yeni bölmələr əlavə edin
+* [Tərcümə](https://github.com/donnemartin/system-design-primer/issues/28)
+
+Müəyyən qədər dəyişikliyə ehtiyacı olan hissələri [inkişaf mərhələsinə](#under-development) yerləşdirilir.
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## Index of system design topics
+[//]: #Help (Review the Contributing Guidelines)
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
 >
