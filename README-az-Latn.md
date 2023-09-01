@@ -236,18 +236,18 @@ Sistem dizaynı üzrə müsahibə **açıq söhbətdir**. Sizə rəhbərlik edə
 
 Müzakirəyə rəhbərlik etmək üçün aşağıdakı addımlardan istifadə edə bilərsiniz. Bu prosesi möhkəmlətməyə kömək etmək üçün aşağıdakı addımlardan istifadə edərək həllər bölməsi ilə [Həlləri olan sistem dizaynı müsahibə sualları](#həlləri-olan-sistem-dizaynı-müsahibə-sualları) üzərində işləyin.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Addım 1: İstifadə hallarını, məhdudiyyətləri və fərziyyələri təsvir edin
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Tələbləri toplayın və problemi əhatə edin. İstifadə hallarını və məhdudiyyətləri aydınlaşdırmaq üçün suallar verin. Fərziyyələri müzakirə edin.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Kim istifadə edəcək?
+* Ondan necə istifadə edəcəklər?
+* Neçə istifadəçi var?
+* Sistem nə edir?
+* Sistemin giriş və çıxışları hansılardır?
+* Nə qədər məlumatı idarə etməyi gözləyirik?
+* Biz saniyədə neçə sorğu gözləyirik?
+* Gözlənilən oxu-yazma nisbəti nədir?
 
 ### Step 2: Create a high level design
 
