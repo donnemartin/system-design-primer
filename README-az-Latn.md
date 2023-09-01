@@ -280,9 +280,9 @@ Məhdudiyyətləri nəzərə alaraq problemləri müəyyənləşdirin və həll 
 
 Potensial həll yollarını və güzəştləri müzakirə edin. Hər şey bir mübadilədir. [Ölçəklənən sistem dizaynı prinsiplərindən](#sistem-dizaynı-mövzularının-indeksi) istifadə edərək, darboğazları aradan qaldırın
 
-### Back-of-the-envelope calculations
+### Back-of-the-envelope hesablamaları
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Sizdən bəzi təxminləri əl ilə etməyiniz xahiş oluna bilər. Aşağıdakı mənbələr üçün [Əlavələrə](#appendix) baxın:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [Powers of two table](#powers-of-two-table)
