@@ -217,6 +217,7 @@ Geniş başlayın və bir neçə sahədə daha dərinə gedin. Bu, müxtəlif ə
 * **Orta müddətli** - Sistem dizaynı mövzuları ilə **genişliyə** və **bir qədər dərinliyə** hədəflənin. **Çoxlu sayda** müsahibə suallarını həll etməklə məşq edin.
 * **Uzun müddətli** - Sistem dizaynı mövzuları ilə **genişliyə** və **daha çox dərinliyə** hədəfləyin. Müsahibə suallarını **əksəriyyətini** həll etməklə məşq edin.
 
+[//]: # (ToDo: Update later When finish translation...)
 | | Short | Medium | Long |
 |---|---|---|---|
 | Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
