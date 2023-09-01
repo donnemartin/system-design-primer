@@ -301,7 +301,7 @@ Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdak
 
 > Nümunə müzakirələr, kodlar və diaqramlarla ümumi sistem dizaynı müsahibə sualları.
 >
-> Həlllər `solutions/` qovluğundakı məzmunla əlaqələndirilir.
+> Həllər `solutions/` qovluğundakı məzmunla əlaqələndirilir.
 
 [//]: # (ToDo: Update later When finish translation...)
 | Question | |
