@@ -191,31 +191,31 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Contact info](#contact-info)
 * [License](#license)
 
-## Study guide
+## Öyrənmə qaydası
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Müsahibə qrafikinizə əsasən nəzərdən keçirmək üçün təklif olunan mövzular (qısa, orta, uzun).
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Sual: Müsahibə üçün mən burdakı bütün materialı bilməliyəm?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**Cavab: Yox, Müsahibə üçün burdakı bütün materialı əzbər bilmək lazım deyil**.
 
-What you are asked in an interview depends on variables such as:
+Sizdən müsahibədə soruşulanlar aşağıdakı kimi şərtlərdən asılıdır:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Nə qədər təcrübəniz var
+* Texniki biliyiniz nə qədərdir
+* Hansı vəzifə üçün müsahibə alırsınız
+* Hansı şirkətdə müsahibə alırsınız
+* Bəxt
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Daha təcrübəli namizədlərin ümumiyyətlə sistem dizaynı haqqında daha çox məlumatlı olması gözlənilir. Architect-lər və ya Team Lead-lar fərdi contributor daha çox şey bilməsi gözlənilə bilər. Ən yaxşı texnoloji şirkətləri çox güman ki, bir və ya daha çox dizayn müsahibə mərhələsi keçirəcəklər.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Geniş başlayın və bir neçə sahədə daha dərinə gedin. Bu, müxtəlif əsas sistem dizayn mövzuları haqqında bir az bilməyə kömək edir. Aşağıdakı bələdçini vaxt cədvəlinizə, təcrübənizə, hansı vəzifələr üçün müsahibə aldığınıza və hansı şirkətlərlə müsahibə etdiyinizə əsasən tənzimləyin.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Qısa müddətli** - Sistem dizayn mövzuları ilə **genişliyə** hədəfləyin. Müsahibə suallarını **bəzilərini** həll etməklə məşq edin.
+* **Orta müddətli** - Sistem dizaynı mövzuları ilə **genişliyə** və **bir qədər dərinliyə** hədəflənin. **Çoxlu sayda** müsahibə suallarını həll etməklə məşq edin.
+* **Uzun müddətli** - Sistem dizaynı mövzuları ilə **genişliyə** və **daha çox dərinliyə** hədəfləyin. Müsahibə suallarını **əksəriyyətini** həll etməklə məşq edin.
 
 | | Short | Medium | Long |
 |---|---|---|---|
