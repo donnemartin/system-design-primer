@@ -269,16 +269,16 @@ Hər bir əsas komponenti ətraflı izzah etməyə başlayın. Məsələn, sizd�
     * Database axtarışı
 * API və obyekt yönümlü dizayn
 
-### Step 4: Scale the design
+### Addım 4: Dizaynı genişləndirin
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Məhdudiyyətləri nəzərə alaraq problemləri müəyyənləşdirin və həll edin. Məsələn, miqyaslılıq problemlərini həll etmək üçün sizə aşağıdakılar lazımdırmı?
 
 * Load balancer
 * Horizontal scaling
 * Caching
-* Database sharding
+* Database parçalanması (Database sharding)
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Potensial həll yollarını və güzəştləri müzakirə edin. Hər şey bir mübadilədir. [Ölçəklənən sistem dizaynı prinsiplərindən](#sistem-dizaynı-mövzularının-indeksi) istifadə edərək, darboğazları aradan qaldırın
 
 ### Back-of-the-envelope calculations
 
