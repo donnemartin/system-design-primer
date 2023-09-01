@@ -23,11 +23,13 @@ Sistem dizaynı geniş mövzudur. Bu mövzunun prinsipləri üzrə internetdə s
 
 Bu repo, bele tip sistemləri qurmağı öyrənməyə kömək etmək üçün **təşkil edilmiş resurslar toplusudur**.
 
-### Learn from the open source community
+### Açıq mənbə (open source) icmasından öyrənin
 
-This is a continually updated, open source project.
+Bu daim yenilənən, open source layihədir.
 
-[Contributions](#contributing) are welcome!
+[Contributions](#contributing) xoş gördük.
+
+[//]: #Help (Contributions)
 
 ### Prep for the system design interview
 
