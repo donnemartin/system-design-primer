@@ -288,9 +288,9 @@ Sizdən bəzi təxminləri əl ilə etməyiniz xahiş oluna bilər. Aşağıdak�
 * [Powers of two table](#powers-of-two-table)
 * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
+### Mənbə(lər) və əlavə oxu
 
-Check out the following links to get a better idea of what to expect:
+Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdakı linklərə baxın:
 
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
