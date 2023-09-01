@@ -9,11 +9,11 @@
   <br/>
 </p>
 
-## Motivation
+## Motivasiya
 
-> Learn how to design large-scale systems.
+> Böyük miqyaslı sistemlərin dizaynlaşdırılmasının öyrənilməsi.
 >
-> Prep for the system design interview.
+> Sistem dizaynı üzrə müsahibəyə hazırlanması.
 
 ### Learn how to design large-scale systems
 
