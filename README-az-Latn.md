@@ -297,12 +297,13 @@ Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdak
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## Həlləri olan sistem dizaynı müsahibə sualları
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Nümunə müzakirələr, kodlar və diaqramlarla ümumi sistem dizaynı müsahibə sualları.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Həlllər `solutions/` qovluğundakı məzmunla əlaqələndirilir.
 
+[//]: # (ToDo: Update later When finish translation...)
 | Question | |
 |---|---|
 | Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
@@ -315,51 +316,51 @@ Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdak
 | Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
 | Add a system design question | [Contribute](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Pastebin.com (və Bit.ly) dizaynı
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Twitter vaxt qrafikini və axtarışı dizaynı (və ya Facebook lenti və axtarışı)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Tapşırıq və həll yoluna baxın](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### web crawler dizaynı
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### Mint.com dizaynı
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Sosial şəbəkə üçün data structure dizaynı
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### search engine üçün key-value store dizaynı
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Kateqoriya xüsusiyyətinə görə Amazonun satış sıralamasını dizaynı
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### AWS-də milyonlarla istifadəçini əhatə edən sistem dizaynı
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
