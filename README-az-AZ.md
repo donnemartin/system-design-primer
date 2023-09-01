@@ -93,12 +93,14 @@ Müəyyən qədər dəyişikliyə ehtiyacı olan hissələri [inkişaf mərhəl�
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 
-## Index of system design topics
 [//]: #Help (Review the Contributing Guidelines)
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+
+## Sistem dizaynı mövzularının indeksi
+
+> Müxtəlif növ sistem dizayn mövzularının xülasəsi, müsbət və mənfi cəhətlərilə birlikdə. **Hər şey bir mübadilədir**.
 >
-> Each section contains links to more in-depth resources.
+> Hər bölmədə ki, qeyd edilən link-lər vasitəsilə daha dərin/ətraflı məlumatlar tapa bilərsiniz.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
