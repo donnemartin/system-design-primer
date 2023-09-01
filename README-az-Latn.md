@@ -256,18 +256,18 @@ Bütün vacib komponentlər daxil olmaq şərtilə tərtib etdiyiniz dizaynı t�
 * Əsas komponentləri və birləşmələri eskiz edin
 * Fikirlərinizi əsaslandırın
 
-### Step 3: Design core components
+### Addım 3: Əsas komponentləri dizayn edin
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Hər bir əsas komponenti ətraflı izzah etməyə başlayın. Məsələn, sizdən [url qısaldıcı xidmət](solutions/system_design/pastebin/README.md) dizayn etmək istənilsə, müzakirə edin:
 
 * Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+    * [MD5](solutions/system_design/pastebin/README.md) və [Base62](solutions/system_design/pastebin/README.md)
+    * Xeş toqquşmaları (Hash collision)
+    * SQL va ya NoSQL
+    * Məlumatlar bazası sxeması (Database schema)
+* Hash-lənmiş url-in tam url-ə yönləndirilməsi
+    * Database axtarışı
+* API və obyekt yönümlü dizayn
 
 ### Step 4: Scale the design
 
