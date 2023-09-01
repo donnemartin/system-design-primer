@@ -15,13 +15,13 @@
 >
 > Sistem dizaynı üzrə müsahibəyə hazırlanması.
 
-### Learn how to design large-scale systems
+### Böyük miqyaslı sistemlərin dizaynlaşdırılmasının öyrənilməsi.
 
-Learning how to design scalable systems will help you become a better engineer.
+Böyük miqyaslı sistemlərin dizaynının öyrənilməsi sizə daha yaxşı mühəndis olmağa kömək edəcək.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Sistem dizaynı geniş mövzudur. Bu mövzunun prinsipləri üzrə internetdə səpələnmiş formada **böyük miqdarda resurs mövcuddur**.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Bu repo, bele tip sistemləri qurmağı öyrənməyə kömək etmək üçün **təşkil edilmiş resurslar toplusudur**.
 
 ### Learn from the open source community
 
