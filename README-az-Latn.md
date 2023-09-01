@@ -249,12 +249,12 @@ Tələbləri toplayın və problemi əhatə edin. İstifadə hallarını və mə
 * Biz saniyədə neçə sorğu gözləyirik?
 * Gözlənilən oxu-yazma nisbəti nədir?
 
-### Step 2: Create a high level design
+### Addım 2: Yüksək səviyyəli dizayn yaradın
 
-Outline a high level design with all important components.
+Bütün vacib komponentlər daxil olmaq şərtilə tərtib etdiyiniz dizaynı təsvir edin.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Əsas komponentləri və birləşmələri eskiz edin
+* Fikirlərinizi əsaslandırın
 
 ### Step 3: Design core components
 
