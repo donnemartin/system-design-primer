@@ -424,14 +424,14 @@ Unutmayın ki, **hər şey bir mübadiləddəir**.
 
 Ardınca daha çətin mövzulara baxacağıq, məsələn DNS, CDN və load balancer-lər kimi.
 
-## Performance vs scalability
+## Performans vs miqyaslılıq
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Servis **miqyaslı**dırsa, əlavə resurslar əlavə edildikcə **performans** artır. Ümumiyyətlə, performansı artırmaq daha çox iş birlikləri deməkdir, amma həm də dataset-lərin böyüməsi buna bir nümunədir.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Performans vs miqyaslılıq mübadiləsinə başqa bir yanaşmada baxaq:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* **Performans** problemi varsa, sistem bir istifadəçi üçün yavaşdır.
+* **Miqyaslılıq** problemi varsa, sistem bir istifadəçi üçün sürətli olsa da, ağır yüklənmə zamanı yavaşdır.
 
 ### Source(s) and further reading
 
