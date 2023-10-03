@@ -412,17 +412,17 @@ Sistem dizaynında yenisiniz?
     * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Növbəti addımlar
 
-Next, we'll look at high-level trade-offs:
+Növbəti olaraq aşağıdakı mövzulara baxacığıq:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Performans** vs **miqyaslılıq**
+* **Gecikmə** vs **keçirmə qabiliyyəti**
+* **Mövcudluq** vs **ardıcıllıq**
 
-Keep in mind that **everything is a trade-off**.
+Unutmayın ki, **hər şey bir mübadiləddəir**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Ardınca daha çətin mövzulara baxacağıq, məsələn DNS, CDN və load balancer-lər kimi.
 
 ## Performance vs scalability
 
