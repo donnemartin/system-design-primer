@@ -390,11 +390,11 @@ Sistem dizaynında yenisiniz?
 
 İlk öncə əsas sistem dizaynın baza prinsiplərini, onların necə istifadə olunduğunu və onların üstünlüklərini və mənfi cəhətlərini öyrənməlisiniz.
 
-### Step 1: Review the scalability video lecture
+### 1-ci addım: Harvarddakı scalability video müsahibəsini izləyin
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
+* Əhatə edən mövzular:
     * Vertical scaling
     * Horizontal scaling
     * Caching
