@@ -384,11 +384,11 @@ Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdak
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
-## System design topics: start here
+## Sistem dizaynı mövzuları: buradan başlayın
 
-New to system design?
+Sistem dizaynında yenisiniz?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+İlk öncə əsas sistem dizaynın baza prinsiplərini, onların necə istifadə olunduğunu və onların üstünlüklərini və mənfi cəhətlərini öyrənməlisiniz.
 
 ### Step 1: Review the scalability video lecture
 
