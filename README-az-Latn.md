@@ -260,11 +260,11 @@ Bütün vacib komponentlər daxil olmaq şərtilə tərtib etdiyiniz dizaynı t�
 
 Hər bir əsas komponenti ətraflı izzah etməyə başlayın. Məsələn, sizdən [url qısaldıcı xidmət](solutions/system_design/pastebin/README.md) dizayn etmək istənilsə, müzakirə edin:
 
-* Generating and storing a hash of the full url
+* Tam url-in hashının yaradılması və saxlanması
     * [MD5](solutions/system_design/pastebin/README.md) və [Base62](solutions/system_design/pastebin/README.md)
     * Xeş toqquşmaları (Hash collision)
     * SQL va ya NoSQL
-    * Məlumatlar bazası sxeması (Database schema)
+    * Məlumatlar bazası sxemi (Database schema)
 * Hash-lənmiş url-in tam url-ə yönləndirilməsi
     * Database axtarışı
 * API və obyekt yönümlü dizayn
@@ -278,7 +278,7 @@ Məhdudiyyətləri nəzərə alaraq problemləri müəyyənləşdirin və həll 
 * Caching
 * Database parçalanması (Database sharding)
 
-Potensial həll yollarını və güzəştləri müzakirə edin. Hər şey bir mübadilədir. [Ölçəklənən sistem dizaynı prinsiplərindən](#sistem-dizaynı-mövzularının-indeksi) istifadə edərək, darboğazları aradan qaldırın
+Potensial həll yollarını və güzəştləri müzakirə edin. Hər şey bir mübadilədir. [Ölçülən sistem dizaynı prinsiplərindən](#sistem-dizaynı-mövzularının-indeksi) istifadə edərək, çətin vəziyyəti aradan qaldırın
 
 ### Back-of-the-envelope hesablamaları
 
