@@ -15,15 +15,15 @@
 
 ### 大規模システムの設計を学ぶ
 
-スケーラブルなシステムのシステム設計を学ぶことは、より良いエンジニアになることに資するでしょう。
+スケーラブルなシステム設計を学習することは、より良いエンジニアになることに資するでしょう。
 
-システム設計はとても広範なトピックを含みます。システム設計原理については **インターネット上には膨大な量の文献が散らばっています。**
+システム設計は広範囲なトピックをカバーします。システム設計原理については **インターネット上には膨大な量の文献が散らばっています。**
 
-このリポジトリは大規模システム構築に必要な知識を学ぶことができる **文献リストを体系的にまとめたもの** です。
+このリポジトリは大規模システム構築に必要な知識を学ぶことができる **文献リストを一か所にまとめたもの** です。
 
 ### オープンソースコミュニティから学ぶ
 
-このプロジェクトは、これからもずっと更新されていくオープンソースプロジェクトの初期段階にすぎません。
+このプロジェクトは、定期的に更新されていく予定のオープンソースプロジェクトの初期段階にすぎません。
 
 [Contributions](#contributing) は大歓迎です！
 
@@ -54,18 +54,18 @@
 * [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
 * [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
 
-外出先や移動中の勉強に役立つでしょう。
+外出先や移動中の勉強に役立つと幸いです。
 
 ### コーディング技術課題用の問題: 練習用インタラクティブアプリケーション
 
-コード技術面接用の問題を探している場合は[**こちら**](https://github.com/donnemartin/interactive-coding-challenges)
+コード技術面接用の問題は[**こちら**](https://github.com/donnemartin/interactive-coding-challenges)
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-姉妹リポジトリの [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges)も見てみてください。追加の暗記デッキカードも入っています。
+関連リポジトリの [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges)も是非参照下さい。追加の暗記デッキカードも入っています。
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
@@ -78,7 +78,7 @@
 * エラー修正
 * セクション内容改善
 * 新規セクション追加
-* [翻訳する](https://github.com/donnemartin/system-design-primer/issues/28)
+* [翻訳](https://github.com/donnemartin/system-design-primer/issues/28)
 
 現在、内容の改善が必要な作業中のコンテンツは[こちら](#進行中の作業)です。
 
@@ -184,12 +184,11 @@
 
 **Q: 面接のためには、ここにあるものすべてをやらないといけないのでしょうか？**
 
-**A: いえ、ここにあるすべてをやる必要はありません。**
+**A: いいえ、ここにあるすべてをやる必要はありません。**
 
 面接で何を聞かれるかは以下の条件によって変わってきます:
 
-* どれだけの技術経験があるか
-* あなたの技術背景が何であるか
+* 面接者の技術経験
 * どのポジションのために面接を受けているか
 * どの企業の面接を受けているか
 * 運
@@ -220,25 +219,25 @@
 
 以下のステップに従って議論を組み立てることができるでしょう。この過程を確かなものにするために、次のセクション[システム設計課題例とその解答](#system-design-interview-questions-with-solutions) を以下の指針に従って読み込むといいでしょう。
 
-### ステップ 1: そのシステム使用例の概要、制約、推計値等を聞き出し、まとめる
+### ステップ 1: システム使用例の概要、制約、推計値等を聞き出し、まとめる
 
 システム仕様の要求事項を聞き出し、問題箇所を特定しましょう。使用例と制約を明確にするための質問を投げかけましょう。要求する推計値についても議論しておきましょう。
 
-* 誰がそのサービスを使うのか？
+* 誰がサービスを使うのか？
 * どのように使うのか？
 * 何人のユーザーがいるのか？
 * システムはどのような機能を果たすのか？
 * システムへの入力と出力は？
 * どれだけの容量のデータを捌く必要があるのか？
 * 一秒間に何リクエストの送信が想定されるか？
-* 読み書き比率の推定値はいくら程度か？
+* 読み書き比率の推定値はどれくらいか？
 
-### ステップ 2: より高レベルのシステム設計を組み立てる
+### ステップ 2: 高レベルのシステム設計を組み立てる
 
 重要なコンポーネントを全て考慮した高レベルのシステム設計概要を組み立てる。
 
 * 主要なコンポーネントと接続をスケッチして書き出す
-* 考えの裏付けをする
+* 考えの裏付けをまとめる
 
 ### ステップ 3: 核となるコンポーネントを設計する
 
@@ -298,13 +297,13 @@
 | AWS上で100万人規模のユーザーを捌くサービスを設計する | [解答](solutions/system_design/scaling_aws/README.md) |
 | システム設計問題を追加する | [Contribute](#contributing) |
 
-### Pastebin.com (もしくは Bit.ly) を設計する
+### Pastebin.com (もしくは Bit.ly) の設計
 
 [問題と解答を見る](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Twitterタイムライン&検索 (もしくはFacebookフィード&検索)を設計する
+### Twitterタイムライン&検索 (もしくはFacebookフィード&検索)の設計
 
 [問題と解答を見る](solutions/system_design/twitter/README.md)
 
@@ -322,25 +321,25 @@
 
 ![Imgur](images/V5q57vU.png)
 
-### SNSサービスのデータ構造を設計する
+### SNSサービスのデータ構造の設計
 
 [問題と解答を見る](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### 検索エンジンのキー/バリュー構造を設計する
+### 検索エンジンのキー/バリュー構造の設計
 
 [問題と解答を見る](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Amazonのカテゴリ毎の売り上げランキングを設計する
+### Amazonのカテゴリ毎の売り上げランキングの設計
 
 [問題と解答を見る](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### AWS上で100万人規模のユーザーを捌くサービスを設計する
+### AWS上で100万人規模のユーザーを捌くサービスの設計
 
 [問題と解答を見る](solutions/system_design/scaling_aws/README.md)
 
@@ -407,7 +406,7 @@
 
 ## パフォーマンス vs スケーラビリティ
 
-リソースが追加されるのにつれて **パフォーマンス** が向上する場合そのサービスは **スケーラブル** であると言えるでしょう。一般的に、パフォーマンスを向上させるというのはすなわち計算処理を増やすことを意味しますが、データセットが増えた時などより大きな処理を捌けるようになることでもあります。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+リソースが追加されるのにつれて **パフォーマンス** が向上する場合、そのサービスは **スケーラブル** であると言えるでしょう。一般的に、パフォーマンスを向上させるというのはすなわち計算処理を増やすことを意味しますが、データセットが増えた時などより大きな処理を捌けるようになることでもあります。<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
 パフォーマンスvsスケーラビリティをとらえる他の考え方:
 
