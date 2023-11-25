@@ -132,7 +132,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Service discovery](#service-discovery)
 * [Database](#database)
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
+        * [Primary-replica replication](#primary-replica-replication)
         * [Master-master replication](#master-master-replication)
         * [Federation](#federation)
         * [Sharding](#sharding)
@@ -508,8 +508,6 @@ With active-passive fail-over, heartbeats are sent between the active and the pa
 
 The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
 
-Active-passive failover can also be referred to as master-slave failover.
-
 #### Active-active
 
 In active-active, both servers are managing traffic, spreading the load between them.
@@ -525,11 +523,11 @@ Active-active failover can also be referred to as master-master failover.
 
 ### Replication
 
-#### Master-slave and master-master
+#### Primary-replica and master-master
 
 This topic is further discussed in the [Database](#database) section:
 
-* [Master-slave replication](#master-slave-replication)
+* [Primary-replica replication](#primary-replica-replication)
 * [Master-master replication](#master-master-replication)
 
 ### Availability in numbers
@@ -824,11 +822,11 @@ A relational database like SQL is a collection of data items organized in tables
 * **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
 * **Durability** - Once a transaction has been committed, it will remain so
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+There are many techniques to scale a relational database: **primary-replica replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 
-#### Master-slave replication
+#### Primary-replica replication
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+The primary server serves reads and writes, replicating writes to one or more replicas, which serve only reads.  Replicas can also replicate to additional replicas in a tree-like fashion.  If the primary server goes offline, the system can continue to operate in read-only mode until a replica is promoted to primary or a new primary server is provisioned.
 
 <p align="center">
   <img src="images/C9ioGtn.png">
@@ -836,10 +834,10 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### Disadvantage(s): primary-replica replication
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Additional logic is needed to promote a replica to primary.
+* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** primary-replica and master-master.
 
 #### Master-master replication
 
@@ -856,13 +854,13 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 * You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
 * Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
 * Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** primary-replica and master-master.
 
 ##### Disadvantage(s): replication
 
 * There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
 * Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
+* The more read replicas, the more you have to replicate, which leads to greater replication lag.
 * On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
 * Replication adds more hardware and additional complexity.
 
