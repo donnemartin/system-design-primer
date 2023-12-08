@@ -97,6 +97,8 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
   <br/>
 </p>
 
+## Table of Contents
+
 * [System design topics: start here](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
     * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
@@ -178,6 +180,8 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Credits](#credits)
 * [Contact info](#contact-info)
 * [License](#license)
+
+<br>
 
 ## Study guide
 
