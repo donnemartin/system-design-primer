@@ -717,7 +717,7 @@ Có hai mẫu hình bổ sung lẫn nhau hỗ trợ khả năng khả dụng cao
 ### Fail-over
 
 #### Active-passive
-#### Chủ động - bị động
+#### Chủ động-bị động
 
 With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
 Với fail-over chủ động - bị động, nhịp tim (heartbeat) sẽ được gửi giữa máy chủ chủ động và máy chủ bị động trực chờ.  Nếu nhịp tim bị ngắt quãng, máy chủ bị động sẽ tiếp quản địa chỉ IP của máy chủ động và tiếp tục dịch vụ.
@@ -728,33 +728,46 @@ The length of downtime is determined by whether the passive server is already ru
 Active-passive failover can also be referred to as master-slave failover.
 Failover chủ động - bị động còn được biết dưới tên failover master-slave.
 
-#### Active-active
+#### Chủ động-chủ động
 
 In active-active, both servers are managing traffic, spreading the load between them.
+Trong mô hình chủ động-chủ động, cả hai server đều quản lý traffic, giàn trải load cho nhau.
 
 If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+Nếu các server là public-facing, DNS sẽ cần phải biết public IP của cả hai.  Nếu các server là internal-facing, thì application logic cần biết về cả hai server.
 
 Active-active failover can also be referred to as master-master failover.
+Failover trong chủ động-chủ động còn được biết đến là master-master failover.
 
 ### Disadvantage(s): failover
+### Bất lợi của failover
 
 * Fail-over adds more hardware and additional complexity.
+* Fail-over đòi hỏi thêm phần cứng và tăng độ phức tạp.
 * There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* Sẽ có khả năng mất dữ liệu nếu hệ thống đang trạng thái chủ động fail trước khi dữ liệu mới được tái tạo vào hệ thống đang ở trạng thái bị động.
 
 ### Replication
+### Tái tạo
 
 #### Master-slave and master-master
+#### Master-slave và master-master
 
 This topic is further discussed in the [Database](#database) section:
+Chủ đề này được sẽ được phân tích thêm trong phần [Cơ sở dữ liệu](#database):
 
 * [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Tái tạo trong master-slave](#master-slave-replication)
+* [Tái tạo trong master-master](#master-master-replication)
 
 ### Availability in numbers
+### Các con số trong tính khả dụng
 
 Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
+Tính khả dụng thường được lượng hoá bởi uptime (hoặc downtime) bằng tỉ lệ phần trăm của thời gian dịch vụ ở trạng thái khả dụng.  Tính khả dụng nhìn chung được đo lường với đơn vị số "9"--như một dịch vụ khả dụng với mức 99.99% sử dụng bốn số "9".
 
 #### 99.9% availability - three 9s
+#### 99.9% khả dụng - "ba 9"
 
 | Duration            | Acceptable downtime|
 |---------------------|--------------------|
@@ -763,7 +776,15 @@ Availability is often quantified by uptime (or downtime) as a percentage of time
 | Downtime per week   | 10m 4.8s           |
 | Downtime per day    | 1m 26.4s           |
 
+| Thời lượng          | Downtime chấp nhận    |
+|---------------------|-----------------------|
+| Downtime hằng năm   | 8 giờ 45 phút 57 giây |
+| Downtime hằng tháng | 43 phút 49,7 giây     |
+| Downtime hằng tuần  | 10 phút 4,8 giây      |
+| Downtime hằng ngày  | 1 phút 26,4 giây      |
+
 #### 99.99% availability - four 9s
+#### 99.99% khả dụng - "bốn 9"
 
 | Duration            | Acceptable downtime|
 |---------------------|--------------------|
@@ -771,6 +792,13 @@ Availability is often quantified by uptime (or downtime) as a percentage of time
 | Downtime per month  | 4m 23s             |
 | Downtime per week   | 1m 5s              |
 | Downtime per day    | 8.6s               |
+
+| Thời lượng          | Downtime chấp nhận |
+|---------------------|--------------------|
+| Downtime hằng năm   | 52 phút 35,7 giây  |
+| Downtime hằng tháng | 4 phút 23 giây     |
+| Downtime hằng tuần  | 1 phút 5 giây      |
+| Downtime hằng ngày  | 8,6 giây           |
 
 #### Availability in parallel vs in sequence
 #### Tính khả dụng trong thực thi song song so với trình tự
@@ -2256,6 +2284,7 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Availability: tính sẵn có / hiện có / khả dụng
 - Traffic:
 - (Data) store: "CSDL" is not technically precise.
+- Failover
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
