@@ -294,7 +294,7 @@ Bắt đầu ở bề rộng và đi sâu hơn vào từng vùng.  Biết một 
 
 * **Thời gian ngắn** - Nhắm vào bề rộng của các chủ đề thiết kế hệ thống. Tập luyện bằng cách giải quyết **một số** câu hỏi phỏng vấn.
 * **Thời gian trung bình** - Nhắm vào bề rộng và một chút phần sâu với các chủ đều thiết kế hệ thống. Tập luyện giải quyết **nhiều** câu hỏi phỏng vấn.
-* ** Thời gian dài** - Nhắm vào bề rộng và nhiều phần sâu với các chủ đề thiết ké hệ thống. Tập luyện giải quyết **hầu hết** các câu hỏi phỏng vấn.
+* **Thời gian dài** - Nhắm vào bề rộng và nhiều phần sâu với các chủ đề thiết ké hệ thống. Tập luyện giải quyết **hầu hết** các câu hỏi phỏng vấn.
 
 | | Short | Medium | Long |
 |---|---|---|---|
@@ -1857,17 +1857,21 @@ Use UDP over TCP when:
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 * [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Remote procedure call (RPC)
+### Gọi thủ tục từ xa (Remote procedure call - RPC)
 
 <p align="center">
   <img src="images/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Nguồn: Crack the system design interview</a></i>
 </p>
 
 In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
 
+Trong RPC, client làm cho một thủ tục được thực thi trên một vùng địa chỉ khác, thường là một server từ xa.  Thủ tục được lập trình như là một thủ nội bộ, trừu tượng hoá đi chi tiết về cách trao đổi giữa chương trình trên server và chương trình client.  Việc gọi từ xa thường là chậm và ít reliable hơn là gọi nội bộ, nên thường nên cần phân hoá giữa RPC và nội bộ.  Các framework RPC phổ biết: [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), và [Avro](https://avro.apache.org/docs/current/).
+
+
 RPC is a request-response protocol:
+RPC là một nghi thức request-response
 
 * **Client program** - Calls the client stub procedure.  The parameters are pushed onto the stack like a local procedure call.
 * **Client stub procedure** - Marshals (packs) procedure id and arguments into a request message.
@@ -1876,7 +1880,15 @@ RPC is a request-response protocol:
 * **Server stub procedure** -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.
 * The server response repeats the steps above in reverse order.
 
+
+* **Chương trình ở client** - Sẽ gọi đến thủ tục stub trên client.  Tham số được đẩy vào stack như là một thủ tục nội bộ.
+* **Thủ thục stub ở client** - Marshal (đóng gói) id của thủ tục và tham số trong một request message.
+* **Module truyền đạt ở client** - OS gửi một message từ client đến server.
+* **Module truyền đạt ở server ** - OS packet đến sang thủ thục stub qua server.
+* **Thủ tục stub ở server** -  Unmarshal kết quả, gọi đến thủ tục tương ứng với ID và truyền các tham số đã được gửi.
+
 Sample RPC calls:
+Ví dụ của gọi RPC:
 
 ```
 GET /someoperation?data=anId
@@ -1889,22 +1901,37 @@ POST /anotheroperation
 ```
 
 RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
+RPC chú trọng trên việc phơi bày hành vi.  RPC thường được sử dụng cho lí do hiệu năng trong truyền đạt nội bộ, vì lẽ bạn có thể, một cách thủ công, tạo các cuộc gọi native cho phù hợp với nhu cầu.
+(Ghi chú của người dịch: ý chính ở đây khi dịch ra tiếng Việt khó thoát nghĩa. Nhìn chung, khi so sánh với các mô hình không phải RPC, thì ta cần thiết kế một lớp trừu tượng hoá. Chẳng hạn với RESTful thì đối tượng trừu tượng chính sẽ là "resource". RPC mô hình hoá một cách trực tiếp hơn: thủ tục gọi thủ tục. Nên sẽ co giãn hơn vì bạn không cần phải bám theo một mô hình nào ở lớp trừu tượng trên. Nhưng đánh đổi bởi "thủ công" là ở việc phải duy trì những thủ tục đối ứng giữa hai bên client và server).
 
 Choose a native library (aka SDK) when:
+Chọn một thư viện native (SDK) khi:
 
 * You know your target platform.
 * You want to control how your "logic" is accessed.
 * You want to control how error control happens off your library.
 * Performance and end user experience is your primary concern.
 
+* Bạn biết cần chạy trên nền tảng nào.
+* Bạn muốn khả năng điều chỉnh về quyền sử dụng logic trên server.
+* Bạn muốn khả năng điều chỉnh cách xử lí lỗi xảy ra trong thư viện của mình.
+* Hiệu năng và trải nghiệm người dùng là ưu tiên chính.
+
 HTTP APIs following **REST** tend to be used more often for public APIs.
+HTTP API theo mô hình REST thường được sử dụng hơn đối với các API public.
 
 #### Disadvantage(s): RPC
+#### Bất lợi của RPC:
 
 * RPC clients become tightly coupled to the service implementation.
 * A new API must be defined for every new operation or use case.
 * It can be difficult to debug RPC.
 * You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
+
+* Client RPC trở nên couple với implementation của service.
+* Sẽ cần định nghĩa API mới cho cho mọi operation và use case mới.
+* Debug RPC có thể sẽ khó khăn.
+* Khó tận dụng các công nghệ có sẵn.  Ví dụ, có thể phải bỏ công thêm để [cache RPC call](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) trên các cache server như là [Squid](http://www.squid-cache.org/).
 
 ### Representational state transfer (REST)
 
@@ -2006,7 +2033,7 @@ Power           Exact Value         Approx Value        Bytes
 * [Bảng bình phương](https://en.wikipedia.org/wiki/Power_of_two)
 
 ### Latency numbers every programmer should know
-### Các chỉ số độ trễ mọi LTV nên biết
+### Các chỉ số độ trễ mọi programmer nên biết
 
 ```
 Latency Comparison Numbers
@@ -2267,13 +2294,14 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 ## Vietnamese Meta Notes (will remove after the translation is done)
 
+TODO: probably make a glossary at the beginning of the document?
+
 ### Words that I haven't figured out how to translate clearly yet
 
 - Scale / scalable / scalability: "mở rộng" / "khả năng mở rộng"?
 - Large-scale system: "hệ thống lớn"?
 - Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
 - Client/server
-- Request/response
 - Service: "dịch vụ"?
 - Worker: "công nhân" sounds off.
 - Tasks vs. jobs vs. operations: should be translated consistently (tác vụ, công việc, thao tác?).
@@ -2285,7 +2313,18 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 - Traffic:
 - (Data) store: "CSDL" is not technically precise.
 - Failover
+- Marshal
+- Packet
+- Couple
+- Implementation
+- Operation
+- Use case
+- Call _(as a noun)_
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
 - Database: "cơ sở dữ liệu", but virtually no one use them.
+- Programmer: "lập trình viên" is just too mouthful
+- Request - response: "yêu cầu / truy vấn" - "hồi đáp / trả lời".
+- Message
+- OS: "hệ điều hành" is sometimes too mouthful.
