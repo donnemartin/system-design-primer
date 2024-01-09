@@ -21,11 +21,11 @@ Während Sie lernen, wie Sie skalierbare Systeme entwerfen, werden Sie zum besse
 
 Systemdesign ist ein breites Thema. Es ist eine **große Menge an Ressourcen verteilt im ganzen Web** basierend auf dem Thema der Systemdesign Prinzipien.
 
-Diese Repo ist eine **organisierte Ansammlung** der Resoursen und wird Ihnen dabei helfen skalierte Systeme zu erlernen.
+Dieses Repo ist eine **organisierte Ansammlung** der Ressourcen und wird Ihnen dabei helfen skalierte Systeme zu erlernen.
 
 ### Lernen Sie von der Open Source Community.
 
-Dies ist ein ständig aktualisiertes Open-Source-Projekt.
+Dies ist ein ständig aktualisiertes, quelloffenes Projekt.
 
 [Hilfe zu Beiträgen](#Beitragen) ist erwünscht!
 
@@ -59,7 +59,7 @@ Die Bereitgestellten [Anki flashcard decks](https://apps.ankiweb.net/) verwenden
 
 Ideal für den Einsatz unterwegs.
 
-### Programmier Resoursen: Interaktive Programmierübungen
+### Programmier Ressourcen: Interaktive Programmierübungen
 
 Suchen Sie nach Ressourcen, die Ihnen bei der Vorbereitung auf das [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges) helfen?
 
@@ -68,7 +68,7 @@ Suchen Sie nach Ressourcen, die Ihnen bei der Vorbereitung auf das [**Coding Int
   <br/>
 </p>
 
-Schauen Sie sich das Schwesterrepositorium [**Interaktive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges) an, das ein zusätzliches Anki-Deck enthält:
+Schauen Sie sich das Schwester-Repo [**Interaktive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges) an, das ein zusätzliches Anki-Deck enthält:
 
 * [Programmier Deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
@@ -76,7 +76,7 @@ Schauen Sie sich das Schwesterrepositorium [**Interaktive Coding Challenges**](h
 
 > Lernen Sie von der Community.
 
-Hilfe erwünscht, um beizutragen können sie pull requests einreichen:
+Hilfe erwünscht, um beizutragen können Sie pull requests einreichen:
 
 * Fehler beheben
 * Abschnitte verbessern
@@ -117,7 +117,7 @@ Beachten Sie die [Beitragsrichtlinien](CONTRIBUTING.md).
     * [Replikation](#Replikation)
     * [Verfügbarkeit in Zahlen](#Verfügbarkeit-in-Zahlen)
 * [Domain Namen System](#Domain-Namen-System)
-* [Kontent distributions Netzwerk](#Kontent-distributions-Netzwerk)
+* [Netzwerk zur Bereitstellung von Inhalten](#Kontent-distributions-Netzwerk)
     * [Push CDNs](#push-cdns)
     * [Pull CDNs](#pull-cdns)
 * [Lastverteilung](#load-balancer)
