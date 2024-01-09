@@ -1570,7 +1570,7 @@ Whenever you query the database, hash the query as a key and store the result to
 
 ### Caching at the object level
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s**:
 
 * Remove the object from cache if its underlying data has changed
 * Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
@@ -1583,23 +1583,31 @@ Suggestions of what to cache:
 * User graph data
 
 ### When to update the cache
+### Khi nào cache được cập nhật
 
 Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+Bởi cache chỉ chứa một lượng dữ liệu giới hạn, bạn cần xác định một chiến lược cập nhật cache phù hợp với nhu cầu.
 
 #### Cache-aside
 
 <p align="center">
   <img src="images/ONjORqk.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Nguồn: From cache to in-memory data grid</a></i>
 </p>
 
 The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+Ứng dụng chịu trách nhiệm cho việc đọc và ghi từ nơi lưu trữ.  Cache không tương tác với lưu trữ này một cách trự tiếp.  Ứng dụng sẽ thực thi như sau:
 
 * Look for entry in cache, resulting in a cache miss
 * Load entry from the database
 * Add entry to cache
 * Return entry
+
+* Tìm mục trong cache, dẫn đến "cache miss"
+* Tải mục này từ database
+* Thêm mục này vào cache
+* Trả về mục này
 
 ```python
 def get_user(self, user_id):
@@ -1613,36 +1621,50 @@ def get_user(self, user_id):
 ```
 
 [Memcached](https://memcached.org/) is generally used in this manner.
+[Memcached](https://memcached.org/) thường được sử dụng với cách này.
 
 Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+Cách thao tác đọc sẽ nhanh sau khi dữ liệu nằm trong cache.  Cache-aside còn được biết đến cái tên "lazy loading".  Chỉ những dữ liệu đã yêu cầu được cache, tránh được việc nhồi nhét vào cache những dữ liệu không được yêu cầu.
 
 ##### Disadvantage(s): cache-aside
+##### Bất lợi của cache-aside
 
 * Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
+* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL** which forces an update of the cache entry, or by using write-through.
 * When a node fails, it is replaced by a new, empty node, increasing latency.
+
+* Mỗi lần miss cache sẽ dẫn đến ba vòng đi, nên có thể gây ra độ trễ cảm nhận được.
+* Dữ liệu ở cache có thể bị cũ (stale) nếu bị update trực tiếp trong CSDL.  Có thể giải quyết phần nào vấn đề này bằng cách cấu hình time-to-live (TTL**, để bắt buộc cập nhật một mục trên cache sau một khoảng thời gian, hoặc sử dụng write-through.
+* Khi một nốt bị hỏng được thay thế bởi một nốt rỗng mới, sẽ làm tăng độ trễ.
 
 #### Write-through
 
 <p align="center">
   <img src="images/0vBc0hN.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Nguồn: Scalability, availability, stability, patterns</a></i>
 </p>
 
 The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+Ứng dụng sử dụng cache như là dữ liệu chính, làm nơi đọc / ghi dữ liệu trực tiếp vào, khi đó thì cache chịu trách nhiệm chính cho việc đọc và ghi vào CSDL.
 
 * Application adds/updates entry in cache
 * Cache synchronously writes entry to data store
 * Return
 
+* Ứng dụng thêm/cập nhật mục vào cache
+* Cache đồng bộ hoá việc ghi dữ liệu vào CSDL
+* Trả về kết quả
+
 Application code:
+Code ở ứng dụng:
 
 ```python
 set_user(12345, {"foo":"bar"})
 ```
 
 Cache code:
+Code ở cache:
 
 ```python
 def set_user(user_id, values):
@@ -1651,36 +1673,51 @@ def set_user(user_id, values):
 ```
 
 Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+Write-through nhìn chung là tương đối chậm do quá trình ghi, nhưng các thao đọc về sau của dư liệu vừa ghi sẽ nhanh.  Người dùng thường chịu chấp nhận độ trễ ở cập nhật dữ liệu hơn là trễ ở việc đọc.  Dữ liệu trong cache sẽ không thể stale.
 
 ##### Disadvantage(s): write through
+##### Bất lợi của write through
 
 * When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
 * Most data written might never be read, which can be minimized with a TTL.
 
+ * Khi một nốt mới được tạo do một nốt khác hỏng hay do mở rộng tải, nốt mới sẽ không có các mục cache hiện tại cho đến khi mục được được cập nhật.  Kết hợp cache-aside và write through có thể giải quyết phần nào vấn đề này.
+ * Hầu hết dữ liệu được ghi có thể sẽ không bao giờ được đọc, việc này có thể giảm thiểu bằng TTL.
+
+#### Write-behind (write-back)
 #### Write-behind (write-back)
 
 <p align="center">
   <img src="images/rgSrvjG.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Nguồn: Scalability, availability, stability, patterns</a></i>
 </p>
 
 In write-behind, the application does the following:
+Với write-behind, ứng dụng sẽ làm như sau:
 
 * Add/update entry in cache
 * Asynchronously write entry to the data store, improving write performance
 
+* Thêm/cập nhật mục vào cache
+* Viết mục vào kho dữ liệu một cách bất đồng bộ, tăng cường hiệu năng của ghi
+
 ##### Disadvantage(s): write-behind
+##### Bất lợi của write-behind
 
 * There could be data loss if the cache goes down prior to its contents hitting the data store.
 * It is more complex to implement write-behind than it is to implement cache-aside or write-through.
 
+* Có thể mất dữ liệu nếu cache sập trước khi nội dung cache đến được kho dữ liệu.
+* Phức tạp hơn để triển khai write-behind so với cache-aside hay write-through.
+
+#### Refresh-ahead
 #### Refresh-ahead
 
 <p align="center">
   <img src="images/kxtjqgE.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Nguồn: From cache to in-memory data grid</a></i>
 </p>
 
 You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
@@ -1993,9 +2030,10 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 ## An ninh
 
 This section could use some updates.  Consider [contributing](#contributing)!
-Phần cần được bổ sung thêm.  Hãy [đóng góp](#contributing)!
+Phần cần được bổ sung thêm.  Xin bạn [đóng góp](#contributing)!
 
 Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+
 An ninh là một chủ đề rộng. Trừ khi bạn có kinh nghiệm đáng kể, một nền tảng về an ninh, hoặc đang ứng tuyển vào một ví trí đòi hỏi kiến thức về an ninh, hầu như bạn sẽ không cần biết nhiều hơn ở mức cơ bản này:
 
 * Encrypt in transit and at rest.
@@ -2125,7 +2163,7 @@ Một số tham số hữu dụng từ các con số trên:
 | Add a system design question | [Contribute](#contributing) |
 
 ### Real world architectures
-### Kiến trúc ở đời thực
+### Kiến trúc thực tế
 
 > Articles on how real world systems are designed.
 > Các bài viết về cách các hệ thống thực tế được thiết kế như thế nào
@@ -2300,6 +2338,7 @@ TODO: probably make a glossary at the beginning of the document?
 
 - Scale / scalable / scalability: "mở rộng" / "khả năng mở rộng"?
 - Large-scale system: "hệ thống lớn"?
+- Scale: "mở rộng tải" / "tăng tải"?
 - Partition tolerance: "dung sai phân vùng" (Typically, "dung sai" in Vietnamese is a scalar value, and often accompanied with an unit. So I'm not sure this is the right one.)
 - Client/server
 - Service: "dịch vụ"?
@@ -2320,6 +2359,8 @@ TODO: probably make a glossary at the beginning of the document?
 - Operation
 - Use case
 - Call _(as a noun)_
+- Node: "nốt"
+- Fail: "hỏng"
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
@@ -2328,3 +2369,7 @@ TODO: probably make a glossary at the beginning of the document?
 - Request - response: "yêu cầu / truy vấn" - "hồi đáp / trả lời".
 - Message
 - OS: "hệ điều hành" is sometimes too mouthful.
+
+### Translation that I found not commonly used / accepted in Vietnamese but is a great translation any way
+
+- stale: thiu
