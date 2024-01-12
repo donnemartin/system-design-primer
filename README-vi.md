@@ -1721,20 +1721,30 @@ Với write-behind, ứng dụng sẽ làm như sau:
 </p>
 
 You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+Ta có thể cấu hình để cache tự động làm mới các mục cache trước thời điểm hết hạn cho các mục thường xuyên được truy cập.
 
 Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+Refresh-ahead có thể đạt hiệu quả trong việc giảm độ trễ so với read-though nếu cache có thể dự đoán chính xác những mục có khả năng được cần đến trong tương lai.
 
 ##### Disadvantage(s): refresh-ahead
+#### Bất lợi của refresh-ahead
 
 * Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+* Thiếu chính xác trong việc dự đoán những mục cần trong tương lai có thể làm giảm thiểu hiệu năng so với việc không refresh-ahead.
 
 ### Disadvantage(s): cache
+### Bất lợi của cache
 
 * Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
 * Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
 * Need to make application changes such as adding Redis or memcached.
 
+* Cần bảo đảm tính nhất quán giữa cache và nguồn gốc như CSDL thông qua [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
+* Cache invalidation là một vấn đề khó, gia tăng tính phức tạp trong việc tính toán thời điểm khi nào thì cập nhật cache.
+* Cần thay đổi ở lớp ứng dụng như là thêm Redis hoặc memcached.
+
 ### Source(s) and further reading
+### Nguồn đọc thêm
 
 * [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 * [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
@@ -1745,14 +1755,16 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
 ## Asynchronism
+## Bất đồng bộ
 
 <p align="center">
   <img src="images/54GYsSx.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Nguồn: Intro to architecting systems for scale</a></i>
 </p>
 
 Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+Workflow bất động bộ giúp giảm thiểu thời gian request so với việc thực hiện một cách tuyến tính cho các tác vụ nặng.  Ngoài ra còn có thể giúp thực hiện trước các công việc tốn thời gian, như tổng hợp dữ liệu một cách định kỳ.
 
 ### Message queues
 ### Hàng đợi tin
@@ -1785,9 +1797,13 @@ Hàng đợi nhận tác vụ và các dữ liệu liên quan, thực thi và gi
 
 If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
+Nếu hạng đợi bắt đầu gia tăng quá lớn, kích thước có thể vượt quá bộ nhớ, dẫn đến "cache miss", truy xuất đĩa, và giảm thiểu hiệu suất.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) có thể giúp ích bằng cách giới hạn kích thước của queue, từ đó bảo đảm tần suất lưu lượng cao và thời gian hồi đáp tốt cho các tác vụ đang có trong hàng đợi.  Khi hàng đợi đầy, client nhận được mã HTTP 503 hoặc "server bận" để thử lại sau.  Client có thể thử lại request ở một thời điểm sau, khả dĩ với [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+
 ### Disadvantage(s): asynchronism
+### Bất lợi của bất đồng bộ
 
 * Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+* Những nhu cầu với các tính toán nhanh và workflow yêu cầu thời gian thực có thể tốt hơn là dùng các tác vụ đồng bộ, thêm hàng đợi có thể tăng độ trễ và độ phức tạp.
 
 ### Source(s) and further reading
 ### Tài liệu bổ sung
@@ -2361,6 +2377,8 @@ TODO: probably make a glossary at the beginning of the document?
 - Call _(as a noun)_
 - Node: "nốt"
 - Fail: "hỏng"
+- Workflow
+- Cache: "bộ đệm"?
 
 ### Words that does have a translation but the English version is widely accepted among the Vietnamese-speakers
 
