@@ -120,3 +120,5 @@ class CallCenter(object):
 
     def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
         pass
+    def test(self):
+        pass
