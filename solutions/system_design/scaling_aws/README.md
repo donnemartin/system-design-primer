@@ -126,7 +126,7 @@ Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
     * Allow the web server to respond to incoming requests from:
         * 80 for HTTP
         * 443 for HTTPS
-        * 22 for SSH to only whitelisted IPs
+        * 22 for SSH to only allowlisted IPs
     * Prevent the web server from initiating outbound connections
 
 *Trade-offs, alternatives, and additional details:*
@@ -182,7 +182,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 * Use a Virtual Private Cloud
     * Create a public subnet for the single **Web Server** so it can send and receive traffic from the internet
     * Create a private subnet for everything else, preventing outside access
-    * Only open ports from whitelisted IPs for each component
+    * Only open ports from allowlisted IPs for each component
 * These same patterns should be implemented for new components in the remainder of the exercise
 
 *Trade-offs, alternatives, and additional details:*
