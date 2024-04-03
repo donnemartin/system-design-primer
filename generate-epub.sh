@@ -34,7 +34,7 @@ generate () {
   cat $name.md | generate_from_stdin $name.epub $language
 }
 
-# Check if depencies exist
+# Check if dependencies exist
 check_dependencies () {
   for dependency in "${dependencies[@]}"
   do
