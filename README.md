@@ -435,7 +435,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### Source(s) and further reading
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
-* [Difference Between latency and throughput](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
+* [Difference between latency and throughput and how to improve it](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
 
 ## Availability vs consistency
 
