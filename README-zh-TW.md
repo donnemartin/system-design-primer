@@ -1451,7 +1451,7 @@ RPC 專注於揭露行為，它通常用來處理內部通訊的效能問題，�
 * RPC 的客戶端會變得和伺服器的實作綁得更死
 * 一個新的 API 必須在每個操作或使用案例中進行定義
 * RPC 很難抓錯誤
-* 你很難方便的修改現有的技術，舉例來說，如果你希望在 [Squid](http://www.squid-cache.org/) 這樣的快取伺服器上確保 [RPC 呼叫被正確的快取](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)，你可以需要多費額外的努力了。
+* 你很難方便的修改現有的技術，舉例來說，如果你希望在 [Squid](http://www.squid-cache.org/) 這樣的快取伺服器上確保 [RPC 呼叫被正確的快取](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)，你可以需要多費額外的努力了。
 
 ### 具象狀態轉移 (REST)
 
@@ -1503,7 +1503,7 @@ REST 關注於揭露資料，減少客戶端/伺服器之間耦合的程度，�
 * [你真的知道為什麼你更喜歡 REST 而不是 RPC 嗎？](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [什麼時候 RPC 比 REST 更適合](http://programmers.stackexchange.com/a/181186)
 * [REST 和 JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [揭開 RPC 和 REST 的神秘面紗](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [揭開 RPC 和 REST 的神秘面紗](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [使用 REST 的缺點](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
 * [破解系統設計面試](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
