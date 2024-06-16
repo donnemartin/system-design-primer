@@ -127,7 +127,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Horizontal scaling](#horizontal-scaling)
 * [Reverse proxy (web server)](#reverse-proxy-web-server)
     * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
+* [Camada de aplicação](#camada-de-aplicação)
     * [Microservices](#microservices)
     * [Service discovery](#service-discovery)
 * [Database](#database)
@@ -770,17 +770,17 @@ Additional benefits include:
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+## Camada de aplicação
 
 <p align="center">
   <img src="images/yB5SYwm.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Fonte:  Introdução à arquitetura de sistemas escaláveis</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+Separar a camada web da camada de aplicação (também conhecida como camada de plataforma) te permite escalar e configurar ambas as camadas de forma independente. Adicionar uma nova API resulta em adicionar servidores de aplicação sem necessariamente precisar adicionar novos servidores web. O **princípio de responsabilidade única** defende o uso de serviços pequenos e autônomos que trabalham juntos. Times pequenos com serviços pequenos podem planejar de forma mais agressiva o crescimento rápido.
 
-Workers in the application layer also help enable [asynchronism](#asynchronism).
+Workers na camada de aplicação também ajudam a permitir [assincronismo](#asynchronism).
 
 ### Microservices
 
