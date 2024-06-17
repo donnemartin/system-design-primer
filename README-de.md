@@ -195,7 +195,7 @@ Was Sie in einem Vorstellungsgespräch gefragt werden, hängt von verschiedenen 
 * Wie viel Erfahrung Sie haben
 * Welchen technischen Hintergrund Sie haben
 * Für welche Stellen Sie sich bewerben
-* bei welchen Unternehmen Sie sich bewerben
+* Bei welchen Unternehmen Sie sich bewerben
 * Glück
 
 Von erfahreneren Bewerbern wird im Allgemeinen erwartet, dass sie mehr über das Systemdesign wissen.  Von Architekten oder Projektleitern kann man erwarten, dass sie mehr wissen als einzelne Mitarbeiter.  Top-Tech-Unternehmen werden wahrscheinlich eine oder mehrere Design-Interview-Runden durchführen.
