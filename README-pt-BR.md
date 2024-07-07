@@ -415,8 +415,8 @@ Um serviço é **escalável** se tem um aumento de **performance** de forma prop
 
 Outra maneira de olhar para performance vs escalabilidade:
 
-* Se você tiver um **problema de performance**, seu sistema é lento para um único usuário.
-* Se você tiver um **problema de escalabilidade**, seu sistema é rápido para um único usuário, mas lento com uma alta carga de usuários.
+* Se você tiver um problema de **performance**, seu sistema é lento para um único usuário.
+* Se você tiver um problema de **escalabilidade**, seu sistema é rápido para um único usuário, mas lento com uma alta carga de usuários.
 
 ### Fonte(s) e leituras adicionais
 
