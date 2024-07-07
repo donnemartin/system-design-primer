@@ -399,7 +399,7 @@ Primeiro, você precisará de uma compreensão básica dos princípios comuns, a
 
 ### Próximos passos
 
-Em seguida, vamos olhar para os trade-offs (perde-e-ganha) de alto nível:
+Em seguida, vamos olhar para os trade-offs (perdas e ganhos) de alto nível:
 
 * **Performance** vs **escalabilidade**
 * **Latência** vs **taxa de transferência**
@@ -409,19 +409,19 @@ Lembre-se que **tudo é um trade-off**.
 
 Em seguida, vamos explorar tópicos mais específicos, como DNS, CDNs e load balancers.
 
-## Performance vs scalability
+## Performance vs escalabilidade
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Um serviço é **escalável** se tem um aumento de **performance** de forma proporcional aos recursos adicionados. Geralmente, aumentar o desempenho significa atender a mais unidades de trabalho, mas também pode significar lidar com unidades de trabalho maiores, como quando os conjuntos de dados crescem.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Outra maneira de olhar para performance vs escalabilidade:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Se você tiver um **problema de performance**, seu sistema é lento para um único usuário.
+* Se você tiver um **problema de escalabilidade**, seu sistema é rápido para um único usuário, mas lento com uma alta carga de usuários.
 
-### Source(s) and further reading
+### Fonte(s) e leituras adicionais
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Uma palavra sobre escalabilidade](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [Escalabilidade, disponibilidade, estabilidade, padrões](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
 ## Latency vs throughput
 
