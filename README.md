@@ -1816,6 +1816,7 @@ Special thanks to:
 * [High scalability](http://highscalability.com/)
 * [checkcheckzz/system-design-interview](https://github.com/checkcheckzz/system-design-interview)
 * [shashank88/system_design](https://github.com/shashank88/system_design)
+* [binhnguyennus/awesome-scalability](https://github.com/binhnguyennus/awesome-scalability)
 * [mmcgrana/services-engineering](https://github.com/mmcgrana/services-engineering)
 * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
