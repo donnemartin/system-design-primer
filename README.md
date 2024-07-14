@@ -124,6 +124,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Active-active](#active-active)
     * [Layer 4 load balancing](#layer-4-load-balancing)
     * [Layer 7 load balancing](#layer-7-load-balancing)
+    * [Consistent Hashing](#consistent-hashing)
     * [Horizontal scaling](#horizontal-scaling)
 * [Reverse proxy (web server)](#reverse-proxy-web-server)
     * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
@@ -689,6 +690,7 @@ Load balancers can route traffic based on various metrics, including:
 * [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
+* Consistent Hashing
 
 ### Layer 4 load balancing
 
@@ -699,6 +701,23 @@ Layer 4 load balancers look at info at the [transport layer](#communication) to 
 Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
 
 At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+
+### Consistent Hashing
+
+Consistent hashing is a technique used in load balancing to distribute requests evenly across multiple servers in a distributed system.
+
+Here's how it works:
+
+* <b>Hash Ring:</b> Imagine a virtual circle, called a hash ring. Each server and each incoming request is assigned a position on this circle based on a hash function. The hash function ensures that the same input (server ID or request data) always gets mapped to the same position on the ring.
+
+* <b>Request Distribution:</b> When a request arrives, its data (often a unique identifier) is hashed to determine its position on the hash ring. The server responsible for handling the request is the one whose position on the ring comes after the hashed request data, continuing clockwise around the circle.
+
+* <b>Scalability and Consistency:</b> The key benefit of consistent hashing is its scalability. If a server is added or removed, only requests that map to the immediate vicinity of the affected server will be re-routed. Most requests will continue to be directed to the same servers as before. This minimizes data re-caching and avoids creating hotspots where certain servers become overloaded
+
+<p align="center">
+  <img src="images/jsjss.png">
+  <br/>
+</p>
 
 ### Horizontal scaling
 
