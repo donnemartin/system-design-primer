@@ -97,11 +97,11 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
+* [Tópicos de System design: comece aqui](#tópicos-de-system-design-comece-aqui)
+    * [Etapa 1: Revise a aula em video sobre escalabilidade](#etapa-1-revise-a-aula-em-video-sobre-escalabilidade)
+    * [Etapa 2: Revise o artigo sobre escalabilidade](#etapa-2-revise-o-artigo-sobre-escalabilidade)
+    * [Próximos passos](#próximos-passos)
+* [Performance vs escalabilidade](#performance-vs-escalabilidade)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
     * [CAP theorem](#cap-theorem)
@@ -369,59 +369,59 @@ Check out the following links to get a better idea of what to expect:
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
-## System design topics: start here
+## Tópicos de System design: comece aqui
 
-New to system design?
+Novo em System design?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Primeiro, você precisará de uma compreensão básica dos princípios comuns, aprendendo o que eles são, como eles são usados e seus prós e contras.
 
-### Step 1: Review the scalability video lecture
+### Etapa 1: Revise a aula em video sobre escalabilidade
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Aula sobre escalabilidade em Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* Tópicos abordados:
+    * Escalabilidade vertical
+    * Escalabilidade horizontal
+    * Cacheamento
+    * Balanceamento de carga (Load Balancing)
+    * Replicação de banco de dados
+    * Particionamento de banco de dados
 
-### Step 2: Review the scalability article
+### Etapa 2: Revise o artigo sobre escalabilidade
 
-[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+[Escalabilidade](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* Tópicos abordados:
     * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Bancos de dados](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [Assíncronismo](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Próximos passos
 
-Next, we'll look at high-level trade-offs:
+Em seguida, vamos olhar para os trade-offs (perdas e ganhos) de alto nível:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Performance** vs **escalabilidade**
+* **Latência** vs **taxa de transferência**
+* **Disponibilidade** vs **consistência**
 
-Keep in mind that **everything is a trade-off**.
+Lembre-se que **tudo é um trade-off**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Em seguida, vamos explorar tópicos mais específicos, como DNS, CDNs e load balancers.
 
-## Performance vs scalability
+## Performance vs escalabilidade
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Um serviço é **escalável** se tem um aumento de **performance** de forma proporcional aos recursos adicionados. Geralmente, aumentar o desempenho significa atender a mais unidades de trabalho, mas também pode significar lidar com unidades de trabalho maiores, como quando os conjuntos de dados crescem.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Outra maneira de olhar para performance vs escalabilidade:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Se você tiver um problema de **performance**, seu sistema é lento para um único usuário.
+* Se você tiver um problema de **escalabilidade**, seu sistema é rápido para um único usuário, mas lento com uma alta carga de usuários.
 
-### Source(s) and further reading
+### Fonte(s) e leituras adicionais
 
-* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Uma palavra sobre escalabilidade](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [Escalabilidade, disponibilidade, estabilidade, padrões](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
 ## Latency vs throughput
 
