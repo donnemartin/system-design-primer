@@ -49,8 +49,15 @@ Additional topics for interview prep:
   <img src="images/zdCAkB3.png">
   <br/>
 </p>
-
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts:
+<p align="center">
+  <img src="images/screenshot.png">
+  <br/>
+</p>
+<p align="center">
+  <img src="images/screenshot_gif.gif">
+  <br/>
+</p>
+The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
 
 * [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
 * [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
