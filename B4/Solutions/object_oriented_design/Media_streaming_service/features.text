@@ -1,0 +1,24 @@
+
+1. User Class:
+
+    a. Represents a user of the streaming service.
+    b. Can create playlists and receive content recommendations based on their playlists.
+        
+2. Subscription Class:
+
+    a. Represents a user's subscription type and monthly fee.
+        
+3. Media Class:
+
+    a. Represents a media item (e.g., a movie or song) with attributes like title, genre, and play count.
+    b. Includes a method to play the media, which increments the play count.
+
+4. Playlist Class:
+
+    a. Represents a user-created playlist that can hold multiple media items.
+    b. Includes methods to add media to the playlist and display the playlist.
+        
+5. MediaLibrary Class:
+
+    a. Manages the collection of media items available for streaming.
+    b. Includes methods to add media to the library and provide recommendations based on user playlists.

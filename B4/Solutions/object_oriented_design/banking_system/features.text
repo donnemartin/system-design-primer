@@ -1,0 +1,9 @@
+Banking System:
+
+1. Account: Represents a bank account, with methods to deposit, 
+    withdraw, and check the balance.
+
+2. Transaction: Represents a transaction, which can either be a 
+    deposit or withdrawal.
+
+3. Bank: Manages accounts and allows for account creation.
