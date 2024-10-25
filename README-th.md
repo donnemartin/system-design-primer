@@ -19,7 +19,7 @@
 
 การเรียนรู้วิธีออกแบบระบบที่ขยายขนาดได้จะช่วยให้คุณเป็นวิศวกรที่เก่งขึ้น
 
-การออกแบบระบบเป็นหัวข้อที่กว้างมาก  There is a **มี ทรัพยากรจำนวนมหาศาลกระจายอยู่หลากหลายแหล่ง** เกี่ยวกับหลักการออกแบบระบบ.
+การออกแบบระบบเป็นหัวข้อที่กว้างมาก  ซึ่งมี **ทรัพยากรจำนวนมหาศาลกระจายอยู่หลากหลายแหล่ง** เกี่ยวกับหลักการออกแบบระบบ.
 
 โดย repository นี้ **เป็นการรวบรวมที่จัดระเบียบ** ของคลังความรู้ เพื่อที่จะออกบบรองรับการขยายของระบบ
 
@@ -27,21 +27,21 @@
 
 นี่เป็นโปรเจกต์โอเพนซอร์สที่อัปเดตอย่างต่อเนื่อง
 
-[Contributions](#contributing) "มาร่วมเป็นส่วนหนึ่ง กับเรา!"
+"[ร่วมเป็นส่วนหนึ่ง](#contributing)" กับเรา!
 
-### Prep for the system design interview
+### การเตรียมตัวสำหรับสัมภาษณ์การออกแบบระบบ
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+นอกจากการสัมภาษณ์การเขียนโค้ดแล้ว การออกแบบระบบยังเป็น **องค์ประกอบที่จำเป็นของ กระบวนการสัมภาษณ์ทางเทคนิค** ในหลายบริษัทเทคโนโลยี
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**ฝึกฝนคำถามสัมภาษณ์การออกแบบระบบที่พบบ่อย** อีกทั้ง **เปรียบเทียบ** ผลลัพธ์กับ **ตัวอย่างวิธีแก้ปัญหา** ไม่ว่าจะเป็น การวิเคราะห์, โค้ด หรือ แผนภาพ
 
-Additional topics for interview prep:
+หัวข้อเพิ่มเติมสำหรับการเตรียมตัวสัมภาษณ์
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [แนวทางการศึกษา](#study-guide)
+* [วิธีการตอบคำถามสัมภาษณ์การออกแบบระบบ](#how-to-approach-a-system-design-interview-question)
+* [คำถามสัมภาษณ์การออกแบบระบบ, **พร้อมคำตอบ**](#system-design-interview-questions-with-solutions)
+* [คำถามสัมภาษณ์การออกแบบเชิงวัตถุ, **พร้อมคำตอบ**](#object-oriented-design-interview-questions-with-solutions)
+* [คำถามสัมภาษณ์การออกแบบระบบเพิ่มเติม](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -50,17 +50,17 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+แฟลชการ์ด [Anki flashcard decks](https://apps.ankiweb.net/) ใช้การทบทวนแบบเว้นระยะเพื่อช่วยให้คุณจดจำแนวคิดการออกแบบระบบที่สำคัญ
 
 * [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
 * [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
 * [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+เหมาะสำหรับใช้งานได้ทุกที่ทุกเวลา
 
-### Coding Resource: Interactive Coding Challenges
+### แหล่งฝึกฝนการเขียนโค้ด : Interactive Coding Challenges
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+กำลังมองหาแหล่งข้อมูลเพื่อช่วยเตรียมความพร้อมสำหรับ [**การสัมภาษณ์เขียนโค้ด**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
@@ -71,20 +71,20 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## การมีส่วนร่วม
 
-> Learn from the community.
+> เรียนรู้จาก community
 
-Feel free to submit pull requests to help:
+เชิญชวนในการ Pull Request เพื่อช่วยเรา:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* แก้ไขข้อผิดพลาด
+* ปรับปรุงส่วนต่าง ๆ
+* เพิ่มเนื้อหาใหม่
+* [แปลภาษา](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+เนื้อหาที่ต้องการการปรับปรุงเพิ่มเติมจะถูกจัดไว้ในสถานะ [ระหว่างการพัฒนา](#under-development)
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+กรุณาศึกษา [แนวทางการมีส่วนร่วม](CONTRIBUTING.md).
 
 ## Index of system design topics
 
