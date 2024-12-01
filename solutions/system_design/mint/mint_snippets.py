@@ -9,6 +9,7 @@ class DefaultCategories(Enum):
     FOOD = 1
     GAS = 2
     SHOPPING = 3
+    GAS = 4
     # ...
 
 
