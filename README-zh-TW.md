@@ -384,13 +384,13 @@
 
 ### 第二步：複習關於可擴展性的文章
 
-[可擴展性](http://www.lecloud.net/tagged/scalability/chrono)
+[可擴展性](https://lecloud.tumblr.com/tagged/scalability)
 
 * 包含以下主題：
-    * [複製](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [資料庫](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [快取](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [非同步](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [複製](https://lecloud.tumblr.com/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [資料庫](https://lecloud.tumblr.com/post/7994751381/scalability-for-dummies-part-2-database)
+    * [快取](https://lecloud.tumblr.com/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [非同步](https://lecloud.tumblr.com/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 ### 下一步
 
