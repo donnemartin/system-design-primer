@@ -190,7 +190,7 @@ class UserGraphService(object):
             # Reverse the list since we iterated backwards
             return path_ids[::-1]
 
-    def _shortest_path(self, source_key, dest_key, path):
+    def _shortest_path(self, source_key, dest_key):
         # Use the id to get the Person
         source = self.person(source_key)
         # Update our bfs queue
