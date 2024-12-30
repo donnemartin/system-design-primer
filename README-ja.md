@@ -385,13 +385,13 @@
 
 ### ステップ 2: スケーラビリティに関する資料を読んで復習する
 
-[スケーラビリティ](http://www.lecloud.net/tagged/scalability/chrono)
+[スケーラビリティ](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
 * ここで触れられているトピックス:
-    * [クローン](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [データベース](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [キャッシュ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [非同期](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [クローン](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [データベース](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [キャッシュ](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [非同期](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 ### 次のステップ
 
@@ -670,7 +670,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 * [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy アーキテクチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [スケーラビリティ](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [スケーラビリティ](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [Layer 4 ロードバランシング](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 ロードバランシング](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
@@ -1034,7 +1034,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 
 * [基本用語の説明](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
 * [NoSQLデータベースについて調査と選択ガイド](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [スケーラビリティ](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [スケーラビリティ](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 * [NoSQLのイントロダクション](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQLパターン](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
@@ -1268,7 +1268,7 @@ def set_user(user_id, values):
 * [スケーラブルなシステムデザインパターン](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 * [スケールできるシステムを設計するためのイントロダクション](http://lethain.com/introduction-to-architecting-systems-for-scale/)
 * [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [スケーラビリティ](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [スケーラビリティ](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCacheのストラテジー](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 

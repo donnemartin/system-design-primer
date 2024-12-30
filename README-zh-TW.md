@@ -384,13 +384,13 @@
 
 ### 第二步：複習關於可擴展性的文章
 
-[可擴展性](http://www.lecloud.net/tagged/scalability/chrono)
+[可擴展性](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
 * 包含以下主題：
-    * [複製](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [資料庫](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [快取](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [非同步](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+    * [複製](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [資料庫](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [快取](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [非同步](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 ### 下一步
 
@@ -669,7 +669,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 * [NGINX 架構](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy 架構指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [可擴展性](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [可擴展性](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [維基百科](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [第四層負載平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [第七層負載平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
@@ -1035,7 +1035,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 * [資料庫術語解釋](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
 * [NoSQL 資料庫：調查與決策指南](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [可擴展性](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [可擴展性](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 * [NoSQL 介紹](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQL 模式](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
@@ -1269,7 +1269,7 @@ def set_user(user_id, values):
 * [可擴展的系統設計模式](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 * [可擴展的系統架構介紹](http://lethain.com/introduction-to-architecting-systems-for-scale/)
 * [可擴展性、可用性、穩定性與模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [可擴展性](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [可擴展性](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [維基百科](https://en.wikipedia.org/wiki/Cache_(computing))
 
