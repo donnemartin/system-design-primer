@@ -3,7 +3,7 @@
 # システム設計入門
 
 <p align="center">
-  <img src="http://i.imgur.com/jj3A5N8.png"/>
+  <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -44,7 +44,7 @@
 ## 暗記カード
 
 <p align="center">
-  <img src="http://i.imgur.com/zdCAkB3.png"/>
+  <img src="images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -61,7 +61,7 @@
 コード技術面接用の問題を探している場合は[**こちら**](https://github.com/donnemartin/interactive-coding-challenges)
 
 <p align="center">
-  <img src="http://i.imgur.com/b4YtAEN.png"/>
+  <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -91,7 +91,7 @@
 > それぞれのセクションはより学びを深めるような他の文献へのリンクが貼られています。
 
 <p align="center">
-  <img src="http://i.imgur.com/jrUBAF7.png"/>
+  <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
@@ -180,7 +180,7 @@
 
 > 学習スパンに応じてみるべきトピックス (short, medium, long)
 
-![Imgur](http://i.imgur.com/OfVllex.png)
+![Imgur](images/OfVllex.png)
 
 **Q: 面接のためには、ここにあるものすべてをやらないといけないのでしょうか？**
 
@@ -302,49 +302,49 @@
 
 [問題と解答を見る](solutions/system_design/pastebin/README.md)
 
-![Imgur](http://i.imgur.com/4edXG0T.png)
+![Imgur](images/4edXG0T.png)
 
 ### Twitterタイムライン&検索 (もしくはFacebookフィード&検索)を設計する
 
 [問題と解答を見る](solutions/system_design/twitter/README.md)
 
-![Imgur](http://i.imgur.com/jrUBAF7.png)
+![Imgur](images/jrUBAF7.png)
 
 ### ウェブクローラーの設計
 
 [問題と解答を見る](solutions/system_design/web_crawler/README.md)
 
-![Imgur](http://i.imgur.com/bWxPtQA.png)
+![Imgur](images/bWxPtQA.png)
 
 ### Mint.comの設計
 
 [問題と解答を見る](solutions/system_design/mint/README.md)
 
-![Imgur](http://i.imgur.com/V5q57vU.png)
+![Imgur](images/V5q57vU.png)
 
 ### SNSサービスのデータ構造を設計する
 
 [問題と解答を見る](solutions/system_design/social_graph/README.md)
 
-![Imgur](http://i.imgur.com/cdCv5g7.png)
+![Imgur](images/cdCv5g7.png)
 
 ### 検索エンジンのキー/バリュー構造を設計する
 
 [問題と解答を見る](solutions/system_design/query_cache/README.md)
 
-![Imgur](http://i.imgur.com/4j99mhe.png)
+![Imgur](images/4j99mhe.png)
 
 ### Amazonのカテゴリ毎の売り上げランキングを設計する
 
 [問題と解答を見る](solutions/system_design/sales_rank/README.md)
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](images/MzExP06.png)
 
 ### AWS上で100万人規模のユーザーを捌くサービスを設計する
 
 [問題と解答を見る](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](http://i.imgur.com/jj3A5N8.png)
+![Imgur](images/jj3A5N8.png)
 
 ## オブジェクト指向設計問題と解答
 
@@ -436,7 +436,7 @@
 ### CAP 理論
 
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png"/>
+  <img src="images/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
@@ -530,7 +530,7 @@
 ## ドメインネームシステム
 
 <p align="center">
-  <img src="http://i.imgur.com/IOyLj4i.jpg"/>
+  <img src="images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
@@ -568,7 +568,7 @@ DNSは少数のオーソライズされたサーバーが上位に位置する�
 ## コンテンツデリバリーネットワーク(Content delivery network)
 
 <p align="center">
-  <img src="http://i.imgur.com/h9TAuGI.jpg"/>
+  <img src="images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
@@ -609,7 +609,7 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 ## ロードバランサー
 
 <p align="center">
-  <img src="http://i.imgur.com/h81n9iK.png"/>
+  <img src="images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -679,7 +679,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 ## リバースプロキシ(webサーバー)
 
 <p align="center">
-  <img src="http://i.imgur.com/n41Azff.png"/>
+  <img src="images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
@@ -722,7 +722,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 ## アプリケーション層
 
 <p align="center">
-  <img src="http://i.imgur.com/yB5SYwm.png"/>
+  <img src="images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -759,7 +759,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 ## データベース
 
 <p align="center">
-  <img src="http://i.imgur.com/Xkm5CXz.png"/>
+  <img src="images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -782,7 +782,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 マスターデータベースが読み取りと書き込みを処理し、書き込みを一つ以上のスレーブデータベースに複製します。スレーブデータベースは読み取りのみを処理します。スレーブデータベースは木構造のように追加のスレーブにデータを複製することもできます。マスターデータベースがオフラインになった場合には、いずれかのスレーブがマスターに昇格するか、新しいマスターデータベースが追加されるまでは読み取り専用モードで稼働します。
 
 <p align="center">
-  <img src="http://i.imgur.com/C9ioGtn.png"/>
+  <img src="images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -797,7 +797,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 いずれのマスターも読み取り書き込みの両方に対応する。書き込みに関してはそれぞれ協調する。いずれかのマスターが落ちても、システム全体としては読み書き両方に対応したまま運用できる。
 
 <p align="center">
-  <img src="http://i.imgur.com/krAHLGg.png"/>
+  <img src="images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -825,7 +825,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 #### Federation
 
 <p align="center">
-  <img src="http://i.imgur.com/U3qV33e.png"/>
+  <img src="images/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -846,7 +846,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 #### シャーディング
 
 <p align="center">
-  <img src="http://i.imgur.com/wU8x5Id.png"/>
+  <img src="images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -966,7 +966,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 * [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database)
 * [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 * [Redisアーキテクチャ](http://qnimate.com/overview-of-redis-architecture/)
-* [メムキャッシュアーキテクチャ](https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/)
+* [メムキャッシュアーキテクチャ](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### ドキュメントストア
 
@@ -990,7 +990,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 #### ワイドカラムストア
 
 <p align="center">
-  <img src="http://i.imgur.com/n16iOGk.png"/>
+  <img src="images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1013,7 +1013,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 #### グラフデータベース
 
 <p align="center">
-  <img src="http://i.imgur.com/fNcl65g.png"/>
+  <img src="images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1041,7 +1041,7 @@ Googleは[Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/cha
 ### SQLか？NoSQLか？
 
 <p align="center">
-  <img src="http://i.imgur.com/wXGqG5f.png"/>
+  <img src="images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1083,7 +1083,7 @@ NoSQLに適するサンプルデータ:
 ## キャッシュ
 
 <p align="center">
-  <img src="http://i.imgur.com/Q6z24La.png"/>
+  <img src="images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -1154,7 +1154,7 @@ Redisはさらに以下のような機能を備えています:
 #### キャッシュアサイド
 
 <p align="center">
-  <img src="http://i.imgur.com/ONjORqk.png"/>
+  <img src="images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1190,7 +1190,7 @@ def get_user(self, user_id):
 #### ライトスルー
 
 <p align="center">
-  <img src="http://i.imgur.com/0vBc0hN.png"/>
+  <img src="images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1225,7 +1225,7 @@ def set_user(user_id, values):
 #### ライトビハインド (ライトバック)
 
 <p align="center">
-  <img src="http://i.imgur.com/rgSrvjG.png"/>
+  <img src="images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1243,7 +1243,7 @@ def set_user(user_id, values):
 #### リフレッシュアヘッド
 
 <p align="center">
-  <img src="http://i.imgur.com/kxtjqgE.png"/>
+  <img src="images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1275,7 +1275,7 @@ def set_user(user_id, values):
 ## 非同期処理
 
 <p align="center">
-  <img src="http://i.imgur.com/54GYsSx.png"/>
+  <img src="images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -1321,7 +1321,7 @@ def set_user(user_id, values):
 ## 通信
 
 <p align="center">
-  <img src="http://i.imgur.com/5KeocQs.jpg"/>
+  <img src="images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
@@ -1353,7 +1353,7 @@ HTTPは**TCP** や **UDP** などの低級プロトコルに依存している�
 ### 伝送制御プロトコル (TCP)
 
 <p align="center">
-  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
+  <img src="images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1377,7 +1377,7 @@ TCPは高い依存性を要し、時間制約が厳しくないものに適し�
 ### ユーザデータグラムプロトコル (UDP)
 
 <p align="center">
-  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
+  <img src="images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1406,7 +1406,7 @@ TCPよりもUDPを使うのは:
 ### 遠隔手続呼出 (RPC)
 
 <p align="center">
-  <img src="http://i.imgur.com/iF4Mkb5.png"/>
+  <img src="images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
@@ -1450,7 +1450,7 @@ RPCは振る舞いを公開することに焦点を当てています。RPCは�
 * RPCクライアントとはサービス実装により厳密に左右されることになります。
 * 新しいオペレーション、使用例があるたびに新しくAPIが定義されなければなりません。
 * RPCをデバッグするのは難しい可能性があります。
-* 既存のテクノロジーをそのまま使ってサービスを構築することはできないかもしれません。例えば、[Squid](http://www.squid-cache.org/)などのサーバーに[RPCコールが正しくキャッシュ](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) されるように追加で骨を折る必要があるかもしれません。
+* 既存のテクノロジーをそのまま使ってサービスを構築することはできないかもしれません。例えば、[Squid](http://www.squid-cache.org/)などのサーバーに[RPCコールが正しくキャッシュ](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) されるように追加で骨を折る必要があるかもしれません。
 
 ### Representational state transfer (REST)
 
@@ -1502,7 +1502,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 * [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [Debunking the myths of RPC and REST](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
@@ -1620,7 +1620,7 @@ Notes
 | ランダムID発行システムの設計 | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
 | 一定のインターバル時間での上位k件を返す | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
 | 複数のデータセンターからデータを配信するサービスの設計 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | システム設計例題を追加する | [Contribute](#contributing) |
 
@@ -1629,7 +1629,7 @@ Notes
 > 世の中のシステムがどのように設計されているかについての記事
 
 <p align="center">
-  <img src="http://i.imgur.com/TcUo2fw.png"/>
+  <img src="images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
@@ -1712,7 +1712,7 @@ Notes
 * [Facebook Engineering](https://www.facebook.com/Engineering)
 * [Flickr Code](http://code.flickr.net/)
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
-* [GitHub Engineering Blog](http://githubengineering.com/)
+* [GitHub Engineering Blog](https://github.blog/category/engineering)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)
@@ -1732,6 +1732,7 @@ Notes
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
 * [Spotify Labs](https://labs.spotify.com/)
+* [Stripe Engineering Blog](https://stripe.com/blog/engineering)
 * [Twilio Engineering Blog](http://www.twilio.com/engineering)
 * [Twitter Engineering](https://engineering.twitter.com/)
 * [Uber Engineering Blog](http://eng.uber.com/)
