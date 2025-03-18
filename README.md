@@ -92,10 +92,6 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 >
 > Each section contains links to more in-depth resources.
 
-<p align="center">
-  <img src="images/jrUBAF7.png">
-  <br/>
-</p>
 
 * [System design topics: start here](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
