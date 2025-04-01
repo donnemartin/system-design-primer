@@ -440,9 +440,9 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### CAP theorem
 
 <p align="center">
-  <img src="images/bgLMI2u.png">
+  <img src="images/1_2Ed1S7UUfLT21AeH0ymIwQ.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=https://medium.com/codenx/explaining-the-cap-theorem-and-its-limitations-e43f47f104c3>Source: medium.com explaining-the-cap-theorem-and-its-limitations</a></i>
 </p>
 
 In a distributed computer system, you can only support two of the following guarantees:
