@@ -1794,8 +1794,7 @@ Handy metrics based on numbers above:
 
 ### Company architectures
 
-Start with an overview of the architectures of well know big tech companies: [System Design And Recommendation Algorithm Of 20 Big Companies](https://www.theinsaneapp.com/2021/03/system-design-and-recommendation-algorithms.html).
-
+Start with an overview of the architectures of well-known big tech companies: [System Design And Recommendation Algorithm Of 20 Big Companies](https://www.theinsaneapp.com/2021/03/system-design-and-recommendation-algorithms.html).
 | Company | Reference(s) |
 |---|---|
 | Amazon | [Amazon architecture](http://highscalability.com/amazon-architecture) |
