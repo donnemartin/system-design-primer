@@ -276,7 +276,7 @@
 
 查看以下的連結獲得更好的做法：
 
-* [如何在系統設計的面試中勝出](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [如何在系統設計的面試中勝出](https://web.archive.org/web/20210505130322/https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [系統設計的面試](http://www.hiredintech.com/system-design)
 * [系統架構與設計的面試介紹](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
