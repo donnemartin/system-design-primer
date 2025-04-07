@@ -179,6 +179,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
   * [Task queues](#task-queues)
   * [Back pressure](#back-pressure)
 * [Communication](#communication)
+  * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
   * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
   * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
   * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
@@ -1445,13 +1446,13 @@ Once the transaction is committed, a background worker reads the "process paymen
 
 HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are the common HTTP verbs:
 
 | Verb | Description | Idempotent* | Safe | Cacheable |
 |---|---|---|---|---|
 | GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
+| POST | Creates a resource or triggers a process that handles data | No | No | Yes if response contains freshness info |
+| PUT | Creates or replaces a resource | Yes | No | No |
 | PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
 | DELETE | Deletes a resource | Yes | No | No |
 
