@@ -720,7 +720,8 @@ Load balancers can route traffic based on various metrics, including:
 * [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
-* Consistent Hashing
+* [Consistent Hashing](#consistent-hashing)
+
 
 ### Layer 4 load balancing
 
@@ -1002,8 +1003,9 @@ Benchmarking and profiling might point you to the following optimizations.
 ##### Tighten up the schema
 
 * MySQL dumps to disk in contiguous blocks for fast access.
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-  * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
+* In some old databases it was better to use `CHAR` instead of `VARCHAR` for fixed-length fields. 
+  In those systems `CHAR` effectively allowed for fast, random access, whereas with `VARCHAR`, the system had to find the end of a string before moving onto the next one.
+  But im most modern DB not only that this is not true, but more over it sometimes the opposite, e.g. [Postgresql tip on datatype]https://www.postgresql.org/docs/current/datatype-character.html 
 * Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
 * Use `INT` for larger numbers up to 2^32 or 4 billion.
 * Use `DECIMAL` for currency to avoid floating point representation errors.
