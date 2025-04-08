@@ -798,10 +798,11 @@ Additional benefits include:
 * **Compression** - Compress server responses
 * **Caching** - Return the response for cached requests
 * **Static content** - Serve static content directly
-  * HTML/CSS/JS
-  * Photos
-  * Videos
-  * Etc
+    * HTML/CSS/JS
+    * Photos
+    * Videos
+    * Etc
+* **Aggregates Requests** - aggregates multiple individual requests into a single request. This pattern applies when a single operation requires calls to multiple backend services. The client sends one request to the reverse proxy. The reverse proxy dispatches requests to the various backend services, and then aggregates the results and sends them back to the client. This helps to reduce chattiness between the client and the backend.
 
 ### Load balancer vs reverse proxy
 
@@ -820,6 +821,7 @@ Additional benefits include:
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+* [API Gateways] (https://docs.microsoft.com/en-us/azure/architecture/microservices/design/gateway)
 
 ## Application layer
 
