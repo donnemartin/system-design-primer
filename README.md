@@ -958,7 +958,7 @@ Benchmarking and profiling might point you to the following optimizations.
 * Use `INT` for larger numbers up to 2^32 or 4 billion.
 * Use `DECIMAL` for currency to avoid floating point representation errors.
 * Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
+* `VARCHAR(255)` is the largest number of characters that can be counted in an 8-bit number, often maximizing the use of a byte in some RDBMS.
 * Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
 
 ##### Use good indices
@@ -1654,7 +1654,7 @@ Handy metrics based on numbers above:
 | Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
 | Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| Design Google Docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
 | Design a key-value store like Redis | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | Design a recommendation system like Amazon's | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
@@ -1758,7 +1758,7 @@ Handy metrics based on numbers above:
 * [Cloudera Developer Blog](http://blog.cloudera.com/)
 * [Dropbox Tech Blog](https://tech.dropbox.com/)
 * [Engineering at Quora](https://www.quora.com/q/quoraengineering)
-* [Ebay Tech Blog](http://www.ebaytechblog.com/)
+* [eBay Tech Blog](http://www.ebaytechblog.com/)
 * [Evernote Tech Blog](https://blog.evernote.com/tech/)
 * [Etsy Code as Craft](http://codeascraft.com/)
 * [Facebook Engineering](https://www.facebook.com/Engineering)
@@ -1777,7 +1777,7 @@ Handy metrics based on numbers above:
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://medium.com/paypal-engineering)
+* [PayPal Developer Blog](https://medium.com/paypal-engineering)
 * [Pinterest Engineering Blog](https://medium.com/@Pinterest_Engineering)
 * [Reddit Blog](http://www.redditblog.com/)
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
