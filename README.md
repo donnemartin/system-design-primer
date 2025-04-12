@@ -465,7 +465,7 @@ First, you'll need a basic understanding of common principles, learning about wh
 - **Replication lag** : When you copy data from the main database to replicas, there's a small delay. The replicas might not have the very latest updates right away.
 - **Consistency issues in write-heavy apps** : If your app writes a lot of data (e.g., saving user actions), the replicas may fall behind, and different servers might show different versions of the data for a short time.
 
-## Database Partitioning [Sharding](https://learn.microsoft.com/en-us/azure/architecture/patterns/sharding)
+## Database Partitioning - [Sharding](https://learn.microsoft.com/en-us/azure/architecture/patterns/sharding)
 
 **Sharding** splits a large database into smaller parts, called shards, each stored on separate machines.
 
