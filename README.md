@@ -391,16 +391,14 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 **Example**: Upgrading your DB server from 8GB RAM to 64GB RAM.
 
-**✅ Pros**
+**Pros**
 - Easy to implement
 - No application code changes needed
 
-**❌ Cons**
+**Cons**
 - Physical hardware limits
 - Downtime may be required
 - Becomes expensive quickly
-
----
 
 ## Horizontal Scaling
 
@@ -408,15 +406,14 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 **Example**: Adding more web servers behind a load balancer.
 
-**✅ Pros**
+**Pros**
 - Scales better for large systems
 - Enables high availability and redundancy
 
-**❌ Cons**
+**Cons**
 - More complex to manage
 - Requires stateless architecture and coordination
 
----
 
 ## Caching
 
@@ -427,11 +424,11 @@ First, you'll need a basic understanding of common principles, learning about wh
 - **CDN cache**: A Content Delivery Network (CDN) stores copies of your content in many places around the world. When a user visits your site, the CDN gives them the closest copy, which loads faster.
 - **Server-side cache**: This is caching done on the backend using tools like Redis or Memcached. For example, if a database query is expensive (slow or heavy), the result can be saved in memory so it doesn’t need to be repeated.
 
-**✅ Pros**
+**Pros**
 - Significantly improves response times
 - Reduces backend load
 
-**❌ Cons**
+**Cons**
 - Sometimes the data in the cache is old and doesn’t match the latest data in the database.
 - It's tricky to know when to delete or update the cached data. If you do it too soon, you lose the benefit of caching; if too late, users may see outdated info.
 
@@ -444,15 +441,15 @@ First, you'll need a basic understanding of common principles, learning about wh
 - **Least connections** : Requests go to the server that is currently handling the fewest active connections. This helps keep load balanced more fairly.
 - **IP hashing** : The system uses the user's IP address to decide which server handles their requests. This way, the same user often gets routed to the same server.
 
-**✅ Pros**
+**Pros**
 - High availability
 - Fault tolerance
 - Enables horizontal scaling
 
-**❌ Cons**
+**Cons**
 - Can become a single point of failure (use redundant balancers)
 
-## 🛢️ Database Replication
+## Database Replication
 
 **Database replication** copies data from a primary (master) DB to one or more replicas (slaves).
 
@@ -460,11 +457,11 @@ First, you'll need a basic understanding of common principles, learning about wh
 - **Master-slave**: Writes to master, reads from replicas
 - **Master-master**: Multiple writable nodes (more complex)
 
-**✅ Pros**
+**Pros**
 - Improved read scalability
 - Redundancy and failover support
 
-**❌ Cons**
+**Cons**
 - **Replication lag** : When you copy data from the main database to replicas, there's a small delay. The replicas might not have the very latest updates right away.
 - **Consistency issues in write-heavy apps** : If your app writes a lot of data (e.g., saving user actions), the replicas may fall behind, and different servers might show different versions of the data for a short time.
 
@@ -476,11 +473,11 @@ First, you'll need a basic understanding of common principles, learning about wh
 - **Horizontal partitioning**: Splits by rows (e.g., user_id ranges)
 - **Vertical partitioning**: Splits by columns (e.g., profile vs activity data)
 
-**✅ Pros**
+**Pros**
 - Improves performance and scaling
 - Avoids overloading a single node
 
-**❌ Cons**
+**Cons**
 - Querying across shards is difficult
 - Requires smart shard key design
 - Rebalancing shards can be tricky
