@@ -388,6 +388,7 @@ You can practice a few sample questions and discuss solutions with the community
 | Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
 | Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Design a cab booking | [Solution](https://youtu.be/Yn7C0x5ozx4)  |
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
