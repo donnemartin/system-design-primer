@@ -96,7 +96,7 @@ We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Datab
                 * Removes the link from `links_to_crawl` in the **NoSQL Database**
                 * Inserts the page link and signature to `crawled_links` in the **NoSQL Database**
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 `PagesDataStore` is an abstraction within the **Crawler Service** that uses the **NoSQL Database**:
 
@@ -180,7 +180,7 @@ class Crawler(object):
 
 We need to be careful the web crawler doesn't get stuck in an infinite loop, which happens when the graph contains a cycle.
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 We'll want to remove duplicate urls:
 

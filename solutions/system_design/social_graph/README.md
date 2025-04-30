@@ -58,7 +58,7 @@ Handy conversion guide:
 
 ### Use case: User searches for someone and sees the shortest path to the searched person
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 Without the constraint of millions of users (vertices) and billions of friend relationships (edges), we could solve this unweighted shortest path task with a general BFS approach:
 

@@ -93,7 +93,7 @@ Since the cache has limited capacity, we'll use a least recently used (LRU) appr
 
 The cache can use a doubly-linked list: new items will be added to the head while items to expire will be removed from the tail.  We'll use a hash table for fast lookups to each linked list node.
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 **Query API Server** implementation:
 

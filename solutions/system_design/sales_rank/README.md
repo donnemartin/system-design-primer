@@ -80,7 +80,7 @@ Handy conversion guide:
 
 We could store the raw **Sales API** server log files on a managed **Object Store** such as Amazon S3, rather than managing our own distributed file system.
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 We'll assume this is a sample log entry, tab delimited:
 

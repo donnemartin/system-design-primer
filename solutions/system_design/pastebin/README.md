@@ -104,7 +104,7 @@ An alternative to a relational database acting as a large hash table, we could u
     * Saves the paste data to the **Object Store**
     * Returns the url
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 The `pastes` table could have the following structure:
 
@@ -192,7 +192,7 @@ Response:
 
 Since realtime analytics are not a requirement, we could simply **MapReduce** the **Web Server** logs to generate hit counts.
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 ```python
 class HitCounts(MRJob):

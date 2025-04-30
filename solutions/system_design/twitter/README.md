@@ -119,7 +119,7 @@ We could store media such as photos or videos on an **Object Store**.
     * Uses the **Notification Service** to send out push notifications to followers:
         * Uses a **Queue** (not pictured) to asynchronously send out notifications
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 If our **Memory Cache** is Redis, we could use a native Redis list with the following structure:
 

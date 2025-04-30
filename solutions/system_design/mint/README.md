@@ -94,7 +94,7 @@ We could store info on the 10 million users in a [relational database](https://g
 * The **Web Server** forwards the request to the **Accounts API** server
 * The **Accounts API** server updates the **SQL Database** `accounts` table with the newly entered account info
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 The `accounts` table could have the following structure:
 
@@ -180,7 +180,7 @@ We'll create an [index](https://github.com/ido777/system-design-primer-update#us
 
 For the **Category Service**, we can seed a seller-to-category dictionary with the most popular sellers.  If we estimate 50,000 sellers and estimate each entry to take less than 255 bytes, the dictionary would only take about 12 MB of memory.
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 ```python
 class DefaultCategories(Enum):
@@ -263,7 +263,7 @@ Running analyses on the transaction files could significantly reduce the load on
 
 We could call the **Budget Service** to re-run the analysis if the user updates a category.
 
-**Clarify with your interviewer how much code you are expected to write**.
+**Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
 Sample log file format, tab delimited:
 
