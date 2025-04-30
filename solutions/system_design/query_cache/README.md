@@ -1,14 +1,26 @@
-# Design a key-value cache to save the results of the most recent web server queries
+# Design a key-value cache to save the results of the most recent web server queries 
 
 *Note: This document links directly to relevant areas found in the [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
-## Step 1: Outline use cases and constraints
+## Step 1: Investigate the problem, use cases and constraints and establish design scope
 
-> Gather requirements and scope the problem.
+> Gather main functional requirements and scope the problem.
 > Ask questions to clarify use cases and constraints.
 > Discuss assumptions.
 
-Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
+
+Adding clarifying questions is the first step in the process.
+Remember your goal is to understand the problem and establish the design scope.
+
+### What questions should you ask to clarify the problem?
+
+Here is an example of the dialog you could have with the **Interviewer**:
+**Interviewer**: Design a key-value cache to save the results of the most recent web server queries.
+**Candidate**: ok, do you mean deploy Redis as docker or building Redis like?
+**Interviewer**: I mean building Redis like.
+**Candidate**: ok, can you please explain the traffic assumptions? 
+**Interviewer**: Yes, the cache should be able to handle 10 million users, 10 billion queries per month.
+**Candidate**: ok. So here is the scope of the problem:
 
 ### Use cases
 
@@ -54,11 +66,103 @@ Handy conversion guide:
 * 40 requests per second = 100 million requests per month
 * 400 requests per second = 1 billion requests per month
 
-## Step 2: Create a high level design
+## Step 2: Create a high level design & Get buy-in
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/KqZ3dSx.png)
+
+<!-- Old image for reference ![Imgur](http://i.imgur.com/KqZ3dSx.png) -->
+
+![Imgur](http://i.imgur.com/KqZ3dSx.png) 
+
+
+```mermaid
+%%{init: { "flowchart": { "htmlLabels": true } }}%%
+
+flowchart TB
+  %% Client Layer
+  subgraph Client["**Client**"]
+    direction TB
+    WebClient[Web Client]
+    MobileClient[Mobile Client]
+  end
+
+  %% Web Server Layer
+  subgraph WebServer["**Web Server - (Reverse Proxy)**"]
+    direction LR
+    QueryAPI[Query API]
+    ReverseIndexService[Reverse Index Service]
+    DocumentService[Document Service]
+  end
+
+  %% Storage Layer
+  subgraph MemoryCache["**Memory Cache**"]
+
+  end
+
+  %% Data Flow
+  Client --> WebServer
+  QueryAPI --> ReverseIndexService  
+  QueryAPI --> DocumentService
+  QueryAPI --> MemoryCache
+
+
+  %% Styling Nodes
+  style WebClient fill:#FFCCCC,stroke:#CC0000,stroke-width:2px,rx:6,ry:6
+  style MobileClient fill:#FFD580,stroke:#AA6600,stroke-width:2px,rx:6,ry:6
+  style ReverseIndexService fill:#CCE5FF,stroke:#004085,stroke-width:2px,rx:6,ry:6
+  style QueryAPI fill:#CCE5FF,stroke:#004085,stroke-width:2px,rx:6,ry:6
+  style DocumentService fill:#D4EDDA,stroke:#155724,stroke-width:2px,rx:6,ry:6
+  style MemoryCache fill:#E2E3E5,stroke:#6C757D,stroke-width:2px,rx:6,ry:6
+```
+
+### Get buy-in
+
+✅ Why This Breakdown?
+
+Rather than diving into implementation, this diagram tells a story:
+
+It reflects the search query workflow with **separation of concerns**:
+
+- The **Query API** handles parsing and orchestration of the search process
+- The **Reverse Index Service** focuses on finding matching documents efficiently when there is a cache miss
+- The **Document Service** retrieves and formats the actual content
+- The **Memory Cache** the memory cache which is used to serve cache hits
+
+A **Reverse/Inverted Index** is a data structure used in search engines that maps content (like words or terms) to their locations in a set of documents. It's called "reverse" because instead of mapping documents to their contents, it maps contents to their documents - hence inverting the relationship.
+Let me break this down with an example:
+Suppose we have two documents:
+1. "The quick brown fox"
+2. "The lazy brown dog"
+A reverse index would look something like this:
+* "The" -> [doc1, doc2]
+* "quick" -> [doc1]
+* "brown" -> [doc1, doc2]
+* "fox" -> [doc1]
+* "lazy" -> [doc2]
+* "dog" -> [doc2]
+
+After finding matching documents, the Document Service is then used to fetch the actual content.
+Workflow:
+   Query API -> Memory Cache -> Cache Miss -> Reverse Index Service:
+   1. Receives processed query from Query API
+   2. Uses inverted index to find matching documents
+   3. Ranks the results
+   4. Returns top matches to Query API  
+
+   Query API -> Memory Cache -> Cache Hit:
+   1. refresh the cache with the new hit 
+   2. Returns top matches to Query API
+
+
+Since the cache has limited capacity, we'll use a **least recently used (LRU)** approach to expire older entries.
+**Recency**: Every time you read or write a key, you mark it as the “most recently used.”
+
+**Eviction**: When inserting a new entry into a full cache, you remove the entry marked as the “least recently used” (i.e. the one you haven’t touched in the longest time).
+
+The architecture supports both the "cache hit" and "cache miss" scenarios while maintaining clear boundaries between components. 
+
+You should ask for a feedback after you present the diagram, and get buy-in and some initial ideas about areas to dive into, based on the feedback.
 
 ## Step 3: Design core components
 
@@ -68,7 +172,7 @@ Handy conversion guide:
 
 Popular queries can be served from a **Memory Cache** such as Redis or Memcached to reduce read latency and to avoid overloading the **Reverse Index Service** and **Document Service**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know>1</a></sup>
 
-Since the cache has limited capacity, we'll use a least recently used (LRU) approach to expire older entries.
+
 
 * The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Query API** server
@@ -91,7 +195,12 @@ Since the cache has limited capacity, we'll use a least recently used (LRU) appr
 
 #### Cache implementation
 
-The cache can use a doubly-linked list: new items will be added to the head while items to expire will be removed from the tail.  We'll use a hash table for fast lookups to each linked list node.
+To achieve constant time O(1) for both `get` and `put`, combine two structures:
+
+* **Hash map** (Map<key, node>): for O(1) lookup of nodes.
+
+* **Doubly‐linked list**: nodes ordered by recency, head = most recent, tail = least recent. O(1) for `append` and `remove`
+
 
 **Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
@@ -123,10 +232,11 @@ class QueryApi(object):
 
 ```python
 class Node(object):
-
     def __init__(self, query, results):
-        self.query = query
-        self.results = results
+        self.query   = query    # the cache key
+        self.results = results  # the cached payload
+        self.prev    = None     # link to previous node
+        self.next    = None     # link to next node
 ```
 
 **LinkedList** implementation:
@@ -139,13 +249,31 @@ class LinkedList(object):
         self.tail = None
 
     def move_to_front(self, node):
-        ...
+        """Detach `node` wherever it is, then insert it at head."""
+        # 1) If node is already head, nothing to do.
+        # 2) Otherwise unlink it:
+        #      node.prev.next = node.next
+        #      node.next.prev = node.prev
+        # 3) Re-link at front:
+        #      node.next = self.head
+        #      self.head.prev = node
+        #      self.head = node
+        #      node.prev = None
 
     def append_to_front(self, node):
-        ...
+        """Insert a brand-new node at head."""
+        # 1) node.next = self.head
+        # 2) if head exists: head.prev = node
+        # 3) self.head = node
+        # 4) if tail is None (first element): tail = node
 
     def remove_from_tail(self):
-        ...
+        """Unlink the tail node and return it (the oldest entry)."""
+        # 1) old = self.tail
+        # 2) self.tail = old.prev
+        # 3) if new tail: new_tail.next = None
+        #    else (list empty): head = None
+        # 4) return old
 ```
 
 **Cache** implementation:
@@ -196,6 +324,14 @@ class Cache(object):
             self.lookup[query] = new_node
 ```
 
+Why this is O(1)
+* **Lookup**: `self.lookup[query]` is a hash-table lookup → O(1).
+* **Reordering**: Doubly-linked list insertions/removals (given a reference to the node) are pointer updates → O(1).
+* **Eviction**: Removing tail is O(1), and deleting from the dict is O(1).
+
+
+
+
 #### When to update the cache
 
 The cache should be updated when:
@@ -208,7 +344,7 @@ The most straightforward way to handle these cases is to simply set a max time t
 
 Refer to [When to update the cache](https://github.com/ido777/system-design-primer-update#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/ido777/system-design-primer-update#cache-aside).
 
-## Step 4: Scale the design
+###  Scale the design
 
 > Identify and address bottlenecks, given the constraints.
 
@@ -216,9 +352,22 @@ Refer to [When to update the cache](https://github.com/ido777/system-design-prim
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
-State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+State you would 
+1) **Benchmark/Load Test**, 
+2) **Profile** for bottlenecks 
+3) address bottlenecks while evaluating alternatives and trade-offs, and 
+4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
+
+
+## Step 4 Wrap up
+
+To summarize, we've designed a key-value cache to save the results of the most recent web server queries. We've discussed the high-level design, identified potential bottlenecks, and proposed solutions to address scalability issues. Now it is time to align again with the interviewer expectations.
+See if she has any feedback or questions, suggest next steps, improvements, error handling, and monitoring if appropriate.
+
+
+
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
