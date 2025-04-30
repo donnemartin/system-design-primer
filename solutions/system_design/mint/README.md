@@ -1,6 +1,6 @@
 # Design Mint.com
 
-*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
+*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
 ## Step 1: Outline use cases and constraints
 
@@ -88,9 +88,9 @@ Handy conversion guide:
 
 ### Use case: User connects to a financial account
 
-We could store info on the 10 million users in a [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
+We could store info on the 10 million users in a [relational database](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms).  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql).
 
-* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Accounts API** server
 * The **Accounts API** server updates the **SQL Database** `accounts` table with the newly entered account info
 
@@ -110,9 +110,9 @@ PRIMARY KEY(id)
 FOREIGN KEY(user_id) REFERENCES users(id)
 ```
 
-We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id`, `user_id `, and `created_at` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+We'll create an [index](https://github.com/ido777/system-design-primer-update#use-good-indices) on `id`, `user_id `, and `created_at` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know>1</a></sup>
 
-We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+We'll use a public [**REST API**](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest):
 
 ```
 $ curl -X POST --data '{ "user_id": "foo", "account_url": "bar", \
@@ -120,7 +120,7 @@ $ curl -X POST --data '{ "user_id": "foo", "account_url": "bar", \
     https://mint.com/api/v1/account
 ```
 
-For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+For internal communications, we could use [Remote Procedure Calls](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc).
 
 Next, the service extracts transactions from the account.
 
@@ -137,7 +137,7 @@ Data flow:
 * The **Client** sends a request to the **Web Server**
 * The **Web Server** forwards the request to the **Accounts API** server
 * The **Accounts API** server places a job on a **Queue** such as [Amazon SQS](https://aws.amazon.com/sqs/) or [RabbitMQ](https://www.rabbitmq.com/)
-    * Extracting transactions could take awhile, we'd probably want to do this [asynchronously with a queue](https://github.com/donnemartin/system-design-primer#asynchronism), although this introduces additional complexity
+    * Extracting transactions could take awhile, we'd probably want to do this [asynchronously with a queue](https://github.com/ido777/system-design-primer-update#asynchronism), although this introduces additional complexity
 * The **Transaction Extraction Service** does the following:
     * Pulls from the **Queue** and extracts transactions for the given account from the financial institution, storing the results as raw log files in the **Object Store**
     * Uses the **Category Service** to categorize each transaction
@@ -160,7 +160,7 @@ PRIMARY KEY(id)
 FOREIGN KEY(user_id) REFERENCES users(id)
 ```
 
-We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id`, `user_id `, and `created_at`.
+We'll create an [index](https://github.com/ido777/system-design-primer-update#use-good-indices) on `id`, `user_id `, and `created_at`.
 
 The `monthly_spending` table could have the following structure:
 
@@ -174,7 +174,7 @@ PRIMARY KEY(id)
 FOREIGN KEY(user_id) REFERENCES users(id)
 ```
 
-We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id` and `user_id `.
+We'll create an [index](https://github.com/ido777/system-design-primer-update#use-good-indices) on `id` and `user_id `.
 
 #### Category service
 
@@ -337,21 +337,21 @@ It's important to discuss what bottlenecks you might encounter with the initial 
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
-*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/ido777/system-design-primer-update#domain-name-system)
+* [CDN](https://github.com/ido777/system-design-primer-update#content-delivery-network)
+* [Load balancer](https://github.com/ido777/system-design-primer-update#load-balancer)
+* [Horizontal scaling](https://github.com/ido777/system-design-primer-update#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/ido777/system-design-primer-update#application-layer)
+* [Cache](https://github.com/ido777/system-design-primer-update#cache)
+* [Relational database management system (RDBMS)](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms)
+* [SQL write master-slave failover](https://github.com/ido777/system-design-primer-update#fail-over)
+* [Master-slave replication](https://github.com/ido777/system-design-primer-update#master-slave-replication)
+* [Asynchronism](https://github.com/ido777/system-design-primer-update#asynchronism)
+* [Consistency patterns](https://github.com/ido777/system-design-primer-update#consistency-patterns)
+* [Availability patterns](https://github.com/ido777/system-design-primer-update#availability-patterns)
 
 We'll add an additional use case: **User** accesses summaries and transactions.
 
@@ -367,7 +367,7 @@ User sessions, aggregate stats by category, and recent transactions could be pla
             * If the url is in the **SQL Database**, fetches the contents
                 * Updates the **Memory Cache** with the contents
 
-Refer to [When to update the cache](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside).
+Refer to [When to update the cache](https://github.com/ido777/system-design-primer-update#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/ido777/system-design-primer-update#cache-aside).
 
 Instead of keeping the `monthly_spending` aggregate table in the **SQL Database**, we could create a separate **Analytics Database** using a data warehousing solution such as Amazon Redshift or Google BigQuery.
 
@@ -377,10 +377,10 @@ To address the 200 *average* read requests per second (higher at peak), traffic 
 
 2,000 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
 
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Federation](https://github.com/ido777/system-design-primer-update#federation)
+* [Sharding](https://github.com/ido777/system-design-primer-update#sharding)
+* [Denormalization](https://github.com/ido777/system-design-primer-update#denormalization)
+* [SQL Tuning](https://github.com/ido777/system-design-primer-update#sql-tuning)
 
 We should also consider moving some data to a **NoSQL Database**.
 
@@ -390,50 +390,50 @@ We should also consider moving some data to a **NoSQL Database**.
 
 #### NoSQL
 
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [Key-value store](https://github.com/ido777/system-design-primer-update#key-value-store)
+* [Document store](https://github.com/ido777/system-design-primer-update#document-store)
+* [Wide column store](https://github.com/ido777/system-design-primer-update#wide-column-store)
+* [Graph database](https://github.com/ido777/system-design-primer-update#graph-database)
+* [SQL vs NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql)
 
 ### Caching
 
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [Client caching](https://github.com/ido777/system-design-primer-update#client-caching)
+    * [CDN caching](https://github.com/ido777/system-design-primer-update#cdn-caching)
+    * [Web server caching](https://github.com/ido777/system-design-primer-update#web-server-caching)
+    * [Database caching](https://github.com/ido777/system-design-primer-update#database-caching)
+    * [Application caching](https://github.com/ido777/system-design-primer-update#application-caching)
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [Caching at the database query level](https://github.com/ido777/system-design-primer-update#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/ido777/system-design-primer-update#caching-at-the-object-level)
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [Cache-aside](https://github.com/ido777/system-design-primer-update#cache-aside)
+    * [Write-through](https://github.com/ido777/system-design-primer-update#write-through)
+    * [Write-behind (write-back)](https://github.com/ido777/system-design-primer-update#write-behind-write-back)
+    * [Refresh ahead](https://github.com/ido777/system-design-primer-update#refresh-ahead)
 
 ### Asynchronism and microservices
 
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/ido777/system-design-primer-update#message-queues)
+* [Task queues](https://github.com/ido777/system-design-primer-update#task-queues)
+* [Back pressure](https://github.com/ido777/system-design-primer-update#back-pressure)
+* [Microservices](https://github.com/ido777/system-design-primer-update#microservices)
 
 ### Communications
 
 * Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * External communication with clients - [HTTP APIs following REST](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/ido777/system-design-primer-update#service-discovery)
 
 ### Security
 
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](https://github.com/ido777/system-design-primer-update#security).
 
 ### Latency numbers
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know).
 
 ### Ongoing
 

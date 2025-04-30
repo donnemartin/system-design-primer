@@ -1,6 +1,6 @@
 # Design a web crawler
 
-*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
+*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
 ## Step 1: Outline use cases and constraints
 
@@ -81,7 +81,7 @@ We'll assume we have an initial list of `links_to_crawl` ranked initially based 
 
 We'll use a table `crawled_links` to store processed links and their page signatures.
 
-We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Database**.  For the ranked links in `links_to_crawl`, we could use [Redis](https://redis.io/) with sorted sets to maintain a ranking of page links.  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
+We could store `links_to_crawl` and `crawled_links` in a key-value **NoSQL Database**.  For the ranked links in `links_to_crawl`, we could use [Redis](https://redis.io/) with sorted sets to maintain a ranking of page links.  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql).
 
 * The **Crawler Service** processes each page link by doing the following in a loop:
     * Takes the top ranked page link to crawl
@@ -211,7 +211,7 @@ We might also choose to support a `Robots.txt` file that gives webmasters contro
 
 ### Use case: User inputs a search term and sees a list of relevant pages with titles and snippets
 
-* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Query API** server
 * The **Query API** server does the following:
     * Parses the query
@@ -224,7 +224,7 @@ We might also choose to support a `Robots.txt` file that gives webmasters contro
         * The **Reverse Index Service** ranks the matching results and returns the top ones
     * Uses the **Document Service** to return titles and snippets
 
-We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+We'll use a public [**REST API**](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest):
 
 ```
 $ curl https://search.com/api/v1/search?query=hello+world
@@ -250,7 +250,7 @@ Response:
 },
 ```
 
-For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+For internal communications, we could use [Remote Procedure Calls](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc).
 
 ## Step 4: Scale the design
 
@@ -266,26 +266,26 @@ It's important to discuss what bottlenecks you might encounter with the initial 
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
-*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [NoSQL](https://github.com/donnemartin/system-design-primer#nosql)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/ido777/system-design-primer-update#domain-name-system)
+* [Load balancer](https://github.com/ido777/system-design-primer-update#load-balancer)
+* [Horizontal scaling](https://github.com/ido777/system-design-primer-update#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/ido777/system-design-primer-update#application-layer)
+* [Cache](https://github.com/ido777/system-design-primer-update#cache)
+* [NoSQL](https://github.com/ido777/system-design-primer-update#nosql)
+* [Consistency patterns](https://github.com/ido777/system-design-primer-update#consistency-patterns)
+* [Availability patterns](https://github.com/ido777/system-design-primer-update#availability-patterns)
 
-Some searches are very popular, while others are only executed once.  Popular queries can be served from a **Memory Cache** such as Redis or Memcached to reduce response times and to avoid overloading the **Reverse Index Service** and **Document Service**.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+Some searches are very popular, while others are only executed once.  Popular queries can be served from a **Memory Cache** such as Redis or Memcached to reduce response times and to avoid overloading the **Reverse Index Service** and **Document Service**.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know>1</a></sup>
 
 Below are a few other optimizations to the **Crawling Service**:
 
 * To handle the data size and request load, the **Reverse Index Service** and **Document Service** will likely need to make heavy use sharding and federation.
 * DNS lookup can be a bottleneck, the **Crawler Service** can keep its own DNS lookup that is refreshed periodically
 * The **Crawler Service** can improve performance and reduce memory usage by keeping many open connections at a time, referred to as [connection pooling](https://en.wikipedia.org/wiki/Connection_pool)
-    * Switching to [UDP](https://github.com/donnemartin/system-design-primer#user-datagram-protocol-udp) could also boost performance
+    * Switching to [UDP](https://github.com/ido777/system-design-primer-update#user-datagram-protocol-udp) could also boost performance
 * Web crawling is bandwidth intensive, ensure there is enough bandwidth to sustain high throughput
 
 ## Additional talking points
@@ -294,58 +294,58 @@ Below are a few other optimizations to the **Crawling Service**:
 
 ### SQL scaling patterns
 
-* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Read replicas](https://github.com/ido777/system-design-primer-update#master-slave-replication)
+* [Federation](https://github.com/ido777/system-design-primer-update#federation)
+* [Sharding](https://github.com/ido777/system-design-primer-update#sharding)
+* [Denormalization](https://github.com/ido777/system-design-primer-update#denormalization)
+* [SQL Tuning](https://github.com/ido777/system-design-primer-update#sql-tuning)
 
 #### NoSQL
 
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [Key-value store](https://github.com/ido777/system-design-primer-update#key-value-store)
+* [Document store](https://github.com/ido777/system-design-primer-update#document-store)
+* [Wide column store](https://github.com/ido777/system-design-primer-update#wide-column-store)
+* [Graph database](https://github.com/ido777/system-design-primer-update#graph-database)
+* [SQL vs NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql)
 
 ### Caching
 
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [Client caching](https://github.com/ido777/system-design-primer-update#client-caching)
+    * [CDN caching](https://github.com/ido777/system-design-primer-update#cdn-caching)
+    * [Web server caching](https://github.com/ido777/system-design-primer-update#web-server-caching)
+    * [Database caching](https://github.com/ido777/system-design-primer-update#database-caching)
+    * [Application caching](https://github.com/ido777/system-design-primer-update#application-caching)
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [Caching at the database query level](https://github.com/ido777/system-design-primer-update#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/ido777/system-design-primer-update#caching-at-the-object-level)
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [Cache-aside](https://github.com/ido777/system-design-primer-update#cache-aside)
+    * [Write-through](https://github.com/ido777/system-design-primer-update#write-through)
+    * [Write-behind (write-back)](https://github.com/ido777/system-design-primer-update#write-behind-write-back)
+    * [Refresh ahead](https://github.com/ido777/system-design-primer-update#refresh-ahead)
 
 ### Asynchronism and microservices
 
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/ido777/system-design-primer-update#message-queues)
+* [Task queues](https://github.com/ido777/system-design-primer-update#task-queues)
+* [Back pressure](https://github.com/ido777/system-design-primer-update#back-pressure)
+* [Microservices](https://github.com/ido777/system-design-primer-update#microservices)
 
 ### Communications
 
 * Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * External communication with clients - [HTTP APIs following REST](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/ido777/system-design-primer-update#service-discovery)
 
 ### Security
 
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](https://github.com/ido777/system-design-primer-update#security).
 
 ### Latency numbers
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know).
 
 ### Ongoing
 

@@ -1,6 +1,6 @@
 # 设计 Pastebin.com (或者 Bit.ly)
 
-**注意: 为了避免重复，当前文档会直接链接到[系统设计主题](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)的相关区域，请参考链接内容以获得综合的讨论点、权衡和替代方案。**
+**注意: 为了避免重复，当前文档会直接链接到[系统设计主题](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#系统设计主题的索引)的相关区域，请参考链接内容以获得综合的讨论点、权衡和替代方案。**
 
 **设计 Bit.ly** - 是一个类似的问题，区别是 pastebin 需要存储的是 paste 的内容，而不是原始的未短化的 url。
 
@@ -87,13 +87,13 @@
 
 ### 用例：用户输入一段文本，然后得到一个随机生成的链接
 
-我们可以用一个 [关系型数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)作为一个大的哈希表，用来把生成的 url 映射到一个包含 paste 文件的文件服务器和路径上。
+我们可以用一个 [关系型数据库](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)作为一个大的哈希表，用来把生成的 url 映射到一个包含 paste 文件的文件服务器和路径上。
 
-为了避免托管一个文件服务器，我们可以用一个托管的**对象存储**，比如 Amazon 的 S3 或者[NoSQL 文档类型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)。
+为了避免托管一个文件服务器，我们可以用一个托管的**对象存储**，比如 Amazon 的 S3 或者[NoSQL 文档类型存储](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#文档类型存储)。
 
-作为一个大的哈希表的关系型数据库的替代方案，我们可以用[NoSQL 键值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)。我们需要讨论[选择 SQL 或 NoSQL 之间的权衡](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。下面的讨论是使用关系型数据库方法。
+作为一个大的哈希表的关系型数据库的替代方案，我们可以用[NoSQL 键值存储](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#键-值存储)。我们需要讨论[选择 SQL 或 NoSQL 之间的权衡](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#sql-还是-nosql)。下面的讨论是使用关系型数据库方法。
 
-* **客户端** 发送一个创建 paste 的请求到作为一个[反向代理](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)启动的 **Web 服务器**。
+* **客户端** 发送一个创建 paste 的请求到作为一个[反向代理](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#反向代理web-服务器)启动的 **Web 服务器**。
 * **Web 服务器** 转发请求给 **写接口** 服务器
 * **写接口** 服务器执行如下操作：
   * 生成一个唯一的 url
@@ -116,7 +116,7 @@ paste_path varchar(255) NOT NULL
 PRIMARY KEY(shortlink)
 ```
 
-我们将在 `shortlink` 字段和 `created_at` 字段上创建一个[数据库索引](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#使用正确的索引)，用来提高查询的速度（避免因为扫描全表导致的长时间查询）并将数据保存在内存中，从内存里面顺序读取 1MB 的数据需要大概 250 微秒，而从 SSD 上读取则需要花费 4 倍的时间，从硬盘上则需要花费 80 倍的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数 > 1</a></sup>
+我们将在 `shortlink` 字段和 `created_at` 字段上创建一个[数据库索引](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#使用正确的索引)，用来提高查询的速度（避免因为扫描全表导致的长时间查询）并将数据保存在内存中，从内存里面顺序读取 1MB 的数据需要大概 250 微秒，而从 SSD 上读取则需要花费 4 倍的时间，从硬盘上则需要花费 80 倍的时间。<sup><a href=https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数 > 1</a></sup>
 
 为了生成唯一的 url，我们可以：
 
@@ -146,7 +146,7 @@ def base_encode(num, base=62):
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
 
-我们将会用一个公开的 [**REST 风格接口**](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)：
+我们将会用一个公开的 [**REST 风格接口**](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#表述性状态转移rest)：
 
 ```shell
 $ curl -X POST --data '{"expiration_length_in_minutes":"60", \"paste_contents":"Hello World!"}' https://pastebin.com/api/v1/paste
@@ -160,7 +160,7 @@ Response:
 }
 ```
 
-用于内部通信，我们可以用 [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
+用于内部通信，我们可以用 [RPC](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#远程过程调用协议rpc)。
 
 ### 用例：用户输入一个 paste 的 url 后可以看到它存储的内容
 
@@ -243,20 +243,20 @@ class HitCounts(MRJob):
 
 我们将介绍一些组件来完成设计，并解决可伸缩性问题。内部的负载平衡器并不能减少杂乱。
 
-**为了避免重复的讨论**， 参考以下[系统设计主题](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)获取主要讨论要点、权衡和替代方案：
+**为了避免重复的讨论**， 参考以下[系统设计主题](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#系统设计主题的索引)获取主要讨论要点、权衡和替代方案：
 
-* [DNS](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#域名系统)
-* [CDN](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#内容分发网络cdn)
-* [负载均衡器](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#负载均衡器)
-* [水平扩展](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#水平扩展)
-* [反向代理（web 服务器）](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#反向代理web-服务器)
-* [应用层](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用层)
-* [缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存)
-* [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#故障切换)
-* [主从复制](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#主从复制)
-* [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
-* [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
+* [DNS](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#域名系统)
+* [CDN](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#内容分发网络cdn)
+* [负载均衡器](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#负载均衡器)
+* [水平扩展](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#水平扩展)
+* [反向代理（web 服务器）](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#反向代理web-服务器)
+* [应用层](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#应用层)
+* [缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#缓存)
+* [关系型数据库管理系统 (RDBMS)](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#关系型数据库管理系统rdbms)
+* [SQL write master-slave failover](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#故障切换)
+* [主从复制](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#主从复制)
+* [一致性模式](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#一致性模式)
+* [可用性模式](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#可用性模式)
 
 **分析存储数据库** 可以用比如 Amazon Redshift 或者 Google BigQuery 这样的数据仓库解决方案。
 
@@ -266,10 +266,10 @@ class HitCounts(MRJob):
 
 对于单个 **SQL Write Master-Slave**，*平均* 每秒 4paste 写入 (峰值更高) 应该是可以做到的。否则，我们需要使用额外的 SQL 扩展模式:
 
-* [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
-* [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
-* [非规范化](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#非规范化)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#SQL调优)
+* [联合](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#联合)
+* [分片](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#分片)
+* [非规范化](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#非规范化)
+* [SQL 调优](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#SQL调优)
 
 我们还应该考虑将一些数据移动到 **NoSQL 数据库**。
 
@@ -279,50 +279,50 @@ class HitCounts(MRJob):
 
 ### NoSQL
 
-* [键值存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#键-值存储)
-* [文档存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#文档类型存储)
-* [列型存储](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#列型存储)
-* [图数据库](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#图数据库)
-* [sql 还是 nosql](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)
+* [键值存储](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#键-值存储)
+* [文档存储](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#文档类型存储)
+* [列型存储](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#列型存储)
+* [图数据库](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#图数据库)
+* [sql 还是 nosql](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#sql-还是-nosql)
 
 ### 缓存
 
 * 在哪缓存
-  * [客户端缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#客户端缓存)
-  * [CDN 缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#cdn-缓存)
-  * [Web 服务器缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#web-服务器缓存)
-  * [数据库缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库缓存)
-  * [应用缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#应用缓存)
+  * [客户端缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#客户端缓存)
+  * [CDN 缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#cdn-缓存)
+  * [Web 服务器缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#web-服务器缓存)
+  * [数据库缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#数据库缓存)
+  * [应用缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#应用缓存)
 * 缓存什么
-  * [数据库查询级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
-  * [对象级别的缓存](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#对象级别的缓存)
+  * [数据库查询级别的缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#数据库查询级别的缓存)
+  * [对象级别的缓存](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#对象级别的缓存)
 * 何时更新缓存
-  * [缓存模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#缓存模式)
-  * [直写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#直写模式)
-  * [回写模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#回写模式)
-  * [刷新](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#刷新)
+  * [缓存模式](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#缓存模式)
+  * [直写模式](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#直写模式)
+  * [回写模式](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#回写模式)
+  * [刷新](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#刷新)
 
 ### 异步和微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#消息队列)
-* [任务队列](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#任务队列)
-* [背压](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#背压)
-* [微服务](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#微服务)
+* [消息队列](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#消息队列)
+* [任务队列](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#任务队列)
+* [背压](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#背压)
+* [微服务](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#微服务)
 
 ### 通信
 
 * 讨论权衡:
-  * 跟客户端之间的外部通信 - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#表述性状态转移rest)
-  * 内部通信 - [RPC](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
-* [服务发现](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#服务发现)
+  * 跟客户端之间的外部通信 - [HTTP APIs following REST](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#表述性状态转移rest)
+  * 内部通信 - [RPC](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#远程过程调用协议rpc)
+* [服务发现](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#服务发现)
 
 ### 安全
 
-参考[安全](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#安全)。
+参考[安全](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#安全)。
 
 ### 延迟数字
 
-见[每个程序员都应该知道的延迟数](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
+见[每个程序员都应该知道的延迟数](https://github.com/ido777/system-design-primer-update/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数)。
 
 ### 持续进行
 

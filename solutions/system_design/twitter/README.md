@@ -1,6 +1,6 @@
 # Design the Twitter timeline and search
 
-*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
+*Note: This document links directly to relevant areas found in the [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
 **Design the Facebook feed** and **Design Facebook search** are similar questions.
 
@@ -101,13 +101,13 @@ Handy conversion guide:
 
 ### Use case: User posts a tweet
 
-We could store the user's own tweets to populate the user timeline (activity from the user) in a [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
+We could store the user's own tweets to populate the user timeline (activity from the user) in a [relational database](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms).  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql).
 
-Delivering tweets and building the home timeline (activity from people the user is following) is trickier.  Fanning out tweets to all followers (60 thousand tweets delivered on fanout per second) will overload a traditional [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We'll probably want to choose a data store with fast writes such as a **NoSQL database** or **Memory Cache**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+Delivering tweets and building the home timeline (activity from people the user is following) is trickier.  Fanning out tweets to all followers (60 thousand tweets delivered on fanout per second) will overload a traditional [relational database](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms).  We'll probably want to choose a data store with fast writes such as a **NoSQL database** or **Memory Cache**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know>1</a></sup>
 
 We could store media such as photos or videos on an **Object Store**.
 
-* The **Client** posts a tweet to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Client** posts a tweet to the **Web Server**, running as a [reverse proxy](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
 * The **Web Server** forwards the request to the **Write API** server
 * The **Write API** stores the tweet in the user's timeline on a **SQL database**
 * The **Write API** contacts the **Fan Out Service**, which does the following:
@@ -131,7 +131,7 @@ If our **Memory Cache** is Redis, we could use a native Redis list with the foll
 
 The new tweet would be placed in the **Memory Cache**, which populates the user's home timeline (activity from people the user is following).
 
-We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+We'll use a public [**REST API**](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest):
 
 ```
 $ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123", \
@@ -151,7 +151,7 @@ Response:
 }
 ```
 
-For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+For internal communications, we could use [Remote Procedure Calls](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc).
 
 ### Use case: User views the home timeline
 
@@ -208,7 +208,7 @@ The REST API would be similar to the home timeline, except all tweets would come
         * Normalizes capitalization
         * Converts the query to use boolean operations
     * Queries the **Search Cluster** (ie [Lucene](https://lucene.apache.org/)) for the results:
-        * [Scatter gathers](https://github.com/donnemartin/system-design-primer#under-development) each server in the cluster to determine if there are any results for the query
+        * [Scatter gathers](https://github.com/ido777/system-design-primer-update#under-development) each server in the cluster to determine if there are any results for the query
         * Merges, ranks, sorts, and returns the results
 
 REST API:
@@ -233,20 +233,20 @@ It's important to discuss what bottlenecks you might encounter with the initial 
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
 
-*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/ido777/system-design-primer-update#domain-name-system)
+* [CDN](https://github.com/ido777/system-design-primer-update#content-delivery-network)
+* [Load balancer](https://github.com/ido777/system-design-primer-update#load-balancer)
+* [Horizontal scaling](https://github.com/ido777/system-design-primer-update#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/ido777/system-design-primer-update#application-layer)
+* [Cache](https://github.com/ido777/system-design-primer-update#cache)
+* [Relational database management system (RDBMS)](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms)
+* [SQL write master-slave failover](https://github.com/ido777/system-design-primer-update#fail-over)
+* [Master-slave replication](https://github.com/ido777/system-design-primer-update#master-slave-replication)
+* [Consistency patterns](https://github.com/ido777/system-design-primer-update#consistency-patterns)
+* [Availability patterns](https://github.com/ido777/system-design-primer-update#availability-patterns)
 
 The **Fanout Service** is a potential bottleneck.  Twitter users with millions of followers could take several minutes to have their tweets go through the fanout process.  This could lead to race conditions with @replies to the tweet, which we could mitigate by re-ordering the tweets at serve time.
 
@@ -269,10 +269,10 @@ Although the **Memory Cache** should reduce the load on the database, it is unli
 
 The high volume of writes would overwhelm a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques.
 
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Federation](https://github.com/ido777/system-design-primer-update#federation)
+* [Sharding](https://github.com/ido777/system-design-primer-update#sharding)
+* [Denormalization](https://github.com/ido777/system-design-primer-update#denormalization)
+* [SQL Tuning](https://github.com/ido777/system-design-primer-update#sql-tuning)
 
 We should also consider moving some data to a **NoSQL Database**.
 
@@ -282,50 +282,50 @@ We should also consider moving some data to a **NoSQL Database**.
 
 #### NoSQL
 
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [Key-value store](https://github.com/ido777/system-design-primer-update#key-value-store)
+* [Document store](https://github.com/ido777/system-design-primer-update#document-store)
+* [Wide column store](https://github.com/ido777/system-design-primer-update#wide-column-store)
+* [Graph database](https://github.com/ido777/system-design-primer-update#graph-database)
+* [SQL vs NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql)
 
 ### Caching
 
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [Client caching](https://github.com/ido777/system-design-primer-update#client-caching)
+    * [CDN caching](https://github.com/ido777/system-design-primer-update#cdn-caching)
+    * [Web server caching](https://github.com/ido777/system-design-primer-update#web-server-caching)
+    * [Database caching](https://github.com/ido777/system-design-primer-update#database-caching)
+    * [Application caching](https://github.com/ido777/system-design-primer-update#application-caching)
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [Caching at the database query level](https://github.com/ido777/system-design-primer-update#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/ido777/system-design-primer-update#caching-at-the-object-level)
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [Cache-aside](https://github.com/ido777/system-design-primer-update#cache-aside)
+    * [Write-through](https://github.com/ido777/system-design-primer-update#write-through)
+    * [Write-behind (write-back)](https://github.com/ido777/system-design-primer-update#write-behind-write-back)
+    * [Refresh ahead](https://github.com/ido777/system-design-primer-update#refresh-ahead)
 
 ### Asynchronism and microservices
 
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](https://github.com/ido777/system-design-primer-update#message-queues)
+* [Task queues](https://github.com/ido777/system-design-primer-update#task-queues)
+* [Back pressure](https://github.com/ido777/system-design-primer-update#back-pressure)
+* [Microservices](https://github.com/ido777/system-design-primer-update#microservices)
 
 ### Communications
 
 * Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * External communication with clients - [HTTP APIs following REST](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/ido777/system-design-primer-update#service-discovery)
 
 ### Security
 
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](https://github.com/ido777/system-design-primer-update#security).
 
 ### Latency numbers
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know).
 
 ### Ongoing
 

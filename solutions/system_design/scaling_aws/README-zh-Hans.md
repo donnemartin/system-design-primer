@@ -1,6 +1,6 @@
 # 在 AWS 上设计支持百万级到千万级用户的系统
 
-**注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
+**注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
 
 ## 第 1 步：用例和约束概要
 
@@ -83,7 +83,7 @@
 
 * **Web 服务器** 在 EC2 上
     * 存储用户数据
-    * [**MySQL 数据库**](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
+    * [**MySQL 数据库**](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms)
 
 运用 **纵向扩展**：
 
@@ -96,7 +96,7 @@
 
 **折中方案, 可选方案, 和其他细节:**
 
-* **纵向扩展** 的可选方案是 [**横向扩展**](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+* **纵向扩展** 的可选方案是 [**横向扩展**](https://github.com/ido777/system-design-primer-update#horizontal-scaling)
 
 #### 自 SQL 开始，但认真考虑 NoSQL
 
@@ -104,8 +104,8 @@
 
 **折中方案, 可选方案, 和其他细节:**
 
-* 查阅 [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 章节
-* 讨论使用 [SQL 或 NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql) 的原因
+* 查阅 [关系型数据库管理系统 (RDBMS)](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms) 章节
+* 讨论使用 [SQL 或 NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql) 的原因
 
 #### 分配公共静态 IP
 
@@ -118,7 +118,7 @@
 
 **折中方案, 可选方案, 和其他细节:**
 
-* 查阅 [域名系统](https://github.com/donnemartin/system-design-primer#domain-name-system) 章节
+* 查阅 [域名系统](https://github.com/ido777/system-design-primer-update#domain-name-system) 章节
 
 #### 安全的 Web 服务器
 
@@ -131,7 +131,7 @@
 
 **折中方案, 可选方案, 和其他细节:**
 
-* 查阅 [安全](https://github.com/donnemartin/system-design-primer#security) 章节
+* 查阅 [安全](https://github.com/ido777/system-design-primer-update#security) 章节
 
 ## 第 4 步：扩展设计
 
@@ -187,7 +187,7 @@
 
 **折中方案, 可选方案, 和其他细节:**
 
-* 查阅 [安全](https://github.com/donnemartin/system-design-primer#security) 章节
+* 查阅 [安全](https://github.com/ido777/system-design-primer-update#security) 章节
 
 ### 用户+++
 
@@ -201,18 +201,18 @@
 
 * 下面的目标试图用 **Web服务器** 解决扩展问题
     * 基于 **基准/负载测试** 和 **分析**，你可能只需要实现其中的一两个技术
-* 使用 [**横向扩展**](https://github.com/donnemartin/system-design-primer#horizontal-scaling) 来处理增加的负载和单点故障
-    * 添加 [**负载均衡器**](https://github.com/donnemartin/system-design-primer#load-balancer) 例如 Amazon 的 ELB 或 HAProxy
+* 使用 [**横向扩展**](https://github.com/ido777/system-design-primer-update#horizontal-scaling) 来处理增加的负载和单点故障
+    * 添加 [**负载均衡器**](https://github.com/ido777/system-design-primer-update#load-balancer) 例如 Amazon 的 ELB 或 HAProxy
         * ELB 是高可用的
-        * 如果你正在配置自己的 **负载均衡器**, 在多个可用区域中设置多台服务器用于 [双活](https://github.com/donnemartin/system-design-primer#active-active) 或 [主被](https://github.com/donnemartin/system-design-primer#active-passive) 将提高可用性
+        * 如果你正在配置自己的 **负载均衡器**, 在多个可用区域中设置多台服务器用于 [双活](https://github.com/ido777/system-design-primer-update#active-active) 或 [主被](https://github.com/ido777/system-design-primer-update#active-passive) 将提高可用性
         * 终止在 **负载平衡器** 上的SSL，以减少后端服务器上的计算负载，并简化证书管理
     * 在多个可用区域中使用多台 **Web服务器**
-    * 在多个可用区域的 [**主-从 故障转移**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 模式中使用多个 **MySQL** 实例来改进冗余
-* 分离 **Web 服务器** 和 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer)
+    * 在多个可用区域的 [**主-从 故障转移**](https://github.com/ido777/system-design-primer-update#master-slave-replication) 模式中使用多个 **MySQL** 实例来改进冗余
+* 分离 **Web 服务器** 和 [**应用服务器**](https://github.com/ido777/system-design-primer-update#application-layer)
     * 独立扩展和配置每一层
-    * **Web 服务器** 可以作为 [**反向代理**](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+    * **Web 服务器** 可以作为 [**反向代理**](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
     * 例如, 你可以添加 **应用服务器** 处理 **读 API** 而另外一些处理 **写 API**
-* 将静态（和一些动态）内容转移到 [**内容分发网络 (CDN)**](https://github.com/donnemartin/system-design-primer#content-delivery-network) 例如 CloudFront 以减少负载和延迟
+* 将静态（和一些动态）内容转移到 [**内容分发网络 (CDN)**](https://github.com/ido777/system-design-primer-update#content-delivery-network) 例如 CloudFront 以减少负载和延迟
 
 **折中方案, 可选方案, 和其他细节:**
 
@@ -232,13 +232,13 @@
 
 * 下面的目标试图解决 **MySQL数据库** 的伸缩性问题
     * * 基于 **基准/负载测试** 和 **分析**，你可能只需要实现其中的一两个技术
-* 将下列数据移动到一个 [**内存缓存**](https://github.com/donnemartin/system-design-primer#cache)，例如弹性缓存，以减少负载和延迟：
+* 将下列数据移动到一个 [**内存缓存**](https://github.com/ido777/system-design-primer-update#cache)，例如弹性缓存，以减少负载和延迟：
     * **MySQL** 中频繁访问的内容
         * 首先, 尝试配置 **MySQL 数据库** 缓存以查看是否足以在实现 **内存缓存** 之前缓解瓶颈
     * 来自 **Web 服务器** 的会话数据
         * **Web 服务器** 变成无状态的, 允许 **自动伸缩**
-    * 从内存中读取 1 MB 内存需要大约 250 微秒，而从SSD中读取时间要长 4 倍，从磁盘读取的时间要长 80 倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
-* 添加 [**MySQL 读取副本**](https://github.com/donnemartin/system-design-primer#master-slave-replication) 来减少写主线程的负载
+    * 从内存中读取 1 MB 内存需要大约 250 微秒，而从SSD中读取时间要长 4 倍，从磁盘读取的时间要长 80 倍。<sup><a href=https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know>1</a></sup>
+* 添加 [**MySQL 读取副本**](https://github.com/ido777/system-design-primer-update#master-slave-replication) 来减少写主线程的负载
 * 添加更多 **Web 服务器** and **应用服务器** 来提高响应
 
 **折中方案, 可选方案, 和其他细节:**
@@ -254,7 +254,7 @@
 
 **折中方案, 可选方案, 和其他细节:**
 
-* 查阅 [关系型数据库管理系统 (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) 章节
+* 查阅 [关系型数据库管理系统 (RDBMS)](https://github.com/ido777/system-design-primer-update#relational-database-management-system-rdbms) 章节
 
 ### 用户++++
 
@@ -317,14 +317,14 @@
 
 SQL 扩展模型包括：
 
-* [集合](https://github.com/donnemartin/system-design-primer#federation)
-* [分片](https://github.com/donnemartin/system-design-primer#sharding)
-* [反范式](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [集合](https://github.com/ido777/system-design-primer-update#federation)
+* [分片](https://github.com/ido777/system-design-primer-update#sharding)
+* [反范式](https://github.com/ido777/system-design-primer-update#denormalization)
+* [SQL 调优](https://github.com/ido777/system-design-primer-update#sql-tuning)
 
-为了进一步处理高读和写请求，我们还应该考虑将适当的数据移动到一个 [**NoSQL数据库**](https://github.com/donnemartin/system-design-primer#nosql) ，例如 DynamoDB。
+为了进一步处理高读和写请求，我们还应该考虑将适当的数据移动到一个 [**NoSQL数据库**](https://github.com/ido777/system-design-primer-update#nosql) ，例如 DynamoDB。
 
-我们可以进一步分离我们的 [**应用服务器**](https://github.com/donnemartin/system-design-primer#application-layer) 以允许独立扩展。不需要实时完成的批处理任务和计算可以通过 Queues 和 Workers 异步完成：
+我们可以进一步分离我们的 [**应用服务器**](https://github.com/ido777/system-design-primer-update#application-layer) 以允许独立扩展。不需要实时完成的批处理任务和计算可以通过 Queues 和 Workers 异步完成：
 
 * 以照片服务为例，照片上传和缩略图的创建可以分开进行
     * **客户端** 上传图片
@@ -344,58 +344,58 @@ SQL 扩展模型包括：
 
 ### SQL 扩展模式
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [集合](https://github.com/donnemartin/system-design-primer#federation)
-* [分区](https://github.com/donnemartin/system-design-primer#sharding)
-* [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [读取副本](https://github.com/ido777/system-design-primer-update#master-slave-replication)
+* [集合](https://github.com/ido777/system-design-primer-update#federation)
+* [分区](https://github.com/ido777/system-design-primer-update#sharding)
+* [反规范化](https://github.com/ido777/system-design-primer-update#denormalization)
+* [SQL 调优](https://github.com/ido777/system-design-primer-update#sql-tuning)
 
 #### NoSQL
 
-* [键值存储](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [文档存储](https://github.com/donnemartin/system-design-primer#document-store)
-* [宽表存储](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [图数据库](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [键值存储](https://github.com/ido777/system-design-primer-update#key-value-store)
+* [文档存储](https://github.com/ido777/system-design-primer-update#document-store)
+* [宽表存储](https://github.com/ido777/system-design-primer-update#wide-column-store)
+* [图数据库](https://github.com/ido777/system-design-primer-update#graph-database)
+* [SQL vs NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql)
 
 ### 缓存
 
 * 缓存到哪里
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web 服务缓存](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [客户端缓存](https://github.com/ido777/system-design-primer-update#client-caching)
+    * [CDN 缓存](https://github.com/ido777/system-design-primer-update#cdn-caching)
+    * [Web 服务缓存](https://github.com/ido777/system-design-primer-update#web-server-caching)
+    * [数据库缓存](https://github.com/ido777/system-design-primer-update#database-caching)
+    * [应用缓存](https://github.com/ido777/system-design-primer-update#application-caching)
 * 缓存什么
-    * [数据库请求层缓存](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [对象层缓存](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [数据库请求层缓存](https://github.com/ido777/system-design-primer-update#caching-at-the-database-query-level)
+    * [对象层缓存](https://github.com/ido777/system-design-primer-update#caching-at-the-object-level)
 * 何时更新缓存
-    * [预留缓存](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [完全写入](https://github.com/donnemartin/system-design-primer#write-through)
-    * [延迟写 (写回)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [事先更新](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [预留缓存](https://github.com/ido777/system-design-primer-update#cache-aside)
+    * [完全写入](https://github.com/ido777/system-design-primer-update#write-through)
+    * [延迟写 (写回)](https://github.com/ido777/system-design-primer-update#write-behind-write-back)
+    * [事先更新](https://github.com/ido777/system-design-primer-update#refresh-ahead)
 
 ### 异步性和微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer#message-queues)
-* [任务队列](https://github.com/donnemartin/system-design-primer#task-queues)
-* [回退压力](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [微服务](https://github.com/donnemartin/system-design-primer#microservices)
+* [消息队列](https://github.com/ido777/system-design-primer-update#message-queues)
+* [任务队列](https://github.com/ido777/system-design-primer-update#task-queues)
+* [回退压力](https://github.com/ido777/system-design-primer-update#back-pressure)
+* [微服务](https://github.com/ido777/system-design-primer-update#microservices)
 
 ### 沟通
 
 * 关于折中方案的讨论:
-    * 客户端的外部通讯 - [遵循 REST 的 HTTP APIs](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * 内部通讯 - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [服务探索](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * 客户端的外部通讯 - [遵循 REST 的 HTTP APIs](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest)
+    * 内部通讯 - [RPC](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc)
+* [服务探索](https://github.com/ido777/system-design-primer-update#service-discovery)
 
 ### 安全性
 
-参考 [安全章节](https://github.com/donnemartin/system-design-primer#security)
+参考 [安全章节](https://github.com/ido777/system-design-primer-update#security)
 
 ### 延迟数字指标
 
-查阅 [每个程序员必懂的延迟数字](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know)
+查阅 [每个程序员必懂的延迟数字](https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know)
 
 ### 正在进行
 

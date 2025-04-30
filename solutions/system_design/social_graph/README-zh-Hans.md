@@ -1,6 +1,6 @@
 # 为社交网络设计数据结构
 
-**注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
+**注释：为了避免重复，这篇文章的链接直接关联到 [系统设计主题](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) 的相关章节。为一讨论要点、折中方案和可选方案做参考。**
 
 ## 第 1 步：用例和约束概要
 
@@ -99,9 +99,9 @@ class Graph(Graph):
         return None
 ```
 
-我们不能在同一台机器上满足所有用户，我们需要通过 **人员服务器** [拆分](https://github.com/donnemartin/system-design-primer#sharding) 用户并且通过 **查询服务** 访问。
+我们不能在同一台机器上满足所有用户，我们需要通过 **人员服务器** [拆分](https://github.com/ido777/system-design-primer-update#sharding) 用户并且通过 **查询服务** 访问。
 
-* **客户端** 向 **服务器** 发送请求，**服务器** 作为 [反向代理](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* **客户端** 向 **服务器** 发送请求，**服务器** 作为 [反向代理](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
 * **搜索 API** 服务器向 **用户图服务** 转发请求
 * **用户图服务** 有以下功能：
     * 使用 **查询服务** 找到当前用户信息存储的 **人员服务器**
@@ -217,7 +217,7 @@ class UserGraphService(object):
         return None
 ```
 
-我们用的是公共的 [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)：
+我们用的是公共的 [**REST API**](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest)：
 
 ```
 $ curl https://social.com/api/v1/friend_search?person_id=1234
@@ -243,7 +243,7 @@ $ curl https://social.com/api/v1/friend_search?person_id=1234
 },
 ```
 
-内部通信使用 [远端过程调用](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)。
+内部通信使用 [远端过程调用](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc)。
 
 ## 第 4 步：扩展设计
 
@@ -259,25 +259,25 @@ $ curl https://social.com/api/v1/friend_search?person_id=1234
 
 我们即将介绍一些组件来完成设计和解决扩展性问题。内部负载均衡不显示以减少混乱。
 
-**避免重复讨论**，以下网址链接到 [系统设计主题](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) 相关的主流方案、折中方案和替代方案。
+**避免重复讨论**，以下网址链接到 [系统设计主题](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) 相关的主流方案、折中方案和替代方案。
 
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [负载均衡](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [横向扩展](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web 服务器（反向代理）](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API 服务器（应用层）](https://github.com/donnemartin/system-design-primer#application-layer)
-* [缓存](https://github.com/donnemartin/system-design-primer#cache)
-* [一致性模式](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [可用性模式](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](https://github.com/ido777/system-design-primer-update#domain-name-system)
+* [负载均衡](https://github.com/ido777/system-design-primer-update#load-balancer)
+* [横向扩展](https://github.com/ido777/system-design-primer-update#horizontal-scaling)
+* [Web 服务器（反向代理）](https://github.com/ido777/system-design-primer-update#reverse-proxy-web-server)
+* [API 服务器（应用层）](https://github.com/ido777/system-design-primer-update#application-layer)
+* [缓存](https://github.com/ido777/system-design-primer-update#cache)
+* [一致性模式](https://github.com/ido777/system-design-primer-update#consistency-patterns)
+* [可用性模式](https://github.com/ido777/system-design-primer-update#availability-patterns)
 
-解决 **平均** 每秒 400 次请求的限制（峰值），人员数据可以存在例如 Redis 或 Memcached 这样的 **内存** 中以减少响应次数和下游流量通信服务。这尤其在用户执行多次连续查询和查询哪些广泛连接的人时十分有用。从内存中读取 1MB 数据大约要 250 微秒，从 SSD 中读取同样大小的数据时间要长 4 倍，从硬盘要长 80 倍。<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+解决 **平均** 每秒 400 次请求的限制（峰值），人员数据可以存在例如 Redis 或 Memcached 这样的 **内存** 中以减少响应次数和下游流量通信服务。这尤其在用户执行多次连续查询和查询哪些广泛连接的人时十分有用。从内存中读取 1MB 数据大约要 250 微秒，从 SSD 中读取同样大小的数据时间要长 4 倍，从硬盘要长 80 倍。<sup><a href=https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know>1</a></sup>
 
 以下是进一步优化方案：
 
 * 在 **内存** 中存储完整的或部分的BFS遍历加快后续查找
 * 在 **NoSQL 数据库** 中批量离线计算并存储完整的或部分的BFS遍历加快后续查找
 * 在同一台 **人员服务器** 上托管批处理同一批朋友查找减少机器跳转
-    * 通过地理位置 [拆分](https://github.com/donnemartin/system-design-primer#sharding) **人员服务器** 来进一步优化，因为朋友通常住得都比较近
+    * 通过地理位置 [拆分](https://github.com/ido777/system-design-primer-update#sharding) **人员服务器** 来进一步优化，因为朋友通常住得都比较近
 * 同时进行两个 BFS 查找，一个从 source 开始，一个从 destination 开始，然后合并两个路径
 * 从有庞大朋友圈的人开始找起，这样更有可能减小当前用户和搜索目标之间的 [离散度数](https://en.wikipedia.org/wiki/Six_degrees_of_separation)
 * 在询问用户是否继续查询之前设置基于时间或跳跃数阈值，当在某些案例中搜索耗费时间过长时。
@@ -289,58 +289,58 @@ $ curl https://social.com/api/v1/friend_search?person_id=1234
 
 ### SQL 扩展模式
 
-* [读取副本](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [集合](https://github.com/donnemartin/system-design-primer#federation)
-* [分区](https://github.com/donnemartin/system-design-primer#sharding)
-* [反规范化](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL 调优](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [读取副本](https://github.com/ido777/system-design-primer-update#master-slave-replication)
+* [集合](https://github.com/ido777/system-design-primer-update#federation)
+* [分区](https://github.com/ido777/system-design-primer-update#sharding)
+* [反规范化](https://github.com/ido777/system-design-primer-update#denormalization)
+* [SQL 调优](https://github.com/ido777/system-design-primer-update#sql-tuning)
 
 #### NoSQL
 
-* [键值存储](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [文档存储](https://github.com/donnemartin/system-design-primer#document-store)
-* [宽表存储](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [图数据库](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+* [键值存储](https://github.com/ido777/system-design-primer-update#key-value-store)
+* [文档存储](https://github.com/ido777/system-design-primer-update#document-store)
+* [宽表存储](https://github.com/ido777/system-design-primer-update#wide-column-store)
+* [图数据库](https://github.com/ido777/system-design-primer-update#graph-database)
+* [SQL vs NoSQL](https://github.com/ido777/system-design-primer-update#sql-or-nosql)
 
 ### 缓存
 
 * 缓存到哪里
-    * [客户端缓存](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN 缓存](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web 服务缓存](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [数据库缓存](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [应用缓存](https://github.com/donnemartin/system-design-primer#application-caching)
+    * [客户端缓存](https://github.com/ido777/system-design-primer-update#client-caching)
+    * [CDN 缓存](https://github.com/ido777/system-design-primer-update#cdn-caching)
+    * [Web 服务缓存](https://github.com/ido777/system-design-primer-update#web-server-caching)
+    * [数据库缓存](https://github.com/ido777/system-design-primer-update#database-caching)
+    * [应用缓存](https://github.com/ido777/system-design-primer-update#application-caching)
 * 缓存什么
-    * [数据库请求层缓存](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [对象层缓存](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+    * [数据库请求层缓存](https://github.com/ido777/system-design-primer-update#caching-at-the-database-query-level)
+    * [对象层缓存](https://github.com/ido777/system-design-primer-update#caching-at-the-object-level)
 * 何时更新缓存
-    * [预留缓存](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [完全写入](https://github.com/donnemartin/system-design-primer#write-through)
-    * [延迟写 (写回)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [事先更新](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+    * [预留缓存](https://github.com/ido777/system-design-primer-update#cache-aside)
+    * [完全写入](https://github.com/ido777/system-design-primer-update#write-through)
+    * [延迟写 (写回)](https://github.com/ido777/system-design-primer-update#write-behind-write-back)
+    * [事先更新](https://github.com/ido777/system-design-primer-update#refresh-ahead)
 
 ### 异步性和微服务
 
-* [消息队列](https://github.com/donnemartin/system-design-primer#message-queues)
-* [任务队列](https://github.com/donnemartin/system-design-primer#task-queues)
-* [回退压力](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [微服务](https://github.com/donnemartin/system-design-primer#microservices)
+* [消息队列](https://github.com/ido777/system-design-primer-update#message-queues)
+* [任务队列](https://github.com/ido777/system-design-primer-update#task-queues)
+* [回退压力](https://github.com/ido777/system-design-primer-update#back-pressure)
+* [微服务](https://github.com/ido777/system-design-primer-update#microservices)
 
 ### 沟通
 
 * 关于折中方案的讨论:
-    * 客户端的外部通讯 - [遵循 REST 的 HTTP APIs](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * 内部通讯 - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [服务探索](https://github.com/donnemartin/system-design-primer#service-discovery)
+    * 客户端的外部通讯 - [遵循 REST 的 HTTP APIs](https://github.com/ido777/system-design-primer-update#representational-state-transfer-rest)
+    * 内部通讯 - [RPC](https://github.com/ido777/system-design-primer-update#remote-procedure-call-rpc)
+* [服务探索](https://github.com/ido777/system-design-primer-update#service-discovery)
 
 ### 安全性
 
-参考 [安全章节](https://github.com/donnemartin/system-design-primer#security)
+参考 [安全章节](https://github.com/ido777/system-design-primer-update#security)
 
 ### 延迟数字指标
 
-查阅 [每个程序员必懂的延迟数字](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know)
+查阅 [每个程序员必懂的延迟数字](https://github.com/ido777/system-design-primer-update#latency-numbers-every-programmer-should-know)
 
 ### 正在进行
 
