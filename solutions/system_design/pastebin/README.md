@@ -20,10 +20,10 @@ Remember your goal is to understand the problem and establish the design scope.
 ### What questions should you ask to clarify the problem?
 
 
-Here is an example of the dialog you could have with the interviewer:
-interviewer: Design Pastebin.com.
-candidate: Could you please remind me what Pastebin.com does at a high level?
-interviewer: Do you happen to know GitHub Gist? It is similar to Pastebin.com.
+Here is an example of the dialog you could have with the **Interviewer**:
+**Interviewer**: Design Pastebin.com.
+**Candidate**: Could you please remind me what Pastebin.com does at a high level?
+**Interviewer**: Do you happen to know GitHub Gist? It is similar to Pastebin.com.
 
 ## 📝 Pastebin.com Overview
 
@@ -47,17 +47,17 @@ interviewer: Do you happen to know GitHub Gist? It is similar to Pastebin.com.
 - Temporary storage of text for collaboration or troubleshooting.
 - Situations where simplicity and speed are paramount. 
 
-candidate: Got it. Since Pastebin can be quite complex, can we focus on just the core features first?  
-interviewer: Sure—what would you target?  
-candidate: The main requirement is that the user pastes text and immediately receives a shareable link. Correct?  
-interviewer: Can you elaborate on the link?  
-candidate: A randomly generated, unique link.  
-interviewer: Does it expire?  
-candidate: No.  
-interviewer: Never?  
-candidate: (_Oops, she doesn’t like that we don’t have expiration._) We can add a timed expiration—user can set the expiration.  
-interviewer: Sounds good.  
-candidate: Cool. Let me summarize.
+**Candidate**: Got it. Since Pastebin can be quite complex, can we focus on just the core features first?  
+**Interviewer**: Sure—what would you target?  
+**Candidate**: The main requirement is that the user pastes text and immediately receives a shareable link. Correct?  
+**Interviewer**: Can you elaborate on the link?  
+**Candidate**: A randomly generated, unique link.  
+**Interviewer**: Does it expire?  
+**Candidate**: No.  
+**Interviewer**: Never?  
+**Candidate**: (_Oops, she doesn’t like that we don’t have expiration._) We can add a timed expiration—user can set the expiration.  
+**Interviewer**: Sounds good.  
+**Candidate**: Cool. Let me summarize.
 
 Conclusion:
 - Use cases
@@ -66,25 +66,25 @@ Conclusion:
   • Default setting does not expire
   • Can optionally set a timed expiration
 
-candidate: Mobile or desktop client?
-interviewer: Both.
-candidate: Is user authentication or account registration required to view or create pastes?
-interviewer: No registration is needed; it’s anonymous.
-candidate: Great. Do we need to track usage statistics or analytics for these pastes?
-interviewer: We will record monthly visit stats.
-candidate: Should expired pastes be removed automatically?
-interviewer: Yes, the service deletes expired pastes.
-candidate: What availability SLA do we expect?
-interviewer: High availability is a requirement.
-candidate: For this exercise phase, I would like to suggest that we don't need user accounts, login, or custom shortlinks.
-interviewer: ok, Those are out of scope for now.
-candidate: For capacity planning, can you confirm traffic patterns and volumes?
-interviewer: Traffic is unevenly distributed; we target 10M users, 10M writes/month, and 100M reads/month.
-candidate: Understood. And are pastes text only, with low-latency URL resolution?
-interviewer: Correct.
-candidate: Finally, any rough numbers on storage and throughput?
-interviewer: I'll leave that to you.
-candidate: ok. So here is the scope of the problem:
+**Candidate**: Mobile or desktop client?
+**Interviewer**: Both.
+**Candidate**: Is user authentication or account registration required to view or create pastes?
+**Interviewer**: No registration is needed; it’s anonymous.
+**Candidate**: Great. Do we need to track usage statistics or analytics for these pastes?
+**Interviewer**: We will record monthly visit stats.
+**Candidate**: Should expired pastes be removed automatically?
+**Interviewer**: Yes, the service deletes expired pastes.
+**Candidate**: What availability SLA do we expect?
+**Interviewer**: High availability is a requirement.
+**Candidate**: For this exercise phase, I would like to suggest that we don't need user accounts, login, or custom shortlinks.
+**Interviewer**: ok, Those are out of scope for now.
+**Candidate**: For capacity planning, can you confirm traffic patterns and volumes?
+**Interviewer**: Traffic is unevenly distributed; we target 10M users, 10M writes/month, and 100M reads/month.
+**Candidate**: Understood. And are pastes text only, with low-latency URL resolution?
+**Interviewer**: Correct.
+**Candidate**: Finally, any rough numbers on storage and throughput?
+**Interviewer**: I'll leave that to you.
+**Candidate**: ok. So here is the scope of the problem:
 
 ### Use cases
 
@@ -154,13 +154,16 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
+
+<!-- Old image for reference ![Imgur](http://i.imgur.com/BKsBnmG.png) -->
+
 ```mermaid
 %%{init: { "flowchart": { "htmlLabels": true } }}%%
 
 flowchart TB
   %% Client Layer
   subgraph Client["**Client**"]
-    direction LR
+    direction TB
     WebClient[Web Client]
     MobileClient[Mobile Client]
   end
@@ -176,15 +179,13 @@ flowchart TB
   %% Storage Layer
   subgraph Storage["**Storage**"]
     direction LR
-    SQLDB[SQL Database]
-    ObjectStore[Object Store]
+    SQLDB[(SQL Database)]
+    ObjectStore[(Object Store)]
   end
 
   %% Data Flow
-  WebClient --> WriteAPI
-  MobileClient --> WriteAPI
-  WebClient --> ReadAPI
-  MobileClient --> ReadAPI
+  Client --> WebServer
+
 
   WriteAPI --> SQLDB
   WriteAPI --> ObjectStore
@@ -458,7 +459,7 @@ for key, count in reduced.items():
 
 To delete expired pastes, we could just scan the **SQL Database** for all entries whose expiration timestamp are older than the current timestamp.  All expired entries would then be deleted (or  marked as expired) from the table.
 
-## Tradeoffs and Scaling the design
+### Tradeoffs and Scaling the design
 
 > Identify and address bottlenecks, given the constraints.
 
@@ -482,6 +483,14 @@ For example, what issues are addressed by adding
  - What are the alternatives and **Trade-Offs** for each?
 
 We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
+
+
+## Step 4 Wrap up
+
+To summarize, we've designed a text snippet sharer system that meets the core requirements. We've discussed the high-level design, identified potential bottlenecks, and proposed solutions to address scalability issues. Now it is time to align again with the interviewer expectations.
+See if she has any feedback or questions, suggest next steps, improvements, error handling, and monitoring if appropriate.
+
+
 
 *To avoid repeating discussions*, refer to the following [system design topics](https://github.com/ido777/system-design-primer-update.git#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
 
