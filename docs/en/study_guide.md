@@ -102,65 +102,6 @@ flowchart TB
   style Assess fill:#FFF0F5,stroke:#993366,stroke-width:4px,rx:6,ry:6
 ```
 
-🗺️ Table of Contents
-
-- [System Design Interview Study Guide](#system-design-interview-study-guide)
-  - [Understand What a System Design Interview Is *Really* About](#understand-what-a-system-design-interview-is-really-about)
-- [Cracking the system](#cracking-the-system)
-  - [A Strategic Framework for System Design Interview Preparation](#a-strategic-framework-for-system-design-interview-preparation)
-    - [Interviewer's perspective.](#interviewers-perspective)
-    - [Interviewer's Goals in System Design Interview](#interviewers-goals-in-system-design-interview)
-    - [Alex Xu's four-phase framework for the system design interview](#alex-xus-four-phase-framework-for-the-system-design-interview)
-  - [From Insight to Interview Mastery](#from-insight-to-interview-mastery)
-    - [Critical Behaviors in the Interview Room](#critical-behaviors-in-the-interview-room)
-  - [✅ ABC Cheat Codes - A way to memorize during the interview](#-abc-cheat-codes---a-way-to-memorize-during-the-interview)
-  - [🔁 Interview ABC Loop](#-interview-abc-loop)
-    - [🎯 ABC for Preparation](#-abc-for-preparation)
-    - [🗣️ ABC  Dialogue Loop](#️-abc--dialogue-loop)
-    - [🧠 ABC - Thinking Process](#-abc---thinking-process)
-- [Phase 1: Understand the Problem \& Establish Design Scope](#phase-1-understand-the-problem--establish-design-scope)
-    - [🎯 Interviewer's Goal](#-interviewers-goal)
-    - [✅ Candidate's Strategy](#-candidates-strategy)
-    - [🧭 Phase one Ask ABC - Ask wide open questions on the below subjects:](#-phase-one-ask-abc---ask-wide-open-questions-on-the-below-subjects)
-    - [🔍 Example Dialogue (Pastebin)](#-example-dialogue-pastebin)
-      - [🧭 For more examples of the scoping dialogue](#-for-more-examples-of-the-scoping-dialogue)
-    - [🧭 Phase one Breakdown ABC - Brief the requirements with breakdown at mind:](#-phase-one-breakdown-abc---brief-the-requirements-with-breakdown-at-mind)
-    - [🔍 Example Breakdown (Pastebin)](#-example-breakdown-pastebin)
-- [Phase 2: Propose a High-Level Design \& Get Buy-In](#phase-2-propose-a-high-level-design--get-buy-in)
-    - [🎯 Interviewer's Goal](#-interviewers-goal-1)
-    - [🛠️ Candidate's Strategy](#️-candidates-strategy)
-      - [How to create the high level design](#how-to-create-the-high-level-design)
-        - [Optional: use cases  --\> Sequence diagram](#optional-use-cases-----sequence-diagram)
-        - [Important: Actually we can use mermaid to draw the sequence diagram, maybe even in the interview room.](#important-actually-we-can-use-mermaid-to-draw-the-sequence-diagram-maybe-even-in-the-interview-room)
-      - [Background tasks](#background-tasks)
-    - [🧭 Phase two ABC - Propose a high-level design](#-phase-two-abc---propose-a-high-level-design)
-      - [Block diagram](#block-diagram)
-    - [Get buy-in](#get-buy-in)
-  - [Phase 2.5: After Gaining Buy-In and Before the Deep Dive](#phase-25-after-gaining-buy-in-and-before-the-deep-dive)
-    - [🎯 Interviewer’s Goal: **Decide What’s Next**](#-interviewers-goal-decide-whats-next)
-    - [✅ Candidate’s Strategy: **Steer the Conversation Strategically**](#-candidates-strategy-steer-the-conversation-strategically)
-- [Phase 3: Deep Dive into Key Components](#phase-3-deep-dive-into-key-components)
-    - [🎯  Interviewer's Goal](#--interviewers-goal)
-    - [✅ Candidate's Strategy](#-candidates-strategy-1)
-    - [🧭 ABC Process for Phase 3](#-abc-process-for-phase-3)
-- [Phase 4: Wrap Up](#phase-4-wrap-up)
-    - [🎯  Interviewer's Goal](#--interviewers-goal-1)
-    - [✅ Candidate's Strategy](#-candidates-strategy-2)
-    - [🧭 ABC Process for Phase 4](#-abc-process-for-phase-4)
-  - [Gap Assessment](#gap-assessment)
-    - [System design interview practice](#system-design-interview-practice)
-    - [System design knowledge](#system-design-knowledge)
-  - [Refresh Your knowledge](#refresh-your-knowledge)
-- [Personal Learning Plan](#personal-learning-plan)
-    - [System design interview](#system-design-interview)
-    - [Timeline matters](#timeline-matters)
-    - [System design knowledge](#system-design-knowledge-1)
-    - [Timeline matters](#timeline-matters-1)
-- [Learning Loop](#learning-loop)
-    - [Repetition is the mother of all skills](#repetition-is-the-mother-of-all-skills)
-- [FAQ](#faq)
-    - [Source(s) and further reading](#sources-and-further-reading)
-    - [References](#references)
 
 
 ## Understand What a System Design Interview Is *Really* About
@@ -183,8 +124,8 @@ Many candidates focus on memorizing architectures instead of engaging in a colla
 
 ---
 
-# Cracking the system 
-## A Strategic Framework for System Design Interview Preparation
+## Cracking the system 
+### A Strategic Framework for System Design Interview Preparation
 
 ---
 
@@ -206,7 +147,7 @@ Don't worry - we will go into details in the next sections, but for now let's ju
 
 ---
 
-### Interviewer's perspective.
+#### Interviewer's perspective.
 
 Before talking about the solution - system design interview guide, let's understand the problem.
 The interviewer decides on your success in the interview, so let's reverse engineer the process of the system design interview from the interviewer point of view.
@@ -218,7 +159,7 @@ The limited time is a challenge for the interviewer, therefore the interviewer w
 Understand the interviewer's goals and triggers will help you to prepare for the interview and to be more effective during the interview.
 
 
-### Interviewer's Goals in System Design Interview
+#### Interviewer's Goals in System Design Interview
 
 1. **Evaluate Communication and Clarification Skills**
    During the *problem clarification* phase, the interviewer wants to see if the candidate can ask the right questions, uncover hidden constraints, and frame the problem with precision — just like they would in real-world ambiguity.
@@ -370,7 +311,7 @@ Communicate Your Thoughts Effectively
 
 
 
-# Phase 1: Understand the Problem & Establish Design Scope
+## Phase 1: Understand the Problem & Establish Design Scope
 
 ### 🎯 Interviewer's Goal
 
@@ -522,7 +463,7 @@ We will use this structure later on to create the high level design. However at 
 Another goal is to verify that we have all the details we need to start the high level design. We want the high level be a straight forward step that is driven from the requirements (more on this in the next section).
 
 
-# Phase 2: Propose a High-Level Design & Get Buy-In
+## Phase 2: Propose a High-Level Design & Get Buy-In
 
 ### 🎯 Interviewer's Goal
 
@@ -753,7 +694,7 @@ Here’s an improved and clearer version of your paragraph, preserving all the o
 
 ---
 
-## Phase 2.5: After Gaining Buy-In and Before the Deep Dive
+### Phase 2.5: After Gaining Buy-In and Before the Deep Dive
 
 > This phase is not part of Alex Xu’s original framework but has been added to emphasize a crucial **pivot** point in the interview process — the transition from high-level design to a deep dive.
 
@@ -785,7 +726,7 @@ These are **common areas of discussion** that apply to many designs. Mastering t
 
  
 
-# Phase 3: Deep Dive into Key Components
+## Phase 3: Deep Dive into Key Components
 
 ### 🎯  Interviewer's Goal
 
@@ -971,3 +912,4 @@ More (original repo) resources:
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+

@@ -16,8 +16,7 @@ plugins:
       default_language: en
       languages:
         en: English
-        zh: 简体中文
-        zh-Hant: 繁體中文
+
 
 markdown_extensions:
   - admonition
@@ -34,3 +33,32 @@ markdown_extensions:
   - pymdownx.tasklist
   - toc:
       permalink: true
+
+
+
+nav:
+  - Home: en/index.md
+  - About: https://github.com/ido777/system-design-primer-update/blob/main/README.md
+  - Contributing: https://github.com/ido777/system-design-primer-update/blob/main/CONTRIBUTING.md
+  - License: https://github.com/ido777/system-design-primer-update/blob/main/LICENSE.md
+  - Changelog: https://github.com/ido777/system-design-primer-update/blob/main/CHANGELOG.md
+
+  - English:
+      - Overview: en/index.md
+      - Start Here: en/study_guide.md
+      - System Design at a Glance: en/design-glance.md
+
+  - 简体中文 (Simplified Chinese):
+      - 简体中文主页: zh/design-glance.md
+
+  - 繁體中文 (Traditional Chinese):
+      - 繁體中文首頁: zh-Hant/design-glance.md
+
+  - العربية (Arabic):
+      - الصفحة الرئيسية: ar/design-glance.md
+
+  - 日本語 (Japanese):
+      - 日本語のホーム: ja/design-glance.md
+
+  - Türkçe (Turkish):
+      - Türkçe Anasayfa: tr/design-glance.md

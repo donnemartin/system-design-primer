@@ -15,6 +15,9 @@ Under the following terms:
 
 - **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made.
 
+
+## New Content
+
 All modifications and additions in [System Design Primer Update](https://github.com/ido777/system-design-primer-update) are made in the spirit of open collaboration and innovation and for now are licensed under the same license as the original content but this might change in the future.
 
 
