@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Language Selector</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    select {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Select Your Language</h1>
+  <p>You will be redirected to the selected documentation language.</p>
+
+  <select id="languageSelect">
+    <option value="en/">English</option>
+    <option value="zh-Hans/">简体中文 (Simplified Chinese)</option>
+    <option value="zh-TW/">繁體中文 (Traditional Chinese)</option>
+  </select>
+
+  <br/><br/>
+  <button onclick="redirectToSelected()">Go</button>
+
+  <script>
+    const supportedLangs = {
+      'zh-Hans': 'zh-Hans/',
+      'zh-CN': 'zh-Hans/',
+      'zh': 'zh-Hans/',
+      'zh-TW': 'zh-TW/',
+      'en': 'en/'
+    };
+
+    function getBrowserLangFolder() {
+      const lang = navigator.language || navigator.userLanguage || 'en';
+      return supportedLangs[lang] || 'en/';
+    }
+
+    function redirectToSelected() {
+      const folder = document.getElementById('languageSelect').value;
+      window.location.href = folder;
+    }
+
+    // Auto-redirect if landing directly
+    window.onload = function () {
+      if (!window.location.hash && window.location.pathname.endsWith('/index.html')) {
+        const preferred = getBrowserLangFolder();
+        window.location.href = preferred;
+      }
+    };
+  </script>
+
+</body>
+</html>
