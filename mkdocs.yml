@@ -45,20 +45,22 @@ nav:
 
   - English:
       - Overview: en/index.md
-      - Start Here: en/study_guide.md
+      - Study Guide Start Here: en/study_guide.md
+      - System Design Interview Questions: en/solutions.md
       - System Design at a Glance: en/design-glance.md
 
-  - 简体中文 (Simplified Chinese):
-      - 简体中文主页: zh/design-glance.md
+  - Translations (Not up to date):
+    - 简体中文 (Simplified Chinese):
+        - 简体中文主页: zh/design-glance.md
 
-  - 繁體中文 (Traditional Chinese):
-      - 繁體中文首頁: zh-Hant/design-glance.md
+    - 繁體中文 (Traditional Chinese):
+        - 繁體中文首頁: zh-Hant/design-glance.md
 
-  - العربية (Arabic):
-      - الصفحة الرئيسية: ar/design-glance.md
+    - العربية (Arabic):
+        - الصفحة الرئيسية: ar/design-glance.md
 
-  - 日本語 (Japanese):
-      - 日本語のホーム: ja/design-glance.md
+    - 日本語 (Japanese):
+        - 日本語のホーム: ja/design-glance.md
 
-  - Türkçe (Turkish):
-      - Türkçe Anasayfa: tr/design-glance.md
+    - Türkçe (Turkish):
+        - Türkçe Anasayfa: tr/design-glance.md

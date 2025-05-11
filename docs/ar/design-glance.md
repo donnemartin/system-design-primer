@@ -5,7 +5,7 @@
 # دليل تصميم النظم (System Design Primer)
 
 <p align="center">
-  <img src="images/jj3A5N8.png">
+  <img src="../../images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -43,7 +43,7 @@
 ## بطاقات Anki التعليمية
 
 <p align="center">
-  <img src="images/zdCAkB3.png">
+  <img src="../../images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -60,7 +60,7 @@
 هل تبحث عن موارد للمساعدة في التحضير لـ [**مقابلات البرمجة**](https://github.com/donnemartin/interactive-coding-challenges)؟
 
 <p align="center">
-  <img src="images/b4YtAEN.png">
+  <img src="../../images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -89,7 +89,7 @@
 > كل قسم يحتوي على روابط لمصادر أكثر تفصيلاً.
 
 <p align="center">
-  <img src="images/jrUBAF7.png">
+  <img src="../../images/jrUBAF7.png">
   <br/>
 </p>
 
@@ -136,7 +136,7 @@
 
 > المواضيع المقترحة للمراجعة بناءً على الجدول الزمني لمقابلتك (قصير، متوسط، طويل).
 
-![Imgur](images/OfVllex.png)
+![Imgur](../../images/OfVllex.png)
 
 **س: هل يجب أن أعرف كل شيء هنا للمقابلة؟**
 
@@ -258,49 +258,49 @@
 
 [عرض التمرين والحل](solutions/system_design/pastebin/README.md)
 
-![Imgur](images/4edXG0T.png)
+![Imgur](../../images/4edXG0T.png)
 
 ### تصميم الجدول الزمني والبحث في Twitter (أو خلاصة Facebook والبحث)
 
 [عرض التمرين والحل](solutions/system_design/twitter/README.md)
 
-![Imgur](images/jrUBAF7.png)
+![Imgur](../../images/jrUBAF7.png)
 
 ### تصميم متصفح ويب
 
 [عرض التمرين والحل](solutions/system_design/web_crawler/README.md)
 
-![Imgur](images/bWxPtQA.png)
+![Imgur](../../images/bWxPtQA.png)
 
 ### تصميم Mint.com
 
 [عرض التمرين والحل](solutions/system_design/mint/README.md)
 
-![Imgur](images/V5q57vU.png)
+![Imgur](../../images/V5q57vU.png)
 
 ### تصميم هياكل البيانات لشبكة اجتماعية
 
 [عرض التمرين والحل](solutions/system_design/social_graph/README.md)
 
-![Imgur](images/cdCv5g7.png)
+![Imgur](../../images/cdCv5g7.png)
 
 ### تصميم مخزن key-value لمحرك بحث
 
 [عرض التمرين والحل](solutions/system_design/query_cache/README.md)
 
-![Imgur](images/4j99mhe.png)
+![Imgur](../../images/4j99mhe.png)
 
 ### تصميم ميزة تصنيف المبيعات حسب الفئة في Amazon
 
 [عرض التمرين والحل](solutions/system_design/sales_rank/README.md)
 
-![Imgur](images/MzExP06.png)
+![Imgur](../../images/MzExP06.png)
 
 ### تصميم نظام يتطور لملايين المستخدمين على AWS
 
 [عرض التمرين والحل](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](images/jj3A5N8.png)
+![Imgur](../../images/jj3A5N8.png)
 
 ## أسئلة مقابلة التصميم الموجه للكائنات مع الحلول
 
@@ -391,7 +391,7 @@
 ### نظرية CAP
 
 <p align="center">
-  <img src="images/bgLMI2u.png">
+  <img src="../../images/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>المصدر: مراجعة نظرية CAP</a></i>
 </p>
@@ -530,7 +530,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ## نظام أسماء النطاقات (Domain Name System)
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg">
+  <img src="../../images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>المصدر: عرض تقديمي عن أمان DNS</a></i>
 </p>
@@ -568,7 +568,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ## شبكة توصيل المحتوى (CDN)
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg">
+  <img src="../../images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>المصدر: لماذا نستخدم CDN</a></i>
 </p>
@@ -609,7 +609,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ## موازن التحميل (Load Balancer)
 
 <p align="center">
-  <img src="images/h81n9iK.png">
+  <img src="../../images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>المصدر: أنماط تصميم النظم القابلة للتطوير</a></i>
 </p>
@@ -679,7 +679,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ## الوكيل العكسي (خادم الويب)
 
 <p align="center">
-  <img src="images/n41Azff.png">
+  <img src="../../images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>المصدر: ويكيبيديا</a></i>
   <br/>
@@ -722,7 +722,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ## طبقة التطبيق
 
 <p align="center">
-  <img src="images/yB5SYwm.png">
+  <img src="../../images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>المصدر: مقدمة في تصميم الأنظمة للتطوير</a></i>
 </p>
@@ -757,7 +757,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ## قاعدة البيانات (Database)
 
 <p align="center">
-  <img src="images/Xkm5CXz.png">
+  <img src="../../images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>المصدر: التطوير حتى 10 ملايين مستخدم</a></i>
 </p>
@@ -780,7 +780,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 يخدم الرئيسي عمليات القراءة والكتابة، مع نسخ عمليات الكتابة إلى تابع واحد أو أكثر، والتي تخدم القراءة فقط. يمكن للتوابع أيضاً النسخ إلى توابع إضافية في شكل شجري. إذا توقف الرئيسي عن العمل، يمكن للنظام الاستمرار في العمل في وضع القراءة فقط حتى يتم ترقية تابع ليصبح رئيسياً أو يتم توفير رئيسي جديد.
 
 <p align="center">
-  <img src="images/C9ioGtn.png">
+  <img src="../../images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>المصدر: أنماط قابلية التطوير والتوافر والاستقرار</a></i>
 </p>
@@ -795,7 +795,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 كلا الرئيسيين يخدمان القراءة والكتابة وينسقان مع بعضهما البعض في عمليات الكتابة. إذا توقف أي من الرئيسيين عن العمل، يمكن للنظام الاستمرار في العمل مع كل من القراءة والكتابة.
 
 <p align="center">
-  <img src="images/krAHLGg.png">
+  <img src="../../images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>المصدر: أنماط قابلية التطوير والتوافر والاستقرار</a></i>
 </p>
@@ -823,7 +823,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 #### الفيدرالية (Federation)
 
 <p align="center">
-  <img src="images/U3qV33e.png">
+  <img src="../../images/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>المصدر: التطوير حتى 10 ملايين مستخدم</a></i>
 </p>
@@ -844,7 +844,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 #### التجزئة (Sharding)
 
 <p align="center">
-  <img src="images/wU8x5Id.png">
+  <img src="../../images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>المصدر: أنماط قابلية التطوير والتوافر والاستقرار</a></i>
 </p>
@@ -986,7 +986,7 @@ NoSQL هي مجموعة من عناصر البيانات ممثلة في **مخ�
 #### مخزن الأعمدة العريضة
 
 <p align="center">
-  <img src="images/n16iOGk.png">
+  <img src="../../images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>المصدر: SQL & NoSQL، تاريخ موجز</a></i>
 </p>
@@ -1009,7 +1009,7 @@ NoSQL هي مجموعة من عناصر البيانات ممثلة في **مخ�
 #### قاعدة بيانات الرسوم البيانية
 
 <p align="center">
-  <img src="images/fNcl65g.png">
+  <img src="../../images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>المصدر: قاعدة بيانات الرسوم البيانية</a></i>
 </p>
@@ -1037,7 +1037,7 @@ NoSQL هي مجموعة من عناصر البيانات ممثلة في **مخ�
 ### SQL أم NoSQL
 
 <p align="center">
-  <img src="images/wXGqG5f.png">
+  <img src="../../images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>المصدر: الانتقال من RDBMS إلى NoSQL</a></i>
 </p>
@@ -1079,7 +1079,7 @@ NoSQL هي مجموعة من عناصر البيانات ممثلة في **مخ�
 ## التخزين المؤقت
 
 <p align="center">
-  <img src="images/Q6z24La.png">
+  <img src="../../images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>المصدر: أنماط تصميم النظام القابل للتوسع</a></i>
 </p>
@@ -1149,7 +1149,7 @@ NoSQL هي مجموعة من عناصر البيانات ممثلة في **مخ�
 #### التخزين المؤقت الجانبي (Cache-aside)
 
 <p align="center">
-  <img src="images/ONjORqk.png">
+  <img src="../../images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>المصدر: من التخزين المؤقت إلى شبكة بيانات في الذاكرة</a></i>
 </p>
@@ -1184,7 +1184,7 @@ def get_user(self, user_id):
 #### الكتابة المباشرة (Write-through)
 
 <p align="center">
-  <img src="images/0vBc0hN.png">
+  <img src="../../images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>المصدر: أنماط قابلية التوسع والتوافر والاستقرار</a></i>
 </p>
@@ -1219,7 +1219,7 @@ def set_user(user_id, values):
 #### الكتابة المؤجلة (write-back)
 
 <p align="center">
-  <img src="images/rgSrvjG.png">
+  <img src="../../images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>المصدر: أنماط قابلية التوسع والتوافر والاستقرار</a></i>
 </p>
@@ -1237,7 +1237,7 @@ def set_user(user_id, values):
 #### التحديث المسبق (Refresh-ahead)
 
 <p align="center">
-  <img src="images/kxtjqgE.png">
+  <img src="../../images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>المصدر: من التخزين المؤقت إلى شبكة البيانات في الذاكرة</a></i>
 </p>
@@ -1269,7 +1269,7 @@ def set_user(user_id, values):
 ## اللاتزامن (Asynchronism)
 
 <p align="center">
-  <img src="images/54GYsSx.png">
+  <img src="../../images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>المصدر: مقدمة في تصميم الأنظمة للتوسع</a></i>
 </p>
@@ -1315,7 +1315,7 @@ def set_user(user_id, values):
 ## الاتصال
 
 <p align="center">
-  <img src="images/5KeocQs.jpg">
+  <img src="../../images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>المصدر: نموذج OSI ذو الطبقات السبع</a></i>
 </p>
@@ -1347,7 +1347,7 @@ HTTP هو بروتوكول طبقة التطبيق يعتمد على بروتو�
 ### بروتوكول التحكم بالإرسال (TCP)
 
 <p align="center">
-  <img src="images/JdAsdvG.jpg">
+  <img src="../../images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>المصدر: كيفية صنع لعبة متعددة اللاعبين</a></i>
 </p>
@@ -1371,7 +1371,7 @@ TCP مفيد للتطبيقات التي تتطلب موثوقية عالية و
 ### بروتوكول حزم المستخدم (UDP)
 
 <p align="center">
-  <img src="images/yzDrJtA.jpg">
+  <img src="../../images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>المصدر: كيفية صنع لعبة متعددة اللاعبين</a></i>
 </p>
@@ -1400,7 +1400,7 @@ UDP أقل موثوقية ولكنه يعمل بشكل جيد في حالات ا
 ### استدعاء الإجراء عن بعد (RPC)
 
 <p align="center">
-  <img src="images/iF4Mkb5.png">
+  <img src="../../images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>المصدر: حل مقابلة تصميم النظام</a></i>
 </p>
@@ -1624,7 +1624,7 @@ Notes
 > مقالات حول كيفية تصميم الأنظمة في العالم الحقيقي.
 
 <p align="center">
-  <img src="images/TcUo2fw.png">
+  <img src="../../images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>المصدر: الجداول الزمنية في Twitter على نطاق واسع</a></i>
 </p>

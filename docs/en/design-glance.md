@@ -5,7 +5,7 @@
 # The System Design Primer
 
 <p align="center">
-  <img src="images/jj3A5N8.png">
+  <img src="../../images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -48,15 +48,15 @@ Additional topics for interview prep:
 ## Anki flashcards
 
 <p align="center">
-  <img src="images/zdCAkB3.png">
+  <img src="../../images/zdCAkB3.png">
   <br/>
 </p>
 <p align="center">
-  <img src="images/screenshot.png">
+  <img src="../../images/screenshot.png">
   <br/>
 </p>
 <p align="center">
-  <img src="images/screenshot_gif.gif">
+  <img src="../../images/screenshot_gif.gif">
   <br/>
 </p>
 The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
@@ -74,7 +74,7 @@ Great for use while on-the-go.
 Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="images/b4YtAEN.png">
+  <img src="../../images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -111,99 +111,193 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 > Each section contains links to more in-depth resources.
 
 <p align="center">
-  <img src="images/jrUBAF7.png">
+  <img src="../../images/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-  * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-  * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-  * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-  * [CAP theorem](#cap-theorem)
-    * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-    * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-  * [Weak consistency](#weak-consistency)
-  * [Eventual consistency](#eventual-consistency)
-  * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-        * [Active-passive](#active-passive)
-        * [Active-active](#active-active)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-  * [Push CDNs](#push-cdns)
-  * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Consistent Hashing](#consistent-hashing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-  * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-  * [Microservices](#microservices)
-  * [Service discovery](#service-discovery)
-* [Database](#database)
-  * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-    * [Master-slave replication](#master-slave-replication)
-    * [Master-master replication](#master-master-replication)
-    * [Federation](#federation)
-    * [Sharding](#sharding)
-    * [Denormalization](#denormalization)
-    * [SQL tuning](#sql-tuning)
-  * [NoSQL](#nosql)
-    * [Key-value store](#key-value-store)
-    * [Document store](#document-store)
-    * [Wide column store](#wide-column-store)
-    * [Graph Database](#graph-database)
-  * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-  * [Client caching](#client-caching)
-  * [CDN caching](#cdn-caching)
-  * [Web server caching](#web-server-caching)
-  * [Database caching](#database-caching)
-  * [Application caching](#application-caching)
-  * [Caching at the database query level](#caching-at-the-database-query-level)
-  * [Caching at the object level](#caching-at-the-object-level)
-  * [When to update the cache](#when-to-update-the-cache)
-    * [Cache-aside](#cache-aside)
-    * [Write-through](#write-through)
-    * [Write-behind (write-back)](#write-behind-write-back)
-    * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-  * [Message queues](#message-queues)
-  * [Task queues](#task-queues)
-  * [Back pressure](#back-pressure)
-* [Communication](#communication)
-  * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
-  * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-  * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-  * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-  * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-  * [Powers of two table](#powers-of-two-table)
-  * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-  * [Additional system design interview questions](#additional-system-design-interview-questions)
-  * [Real world architectures](#real-world-architectures)
-  * [Company architectures](#company-architectures)
-  * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+- [The System Design Primer](#the-system-design-primer)
+  - [Motivation](#motivation)
+    - [Learn how to design large-scale systems](#learn-how-to-design-large-scale-systems)
+    - [Learn from the open source community](#learn-from-the-open-source-community)
+    - [Prep for the system design interview](#prep-for-the-system-design-interview)
+  - [Anki flashcards](#anki-flashcards)
+    - [Coding Resource: Interactive Coding Challenges](#coding-resource-interactive-coding-challenges)
+    - [Video Resources](#video-resources)
+  - [Contributing](#contributing)
+  - [Index of system design topics](#index-of-system-design-topics)
+  - [Study guide](#study-guide)
+  - [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
+    - [Step 1: Outline use cases, constraints, and assumptions](#step-1-outline-use-cases-constraints-and-assumptions)
+    - [Step 2: Create a high level design](#step-2-create-a-high-level-design)
+    - [Step 3: Design core components](#step-3-design-core-components)
+    - [Step 4: Scale the design](#step-4-scale-the-design)
+    - [Back-of-the-envelope calculations](#back-of-the-envelope-calculations)
+    - [Source(s) and further reading](#sources-and-further-reading)
+  - [System design interview questions with solutions](#system-design-interview-questions-with-solutions)
+    - [Design Pastebin.com (or Bit.ly)](#design-pastebincom-or-bitly)
+    - [Design the Twitter timeline and search (or Facebook feed and search)](#design-the-twitter-timeline-and-search-or-facebook-feed-and-search)
+    - [Design a web crawler](#design-a-web-crawler)
+    - [Design Mint.com](#design-mintcom)
+    - [Design the data structures for a social network](#design-the-data-structures-for-a-social-network)
+    - [Design a key-value store for a search engine](#design-a-key-value-store-for-a-search-engine)
+    - [Design Amazon's sales ranking by category feature](#design-amazons-sales-ranking-by-category-feature)
+    - [Design a system that scales to millions of users on AWS](#design-a-system-that-scales-to-millions-of-users-on-aws)
+  - [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions)
+  - [System design topics: start here](#system-design-topics-start-here)
+    - [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
+    - [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
+    - [Next steps](#next-steps)
+  - [Performance vs scalability](#performance-vs-scalability)
+    - [Source(s) and further reading](#sources-and-further-reading-1)
+  - [Latency vs throughput](#latency-vs-throughput)
+    - [Source(s) and further reading](#sources-and-further-reading-2)
+  - [Availability vs consistency](#availability-vs-consistency)
+    - [CAP theorem](#cap-theorem)
+      - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+      - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+    - [Source(s) and further reading](#sources-and-further-reading-3)
+  - [Consistency patterns](#consistency-patterns)
+    - [Weak consistency](#weak-consistency)
+    - [Eventual consistency](#eventual-consistency)
+    - [Strong consistency](#strong-consistency)
+    - [Source(s) and further reading](#sources-and-further-reading-4)
+  - [Availability patterns](#availability-patterns)
+    - [Fail-over](#fail-over)
+      - [Active-passive](#active-passive)
+      - [Active-active](#active-active)
+    - [Disadvantage(s): failover](#disadvantages-failover)
+    - [Replication](#replication)
+      - [Master-slave and master-master](#master-slave-and-master-master)
+    - [Availability in numbers](#availability-in-numbers)
+      - [99.9% availability - three 9s](#999-availability---three-9s)
+      - [99.99% availability - four 9s](#9999-availability---four-9s)
+      - [Availability in parallel vs in sequence](#availability-in-parallel-vs-in-sequence)
+        - [In sequence](#in-sequence)
+        - [In parallel](#in-parallel)
+  - [Domain name system](#domain-name-system)
+    - [Disadvantage(s): DNS](#disadvantages-dns)
+    - [Source(s) and further reading](#sources-and-further-reading-5)
+  - [Content delivery network](#content-delivery-network)
+    - [Push CDNs](#push-cdns)
+    - [Pull CDNs](#pull-cdns)
+    - [Disadvantage(s): CDN](#disadvantages-cdn)
+    - [Source(s) and further reading](#sources-and-further-reading-6)
+  - [Load balancer](#load-balancer)
+    - [Layer 4 load balancing](#layer-4-load-balancing)
+    - [Layer 7 load balancing](#layer-7-load-balancing)
+    - [Consistent Hashing](#consistent-hashing)
+    - [Horizontal scaling](#horizontal-scaling)
+      - [Disadvantage(s): horizontal scaling](#disadvantages-horizontal-scaling)
+    - [Disadvantage(s): load balancer](#disadvantages-load-balancer)
+    - [Source(s) and further reading](#sources-and-further-reading-7)
+  - [Reverse proxy (web server)](#reverse-proxy-web-server)
+    - [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
+    - [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
+    - [Source(s) and further reading](#sources-and-further-reading-8)
+  - [Application layer](#application-layer)
+    - [Microservices](#microservices)
+    - [Service Discovery](#service-discovery)
+    - [Disadvantage(s): application layer](#disadvantages-application-layer)
+    - [Source(s) and further reading](#sources-and-further-reading-9)
+  - [Database](#database)
+    - [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+      - [Master-slave replication](#master-slave-replication)
+        - [Disadvantage(s): master-slave replication](#disadvantages-master-slave-replication)
+      - [Master-master replication](#master-master-replication)
+        - [Disadvantage(s): master-master replication](#disadvantages-master-master-replication)
+        - [Disadvantage(s): replication](#disadvantages-replication)
+        - [Source(s) and further reading: replication](#sources-and-further-reading-replication)
+      - [Federation](#federation)
+        - [Disadvantage(s): federation](#disadvantages-federation)
+        - [Source(s) and further reading: federation](#sources-and-further-reading-federation)
+      - [Sharding](#sharding)
+        - [Disadvantage(s): sharding](#disadvantages-sharding)
+        - [Source(s) and further reading: sharding](#sources-and-further-reading-sharding)
+      - [Denormalization](#denormalization)
+        - [Disadvantage(s): denormalization](#disadvantages-denormalization)
+          - [Source(s) and further reading: denormalization](#sources-and-further-reading-denormalization)
+      - [SQL tuning](#sql-tuning)
+        - [Tighten up the schema](#tighten-up-the-schema)
+        - [Use good indices](#use-good-indices)
+        - [Avoid expensive joins](#avoid-expensive-joins)
+        - [Partition tables](#partition-tables)
+        - [Tune the query cache](#tune-the-query-cache)
+        - [Source(s) and further reading: SQL tuning](#sources-and-further-reading-sql-tuning)
+    - [NoSQL](#nosql)
+      - [Key-value store](#key-value-store)
+        - [Source(s) and further reading: key-value store](#sources-and-further-reading-key-value-store)
+      - [Document store](#document-store)
+        - [Source(s) and further reading: document store](#sources-and-further-reading-document-store)
+      - [Wide column store](#wide-column-store)
+        - [Source(s) and further reading: wide column store](#sources-and-further-reading-wide-column-store)
+      - [Graph database](#graph-database)
+        - [Source(s) and further reading: graph](#sources-and-further-reading-graph)
+      - [Source(s) and further reading: NoSQL](#sources-and-further-reading-nosql)
+    - [SQL or NoSQL](#sql-or-nosql)
+      - [Source(s) and further reading: SQL or NoSQL](#sources-and-further-reading-sql-or-nosql)
+  - [Cache](#cache)
+    - [Client caching](#client-caching)
+    - [CDN caching](#cdn-caching)
+    - [Web server caching](#web-server-caching)
+    - [Database caching](#database-caching)
+    - [Application caching](#application-caching)
+    - [Caching at the database query level](#caching-at-the-database-query-level)
+    - [Caching at the object level](#caching-at-the-object-level)
+    - [When to update the cache](#when-to-update-the-cache)
+      - [Cache-aside](#cache-aside)
+        - [Disadvantage(s): cache-aside](#disadvantages-cache-aside)
+      - [Write-through](#write-through)
+        - [Disadvantage(s): write through](#disadvantages-write-through)
+      - [Write-behind (write-back)](#write-behind-write-back)
+        - [Disadvantage(s): write-behind](#disadvantages-write-behind)
+      - [Refresh-ahead](#refresh-ahead)
+        - [Disadvantage(s): refresh-ahead](#disadvantages-refresh-ahead)
+    - [Disadvantage(s): cache](#disadvantages-cache)
+    - [Source(s) and further reading](#sources-and-further-reading-10)
+  - [Asynchronism](#asynchronism)
+    - [Message queues](#message-queues)
+    - [Task queues](#task-queues)
+    - [Back pressure](#back-pressure)
+    - [Transactional Messaging](#transactional-messaging)
+    - [Disadvantage(s): asynchronism](#disadvantages-asynchronism)
+    - [Source(s) and further reading](#sources-and-further-reading-11)
+  - [Communication](#communication)
+    - [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
+      - [Source(s) and further reading: HTTP](#sources-and-further-reading-http)
+    - [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
+    - [User datagram protocol (UDP)](#user-datagram-protocol-udp)
+      - [Source(s) and further reading: TCP and UDP](#sources-and-further-reading-tcp-and-udp)
+    - [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+      - [Disadvantage(s): RPC](#disadvantages-rpc)
+    - [Representational state transfer (REST)](#representational-state-transfer-rest)
+      - [Disadvantage(s): REST](#disadvantages-rest)
+    - [RPC and REST calls comparison](#rpc-and-rest-calls-comparison)
+      - [Source(s) and further reading: REST and RPC](#sources-and-further-reading-rest-and-rpc)
+  - [Security](#security)
+    - [Source(s) and further reading](#sources-and-further-reading-12)
+  - [Appendix](#appendix)
+    - [Powers of two table](#powers-of-two-table)
+      - [Source(s) and further reading](#sources-and-further-reading-13)
+    - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+      - [Latency numbers visualized](#latency-numbers-visualized)
+      - [Source(s) and further reading](#sources-and-further-reading-14)
+    - [Additional system design interview questions](#additional-system-design-interview-questions)
+    - [Real world architectures](#real-world-architectures)
+    - [Company architectures](#company-architectures)
+    - [Company engineering blogs](#company-engineering-blogs)
+      - [Source(s) and further reading](#sources-and-further-reading-15)
+  - [Interview preparation resources](#interview-preparation-resources)
+    - [Mock interviews](#mock-interviews)
+  - [Under development](#under-development)
+  - [Credits](#credits)
+  - [Contact info](#contact-info)
+  - [License](#license)
 
 ## Study guide
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
-![Imgur](images/OfVllex.png)
+![Imgur](../../images/OfVllex.png)
 
 **Q: For interviews, do I need to know everything here?**
 
@@ -332,49 +426,49 @@ You can practice a few sample questions and discuss solutions with the community
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
 
-![Imgur](images/4edXG0T.png)
+![Imgur](../../images/4edXG0T.png)
 
 ### Design the Twitter timeline and search (or Facebook feed and search)
 
 [View exercise and solution](solutions/system_design/twitter/README.md)
 
-![Imgur](images/jrUBAF7.png)
+![Imgur](../../images/jrUBAF7.png)
 
 ### Design a web crawler
 
 [View exercise and solution](solutions/system_design/web_crawler/README.md)
 
-![Imgur](images/bWxPtQA.png)
+![Imgur](../../images/bWxPtQA.png)
 
 ### Design Mint.com
 
 [View exercise and solution](solutions/system_design/mint/README.md)
 
-![Imgur](images/V5q57vU.png)
+![Imgur](../../images/V5q57vU.png)
 
 ### Design the data structures for a social network
 
 [View exercise and solution](solutions/system_design/social_graph/README.md)
 
-![Imgur](images/cdCv5g7.png)
+![Imgur](../../images/cdCv5g7.png)
 
 ### Design a key-value store for a search engine
 
 [View exercise and solution](solutions/system_design/query_cache/README.md)
 
-![Imgur](images/4j99mhe.png)
+![Imgur](../../images/4j99mhe.png)
 
 ### Design Amazon's sales ranking by category feature
 
 [View exercise and solution](solutions/system_design/sales_rank/README.md)
 
-![Imgur](images/MzExP06.png)
+![Imgur](../../images/MzExP06.png)
 
 ### Design a system that scales to millions of users on AWS
 
 [View exercise and solution](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](images/jj3A5N8.png)
+![Imgur](../../images/jj3A5N8.png)
 
 ## Object-oriented design interview questions with solutions
 
@@ -473,7 +567,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### CAP theorem
 
 <p align="center">
-  <img src="images/1_2Ed1S7UUfLT21AeH0ymIwQ.png">
+  <img src="../../images/1_2Ed1S7UUfLT21AeH0ymIwQ.png">
   <br/>
   <i><a href=https://medium.com/codenx/explaining-the-cap-theorem-and-its-limitations-e43f47f104c3>Source: medium.com explaining-the-cap-theorem-and-its-limitations</a></i>
 </p>
@@ -615,7 +709,7 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
 ## Domain name system
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg">
+  <img src="../../images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
@@ -655,7 +749,7 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 ## Content delivery network
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg">
+  <img src="../../images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
 </p>
@@ -697,7 +791,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 ## Load balancer
 
 <p align="center">
-  <img src="images/h81n9iK.png">
+  <img src="../../images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -752,7 +846,7 @@ Here's how it works:
 * <b>Scalability and Consistency:</b> The key benefit of consistent hashing is its scalability. If a server is added or removed, only requests that map to the immediate vicinity of the affected server will be re-routed. Most requests will continue to be directed to the same servers as before. This minimizes data re-caching and avoids creating hotspots where certain servers become overloaded
 
 <p align="center">
-  <img src="images/jsjss.png">
+  <img src="../../images/jsjss.png">
   <br/>
 </p>
 
@@ -786,7 +880,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 ## Reverse proxy (web server)
 
 <p align="center">
-  <img src="images/n41Azff.png">
+  <img src="../../images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
@@ -831,7 +925,7 @@ Additional benefits include:
 ## Application layer
 
 <p align="center">
-  <img src="images/yB5SYwm.png">
+  <img src="../../images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -866,7 +960,7 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 ## Database
 
 <p align="center">
-  <img src="images/Xkm5CXz.png">
+  <img src="../../images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -889,7 +983,7 @@ There are many techniques to scale a relational database: **master-slave replica
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
 <p align="center">
-  <img src="images/C9ioGtn.png">
+  <img src="../../images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -904,7 +998,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
 
 <p align="center">
-  <img src="images/krAHLGg.png">
+  <img src="../../images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -932,7 +1026,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 #### Federation
 
 <p align="center">
-  <img src="images/U3qV33e.png">
+  <img src="../../images/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -953,7 +1047,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 #### Sharding
 
 <p align="center">
-  <img src="images/wU8x5Id.png">
+  <img src="../../images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1099,7 +1193,7 @@ Document stores provide high flexibility and are often used for working with occ
 #### Wide column store
 
 <p align="center">
-  <img src="images/n16iOGk.png">
+  <img src="../../images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1122,7 +1216,7 @@ Wide column stores offer high availability and high scalability.  They are often
 #### Graph database
 
 <p align="center">
-  <img src="images/fNcl65g.png">
+  <img src="../../images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1151,7 +1245,7 @@ Graphs databases offer high performance for data models with complex relationshi
 ### SQL or NoSQL
 
 <p align="center">
-  <img src="images/wXGqG5f.png">
+  <img src="../../images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1193,7 +1287,7 @@ Sample data well-suited for **NoSQL**:
 ## Cache
 
 <p align="center">
-  <img src="images/Q6z24La.png">
+  <img src="../../images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -1264,7 +1358,7 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 #### Cache-aside
 
 <p align="center">
-  <img src="images/ONjORqk.png">
+  <img src="../../images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1302,7 +1396,7 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 #### Write-through
 
 <p align="center">
-  <img src="images/0vBc0hN.png">
+  <img src="../../images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1337,7 +1431,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 #### Write-behind (write-back)
 
 <p align="center">
-  <img src="images/rgSrvjG.png">
+  <img src="../../images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1355,7 +1449,7 @@ In write-behind, the application does the following:
 #### Refresh-ahead
 
 <p align="center">
-  <img src="images/kxtjqgE.png">
+  <img src="../../images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1387,7 +1481,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ## Asynchronism
 
 <p align="center">
-  <img src="images/54GYsSx.png">
+  <img src="../../images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
 </p>
@@ -1450,7 +1544,7 @@ Once the transaction is committed, a background worker reads the "process paymen
 ## Communication
 
 <p align="center">
-  <img src="images/5KeocQs.jpg">
+  <img src="../../images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
 </p>
@@ -1482,7 +1576,7 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 ### Transmission control protocol (TCP)
 
 <p align="center">
-  <img src="images/JdAsdvG.jpg">
+  <img src="../../images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1508,7 +1602,7 @@ Use TCP over UDP when:
 ### User datagram protocol (UDP)
 
 <p align="center">
-  <img src="images/yzDrJtA.jpg">
+  <img src="../../images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
 </p>
@@ -1539,7 +1633,7 @@ Use UDP over TCP when:
 ### Remote procedure call (RPC)
 
 <p align="center">
-  <img src="images/iF4Mkb5.png">
+  <img src="../../images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
@@ -1766,7 +1860,7 @@ Handy metrics based on numbers above:
 > Articles on how real world systems are designed.
 
 <p align="center">
-  <img src="images/TcUo2fw.png">
+  <img src="../../images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>

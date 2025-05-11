@@ -3,7 +3,7 @@
 # 系統設計入門
 
 <p align="center">
-  <img src="images/jj3A5N8.png">
+  <img src="../../images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -44,7 +44,7 @@
 ## 學習單字卡
 
 <p align="center">
-  <img src="images/zdCAkB3.png">
+  <img src="../../images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -61,7 +61,7 @@
 你正在尋找資源來面對[**程式語言面試**](https://github.com/donnemartin/interactive-coding-challenges)嗎？
 
 <p align="center">
-  <img src="images/b4YtAEN.png">
+  <img src="../../images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -91,96 +91,182 @@
 > 每一章節都包含更深入資源的連結。
 
 <p align="center">
-  <img src="images/jrUBAF7.png">
+  <img src="../../images/jrUBAF7.png">
   <br/>
 </p>
 
-* [系統設計主題：從這裡開始](#系統設計主題從這裡開始)
-    * [第一步：複習關於可擴展性的影片講座](#第一步複習關於可擴展性的影片講座)
-    * [第二步：複習關於可擴展性的文章](#第二步複習關於可擴展性的文章)
-    * [下一步](#下一步)
-* [效能與可擴展性](#效能與可擴展性)
-* [延遲與吞吐量](#延遲與吞吐量)
-* [可用性與一致性](#可用性與一致性)
-    * [CAP 理論](#cap-理論)
-        * [CP-一致性與部分容錯性](#cp-一致性與部分容錯性)
-        * [AP-可用性與部分容錯性](#ap-可用性與部分容錯性)
-* [一致性模式](#一致性模式)
-    * [弱一致性](#弱一致性)
-    * [最終一致性](#最終一致性)
-    * [強一致性](#強一致性)
-* [可用性模式](#可用性模式)
-    * [容錯轉移](#容錯轉移)
-    * [複寫機制](#複寫機制)
-* [域名系統](#域名系統)
-* [內容傳遞網路(CDN)](#內容傳遞網路cdn)
-    * [推送式 CDNs](#推送式-cdns)
-    * [拉取式 CDNs](#拉取式-cdns)
-* [負載平衡器](#負載平衡器)
-    * [主動到備用切換模式(AP Mode)](#主動到備用切換模式ap-mode)
-    * [雙主動切換模式(AA Mode)](#雙主動切換模式aa-mode)
-    * [第四層負載平衡](#第四層負載平衡)
-    * [第七層負載平衡](#第七層負載平衡)
-    * [水平擴展](#水平擴展)
-* [反向代理(網頁伺服器)](#反向代理網頁伺服器)
-    * [負載平衡器與反向代理伺服器](#負載平衡器與反向代理伺服器)
-* [應用層](#應用層)
-    * [微服務](#微服務)
-    * [服務發現](#服務發現)
-* [資料庫](#資料庫)
-    * [關連式資料庫管理系統(RDBMS)](#關連式資料庫管理系統rdbms)
-        * [主從複寫](#主從複寫)
-        * [主動模式複寫](#主動模式複寫)
-        * [聯邦式資料庫](#聯邦式資料庫)
-        * [分片](#分片)
-        * [反正規化](#反正規化)
-        * [SQL 優化](#sql-優化)
-    * [NoSQL](#nosql)
-        * [鍵-值對的資料庫](#鍵-值對的資料庫)
-        * [文件類型資料庫](#文件類型資料庫)
-        * [列儲存型資料庫](#列儲存型資料庫)
-        * [圖形資料庫](#圖形資料庫)
-    * [SQL 或 NoSQL](#sql-或-nosql)
-* [快取](#快取)
-    * [客戶端快取](#客戶端快取)
-    * [CDN 快取](#cdn-快取)
-    * [網站伺服器快取](#網站伺服器快取)
-    * [資料庫快取](#資料庫快取)
-    * [應用程式快取](#應用程式快取)
-    * [資料庫查詢級別的快取](#資料庫查詢級別的快取)
-    * [物件級別的快取](#物件級別的快取)
-    * [什麼時候要更新快取](#什麼時候要更新快取)
-        * [快取模式](#快取模式)
-        * [寫入模式](#寫入模式)
-        * [事後寫入(回寫)](#事後寫入回寫)
-        * [更新式快取](#更新式快取)
-* [非同步機制](#非同步機制)
-    * [訊息佇列](#訊息佇列)
-    * [工作佇列](#工作佇列)
-    * [背壓機制](#背壓機制)
-* [通訊](#通訊)
-    * [傳輸控制通訊協定(TCP)](#傳輸控制通訊協定tcp)
-    * [使用者資料流通訊協定 (UDP)](#使用者資料流通訊協定-udp)
-    * [遠端程式呼叫 (RPC)](#遠端程式呼叫-rpc)
-    * [具象狀態轉移 (REST)](#具象狀態轉移-rest)
-* [資訊安全](#資訊安全)
-* [附錄](#附錄)
-    * [2 的次方表](#2-的次方表)
-    * [每個開發者都應該知道的延遲數量級](#每個開發者都應該知道的延遲數量級)
-    * [其他的系統設計面試問題](#其他的系統設計面試問題)
-    * [真實世界的架構](#真實世界的架構)
-    * [公司的系統架構](#公司的系統架構)
-    * [公司的工程部落格](#公司的工程部落格)
-* [仍在進行中](#仍在進行中)
-* [致謝](#致謝)
-* [聯絡資訊](#聯絡資訊)
-* [授權](#授權)
+- [系統設計入門](#系統設計入門)
+  - [動機](#動機)
+    - [學習如何設計大型系統](#學習如何設計大型系統)
+    - [從開放原始碼社群中學習](#從開放原始碼社群中學習)
+    - [準備系統設計的面試](#準備系統設計的面試)
+  - [學習單字卡](#學習單字卡)
+    - [程式設計學習資源：互動式程式學習設計](#程式設計學習資源互動式程式學習設計)
+  - [如何貢獻](#如何貢獻)
+  - [系統設計主題的索引](#系統設計主題的索引)
+  - [學習指南](#學習指南)
+  - [如何解決一個系統設計的面試題目](#如何解決一個系統設計的面試題目)
+    - [第一步：描述使用的場景、限制及假設](#第一步描述使用的場景限制及假設)
+    - [第二步：建立一個高階的設計](#第二步建立一個高階的設計)
+    - [第三步： 設計核心的元件](#第三步-設計核心的元件)
+    - [第四步：評估你的設計](#第四步評估你的設計)
+    - [快速有效的進行估算](#快速有效的進行估算)
+    - [相關資源與延伸閱讀](#相關資源與延伸閱讀)
+  - [系統設計面試問題與解答](#系統設計面試問題與解答)
+    - [設計 Pastebin.com (或 Bit.ly)](#設計-pastebincom-或-bitly)
+    - [設計一個像是 Twitter 的 timeline (或 Facebook feed)設計一個 Twitter 搜尋功能 (or Facebook 搜尋功能)](#設計一個像是-twitter-的-timeline-或-facebook-feed設計一個-twitter-搜尋功能-or-facebook-搜尋功能)
+    - [設計一個爬蟲系統](#設計一個爬蟲系統)
+    - [設計 Mint.com 網站](#設計-mintcom-網站)
+    - [設計一個社交網站的資料結構](#設計一個社交網站的資料結構)
+    - [設計一個搜尋引擎使用的鍵值儲存資料結構](#設計一個搜尋引擎使用的鍵值儲存資料結構)
+    - [設計一個根據產品分類的亞馬遜銷售排名](#設計一個根據產品分類的亞馬遜銷售排名)
+    - [在 AWS 上設計一個百萬用戶等級的系統](#在-aws-上設計一個百萬用戶等級的系統)
+  - [物件導向設計面試問題與解答](#物件導向設計面試問題與解答)
+  - [系統設計主題：從這裡開始](#系統設計主題從這裡開始)
+    - [第一步：複習關於可擴展性的影片講座](#第一步複習關於可擴展性的影片講座)
+    - [第二步：複習關於可擴展性的文章](#第二步複習關於可擴展性的文章)
+    - [下一步](#下一步)
+  - [效能與可擴展性](#效能與可擴展性)
+    - [來源及延伸閱讀](#來源及延伸閱讀)
+  - [延遲與吞吐量](#延遲與吞吐量)
+    - [來源及延伸閱讀](#來源及延伸閱讀-1)
+  - [可用性與一致性](#可用性與一致性)
+    - [CAP 理論](#cap-理論)
+      - [CP-一致性與部分容錯性](#cp-一致性與部分容錯性)
+      - [AP-可用性與部分容錯性](#ap-可用性與部分容錯性)
+    - [來源及延伸閱讀](#來源及延伸閱讀-2)
+  - [一致性模式](#一致性模式)
+    - [弱一致性](#弱一致性)
+    - [最終一致性](#最終一致性)
+    - [強一致性](#強一致性)
+    - [來源及延伸閱讀](#來源及延伸閱讀-3)
+  - [可用性模式](#可用性模式)
+    - [容錯轉移](#容錯轉移)
+      - [主動到備用切換模式(AP Mode)](#主動到備用切換模式ap-mode)
+      - [雙主動切換模式(AA Mode)](#雙主動切換模式aa-mode)
+    - [缺點：容錯轉移](#缺點容錯轉移)
+    - [複寫機制](#複寫機制)
+      - [主動到備用複寫與雙主動複寫](#主動到備用複寫與雙主動複寫)
+  - [域名系統](#域名系統)
+    - [DNS 的缺點](#dns-的缺點)
+    - [來源及延伸閱讀](#來源及延伸閱讀-4)
+  - [內容傳遞網路(CDN)](#內容傳遞網路cdn)
+    - [推送式 CDNs](#推送式-cdns)
+    - [拉取式 CDNs](#拉取式-cdns)
+    - [CDN 的缺點](#cdn-的缺點)
+    - [來源及延伸閱讀](#來源及延伸閱讀-5)
+  - [負載平衡器](#負載平衡器)
+    - [第四層負載平衡](#第四層負載平衡)
+    - [第七層負載平衡](#第七層負載平衡)
+    - [水平擴展](#水平擴展)
+      - [水平擴展的缺點](#水平擴展的缺點)
+    - [負載平衡器的缺點](#負載平衡器的缺點)
+    - [來源及延伸閱讀](#來源及延伸閱讀-6)
+  - [反向代理(網頁伺服器)](#反向代理網頁伺服器)
+    - [負載平衡器與反向代理伺服器](#負載平衡器與反向代理伺服器)
+    - [反向代理伺服器的缺點](#反向代理伺服器的缺點)
+    - [來源與延伸閱讀](#來源與延伸閱讀)
+  - [應用層](#應用層)
+    - [微服務](#微服務)
+    - [服務發現](#服務發現)
+    - [應用層的缺點](#應用層的缺點)
+    - [來源與延伸閱讀](#來源與延伸閱讀-1)
+  - [資料庫](#資料庫)
+    - [關連式資料庫管理系統(RDBMS)](#關連式資料庫管理系統rdbms)
+      - [主從複寫](#主從複寫)
+        - [主從複寫的缺點](#主從複寫的缺點)
+      - [主動模式複寫](#主動模式複寫)
+        - [主動模式的缺點](#主動模式的缺點)
+        - [複寫的缺點](#複寫的缺點)
+        - [來源及延伸閱讀](#來源及延伸閱讀-7)
+      - [聯邦式資料庫](#聯邦式資料庫)
+        - [聯邦式資料庫的缺點](#聯邦式資料庫的缺點)
+        - [來源及延伸閱讀](#來源及延伸閱讀-8)
+      - [分片](#分片)
+        - [分片的缺點](#分片的缺點)
+        - [來源及延伸閱讀](#來源及延伸閱讀-9)
+      - [反正規化](#反正規化)
+        - [反正規化的缺點](#反正規化的缺點)
+          - [來源及延伸閱讀](#來源及延伸閱讀-10)
+      - [SQL 優化](#sql-優化)
+        - [使用較為精準的 schema](#使用較為精準的-schema)
+        - [使用正確的索引](#使用正確的索引)
+        - [避免高成本的 Join 操作](#避免高成本的-join-操作)
+        - [分割資料表](#分割資料表)
+        - [調整查詢的快取](#調整查詢的快取)
+        - [來源及延伸閱讀](#來源及延伸閱讀-11)
+    - [NoSQL](#nosql)
+      - [鍵-值對的資料庫](#鍵-值對的資料庫)
+        - [來源及延伸閱讀](#來源及延伸閱讀-12)
+      - [文件類型資料庫](#文件類型資料庫)
+        - [延伸閱讀](#延伸閱讀)
+      - [列儲存型資料庫](#列儲存型資料庫)
+        - [來源及延伸閱讀](#來源及延伸閱讀-13)
+      - [圖形資料庫](#圖形資料庫)
+        - [來源及延伸閱讀](#來源及延伸閱讀-14)
+      - [來源及延伸閱讀：NoSQL](#來源及延伸閱讀nosql)
+    - [SQL 或 NoSQL](#sql-或-nosql)
+        - [來源及延伸閱讀： SQL 或 NoSQL](#來源及延伸閱讀-sql-或-nosql)
+  - [快取](#快取)
+    - [客戶端快取](#客戶端快取)
+    - [CDN 快取](#cdn-快取)
+    - [網站伺服器快取](#網站伺服器快取)
+    - [資料庫快取](#資料庫快取)
+    - [應用程式快取](#應用程式快取)
+    - [資料庫查詢級別的快取](#資料庫查詢級別的快取)
+    - [物件級別的快取](#物件級別的快取)
+    - [什麼時候要更新快取](#什麼時候要更新快取)
+      - [快取模式](#快取模式)
+        - [快取的缺點](#快取的缺點)
+      - [寫入模式](#寫入模式)
+        - [寫入模式的缺點](#寫入模式的缺點)
+      - [事後寫入(回寫)](#事後寫入回寫)
+        - [事後寫入的缺點](#事後寫入的缺點)
+      - [更新式快取](#更新式快取)
+        - [更新式快取的缺點](#更新式快取的缺點)
+    - [快取的缺點](#快取的缺點-1)
+    - [來源及延伸閱讀](#來源及延伸閱讀-15)
+  - [非同步機制](#非同步機制)
+    - [訊息佇列](#訊息佇列)
+    - [工作佇列](#工作佇列)
+    - [背壓機制](#背壓機制)
+    - [非同步的缺點](#非同步的缺點)
+    - [來源及延伸閱讀](#來源及延伸閱讀-16)
+  - [通訊](#通訊)
+    - [超文件通訊協定 (HTTP)](#超文件通訊協定-http)
+      - [來源及延伸閱讀](#來源及延伸閱讀-17)
+    - [傳輸控制通訊協定(TCP)](#傳輸控制通訊協定tcp)
+    - [使用者資料流通訊協定 (UDP)](#使用者資料流通訊協定-udp)
+      - [來源及延伸閱讀](#來源及延伸閱讀-18)
+    - [遠端程式呼叫 (RPC)](#遠端程式呼叫-rpc)
+      - [RPC 的缺點](#rpc-的缺點)
+    - [具象狀態轉移 (REST)](#具象狀態轉移-rest)
+      - [REST 的缺點](#rest-的缺點)
+    - [RPC 和 REST 呼叫的比較](#rpc-和-rest-呼叫的比較)
+      - [來源及延伸閱讀](#來源及延伸閱讀-19)
+  - [資訊安全](#資訊安全)
+    - [來源及延伸閱讀](#來源及延伸閱讀-20)
+  - [附錄](#附錄)
+    - [2 的次方表](#2-的次方表)
+      - [來源及延伸閱讀](#來源及延伸閱讀-21)
+    - [每個開發者都應該知道的延遲數量級](#每個開發者都應該知道的延遲數量級)
+      - [視覺化延遲數](#視覺化延遲數)
+      - [來源及延伸閱讀](#來源及延伸閱讀-22)
+    - [其他的系統設計面試問題](#其他的系統設計面試問題)
+    - [真實世界的架構](#真實世界的架構)
+    - [公司的系統架構](#公司的系統架構)
+    - [公司的工程部落格](#公司的工程部落格)
+      - [來源及延伸閱讀](#來源及延伸閱讀-23)
+  - [仍在進行中](#仍在進行中)
+  - [致謝](#致謝)
+  - [聯絡資訊](#聯絡資訊)
+  - [授權](#授權)
 
 ## 學習指南
 
 > 基於你面試的時間 (短、中、長) 來複習這些建議的主題。
 
-![Imgur](images/OfVllex.png)
+![Imgur](../../images/OfVllex.png)
 
 **Q: 對於面試者來說，我需要知道這裡所有的知識嗎？**
 
@@ -302,49 +388,49 @@
 
 [閱讀練習與解答](solutions/system_design/pastebin/README.md)
 
-![Imgur](images/4edXG0T.png)
+![Imgur](../../images/4edXG0T.png)
 
 ### 設計一個像是 Twitter 的 timeline (或 Facebook feed)設計一個 Twitter 搜尋功能 (or Facebook 搜尋功能)
 
 [閱讀練習與解答](solutions/system_design/twitter/README.md)
 
-![Imgur](images/jrUBAF7.png)
+![Imgur](../../images/jrUBAF7.png)
 
 ### 設計一個爬蟲系統
 
 [閱讀練習與解答](solutions/system_design/web_crawler/README.md)
 
-![Imgur](images/bWxPtQA.png)
+![Imgur](../../images/bWxPtQA.png)
 
 ### 設計 Mint.com 網站
 
 [閱讀練習與解答](solutions/system_design/mint/README.md)
 
-![Imgur](images/V5q57vU.png)
+![Imgur](../../images/V5q57vU.png)
 
 ### 設計一個社交網站的資料結構
 
 [閱讀練習與解答](solutions/system_design/social_graph/README.md)
 
-![Imgur](images/cdCv5g7.png)
+![Imgur](../../images/cdCv5g7.png)
 
 ### 設計一個搜尋引擎使用的鍵值儲存資料結構
 
 [閱讀練習與解答](solutions/system_design/query_cache/README.md)
 
-![Imgur](images/4j99mhe.png)
+![Imgur](../../images/4j99mhe.png)
 
 ### 設計一個根據產品分類的亞馬遜銷售排名
 
 [閱讀練習與解答](solutions/system_design/sales_rank/README.md)
 
-![Imgur](images/MzExP06.png)
+![Imgur](../../images/MzExP06.png)
 
 ### 在 AWS 上設計一個百萬用戶等級的系統
 
 [閱讀練習與解答](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](images/jj3A5N8.png)
+![Imgur](../../images/jj3A5N8.png)
 
 ## 物件導向設計面試問題與解答
 
@@ -435,7 +521,7 @@
 ### CAP 理論
 
 <p align="center">
-  <img src="images/bgLMI2u.png">
+  <img src="../../images/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>來源：再看 CAP 理論</a></i>
 </p>
@@ -529,7 +615,7 @@ DNS 或是電子郵件系統使用的就是這種方式，最終一致性在高�
 ## 域名系統
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg">
+  <img src="../../images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>資料來源：DNS 安全介紹</a></i>
 </p>
@@ -567,7 +653,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 內容傳遞網路(CDN)
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg">
+  <img src="../../images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>來源：為什麼要使用 CDN</a></i>
 </p>
@@ -608,7 +694,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 負載平衡器
 
 <p align="center">
-  <img src="images/h81n9iK.png">
+  <img src="../../images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>來源：可擴展的系統設計模式</a></i>
 </p>
@@ -678,7 +764,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 反向代理(網頁伺服器)
 
 <p align="center">
-  <img src="images/n41Azff.png">
+  <img src="../../images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>來源：維基百科</a></i>
   <br/>
@@ -721,7 +807,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 應用層
 
 <p align="center">
-  <img src="images/yB5SYwm.png">
+  <img src="../../images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>資料來源：可縮放式系統架構介紹</a></i>
 </p>
@@ -758,7 +844,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ## 資料庫
 
 <p align="center">
-  <img src="images/Xkm5CXz.png">
+  <img src="../../images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>來源：擴展你的使用者數量到第一個一千萬量級</a></i>
 </p>
@@ -781,7 +867,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 主資料庫負責讀和寫，並且將寫入的資料複寫至一或多個從屬資料庫中，從屬資料庫只負責讀取。而從屬資料庫可以再將寫入複製到更多以樹狀結構的其他資料庫中。如果主資料庫離線了，系統可以以只讀模式運行，直到某個從屬資料庫被提升為主資料庫，或有新的主資料庫出現。
 
 <p align="center">
-  <img src="images/C9ioGtn.png">
+  <img src="../../images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>來源： 可擴展性、可用性、穩定性及其模式</a></i>
 </p>
@@ -796,7 +882,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 兩個主要的資料庫都負責讀取和寫入，並且兩者互相協調。如果其中一個主要資料庫離線，系統可以繼續運作。
 
 <p align="center">
-  <img src="images/krAHLGg.png">
+  <img src="../../images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>來源： 可擴展性、可用性、穩定性及其模式</a></i>
 </p>
@@ -824,7 +910,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 #### 聯邦式資料庫
 
 <p align="center">
-  <img src="images/U3qV33e.png">
+  <img src="../../images/U3qV33e.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=vg5onp8TU6Q>來源：擴展你的使用者數量到第一個一千萬量級</a></i>
 </p>
@@ -845,7 +931,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 #### 分片
 
 <p align="center">
-  <img src="images/wU8x5Id.png">
+  <img src="../../images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>來源： 可擴展性、可用性、穩定性及其模式</a></i>
 </p>
@@ -991,7 +1077,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 #### 列儲存型資料庫
 
 <p align="center">
-  <img src="images/n16iOGk.png">
+  <img src="../../images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>來源：SQL 和 NoSQL，簡短的歷史介紹</a></i>
 </p>
@@ -1014,7 +1100,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 #### 圖形資料庫
 
 <p align="center">
-  <img src="images/fNcl65g.png">
+  <img src="../../images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>來源： 圖形化資料庫</a></i>
 </p>
@@ -1042,7 +1128,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 ### SQL 或 NoSQL
 
 <p align="center">
-  <img src="images/wXGqG5f.png">
+  <img src="../../images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>來源：從 RDBMS 轉換到 NoSQL</a></i>
 </p>
@@ -1084,7 +1170,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 ## 快取
 
 <p align="center">
-  <img src="images/Q6z24La.png">
+  <img src="../../images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>來源：可擴展的系統設計模式</a></i>
 </p>
@@ -1155,7 +1241,7 @@ Redis 還有以下額外的功能：
 #### 快取模式
 
 <p align="center">
-  <img src="images/ONjORqk.png">
+  <img src="../../images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>資料來源：從快取到記憶體資料網格</a></i>
 </p>
@@ -1191,7 +1277,7 @@ def get_user(self, user_id):
 #### 寫入模式
 
 <p align="center">
-  <img src="images/0vBc0hN.png">
+  <img src="../../images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>資料來源：可獲展性、可用性、穩定性與模式</a></i>
 </p>
@@ -1226,7 +1312,7 @@ def set_user(user_id, values):
 #### 事後寫入(回寫)
 
 <p align="center">
-  <img src="images/rgSrvjG.png">
+  <img src="../../images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>資料來源：可獲展性、可用性、穩定性與模式</a></i>
 </p>
@@ -1244,7 +1330,7 @@ def set_user(user_id, values):
 #### 更新式快取
 
 <p align="center">
-  <img src="images/kxtjqgE.png">
+  <img src="../../images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>來源：從快取到記憶體資料網格技術</a></i>
 </p>
@@ -1276,7 +1362,7 @@ def set_user(user_id, values):
 ## 非同步機制
 
 <p align="center">
-  <img src="images/54GYsSx.png">
+  <img src="../../images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>資料來源：可縮放性系統架構介紹</a></i>
 </p>
@@ -1322,7 +1408,7 @@ def set_user(user_id, values):
 ## 通訊
 
 <p align="center">
-  <img src="images/5KeocQs.jpg">
+  <img src="../../images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>來源：OSI 七層模型</a></i>
 </p>
@@ -1354,7 +1440,7 @@ HTTP 是依賴於較底層的協議(例如：**TCP** 和 **UDP**) 的應用層�
 ### 傳輸控制通訊協定(TCP)
 
 <p align="center">
-  <img src="images/JdAsdvG.jpg">
+  <img src="../../images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>來源：如何開發多人遊戲</a></i>
 </p>
@@ -1378,7 +1464,7 @@ TCP 對於需要高可靠、低時間急迫性的應用來說很有用，比如�
 ### 使用者資料流通訊協定 (UDP)
 
 <p align="center">
-  <img src="images/yzDrJtA.jpg">
+  <img src="../../images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>資料來源：如何製作多人遊戲</a></i>
 </p>
@@ -1407,7 +1493,7 @@ UDP 的可靠性較低，但適合用在像是網路電話、視訊聊天、串�
 ### 遠端程式呼叫 (RPC)
 
 <p align="center">
-  <img src="images/iF4Mkb5.png">
+  <img src="../../images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>資料來源：破解系統設計面試</a></i>
 </p>
@@ -1630,7 +1716,7 @@ Notes
 > 底下是關於真實世界的系統架構是如何設計的文章
 
 <p align="center">
-  <img src="images/TcUo2fw.png">
+  <img src="../../images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>資料來源：可擴展式的 Twitter 時間軸設計</a></i>
 </p>

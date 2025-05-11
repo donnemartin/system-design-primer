@@ -5,7 +5,7 @@
 # Sistem Tasarım Rehberi
 
 <p align="center">
-  <img src="images/jj3A5N8.png">
+  <img src="../../images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -46,7 +46,7 @@ Mülakata hazırlık için diğer konular:
 ## Anki bilgi kartları
 
 <p align="center">
-  <img src="images/zdCAkB3.png">
+  <img src="../../images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -63,7 +63,7 @@ Her zaman ve her yerde kullanılabilir.
 [**Kodlama Mülakatları**](https://github.com/donnemartin/interactive-coding-challenges)na hazırlanmak için kaynak mı arıyorsunuz?
 
 <p align="center">
-  <img src="images/b4YtAEN.png">
+  <img src="../../images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -93,97 +93,188 @@ Lütfen [katkı kurallarını](CONTRIBUTING.md) inceleyin.
 > Her bölüm, ek kaynaklara bağlantılar içerir.
 
 <p align="center">
-  <img src="images/jrUBAF7.png">
+  <img src="../../images/jrUBAF7.png">
   <br/>
 </p>
 
-* [Sistem tasarımı konuları: buradan başlayın](#sistem-tasarımı-konuları-buradan-başlayın)
-    * [1. Adım: Ölçeklenebilirlik video dersini inceleyin](#1-adım-ölçeklenebilirlik-video-dersini-inceleyin)
-    * [2. Adım: Ölçeklenebilirlik makalesini inceleyin](#2-adım-ölçeklenebilirlik-makalesini-inceleyin)
-    * [Sonraki adımlar](#sonraki-adımlar)
-* [Performans veya ölçeklenebilirlik](#performans-veya-ölçeklenebilirlik)
-* [Gecikme veya verim](#gecikme-veya-verim)
-* [Kullanılabilirlik veya tutarlılık](#kullanılabilirlik-veya-tutarlılık)
-    * [CAP teoremi](#cap-teoremi)
-        * [CP - Tutarlılık ve bölüm toleransı](#cp--tutarlılık-ve-bölüm-toleransı)
-        * [AP - Kullanılabilirlik ve bölüm toleransı](#ap--kullanılabilirlik-ve-bölüm-toleransı)
-* [Tutarlılık modelleri](#tutarlılık-modelleri)
-    * [Zayıf tutarlılık](#zayıf-tutarlılık)
-    * [Nihai tutarlılık](#Nihai-tutarlılık)
-    * [Güçlü tutarlılık](#güçlü-tutarlılık)
-* [Kullanılabilirlik modları](#kullanılabilirlik-modları)
-    * [Yük devretme](#yük-devretme)
-    * [Çoğaltma](#çoğaltma)
-    * [Sayılarla erişilebilirlik](#sayılarla-erişilebilirlik)
-* [Alan adı sistemi (DNS)](#alan-adı-sistemi-dns)
-* [İçerik dağıtım ağı (CDN)](#içerik-dağıtım-ağı-cdn)
-    * [Push CDN](#push-cdn)
-    * [Pull CDN](#pull-cdn)
-* [Yük dengeleyici (Load balancer)](#yük-dengeleyici-load-balancer)
-    * [Aktif-pasif)](#aktif-pasif)
-    * [Aktif-aktif)](#aktif-aktif)
-    * [Katman 4 yük dengeleyicisi](#katman-4-yük-dengeleyicisi)
-    * [Katman 7 yük dengeleyicisi](#katman-7-yük-dengeleyicisi)
-    * [Yatay ölçekleme](#yatay-ölçekleme)
-* [Ters proxy (web sunucusu)](#ters-proxy-web-sunucusu)
-    * [Yük dengeleyici ve ters proxy](#yük-dengeleyici-ve-ters-proxy)
-* [Uygulama katmanı](#uygulama-katmanı)
-    * [Mikroservisler](#mikroservisler)
-    * [Servis keşfi](#servis-keşfi)
-* [Veritabanı](#veritabanı)
-    * [İlişkisel veritabanı yönetim sistemi (RDBMS)](#ilişkisel-veritabanı-yönetim-sistemi-rdbms)
-        * [Master-slave çoğaltma](#master-slave-çoğaltma)
-        * [Master-master çoğaltma](#master-master-çoğaltma)
-        * [Federasyon](#federasyon)
-        * [Parçalama](#parçalama)
-        * [Denormalizasyon](#denormalizasyon)
-        * [SQL ayarlama (SQL tuning)](#sql-ayarlama-sql-tuning)
-    * [NoSQL](#nosql)
-        * [Anahtar/değer deposu](#anahtar-değer-deposu)
-        * [Belge deposu](#belge-deposu)
-        * [Geniş sütun deposu](#geniş-sütun-deposu)
-        * [Grafik veritabanı](#grafik-veritabanı)
-    * [SQL veya NoSQL](#sql-veya-nosql)
-* [Önbellek](#önbellek)
-    * [İstemci önbelleği](#istemci-önbelleği)
-    * [CDN önbelleği](#cdn-önbelleği)
-    * [Web sunucusu önbelleği](#web-sunucusu-önbelleği)
-    * [Veritabanı önbelleği](#veritabanı-önbelleği)
-    * [Uygulama Önbelleği](#uygulama-önbelleği)
-    * [Veritabanı sorgu düzeyinde önbellekleme](#veritabanı-sorgu-düzeyinde-önbellekleme)
-    * [Nesne düzeyinde önbellekleme](#nesne-düzeyinde-önbellekleme)
-    * [Önbellek ne zaman güncellenmeli](#önbellek-ne-zaman-güncellenmeli)
-        * [Cache-aside](#cache-aside)
-        * [Üzerine yazma (write-through)](#üzerine-yazma-write-through)
-        * [Geri yazma (write-behind)](#geri-yazma-write-behind)
-        * [Önbelleği önceden yenileme (refresh-ahead)](#önbelleği-önceden-yenileme-refresh-ahead)
-* [Asenkronizm](#asenkronizm)
-    * [Mesaj kuyrukları](#mesaj-kuyrukları)
-    * [Görev kuyrukları](#görev-kuyrukları)
-    * [Back pressure](#back-pressure)
-* [İletişim](#iletişim)
-    * [İletim kontrol protokolü (TCP)](#iletim-kontrol-protokolü-tcp)
-    * [Kullanıcı datagram protokolü (UDP)](#kullanıcı-datagram-protokolü-udp)
-    * [Uzaktan yordam çağrısı (RPC)](#uzaktan-yordam-çağrısı-rpc)
-    * [Temsili durum transferi (REST)](#temsili-durum-transferi-rest)
-* [Güvenlik](#güvenlik)
-  *[EK](#ek)
-    * [İkinin kuvveti tablosu](#ikinin-kuvveti-tablosu)
-    * [Her programcının bilmesi gereken gecikme sayıları](#her-programcının-bilmesi-gereken-gecikme-sayıları)
-    * [Diğer sistem tasarımı mülakat soruları](#diğer-sistem-tasarımı-mülakat-soruları)
-    * [Gerçek dünya mimarileri](#gerçek-dünya-mimarileri)
-    * [Şirketlerin sistem mimarileri](#şirketlerin-sistem-mimarileri)
-    *[Şirketlerin mühendislik blogları](#şirketlerin-mühendislik-blogları)
-*[Geliştirme aşamasında](#geliştirme-aşamasında)
-* [Katkıda bulunanlar](#katkıda-bulunanlar)
-* [İletişim](#iletişim)
-* [Lisans](#lisans)
+- [Sistem Tasarım Rehberi](#sistem-tasarım-rehberi)
+  - [Amaç](#amaç)
+    - [Büyük sistemlerin nasıl tasarlacağını öğrenin](#büyük-sistemlerin-nasıl-tasarlacağını-öğrenin)
+    - [Açık kaynak topluluğundan bilgi edinin](#açık-kaynak-topluluğundan-bilgi-edinin)
+    - [Sistem tasarımı görüşmelerine hazırlanın](#sistem-tasarımı-görüşmelerine-hazırlanın)
+  - [Anki bilgi kartları](#anki-bilgi-kartları)
+    - [Kod Kaynakları: Etkileşimli Kodlama Yarışmaları](#kod-kaynakları-etkileşimli-kodlama-yarışmaları)
+  - [Katkı](#katkı)
+  - [Sistem tasarımı konuları dizini](#sistem-tasarımı-konuları-dizini)
+  - [Çalışma rehberi](#çalışma-rehberi)
+  - [Sistem tasarımı mülakat sorusu nasıl ele alınır?](#sistem-tasarımı-mülakat-sorusu-nasıl-ele-alınır)
+    - [Adım 1: Kullanım senaryolarını, kısıtlamaları ve varsayımları açıklayın](#adım-1-kullanım-senaryolarını-kısıtlamaları-ve-varsayımları-açıklayın)
+    - [Adım 2: Üst düzey bir tasarım oluşturun](#adım-2-üst-düzey-bir-tasarım-oluşturun)
+    - [Adım 3: Temel bileşenleri tasarlayın](#adım-3-temel-bileşenleri-tasarlayın)
+    - [Adım 4: Tasarımı genişletin](#adım-4-tasarımı-genişletin)
+    - [Tahmini hesaplama](#tahmini-hesaplama)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma)
+  - [Sistem tasarımı mülakat soruları ve çözümleri](#sistem-tasarımı-mülakat-soruları-ve-çözümleri)
+    - [Pastebin.com(veya Bit.ly) tasarlayın](#pastebincomveya-bitly-tasarlayın)
+    - [Twitter zaman çizelgesi ve arama(veya Facebook haber akışı ve arama) tasarlayın](#twitter-zaman-çizelgesi-ve-aramaveya-facebook-haber-akışı-ve-arama-tasarlayın)
+    - [Bir web tarayıcısı tasarlayın](#bir-web-tarayıcısı-tasarlayın)
+    - [Mint.com tasarlayın](#mintcom-tasarlayın)
+    - [Sosyal ağ için veri yapılarını tasarlayın](#sosyal-ağ-için-veri-yapılarını-tasarlayın)
+    - [Arama motorları için bir anahtar/değer(key-value) deposu tasarlayın](#arama-motorları-için-bir-anahtardeğerkey-value-deposu-tasarlayın)
+    - [Amazon'un satış sıralamasını kategori özellikleri aracılığıyla tasarlayın](#amazonun-satış-sıralamasını-kategori-özellikleri-aracılığıyla-tasarlayın)
+    - [AWS'de milyon kullanıcılı bir sistem tasarlayın](#awsde-milyon-kullanıcılı-bir-sistem-tasarlayın)
+  - [Nesne yönelimli tasarım mülakat soruları ve çözümleri](#nesne-yönelimli-tasarım-mülakat-soruları-ve-çözümleri)
+  - [Sistem tasarımı konuları: buradan başlayın](#sistem-tasarımı-konuları-buradan-başlayın)
+    - [1. Adım: Ölçeklenebilirlik video dersini inceleyin](#1-adım-ölçeklenebilirlik-video-dersini-inceleyin)
+    - [2. Adım: Ölçeklenebilirlik makalesini inceleyin](#2-adım-ölçeklenebilirlik-makalesini-inceleyin)
+    - [Sonraki adımlar](#sonraki-adımlar)
+  - [Performans veya ölçeklenebilirlik](#performans-veya-ölçeklenebilirlik)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-1)
+  - [Gecikme veya verim](#gecikme-veya-verim)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-2)
+  - [Kullanılabilirlik veya tutarlılık](#kullanılabilirlik-veya-tutarlılık)
+    - [CAP Teoremi](#cap-teoremi)
+      - [CP ─ Tutarlılık ve Bölüm Toleransı](#cp--tutarlılık-ve-bölüm-toleransı)
+      - [AP ─ Kullanılabilirlik ve Bölüm Toleransı](#ap--kullanılabilirlik-ve-bölüm-toleransı)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-3)
+  - [Tutarlılık modelleri](#tutarlılık-modelleri)
+    - [Zayıf tutarlılık](#zayıf-tutarlılık)
+    - [Nihai tutarlılık](#nihai-tutarlılık)
+    - [Güçlü tutarlılık](#güçlü-tutarlılık)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-4)
+  - [Kullanılabilirlik modları](#kullanılabilirlik-modları)
+    - [Yük devretme](#yük-devretme)
+      - [Aktif-pasif](#aktif-pasif)
+      - [Aktif-aktif](#aktif-aktif)
+    - [Dezavantaj: Yük Devretme](#dezavantaj-yük-devretme)
+    - [Çoğaltma](#çoğaltma)
+      - [Master-slave ve master-master](#master-slave-ve-master-master)
+    - [Sayılarla erişilebilirlik](#sayılarla-erişilebilirlik)
+      - [99.9% erişilebilirlik - 3 tane 9'a sahip hizmet](#999-erişilebilirlik---3-tane-9a-sahip-hizmet)
+      - [99.99% erişilebilirlik - 4 tane 9'a sahip hizmet](#9999-erişilebilirlik---4-tane-9a-sahip-hizmet)
+      - [Paralel ve sıralı erişilebilirlik](#paralel-ve-sıralı-erişilebilirlik)
+          - [Sıralı](#sıralı)
+          - [Paralel](#paralel)
+  - [Alan Adı Sistemi (DNS)](#alan-adı-sistemi-dns)
+    - [Dezavantaj(lar): Alan adı sistemi(DNS)](#dezavantajlar-alan-adı-sistemidns)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-5)
+  - [İçerik Dağıtım Ağı (CDN)](#i̇çerik-dağıtım-ağı-cdn)
+    - [Push CDN](#push-cdn)
+    - [Pull CDN](#pull-cdn)
+    - [Dezavantaj(lar): CDN](#dezavantajlar-cdn)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-6)
+  - [Yük dengeleyici (Load balancer)](#yük-dengeleyici-load-balancer)
+    - [Katman 4 yük dengeleyicisi](#katman-4-yük-dengeleyicisi)
+    - [Katman 7 yük dengeleyicisi](#katman-7-yük-dengeleyicisi)
+    - [Yatay ölçekleme](#yatay-ölçekleme)
+      - [Dezavantaj(lar): yatay ölçekleme](#dezavantajlar-yatay-ölçekleme)
+    - [Dezavantaj(lar): Yük Dengeleyici](#dezavantajlar-yük-dengeleyici)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-7)
+  - [Ters proxy (web sunucusu)](#ters-proxy-web-sunucusu)
+    - [Yük dengeleyici ve ters proxy](#yük-dengeleyici-ve-ters-proxy)
+    - [Dezavantaj(lar): Ters proxy](#dezavantajlar-ters-proxy)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-8)
+  - [Uygulama katmanı](#uygulama-katmanı)
+    - [Mikroservisler](#mikroservisler)
+    - [Servis keşfi](#servis-keşfi)
+    - [Dezavantaj(lar): Uygulama katmanı](#dezavantajlar-uygulama-katmanı)
+    - [Kaynaklar ve ek okuma](#kaynaklar-ve-ek-okuma-9)
+  - [Veritabanı](#veritabanı)
+    - [İlişkisel veritabanı yönetim sistemi (RDBMS)](#i̇lişkisel-veritabanı-yönetim-sistemi-rdbms)
+      - [Master-slave çoğaltma](#master-slave-çoğaltma)
+        - [Dezavantaj(lar): master-slave çoğaltma](#dezavantajlar-master-slave-çoğaltma)
+      - [Master-master çoğaltma](#master-master-çoğaltma)
+        - [Dezavantaj(lar): master-master](#dezavantajlar-master-master)
+        - [Dezavantaj(lar): çoğaltma](#dezavantajlar-çoğaltma)
+        - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-10)
+      - [Federasyon](#federasyon)
+        - [Dezavantaj(lar): federasyon](#dezavantajlar-federasyon)
+        - [Kaynak(lar) ve ek okuma: federasyon](#kaynaklar-ve-ek-okuma-federasyon)
+      - [Parçalama](#parçalama)
+        - [Dezavantaj(lar): parçalama](#dezavantajlar-parçalama)
+      - [Kaynak(lar) ve ek okuma: parçalama](#kaynaklar-ve-ek-okuma-parçalama)
+      - [Denormalizasyon](#denormalizasyon)
+        - [Dezavantaj(lar): Denormalizasyon](#dezavantajlar-denormalizasyon)
+        - [Kaynak(lar) ve ek okuma: Denormalizasyon](#kaynaklar-ve-ek-okuma-denormalizasyon)
+      - [SQL ayarlama (SQL tuning)](#sql-ayarlama-sql-tuning)
+        - [Şemayı sınırlandırın](#şemayı-sınırlandırın)
+        - [Doğru dizini kullanın](#doğru-dizini-kullanın)
+        - [Pahalı birleştirme işlemlerinden kaçının](#pahalı-birleştirme-işlemlerinden-kaçının)
+        - [Veri tablosunu bölün](#veri-tablosunu-bölün)
+        - [Sorgu önbelleğini ayarlayın](#sorgu-önbelleğini-ayarlayın)
+        - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-11)
+    - [NoSQL](#nosql)
+      - [Anahtar-değer deposu](#anahtar-değer-deposu)
+      - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-12)
+      - [Belge deposu](#belge-deposu)
+      - [Kaynak(lar) ve ek okuma: belge deposu](#kaynaklar-ve-ek-okuma-belge-deposu)
+      - [Geniş sütun deposu](#geniş-sütun-deposu)
+        - [Kaynak(lar) ve ek okuma: geniş sütun depolama](#kaynaklar-ve-ek-okuma-geniş-sütun-depolama)
+      - [Grafik veritabanı](#grafik-veritabanı)
+        - [Kaynak(lar) ve ek okuma: grafik](#kaynaklar-ve-ek-okuma-grafik)
+      - [Kaynak(lar) ve ek okuma: NoSQL](#kaynaklar-ve-ek-okuma-nosql)
+    - [SQL veya NoSQL](#sql-veya-nosql)
+        - [Kaynak(lar) ve ek okuma: SQL veya NoSQL](#kaynaklar-ve-ek-okuma-sql-veya-nosql)
+  - [Önbellek](#önbellek)
+    - [İstemci önbelleği](#i̇stemci-önbelleği)
+    - [CDN önbelleği](#cdn-önbelleği)
+    - [Web sunucusu önbelleği](#web-sunucusu-önbelleği)
+    - [Veritabanı önbelleği](#veritabanı-önbelleği)
+    - [Uygulama önbelleği](#uygulama-önbelleği)
+    - [Veritabanı sorgu düzeyinde önbellekleme](#veritabanı-sorgu-düzeyinde-önbellekleme)
+    - [Nesne düzeyinde önbellekleme](#nesne-düzeyinde-önbellekleme)
+    - [Önbellek ne zaman güncellenmeli](#önbellek-ne-zaman-güncellenmeli)
+      - [Cache-aside](#cache-aside)
+        - [Dezavantaj(lar): cache-aside](#dezavantajlar-cache-aside)
+      - [Üzerine yazma (write-through)](#üzerine-yazma-write-through)
+        - [Dezavantaj(lar): üzerine yazma (write-through)](#dezavantajlar-üzerine-yazma-write-through)
+      - [Geri yazma (write-behind)](#geri-yazma-write-behind)
+        - [Dezavantaj(lar): geri yazma (write-behind)](#dezavantajlar-geri-yazma-write-behind)
+      - [Önbelleği önceden yenileme (refresh-ahead)](#önbelleği-önceden-yenileme-refresh-ahead)
+        - [Dezavantaj(lar): önbelleği önceden yenileme (refresh-ahead)](#dezavantajlar-önbelleği-önceden-yenileme-refresh-ahead)
+    - [Dezavantaj(lar): önbellek](#dezavantajlar-önbellek)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-13)
+  - [Asenkronizm](#asenkronizm)
+    - [Mesaj kuyrukları](#mesaj-kuyrukları)
+    - [Görev kuyrukları](#görev-kuyrukları)
+    - [Back pressure](#back-pressure)
+    - [Dezavantaj(lar): asenkronizm](#dezavantajlar-asenkronizm)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-14)
+  - [İletişim](#i̇letişim)
+    - [Köprü metni aktarım protokolü (HTTP)](#köprü-metni-aktarım-protokolü-http)
+      - [Kaynak(lar) ve ek okuma: HTTP](#kaynaklar-ve-ek-okuma-http)
+    - [İletim kontrol protokolü (TCP)](#i̇letim-kontrol-protokolü-tcp)
+    - [Kullanıcı datagram protokolü (UDP)](#kullanıcı-datagram-protokolü-udp)
+      - [Kaynak(lar) ve ek okuma: TCP ve UDP](#kaynaklar-ve-ek-okuma-tcp-ve-udp)
+    - [Uzaktan yordam çağrısı (RPC)](#uzaktan-yordam-çağrısı-rpc)
+      - [Dezavantajları: RPC](#dezavantajları-rpc)
+    - [Temsili Durum Transferi (REST)](#temsili-durum-transferi-rest)
+      - [Dezavantaj(lar): REST](#dezavantajlar-rest)
+    - [RPC ve REST karşılaştırması](#rpc-ve-rest-karşılaştırması)
+      - [Kaynak(lar) ve ek okuma: REST ve RPC](#kaynaklar-ve-ek-okuma-rest-ve-rpc)
+  - [Güvenlik](#güvenlik)
+    - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-15)
+  - [Ek](#ek)
+    - [İkinin kuvveti tablosu](#i̇kinin-kuvveti-tablosu)
+      - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-16)
+    - [Her programcının bilmesi gereken gecikme sayıları](#her-programcının-bilmesi-gereken-gecikme-sayıları)
+      - [Gecikme numarası görselleştirmesi](#gecikme-numarası-görselleştirmesi)
+      - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-17)
+    - [Diğer sistem tasarımı mülakat soruları](#diğer-sistem-tasarımı-mülakat-soruları)
+    - [Gerçek dünya mimarileri](#gerçek-dünya-mimarileri)
+    - [Şirketlerin sistem mimarileri](#şirketlerin-sistem-mimarileri)
+    - [Şirketlerin mühendislik blogları](#şirketlerin-mühendislik-blogları)
+      - [Kaynak(lar) ve ek okuma](#kaynaklar-ve-ek-okuma-18)
+  - [Geliştirme aşamasında](#geliştirme-aşamasında)
+  - [Katkıda bulunanlar](#katkıda-bulunanlar)
+  - [İletişim](#i̇letişim-1)
+  - [Lisans](#lisans)
 
 ## Çalışma rehberi
 
 > Mülakat zaman çizelgenize (kısa, orta, uzun) göre önerilen konuları gözden geçirin.
 
-![Imgur](images/OfVllex.png)
+![Imgur](../../images/OfVllex.png)
 
 **S: Mülakatlar için buradaki her şeyi bilmem gerekiyor mu? **
 
@@ -305,49 +396,49 @@ Daha iyi bir fikir edinmek için aşağıdaki bağlantılara göz atın:
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/pastebin/README.md)
 
-![Imgur](images/4edXG0T.png)
+![Imgur](../../images/4edXG0T.png)
 
 ### Twitter zaman çizelgesi ve arama(veya Facebook haber akışı ve arama) tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/twitter/README.md)
 
-![Imgur](images/jrUBAF7.png)
+![Imgur](../../images/jrUBAF7.png)
 
 ### Bir web tarayıcısı tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/web_crawler/README.md)
 
-![Imgur](images/bWxPtQA.png)
+![Imgur](../../images/bWxPtQA.png)
 
 ### Mint.com tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/mint/README.md)
 
-![Imgur](images/V5q57vU.png)
+![Imgur](../../images/V5q57vU.png)
 
 ### Sosyal ağ için veri yapılarını tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/social_graph/README.md)
 
-![Imgur](images/cdCv5g7.png)
+![Imgur](../../images/cdCv5g7.png)
 
 ### Arama motorları için bir anahtar/değer(key-value) deposu tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/query_cache/README.md)
 
-![Imgur](images/4j99mhe.png)
+![Imgur](../../images/4j99mhe.png)
 
 ### Amazon'un satış sıralamasını kategori özellikleri aracılığıyla tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/sales_rank/README.md)
 
-![Imgur](images/MzExP06.png)
+![Imgur](../../images/MzExP06.png)
 
 ### AWS'de milyon kullanıcılı bir sistem tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](images/jj3A5N8.png)
+![Imgur](../../images/jj3A5N8.png)
 
 ## Nesne yönelimli tasarım mülakat soruları ve çözümleri
 
@@ -439,7 +530,7 @@ Genel olarak, kabul edilebilir gecikme süresiyle verimi en üst düzeye çıkar
 ### CAP Teoremi
 
 <p align="center">
-  <img src="images/bgLMI2u.png">
+  <img src="../../images/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Kaynak: CAP theorem revisited</a></i>
 </p>
@@ -580,7 +671,7 @@ Eğer "Bileşen 1" ve "Bileşen 2" %99.9 erişilebilirliğe sahiplerse toplam er
 ## Alan Adı Sistemi (DNS)
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg">
+  <img src="../../images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Kaynak: DNS security presentation</a></i>
 </p>
@@ -618,7 +709,7 @@ DNS hiyerarşik bir yapıya sahiptir ve en üst düzeyde birkaç yetkili sunucu 
 ## İçerik Dağıtım Ağı (CDN)
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg">
+  <img src="../../images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Kaynak: Why use a CDN</a></i>
 </p>
@@ -659,7 +750,7 @@ Yüksek trafikli siteler, trafiği daha düzenli bir şekilde dağıttığı iç
 ## Yük dengeleyici (Load balancer)
 
 <p align="center">
-  <img src="images/h81n9iK.png">
+  <img src="../../images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Kaynak: Scalable system design patterns</a></i>
 </p>
@@ -729,7 +820,7 @@ Yük dengeleyicileri, yatay ölçeklendirmeye de yardımcı olabilir, performans
 ## Ters proxy (web sunucusu)
 
 <p align="center">
-  <img src="images/n41Azff.png">
+  <img src="../../images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Kaynak: Wikipedia</a></i>
   <br/>
@@ -772,7 +863,7 @@ Faydaları şunları içerir:
 ## Uygulama katmanı
 
 <p align="center">
-  <img src="images/yB5SYwm.png">
+  <img src="../../images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Kaynak: Intro to architecting systems for scale</a></i>
 </p>
@@ -809,7 +900,7 @@ Bu tartışma ile ilgili olan [mikroservisler](https://en.wikipedia.org/wiki/Mic
 ## Veritabanı
 
 <p align="center">
-  <img src="images/Xkm5CXz.png">
+  <img src="../../images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Kaynak: Scaling up to your first 10 million users</a></i>
 </p>
@@ -832,7 +923,7 @@ SQL gibi ilişkisel bir veritabanı, tablolar halinde düzenlenmiş veri öğele
 Master sunucu, okuma ve yazma hizmeti sunar, yazma işlemlerini bir veya daha fazla slave sunucalara replike eder ve slave sunucular yalnızca okuma işlemleri sunar. Slave sunucular aynı zamanda daha fazla slave sunucuya ağaç benzeri bir şekilde replike edebilir. Master sunucu çevrimdışıysa; bir slave sunucu, ana bilgisayar olarak atanana veya yeni bir master sunucu tahsis edilene kadar; sistem okuma modunda çalışmaya devam edebilir.
 
 <p align="center">
-  <img src="images/C9ioGtn.png">
+  <img src="../../images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -847,7 +938,7 @@ Master sunucu, okuma ve yazma hizmeti sunar, yazma işlemlerini bir veya daha fa
 Her iki ana sunucu da okuma ve yazma işlemlerinden sorumludur ve yazma işlemleri sırasında birbirleriyle koordineli çalışırlar. Ana sunuculardan biri kapanırsa sistem okumaya ve yazmaya devam edebilir.
 
 <p align="center">
-  <img src="images/krAHLGg.png">
+  <img src="../../images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -875,7 +966,7 @@ Her iki ana sunucu da okuma ve yazma işlemlerinden sorumludur ve yazma işlemle
 #### Federasyon
 
 <p align="center">
-  <img src="images/U3qV33e.png">
+  <img src="../../images/U3qV33e.png">
   <br/>
   <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">Kaynak: Kullanıcılarınızı İlk On Milyona Kadar Ölçeklendirme</a></strong>
 </p>
@@ -896,7 +987,7 @@ Federasyon (veya fonksiyonel bölümleme), veritabanını ilgili işlevlere gör
 #### Parçalama
 
 <p align="center">
-  <img src="images/wU8x5Id.png">
+  <img src="../../images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1040,7 +1131,7 @@ Belge depoları yüksek esneklik sağlar ve genellikle zaman zaman değişen ver
 #### Geniş sütun deposu
 
 <p align="center">
-  <img src="images/n16iOGk.png">
+  <img src="../../images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Kaynak: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1063,7 +1154,7 @@ Geniş sütun depolamaları yüksek kullanılabilirlik ve ölçeklenebilirlik su
 #### Grafik veritabanı
 
 <p align="center">
-  <img src="images/fNcl65g.png">
+  <img src="../../images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Kaynak: Graph database</a></i>
 </p>
@@ -1091,7 +1182,7 @@ Grafik veritabanları, sosyal ağ gibi karmaşık ilişkilere sahip veri modelle
 ### SQL veya NoSQL
 
 <p align="center">
-  <img src="images/wXGqG5f.png">
+  <img src="../../images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Kaynak: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1133,7 +1224,7 @@ NoSQL'e uygun örnek veriler:
 ## Önbellek
 
 <p align="center">
-  <img src="images/Q6z24La.png">
+  <img src="../../images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Kaynak: Scalable system design patterns</a></i>
 </p>
@@ -1204,7 +1295,7 @@ Verinizi, uygulama kodunuzdaki objeler gibi düşünün. Uygulamanın veritaban�
 #### Cache-aside
 
 <p align="center">
-  <img src="images/ONjORqk.png">
+  <img src="../../images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Kaynak: From cache to in-memory data grid</a></i>
 </p>
@@ -1240,7 +1331,7 @@ def get_user(self, user_id):
 #### Üzerine yazma (write-through)
 
 <p align="center">
-  <img src="images/0vBc0hN.png">
+  <img src="../../images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1275,7 +1366,7 @@ Depolama ve yazma işlemleri nedeniyle, üzerine yazma yöntemi genel olarak ço
 #### Geri yazma (write-behind)
 
 <p align="center">
-  <img src="images/rgSrvjG.png">
+  <img src="../../images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1293,7 +1384,7 @@ Geri yazma yönteminde, uygulama aşağıdaki adımları gerçekleştirir:
 #### Önbelleği önceden yenileme (refresh-ahead)
 
 <p align="center">
-  <img src="images/kxtjqgE.png">
+  <img src="../../images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Kaynak: From cache to in-memory data grid</a></i>
 </p>
@@ -1325,7 +1416,7 @@ Refresh-ahead, önbelleğin gelecekte hangi öğelere ihtiyaç duyulma olasılı
 ## Asenkronizm
 
 <p align="center">
-  <img src="images/54GYsSx.png">
+  <img src="../../images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Kaynak: Intro to architecting systems for scale</a></i>
 </p>
@@ -1371,7 +1462,7 @@ Eğer kuyruk önemli ölçüde büyümeye başlarsa, sıra boyutu bellek boyutun
 ## İletişim
 
 <p align="center">
-  <img src="images/5KeocQs.jpg">
+  <img src="../../images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Kaynak: OSI 7 layer model</a></i>
 </p>
@@ -1403,7 +1494,7 @@ HTTP, **TCP** ve **UDP** gibi alt düzey protokollere dayanan bir uygulama katma
 ### İletim kontrol protokolü (TCP)
 
 <p align="center">
-  <img src="images/JdAsdvG.jpg">
+  <img src="../../images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Kaynak: How to make a multiplayer game</a></i>
 </p>
@@ -1427,7 +1518,7 @@ Aşağıdaki durumlarda UDP yerine TCP tercih ediniz:
 ### Kullanıcı datagram protokolü (UDP)
 
 <p align="center">
-  <img src="images/yzDrJtA.jpg">
+  <img src="../../images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Kaynak: How to make a multiplayer game</a></i>
 </p>
@@ -1456,7 +1547,7 @@ Aşağıdaki durumlarda TCP yerine UDP kullanın:
 ### Uzaktan yordam çağrısı (RPC)
 
 <p align="center">
-  <img src="images/iF4Mkb5.png">
+  <img src="../../images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Kaynak: Crack the system design interview</a></i>
 </p>
@@ -1680,7 +1771,7 @@ Yukarıdaki sayılar temelinde kullanışlı ölçümler:
 > Sistemlerin gerçekte nasıl tasarlandığına dair makaleler.
 
 <p align="center">
-  <img src="images/TcUo2fw.png">
+  <img src="../../images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Kaynak: Twitter timelines at scale</a></i>
 </p>
