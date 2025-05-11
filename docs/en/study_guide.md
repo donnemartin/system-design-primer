@@ -333,7 +333,7 @@ Ask clear, somewhat pre-defined open-ended questions that surface assumptions, c
 
 **Interviewer**: Design Pastebin.com.
 
-**Candidate**: Thanks. To clarify and understand the scope, may I start with a few quick questions?
+**Candidate**: To clarify and understand the scope, may I start with a few quick questions?
 
 **Interviewer**: Yes, please.
 
@@ -813,9 +813,7 @@ Try to test your memory about the system design guides.
 After mapping your gaps prioritize your learning and learn and practice. 
 Learn / Refresh your knowledge by reading the system design topics and practice by solving the interview questions.
 
----
 > Comment: We are working on a tools to help you with this.
----
 
 
 # Personal Learning Plan
@@ -841,9 +839,6 @@ Let's us know if it worked for you or if you think we can improve it.
 | Once you see that you missed something in your solution jump over to the [System design topics](index.md#index-of-system-design-topics) and refresh your knowledge | Few times | More times | Know by heart |
 
 
-
-
-
 ### System design knowledge
 
 ### Timeline matters
@@ -866,7 +861,6 @@ Other resources
 -  Read through a few articles in the [Company engineering blogs](16_real_world_architectures.md#company-engineering-blogs) for the companies you are interviewing with
 - Read through a few [Real world architectures](16_real_world_architectures.md#real-world-architectures) 
 
-
 ---
 
 # Learning Loop
@@ -876,9 +870,6 @@ Time to practice.
 ### Repetition is the mother of all skills
 
 ---
-
-
-
 
 
 # FAQ
@@ -908,6 +899,7 @@ Check out the following links to get a better idea of what to expect:
 3. **Exponent**, ["Five common system design interview mistakes 😅"](https://www.youtube.com/watch?v=z_YuqLmGZuo&ab_channel=GauravSen).
 
 More (original repo) resources:
+
 * [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)

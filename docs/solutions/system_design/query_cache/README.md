@@ -16,10 +16,19 @@ Remember your goal is to understand the problem and establish the design scope.
 
 Here is an example of the dialog you could have with the **Interviewer**:
 **Interviewer**: Design a key-value cache to save the results of the most recent web server queries.
+
 **Candidate**: ok, do you mean deploy Redis as docker or building Redis like?
+
 **Interviewer**: I mean building Redis like.
-**Candidate**: ok, can you please explain the traffic assumptions? 
+
+**Candidate**: To clarify and understand the scope, may I start with a few quick questions?
+
+**Interviewer**: Yes, please.
+
+**Candidate**: What are the **main features, users, and use cases** of the system?
+
 **Interviewer**: Yes, the cache should be able to handle 10 million users, 10 billion queries per month.
+
 **Candidate**: ok. So here is the scope of the problem:
 
 ### Use cases
@@ -73,7 +82,7 @@ Handy conversion guide:
 
 <!-- Old image for reference ![Imgur](http://i.imgur.com/KqZ3dSx.png) -->
 
-![Imgur](http://i.imgur.com/KqZ3dSx.png) 
+![Imgur](../../../images/KqZ3dSx.png) 
 
 
 ```mermaid

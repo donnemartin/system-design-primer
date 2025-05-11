@@ -2,13 +2,41 @@
 
 *Note: This document links directly to relevant areas found in the [system design topics](https://github.com/ido777/system-design-primer-update#index-of-system-design-topics) to avoid duplication.  Refer to the linked content for general talking points, tradeoffs, and alternatives.*
 
-## Step 1: Outline use cases and constraints
 
-> Gather requirements and scope the problem.
-> Ask questions to clarify use cases and constraints.
-> Discuss assumptions.
+Adding clarifying questions is the first step in the process.
+Remember your goal is to understand the problem and establish the design scope.
 
-Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
+### What questions should you ask to clarify the problem?
+
+
+Here is an example of the dialog you could have with the interviewer:
+
+**Example dialog with your interviewer:**
+
+
+**Interviewer**: Design Amazon's sales rank by category feature
+
+**Candidate**: To clarify and understand the scope, may I start with a few quick questions?
+
+**Interviewer**: Yes, please.
+
+**Candidate**: What are the **main features, users, and use cases** of the system?
+
+**Interviewer**: The system will calculate the sales rank of products by category.  Users will be able to view the sales rank of products by category.
+
+**Candidate**: What is the **expected traffic**?
+
+**Interviewer**: The system will be able to handle 100 million requests per day.
+
+**Candidate**: What is the **expected read/write ratio**?
+
+**Interviewer**: The system will be able to handle 100:1 read/write ratio.
+
+**Candidate**: What is the **expected data size**?
+
+**Interviewer**: The system will be able to handle 100 million products.
+
+
 
 ### Use cases
 

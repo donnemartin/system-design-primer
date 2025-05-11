@@ -64,3 +64,6 @@ scratch/
 
 # IPython Notebook templates
 template.ipynb
+
+# mkdocs
+site/

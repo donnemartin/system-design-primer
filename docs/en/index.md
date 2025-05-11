@@ -36,7 +36,7 @@ See [CHANGELOG](https://github.com/ido777/system-design-primer-update/blob/main/
 
 👉 Start here: [Study Guide](./study_guide.md)  
 
-👉 Solve System Design Interview Questions [Questions & Solutions](./solutions.md)
+👉 Solve System Design Interview Questions [Questions & Solutions](./practice.md)
 
 👉 Identified Gaps while solving read the relevant sections in [System Design at a Glance](./design-glance.md)
 

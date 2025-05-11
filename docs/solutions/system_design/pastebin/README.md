@@ -7,23 +7,6 @@ We will focus only on the core functionality.
 
 [Design A URL shortener](../url_shortener/README.md)  - e.g. [TinyURL](https://tinyurl.com/), [bit.ly](https://bit.ly/) is a related question, since pastebin requires storing the paste contents instead of the original unshortened url. However, the URL shortener question is more focused on the shortlink generation and redirection, while the pastebin question is more focused on the storage and retrieval of the paste contents.
 
-## Step 1: Investigate the problem, use cases and constraints and establish design scope
-
-> Gather main functional requirements and scope the problem.
-> Ask questions to clarify use cases and constraints.
-> Discuss assumptions.
-
-
-Adding clarifying questions is the first step in the process.
-Remember your goal is to understand the problem and establish the design scope.
-
-### What questions should you ask to clarify the problem?
-
-
-Here is an example of the dialog you could have with the **Interviewer**:
-**Interviewer**: Design Pastebin.com.
-**Candidate**: Could you please remind me what Pastebin.com does at a high level?
-**Interviewer**: Do you happen to know GitHub Gist? It is similar to Pastebin.com.
 
 ## 📝 Pastebin.com Overview
 
@@ -47,44 +30,110 @@ Here is an example of the dialog you could have with the **Interviewer**:
 - Temporary storage of text for collaboration or troubleshooting.
 - Situations where simplicity and speed are paramount. 
 
-**Candidate**: Got it. Since Pastebin can be quite complex, can we focus on just the core features first?  
-**Interviewer**: Sure—what would you target?  
-**Candidate**: The main requirement is that the user pastes text and immediately receives a shareable link. Correct?  
-**Interviewer**: Can you elaborate on the link?  
-**Candidate**: A randomly generated, unique link.  
-**Interviewer**: Does it expire?  
-**Candidate**: No.  
-**Interviewer**: Never?  
-**Candidate**: (_Oops, she doesn’t like that we don’t have expiration._) We can add a timed expiration—user can set the expiration.  
-**Interviewer**: Sounds good.  
-**Candidate**: Cool. Let me summarize.
 
-Conclusion:
-- Use cases
-  • User enters a block of text and gets a randomly generated link
-- Expiration
-  • Default setting does not expire
-  • Can optionally set a timed expiration
+## Step 1: Investigate the problem, use cases and constraints and establish design scope
 
-**Candidate**: Mobile or desktop client?
-**Interviewer**: Both.
-**Candidate**: Is user authentication or account registration required to view or create pastes?
-**Interviewer**: No registration is needed; it’s anonymous.
-**Candidate**: Great. Do we need to track usage statistics or analytics for these pastes?
-**Interviewer**: We will record monthly visit stats.
-**Candidate**: Should expired pastes be removed automatically?
-**Interviewer**: Yes, the service deletes expired pastes.
-**Candidate**: What availability SLA do we expect?
-**Interviewer**: High availability is a requirement.
-**Candidate**: For this exercise phase, I would like to suggest that we don't need user accounts, login, or custom shortlinks.
-**Interviewer**: ok, Those are out of scope for now.
-**Candidate**: For capacity planning, can you confirm traffic patterns and volumes?
-**Interviewer**: Traffic is unevenly distributed; we target 10M users, 10M writes/month, and 100M reads/month.
-**Candidate**: Understood. And are pastes text only, with low-latency URL resolution?
-**Interviewer**: Correct.
-**Candidate**: Finally, any rough numbers on storage and throughput?
-**Interviewer**: I'll leave that to you.
-**Candidate**: ok. So here is the scope of the problem:
+> Gather main functional requirements and scope the problem.
+> Ask questions to clarify use cases and constraints.
+> Discuss assumptions.
+
+
+Adding clarifying questions is the first step in the process.
+Remember your goal is to understand the problem and establish the design scope.
+
+
+### What questions should you ask to clarify the problem?
+
+Here is an example of the dialog you could have with the **Interviewer**:
+### 🔍 Example Dialogue (Pastebin)
+
+**Interviewer**: Design Pastebin.com.
+
+**Candidate**: To clarify and understand the scope, may I start with a few quick questions?
+
+**Interviewer**: Yes, please.
+
+**Candidate**: What are the **main features, users, and use cases** of the system?
+
+**Interviewer**: Pastebin is a simple site to share plain text. Users paste content and get a short link to share. Pastebin includes anonymous users as well as logged in users.
+
+**Candidate**: Great. So **can we scope the problem to 2 main flows**:
+1. User creates a paste and gets a link to share.
+2. User accesses a paste using the link.
+
+**Interviewer**: Yes, that's a good start.
+
+**Candidate**: What are the **other** important topics we need to consider for the basic **MVP** functionality?
+
+**Interviewer**: Pastebin supports two types of users:
+* Anonymous users - who can create and share content without an account
+* Authenticated users - who can create content and customize their sharing links (e.g., custom URLs, expiration dates, access controls).
+
+**Candidate**: Understood. For this phase, can we **focus** on Anonymous users?
+
+**Interviewer**: You mean that we should ignore the requirements for authenticated users?
+
+**Candidate**: No, I want to **clarify**. I am suggesting and **asking** your confirmation - to be effective I think we can start dealing with the main flows of the system. We will bear in mind the authenticated requirement and **deal with them later on**. 
+
+**Interviewer**: Later on in the interview, or later on in the product life cycle?
+
+**Candidate**: Both. Let me explain. Let's for now assume that we will use REST API to write and read the content. We can have 2 different api endpoints for anonymous and authenticated users, and we can have shared functions that can be used by both. This way we can **focus** on the main flows of the system. On the other hand we can talk about the authenticated requirements now, such as [OAuth 2.0](https://oauth.net/2/) of [JWT](https://jwt.io/).
+
+**Interviewer**: Ok.
+
+**Candidate**: So for now, is it ok to focus on the anonymous users?
+
+**Interviewer**: Yes.
+
+**Candidate**: What are the *other* important topics we need to consider? What about traffic assumptions / load?
+
+**Interviewer**: 10M writes per month, 100M reads. 
+
+**Candidate**: Got it. High read-to-write ratio. Any *other* specific requirements, assumptions or constraints, data flows?
+
+**Interviewer**: We do track monthly stats. Links can have optional expiration. Expired pastes are auto-deleted.
+
+**Candidate**: Is there **anything more** we should discuss in terms of latency, availability, or other non-functional constraints?
+
+**Interviewer**: Reads should be low-latency. High availability is expected. 
+
+**Candidate**: Cost efficiency, scaling and security matter, but I **suggest** to digest those in the next phases.
+
+**Interviewer**: Ok.
+
+**Candidate**: Thanks — that's clear and helps scope my design. Let's me summarize the scope as i understood it and the assumptions to make sure we are on the **same page**.
+
+**Interviewer**: Ok.
+
+
+### 🔍 Example Breakdown
+
+**Candidate**: ok, here a reflection of what I understood from the requirements, I will write it down here
+
+> ### Use cases
+> * **User** enters a block of text and gets a randomly generated link
+> * **User** enters a paste's url and views the contents
+> * **User** is anonymous
+>
+> ### Background tasks
+> * **Service** tracks analytics of pages
+>     * Monthly visit stats
+> * **Service** deletes expired pastes
+>
+> ### Non functional requirements
+> * **Service** has high availability
+>
+> ### Out of scope
+> * All authenticated users features
+> * Any other requirements
+>
+> ### Other considerations we need to think about (Later on)
+> * System Quality Attributes (Reliability, Scalability, Security & Privacy, Operational Aspects, etc.)
+> * System life cycle (Deployment, Monitoring, Logging, Automation, CI/CD, etc.)
+
+Does it look good?  Did I miss anything? Any thing else we should cover at this stage?
+
+**Interviewer**: Yes, it looks good.
 
 ### Use cases
 
@@ -379,6 +428,44 @@ While traditional MapReduce jobs are rarely written manually today, the underlyi
 
 **Clarify with your interviewer the expected amount, style, and purpose of the code you should write**.
 
+
+#### Example of MapReduce Concept 
+
+For educational purposes and small local testing, we can simulate MapReduce logic using Python. This is **not how production systems work today**, but it is useful for **understanding the concepts** and explaining it to the interviewer.
+
+```python
+from collections import defaultdict
+
+# Example raw log lines
+logs = [
+    '2025-04-01 12:00:00 /home',
+    '2025-04-01 12:05:00 /about',
+    '2025-04-01 12:10:00 /home',
+    '2025-04-02 13:00:00 /contact',
+]
+
+# Map Step
+mapped = []
+for line in logs:
+    timestamp, url = line.split()
+    day = timestamp.split('T')[0] if 'T' in timestamp else timestamp.split()[0]
+    mapped.append(((day, url), 1))
+
+# Shuffle & Group Step
+grouped = defaultdict(list)
+for key, value in mapped:
+    grouped[key].append(value)
+
+# Reduce Step
+reduced = {}
+for key, values in grouped.items():
+    reduced[key] = sum(values)
+
+# Output
+for key, count in reduced.items():
+    print(f"{key}: {count}")
+```
+
 #### Modern "MapReduce" today looks like:
 
 1. If you have logs (e.g., nginx, access logs):
@@ -414,47 +501,6 @@ ORDER BY
 
 But you don’t manage the "mapping" and "reducing" manually — the cloud service **optimizes** and **parallelizes** it for you.
 
-
-#### Example of Local MapReduce Simulation for Testing:
-
-
-For educational purposes and small local testing, we can simulate MapReduce logic using Python. This is **not how production systems work today**, but it is useful for **understanding the concepts**.
-
-```python
-from collections import defaultdict
-
-# Example raw log lines
-logs = [
-    '2025-04-01 12:00:00 /home',
-    '2025-04-01 12:05:00 /about',
-    '2025-04-01 12:10:00 /home',
-    '2025-04-02 13:00:00 /contact',
-]
-
-# Map Step
-mapped = []
-for line in logs:
-    timestamp, url = line.split()
-    day = timestamp.split('T')[0] if 'T' in timestamp else timestamp.split()[0]
-    mapped.append(((day, url), 1))
-
-# Shuffle & Group Step
-grouped = defaultdict(list)
-for key, value in mapped:
-    grouped[key].append(value)
-
-# Reduce Step
-reduced = {}
-for key, values in grouped.items():
-    reduced[key] = sum(values)
-
-# Output
-for key, count in reduced.items():
-    print(f"{key}: {count}")
-```
-
-
-
 ### Use case: Service deletes expired pastes
 
 To delete expired pastes, we could just scan the **SQL Database** for all entries whose expiration timestamp are older than the current timestamp.  All expired entries would then be deleted (or  marked as expired) from the table.
@@ -463,14 +509,19 @@ To delete expired pastes, we could just scan the **SQL Database** for all entrie
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/4edXG0T.png)
+![Imgur](../../../images/4edXG0T.png)
+
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
 State you would do this iteratively: 
-1) **Benchmark/Load Test**, 
+
+1) **Benchmark/Load Test**
+   
 2) **Profile** for bottlenecks 
+   
 3) address bottlenecks while evaluating alternatives and trade-offs, and 
+   
 4) repeat.  
 
 See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.

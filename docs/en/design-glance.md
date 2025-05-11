@@ -137,7 +137,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     - [Design Pastebin.com (or Bit.ly)](#design-pastebincom-or-bitly)
     - [Design the Twitter timeline and search (or Facebook feed and search)](#design-the-twitter-timeline-and-search-or-facebook-feed-and-search)
     - [Design a web crawler](#design-a-web-crawler)
-    - [Design Mint.com](#design-mintcom)
+    - [Design personal budget tracking app (Mint.com)](#design-mintcom)
     - [Design the data structures for a social network](#design-the-data-structures-for-a-social-network)
     - [Design a key-value store for a search engine](#design-a-key-value-store-for-a-search-engine)
     - [Design Amazon's sales ranking by category feature](#design-amazons-sales-ranking-by-category-feature)
@@ -413,7 +413,7 @@ Check out the following links to get a better idea of what to expect:
 | Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
 | Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
 | Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
+| Design personal budget tracking app (Mint.com) | [Solution](solutions/system_design/mint/README.md) |
 | Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
 | Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
 | Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
@@ -440,7 +440,7 @@ You can practice a few sample questions and discuss solutions with the community
 
 ![Imgur](../../images/bWxPtQA.png)
 
-### Design Mint.com
+### Design personal budget tracking app (Mint.com)
 
 [View exercise and solution](solutions/system_design/mint/README.md)
 

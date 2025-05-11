@@ -20,27 +20,51 @@ Here is an example of the dialog you could have with the interviewer:
 **Example dialog with your interviewer:**
 
 
-**Interviewer**: Design Mint.com.
-**Candidate**: Sure—could you remind me what the core value proposition of Mint.com is?
+**Interviewer**: Design personal budget tracking app (Mint.com).
+
+**Candidate**: To clarify and understand the scope, may I start with a few quick questions?
+
+**Interviewer**: Yes, please.
+
+**Candidate**: What are the **main features, users, and use cases** of the system?
+
 **Interviewer**: It aggregates users’ financial accounts, categorizes transactions, and helps them budget.
+
 **Candidate**: Got it. How do we get the data from the financial accounts?
+
 **Interviewer**: connects to a financial account.
+
 **Candidate**: Should we focus on real-time updates or would a daily refresh suffice?
+
 **Interviewer**: Daily is fine.
+
 **Candidate**: How should categorization work?
+
 **Interviewer**: Auto-categorize based on merchant, but allow manual overrides. No re-categorization once set.
+
 **Candidate**: Understood. What budget features are needed?
+
 **Interviewer**: Recommend budgets by category, allow manual budgets, and notify when users approach or exceed them.
+
 **Candidate**: Any non-functional requirements?
+
 **Interviewer**: High availability is a must; budget alerts don’t need millisecond latency.
+
 **Candidate**: Great. And scale?
+
 **Interviewer**: Target ~10 M users, ~30 M linked accounts, ~5 B transactions/mo, with ~500 M reads/mo.
 
-### Use cases
+**Candidate**: Thanks — that's clear and helps scope my design. Let's me summarize the scope as i understood it and the assumptions to make sure we are on the **same page**.
 
-#### We'll scope the problem to handle only the following use cases
+**Interviewer**: Ok.
 
-* **User** connects to one or more financial accounts (bank, credit card, investment).  
+**Candidate**: ok, here a reflection of what I understood from the requirements, I will write it down here
+
+> ### Use cases
+> * **User** connects to one or more financial accounts (bank, credit card, investment).  
+
+>
+> ### Background tasks
 * **Service** extracts transactions from the account
     * Daily batch updates for active users (last 30 days). 
     * Categorizes transactions
@@ -53,11 +77,21 @@ Here is an example of the dialog you could have with the interviewer:
     * Recommend a budget per category.  
     * Allow users to set or adjust budgets manually.  
     * Send notifications when spending approaches/exceeds budget. 
-* **Service** has high availability
 
-#### Out of scope
+>
+> ### Non functional requirements
+> * **Service** has high availability
+>
+> ### Out of scope
+> * **Service** performs additional logging and analytics
+> * All authenticated users features
+> * Any other requirements
+>
+> ### Other considerations we need to think about (Later on)
+> * System Quality Attributes (Reliability, Scalability, Security & Privacy, Operational Aspects, etc.)
+> * System life cycle (Deployment, Monitoring, Logging, Automation, CI/CD, etc.)
 
-* **Service** performs additional logging and analytics
+
  
 ###  Constraints & assumptions
 
@@ -495,7 +529,7 @@ class SpendingByCategory(MRJob):
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/V5q57vU.png)
+![Imgur](../../../images/V5q57vU.png)
 
 **Important: Do not simply jump right into the final design from the initial design!**
 

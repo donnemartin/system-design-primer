@@ -16,6 +16,7 @@ plugins:
       default_language: en
       languages:
         en: English
+  # - htmlproofer
 
 
 markdown_extensions:
