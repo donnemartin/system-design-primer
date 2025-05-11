@@ -12,6 +12,7 @@ The world of software development has evolved dramatically since 2017. Today, sy
 
 - **Outdated Core Content**: The majority of the original material dates back to 2017. Foundational chapters on scaling, fault tolerance, and microservices were written before Kubernetes became ubiquitous.
 - **Generative AI Impact**: Emerging AI-driven patterns—from inference pipelines to LLM-powered observability—are not covered in the legacy primer. Incorporating these topics will keep the guide relevant.
+- **Guide structure**: The structure is not optimal for learning. It is not easy to follow and understand the guide. People were asking for a better structure already from 2021 [here for example](https://github.com/donnemartin/system-design-primer/pull/598).
 - **Stagnant Maintenance**: Even minor fixes—typo corrections, link updates, and broken URL patches—have gone unaddressed for at least two years. Examples include [is this awesome repo no longer been updated?](https://github.com/donnemartin/system-design-primer/issues/840) that was opened at **Feb 2024** or [Indieflashblog link is dead](https://github.com/donnemartin/system-design-primer/issues/501) that was opened at **Jan 2021**.
 
 ### 3. Community Call to Action

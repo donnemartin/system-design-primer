@@ -14,6 +14,7 @@ The world of software development has evolved dramatically since 2017. Today, sy
 
 - **Outdated Core Content**: The majority of the original material dates back to 2017. Foundational chapters on scaling, fault tolerance, and microservices were written before Kubernetes became ubiquitous.
 - **Generative AI Impact**: Emerging AI-driven patterns—from inference pipelines to LLM-powered observability—are not covered in the legacy primer. Incorporating these topics will keep the guide relevant.
+- - **Guide structure**: The structure is not optimal for learning. It is not easy to follow and understand the guide. People were asking for a better structure already from 2021 [here for example](https://github.com/donnemartin/system-design-primer/pull/598).
 - **Stagnant Maintenance**: Even minor fixes—typo corrections, link updates, and broken URL patches—have gone unaddressed for at least two years. Examples include [is this awesome repo no longer been updated?](https://github.com/donnemartin/system-design-primer/issues/840) that was opened at **Feb 2024** or [Indieflashblog link is dead](https://github.com/donnemartin/system-design-primer/issues/501) that was opened at **Jan 2021**.
 
 ### 3. Community Call to Action
@@ -52,17 +53,18 @@ These capabilities will help learners deepen their understanding and kickstart r
 - **Issue & PR migration**: Migrated all issues and pull requests to the new repo—merged active PRs, closed those older than three years as archived, and marked old issues as “not planned” to preserve history while allowing users to reopen them if they wish.
 - **Project board established**: To enable a clear view of project progress, see our [System Design Primer Content Update & Revamp](https://github.com/users/ido777/projects/1/views/1).
 - **Added [Discussions](https://github.com/ido777/system-design-primer-update/discussions)**: To enable a community driven effort, we will use discussions to share ideas, ask questions and get feedback.
+- **GitHub Pages deployment**: Easy navigation and styling via Pages.
+- **Solutions refactoring**: Refactored most solutions to comply with the new study guide.
 
 ### In Progress
 - **Content refactoring**: Monolithic README split into modular sections.
-- **Solutions modernization**: 
-- **GitHub Pages deployment**: Easy navigation and styling via Pages.
 - **Mermaid Diagrams**: Converting static images into editable flowcharts.
 
 ### Upcoming
 - **Translation overhaul**: Prototype AI‑assisted translation workflow.
 - **Fair‑use excerpts**: Add curated snippets from key texts (Alex Xu, Brendan Burns).
 - **CI/CD for quality**: Automate grammar checks, link validations, and draft translations.
+- **Solutions modernization**: Update solutions to comply with the new technologies and trends.
 - **Interactive course launch**: Alpha release of an AI‑guided system design simulator.
 
 ## ❓ Open Questions
