@@ -1,0 +1,36 @@
+site_name: System Design Primer Update  
+theme:
+  name: material
+  language: en
+  features:
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en: English
+        zh: 简体中文
+        zh-Hant: 繁體中文
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format  
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - toc:
+      permalink: true
