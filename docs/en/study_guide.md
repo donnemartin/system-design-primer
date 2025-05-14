@@ -108,11 +108,24 @@ flowchart TB
 
 
 No one can build a system from scratch in 45 minutes, but no one excepts it from you. 
+Actually, the system design interview is a misleading title, it is not about **designing** a system it is about **explaining** a system to the interviewer. Even worse, most of the "questions" the interviewer thinks about are NOT asked as a direct question, but are inferred from your talk, sometimes inferred wrongly because you didn't touch the explanation the interviewer looks for at this specific moment.
+
+Here is an example:
+
+* While you are explaining the details of the flow of read in your design, the interviewer ask you "does the flow of read goes _really_ from the client to the web server?"
+
+Since many of the system design topics are about scaling this question is probably an hint that maybe you should add DNS, Load Balancer or CDN to your explanation. The fact that a moment ago you were talking about all the above and said that we need to add those and the interviewer didn't asked anything about it, does not mean that he does not want to check your knowledge on the subject, at this moment. 
+Ok, but should you 
+- stop talking about the read flow and jump over to the DNS, Load Balancer or CDN?
+- or you should continue talking about the read flow and add those to your explanation?
+- or should you dive in about CDN hit and miss mechanism?
+
+The answer is: You should **ASK** the interviewer, and try to uncover the hidden question - what does she want you to explain - now. Ask open question so if the interviewer intended to ask you something else, she will tell you.
+
+
 The system design interview is a ceremony with per defined rules and **you can’t win the game if you don’t understand the rules of the game**.
 Many interviewees fail the system design interview—not for lack of technical knowledge, or preparation but for misunderstanding what it's **really** about.
-Many candidates focus on memorizing architectures instead of engaging in a collaborative design **discussion**. In reality, interviewers want to see how you **lead** a targeted conversation to solve a **scoped problem**, not how fast you can sketch an entire production system.
-
-
+Many candidates focus on memorizing architectures instead of engaging in a collaborative design **discussion**. In reality, interviewers want to see how you **lead** a targeted conversation to solve a **scoped problem**, not how fast you can sketch an entire production system... and it is your responsibility to understand the interviewer's hidden questions.
 
 
 
