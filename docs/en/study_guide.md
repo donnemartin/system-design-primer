@@ -108,25 +108,25 @@ flowchart TB
 
 
 No one can build a system from scratch in 45 minutes, but no one excepts it from you. 
-Actually, the system design interview is a misleading title, it is not about **designing** a system it is about **explaining** a system to the interviewer. Even worse, most of the "questions" the interviewer thinks about are NOT asked as a direct question, but are inferred from your talk, sometimes inferred wrongly because you didn't touch the explanation the interviewer looks for at this specific moment.
-
-Here is an example:
-
-* While you are explaining the details of the flow of read in your design, the interviewer ask you "does the flow of read goes _really_ from the client to the web server?"
-
-Since many of the system design topics are about scaling this question is probably an hint that maybe you should add DNS, Load Balancer or CDN to your explanation. The fact that a moment ago you were talking about all the above and said that we need to add those and the interviewer didn't asked anything about it, does not mean that he does not want to check your knowledge on the subject, at this moment. 
-Ok, but should you 
-- stop talking about the read flow and jump over to the DNS, Load Balancer or CDN?
-- or you should continue talking about the read flow and add those to your explanation?
-- or should you dive in about CDN hit and miss mechanism?
-
-The answer is: You should **ASK** the interviewer, and try to uncover the hidden question - what does she want you to explain - now. Ask open question so if the interviewer intended to ask you something else, she will tell you.
+In fact, “system design interview” is a misnomer—it’s not about **designing** a system, but about **explaining** one to your interviewer. Even more challenging, most of the questions the interviewer has in mind aren’t stated outright; they’re inferred from your explanation—sometimes incorrectly—when you miss the precise detail they’re looking for.
 
 
-The system design interview is a ceremony with per defined rules and **you can’t win the game if you don’t understand the rules of the game**.
-Many interviewees fail the system design interview—not for lack of technical knowledge, or preparation but for misunderstanding what it's **really** about.
-Many candidates focus on memorizing architectures instead of engaging in a collaborative design **discussion**. In reality, interviewers want to see how you **lead** a targeted conversation to solve a **scoped problem**, not how fast you can sketch an entire production system... and it is your responsibility to understand the interviewer's hidden questions.
+**Example**
+While you’re describing the read flow in your design, the interviewer might ask:
 
+> “Does the read flow *really* go from the client all the way to the web server?”
+
+Since many system design discussions focus on scaling, this prompt likely hints that you should mention DNS, load balancers, or CDNs. Just because you discussed those components moments earlier—and the interviewer didn’t follow up—doesn’t mean they aren’t testing your knowledge now.
+
+What should you do?
+
+* Stop explaining the read flow and switch to an overview of DNS, load balancers, or CDNs?
+* Continue describing the read flow while integrating those components?
+* Dive into the CDN’s cache hit and miss mechanisms?
+
+The answer: **ASK**. Seek to uncover the hidden question. Open-ended questions help the interviewer clarify what they really want you to explain at that moment.
+
+A system design interview is a ceremonial rite governed by strict, unspoken rules.**You can’t win the game if you don’t understand those rules**. Many candidates fail—not for lack of technical skill or preparation, but because they misunderstand the interview’s true purpose. Rather than memorizing architectures, focus on driving a collaborative design **discussion**. Interviewers want to see how you **lead** a targeted conversation around a **scoped problem**, not how quickly you can draft an entire production system. Ultimately, it’s your responsibility to identify and address the interviewer’s hidden questions at any moment.
 
 
 ---
