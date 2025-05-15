@@ -1,0 +1,24 @@
+{% extends "partials/footer.html" %}
+
+{% block footer %}
+  {{ super() }}
+  <div id="comments" class="md-content">
+    <!-- Giscus widget -->
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="ido777/system-design-primer-update"
+      data-repo-id="R_kgDOORdCfw"
+      data-category="Feedback by Page"
+      data-category-id="DIC_kwDOORdCf84CqLEY"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="en"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+{% endblock %}

@@ -19,6 +19,12 @@ plugins:
   # - htmlproofer
 
 
+extra_javascript:
+  - https://giscus.app/client.js
+
+
+
+
 markdown_extensions:
   - admonition
   - pymdownx.superfences:

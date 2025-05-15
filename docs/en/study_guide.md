@@ -126,13 +126,14 @@ What should you do?
 
 The answer: **ASK**. Seek to uncover the hidden question. Open-ended questions help the interviewer clarify what they really want you to explain at that moment.
 
-A system design interview is a ceremonial rite governed by strict, unspoken rules.**You can’t win the game if you don’t understand those rules**. Many candidates fail—not for lack of technical skill or preparation, but because they misunderstand the interview’s true purpose. Rather than memorizing architectures, focus on driving a collaborative design **discussion**. Interviewers want to see how you **lead** a targeted conversation around a **scoped problem**, not how quickly you can draft an entire production system. Ultimately, it’s your responsibility to identify and address the interviewer’s hidden questions at any moment.
+A system design interview is a ceremonial rite governed by strict, unspoken rules.**You can’t win the game if you don’t understand those rules**. 
+Many candidates stumble not for lack of technical chops, but because they misread the interview’s true purpose at specific moments. Rather than memorizing architectures, focus on driving a collaborative design **discussion**. Interviewers want to see how you **lead** a targeted conversation around a **scoped problem**, not how quickly you can draft an entire production system. Ultimately, it’s on you to uncover and address the interviewer’s hidden questions at every turn.
 
 
 ---
 
 > *A well-structured system design interview isn't about blurting out the “right” design—it's about owning the conversation. 
-> Rather than simply answering, you must lead: ask clarifying questions, listen to sub text, expose hidden constraints, and keep the interviewer engaged. 
+> Rather than simply answering, you must lead: ask clarifying questions, listen to sub text, expose hidden , and keep the interviewer engaged. 
 > **Alex Xu's four-phase framework**, the **ABC interview loops** *below* are designed to help you to do just that.*
 
 ---
