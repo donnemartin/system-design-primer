@@ -13,6 +13,10 @@ theme:
     - search.suggest
 
 plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en: English
   - search               # MkDocs default search plugin
   - git-revision-date-localized:
       type: date         # or datetime, iso_date, iso_datetime, timeago
@@ -20,10 +24,6 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
-  - i18n:
-      default_language: en
-      languages:
-        en: English
   # - htmlproofer
 
 
@@ -72,28 +72,27 @@ nav:
   - English:
       - Overview: en/index.md
       - Study Guide Start Here: en/study_guide.md
-      - System Design Interview Questions: en/solutions.md
+      - System Design Interview Questions: en/practice.md
       - System Design at a Glance: en/design-glance.md
-      - System Design Interview Questions:
-          - System Design:
-              - Pastebin: docs/solutions/system_design/pastebin/README.md
-              - Query Cache: docs/solutions/system_design/query_cache/README.md
-              - Mint: docs/solutions/system_design/mint/README.md
-              - Sales Rank: docs/solutions/system_design/sales_rank/README.md
-              - URL Shortener: docs/solutions/system_design/url_shortener/README.md
-              - Web Crawler: docs/solutions/system_design/web_crawler/README.md
-              - Scaling AWS: docs/solutions/system_design/scaling_aws/README.md
-              - Social Graph: docs/solutions/system_design/social_graph/README.md
-              - Twitter: docs/solutions/system_design/twitter/README.md
-          - Object-Oriented Design:
-              - Call Center: docs/solutions/object_oriented_design/call_center/README.md
-              - Circular Array: docs/solutions/object_oriented_design/circular_array/README.md
-              - Deck of Cards: docs/solutions/object_oriented_design/deck_of_cards/README.md
-              - Hash Table: docs/solutions/object_oriented_design/hash_table/README.md
-              - LRU Cache: docs/solutions/object_oriented_design/lru_cache/README.md
-              - Movie Tickets: docs/solutions/object_oriented_design/movie_tickets/README.md
-              - Online Chat: docs/solutions/object_oriented_design/online_chat/README.md
-              - Parking Lot: docs/solutions/object_oriented_design/parking_lot/README.md
+      - System Design Solutions:
+          - Pastebin: solutions/system_design/pastebin/README.md
+          - Query Cache: solutions/system_design/query_cache/README.md
+          - Mint: solutions/system_design/mint/README.md
+          - Sales Rank: solutions/system_design/sales_rank/README.md
+          - URL Shortener: solutions/system_design/url_shortener/README.md
+          - Web Crawler: solutions/system_design/web_crawler/README.md
+          - Scaling AWS: solutions/system_design/scaling_aws/README.md
+          - Social Graph: solutions/system_design/social_graph/README.md
+          - Twitter: solutions/system_design/twitter/README.md
+      - Object-Oriented Design Solutions:
+          - Call Center: solutions/object_oriented_design/call_center/README.md
+          - Circular Array: solutions/object_oriented_design/circular_array/README.md
+          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/README.md
+          - Hash Table: solutions/object_oriented_design/hash_table/README.md
+          - LRU Cache: solutions/object_oriented_design/lru_cache/README.md
+          - Movie Tickets: solutions/object_oriented_design/movie_tickets/README.md
+          - Online Chat: solutions/object_oriented_design/online_chat/README.md
+          - Parking Lot: solutions/object_oriented_design/parking_lot/README.md
 
   - Translations (Not up to date):
     - 简体中文 (Simplified Chinese):
