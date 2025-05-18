@@ -1,0 +1,12 @@
+.giscus, .giscus-frame {
+    width: 100%;
+    min-height: 150px;
+  }
+  
+  .giscus-frame {
+    border: none;
+    color-scheme: light dark;
+  }
+  .giscus-frame--loading {
+    opacity: 0;
+  }
