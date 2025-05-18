@@ -14,6 +14,13 @@ theme:
     - search.suggest
 
 plugins:
+  - search               # MkDocs default search plugin
+  - git-revision-date-localized:
+      type: date         # or datetime, iso_date, iso_datetime, timeago
+      fallback_to_build_date: false
+      enable_creation_date: true
+      exclude:
+        - index.md
   - i18n:
       default_language: en
       languages:
