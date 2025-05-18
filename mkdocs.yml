@@ -3,7 +3,6 @@ theme:
   name: material
   language: en
   custom_dir: overrides/
-
   features:
     - content.code.annotate
     - content.tabs.link
