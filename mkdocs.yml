@@ -34,12 +34,19 @@ plugins:
   - i18n:
       default_language: en
       languages:
-        en: English
-        zh: Simplified Chinese
-        zh-Hant: Traditional Chinese
-        ja: Japanese
-        tr: Turkish
-        ar: Arabic
+        - locale: en
+          name: English
+          default: true
+        - locale: zh
+          name: Simplified Chinese
+        - locale: zh-Hant
+          name: Traditional Chinese
+        - locale: ja
+          name: Japanese
+        - locale: tr
+          name: Turkish
+        - locale: ar
+          name: Arabic
   - search               # MkDocs default search plugin
   - git-revision-date-localized:
       type: date         # or datetime, iso_date, iso_datetime, timeago
@@ -96,7 +103,6 @@ nav:
   - Contributing: https://github.com/ido777/system-design-primer-update/blob/main/CONTRIBUTING.md
   - License: https://github.com/ido777/system-design-primer-update/blob/main/LICENSE.md
   - Changelog: https://github.com/ido777/system-design-primer-update/blob/main/CHANGELOG.md
-
   - English:
       - Overview: en/index.md
       - Study Guide Start Here: en/study_guide.md
