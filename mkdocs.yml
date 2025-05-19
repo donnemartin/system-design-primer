@@ -2,22 +2,30 @@ site_name: System Design Primer Update
 site_url: https://ido777.github.io/system-design-primer-update/en/study_guide/
 
 repo_url: https://github.com/ido777/system-design-primer-update
+repo_name: ido777/system-design-primer-update
 
-use_directory_urls: true
+# use_directory_urls: true
 
 theme:
   name: material
   language: en
   custom_dir: overrides/
   features:
-    - content.code.annotate
-    - content.tabs.link
-    - navigation.sections
     - navigation.tabs
+    - navigation.tabs.sticky    
     - navigation.top
     - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch 
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.path    
+    - content.code.annotate
+    - content.tabs.link
     - search.highlight
     - search.suggest
+    - toc.follow    
   palette:
   - media: "(prefers-color-scheme: light)"
     scheme: default
@@ -31,22 +39,22 @@ theme:
       name: Switch to light mode
 
 plugins:
-  - i18n:
-      default_language: en
-      languages:
-        - locale: en
-          name: English
-          default: true
-        - locale: zh
-          name: Simplified Chinese
-        - locale: zh-Hant
-          name: Traditional Chinese
-        - locale: ja
-          name: Japanese
-        - locale: tr
-          name: Turkish
-        - locale: ar
-          name: Arabic
+  # - i18n:
+  #     default_language: en
+  #     languages:
+  #       - locale: en
+  #         name: English
+  #         default: true
+  #       - locale: zh
+  #         name: Simplified Chinese
+  #       - locale: zh-Hant
+  #         name: Traditional Chinese
+  #       - locale: ja
+  #         name: Japanese
+  #       - locale: tr
+  #         name: Turkish
+  #       - locale: ar
+  #         name: Arabic
   - search               # MkDocs default search plugin
   - git-revision-date-localized:
       type: date         # or datetime, iso_date, iso_datetime, timeago
@@ -58,6 +66,7 @@ plugins:
       repository: ido777/system-design-primer-update
       branch: main
   - meta
+  - offline
   # - htmlproofer
 
 extra:
@@ -76,10 +85,27 @@ extra:
     theme: light
     lang: en
     loading: lazy
+  # alternate:
+  # - name: English
+  #   link: en/index.md 
+  #   lang: en
+  # - name: 简体中文
+  #   link: /zh/
+  #   lang: zh
+  # - name: 繁體中文
+  #   link: /zh-Hant/
+  #   lang: zh-Hant
+  # - name: 日本語
+  #   link: /ja/
+  #   lang: ja
 
 extra_javascript:
-  - js/client-debug.js
-  - js/giscus-debug.js
+  - javascripts/client-debug.js
+  - javascripts/giscus-debug.js
+
+extra_css:
+  - stylesheets/default.css
+
 
 markdown_extensions:
   - admonition
