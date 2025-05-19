@@ -125,10 +125,10 @@ markdown_extensions:
 
 nav:
   - Home: en/index.md
-  - About: https://github.com/ido777/system-design-primer-update/blob/main/README.md
-  - Contributing: https://github.com/ido777/system-design-primer-update/blob/main/CONTRIBUTING.md
-  - License: https://github.com/ido777/system-design-primer-update/blob/main/LICENSE.md
-  - Changelog: https://github.com/ido777/system-design-primer-update/blob/main/CHANGELOG.md
+  - About: about.md
+  - Contributing: CONTRIBUTING.md
+  - License: LICENSE.md
+  - Changelog: CHANGELOG.md
   - English:
       - Overview: en/index.md
       - Study Guide Start Here: en/study_guide.md
