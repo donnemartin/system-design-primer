@@ -1,4 +1,10 @@
 site_name: System Design Primer Update  
+site_url: https://ido777.github.io/system-design-primer-update/en/study_guide/
+
+repo_url: https://github.com/ido777/system-design-primer-update
+
+
+use_directory_urls: true
 theme:
   name: material
   language: en
@@ -9,8 +15,20 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.top
+    - navigation.footer
     - search.highlight
     - search.suggest
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
 
 plugins:
   - i18n:
@@ -24,10 +42,22 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
+  - git-committers:
+      repository: ido777/system-design-primer-update
+      branch: main
+  - meta
+
   # - htmlproofer
 
 
+
+
+
+
 extra:
+  analytics:
+    provider: google
+    property: UA-210436000-1
   giscus:
     repo: ido777/system-design-primer-update
     repo_id: R_kgDOORdCfw
