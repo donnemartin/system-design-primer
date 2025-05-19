@@ -3,8 +3,8 @@ site_url: https://ido777.github.io/system-design-primer-update/en/study_guide/
 
 repo_url: https://github.com/ido777/system-design-primer-update
 
-
 use_directory_urls: true
+
 theme:
   name: material
   language: en
@@ -35,6 +35,11 @@ plugins:
       default_language: en
       languages:
         en: English
+        zh: Simplified Chinese
+        zh-Hant: Traditional Chinese
+        ja: Japanese
+        tr: Turkish
+        ar: Arabic
   - search               # MkDocs default search plugin
   - git-revision-date-localized:
       type: date         # or datetime, iso_date, iso_datetime, timeago
@@ -46,13 +51,7 @@ plugins:
       repository: ido777/system-design-primer-update
       branch: main
   - meta
-
   # - htmlproofer
-
-
-
-
-
 
 extra:
   analytics:
@@ -74,7 +73,6 @@ extra:
 extra_javascript:
   - js/client-debug.js
   - js/giscus-debug.js
-
 
 markdown_extensions:
   - admonition
