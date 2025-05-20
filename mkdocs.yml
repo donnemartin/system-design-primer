@@ -22,6 +22,7 @@ theme:
     - navigation.tracking
     - navigation.path    
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
     - search.highlight
     - search.suggest
@@ -116,18 +117,28 @@ extra_css:
 
 markdown_extensions:
   - admonition
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: [docs, docs/en, docs/solutions/object_oriented_design/call_center, docs/solutions/object_oriented_design/circular_array, docs/solutions/object_oriented_design/deck_of_cards, docs/solutions/object_oriented_design/hash_table, docs/solutions/object_oriented_design/lru_cache, docs/solutions/object_oriented_design/movie_tickets, docs/solutions/object_oriented_design/online_chat, docs/solutions/object_oriented_design/parking_lot]
+  - pymdownx.highlight:
+      anchor_linenums: true
+      use_pygments: true
+      auto_title: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format  
   - pymdownx.details
-  - pymdownx.highlight
   - pymdownx.emoji
   - pymdownx.mark
   - pymdownx.tabbed
   - pymdownx.tasklist
+  - pymdownx.keys
+  - pymdownx.smartsymbols  
   - toc:
       permalink: true
 
@@ -176,13 +187,13 @@ nav:
         - Twitter: solutions/system_design/twitter/README.md
       - Object-Oriented Design Solutions:
           - Call Center: solutions/object_oriented_design/call_center/README.md
-          - Circular Array: solutions/object_oriented_design/circular_array/circular_array.py
-          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/deck_of_cards.py
-          - Hash Table: solutions/object_oriented_design/hash_table/hash_table.py
-          - LRU Cache: solutions/object_oriented_design/lru_cache/lru_cache.py
-          - Movie Tickets: solutions/object_oriented_design/movie_tickets/movie_tickets.py
-          - Online Chat: solutions/object_oriented_design/online_chat/online_chat.py
-          - Parking Lot: solutions/object_oriented_design/parking_lot/parking_lot.py
+          - Circular Array: solutions/object_oriented_design/circular_array/README.md
+          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/README.md
+          - Hash Table: solutions/object_oriented_design/hash_table/README.md
+          - LRU Cache: solutions/object_oriented_design/lru_cache/README.md
+          - Movie Tickets: solutions/object_oriented_design/movie_tickets/README.md
+          - Online Chat: solutions/object_oriented_design/online_chat/README.md
+          - Parking Lot: solutions/object_oriented_design/parking_lot/README.md
       - WIP (old structure and content, will be removed):
         - Original System Design Primer as one page (WIP): en/design-glance.md
         - 'Motivation': en/sd_motivation.md
