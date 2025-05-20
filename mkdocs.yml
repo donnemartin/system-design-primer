@@ -1,5 +1,5 @@
 site_name: System Design Primer Update  
-site_url: https://ido777.github.io/system-design-primer-update/
+site_url: https://ido777.github.io/system-design-primer-update
 
 repo_url: https://github.com/ido777/system-design-primer-update
 repo_name: ido777/system-design-primer-update
@@ -62,9 +62,9 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
-  # - git-committers:
-  #     repository: ido777/system-design-primer-update
-  #     branch: main
+  - git-committers:
+      repository: ido777/system-design-primer-update
+      branch: main
   - meta
   - offline
   - git-authors
@@ -77,9 +77,9 @@ plugins:
   # - htmlproofer
 
 extra:
-  analytics:
-    provider: google
-    property: UA-210436000-1
+  # analytics:
+  #   provider: google
+  #   property: UA-210436000-1
   giscus:
     repo: ido777/system-design-primer-update
     repo_id: R_kgDOORdCfw
