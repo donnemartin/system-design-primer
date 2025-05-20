@@ -1,5 +1,5 @@
 site_name: System Design Primer Update  
-site_url: https://ido777.github.io/system-design-primer-update/en/study_guide/
+site_url: https://ido777.github.io/system-design-primer-update/
 
 repo_url: https://github.com/ido777/system-design-primer-update
 repo_name: ido777/system-design-primer-update
@@ -62,11 +62,18 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
-  - git-committers:
-      repository: ido777/system-design-primer-update
-      branch: main
+  # - git-committers:
+  #     repository: ido777/system-design-primer-update
+  #     branch: main
   - meta
   - offline
+  - git-authors
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["solutions/object_oriented_design"]
+
+
   # - htmlproofer
 
 extra:
@@ -109,6 +116,7 @@ extra_css:
 
 markdown_extensions:
   - admonition
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -133,26 +141,58 @@ nav:
       - Overview: en/index.md
       - Study Guide Start Here: en/study_guide.md
       - System Design Interview Questions: en/practice.md
-      - System Design at a Glance: en/design-glance.md
-      - System Design Solutions:
-          - Pastebin: solutions/system_design/pastebin/README.md
-          - Query Cache: solutions/system_design/query_cache/README.md
-          - Mint: solutions/system_design/mint/README.md
-          - Sales Rank: solutions/system_design/sales_rank/README.md
-          - URL Shortener: solutions/system_design/url_shortener/README.md
-          - Web Crawler: solutions/system_design/web_crawler/README.md
-          - Scaling AWS: solutions/system_design/scaling_aws/README.md
-          - Social Graph: solutions/system_design/social_graph/README.md
-          - Twitter: solutions/system_design/twitter/README.md
+      - System Design: 
+        - 'System design topics': en/sd_system_design_topics_start_here.md
+        - 'Performance vs scalability': en/sd_performance_vs_scalability.md
+        - 'Latency vs throughput': en/sd_latency_vs_throughput.md
+        - 'Availability vs consistency': en/sd_availability_vs_consistency.md
+        - 'Consistency patterns': en/sd_consistency_patterns.md
+        - 'Availability patterns': en/sd_availability_patterns.md
+        - 'Domain name system': en/sd_domain_name_system.md
+        - 'Content delivery network': en/sd_content_delivery_network.md
+        - 'Load balancer': en/sd_load_balancer.md
+        - 'Reverse proxy (web server)': en/sd_reverse_proxy_web_server.md
+        - 'Application layer': en/sd_application_layer.md
+        - 'Database': en/sd_database.md
+        - 'Cache': en/sd_cache.md
+        - 'Asynchronism': en/sd_asynchronism.md
+        - 'Communication': en/sd_communication.md
+        - 'Security': en/sd_security.md
+        - 'Appendix': en/sd_appendix.md
+        - 'Interview preparation resources': en/sd_interview_preparation_resources.md
+        - 'Under development': en/sd_under_development.md
+        - 'Credits': en/sd_credits.md
+        - 'Contact info': en/sd_contact_info.md
+        - 'License': en/sd_license.md
+      - Solutions:
+        - Pastebin: solutions/system_design/pastebin/README.md
+        - Query Cache: solutions/system_design/query_cache/README.md
+        - Mint: solutions/system_design/mint/README.md
+        - Sales Rank: solutions/system_design/sales_rank/README.md
+        - URL Shortener: solutions/system_design/url_shortener/README.md
+        - Web Crawler: solutions/system_design/web_crawler/README.md
+        - Scaling AWS: solutions/system_design/scaling_aws/README.md
+        - Social Graph: solutions/system_design/social_graph/README.md
+        - Twitter: solutions/system_design/twitter/README.md
       - Object-Oriented Design Solutions:
           - Call Center: solutions/object_oriented_design/call_center/README.md
-          - Circular Array: solutions/object_oriented_design/circular_array/README.md
-          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/README.md
-          - Hash Table: solutions/object_oriented_design/hash_table/README.md
-          - LRU Cache: solutions/object_oriented_design/lru_cache/README.md
-          - Movie Tickets: solutions/object_oriented_design/movie_tickets/README.md
-          - Online Chat: solutions/object_oriented_design/online_chat/README.md
-          - Parking Lot: solutions/object_oriented_design/parking_lot/README.md
+          - Circular Array: solutions/object_oriented_design/circular_array/circular_array.py
+          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/deck_of_cards.py
+          - Hash Table: solutions/object_oriented_design/hash_table/hash_table.py
+          - LRU Cache: solutions/object_oriented_design/lru_cache/lru_cache.py
+          - Movie Tickets: solutions/object_oriented_design/movie_tickets/movie_tickets.py
+          - Online Chat: solutions/object_oriented_design/online_chat/online_chat.py
+          - Parking Lot: solutions/object_oriented_design/parking_lot/parking_lot.py
+      - WIP (old structure and content, will be removed):
+        - Original System Design Primer as one page (WIP): en/design-glance.md
+        - 'Motivation': en/sd_motivation.md
+        - 'Anki flashcards': en/sd_anki_flashcards.md
+        - 'Contributing': en/sd_contributing.md
+        - 'Index of system design topics': en/sd_index_of_system_design_topics.md
+        - 'Study guide': en/sd_study_guide.md
+        - 'How to approach a system design interview question': en/sd_how_to_approach_a_system_design_interview_question.md
+        - 'System design interview questions with solutions': en/sd_system_design_interview_questions_with_solutions.md
+        - 'Object-oriented design interview questions with solutions': en/sd_object-oriented_design_interview_questions_with_solutions.md        
 
   - Translations (Not up to date):
     - 简体中文 (Simplified Chinese):
