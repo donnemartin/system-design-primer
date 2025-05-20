@@ -152,8 +152,28 @@ nav:
       - Overview: en/index.md
       - Study Guide Start Here: en/study_guide.md
       - System Design Interview Questions: en/practice.md
-      - System Design: 
-        - 'System design topics': en/sd_system_design_topics_start_here.md
+      - System Design Interview Solutions:
+        - Pastebin: solutions/system_design/pastebin/README.md
+        - Query Cache: solutions/system_design/query_cache/README.md
+        - Mint: solutions/system_design/mint/README.md
+        - Sales Rank: solutions/system_design/sales_rank/README.md
+        - URL Shortener: solutions/system_design/url_shortener/README.md
+        - Web Crawler: solutions/system_design/web_crawler/README.md
+        - Scaling AWS: solutions/system_design/scaling_aws/README.md
+        - Social Graph: solutions/system_design/social_graph/README.md
+        - Twitter: solutions/system_design/twitter/README.md
+        - 'Object-oriented design interview questions with solutions':
+          - 'Object-oriented design interview questions': en/sd_object-oriented_design_interview_questions.md
+          - Call Center: solutions/object_oriented_design/call_center/README.md
+          - Circular Array: solutions/object_oriented_design/circular_array/README.md
+          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/README.md
+          - Hash Table: solutions/object_oriented_design/hash_table/README.md
+          - LRU Cache: solutions/object_oriented_design/lru_cache/README.md
+          - Movie Tickets: solutions/object_oriented_design/movie_tickets/README.md
+          - Online Chat: solutions/object_oriented_design/online_chat/README.md
+          - Parking Lot: solutions/object_oriented_design/parking_lot/README.md      
+      - System Design Topics: 
+        - 'Introduction': en/sd_system_design_topics_start_here.md
         - 'Performance vs scalability': en/sd_performance_vs_scalability.md
         - 'Latency vs throughput': en/sd_latency_vs_throughput.md
         - 'Availability vs consistency': en/sd_availability_vs_consistency.md
@@ -175,25 +195,7 @@ nav:
         - 'Credits': en/sd_credits.md
         - 'Contact info': en/sd_contact_info.md
         - 'License': en/sd_license.md
-      - Solutions:
-        - Pastebin: solutions/system_design/pastebin/README.md
-        - Query Cache: solutions/system_design/query_cache/README.md
-        - Mint: solutions/system_design/mint/README.md
-        - Sales Rank: solutions/system_design/sales_rank/README.md
-        - URL Shortener: solutions/system_design/url_shortener/README.md
-        - Web Crawler: solutions/system_design/web_crawler/README.md
-        - Scaling AWS: solutions/system_design/scaling_aws/README.md
-        - Social Graph: solutions/system_design/social_graph/README.md
-        - Twitter: solutions/system_design/twitter/README.md
-      - Object-Oriented Design Solutions:
-          - Call Center: solutions/object_oriented_design/call_center/README.md
-          - Circular Array: solutions/object_oriented_design/circular_array/README.md
-          - Deck of Cards: solutions/object_oriented_design/deck_of_cards/README.md
-          - Hash Table: solutions/object_oriented_design/hash_table/README.md
-          - LRU Cache: solutions/object_oriented_design/lru_cache/README.md
-          - Movie Tickets: solutions/object_oriented_design/movie_tickets/README.md
-          - Online Chat: solutions/object_oriented_design/online_chat/README.md
-          - Parking Lot: solutions/object_oriented_design/parking_lot/README.md
+
       - WIP (old structure and content, will be removed):
         - Original System Design Primer as one page (WIP): en/design-glance.md
         - 'Motivation': en/sd_motivation.md
@@ -203,7 +205,7 @@ nav:
         - 'Study guide': en/sd_study_guide.md
         - 'How to approach a system design interview question': en/sd_how_to_approach_a_system_design_interview_question.md
         - 'System design interview questions with solutions': en/sd_system_design_interview_questions_with_solutions.md
-        - 'Object-oriented design interview questions with solutions': en/sd_object-oriented_design_interview_questions_with_solutions.md        
+        
 
   - Translations (Not up to date):
     - 简体中文 (Simplified Chinese):
