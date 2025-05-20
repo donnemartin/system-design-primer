@@ -39,7 +39,7 @@ jobs:
             mkdocs-material-
 
       - name: 📦 Install dependencies
-        run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-git-committers-plugin-2  mkdocs-git-authors-plugin mkdocs-static-i18n
+        run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-git-committers-plugin-2  mkdocs-git-authors-plugin mkdocstrings mkdocs-static-i18n mkdocstrings-python
 
       - name: 🚀 Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
