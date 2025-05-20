@@ -509,7 +509,7 @@ To delete expired pastes, we could just scan the **SQL Database** for all entrie
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](../../../images/4edXG0T.png)
+![Imgur](../../images/4edXG0T.png)
 
 
 **Important: Do not simply jump right into the final design from the initial design!**

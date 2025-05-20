@@ -417,7 +417,7 @@ There are a lot of **system considerations** that are important in interviews ma
 But even if you don't remember them, you can still ask the interviewer for other requirements we need to consider.
 
 <p >
-  <img src="../../images/requirements.png" style="margin-left:40px;" width="500">
+  <img src="../images/requirements.png" style="margin-left:40px;" width="500">
   <br/>
 </p>
 

@@ -5,7 +5,7 @@
 # Sistem Tasarım Rehberi
 
 <p align="center">
-  <img src="../../images/jj3A5N8.png">
+  <img src="../images/jj3A5N8.png">
   <br/>
 </p>
 
@@ -46,7 +46,7 @@ Mülakata hazırlık için diğer konular:
 ## Anki bilgi kartları
 
 <p align="center">
-  <img src="../../images/zdCAkB3.png">
+  <img src="../images/zdCAkB3.png">
   <br/>
 </p>
 
@@ -63,7 +63,7 @@ Her zaman ve her yerde kullanılabilir.
 [**Kodlama Mülakatları**](https://github.com/donnemartin/interactive-coding-challenges)na hazırlanmak için kaynak mı arıyorsunuz?
 
 <p align="center">
-  <img src="../../images/b4YtAEN.png">
+  <img src="../images/b4YtAEN.png">
   <br/>
 </p>
 
@@ -93,7 +93,7 @@ Lütfen [katkı kurallarını](CONTRIBUTING.md) inceleyin.
 > Her bölüm, ek kaynaklara bağlantılar içerir.
 
 <p align="center">
-  <img src="../../images/jrUBAF7.png">
+  <img src="../images/jrUBAF7.png">
   <br/>
 </p>
 
@@ -274,7 +274,7 @@ Lütfen [katkı kurallarını](CONTRIBUTING.md) inceleyin.
 
 > Mülakat zaman çizelgenize (kısa, orta, uzun) göre önerilen konuları gözden geçirin.
 
-![Imgur](../../images/OfVllex.png)
+![Imgur](../images/OfVllex.png)
 
 **S: Mülakatlar için buradaki her şeyi bilmem gerekiyor mu? **
 
@@ -396,49 +396,49 @@ Daha iyi bir fikir edinmek için aşağıdaki bağlantılara göz atın:
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/pastebin/README.md)
 
-![Imgur](../../images/4edXG0T.png)
+![Imgur](../images/4edXG0T.png)
 
 ### Twitter zaman çizelgesi ve arama(veya Facebook haber akışı ve arama) tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/twitter/README.md)
 
-![Imgur](../../images/jrUBAF7.png)
+![Imgur](../images/jrUBAF7.png)
 
 ### Bir web tarayıcısı tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/web_crawler/README.md)
 
-![Imgur](../../images/bWxPtQA.png)
+![Imgur](../images/bWxPtQA.png)
 
 ### Mint.com tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/mint/README.md)
 
-![Imgur](../../images/V5q57vU.png)
+![Imgur](../images/V5q57vU.png)
 
 ### Sosyal ağ için veri yapılarını tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/social_graph/README.md)
 
-![Imgur](../../images/cdCv5g7.png)
+![Imgur](../images/cdCv5g7.png)
 
 ### Arama motorları için bir anahtar/değer(key-value) deposu tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/query_cache/README.md)
 
-![Imgur](../../images/4j99mhe.png)
+![Imgur](../images/4j99mhe.png)
 
 ### Amazon'un satış sıralamasını kategori özellikleri aracılığıyla tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/sales_rank/README.md)
 
-![Imgur](../../images/MzExP06.png)
+![Imgur](../images/MzExP06.png)
 
 ### AWS'de milyon kullanıcılı bir sistem tasarlayın
 
 [Alıştırma ve çözümü görüntüleyin](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](../../images/jj3A5N8.png)
+![Imgur](../images/jj3A5N8.png)
 
 ## Nesne yönelimli tasarım mülakat soruları ve çözümleri
 
@@ -530,7 +530,7 @@ Genel olarak, kabul edilebilir gecikme süresiyle verimi en üst düzeye çıkar
 ### CAP Teoremi
 
 <p align="center">
-  <img src="../../images/bgLMI2u.png">
+  <img src="../images/bgLMI2u.png">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Kaynak: CAP theorem revisited</a></i>
 </p>
@@ -671,7 +671,7 @@ Eğer "Bileşen 1" ve "Bileşen 2" %99.9 erişilebilirliğe sahiplerse toplam er
 ## Alan Adı Sistemi (DNS)
 
 <p align="center">
-  <img src="../../images/IOyLj4i.jpg">
+  <img src="../images/IOyLj4i.jpg">
   <br/>
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Kaynak: DNS security presentation</a></i>
 </p>
@@ -709,7 +709,7 @@ DNS hiyerarşik bir yapıya sahiptir ve en üst düzeyde birkaç yetkili sunucu 
 ## İçerik Dağıtım Ağı (CDN)
 
 <p align="center">
-  <img src="../../images/h9TAuGI.jpg">
+  <img src="../images/h9TAuGI.jpg">
   <br/>
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Kaynak: Why use a CDN</a></i>
 </p>
@@ -750,7 +750,7 @@ Yüksek trafikli siteler, trafiği daha düzenli bir şekilde dağıttığı iç
 ## Yük dengeleyici (Load balancer)
 
 <p align="center">
-  <img src="../../images/h81n9iK.png">
+  <img src="../images/h81n9iK.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Kaynak: Scalable system design patterns</a></i>
 </p>
@@ -820,7 +820,7 @@ Yük dengeleyicileri, yatay ölçeklendirmeye de yardımcı olabilir, performans
 ## Ters proxy (web sunucusu)
 
 <p align="center">
-  <img src="../../images/n41Azff.png">
+  <img src="../images/n41Azff.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Kaynak: Wikipedia</a></i>
   <br/>
@@ -863,7 +863,7 @@ Faydaları şunları içerir:
 ## Uygulama katmanı
 
 <p align="center">
-  <img src="../../images/yB5SYwm.png">
+  <img src="../images/yB5SYwm.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Kaynak: Intro to architecting systems for scale</a></i>
 </p>
@@ -900,7 +900,7 @@ Bu tartışma ile ilgili olan [mikroservisler](https://en.wikipedia.org/wiki/Mic
 ## Veritabanı
 
 <p align="center">
-  <img src="../../images/Xkm5CXz.png">
+  <img src="../images/Xkm5CXz.png">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Kaynak: Scaling up to your first 10 million users</a></i>
 </p>
@@ -923,7 +923,7 @@ SQL gibi ilişkisel bir veritabanı, tablolar halinde düzenlenmiş veri öğele
 Master sunucu, okuma ve yazma hizmeti sunar, yazma işlemlerini bir veya daha fazla slave sunucalara replike eder ve slave sunucular yalnızca okuma işlemleri sunar. Slave sunucular aynı zamanda daha fazla slave sunucuya ağaç benzeri bir şekilde replike edebilir. Master sunucu çevrimdışıysa; bir slave sunucu, ana bilgisayar olarak atanana veya yeni bir master sunucu tahsis edilene kadar; sistem okuma modunda çalışmaya devam edebilir.
 
 <p align="center">
-  <img src="../../images/C9ioGtn.png">
+  <img src="../images/C9ioGtn.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -938,7 +938,7 @@ Master sunucu, okuma ve yazma hizmeti sunar, yazma işlemlerini bir veya daha fa
 Her iki ana sunucu da okuma ve yazma işlemlerinden sorumludur ve yazma işlemleri sırasında birbirleriyle koordineli çalışırlar. Ana sunuculardan biri kapanırsa sistem okumaya ve yazmaya devam edebilir.
 
 <p align="center">
-  <img src="../../images/krAHLGg.png">
+  <img src="../images/krAHLGg.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -966,7 +966,7 @@ Her iki ana sunucu da okuma ve yazma işlemlerinden sorumludur ve yazma işlemle
 #### Federasyon
 
 <p align="center">
-  <img src="../../images/U3qV33e.png">
+  <img src="../images/U3qV33e.png">
   <br/>
   <strong><a href="https://www.youtube.com/watch?v=w95murBkYmU">Kaynak: Kullanıcılarınızı İlk On Milyona Kadar Ölçeklendirme</a></strong>
 </p>
@@ -987,7 +987,7 @@ Federasyon (veya fonksiyonel bölümleme), veritabanını ilgili işlevlere gör
 #### Parçalama
 
 <p align="center">
-  <img src="../../images/wU8x5Id.png">
+  <img src="../images/wU8x5Id.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1131,7 +1131,7 @@ Belge depoları yüksek esneklik sağlar ve genellikle zaman zaman değişen ver
 #### Geniş sütun deposu
 
 <p align="center">
-  <img src="../../images/n16iOGk.png">
+  <img src="../images/n16iOGk.png">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Kaynak: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1154,7 +1154,7 @@ Geniş sütun depolamaları yüksek kullanılabilirlik ve ölçeklenebilirlik su
 #### Grafik veritabanı
 
 <p align="center">
-  <img src="../../images/fNcl65g.png">
+  <img src="../images/fNcl65g.png">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Kaynak: Graph database</a></i>
 </p>
@@ -1182,7 +1182,7 @@ Grafik veritabanları, sosyal ağ gibi karmaşık ilişkilere sahip veri modelle
 ### SQL veya NoSQL
 
 <p align="center">
-  <img src="../../images/wXGqG5f.png">
+  <img src="../images/wXGqG5f.png">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Kaynak: Transitioning from RDBMS to NoSQL</a></i>
 </p>
@@ -1224,7 +1224,7 @@ NoSQL'e uygun örnek veriler:
 ## Önbellek
 
 <p align="center">
-  <img src="../../images/Q6z24La.png">
+  <img src="../images/Q6z24La.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Kaynak: Scalable system design patterns</a></i>
 </p>
@@ -1295,7 +1295,7 @@ Verinizi, uygulama kodunuzdaki objeler gibi düşünün. Uygulamanın veritaban�
 #### Cache-aside
 
 <p align="center">
-  <img src="../../images/ONjORqk.png">
+  <img src="../images/ONjORqk.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Kaynak: From cache to in-memory data grid</a></i>
 </p>
@@ -1331,7 +1331,7 @@ def get_user(self, user_id):
 #### Üzerine yazma (write-through)
 
 <p align="center">
-  <img src="../../images/0vBc0hN.png">
+  <img src="../images/0vBc0hN.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1366,7 +1366,7 @@ Depolama ve yazma işlemleri nedeniyle, üzerine yazma yöntemi genel olarak ço
 #### Geri yazma (write-behind)
 
 <p align="center">
-  <img src="../../images/rgSrvjG.png">
+  <img src="../images/rgSrvjG.png">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Kaynak: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1384,7 +1384,7 @@ Geri yazma yönteminde, uygulama aşağıdaki adımları gerçekleştirir:
 #### Önbelleği önceden yenileme (refresh-ahead)
 
 <p align="center">
-  <img src="../../images/kxtjqgE.png">
+  <img src="../images/kxtjqgE.png">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Kaynak: From cache to in-memory data grid</a></i>
 </p>
@@ -1416,7 +1416,7 @@ Refresh-ahead, önbelleğin gelecekte hangi öğelere ihtiyaç duyulma olasılı
 ## Asenkronizm
 
 <p align="center">
-  <img src="../../images/54GYsSx.png">
+  <img src="../images/54GYsSx.png">
   <br/>
   <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Kaynak: Intro to architecting systems for scale</a></i>
 </p>
@@ -1462,7 +1462,7 @@ Eğer kuyruk önemli ölçüde büyümeye başlarsa, sıra boyutu bellek boyutun
 ## İletişim
 
 <p align="center">
-  <img src="../../images/5KeocQs.jpg">
+  <img src="../images/5KeocQs.jpg">
   <br/>
   <i><a href=http://www.escotal.com/osilayer.html>Kaynak: OSI 7 layer model</a></i>
 </p>
@@ -1494,7 +1494,7 @@ HTTP, **TCP** ve **UDP** gibi alt düzey protokollere dayanan bir uygulama katma
 ### İletim kontrol protokolü (TCP)
 
 <p align="center">
-  <img src="../../images/JdAsdvG.jpg">
+  <img src="../images/JdAsdvG.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Kaynak: How to make a multiplayer game</a></i>
 </p>
@@ -1518,7 +1518,7 @@ Aşağıdaki durumlarda UDP yerine TCP tercih ediniz:
 ### Kullanıcı datagram protokolü (UDP)
 
 <p align="center">
-  <img src="../../images/yzDrJtA.jpg">
+  <img src="../images/yzDrJtA.jpg">
   <br/>
   <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Kaynak: How to make a multiplayer game</a></i>
 </p>
@@ -1547,7 +1547,7 @@ Aşağıdaki durumlarda TCP yerine UDP kullanın:
 ### Uzaktan yordam çağrısı (RPC)
 
 <p align="center">
-  <img src="../../images/iF4Mkb5.png">
+  <img src="../images/iF4Mkb5.png">
   <br/>
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Kaynak: Crack the system design interview</a></i>
 </p>
@@ -1771,7 +1771,7 @@ Yukarıdaki sayılar temelinde kullanışlı ölçümler:
 > Sistemlerin gerçekte nasıl tasarlandığına dair makaleler.
 
 <p align="center">
-  <img src="../../images/TcUo2fw.png">
+  <img src="../images/TcUo2fw.png">
   <br/>
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Kaynak: Twitter timelines at scale</a></i>
 </p>

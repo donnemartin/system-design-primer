@@ -82,7 +82,7 @@ Handy conversion guide:
 
 <!-- Old image for reference ![Imgur](http://i.imgur.com/KqZ3dSx.png) -->
 
-![Imgur](../../../images/KqZ3dSx.png) 
+![Imgur](../../images/KqZ3dSx.png) 
 
 
 ```mermaid

@@ -529,7 +529,7 @@ class SpendingByCategory(MRJob):
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](../../../images/V5q57vU.png)
+![Imgur](../../images/V5q57vU.png)
 
 **Important: Do not simply jump right into the final design from the initial design!**
 
