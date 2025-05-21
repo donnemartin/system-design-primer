@@ -50,7 +50,7 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts:
 
 * [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
 * [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
@@ -225,7 +225,7 @@ You can use the following steps to guide the discussion.  To help solidify this 
 
 ### Step 1: Outline use cases, constraints, and assumptions
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions:
 
 * Who is going to use it?
 * How are they going to use it?
@@ -238,7 +238,7 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 
 ### Step 2: Create a high level design
 
-Outline a high level design with all important components.
+Outline a high level design with all important components:
 
 * Sketch the main components and connections
 * Justify your ideas
@@ -1116,7 +1116,7 @@ Reasons for **NoSQL**:
 * Very data intensive workload
 * Very high throughput for IOPS
 
-Sample data well-suited for NoSQL:
+Sample data well-suited for **NoSQL**:
 
 * Rapid ingest of clickstream and log data
 * Leaderboard or scoring data
