@@ -98,82 +98,82 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 </p>
 
 * [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
+  * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
+  * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
+  * [Next steps](#next-steps)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+  * [CAP theorem](#cap-theorem)
+    * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+    * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
 * [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
+  * [Weak consistency](#weak-consistency)
+  * [Eventual consistency](#eventual-consistency)
+  * [Strong consistency](#strong-consistency)
 * [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
+  * [Fail-over](#fail-over)
+  * [Replication](#replication)
+  * [Availability in numbers](#availability-in-numbers)
 * [Domain name system](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
+  * [Push CDNs](#push-cdns)
+  * [Pull CDNs](#pull-cdns)
 * [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
+  * [Active-passive](#active-passive)
+  * [Active-active](#active-active)
+  * [Layer 4 load balancing](#layer-4-load-balancing)
+  * [Layer 7 load balancing](#layer-7-load-balancing)
+  * [Horizontal scaling](#horizontal-scaling)
 * [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
+  * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
 * [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
+  * [Microservices](#microservices)
+  * [Service discovery](#service-discovery)
 * [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
-    * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
+  * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
+    * [Master-slave replication](#master-slave-replication)
+    * [Master-master replication](#master-master-replication)
+    * [Federation](#federation)
+    * [Sharding](#sharding)
+    * [Denormalization](#denormalization)
+    * [SQL tuning](#sql-tuning)
+  * [NoSQL](#nosql)
+    * [Key-value store](#key-value-store)
+    * [Document store](#document-store)
+    * [Wide column store](#wide-column-store)
+    * [Graph Database](#graph-database)
+  * [SQL or NoSQL](#sql-or-nosql)
 * [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
+  * [Client caching](#client-caching)
+  * [CDN caching](#cdn-caching)
+  * [Web server caching](#web-server-caching)
+  * [Database caching](#database-caching)
+  * [Application caching](#application-caching)
+  * [Caching at the database query level](#caching-at-the-database-query-level)
+  * [Caching at the object level](#caching-at-the-object-level)
+  * [When to update the cache](#when-to-update-the-cache)
+    * [Cache-aside](#cache-aside)
+    * [Write-through](#write-through)
+    * [Write-behind (write-back)](#write-behind-write-back)
+    * [Refresh-ahead](#refresh-ahead)
 * [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
+  * [Message queues](#message-queues)
+  * [Task queues](#task-queues)
+  * [Back pressure](#back-pressure)
 * [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
+  * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
+  * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
+  * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
+  * [Representational state transfer (REST)](#representational-state-transfer-rest)
 * [Security](#security)
 * [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
+  * [Powers of two table](#powers-of-two-table)
+  * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+  * [Additional system design interview questions](#additional-system-design-interview-questions)
+  * [Real world architectures](#real-world-architectures)
+  * [Company architectures](#company-architectures)
+  * [Company engineering blogs](#company-engineering-blogs)
 * [Under development](#under-development)
 * [Credits](#credits)
 * [Contact info](#contact-info)
@@ -248,12 +248,12 @@ Outline a high level design with all important components.
 Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
 
 * Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
+  * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
+  * Hash collisions
+  * SQL or NoSQL
+  * Database schema
 * Translating a hashed url to the full url
-    * Database lookup
+  * Database lookup
 * API and object-oriented design
 
 ### Step 4: Scale the design
@@ -353,9 +353,7 @@ Check out the following links to get a better idea of what to expect:
 ## Object-oriented design interview questions with solutions
 
 > Common object-oriented design interview questions with sample discussions, code, and diagrams.
->
 > Solutions linked to content in the `solutions/` folder.
-
 >**Note: This section is under development**
 
 | Question | |
@@ -380,22 +378,22 @@ First, you'll need a basic understanding of common principles, learning about wh
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
 * Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+  * Vertical scaling
+  * Horizontal scaling
+  * Caching
+  * Load balancing
+  * Database replication
+  * Database partitioning
 
 ### Step 2: Review the scalability article
 
 [Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
 * Topics covered:
-    * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+  * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+  * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+  * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+  * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 ### Next steps
 
@@ -558,21 +556,21 @@ Availability is often quantified by uptime (or downtime) as a percentage of time
 
 If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
 
-###### In sequence
+##### In sequence
 
 Overall availability decreases when two components with availability < 100% are in sequence:
 
-```
+```text
 Availability (Total) = Availability (Foo) * Availability (Bar)
 ```
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
 
-###### In parallel
+##### In parallel
 
 Overall availability increases when two components with availability < 100% are in parallel:
 
-```
+```text
 Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ```
 
@@ -586,21 +584,21 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
   <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+A Domain Name System (DNS) translates a domain name such as <www.example.com> to an IP address.
 
 DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
 
 * **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
 * **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
 * **A record (address)** - Points a name to an IP address.
-* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to <www.example.com>) or to an `A` record.
 
 Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
 
 * [Weighted round robin](https://www.jscape.com/blog/load-balancing-algorithms)
-    * Prevent traffic from going to servers under maintenance
-    * Balance between varying cluster sizes
-    * A/B testing
+  * Prevent traffic from going to servers under maintenance
+  * Balance between varying cluster sizes
+  * A/B testing
 * [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
 * [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html)
 
@@ -676,7 +674,7 @@ Load balancers can be implemented with hardware (expensive) or with software suc
 Additional benefits include:
 
 * **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
+  * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
 * **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
 
 To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
@@ -707,8 +705,8 @@ Load balancers can also help with horizontal scaling, improving performance and 
 #### Disadvantage(s): horizontal scaling
 
 * Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
+  * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
+  * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
 * Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
 
 ### Disadvantage(s): load balancer
@@ -743,14 +741,14 @@ Additional benefits include:
 * **Increased security** - Hide information about backend servers, blacklist IPs, limit number of connections per client
 * **Increased scalability and flexibility** - Clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration
 * **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
+  * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
 * **Compression** - Compress server responses
 * **Caching** - Return the response for cached requests
 * **Static content** - Serve static content directly
-    * HTML/CSS/JS
-    * Photos
-    * Videos
-    * Etc
+  * HTML/CSS/JS
+  * Photos
+  * Videos
+  * Etc
 
 ### Load balancer vs reverse proxy
 
@@ -910,7 +908,7 @@ Common ways to shard a table of users is either through the user's last name ini
 
 * You'll need to update your application logic to work with shards, which could result in complex SQL queries.
 * Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
+  * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
 * Joining data from multiple shards is more complex.
 * Sharding adds more hardware and additional complexity.
 
@@ -953,7 +951,7 @@ Benchmarking and profiling might point you to the following optimizations.
 
 * MySQL dumps to disk in contiguous blocks for fast access.
 * Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
+  * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
 * Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
 * Use `INT` for larger numbers up to 2^32 or 4 billion.
 * Use `DECIMAL` for currency to avoid floating point representation errors.
@@ -1124,7 +1122,7 @@ Sample data well-suited for NoSQL:
 * Frequently accessed ('hot') tables
 * Metadata/lookup tables
 
-##### Source(s) and further reading: SQL or NoSQL
+#### Source(s) and further reading: SQL or NoSQL
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
@@ -1473,7 +1471,7 @@ RPC is a request-response protocol:
 
 Sample RPC calls:
 
-```
+```text
 GET /someoperation?data=anId
 
 POST /anotheroperation
@@ -1514,7 +1512,7 @@ There are four qualities of a RESTful interface:
 
 Sample REST calls:
 
-```
+```text
 GET /someresources/anId
 
 PUT /someresources/anId
@@ -1580,7 +1578,7 @@ You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, 
 
 ### Powers of two table
 
-```
+```text
 Power           Exact Value         Approx Value        Bytes
 ---------------------------------------------------------------
 7                             128
@@ -1599,7 +1597,7 @@ Power           Exact Value         Approx Value        Bytes
 
 ### Latency numbers every programmer should know
 
-```
+```text
 Latency Comparison Numbers
 --------------------------
 L1 cache reference                           0.5 ns
@@ -1832,8 +1830,10 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
 
 *I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
 
-    Copyright 2017 Donne Martin
+```text
+Copyright 2017 Donne Martin
 
-    Creative Commons Attribution 4.0 International License (CC BY 4.0)
+Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
-    http://creativecommons.org/licenses/by/4.0/
+http://creativecommons.org/licenses/by/4.0/
+```
