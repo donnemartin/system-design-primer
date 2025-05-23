@@ -1,0 +1,7 @@
+Payment Processing System:
+
+1. User: Represents a user with a balance.
+
+2. Transaction: Represents a payment transaction between users.
+
+3. PaymentProcessingSystem: Processes transactions and handles fund transfers.

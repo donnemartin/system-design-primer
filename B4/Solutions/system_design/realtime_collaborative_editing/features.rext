@@ -1,0 +1,7 @@
+1. Document: Represents a document being edited, with content locked for 
+    safe concurrent editing.
+
+2. User: Represents a user editing the document.
+
+3. Each user can edit the document concurrently, with proper locking to prevent 
+    data corruption.
