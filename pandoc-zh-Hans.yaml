@@ -1,0 +1,34 @@
+---
+metadata:
+  title: 系统设计入门
+  subtitle: 学习如何设计大型系统。为系统设计的面试做准备。
+  author: Donne Martin
+  category: "License: Creative Commons Attribution 4.0 International License"
+standalone: true
+variables:
+  documentclass: scrbook
+  links-as-notes: true
+  lot: false
+  lof: false
+  margin-top: 1.27cm
+  margin-left: .635cm
+  margin-right: .635cm
+  margin-bottom: 1.27cm
+table-of-contents: true
+toc-depth: 2
+include-in-header: deeplists.tex
+verbosity: ERROR
+pdf-engine: xelatex
+template: unicode.latex
+input-files:
+  - ./README-zh-Hans.md
+  - ./solutions/system_design/social_graph/README-zh-Hans.md
+  - ./solutions/system_design/web_crawler/README-zh-Hans.md
+  - ./solutions/system_design/scaling_aws/README-zh-Hans.md
+  - ./solutions/system_design/pastebin/README-zh-Hans.md
+  - ./solutions/system_design/sales_rank/README-zh-Hans.md
+  - ./solutions/system_design/twitter/README-zh-Hans.md
+  - ./solutions/system_design/mint/README-zh-Hans.md
+  - ./solutions/system_design/query_cache/README-zh-Hans.md
+output-file: system-design-primer-zh.pdf
+...

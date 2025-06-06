@@ -1,0 +1,39 @@
+---
+metadata:
+  title: System Design Primer
+  subtitle: Learn how to design large-scale systems. Prep for the system design interview.
+  author: Donne Martin
+  category: "License: Creative Commons Attribution 4.0 International License"
+  keywords:
+    - "system"
+    - "design"
+    - "primer"
+standalone: true
+variables:
+  documentclass: scrbook
+  lang: en-US
+  links-as-notes: true
+  lot: false
+  lof: false
+  margin-top: 1.27cm
+  margin-left: .635cm
+  margin-right: .635cm
+  margin-bottom: 1.27cm
+table-of-contents: true
+toc-depth: 2
+include-in-header: deeplists.tex
+verbosity: ERROR
+pdf-engine: xelatex
+template: unicode.latex
+input-files:
+  - ./README.md
+  - ./solutions/system_design/social_graph/README.md
+  - ./solutions/system_design/web_crawler/README.md
+  - ./solutions/system_design/scaling_aws/README.md
+  - ./solutions/system_design/pastebin/README.md
+  - ./solutions/system_design/sales_rank/README.md
+  - ./solutions/system_design/twitter/README.md
+  - ./solutions/system_design/mint/README.md
+  - ./solutions/system_design/query_cache/README.md
+output-file: system-design-primer.pdf
+...

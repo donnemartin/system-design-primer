@@ -1,4 +1,4 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) &#8226; [日本語](README-ja.md) &#8226; [简体中文](README-zh-Hans.md) &#8226; [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) &#8226; [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) &#8226; [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) &#8226; [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) &#8226; [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) &#8226; [עברית](https://github.com/donnemartin/system-design-primer/issues/272) &#8226; [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) &#8226; [한국어](https://github.com/donnemartin/system-design-primer/issues/102) &#8226; [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) &#8226; [Polski](https://github.com/donnemartin/system-design-primer/issues/68) &#8226; [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) &#8226; [Español](https://github.com/donnemartin/system-design-primer/issues/136) &#8226; [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) &#8226; [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) &#8226; [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) &#8226; [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
 **Help [translate](TRANSLATIONS.md) this guide!**
 
@@ -45,10 +45,7 @@ Additional topics for interview prep:
 
 ## Anki flashcards
 
-<p align="center">
-  <img src="images/zdCAkB3.png">
-  <br/>
-</p>
+![Anki flashcards](images/zdCAkB3.png)
 
 The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
 
@@ -62,10 +59,7 @@ Great for use while on-the-go.
 
 Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
-<p align="center">
-  <img src="images/b4YtAEN.png">
-  <br/>
-</p>
+![Interactive Coding Challenges](images/b4YtAEN.png)
 
 Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
@@ -183,7 +177,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
-![Imgur](images/OfVllex.png)
+![Study Guide](images/OfVllex.png)
 
 **Q: For interviews, do I need to know everything here?**
 
@@ -306,49 +300,49 @@ Check out the following links to get a better idea of what to expect:
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
 
-![Imgur](images/4edXG0T.png)
+![Scaled design of Pastebin.com (or Bit.ly)](images/4edXG0T.png)
 
 ### Design the Twitter timeline and search (or Facebook feed and search)
 
 [View exercise and solution](solutions/system_design/twitter/README.md)
 
-![Imgur](images/jrUBAF7.png)
+![Scaled design of the Twitter timeline and search (or Facebook feed and search)](images/jrUBAF7.png)
 
 ### Design a web crawler
 
 [View exercise and solution](solutions/system_design/web_crawler/README.md)
 
-![Imgur](images/bWxPtQA.png)
+![Scaled design of a web crawler](images/bWxPtQA.png)
 
 ### Design Mint.com
 
 [View exercise and solution](solutions/system_design/mint/README.md)
 
-![Imgur](images/V5q57vU.png)
+![Scaled design of Mint.com](images/V5q57vU.png)
 
 ### Design the data structures for a social network
 
 [View exercise and solution](solutions/system_design/social_graph/README.md)
 
-![Imgur](images/cdCv5g7.png)
+![Scaled design of the data structures for a social network](images/cdCv5g7.png)
 
 ### Design a key-value store for a search engine
 
 [View exercise and solution](solutions/system_design/query_cache/README.md)
 
-![Imgur](images/4j99mhe.png)
+![Scaled design of a key-value store for a search engine](images/4j99mhe.png)
 
 ### Design Amazon's sales ranking by category feature
 
 [View exercise and solution](solutions/system_design/sales_rank/README.md)
 
-![Imgur](images/MzExP06.png)
+![Scaled design of Amazon's sales ranking by category feature](images/MzExP06.png)
 
 ### Design a system that scales to millions of users on AWS
 
 [View exercise and solution](solutions/system_design/scaling_aws/README.md)
 
-![Imgur](images/jj3A5N8.png)
+![Scaled design of a system that scales to millions of users on AWS](images/jj3A5N8.png)
 
 ## Object-oriented design interview questions with solutions
 
@@ -439,11 +433,8 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 
 ### CAP theorem
 
-<p align="center">
-  <img src="images/bgLMI2u.png">
-  <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
-</p>
+![CAP theorem](images/bgLMI2u.png)
+[Source: CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited)
 
 In a distributed computer system, you can only support two of the following guarantees:
 
@@ -580,11 +571,8 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
 
 ## Domain name system
 
-<p align="center">
-  <img src="images/IOyLj4i.jpg">
-  <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
-</p>
+![Simple DNS lookup](images/IOyLj4i.jpg)
+[Source: DNS security presentation](https://www.slideshare.net/srikrupa5/dns-security-presentation-issa)
 
 A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
 
@@ -618,11 +606,8 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 
 ## Content delivery network
 
-<p align="center">
-  <img src="images/h9TAuGI.jpg">
-  <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
-</p>
+![Content delivery network](images/h9TAuGI.jpg)
+[Source: Why use a CDN](https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/)
 
 A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.  Generally, static files such as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as Amazon's CloudFront support dynamic content.  The site's DNS resolution will tell clients which server to contact.
 
@@ -659,11 +644,8 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 
 ## Load balancer
 
-<p align="center">
-  <img src="images/h81n9iK.png">
-  <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
-</p>
+![Load balancer pattern](images/h81n9iK.png)
+[Source: Scalable system design patterns](https://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 
 Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
 
@@ -729,12 +711,8 @@ Load balancers can also help with horizontal scaling, improving performance and 
 
 ## Reverse proxy (web server)
 
-<p align="center">
-  <img src="images/n41Azff.png">
-  <br/>
-  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
-  <br/>
-</p>
+![Reverse proxy (web server)](images/n41Azff.png)
+[Source: Wikipedia](https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg)
 
 A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public.  Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
 
@@ -772,11 +750,8 @@ Additional benefits include:
 
 ## Application layer
 
-<p align="center">
-  <img src="images/yB5SYwm.png">
-  <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
-</p>
+![Load balancing requests](images/yB5SYwm.png)
+[Source: Intro to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer)
 
 Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
 
@@ -807,11 +782,8 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 
 ## Database
 
-<p align="center">
-  <img src="images/Xkm5CXz.png">
-  <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
-</p>
+![Scaled database serving traffic](images/Xkm5CXz.png)
+[Source: Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
 ### Relational database management system (RDBMS)
 
@@ -830,11 +802,8 @@ There are many techniques to scale a relational database: **master-slave replica
 
 The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
 
-<p align="center">
-  <img src="images/C9ioGtn.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
-</p>
+![Master-slave replication](images/C9ioGtn.png)
+[Source: Scalability, availability, stability, patterns](https://www.slideshare.net/jboner/scalability-availability-stability-patterns)
 
 ##### Disadvantage(s): master-slave replication
 
@@ -845,11 +814,8 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 
 Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
 
-<p align="center">
-  <img src="images/krAHLGg.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
-</p>
+![Master-master replication](images/krAHLGg.png)
+[Source: Scalability, availability, stability, patterns](https://www.slideshare.net/jboner/scalability-availability-stability-patterns)
 
 ##### Disadvantage(s): master-master replication
 
@@ -873,11 +839,8 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 
 #### Federation
 
-<p align="center">
-  <img src="images/U3qV33e.png">
-  <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
-</p>
+![Functional partitioning (federation)](images/U3qV33e.png)
+[Source: Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
 Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
 
@@ -894,11 +857,8 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 
 #### Sharding
 
-<p align="center">
-  <img src="images/wU8x5Id.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
-</p>
+![Sharding](images/wU8x5Id.png)
+[Source: Scalability, availability, stability, patterns](https://www.slideshare.net/jboner/scalability-availability-stability-patterns)
 
 Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
 
@@ -1038,11 +998,8 @@ Document stores provide high flexibility and are often used for working with occ
 
 #### Wide column store
 
-<p align="center">
-  <img src="images/n16iOGk.png">
-  <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
-</p>
+![Wide column store](images/n16iOGk.png)
+[Source: SQL & NoSQL, a brief history](https://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 
 > Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
@@ -1061,11 +1018,8 @@ Wide column stores offer high availability and high scalability.  They are often
 
 #### Graph database
 
-<p align="center">
-  <img src="images/fNcl65g.png">
-  <br/>
-  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
-</p>
+![Graph database](images/fNcl65g.png)
+[Source: Graph database](https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png)
 
 > Abstraction: graph
 
@@ -1089,11 +1043,8 @@ Graphs databases offer high performance for data models with complex relationshi
 
 ### SQL or NoSQL
 
-<p align="center">
-  <img src="images/wXGqG5f.png">
-  <br/>
-  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
-</p>
+![SQL or NoSQL](images/wXGqG5f.png)
+[Source: Transitioning from RDBMS to NoSQL](https://www.infoq.com/articles/Transition-RDBMS-NoSQL)
 
 Reasons for **SQL**:
 
@@ -1131,11 +1082,8 @@ Sample data well-suited for NoSQL:
 
 ## Cache
 
-<p align="center">
-  <img src="images/Q6z24La.png">
-  <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
-</p>
+![Cache](images/Q6z24La.png)
+[Source: Scalable system design patterns](https://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 
 Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
 
@@ -1202,11 +1150,8 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 
 #### Cache-aside
 
-<p align="center">
-  <img src="images/ONjORqk.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
-</p>
+![Cache-aside](images/ONjORqk.png)
+[Source: From cache to in-memory data grid](https://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 
 The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
 
@@ -1238,11 +1183,8 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 
 #### Write-through
 
-<p align="center">
-  <img src="images/0vBc0hN.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
-</p>
+![Write-through](images/0vBc0hN.png)
+[Source: Scalability, availability, stability, patterns](https://www.slideshare.net/jboner/scalability-availability-stability-patterns)
 
 The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
 
@@ -1273,11 +1215,8 @@ Write-through is a slow overall operation due to the write operation, but subseq
 
 #### Write-behind (write-back)
 
-<p align="center">
-  <img src="images/rgSrvjG.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
-</p>
+![Write-behind (write-back)](images/rgSrvjG.png)
+[Source: Scalability, availability, stability, patterns](https://www.slideshare.net/jboner/scalability-availability-stability-patterns)
 
 In write-behind, the application does the following:
 
@@ -1291,11 +1230,8 @@ In write-behind, the application does the following:
 
 #### Refresh-ahead
 
-<p align="center">
-  <img src="images/kxtjqgE.png">
-  <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
-</p>
+![Refresh-ahead](images/kxtjqgE.png)
+[Source: From cache to in-memory data grid](https://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 
 You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
 
@@ -1323,11 +1259,8 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 
 ## Asynchronism
 
-<p align="center">
-  <img src="images/54GYsSx.png">
-  <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
-</p>
+![Asynchronism](images/54GYsSx.png)
+[Source: Intro to architecting systems for scale](https://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer)
 
 Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
 
@@ -1369,11 +1302,8 @@ If queues start to grow significantly, the queue size can become larger than mem
 
 ## Communication
 
-<p align="center">
-  <img src="images/5KeocQs.jpg">
-  <br/>
-  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
-</p>
+![OSI 7 Layer Model](images/5KeocQs.jpg)
+[Source: OSI 7 layer model](https://www.escotal.com/osilayer.html)
 
 ### Hypertext transfer protocol (HTTP)
 
@@ -1401,11 +1331,8 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 
 ### Transmission control protocol (TCP)
 
-<p align="center">
-  <img src="images/JdAsdvG.jpg">
-  <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
-</p>
+![TCP](images/JdAsdvG.jpg)
+[Source: How to make a multiplayer game](http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1)
 
 TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
 
@@ -1425,11 +1352,8 @@ Use TCP over UDP when:
 
 ### User datagram protocol (UDP)
 
-<p align="center">
-  <img src="images/yzDrJtA.jpg">
-  <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
-</p>
+![UDP](images/yzDrJtA.jpg)
+[Source: How to make a multiplayer game](http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1)
 
 UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.
 
@@ -1454,11 +1378,8 @@ Use UDP over TCP when:
 
 ### Remote procedure call (RPC)
 
-<p align="center">
-  <img src="images/iF4Mkb5.png">
-  <br/>
-  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
-</p>
+![RPC](images/iF4Mkb5.png)
+[Source: Crack the system design interview](https://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
 In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
 
@@ -1680,11 +1601,8 @@ Handy metrics based on numbers above:
 
 > Articles on how real world systems are designed.
 
-<p align="center">
-  <img src="images/TcUo2fw.png">
-  <br/>
-  <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
-</p>
+![Twitter timeline scalability](images/TcUo2fw.png)
+[Source: Twitter timelines at scale](https://www.infoq.com/presentations/Twitter-Timeline-Scalability)
 
 **Don't focus on nitty gritty details for the following articles, instead:**
 
