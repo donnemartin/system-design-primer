@@ -49,3 +49,39 @@
 </ul>
 
 </div>
+
+## כרטיסיות Anki
+
+<div dir="rtl">
+
+<p align="center">
+  <img src="images/zdCAkB3.png">
+  <br/>
+</p>
+
+החבילות המוכנות של כרטיסיות [Anki](https://apps.ankiweb.net/) משתמשות בשיטת **חזרתיות מבוססת מרווחים (Spaced Repetition)** כדי לעזור לך לזכור מושגים חשובים בתכנון מערכות.
+
+<ul dir="rtl">
+  <li><a href="https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg">חבילת תכנון מערכות</a></li>
+  <li><a href="https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg">חבילת תרגילים בתכנון מערכות</a></li>
+  <li><a href="https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg">חבילת תכנון מונחה עצמים</a></li>
+</ul>
+
+מומלצות לשימוש בדרכים.
+
+### משאב לראיונות קידוד: אתגרי קידוד אינטראקטיביים
+
+מחפש משאבים שיעזרו לך להתכונן [**לראיונות קידוד**](https://github.com/donnemartin/interactive-coding-challenges)?
+
+<p align="center">
+  <img src="images/b4YtAEN.png">
+  <br/>
+</p>
+
+תעיף מבט על ה-repo המקביל [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), שמכיל חבילת Anki נוספת:
+
+<ul dir="rtl">
+  <li><a href="https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg">חבילת קידוד</a></li>
+</ul>
+
+</div>
