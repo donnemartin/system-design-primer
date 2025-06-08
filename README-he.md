@@ -499,7 +499,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/4edXG0T.png" width="75%">
+    <img src="images/4edXG0T.png" width="60%">
     <br/>
   </p>
 </details>
@@ -511,7 +511,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/jrUBAF7.png" width="75%">
+    <img src="images/jrUBAF7.png" width="60%">
     <br/>
   </p>
 </details>
@@ -523,7 +523,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/bWxPtQA.png" width="75%">
+    <img src="images/bWxPtQA.png" width="60%">
     <br/>
   </p>
 </details>
@@ -535,7 +535,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/V5q57vU.png" width="75%">
+    <img src="images/V5q57vU.png" width="60%">
     <br/>
   </p>
 </details>
@@ -547,7 +547,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/cdCv5g7.png" width="75%">
+    <img src="images/cdCv5g7.png" width="60%">
     <br/>
   </p>
 </details>
@@ -559,7 +559,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/4j99mhe.png" width="75%">
+    <img src="images/4j99mhe.png" width="60%">
     <br/>
   </p>
 </details>
@@ -571,7 +571,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/MzExP06.png" width="75%">
+    <img src="images/MzExP06.png" width="60%">
     <br/>
   </p>
 </details>
@@ -583,7 +583,7 @@
 <details>
   <summary>הצג/הסתר דיאגרמה</summary>
   <p align="center">
-    <img src="images/jj3A5N8.png" width="75%">
+    <img src="images/jj3A5N8.png" width="60%">
     <br/>
   </p>
 </details>
