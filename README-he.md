@@ -352,7 +352,7 @@
 
 </div>
 
-## איך לגשת לשאלת ראיון ארכיטקטורה
+## איך לגשת לשאלת ריאיון ארכיטקטורה
 
 <div dir="rtl">
 
@@ -433,5 +433,72 @@
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+
+</div>
+
+
+## שאלות ריאיון תכנון מערכות עם פתרונות
+
+<div dir="rtl">
+
+> שאלות נפוצות בריאיון ארכיטקטורה עם הסברים פשוטים, קוד, ודיאגרמות.
+>
+> הפתרונות מפנים לתוכן שנמצא בתיקיית `solutions/`.
+
+<table dir="rtl">
+  <thead>
+    <tr>
+      <th>שאלה</th>
+      <th>פתרון</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>תכנן את Pastebin.com (או Bit.ly)</td>
+      <td><a href="solutions/system_design/pastebin/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן את ציר הזמן והחיפוש של טוויטר (או הפיד והחיפוש של פייסבוק)</td>
+      <td><a href="solutions/system_design/twitter/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן סורק רשת (web crawler)</td>
+      <td><a href="solutions/system_design/web_crawler/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן את Mint.com</td>
+      <td><a href="solutions/system_design/mint/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן את מבני הנתונים של רשת חברתית</td>
+      <td><a href="solutions/system_design/social_graph/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן אחסון key-value למנוע חיפוש</td>
+      <td><a href="solutions/system_design/query_cache/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן את מנגנון דירוג המכירות לפי קטגוריה של אמזון</td>
+      <td><a href="solutions/system_design/sales_rank/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>תכנן מערכת שיכולה לגדול למיליוני משתמשים על AWS</td>
+      <td><a href="solutions/system_design/scaling_aws/README.md">פתרון</a></td>
+    </tr>
+    <tr>
+      <td>הוסף שאלה לתכנון מערכת</td>
+      <td><a href="#contributing">תרום</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### תכנן את Pastebin.com (או Bit.ly)
+
+[צפה בתרגיל ובפתרון](solutions/system_design/pastebin/README.md)
+
+<p align="center">
+  <img src="images/4edXG0T.png", width="50%">
+  <br/>
+</p>
 
 </div>
