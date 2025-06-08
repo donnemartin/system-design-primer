@@ -107,7 +107,7 @@
 
 </div>
 
-## אינדקס נושאים בתכנון מערכות
+## אינדקס נושאים בארכיטקטורה
 
 <div dir="rtl">
 
@@ -347,5 +347,89 @@
     </tr>
   </tbody>
 </table>
+
+</div>
+
+## איך לגשת לשאלת ראיון ארכיטקטורה
+
+<div dir="rtl">
+
+> איך לפתור שאלת ראיון ארכיטקטורה.
+
+ראיון ארכיטקטורה הוא **שיחה פתוחה**. מצופה ממך להוביל אותה.
+
+אתה יכול להיעזר בצעדים הבאים כדי להנחות את הדיון. כדי לחזק את ההבנה של התהליך, תעבור על [שאלות ריאיון בתכנון מערכות עם פתרונות](#system-design-interview-questions-with-solutions) אל מול הצעדים הבאים:
+
+### תאר מקרי שימוש, אילוצים והנחות עבודה
+
+אסוף דרישות והגדר את ה-scope של הבעיה.
+שאל שאלות כדי להבהיר את מקרי השימוש והאילוצים. דון בהנחות העבודה שאתה עושה.
+
+* מי הולך להשתמש במערכת?
+* איך הם הולכים להשתמש בה?
+* כמה משתמשים יהיו?
+* מה המערכת עושה?
+* מה הקלטים והפלטים של המערכת?
+* בכמה דאטא נצטרך לטפל?
+* כמה בקשות לשניה מחכות לנו?
+* מה היחס הצפוי בין קריאה לכתיבה?
+
+### שלב 2: כתוב תכנון במבט על (high level design)
+
+כתוב תכנון high level עם כל הרכיבים החשובים.
+
+* שרטט את הרכיבים החשובים והקשרים ביניהם
+* תצדיק את הרעיונות שלך
+
+### שלב 3: תכנן את הרכיבים המרכזיים
+
+צלול לפרטים של כל רכיב מרכזי. לדוגמה, אם התבקשת לתכנן [שירות קיצור כתובות url](solutions/system_design/pastebin/README.md), דון בנושאים הבאים:
+
+<ul dir="rtl">
+  <li>יצירה ואחסון hash של ה-url המלא
+    <ul>
+      <li>דרכים כמו <a href="solutions/system_design/pastebin/README.md">MD5</a> ו-<a href="solutions/system_design/pastebin/README.md">Base62</a></li>
+      <li>התנגשויות hash</li>
+      <li>מסד נתונים SQL או NoSQL</li>
+      <li>סכמת הנתונים</li>
+    </ul>
+  </li>
+  <li>המרה של כתובת מקוצרת לכתובת המלאה
+    <ul>
+      <li>חיפוש ב-DB</li>
+    </ul>
+  </li>
+  <li>תכנון API ותכנון מונחה עצמים</li>
+</ul>
+
+### שלב 4: תבצע scale לתכנון
+
+זהה וטפל בצווארי בקבוק, בהתאם לאילוצים. למשל, האם תזדקק לאחד מהפתרונות הבאים כדי להתמודד עם בעיות של סקילביליות?
+
+<ul dir="rtl">
+  <li>מאזן עומסים (Load balancer)</li>
+  <li>סקיילינג אופקי (Horizontal scaling)</li>
+  <li>שמירה במטמון (Caching)</li>
+  <li>פיצול בסיס נתונים (Database sharding)</li>
+</ul>
+
+דון בפתרונות אפשריים וה-trade-offs. הכול הוא trade-off. התמודד עם צווארי בקבוק בעזרת [עקרונות תכנון מערכת סקילבילית](#index-of-system-design-topics).
+
+### חישובים "על גב המעטפה" (מהירים)
+
+ייתכן שיבקשו ממך לבצע הערכות באופן ידני. ראה את [הנספח](#appendix) עבור המשאבים הבאים:
+
+* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Powers of two table](#powers-of-two-table)
+* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+
+### מקורות לקריאה נוספת
+
+עיין בקישורים הבאים כדי להבין טוב יותר למה לצפות:
+
+* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [The system design interview](http://www.hiredintech.com/system-design)
+* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
 </div>
