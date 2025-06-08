@@ -462,7 +462,7 @@
       <td><a href="solutions/system_design/twitter/README.md">פתרון</a></td>
     </tr>
     <tr>
-      <td>תכנן סורק רשת (web crawler)</td>
+      <td>תכנן web crawler</td>
       <td><a href="solutions/system_design/web_crawler/README.md">פתרון</a></td>
     </tr>
     <tr>
@@ -496,9 +496,96 @@
 
 [צפה בתרגיל ובפתרון](solutions/system_design/pastebin/README.md)
 
-<p align="center">
-  <img src="images/4edXG0T.png", width="50%">
-  <br/>
-</p>
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/4edXG0T.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן את ציר הזמן והחיפוש של טוויטר (או הפיד והחיפוש של פייסבוק)
+
+[צפה בתרגיל ובפתרון](solutions/system_design/twitter/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/jrUBAF7.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן web crawler
+
+[צפה בתרגיל ובפתרון](solutions/system_design/web_crawler/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/bWxPtQA.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן את Mint.com
+
+[צפה בתרגיל ובפתרון](solutions/system_design/mint/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/V5q57vU.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן את מבני הנתונים של רשת חברתית
+
+[צפה בתרגיל ובפתרון](solutions/system_design/social_graph/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/cdCv5g7.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן אחסון key-value למנוע חיפוש
+
+[צפה בתרגיל ובפתרון](solutions/system_design/query_cache/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/4j99mhe.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן את מנגנון דירוג המכירות לפי קטגוריה של אמזון
+
+[צפה בתרגיל ובפתרון](solutions/system_design/sales_rank/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/MzExP06.png" width="75%">
+    <br/>
+  </p>
+</details>
+
+### תכנן מערכת שיכולה לגדול למיליוני משתמשים על AWS
+
+[צפה בתרגיל ובפתרון](solutions/system_design/scaling_aws/README.md)
+
+<details>
+  <summary>הצג/הסתר דיאגרמה</summary>
+  <p align="center">
+    <img src="images/jj3A5N8.png" width="75%">
+    <br/>
+  </p>
+</details>
 
 </div>
