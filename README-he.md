@@ -85,3 +85,24 @@
 </ul>
 
 </div>
+
+## תרומה למדריך
+
+<div dir="rtl">
+
+> ללמוד מהקהילה.
+
+אל תהסס להגיש pull requests כדי לעזור:
+
+<ul dir="rtl">
+  <li>תיקון שגיאות</li>
+  <li>שיפור קטעים קיימים</li>
+  <li>הוספת קטעים חדשים</li>
+  <li><a href="https://github.com/donnemartin/system-design-primer/issues/28">תרגום לשפות נוספות</a></li>
+</ul>
+
+תכנים שעדיין דורשים ליטוש מסומנים בתור <a href="#under-development">תחת פיתוח</a>.
+
+מומלץ לעיין ב<a href="CONTRIBUTING.md">הנחיות לתרומה</a> לפני התחלה.
+
+</div>
