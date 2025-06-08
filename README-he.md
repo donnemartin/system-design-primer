@@ -738,7 +738,7 @@
 ### משפט CAP
 
 <p align="center">
-  <img src="images/bgLMI2u.png", width="75%">
+  <img src="images/bgLMI2u.png", width="50%">
   <br/>
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
