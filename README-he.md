@@ -106,3 +106,155 @@
 מומלץ לעיין ב<a href="CONTRIBUTING.md">הנחיות לתרומה</a> לפני התחלה.
 
 </div>
+
+## אינדקס נושאים בתכנון מערכות
+
+<div dir="rtl">
+
+> סיכומים של נושאים שונים בתכנון מערכות, כולל יתרונות וחסרונות. **כל החלטה כוללת פשרות (trade-offs)**.
+>
+> כל חלק מכיל קישורים להרחבה וללמידה מעמיקה יותר.
+
+<p align="center">
+  <img src="images/jrUBAF7.png">
+  <br/>
+</p>
+
+<ul dir="rtl">
+  <li><a href="#system-design-topics-start-here">נושאים בתכנון מערכות: התחל כאן</a>
+    <ul>
+      <li><a href="#step-1-review-the-scalability-video-lecture">שלב 1: צפה בהרצאה על סקילביליות</a></li>
+      <li><a href="#step-2-review-the-scalability-article">שלב 2: קרא מאמרים על סקילביליות</a></li>
+      <li><a href="#next-steps">השלבים הבאים</a></li>
+    </ul>
+  </li>
+  <li><a href="#performance-vs-scalability">ביצועים (performance) מול סקילביליות (scalability)</a></li>
+  <li><a href="#latency-vs-throughput">שיהוי (latency) מול תפוקה (throughput)</a></li>
+  <li><a href="#availability-vs-consistency">זמינות (availability) מול עקביות (consistency)</a>
+    <ul>
+      <li><a href="#cap-theorem">משפט CAP</a>
+        <ul>
+          <li><a href="#cp---consistency-and-partition-tolerance">CP - עקביות וטולרנטיות לפיצול</a></li>
+          <li><a href="#ap---availability-and-partition-tolerance">AP - זמינות וטולרנטיות לפיצול</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#consistency-patterns">דפוסי עקביות</a>
+    <ul>
+      <li><a href="#weak-consistency">עקביות חלשה (weak)</a></li>
+      <li><a href="#eventual-consistency">עקביות לא מיידית (eventual)</a></li>
+      <li><a href="#strong-consistency">עקביות חזקה (strong)</a></li>
+    </ul>
+  </li>
+  <li><a href="#availability-patterns">דפוסי זמינות</a>
+    <ul>
+      <li><a href="#fail-over">גיבוי בזמן כישלון (fail-over)</a></li>
+      <li><a href="#replication">שכפול (replication)</a></li>
+      <li><a href="#availability-in-numbers">זמינות במספרים</a></li>
+    </ul>
+  </li>
+  <li><a href="#domain-name-system">מערכת שמות דומיינים (DNS)</a></li>
+  <li><a href="#content-delivery-network">רשתות הפצת תוכן (CDN)</a>
+    <ul>
+      <li><a href="#push-cdns">דחיפה (Push)</a></li>
+      <li><a href="#pull-cdns">משיכה (Pull)</a></li>
+    </ul>
+  </li>
+  <li><a href="#load-balancer">מאזן עומסים (load balancer)</a>
+    <ul>
+      <li><a href="#active-passive">אקטיבי-פסיבי (active-passive)</a></li>
+      <li><a href="#active-active">אקטיבי-אקטיבי (active-active)</a></li>
+      <li><a href="#layer-4-load-balancing">איזון עומסים בשכבה 4</a></li>
+      <li><a href="#layer-7-load-balancing">איזון עומסים בשכבה 7</a></li>
+      <li><a href="#horizontal-scaling">גדילה אופקית (horizontal)</a></li>
+    </ul>
+  </li>
+  <li><a href="#reverse-proxy-web-server">פרוקסי 'הפוך' (Reverse Proxy)</a>
+    <ul>
+      <li><a href="#load-balancer-vs-reverse-proxy">מאזן עומסים לעומת פרוקסי הפוך</a></li>
+    </ul>
+  </li>
+  <li><a href="#application-layer">שכבת האפליקציה</a>
+    <ul>
+      <li><a href="#microservices">מיקרוסרביסים (microservices)</a></li>
+      <li><a href="#service-discovery">גילוי שירותים (service discovery)</a></li>
+    </ul>
+  </li>
+  <li><a href="#database">מסדי נתונים</a>
+    <ul>
+      <li><a href="#relational-database-management-system-rdbms">מסדי נתונים רלציוניים (RDBMS)</a>
+        <ul>
+          <li><a href="#master-slave-replication">שכפול Master-Slave</a></li>
+          <li><a href="#master-master-replication">שכפול Master-Master</a></li>
+          <li><a href="#federation">פדרציה (federation)</a></li>
+          <li><a href="#sharding">חלוקה (sharding)</a></li>
+          <li><a href="#denormalization">דה-נורמליזציה (denormalization)</a></li>
+          <li><a href="#sql-tuning">SQL Tuning</a></li>
+        </ul>
+      </li>
+      <li><a href="#nosql">NoSQL</a>
+        <ul>
+          <li><a href="#key-value-store">מפתח-ערך (Key-Value)</a></li>
+          <li><a href="#document-store">מסמכים (Document Store)</a></li>
+          <li><a href="#wide-column-store">רב-עמודות (Wide Column)</a></li>
+          <li><a href="#graph-database">גרפים (Graph DB)</a></li>
+        </ul>
+      </li>
+      <li><a href="#sql-or-nosql">SQL או NoSQL</a></li>
+    </ul>
+  </li>
+  <li><a href="#cache">מטמון (Cache)</a>
+    <ul>
+      <li><a href="#client-caching">caching בצד לקוח</a></li>
+      <li><a href="#cdn-caching">caching ב-CDN</a></li>
+      <li><a href="#web-server-caching">caching בשרת</a></li>
+      <li><a href="#database-caching">caching במסד נתונים</a></li>
+      <li><a href="#application-caching">caching באפליקציה</a></li>
+      <li><a href="#caching-at-the-database-query-level">caching ברמת שאילתה</a></li>
+      <li><a href="#caching-at-the-object-level">caching ברמת אובייקט</a></li>
+      <li><a href="#when-to-update-the-cache">מתי לעדכן את ה-cache?</a>
+        <ul>
+          <li><a href="#cache-aside">Cache-aside</a></li>
+          <li><a href="#write-through">Write-through</a></li>
+          <li><a href="#write-behind-write-back">Write-behind (write-back)</a></li>
+          <li><a href="#refresh-ahead">Refresh-ahead</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#asynchronism">אסינכרוניות (asynchronism)</a>
+    <ul>
+      <li><a href="#message-queues">תורי הודעות (MQ)</a></li>
+      <li><a href="#task-queues">תורי משימות</a></li>
+      <li><a href="#back-pressure">לחץ אחורי (Back Pressure)</a></li>
+    </ul>
+  </li>
+  <li><a href="#communication">תקשורת</a>
+    <ul>
+      <li><a href="#transmission-control-protocol-tcp">Transmission control protocol (TCP)</a></li>
+      <li><a href="#user-datagram-protocol-udp">User datagram protocol (UDP)</a></li>
+      <li><a href="#remote-procedure-call-rpc">Remote procedure call (RPC)</a></li>
+      <li><a href="#representational-state-transfer-rest">Representational state transfer (REST)</a></li>
+    </ul>
+  </li>
+  <li><a href="#security">אבטחה</a></li>
+  <li><a href="#appendix">נספחים</a>
+    <ul>
+      <li><a href="#powers-of-two-table">טבלת חזקות של 2</a></li>
+      <li><a href="#latency-numbers-every-programmer-should-know">מספרי latency חשובים</a></li>
+      <li><a href="#additional-system-design-interview-questions">שאלות נוספות לראיונות</a></li>
+      <li><a href="#real-world-architectures">ארכיטקטורות מהעולם האמיתי</a></li>
+      <li><a href="#company-architectures">ארכיטקטורות של חברות</a></li>
+      <li><a href="#company-engineering-blogs">בלוגים טכניים של חברות</a></li>
+    </ul>
+  </li>
+  <li><a href="#under-development">תחת פיתוח</a></li>
+  <li><a href="#credits">קרדיטים</a></li>
+  <li><a href="#contact-info">פרטי קשר</a></li>
+  <li><a href="#license">רישיון</a></li>
+</ul>
+
+</div>
+
+
