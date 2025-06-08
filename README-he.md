@@ -441,7 +441,7 @@
 
 <div dir="rtl">
 
-> שאלות נפוצות בריאיון ארכיטקטורה עם הסברים פשוטים, קוד, ודיאגרמות.
+> שאלות נפוצות בריאיון ארכיטקטורה עם הסברים לדוגמה, קוד, ודיאגרמות.
 >
 > הפתרונות מפנים לתוכן שנמצא בתיקיית `solutions/`.
 
@@ -454,7 +454,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>תכנן את Pastebin.com (או Bit.ly)</td>
+      <td>תכנן את pastebin.com (או bit.ly)</td>
       <td><a href="solutions/system_design/pastebin/README.md">פתרון</a></td>
     </tr>
     <tr>
@@ -492,7 +492,7 @@
   </tbody>
 </table>
 
-### תכנן את Pastebin.com (או Bit.ly)
+### תכנן את pastebin.com (או bit.ly)
 
 [צפה בתרגיל ובפתרון](solutions/system_design/pastebin/README.md)
 
@@ -587,5 +587,62 @@
     <br/>
   </p>
 </details>
+
+</div>
+
+
+## שאלות ריאיון בתכנון מונחה עצמים עם פתרונות
+
+<div dir="rtl">
+
+> שאלות נפוצות בתכנון מונחה עצמים עם הסברים לדוגמה, קוד, ודיאגרמות.
+>
+> הפתרונות מפנים לתוכן שנמצא בתיקיית `solutions/`.
+
+>**הערה: החלק הזה עדיין בפיתוח**
+
+
+<table>
+<thead>
+    <tr>
+    <th>שאלה</th>
+    <th>פתרון</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td>תכנן Hash Map</td>
+    <td><a href="solutions/object_oriented_design/hash_table/hash_map.ipynb">פתרון</a></td>
+    </tr>
+    <tr>
+    <td>תכנן מנגנון Cache בשיטת Least Recently Used</td>
+    <td><a href="solutions/object_oriented_design/lru_cache/lru_cache.ipynb">פתרון</a></td>
+    </tr>
+    <tr>
+    <td>תכנן מרכז שירות טלפוני (Call Center)</td>
+    <td><a href="solutions/object_oriented_design/call_center/call_center.ipynb">פתרון</a></td>
+    </tr>
+    <tr>
+    <td>תכנן חפיסת קלפים</td>
+    <td><a href="solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb">פתרון</a></td>
+    </tr>
+    <tr>
+    <td>תכנן חניון</td>
+    <td><a href="solutions/object_oriented_design/parking_lot/parking_lot.ipynb">פתרון</a></td>
+    </tr>
+    <tr>
+    <td>תכנן שרת צ'אט</td>
+    <td><a href="solutions/object_oriented_design/online_chat/online_chat.ipynb">פתרון</a></td>
+    </tr>
+    <tr>
+    <td>תכנן מערך מעגלי</td>
+    <td><a href="#contributing">תרום</a></td>
+    </tr>
+    <tr>
+    <td>הוסף שאלה בעיצוב מונחה עצמים</td>
+    <td><a href="#contributing">תרום</a></td>
+    </tr>
+</tbody>
+</table>
 
 </div>
