@@ -55,7 +55,7 @@
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/zdCAkB3.png", width="75%">
+  <img src="images/zdCAkB3.png", width="50%">
   <br/>
 </p>
 
@@ -74,7 +74,7 @@
 מחפש משאבים שיעזרו לך להתכונן [**לראיונות קידוד**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="images/b4YtAEN.png", width="75%">
+  <img src="images/b4YtAEN.png", width="50%">
   <br/>
 </p>
 
@@ -367,21 +367,25 @@
 אסוף דרישות והגדר את ה-scope של הבעיה.
 שאל שאלות כדי להבהיר את מקרי השימוש והאילוצים. דון בהנחות העבודה שאתה עושה.
 
-* מי הולך להשתמש במערכת?
-* איך הם הולכים להשתמש בה?
-* כמה משתמשים יהיו?
-* מה המערכת עושה?
-* מה הקלטים והפלטים של המערכת?
-* בכמה דאטא נצטרך לטפל?
-* כמה בקשות לשניה מחכות לנו?
-* מה היחס הצפוי בין קריאה לכתיבה?
+<ul dir="rtl">
+  <li>מי הולך להשתמש במערכת?</li>
+  <li>איך הם הולכים להשתמש בה?</li>
+  <li>כמה משתמשים יהיו?</li>
+  <li>מה המערכת עושה?</li>
+  <li>מה הקלטים והפלטים של המערכת?</li>
+  <li>בכמה דאטא נצטרך לטפל?</li>
+  <li>כמה בקשות לשניה מחכות לנו?</li>
+  <li>מה היחס הצפוי בין קריאה לכתיבה?</li>
+</ul>
 
 ### שלב 2: כתוב תכנון במבט על (high level design)
 
 כתוב תכנון high level עם כל הרכיבים החשובים.
 
-* שרטט את הרכיבים החשובים והקשרים ביניהם
-* תצדיק את הרעיונות שלך
+<ul dir="rtl">
+  <li>שרטט את הרכיבים החשובים והקשרים ביניהם</li>
+  <li>תצדיק את הרעיונות שלך</li>
+</ul>
 
 ### שלב 3: תכנן את הרכיבים המרכזיים
 
@@ -644,5 +648,48 @@
     </tr>
 </tbody>
 </table>
+
+</div>
+
+## נושאים בתכנון מערכות: התחל כאן
+
+<div dir="rtl">
+
+חדש בתחום תכנון מערכות?
+
+ראשית, תצטרך לקבל הבנה בסיסית של העקרונות הנפוצים, ללמוד מה הם, איך משתמשים בהם, מה היתרונות והחסרונות של כל אחד מהם.
+
+### שלב 1: צפה בהרצאה על סקילביליות
+
+[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+
+* Topics covered:
+    * Vertical scaling
+    * Horizontal scaling
+    * Caching
+    * Load balancing
+    * Database replication
+    * Database partitioning
+
+### שלב 2: קרא מאמר על סקילביליות
+
+[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+
+* Topics covered:
+    * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+
+### השלבים הבאים
+
+בהמשך, נסתכל על trade-offs ב-high level:
+
+* **Performance** vs **scalability**
+* **Latency** vs **throughput**
+* **Availability** vs **consistency**
+
+נזכור כי **הכול זה trade-off**.
+לאחר מכן נצלול לנושאים ספציפיים יותר כמו DNS, CDN ו-load balancers.
 
 </div>
