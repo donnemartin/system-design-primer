@@ -693,3 +693,80 @@
 לאחר מכן נצלול לנושאים ספציפיים יותר כמו DNS, CDN ו-load balancers.
 
 </div>
+
+
+## ביצועים (performance) מול סקילביליות (scalability)
+
+<div dir="rtl">
+
+שירות הוא **סקילבילי (scalable)** אם הוא משתפר **בביצועים (performance)** שלו באופן פרופורציונלי למשאבים שנוספו. באופן כללי, שיפור בביצועים פירושו היכולת לתת שירות ליותר יחידות עבודה, אך הוא יכול גם לבוא לידי ביטוי ביכולת להתמודד עם יחידות עבודה גדולות יותר, ככל שהדאטא גדל.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+
+דרך נוספת להסתכל על ביצועים מול סקילביליות
+
+<ul>
+      <li>אם יש לך בעיית <strong>ביצועים</strong>, המערכת איטית עבור משתמש בודד.</li>
+      <li>אם יש לך בעיית <strong>סקילביליות</strong>, המערכת מהירה עבור משתמש בודד אך איטית בעומס כבד.</li>
+    </ul>
+
+### מקורות וקריאה נוספת
+
+* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+
+</div>
+
+## שיהוי (latency) מול תפוקה (throughput)
+
+<div dir="rtl">
+
+**שיהוי** הוא הזמן שנדרש כדי לבצע פעולה כלשהי או להפיק תוצאה כלשהי
+
+**תפוקה** היא מספר הפעולות או התוצאות ליחידת זמן.
+
+באופן כללי, כדאי לשאוף **לתפוקה מקסימלית** עם **שיהוי סביר**.
+
+### חומרים וקריאה נוספת
+
+* [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+
+</div>
+
+## זמינות (availability) מול עקביות (consistency)
+
+<div dir="rtl">
+
+### משפט CAP
+
+<p align="center">
+  <img src="images/bgLMI2u.png", width="75%">
+  <br/>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+</p>
+
+במערכות מחשוב מבוזרות, ניתן לתמוך רק בשניים מתוך שלושת התנאים הבאים:
+
+<ul>
+      <li><strong>עקביות (Consistency)</strong> – כל קריאה מקבלת את הכתיבה העדכנית ביותר, או שגיאה.</li>
+      <li><strong>זמינות (Availability)</strong> - כל בקשה תקבל מענה, ללא הבטחה שהמידע שיחזור יהיה העדכני ביותר.</li>
+      <li><strong>יכולת חלוקה (Partition Tolerance)</strong> - המערכת ממשיכה לתפקד גם במקרים בהם נאבדות או מתעכבות מספר הודעות בין שרתי המערכת בגלל בעיות תקשורת.</li>
+    </ul>
+
+*ניתן לצאת מנקודת הנחה שרשתות לא אמינות - כך שנהיה חייבים לתמוך ב-״Partition tolerance״. 
+לכן, נצטרך לבחור אחד משני האחרים - זמינות או עקביות.*
+
+#### בחירה ב-CP - עקביות ויכולת חלוקה
+
+המתנה לתשובה מהמערכת (אשר סובלת מ-network partition) עלולה להסתיים בשגיאת timeout. לכן, CP הוא בחירה טובה במידה ויש הצדקה עסקית לקריאות וכתיבות אטומיות.
+
+#### בחירה ב-AP - זמינות ויכולת חלוקה
+
+תשובות לבקשות מהמערכת מחזירות את הגרסה הזמינה ביותר של הנתונים הזמינים בשרת הרלוונטי, שאינה בהכרח האחרונה. כתיבה עשויה לקחת זמן מסוים עד שתסתיים, עד אשר התקשורת הבעייתית תיפתר.
+
+לכן, AP הוא בחירה טובה במידה ויש הצדקה עסקית לעבוד במצב של [eventual consistency](#eventual-consistency) או במידה והמערכת צריכה להמשיך לשרת למרות שגיאות בלתי-תלויות.
+
+### חומרים וקריאה נוספת
+
+* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [CAP FAQ](https://github.com/henryr/cap-faq)
+* [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
