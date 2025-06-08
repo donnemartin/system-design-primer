@@ -5,7 +5,7 @@
 # המדריך לתכנון מערכות (The System Design Primer)
 
 <p align="center">
-  <img src="images/jj3A5N8.png">
+  <img src="images/jj3A5N8.png", width="80%">
   <br/>
 </p>
 
@@ -55,7 +55,7 @@
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/zdCAkB3.png">
+  <img src="images/zdCAkB3.png", width="80%">
   <br/>
 </p>
 
@@ -74,7 +74,7 @@
 מחפש משאבים שיעזרו לך להתכונן [**לראיונות קידוד**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="images/b4YtAEN.png">
+  <img src="images/b4YtAEN.png", width="80%">
   <br/>
 </p>
 
@@ -116,7 +116,7 @@
 > כל חלק מכיל קישורים להרחבה וללמידה מעמיקה יותר.
 
 <p align="center">
-  <img src="images/jrUBAF7.png">
+  <img src="images/jrUBAF7.png", width="80%">
   <br/>
 </p>
 
