@@ -134,8 +134,8 @@
     <ul>
       <li><a href="#cap-theorem">משפט CAP</a>
         <ul>
-          <li><a href="#cp---consistency-and-partition-tolerance">CP - עקביות וטולרנטיות לפיצול</a></li>
-          <li><a href="#ap---availability-and-partition-tolerance">AP - זמינות וטולרנטיות לפיצול</a></li>
+          <li><a href="#cp---consistency-and-partition-tolerance">עקביות וטולרנטיות לפיצול (CP)</a></li>
+          <li><a href="#ap---availability-and-partition-tolerance">זמינות וטולרנטיות לפיצול (AP)</a></li>
         </ul>
       </li>
     </ul>
@@ -206,19 +206,19 @@
   </li>
   <li><a href="#cache">מטמון (Cache)</a>
     <ul>
-      <li><a href="#client-caching">caching בצד לקוח</a></li>
-      <li><a href="#cdn-caching">caching ב-CDN</a></li>
-      <li><a href="#web-server-caching">caching בשרת</a></li>
-      <li><a href="#database-caching">caching במסד נתונים</a></li>
-      <li><a href="#application-caching">caching באפליקציה</a></li>
-      <li><a href="#caching-at-the-database-query-level">caching ברמת שאילתה</a></li>
-      <li><a href="#caching-at-the-object-level">caching ברמת אובייקט</a></li>
+      <li><a href="#client-caching">מטמון בצד לקוח</a></li>
+      <li><a href="#cdn-caching">מטמון ב-CDN</a></li>
+      <li><a href="#web-server-caching">מטמון בשרת</a></li>
+      <li><a href="#database-caching">מטמון במסד נתונים</a></li>
+      <li><a href="#application-caching">מטמון באפליקציה</a></li>
+      <li><a href="#caching-at-the-database-query-level">מטמון ברמת שאילתה</a></li>
+      <li><a href="#caching-at-the-object-level">מטמון ברמת אובייקט</a></li>
       <li><a href="#when-to-update-the-cache">מתי לעדכן את ה-cache?</a>
         <ul>
-          <li><a href="#cache-aside">Cache-aside</a></li>
-          <li><a href="#write-through">Write-through</a></li>
-          <li><a href="#write-behind-write-back">Write-behind (write-back)</a></li>
-          <li><a href="#refresh-ahead">Refresh-ahead</a></li>
+          <li><a href="#cache-aside">אסטרטגיית Cache-aside</a></li>
+          <li><a href="#write-through">אסטרטגיית Write-through</a></li>
+          <li><a href="#write-behind-write-back">אסטרטגיית Write-behind (write-back)</a></li>
+          <li><a href="#refresh-ahead">אסטרטגיית Refresh-ahead</a></li>
         </ul>
       </li>
     </ul>
@@ -232,10 +232,10 @@
   </li>
   <li><a href="#communication">תקשורת</a>
     <ul>
-      <li><a href="#transmission-control-protocol-tcp">Transmission control protocol (TCP)</a></li>
-      <li><a href="#user-datagram-protocol-udp">User datagram protocol (UDP)</a></li>
-      <li><a href="#remote-procedure-call-rpc">Remote procedure call (RPC)</a></li>
-      <li><a href="#representational-state-transfer-rest">Representational state transfer (REST)</a></li>
+      <li><a href="#transmission-control-protocol-tcp">פרוטוקול Transmission control protocol (TCP)</a></li>
+      <li><a href="#user-datagram-protocol-udp">פרוטוקול User datagram protocol (UDP)</a></li>
+      <li><a href="#remote-procedure-call-rpc">קריאת Remote procedure call (RPC)</a></li>
+      <li><a href="#representational-state-transfer-rest">פרוטוקול Representational state transfer (REST)</a></li>
     </ul>
   </li>
   <li><a href="#security">אבטחה</a></li>
