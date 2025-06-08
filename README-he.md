@@ -5,7 +5,7 @@
 # המדריך לתכנון מערכות (The System Design Primer)
 
 <p align="center">
-  <img src="images/jj3A5N8.png", width="80%">
+  <img src="images/jj3A5N8.png", width="75%">
   <br/>
 </p>
 
@@ -55,7 +55,7 @@
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/zdCAkB3.png", width="80%">
+  <img src="images/zdCAkB3.png", width="75%">
   <br/>
 </p>
 
@@ -74,7 +74,7 @@
 מחפש משאבים שיעזרו לך להתכונן [**לראיונות קידוד**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
-  <img src="images/b4YtAEN.png", width="80%">
+  <img src="images/b4YtAEN.png", width="75%">
   <br/>
 </p>
 
@@ -116,7 +116,7 @@
 > כל חלק מכיל קישורים להרחבה וללמידה מעמיקה יותר.
 
 <p align="center">
-  <img src="images/jrUBAF7.png", width="80%">
+  <img src="images/jrUBAF7.png", width="75%">
   <br/>
 </p>
 
@@ -266,7 +266,10 @@
 
 > נושאים מוצעים ללימוד לפי לוח הזמנים לריאיון שלך (קצר, בינוני, ארוך)
 
-![Imgur](images/OfVllex.png)
+<p align="center">
+  <img src="images/OfVllex.png", width="75%">
+  <br/>
+</p>
 
 **ש: עבור הראיונות, האם אני אמור לדעת כל מה שכתוב כאן?**
 
@@ -291,7 +294,6 @@
   <li><strong>לוח זמנים בינוני</strong> – התמקד ב<strong>רוחב</strong> ו<strong>קצת עומק</strong> של נושאים בתכנון מערכות. תרגל פתרון של <strong>הרבה</strong> שאלות ריאיון.</li>
   <li><strong>לוח זמנים ארוך</strong> – התמקד ב<strong>רוחב</strong> ו<strong>יותר עומק</strong> של נושאים בתכנון מערכות. תרגל פתרון של <strong>רוב</strong> שאלות הריאיון.</li>
 </ul>
-
 
 <table dir="rtl" border="1" cellspacing="0" cellpadding="6">
   <thead>
