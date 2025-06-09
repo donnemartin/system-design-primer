@@ -123,37 +123,37 @@
 <details dir="rtl">
   <summary>אינדקס נושאים</summary>
     <ul dir="rtl">
-    <li><a href="#system-design-topics-start-here">נושאים בתכנון מערכות: התחל כאן</a>
+    <li><a href="#נושאים-בתכנון-מערכות-התחל-כאן">נושאים בתכנון מערכות: התחל כאן</a>
         <ul>
-        <li><a href="#step-1-review-the-scalability-video-lecture">שלב 1: צפה בהרצאה על סקילביליות</a></li>
-        <li><a href="#step-2-review-the-scalability-article">שלב 2: קרא מאמרים על סקילביליות</a></li>
-        <li><a href="#next-steps">השלבים הבאים</a></li>
+        <li><a href="#שלב-1-צפה-בהרצאה-על-סקילביליות">שלב 1: צפה בהרצאה על סקילביליות</a></li>
+        <li><a href="#שלב-2-קרא-מאמר-על-סקילביליות">שלב 2: קרא מאמרים על סקילביליות</a></li>
+        <li><a href="#השלבים-הבאים">השלבים הבאים</a></li>
         </ul>
     </li>
-    <li><a href="#performance-vs-scalability">ביצועים (performance) מול סקילביליות (scalability)</a></li>
-    <li><a href="#latency-vs-throughput">שיהוי (latency) מול תפוקה (throughput)</a></li>
-    <li><a href="#availability-vs-consistency">זמינות (availability) מול עקביות (consistency)</a>
+    <li><a href="#ביצועים-performance-מול-סקילביליות-scalability">ביצועים (performance) מול סקילביליות (scalability)</a></li>
+    <li><a href="#שיהוי-latency-מול-תפוקה-throughput">שיהוי (latency) מול תפוקה (throughput)</a></li>
+    <li><a href="#זמינות-availability-מול-עקביות-consistency">זמינות (availability) מול עקביות (consistency)</a>
         <ul>
-        <li><a href="#cap-theorem">משפט CAP</a>
+        <li><a href="#משפט-cap">משפט CAP</a>
             <ul>
-            <li><a href="#cp---consistency-and-partition-tolerance">עקביות וטולרנטיות לפיצול (CP)</a></li>
-            <li><a href="#ap---availability-and-partition-tolerance">זמינות וטולרנטיות לפיצול (AP)</a></li>
+            <li><a href="#בחירה-ב-cp---עקביות-ויכולת-חלוקה">עקביות וטולרנטיות לפיצול (CP)</a></li>
+            <li><a href="#בחירה-ב-ap---זמינות-ויכולת-חלוקה">זמינות וטולרנטיות לפיצול (AP)</a></li>
             </ul>
         </li>
         </ul>
     </li>
-    <li><a href="#consistency-patterns">דפוסי עקביות</a>
+    <li><a href="#דפוסי-עקביות-consistency-patterns">דפוסי עקביות</a>
         <ul>
-        <li><a href="#weak-consistency">עקביות חלשה (weak)</a></li>
-        <li><a href="#eventual-consistency">עקביות לא מיידית (eventual)</a></li>
-        <li><a href="#strong-consistency">עקביות חזקה (strong)</a></li>
+        <li><a href="#עקביות-חלשה-weak-consistency">עקביות חלשה (weak)</a></li>
+        <li><a href="#עקביות-לא-מיידית-eventual-consistency">עקביות לא מיידית (eventual)</a></li>
+        <li><a href="#עקביות-חזקה-strong-consistency">עקביות חזקה (strong)</a></li>
         </ul>
     </li>
-    <li><a href="#availability-patterns">דפוסי זמינות</a>
+    <li><a href="#דפוסי-זמינות-availability-patterns">דפוסי זמינות</a>
         <ul>
-        <li><a href="#fail-over">גיבוי בזמן כישלון (fail-over)</a></li>
-        <li><a href="#replication">שכפול (replication)</a></li>
-        <li><a href="#availability-in-numbers">זמינות במספרים</a></li>
+        <li><a href="#גיבוי-בזמן-כישלון-fail-over">גיבוי בזמן כישלון (fail-over)</a></li>
+        <li><a href="#שכפול-replication">שכפול (replication)</a></li>
+        <li><a href="#זמינות-במספרים">זמינות במספרים</a></li>
         </ul>
     </li>
     <li><a href="#domain-name-system">מערכת שמות דומיינים (DNS)</a></li>
@@ -846,6 +846,8 @@
 - [Master-slave replication](#master-slave-replication)
 - [Master-master replication](#master-master-replication)
 
+</div>
+
 ### זמינות במספרים
 
 נהוג למדוד זמינות לפי זמן פעילות (uptime) או חוסר פעילות (downtime)כאחוז מהזמן שבו השירות פועל. המדד הנפוץ הוא לפי מספר התשיעיות — לדוגמה: שירות עם זמינות של 99.99% מתואר כבעל ארבע תשיעיות.
@@ -892,7 +894,8 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 
 אם גם `Foo` וגם `Bar` זמינים ברמה של 99.9%, הזמינות הכוללת שלהם במקביל תהיה 99.9999%.
 
+## מערכת שמות דומיינים (DNS)
+
+<div dir="rtl">
+
 </div>
-
-
-
