@@ -898,4 +898,50 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 
 <div dir="rtl">
 
+<p align="center">
+  <img src="images/IOyLj4i.jpg">
+  <br/>
+  <i><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">מקור: מצגת אבטחת DNS</a></i>
+</p>
+
+מערכת שמות דומיינים (DNS) ממירה שם דומיין כמו `www.example.com` לכתובת IP.
+
+ה-DNS בנוי בהיררכיה: כאשר ישנם כמה שרתי ניהול בשכבה העליונה.  ה-router שלך או ספק האינטרנט (ISP) מספקים כתובות לשרת(י) DNS שיש לפנות אליהם בעת ביצוע חיפוש של כתובת.  
+שרתי DNS בשכבה נמוכה יותר, מבצעים cache למיפויים, שעלולים להיות לא עדכניים (stale) אם הרשומה המעודכנת עוד לא עברה מהשרת בשכבה הגבוהה עד למטה (propagation delays).
+המיפוי של ה-DNS יכול להישמר על ידי הדפדפן או מערכת ההפעלה לפרק זמן מסוים, הנקבע על ידי [TTL – Time To Live](https://he.wikipedia.org/wiki/Time_to_live).
+
+<ul dir="rtl">
+  <li><strong>NS record (Name Server)</strong> – מגדירה את שרתי DNS עבור הדומיין/תת-דומיין.</li>
+  <li><strong>MX record (Mail Exchange)</strong> – מגדירה את שרתי הדואר לקבלת הודעות.</li>
+  <li><strong>A record (Address)</strong> – ממפה שם לכתובת IP.</li>
+  <li><strong>CNAME (Canonical Name)</strong> – ממפה שם לשם אחר (למשל example.com → <code>www.example.com</code>) או לרשומת <code>A</code>.</li>
+</ul>
+
+שירותים מנוהלים כמו [CloudFlare](https://www.cloudflare.com/dns/) ו-[Route 53](https://aws.amazon.com/route53/) מספקים DNS מנוהל.  
+חלקם מאפשרים ניתוב תעבורה בשיטות שונות:
+
+- [Weighted round robin](https://www.jscape.com/blog/load-balancing-algorithms)
+    - Prevent traffic from going to servers under maintenance
+    - Balance between varying cluster sizes
+    - A/B testing
+- [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
+- [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html)
+
+### חסרונות (DNS)
+
+<ul dir="rtl">
+  <li>פנייה לשרת DNS מוסיפה עיכוב קל, אם כי ברוב המקרים הוא מתמתן בזכות caching כפי שתואר קודם.</li>
+  <li>ניהול שרתי DNS יכול להיות מורכב, ולרוב מנוהל על-ידי <a href="http://superuser.com/questions/472695/who-controls-the-dns-servers/472729">ממשלות, ISPs וחברות גדולות</a>.</li>
+  <li>שירותי DNS היו יעד לאחרונה ל-<a href="http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/">מתקפות DDoS</a>, מה שמנע מגולשים להגיע לאתרים (למשל Twitter) בלי להכיר כתובות IP ידניות.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+- [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
+- [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
+- [DNS articles](https://support.dnsimple.com/categories/dns/)
+
 </div>
+
+
+
