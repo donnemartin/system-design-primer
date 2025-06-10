@@ -995,4 +995,101 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 
 </div>
 
+## מאזן עומסים (Load Balancer)
 
+<div dir="rtl">
+
+<p align="center">
+  <img src="images/h81n9iK.png", width="80%">
+  <br/>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+</p>
+
+מאזן עומסים מבזר בקשות נכנסות מלקוח בין משאבי חישוב שונים כגון שרתי אפליקציה ומסדי נתונים. עבור כל בקשה, הוא מחזיר את התשובה ממשאב החישוב המתאים, אל הלקוח המתאים. מאזן עומסים יעיל ב:
+
+<ul dir="rtl">
+  <li>מניעת שליחת בקשות לשרתים לא יציבים (unhealthy)</li>
+  <li>מניעת העמסת־יתר על משאבים</li>
+  <li>סילוק נקודת כשל בודדת (SPOF)</li>
+</ul>
+
+מאזן עומסים ניתן למימוש כחומרה (יקר) או כתוכנה כדוגמת HAProxy.
+
+יתרונות נוספים:
+
+<ul dir="rtl">
+  <li><strong>SSL Termination </strong>  – טכניקת אבטחה שבה מפענחים בקשות נכנסות לפני שהן מגיעות לשרת הקצה, ומצפינים את התשובות של השרת כך ששרתי ה-backend לא צריכים לבצע את הפעולות היקרות הללו.
+    <ul>
+      <li>מוריד את הצורך להתקין תעודות <a href="https://he.wikipedia.org/wiki/X.509">X.509</a> על כל שרת.
+      </li>
+    </ul>
+  </li>
+  <li><strong>Session Persistence</strong> – יצירת עוגיות (cookies) וניתוב בקשות של לקוח מסוים לאותו מופע שהתנהל מולו, אם האפליקציה לא מנהלת סשנים בעצמה.
+  </li>
+</ul>
+
+כדי להגן מפני כישלונות נהוג להקים מספר מאזני עומסים, במצב  
+[Active-Passive](#אקטיבי-פסיבי-active-passive) או [Active-Active](#אקטיבי-אקטיבי-active-active).
+
+מאזן עומסים יכול לנתב את התעבורה על פי מדדים שונים:
+
+- Random
+- Least loaded
+- Session/cookies
+- [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+- [Layer 4](#layer-4-load-balancing)
+- [Layer 7](#layer-7-load-balancing)
+
+### איזון עומסים בשכבה 4
+
+מאזני עומסים בשכבה 4 בוחנים מידע בשכבת התעבורה ([transport layer](#communication)) כדי להחליט כיצד להפיץ בקשות.  
+בדרך כלל, מדובר בכתובות ה-IP של המקור והיעד ובפורטים שבכותרת (header), ולא בתוכן הפקטה (packet).  
+מאזני עומסים בשכבה 4 מעבירים את חבילות הרשת אל ומן השרת הנבחר (upstream server) תוך ביצוע  
+[תרגום כתובות רשת (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+
+
+### איזון עומסים בשכבה 7
+
+מאזני עומסים בשכבה 7 בוחנים את [שכבת האפליקציה](#communication) כדי להחליט כיצד להפיץ בקשות. ההחלטה יכולה להתבסס על תוכן הכותרות (headers), גוף ההודעה, ועוגיות (cookies).
+
+מאזן עומסים בשכבה 7 מסיים (terminates) את תעבורת הרשת אל מול הלקוח, קורא את ההודעה, מקבל החלטת איזון-עומסים, ואז פותח חיבור לשרת שנבחר.  
+למשל, מאזן כזה יכול לשלוח תעבורת וידאו לשרתים שמאחסנים קטעי וידאו, ובמקביל לנתב תעבורת חיוב משתמשים (billing) לשרתים מוקשחים אבטחתית.
+
+לעומת זאת, איזון עומסים בשכבה 4 דורש פחות זמן ומשאבי מחשוב מאשר שכבה 7, אם כי על חומרה מודרנית ההשפעה הביצועית עשויה להיות מזערית.
+
+### גדילה אופקית (Horizontal Scaling)
+
+מאזני עומסים מסייעים גם בגדילה אופקית (Horizontal Scaling), וכך משפרים ביצועים וזמינות.  
+הרחבת המערכת באמצעות שרתים זולים חסכונית יותר ומביאה לרמת זמינות גבוהה  לעומת **הגדלה אנכית (Vertical Scaling)** – חיזוק שרת יחיד בחומרה יקרה. בנוסף, קל יותר לגייס אנשי מקצוע המיומנים בעבודה עם שרתים סטנדרטיים   מאשר כאלה המתמחים במערכות ארגוניות ייעודיות ויקרות.
+
+#### חסרונות: גדילה אופקית
+
+<ul dir="rtl">
+  <li>גדילה אופקית מוסיפה מורכבות וכוללת שכפול שרתים
+    <ul>
+      <li>השרתים צריכים להיות stateless: אין לאחסן בהם מידע משתמש כגון סשנים או תמונות פרופיל</li>
+      <li>ניתן לשמור סשנים באחסון נתונים מרכזי כגון <a href="#database">מסד־נתונים</a> (SQL או NoSQL) או <a href="#cache">מטמון</a> פרסיסטנטי (Redis, Memcached)</li>
+    </ul>
+  </li>
+  <li>שרתים בהמשך השרשרת (downstream) למשל cache ו-DB צריכים להתמודד עם יותר חיבורים בו-זמנית ככל שמספר שרתי האפליקציה גדל</li>
+</ul>
+
+### חסרונות: מאזן עומסים
+
+<ul dir="rtl">
+  <li>מאזן העומסים עצמו עלול להפוך לצוואר בקבוק בביצועים אם אין לו מספיק משאבים או אם הוא מוגדר בצורה לא נכונה.</li>
+  <li>הוספת מאזן עומסים כדי להסיר נקודת כשל בודדת (SPOF) מוסיפה מורכבות למערכת.</li>
+  <li>מאזן עומסים יחיד הוא SPOF, ועבודה עם מספר מאזני עומסים מגדילה עוד יותר את המורכבות.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+- [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+- [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+- [Scalability](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+- [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+- [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+- [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+- [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+
+</div>
