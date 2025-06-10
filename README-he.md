@@ -156,20 +156,20 @@
         <li><a href="#זמינות-במספרים">זמינות במספרים</a></li>
         </ul>
     </li>
-    <li><a href="#domain-name-system">מערכת שמות דומיינים (DNS)</a></li>
-    <li><a href="#content-delivery-network">רשתות הפצת תוכן (CDN)</a>
+    <li><a href="#מערכת-שמות-דומיינים-dns">מערכת שמות דומיינים (DNS)</a></li>
+    <li><a href="#רשתות-הפצת-תוכן-cdn">רשתות הפצת תוכן (CDN)</a>
         <ul>
-        <li><a href="#push-cdns">דחיפה (Push)</a></li>
-        <li><a href="#pull-cdns">משיכה (Pull)</a></li>
+        <li><a href="#דחיפה-push">דחיפה (Push)</a></li>
+        <li><a href="#משיכה-pull">משיכה (Pull)</a></li>
         </ul>
     </li>
-    <li><a href="#load-balancer">מאזן עומסים (load balancer)</a>
+    <li><a href="#מאזן-עומסים-load-balancer">מאזן עומסים (load balancer)</a>
         <ul>
-        <li><a href="#active-passive">אקטיבי-פסיבי (active-passive)</a></li>
-        <li><a href="#active-active">אקטיבי-אקטיבי (active-active)</a></li>
-        <li><a href="#layer-4-load-balancing">איזון עומסים בשכבה 4</a></li>
-        <li><a href="#layer-7-load-balancing">איזון עומסים בשכבה 7</a></li>
-        <li><a href="#horizontal-scaling">גדילה אופקית (horizontal)</a></li>
+        <li><a href="#מאזן-עומסים-load-balancer">אקטיבי-פסיבי (active-passive)</a></li>
+        <li><a href="#אקטיבי-אקטיבי-active-active">אקטיבי-אקטיבי (active-active)</a></li>
+        <li><a href="#איזון-עומסים-בשכבה-4">איזון עומסים בשכבה 4</a></li>
+        <li><a href="#איזון-עומסים-בשכבה-7">איזון עומסים בשכבה 7</a></li>
+        <li><a href="#גדילה-אופקית-horizontal-scaling">גדילה אופקית (horizontal)</a></li>
         </ul>
     </li>
     <li><a href="#reverse-proxy-web-server">פרוקסי 'הפוך' (Reverse Proxy)</a>
@@ -899,7 +899,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg">
+  <img src="images/IOyLj4i.jpg", width="80%">
   <br/>
   <i><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">מקור: מצגת אבטחת DNS</a></i>
 </p>
@@ -948,7 +948,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg", width="80%">
+  <img src="images/h9TAuGI.jpg", width="70%">
   <br/>
   <i><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">מקור: Why use a CDN</a></i>
 </p>
@@ -1000,7 +1000,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/h81n9iK.png", width="80%">
+  <img src="images/h81n9iK.png", width="70%">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
