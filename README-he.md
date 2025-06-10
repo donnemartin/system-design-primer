@@ -943,5 +943,56 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 
 </div>
 
+## רשתות הפצת תוכן (CDN)
+
+<div dir="rtl">
+
+<p align="center">
+  <img src="images/h9TAuGI.jpg", width="80%">
+  <br/>
+  <i><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">מקור: Why use a CDN</a></i>
+</p>
+
+רשת הפצת תוכן (CDN) היא רשת גלובלית ומבוזרת של שרתי proxy, אשר מנגישים תכנים ממיקומים הקרובים יותר למשתמש הקצה.
+בדרך כלל, קבצים סטטיים כמו HTML/CSS/JS, תמונות וסרטונים, מונגשים על ידי CDN, למרות שיש כאלו כמו CloudFront של Amazon התומכים גם בתכנים דינמיים.
+מיפוי ה-DNS שיתקבל ינחה את הלקוחות לאיזה שרת להתחבר.
+
+הגשת תוכן מ-CDN משפר ביצועים משמעותית בשני אופנים:
+
+<ul dir="rtl">
+  <li>המשתמש מקבל תוכן מ-data center הקרוב אליו פיזית.</li>
+  <li>השרתים אינם צריכים לשרת בקשות שה-CDN מספק במקומם.</li>
+</ul>
+
+### דחיפה (Push)
+
+ב-Push CDN התוכן נדחף אל ה-CDN בכל פעם שהוא משתנה בשרת המקור.  האחריות על העלאת הקבצים וכתיבת ה-URLs המופנים ל-CDN היא שלך.  אתה מגדיר את הזמן שבו פג תוקפו של תוכן מסוים, ומתי הוא מתעדכן.
+
+תוכן מועלה רק כאשר הוא חדש, או עבר שינוי, מה שמפחית תעבורה אבל ממקסם על האחסון. אתרים עם מעט תוכן או תעבורה, או עם תוכן שלא מתעדכן באופן תדיר עובדים טוב עם Push CDN. התוכן נמצא ב-CDN פעם אחת, במקום שישלפו אותו מחדש בתדירות קבועה.
+
+### משיכה (Pull)
+
+ב-Pull CDN התוכן נשלף מהשרת המקור רק כאשר משתמש מבקש אותו לראשונה.  הקבצים נשארים בשרת שלך ו-URLs מפנים ל-CDN.
+הבקשה הראשונית איטית יותר עד שהקובץ נשמר ב-CDN.
+משך הזמן שבו ישאר ה-cache נקבע על-ידי [TTL – Time to Live](https://he.wikipedia.org/wiki/Time_to_live).  
+
+ה-Pull CDN חוסך שטח אחסון על ה-CDN, אך עלול ליצור תעבורה מיותרת אם קבצים פגי-תוקף נשלפים שוב לפני ששונו בפועל.
+Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מתפזר וה-CDN שומר רק קבצים שנדרשו לאחרונה.
+
+### חסרונות (CDN)
+
+<ul dir="rtl">
+  <li>עלויות CDN עשויות להיות משמעותיות בהתאם לנפח התעבורה, אך יש לשקול אותן מול העלויות שהיית משלם ללא CDN.</li>
+  <li>תוכן עלול להיות מיושן (stale) אם עודכן לפני שפג תוקף ה-TTL.</li>
+  <li>יש צורך לשנות את כתובות ה-URL של תוכן סטטי כך שיפנו אל ה-CDN.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+- [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
+- [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+- [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
+
+</div>
 
 
