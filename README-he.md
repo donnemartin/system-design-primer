@@ -172,7 +172,7 @@
         <li><a href="#גדילה-אופקית-horizontal-scaling">גדילה אופקית (horizontal)</a></li>
         </ul>
     </li>
-    <li><a href="#reverse-proxy-web-server">פרוקסי 'הפוך' (Reverse Proxy)</a>
+    <li><a href="#reverse-proxy-web-server">פרוקסי הפוך (Reverse Proxy)</a>
         <ul>
         <li><a href="#load-balancer-vs-reverse-proxy">מאזן עומסים לעומת פרוקסי הפוך</a></li>
         </ul>
@@ -1091,5 +1091,58 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 - [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 - [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 - [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+
+</div>
+
+## פרוקסי הפוך (Reverse Proxy)
+
+<div dir="rtl">
+
+פרוקסי הפוך הוא שרת אינטרנט המרכז שירותים פנימיים ומספק ממשק אחיד החוצה.  בקשות שמגיעות מלקוחות מועברות לשרת ה-backend המסוגל לטפל בהן, ולאחר מכן הפרוקסי מחזיר ללקוח את תגובת השרת.
+
+יתרונות הכלולים בצורה זו:
+
+<ul dir="rtl">
+  <li><strong>אבטחה מוגברת</strong> – הסתרת מידע על שרתי ה-backend, חסימת כתובות IP, הגבלת מספר חיבורים לכל לקוח</li>
+  <li><strong>גמישות וסקילביליות מוגברת</strong> – הלקוחות רואים רק את כתובת ה-IP של הפרוקסי, מה שמאפשר להגדיל/לשנות שרתים בלי להשפיע על הלקוחות</li>
+  <li><strong>SSL Termination </strong>  – טכניקת אבטחה שבה מפענחים בקשות נכנסות לפני שהן מגיעות לשרת הקצה, ומצפינים את התשובות של השרת כך ששרתי ה-backend לא צריכים לבצע את הפעולות היקרות הללו.
+    <ul>
+      <li>מוריד את הצורך להתקין תעודות <a href="https://he.wikipedia.org/wiki/X.509">X.509</a> על כל שרת.
+      </li>
+    </ul>
+  </li>
+  <li><strong>דחיסה</strong> – דחיסת תגובות השרת</li>
+  <li><strong>מטמון</strong> – החזרת תגובות עבור בקשות שמורות (cached)</li>
+  <li><strong>תוכן סטטי</strong> – הנגשת קבצים סטטיים ישירות
+    <ul>
+      <li>HTML/CSS/JS</li>
+      <li>תמונות</li>
+      <li>סרטונים</li>
+      <li>וכד׳</li>
+    </ul>
+  </li>
+</ul>
+
+### מאזן עומסים לעומת פרוקסי הפוך
+
+<ul dir="rtl">
+  <li>פריסת מאזן עומסים שימושית כשקיימים מספר שרתים. לרוב הוא מנתב תעבורה לקבוצת שרתים המבצעים אותה לוגיקה.</li>
+  <li>פרוקסי הפוך מועיל גם כאשר יש רק שרת אינטרנט/אפליקציה אחד – ומעניק את כל היתרונות שפורטו לעיל.</li>
+  <li>פתרונות כמו NGINX ו-HAProxy תומכים גם בפרוקסי הפוך בשכבה 7 וגם באיזון עומסים.</li>
+</ul>
+
+### חסרונות: פרוקסי הפוך
+
+<ul dir="rtl">
+  <li>הכנסת פרוקסי הפוך מוסיפה מורכבות לארכיטקטורה.</li>
+  <li>פרוקסי הפוך יחיד הוא SPOF. הגדרת כמה כאלו להפחתת סיכון (<a href="https://en.wikipedia.org/wiki/Failover">Fail-over</a>) מוסיפה מורכבות נוספת.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+- [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+- [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+- [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+- [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
 </div>
