@@ -899,7 +899,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/IOyLj4i.jpg", width="80%">
+  <img src="images/IOyLj4i.jpg", width="60%">
   <br/>
   <i><a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">מקור: מצגת אבטחת DNS</a></i>
 </p>
@@ -948,7 +948,7 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/h9TAuGI.jpg", width="70%">
+  <img src="images/h9TAuGI.jpg", width="60%">
   <br/>
   <i><a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">מקור: Why use a CDN</a></i>
 </p>
@@ -1000,7 +1000,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 <div dir="rtl">
 
 <p align="center">
-  <img src="images/h81n9iK.png", width="70%">
+  <img src="images/h81n9iK.png", width="60%">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
