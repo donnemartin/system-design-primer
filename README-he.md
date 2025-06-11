@@ -1114,11 +1114,10 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
   <li><strong>דחיסה</strong> – דחיסת תגובות השרת</li>
   <li><strong>מטמון</strong> – החזרת תגובות עבור בקשות שמורות (cached)</li>
   <li><strong>תוכן סטטי</strong> – הנגשת קבצים סטטיים ישירות
-    <ul>
-      <li>HTML/CSS/JS</li>
+    <ul dir="rtl">
+      <li>קבצי HTML/CSS/JS</li>
       <li>תמונות</li>
       <li>סרטונים</li>
-      <li>וכד׳</li>
     </ul>
   </li>
 </ul>
