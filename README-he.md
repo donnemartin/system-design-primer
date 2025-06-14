@@ -1145,3 +1145,45 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 - [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
 </div>
+
+
+## שכבת האפליקציה
+
+<div dir="rtl">
+
+הפרדת שכבת הרשת משכבת האפליקציה (ידועה גם כשכבת ה-platform), מאפשרת לבצע scaling ולקנפג את שתי השכבות באופן בלתי תלוי. הוספת API חדש גוררת הוספתי שרתי אפליקציה, מבלי להוסיף בהכרח גם שרתי המטפלים בלוגיקת הרשת. 
+
+עקרון האחריות היחידה (**single respoinsibility principle**) מעודד סרביסים עצמאיים וקטנים שעובדים יחד. צוותים קטנים המטפלים שירותים קטנים יכלוים להתכוונן בצורה מיטבית לגדילה מהירה.
+
+ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוניות](#asynchronism).
+
+### מיקרו-סרביסים (Microservices)
+
+במונח [Microservices](https://he.wikipedia.org/wiki/מיקרו-שירותים) הכוונה למערך של שירותים קטנים,  מודולריים, הניתנים לפריסה עצמאית. כל שירות רץ כתהליך נפרד ומתקשר באמצעות מנגנון פשוט ומוגדר היטב כדי להשיג יעד עסקי.<sup><a href="https://smartbear.com/learn/api-design/what-are-microservices">1</a></sup>
+
+לדוגמה, ב-Pinterest יכולים להיות המיקרו-סרביסים הבאים: פרופיל משתמש, עוקבים, פיד, חיפוש, העלאת תמונה וכו'.
+
+### גילוי סרביסים (Service Discovery)
+
+מערכות כמו [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcddocs/latest), ו-[Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) מסייעות לשירותים “למצוא” זה את זה על ידי ניהול ומעקב אחר שמות הסרביסים, כתובות IP, ופורטים.
+בדיקות דופק ([Health checks](https://www.consul.io/intro/getting-started/checks.html)) — מאמתות את תקינות השירות, לעיתים קרובות באמצעות endpoint HTTP.
+גם Consul וגם Etcd כוללים
+[אחסון key-value](#key-value-store) מובנה, השימושי לאחסון קונפיגורציה ונתונים משותפים.
+
+### חסרונות: שכבת האפליקציה
+
+<ul dir="rtl">
+  <li>הוספת שכבת אפליקציה עם סרביסים שהקשר ביניהם רופף (loosely coupled) דורשת גישה שונה בארכיטקטורה, תפעול ותהליכי פיתוח (לעומת מערכת מונוליטית).</li>
+  <li>מיקרו-סרביסים עלולים להוסיף מורכבות מבחינת פריסות ותפעול.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+- [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
+- [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+- [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+- [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+- [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+
+</div>
+
+
