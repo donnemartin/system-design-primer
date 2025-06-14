@@ -1186,4 +1186,231 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 
 </div>
 
+## מסדי נתונים (DB)
 
+<div dir="rtl">
+
+<p align="center">
+  <img src="images/Xkm5CXz.png", width="60%">
+  <br/>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+</p>
+
+### מסדי נתונים רלציוניים (RDBMS)
+
+מסד נתונים רלציוני כמו SQL הוא אוסף פריטי מידע המאורגנים בטבלאות. **ACID** הוא סט מאפיינים של [טרנזקציות](https://he.wikipedia.org/wiki/טרנזקציה_(בסיס_נתונים)) במסדי נתונים רלציוניים:
+
+<ul dir="rtl">
+  <li><strong>Atomicity</strong> – כל טרנזקציה מתבצעת בשלמותה או שלא מתבצעת כלל (all or nothing).</li>
+  <li><strong>Consistency</strong> – טרנזקציה מעבירה את ה-DB ממצב תקין אחד למצב תקין אחר.</li>
+  <li><strong>Isolation</strong> – הרצה במקביל של טרנזקציות שקולה להרצה סדרתית שלהן.</li>
+  <li><strong>Durability</strong> – לאחר שטרנזקציה הסתיימה, היא תישאר קבועה גם בקריסת מערכת.</li>
+</ul>
+
+ישנן טכניקות רבות להגדלת (scaling) מסד נתונים רלציוני:  
+<strong>שכפול Master-Slave</strong>, <strong>שכפול Master-Master</strong>, <strong>פדרציה (Federation)</strong>, <strong>חלוקה (Sharding)</strong>, <strong>דה-נורמליזציה (Denormalization)</strong>, ו-<strong>SQL Tuning</strong>.
+
+---
+
+#### שכפול Master-Slave
+
+ה-master משרת קריאות וכתיבות (RW), ומשכפל את הכתיבות ל-slave אחד או יותר שמשרת רק קריאות (R). ה-slaves יכול לשכפל את הדאטא ל-slaves נוספים במבנה של מעין עץ.
+אם ה-master נופל, המערכת יכולה להמשיך לרוץ במצב read-only עד שאחד ה-slaves מקודם להיות master, או שמקצים master חדש.
+
+<p align="center">
+  <img src="images/C9ioGtn.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+
+##### חסרונות: Master-Slave
+
+<ul dir="rtl">
+  <li>נדרשת לוגיקה לקידום slave ל-master.</li>
+  <li>ראה <a href="#disadvantages-replication">חסרונות: replication</a> – רלוונטי גם ל-Master-Slave וגם ל-Master-Master.</li>
+</ul>
+
+---
+
+#### שכפול Master-Master
+
+שני ה-masters משרתים קריאה וכתיבה (RW) ומתאמים אחד עם השני את הכתיבות. אם אחד מהם נופל, המערכת יכולה להמשיך לתפקד במצב של קריאה וכתיבה.
+
+<p align="center">
+  <img src="images/krAHLGg.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+##### חסרונות: Master-Master
+
+<ul dir="rtl">
+  <li>נדרש מאזן עומסים או שינוי לוגיקת האפליקציה כדי להחליט לאן לכתוב.</li>
+  <li>רוב מערכות ה-Master-Master מפרות עקרון של עקביות (לכן מפרות ACID) או סובלות מאיטיות כתיבה עקב הצורך לבצע סנכרון.</li>
+  <li>ככל שמתרבים שרתים שמאפשרים כתיבה וה-latency גדל, יש צורך להכריע יותר מקרים של conflict.</li>
+  <li>ראה <a href="#disadvantages-replication">חסרונות: replication</a>.</li>
+</ul>
+
+##### חסרונות: Replication (כללי)
+
+<ul dir="rtl">
+  <li>סכנת אובדן נתונים אם ה-master נופל לפני ששוכפל מידע חדש שנכתב.</li>
+  <li>כל שינוי ב-master משתכפל לרפליקות, מה שגורם להן להיות עסוקות בשחזור הכתיבות, וזה מאט את הקריאות מהן.</li>
+  <li>כל רפליקה נוספת מובילה ל-lag גדול יותר בקריאה עקב הצורך לשכפל את כל המידע לכל הרפליקות.</li>
+  <li>בחלק מהמערכות, כתיבה ל-master יכולה להיות multi-threaded בעוד שברפליקות לרוב הכתיבה היא סנכרונית עם thread בודד.</li>
+  <li>שכפול מוסיף עוד חומרה ומורכבות.</li>
+</ul>
+
+##### מקורות וקריאה נוספת: Replication
+
+- [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
+
+---
+
+#### פדרציה (Federation)
+
+<p align="center">
+  <img src="images/U3qV33e.png", width="40%">
+  <br/>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+</p>
+
+בפדרציה (או חלוקה פונקציונלית) מפצלת DB לפי הפונקציות שלו. לדוגמה, במקום DB מונוליטי בודד, ניתן לנהל 3 DBים נפרדים: **פורומים, משתמשים, ומוצרים**, מה שגורר פחות תעבורת קריאה וכתיבה לכל DB, ועקב כך פחות replication lag.
+מסדי נתונים קטנים יותר מאפשרים יותר דאטא שנכנס בזיכרון, שיכול להוביל ליותר cache hits מוצלחים. בלי master אחד מרכזי שאחראי לדאוג לכל הכתיבות באופן סדרתי, אפשר לכתוב במקביל ל-DB שונים עבור כל סוג של נתונים, ובכך להגדיל את ה-throughput.
+
+##### חסרונות: פדרציה
+
+<ul dir="rtl">
+  <li>לא יעיל אם הסכימה דורשת טבלאות עצומות.</li>
+  <li>הלוגיקה באפליקציה צריכה להתעדכן כדי לדעת לאיזה DB לפנות.</li>
+  <li>ביצוע פעולת JOIN  משני DBים קשה יותר ודורש <a href="http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers">server link</a>.</li>
+  <li>דורשת הוספה של עוד חומרה ומורכבות.</li>
+</ul>
+
+##### מקורות וקריאה נוספת: פדרציה
+
+- [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
+
+---
+
+#### חלוקה (Sharding)
+
+<p align="center">
+  <img src="images/wU8x5Id.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+חלוקה מפזרת את הדאטא בין DBים שונים כך שכל DB מנהל חלק (subset) מסוים של הדאטא. נסתכל למשל על DB של משתמשים, ככל שכמות המשתמשים עולה, יותר חלקים (shards) מתווספים ל-cluster.
+
+בדומה ליתרונות של [פדרציה](), חלוקה גוררת פחות תעבורה של קריאות וכתיבות, פחות שכפול, ויותר cache hits. גודל ה-index גם קטן, מה שלרוב משפר את קצב ביצוע השאילתות.
+אם shard אחד נופל, כל שאר ה-shards עדיין פעילים, למרות שנרצה לבצע שכפול מסוים כדי להימנע מאיבוד מידע. כמו פדרציה, אין master מרכזי אחיד שכל הכתיבות עוברות דרכו, מה שמאפשר לכתוב במקביל ל-DBים שונים ולהגביר את ה-throughput.
+
+דרכים נפוצות לבצע sharding לטבלה של משתמשים הן באמצעות האות הראשונה של שם המשפחה, או המיקום הגיאוגרפי של המשתמש.
+
+##### חסרונות: Sharding
+
+<ul dir="rtl">
+  <li>הקוד צריך לדעת באיזה shard הנתונים נמצאים, דבר הגורר שאילתות SQL מורכבות.</li>
+  <li>התפלגות נתונים עלולה להיות לא אחידה, קבוצה של power users על אותו ה-shard יכולה להביא לעומס מוגבר לאותו ה-shard ביחס לאחרים.
+  ביצוע rebalance גורר מורכבות נוספת. פונקציית sharding המבוססת על <a href="http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html">Consistent Hashing</a> יכול להקטין את כמות הדאטא שמועבר בין shardים.
+  <li>ביצוע פעולת JOIN על מספר shardים מורכבת יותר.</li>
+  <li>sharding מוסיף חומרה ומורכבות.</li>
+</ul>
+
+###### מקורות וקריאה נוספת
+
+- [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+- [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+- [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
+
+---
+
+#### דנורמליזציה (Denormalization)
+
+דנורמליזציה שואפת לשפר ביצועים של קריאות על חשבון חלק מהביצועים של הכתיבות. עותקים מיותרים (משוכפלים באופן מכוון, Redundant) של הדאטא נכתבים במספר טבלאות שונות כדי להימנע מביצוע JOINים יקרים. חלק מה-RDBMSים כמו [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) ו-Oracle תומכים ב-[materialized views](https://en.wikipedia.org/wiki/Materialized_view) אשר דואגים לשמירה של מידע מיותר ושמירת עותקים מיותרים עקביים.
+
+כאשר הדאטא מבוזר באמצעות טכניקות כמו [פדרציה]() או [חלוקה](), ניהול JOINים בין ריכוזי מידע שונים מגדיר את המורכבות. דנורמליזציה יכולה לייתר את הצורך לבצע JOINים מורכבים.
+
+ברוב המערכות, כמות הקריאות גדולה בהרבה מכמות הכתיבות, ביחס של 100:1 ואף 1000:1. קריה יכולה להוביל לביצוע JOIN מורכב ויקר, מה שעולה בביצוע פעולות דיסק זמן רב.
+
+##### חסרונות: דנורמליזציה
+
+<ul dir="rtl">
+  <li>הדאטא משוכפל.</li>
+  <li>אף שדנורמליזציה משפרת קריאות, היא דורשת שכבת אילוצים (constraints) וחוקים מסוימים כדי לשמור על עקביות העותקים — מה שמסבך את תכנון ה-DB.</li>
+  <li>במערכת עם עומס כתיבה כבד ייתכן שדנורמליזציה דווקא תפגע בביצועים.</li>
+</ul>
+
+###### מקורות וקריאה נוספת
+
+- [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+
+---
+
+#### SQL Tuning
+
+SQL Tuning הוא תחום רחב, ונכתבו עליו לא מעט [ספרים](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning).
+חשוב לבצע **Benchmark** ו-**Profile** כדי לדמות עומסים ולגלות צווארי-בקבוק.
+
+<ul dir="rtl">
+  <li><strong>Benchmark</strong> – סימולציית עומס כבד באמצעות כלים כמו <a href="http://httpd.apache.org/docs/2.2/programs/ab.html">ab</a>.</li>
+  <li><strong>Profile</strong> – הפעלת כלים כגון <a href="http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html">Slow Query Log</a> למעקב אחר בעיות ביצועים.</li>
+</ul>
+
+התוצאות של השימוש בכלים אלו עשויה להוביל לאופטימיזציות הבאות:
+##### הידוק הסכימה (Tighten up the schema)
+
+<ul dir="rtl">
+  <li>MySQL כותב לדיסק בבלוקים עוקבים, לגישה מהירה.</li>
+  <li>השתמש ב-<code>CHAR</code> במקום <code>VARCHAR</code> לשדות קבועי-אורך
+    <ul>
+      <li><code>CHAR</code> מאפשר גישה אקראית מהירה; ב-<code>VARCHAR</code> צריך לחפש את סוף-המחרוזת.</li>
+    </ul>
+  </li>
+  <li>השתמש ב-<code>TEXT</code> למקטעי טקסט גדולים (למשל פוסטים של בלוג); מאפשר גם חיפושים בוליאניים. השדה מאחסן מצביע על הדיסק שמטרתו לאתר את בלוק הטקסט.</li>
+  <li>השתמש ב-<code>INT</code> למספרים עד 2<sup>32</sup> (≈ 4 מיליארד).</li>
+  <li>השתמש ב-<code>DECIMAL</code> לערכים כספיים – כדי להימנע משגיאות Floating Point.</li>
+  <li>הימנע מאחסון <code>BLOB</code>-ים גדולים; שמור רק את המיקום שלהם.</li>
+  <li><code>VARCHAR(255)</code> – המספר שמנצל בתים בצורה מיטבית בחלק מה-RDBMS-ים.</li>
+  <li>הגדר <code>NOT NULL</code> כשאפשר כדי <a href="http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search">לשפר ביצועי חיפוש</a>.</li>
+</ul>
+
+##### השתמש באינדקסים טובים (Use good indices)
+
+<ul dir="rtl">
+  <li>עמודות הנשלפות באמצעות פקודות כמו <code>SELECT</code>, <code>GROUP BY</code>, <code>ORDER BY</code>, <code>JOIN</code> יכולות להיות מהירות יותר עם אינדקסים.</li>
+  <li>אינדקסים מיוצגים בדרך-כלל כ-<a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> מאוזן: שומר על הדאטא ממוין, ומאפשר חיפוש/הוספה/מחיקה בזמן לוגריתמי.</li>
+  <li>אינדקס שומר את הנתונים בזיכרון – אבל צורך יותר מקום.</li>
+  <li>כתיבות עלולות להיות איטיות יותר כי צריך לעדכן גם את האינדקס.</li>
+  <li>בעת טעינת נתונים גדולה ייתכן שיותר מהיר להשבית אינדקסים, לטעון את הנתונים ואז לבנות את האינדקסים מחדש.</li>
+</ul>
+
+##### מניעת JOIN יקר
+
+<ul dir="rtl">
+  <li>לשקול <a href="#">דנורמליזציה</a> כאשר הביצועים דורשים זאת.</li>
+</ul>
+
+##### חלוקה לטבלאות (Partitioning)
+
+<ul dir="rtl">
+  <li>חלוקה לטבלאות (Partitioning) מאפשרת לשמור את ה־hot spots (אזורים “חמים” בטבלה, כלומר רשומות שנקראות/נכתבות הכי הרבה) במחיצה קטנה שנשארת בזיכרון, ולכן שאילתות על הנתונים העדכניים רצות מהר יותר ומעמיסות פחות על הדיסק.</li>
+</ul>
+
+##### כוונון Query Cache
+
+<ul dir="rtl">
+  <li>במקרים מסוימים, <a href="https://dev.mysql.com/doc/refman/5.7/en/query-cache.html">query cache</a> עלול לגרום ל<a href="https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/">בעיות ביצועים</a>.</li>
+</ul>
+
+###### מקורות וקריאה נוספת
+
+- [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
+- [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+- [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
+- [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+
+</div>
