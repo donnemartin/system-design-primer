@@ -1472,7 +1472,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 #### אחסון Wide Column
 
 <p align="center">
-  <img src="images/n16iOGk.png", width="80%">
+  <img src="images/n16iOGk.png", width="40%">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1502,7 +1502,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 #### אחסון Graph
 
 <p align="center">
-  <img src="images/fNcl65g.png", width="70%">
+  <img src="images/fNcl65g.png", width="40%">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1532,7 +1532,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 ### SQL or NoSQL
 
 <p align="center">
-  <img src="images/wXGqG5f.png", width="80%">
+  <img src="images/wXGqG5f.png", width="40%">
   <br/>
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
