@@ -1351,7 +1351,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 #### SQL Tuning
 
-SQL Tuning הוא תחום רחב, ונכתבו עליו לא מעט [ספרים](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning).
+התחום של SQL Tuning הוא  רחב, ונכתבו עליו לא מעט [ספרים](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning).
 חשוב לבצע **Benchmark** ו-**Profile** כדי לדמות עומסים ולגלות צווארי-בקבוק.
 
 <ul dir="rtl">
@@ -1403,11 +1403,176 @@ SQL Tuning הוא תחום רחב, ונכתבו עליו לא מעט [ספרים
   <li>במקרים מסוימים, <a href="https://dev.mysql.com/doc/refman/5.7/en/query-cache.html">query cache</a> עלול לגרום ל<a href="https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/">בעיות ביצועים</a>.</li>
 </ul>
 
-###### מקורות וקריאה נוספת
+##### מקורות וקריאה נוספת
 
 - [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
 - [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
 - [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 - [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
+
+### NoSQL
+
+לעומת SQL קלאסי, NoSQL הוא אוסף של מבני נתונים הנשמרים בתור **Key-Value Store**, **Document Store**, **Wide Column Store** או **Graph Database**.  
+הנתונים מנורמלים פחות, ופעולות JOIN מבוצעות לרוב בקוד האפליקציה עצמה.  
+רוב האחסונים מסוג NoSQL אינם תומכים בטרנזקציות ACID מלאות ומספקים [עקביות לא מיידית](#eventual-consistency).
+
+מקובל לסמן את מאפייני NoSQL בראשי התיבות **BASE** (תווך שימוש ב[משפט CAP](#cap-theorem), תכונות BASE מתעדפות זמינות (A) על פני עקביות (C)):
+
+<ul dir="rtl">
+  <li><strong>Basically Available</strong> – המערכת מבטיחה זמינות.</li>
+  <li><strong>Soft State</strong> – מצב המערכת עשוי להשתנות עם הזמן, גם ללא קלט.</li>
+  <li><strong>Eventual Consistency</strong> – המערכת תהפוך עקבית בסופו של דבר, בהנחה שלא מתקבל קלט נוסף בתקופה זו.</li>
+</ul>
+
+מעבר לבחירה בין [SQL ל-NoSQL](#sql-or-nosql), חשוב להבין איזה סוג NoSQL מתאים ביותר לשימוש שלך.  נדון בסוגים **Key-Value Stores**, **Document Stores**, **Wide Column Stores** ו-**Graph Databases**.
+
+---
+
+#### אחסון Key-Value
+> הפשטה: Hash Table
+
+אחסון Key-Value לרוב מאפשר קריאות וכתיבות ב-O(1) ומגובה באמצעות זיכרון או SSD. ניתן לשמור מפתחות ב[סדר לקסיקוגרפי](), מה שמאפשר שליפה יעילה של טווחי המפתחות.
+אחסון זה מאפשר תמיכה ב-metadadta עם ערכים.
+
+אחסון זה מספק ביצועים גבוהים ולרוב בשימוש עבור מודלי דאטא פשוטים או לדאטא שמשתנה במהירות, כמו שכבת cache in-memory. כיוון שסוגי אחסון זה מציעים סט מצומצם של פעולות, המורכבות נמצאת בשכבת האפלקציה אם נדרשות פעולות נוספות.
+
+אחסון זה הוא הבסיס למערכות מורכבות יותר כמו document store ובמקרים מסוימים גם graph db.
+
+##### מקורות וקריאה נוספת: אחסון Key-Value
+
+- [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
+- [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
+- [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
+- [Memcached architecture](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
+
+---
+
+#### אחסון Document  
+> הפשטה: אחסון Key-Value שבו הערך הוא מסמך
+
+אחסון Document מתרכז סביב מסמכים (XML, JSON, binary, etc.) כאשר מסמך שומר את כל המידע שקשור לאובייקט מסוים. אחסון זה מספק API או query language כדי לתשאל על בסיס המבנה הפנימי של המסמך עצמו. נשים לב, כי הרבה אחסונים מסוג Key-Value כוללים פיצ'רים כדי לעבוד עם ה-metadata של ה-value, מה שמטשטש את הגבול בין שני סוגי אחסון אלו.
+
+על בסיס המימוש הספציפי מאחורי הקלעים, מסמכים מאורגנים לפי אוספים, תגים, metadata או תיקיות. למרות שמסמכים יכולים להיות מאורגנים או מקובצים יחדיו, יכולים להיות להם שדות שונים לחלוטין אחד מהשני.
+
+
+אחסונים כמו [MongoDB](https://www.mongodb.com/mongodb-architecture) ו-[CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) מציעים שפה דמוית SQL על מנת לבצע שאילתות מורכבות.
+[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) תומך גם ב-Key-Value וגם במסמכים.
+
+אחסונים אלו מספקים גמישות גבוהה ולרוב בשימוש עבור דאטא שמשתנה בתדירות גבוהה.
+
+##### מקורות וקריאה נוספת: אחסון Document
+
+- [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
+- [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
+- [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+- [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+
+---
+
+#### אחסון Wide Column
+
+<p align="center">
+  <img src="images/n16iOGk.png", width="80%">
+  <br/>
+  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+</p>
+
+> הפשטה: Map מקונן מסוג
+
+> <code>ColumnFamily&lt;RowKey, Columns&lt;ColKey, Value, Timestamp&gt;&gt;</code>
+
+אחסון Wide Column עובד עם יחידת דאטא בסיסית שהיא עמודה (זוג שם/ערך).
+עמודות מקובצות תחת column families (כמו טבלת SQL). Super column families הן אוסף של column families. אפשר לגשת לכל עמודה בנפרד עם row key, כאשר עמודות בעלות אותו row key יוצרות שורה.
+כל ערך מכיל timestamp עבור גרסאות ופתרון קונפליקטים.
+
+דוגמאות: Google הציגה את [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) כאחסון הראשון מסוג זה.  זה השפיע על פרויקט הקוד הפתוח [HBase](https://www.edureka.co/blog/hbase-architecture/) (באקוסיסטם Hadoop) ו-[Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) של Facebook.  
+מערכות כמו Bigtable, HBase ו-Cassandra שומרות מפתחות בסדר **לקסיקוגרפי**, וכך מאפשרות שליפת טווחי מפתחות ביעילות.
+
+אחסונים אלו מציעים זמינות גבוהה, וסקילביליות גבוהה. לרוב משתמשים בהם לאחסון דאטאסטים מאוד גדולים.
+
+##### מקורות וקריאה נוספת: אחסון Wide Column
+
+- [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
+- [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+- [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
+- [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
+  
+---
+
+#### אחסון Graph
+
+<p align="center">
+  <img src="images/fNcl65g.png", width="70%">
+  <br/>
+  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+</p>
+
+> הפשטה: גרף
+
+ב-DB גרפי כל **צומת** (Node) הוא רשומה, וכל **קשת** (Arc/Edge) היא קשר בין שני צמתים.  
+ה-DB מותאם לייצוג קשרים מורכבים – עם הרבה מפתחות זרים (Foreign Keys) או יחסי Many-to-Many.
+
+אחסון זה מאפשר ביצועים גבוהים למודלים עם יחסים מורכבים, למשל כמו רשת חברתית. הטכנולוגיה הזו יחסית חדשה ופות נפוצה; ייתכן קושי למצוא כלי פיתוח ומשאבים. הרבה אחסונים מסוג זה נגישים רק באמצעות
+[REST APIs](#representational-state-transfer-rest).
+
+##### מקורות וקריאה נוספת: Graph
+
+- [Graph database](https://en.wikipedia.org/wiki/Graph_database)
+- [Neo4j](https://neo4j.com/)
+- [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+
+#### מקורות וקריאה נוספת: NoSQL
+
+- [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
+- [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
+- [Scalability](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+- [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+- [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
+
+### SQL or NoSQL
+
+<p align="center">
+  <img src="images/wXGqG5f.png", width="80%">
+  <br/>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+</p>
+
+-סיבות לשימוש ב**SQL**:
+
+<ul dir="rtl">
+  <li>נתונים עם מבנה קבוע</li>
+  <li>סכמה ברורה עם אילוצים וטיפוסים</li>
+  <li>דאטא עם קשרי Foreign Key ו־Many-to-Many</li>
+  <li>צורך בביצוע JOIN-ים מורכבים</li>
+  <li>טרנזקציות (עקרונות ACID)</li>
+  <li>תבניות ברורות לביצוע Scaling</li>
+  <li>אקו־סיסטם ענק של כלים, קוד וקהילה</li>
+  <li>חיפושים לפי אינדקס מהירים מאוד</li>
+</ul>
+
+סיבות לשימוש ב-**NoSQL**:
+
+<ul dir="rtl">
+  <li>דאטא שהוא מובנה באופן חלקי</li>
+  <li>סכמה דינמית או גמישה</li>
+  <li>דאטא ללא relations</li>
+  <li>אין צורך ב־JOIN־ים מורכבים</li>
+  <li>אחסון TB או PB של דאטא</li>
+  <li>פעולות רבות של כתיבה וקריאה בשנייה</li>
+  <li>כמות גדולה של פעולות דיסק בשנייה</li>
+</ul>
+
+דאטא לדוגמה שמתאים מאוד עבור **NoSQL**:
+
+- Rapid ingest of clickstream and log data
+- Leaderboard or scoring data
+- Temporary data, such as a shopping cart
+- Frequently accessed ('hot') tables
+- Metadata/lookup tables
+
+##### מקורות וקריאה נוספת: SQL or NoSQL
+
+- [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
+- [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 </div>
