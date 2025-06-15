@@ -130,29 +130,29 @@
         <li><a href="#השלבים-הבאים">השלבים הבאים</a></li>
         </ul>
     </li>
-    <li><a href="#ביצועים-performance-מול-סקילביליות-scalability">ביצועים (performance) מול סקילביליות (scalability)</a></li>
-    <li><a href="#שיהוי-latency-מול-תפוקה-throughput">שיהוי (latency) מול תפוקה (throughput)</a></li>
-    <li><a href="#זמינות-availability-מול-עקביות-consistency">זמינות (availability) מול עקביות (consistency)</a>
+    <li><a href="#ביצועים-performance-מול-סקילביליות-scalability">ביצועים (Performance) מול סקילביליות (Scalability)</a></li>
+    <li><a href="#שיהוי-latency-מול-תפוקה-throughput">שיהוי (Latency) מול תפוקה (Throughput)</a></li>
+    <li><a href="#זמינות-availability-מול-עקביות-consistency">זמינות (Availability) מול עקביות (Consistency)</a>
         <ul>
         <li><a href="#משפט-cap">משפט CAP</a>
             <ul>
-            <li><a href="#בחירה-ב-cp---עקביות-ויכולת-חלוקה">עקביות וטולרנטיות לפיצול (CP)</a></li>
-            <li><a href="#בחירה-ב-ap---זמינות-ויכולת-חלוקה">זמינות וטולרנטיות לפיצול (AP)</a></li>
+            <li><a href="#בחירה-ב-cp---עקביות-ועמידות-לפי">עקביות ועמידות לפיצול (CP)</a></li>
+            <li><a href="#בחירה-ב-ap---זמינות-ויכולת-חלוקה">זמינות ועמידות לפיצול (AP)</a></li>
             </ul>
         </li>
         </ul>
     </li>
     <li><a href="#דפוסי-עקביות-consistency-patterns">דפוסי עקביות</a>
         <ul>
-        <li><a href="#עקביות-חלשה-weak-consistency">עקביות חלשה (weak)</a></li>
-        <li><a href="#עקביות-לא-מיידית-eventual-consistency">עקביות לא מיידית (eventual)</a></li>
-        <li><a href="#עקביות-חזקה-strong-consistency">עקביות חזקה (strong)</a></li>
+        <li><a href="#עקביות-חלשה-weak-consistency">עקביות חלשה (Weak)</a></li>
+        <li><a href="#עקביות-לא-מיידית-eventual-consistency">עקביות לא מיידית (Eventual)</a></li>
+        <li><a href="#עקביות-חזקה-strong-consistency">עקביות חזקה (Strong)</a></li>
         </ul>
     </li>
     <li><a href="#דפוסי-זמינות-availability-patterns">דפוסי זמינות</a>
         <ul>
-        <li><a href="#גיבוי-בזמן-כישלון-fail-over">גיבוי בזמן כישלון (fail-over)</a></li>
-        <li><a href="#שכפול-replication">שכפול (replication)</a></li>
+        <li><a href="#גיבוי-בזמן-כישלון-fail-over">גיבוי בזמן כישלון (Fail-Over)</a></li>
+        <li><a href="#שכפול-replication">שכפול (Replication)</a></li>
         <li><a href="#זמינות-במספרים">זמינות במספרים</a></li>
         </ul>
     </li>
@@ -163,44 +163,44 @@
         <li><a href="#משיכה-pull">משיכה (Pull)</a></li>
         </ul>
     </li>
-    <li><a href="#מאזן-עומסים-load-balancer">מאזן עומסים (load balancer)</a>
+    <li><a href="#מאזן-עומסים-load-balancer">מאזן עומסים (Load Balancer)</a>
         <ul>
-        <li><a href="#מאזן-עומסים-load-balancer">אקטיבי-פסיבי (active-passive)</a></li>
-        <li><a href="#אקטיבי-אקטיבי-active-active">אקטיבי-אקטיבי (active-active)</a></li>
+        <li><a href="#מאזן-עומסים-load-balancer">אקטיבי-פסיבי (Active-Passive)</a></li>
+        <li><a href="#אקטיבי-אקטיבי-active-active">אקטיבי-אקטיבי (Active-Active)</a></li>
         <li><a href="#איזון-עומסים-בשכבה-4">איזון עומסים בשכבה 4</a></li>
         <li><a href="#איזון-עומסים-בשכבה-7">איזון עומסים בשכבה 7</a></li>
-        <li><a href="#גדילה-אופקית-horizontal-scaling">גדילה אופקית (horizontal)</a></li>
+        <li><a href="#גדילה-אופקית-horizontal-scaling">גדילה אופקית (Horizontal)</a></li>
         </ul>
     </li>
-    <li><a href="#reverse-proxy-web-server">פרוקסי הפוך (Reverse Proxy)</a>
+    <li><a href="#פרוקסי-הפוך-reverse-proxy">פרוקסי הפוך (Reverse Proxy)</a>
         <ul>
-        <li><a href="#load-balancer-vs-reverse-proxy">מאזן עומסים לעומת פרוקסי הפוך</a></li>
+        <li><a href="#מאזן-עומסים-לעומת-פרוקסי-הפוך">מאזן עומסים לעומת פרוקסי הפוך</a></li>
         </ul>
     </li>
-    <li><a href="#application-layer">שכבת האפליקציה</a>
+    <li><a href="#שכבת-האפליקציה">שכבת האפליקציה</a>
         <ul>
-        <li><a href="#microservices">מיקרוסרביסים (microservices)</a></li>
-        <li><a href="#service-discovery">גילוי שירותים (service discovery)</a></li>
+        <li><a href="#מיקרו-סרביסים-microservices">מיקרוסרביסים (Microservices)</a></li>
+        <li><a href="#גילוי-סרביסים-service-discovery">גילוי שירותים (Service Discovery)</a></li>
         </ul>
     </li>
-    <li><a href="#database">מסדי נתונים</a>
+    <li><a href="#מסדי-נתונים-db">מסדי נתונים</a>
         <ul>
-        <li><a href="#relational-database-management-system-rdbms">מסדי נתונים רלציוניים (RDBMS)</a>
+        <li><a href="#מסדי-נתונים-רלציוניים-rdbms">מסדי נתונים רלציוניים (RDBMS)</a>
             <ul>
-            <li><a href="#master-slave-replication">שכפול Master-Slave</a></li>
-            <li><a href="#master-master-replication">שכפול Master-Master</a></li>
-            <li><a href="#federation">פדרציה (federation)</a></li>
-            <li><a href="#sharding">חלוקה (sharding)</a></li>
-            <li><a href="#denormalization">דה-נורמליזציה (denormalization)</a></li>
+            <li><a href="#שכפול-master-slave">שכפול Master-Slave</a></li>
+            <li><a href="#שכפול-master-master">שכפול Master-Master</a></li>
+            <li><a href="#פדרציה-federation">פדרציה (Federation)</a></li>
+            <li><a href="#חלוקה-sharding">חלוקה (Sharding)</a></li>
+            <li><a href="#דנורמליזציה-denormalization">דה-נורמליזציה (Denormalization)</a></li>
             <li><a href="#sql-tuning">SQL Tuning</a></li>
             </ul>
         </li>
         <li><a href="#nosql">NoSQL</a>
             <ul>
-            <li><a href="#key-value-store">מפתח-ערך (Key-Value)</a></li>
-            <li><a href="#document-store">מסמכים (Document Store)</a></li>
-            <li><a href="#wide-column-store">רב-עמודות (Wide Column)</a></li>
-            <li><a href="#graph-database">גרפים (Graph DB)</a></li>
+            <li><a href="#אחסון-key-value">אחסון Key-Value</a></li>
+            <li><a href="#אחסון-document">אחסון Document</a></li>
+            <li><a href="#אחסון-wide-column">אחסון Wide-Column</a></li>
+            <li><a href="#אחסון-graph">אחסון Graph</a></li>
             </ul>
         </li>
         <li><a href="#sql-or-nosql">SQL או NoSQL</a></li>
@@ -748,17 +748,17 @@
 <ul>
   <li><strong>עקביות (Consistency)</strong> – כל קריאה מקבלת את הכתיבה העדכנית ביותר, או שגיאה.</li>
   <li><strong>זמינות (Availability)</strong> - כל בקשה תקבל מענה, ללא הבטחה שהמידע שיחזור יהיה העדכני ביותר.</li>
-  <li><strong>יכולת חלוקה (Partition Tolerance)</strong> - המערכת ממשיכה לתפקד גם במקרים בהם נאבדות או מתעכבות מספר הודעות בין שרתי המערכת בגלל בעיות תקשורת.</li>
+  <li><strong>עמידות לפיצול (Partition Tolerance)</strong> - המערכת ממשיכה לתפקד גם במקרים בהם נאבדות או מתעכבות מספר הודעות בין שרתי המערכת בגלל בעיות תקשורת.</li>
 </ul>
 
 *ניתן לצאת מנקודת הנחה שרשתות לא אמינות - כך שנהיה חייבים לתמוך ב-״Partition tolerance״. 
 לכן, נצטרך לבחור אחד משני האחרים - זמינות או עקביות.*
 
-#### בחירה ב-CP - עקביות ויכולת חלוקה
+#### בחירה ב-CP - עקביות ועמידות לפיצול
 
 המתנה לתשובה מהמערכת (אשר סובלת מ-network partition) עלולה להסתיים בשגיאת timeout. לכן, CP הוא בחירה טובה במידה ויש הצדקה עסקית לקריאות וכתיבות אטומיות.
 
-#### בחירה ב-AP - זמינות ויכולת חלוקה
+#### בחירה ב-AP - זמינות ועמידות לפיצול
 
 תשובות לבקשות מהמערכת מחזירות את הגרסה הזמינה ביותר של הנתונים הזמינים בשרת הרלוונטי, שאינה בהכרח האחרונה. כתיבה עשויה לקחת זמן מסוים עד שתסתיים, עד אשר התקשורת הבעייתית תיפתר.
 
@@ -1574,5 +1574,13 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 - [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 - [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+
+</div>
+
+
+
+## Cache
+
+<div dir="rtl">
 
 </div>
