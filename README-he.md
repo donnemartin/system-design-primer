@@ -1154,8 +1154,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 הפרדת שכבת הרשת משכבת האפליקציה (ידועה גם כשכבת ה-platform), מאפשרת לבצע scaling ולקנפג את שתי השכבות באופן בלתי תלוי. הוספת API חדש גוררת הוספתי שרתי אפליקציה, מבלי להוסיף בהכרח גם שרתי המטפלים בלוגיקת הרשת. 
 
 עקרון האחריות היחידה (**single respoinsibility principle**) מעודד סרביסים עצמאיים וקטנים שעובדים יחד. צוותים קטנים המטפלים שירותים קטנים יכלוים להתכוונן בצורה מיטבית לגדילה מהירה.
-
- Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוניות](#asynchronism).
+Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוניות](#asynchronism).
 
 ### מיקרו-סרביסים (Microservices)
 
@@ -1218,7 +1217,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 אם ה-master נופל, המערכת יכולה להמשיך לרוץ במצב read-only עד שאחד ה-slaves מקודם להיות master, או שמקצים master חדש.
 
 <p align="center">
-  <img src="images/C9ioGtn.png", width="60%">
+  <img src="images/C9ioGtn.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1238,7 +1237,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 שני ה-masters משרתים קריאה וכתיבה (RW) ומתאמים אחד עם השני את הכתיבות. אם אחד מהם נופל, המערכת יכולה להמשיך לתפקד במצב של קריאה וכתיבה.
 
 <p align="center">
-  <img src="images/krAHLGg.png", width="60%">
+  <img src="images/krAHLGg.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1272,7 +1271,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 #### פדרציה (Federation)
 
 <p align="center">
-  <img src="images/U3qV33e.png", width="40%">
+  <img src="images/U3qV33e.png", width="30%">
   <br/>
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
@@ -1298,7 +1297,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 #### חלוקה (Sharding)
 
 <p align="center">
-  <img src="images/wU8x5Id.png", width="60%">
+  <img src="images/wU8x5Id.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1365,10 +1364,8 @@ SQL Tuning הוא תחום רחב, ונכתבו עליו לא מעט [ספרים
 
 <ul dir="rtl">
   <li>MySQL כותב לדיסק בבלוקים עוקבים, לגישה מהירה.</li>
-  <li>השתמש ב-<code>CHAR</code> במקום <code>VARCHAR</code> לשדות קבועי-אורך
-    <ul>
-      <li><code>CHAR</code> מאפשר גישה אקראית מהירה; ב-<code>VARCHAR</code> צריך לחפש את סוף-המחרוזת.</li>
-    </ul>
+  <li>השתמש ב-<code>CHAR</code> במקום <code>VARCHAR</code> לשדות קבועי-אורך.
+    code>CHAR</code> מאפשר גישה אקראית מהירה; ב-<code>VARCHAR</code> צריך לחפש את סוף-המחרוזת.
   </li>
   <li>השתמש ב-<code>TEXT</code> למקטעי טקסט גדולים (למשל פוסטים של בלוג); מאפשר גם חיפושים בוליאניים. השדה מאחסן מצביע על הדיסק שמטרתו לאתר את בלוק הטקסט.</li>
   <li>השתמש ב-<code>INT</code> למספרים עד 2<sup>32</sup> (≈ 4 מיליארד).</li>
