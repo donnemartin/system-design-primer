@@ -1647,7 +1647,6 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 במקום לשמור תוצאה של שאילתה, נחשוב על הנתונים כמו על "אובייקט" בקוד. 
 האפליקציה שולפת את המידע מה-DB ומרכיבה ממנו מופע שמתאר אותו תוך שימוש ב-class כלשהו:
 
-
 <ul dir="rtl">
   <li>יש להסיר את האובייקט מה-cache אם אחד מהשדות שלו השתנה</li>
   <li>מאפשר עיבוד אסינכרוני: תהליכים ברקע יכולים להרכיב אובייקטים על ידי הדבר האחרון שנמצא ב-cache</li>
@@ -1655,9 +1654,148 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 הצעות לדברים שכדאי לבצע להם cache:
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+- User sessions
+- Fully rendered web pages
+- Activity streams
+- User graph data
+
+### מתי לעדכן את ה-cache?
+
+כיוון שאפשר לאחסן רק כמות מוגבלת של מידע ב-cache, יש לבחור באסטרטגיית עדכון ופינוי המקום ב-cache שמתאימה ביותר עבור המערכת.
+
+#### אסטרטגיית Cache-Aside
+
+<p align="center">
+  <img src="images/ONjORqk.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+</p>
+
+האפליקציה אחראית לבצע קריאה וכתיבה מול האחסון. ה-cache לא מדבר עם האחסון ישירות. האפליקציה עושה את הדברים הבאים:
+<ul dir="rtl">
+  <li>חיפוש הרשומה ב-cache, מה שמוביל ל-cache miss</li>
+ <li>טוענים את הרשומה מהאחסון</li>
+ <li>שומרים את התוצאה ב-cache</li>
+ <li>מחזירים את הרשומה ללקוח</li>
+</ul>
+
+```python
+def get_user(self, user_id):
+    user = cache.get("user.{0}", user_id)
+    if user is None:
+        user = db.query("SELECT * FROM users WHERE user_id = {0}", user_id)
+        if user is not None:
+            key = "user.{0}".format(user_id)
+            cache.set(key, json.dumps(user))
+    return user
+```
+למשל [Memcached](https://memcached.org/) יכול להיות בשימוש בקטע קוד מהסוג הזה, האפליקציה היא זו שקובעת מתי לקרוא ולכתוב ל-cache.
+אחרי שהפריט נכתב ל-cache, כל קריאה חוזרת אליו מהירה במיוחד. אסטרטגייה זו נקראת גם lazy loading. רק מידע שנעשתה אליו גישה נכנס ל-cache, מה שמונע שמירה של הרבה דאטא שאין בו שימוש.
+
+##### חסרונות: cache-aside
+
+<ul dir="rtl">
+ <li>כל cache miss עולה לנו ב-3 שלבים, מה שיכול לגרום לעיכוב משמעותי.</li>
+ <li>הדאטא יכול להתיישן אם הוא מתעדכן ב-DB. הרשומה ב-RAM כבר לא רלוונטית. אפשר לקבוע TTL קצר או לעבור לאסטרטגיה של write-through.</li>
+ <li>כאשר שרת ה-cache קורס, הוא מוחלף באחד חדש שעולה ריק מאפס, מה שגורם ל-latency גבוה.</li>
+</ul>
+
+#### אסטרטגיית Write-Through
+
+<p align="center">
+  <img src="images/0vBc0hN.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+האפליקציה מתייחסת אל ה-cache כאחסון המרכזי, מבצעת קריאות וכתיבות מולו, כאשר ה-cache אחרי לבצע את הקריאות והכתיבות מול ה-DB:
+
+<ul dir="rtl">
+ <li>האפליקציה מוסיפה או מעדכנת רשומה ב-cache</li>
+ <li>ה-cache מסנכרן כל כתיבה ל-DB</li>
+ <li>הפעולה חוזרת למשתמש</li>
+</ul>
+
+Application code:
+
+```python
+set_user(12345, {"foo":"bar"})
+```
+
+Cache code:
+
+```python
+def set_user(user_id, values):
+    user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
+    cache.set(user_id, user)
+```
+
+אסטרטגיה זו איטית יותר בשל ביצוע ה-write (שתי כתיבות במקום אחת), אבל קריאות שיקרו בהמשך של הדאטא שזה עתה נכתב יהיו מהירות. המשתמשים לרוב יותר סבלניים לגבי שיהוי כאשר מעדכנים את הדאטא לעומת קריאה שלו. הדאטא ב-cache תמיד עדכני.
+
+##### חסרונות: write through
+
+<ul dir="rtl">
+ <li>כאשר עולה node חדש של ה-cache הוא לא יכיר אף רשומה עד שהיא לא תתעדכן ב-DB, המערכת צריכה קודם לבצע עדכונים לאותם הערכים. שילוב של cache-aside עם write-through יכול לצמצם את הבעיה - אם אין ערך, האפליקציה טוענת מה-DB ושומרת ב-cache, ואז העדכון נכנס גם ל-cache וגם ל-DB.</li>
+ <li>חלק גדול מהנתונים שנכתבים לעולם לא ייקראו, כל כתיבה נשמרת ל-cache ותופסת RAM יקר בלי שבהכרח יש בה שימוש. אפשר למנוע את בזבוז הזיכרון באמצעות TTL על ערכים שאינם נקראים. הערכים שעדיין "חמים" יתעדכנו מחדש ב-TTL בכל קריאה או כתיבה.</li>
+</ul>
+
+#### אסטרטגיית Write-Behind/Back
+
+<p align="center">
+  <img src="images/rgSrvjG.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+האפליקציה מבצעת את הפעולות הבאות:
+<ul dir="rtl">
+ <li>הוספה או עדכון של רשומה ב-cache.</li>
+ <li>כתיבת הרשומה באופן אסינכרוני ל-DB, כך זמן הכתיבה שנתפס בעיני המשתמש קצר מאוד, מפני שהחלק האיטי (לדיסק) נעשה ברקע.</li>
+</ul>
+
+##### חסרונות: write-behind
+
+<ul dir="rtl">
+ <li>יכול להיות אובדן מידע אם ה-cache נופל לפני שהכתיבה האסינכרונית ל-DB הסתיימה, ואז הרשומות נעלמו לנצח.</li>
+ <li>יותר מורכב לממש write-behind מאז לממש את האסטרטגיות הקודמות כמו cache-aside או write-through.</li>
+</ul>
+
+#### אסטרטגיית Refresh-Ahead
+
+<p align="center">
+  <img src="images/kxtjqgE.png", width="60%">
+  <br/>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+</p>
+
+אפשר לקנפג את ה-cache כך שהוא ירענן כל פריט שניגשו אליו לאחרונה לפני שתפוג תקופת ה-TTL שלו (יבצע fetch מול ה-DB).
+
+אם המערכת יודעת לחזות בצורה טובה אילו פריטים יבוקשו שוב בקרוב, נקבל latency נמוך יותר משיטות read-through רגילות: המשתמש יקבל תשובה מ-cache שכבר עבר עדכון ברקע (ואין cache miss).
+
+##### חסרונות: refresh-ahead
+
+<ul dir="rtl">
+ <li>חיזוי לא מדויק של פריטים שיידרשו בעתיד יכול לגרום לרענון מיותר, ובזבוז של RAM וחיבורים ל-DB, מה שעלול לגרום לתוצאות איטיות יותר מאשר בלי לבצע refresh-ahead.</li>
+</ul>
+
+### חסרונות: cache
+
+<ul dir="rtl">
+ <li>חייבים לשמר עקביות בין ה-cache ומקור המידע האמיתי (ה-DB) באמצעות <a href="https://en.wikipedia.org/wiki/Cache_algorithms">cache invalidation</a>, כללים הקובעים מתי מוחקים או מרעננים ערכים ב-cache.</li>
+ <li>cache invalidation הוא אתגר לא פשוט, יש מורכבות נוספת להבנה מתי בדיוק ערך ב-cache הוא כבר לא עדכני. </li>
+ <li>נדרשים לבצע שינויים בקוד ובתשתית להוספת רכיבים כמו Redis או Memcached.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+- [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
+- [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
+- [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
+- [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+- [Scalability](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+- [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
+- [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
 </div>
+
+
