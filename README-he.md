@@ -1472,7 +1472,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 #### אחסון Wide Column
 
 <p align="center">
-  <img src="images/n16iOGk.png", width="40%">
+  <img src="images/n16iOGk.png", width="60%">
   <br/>
   <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
 </p>
@@ -1502,7 +1502,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 #### אחסון Graph
 
 <p align="center">
-  <img src="images/fNcl65g.png", width="40%">
+  <img src="images/fNcl65g.png", width="50%">
   <br/>
   <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
 </p>
@@ -1666,7 +1666,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 #### אסטרטגיית Cache-Aside
 
 <p align="center">
-  <img src="images/ONjORqk.png", width="60%">
+  <img src="images/ONjORqk.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1703,7 +1703,7 @@ def get_user(self, user_id):
 #### אסטרטגיית Write-Through
 
 <p align="center">
-  <img src="images/0vBc0hN.png", width="60%">
+  <img src="images/0vBc0hN.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1742,7 +1742,7 @@ def set_user(user_id, values):
 #### אסטרטגיית Write-Behind/Back
 
 <p align="center">
-  <img src="images/rgSrvjG.png", width="60%">
+  <img src="images/rgSrvjG.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
@@ -1763,7 +1763,7 @@ def set_user(user_id, values):
 #### אסטרטגיית Refresh-Ahead
 
 <p align="center">
-  <img src="images/kxtjqgE.png", width="60%">
+  <img src="images/kxtjqgE.png", width="40%">
   <br/>
   <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
 </p>
@@ -1797,5 +1797,4 @@ def set_user(user_id, values):
 - [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
 </div>
-
 
