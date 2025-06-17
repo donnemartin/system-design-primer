@@ -1360,6 +1360,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 </ul>
 
 התוצאות של השימוש בכלים אלו עשויה להוביל לאופטימיזציות הבאות:
+
 ##### הידוק הסכימה (Tighten up the schema)
 
 <ul dir="rtl">
@@ -1795,6 +1796,64 @@ def set_user(user_id, values):
 - [Scalability](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 - [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 - [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+
+</div>
+
+
+## אסינכרוניות (Asynchronism)
+
+<div dir="rtl">
+
+<p align="center">
+  <img src="images/54GYsSx.png", width="60%">
+  <br/>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+</p>
+
+ביצוע פעולות באופן אסינכרוני עוזר לקצר זמני תגובה לבקשות עצמן. פעולות כבדות אינן מבוצעות ישירות אלא מתווספות לתור משימות, כאשר התשובה חוזר כמעט מיד. ברקע, המשימה מתבצעת מאוחר יותר. 
+משימות שלוקחות זמן רב יכולות להתבצע מבעוד מועד, כמו aggregation תקופתי של דאטא. הנתונים כבר מוכנים מראש והשליפה תהיה מהירה.
+
+### תורי הודעות (Message Queues)
+
+תורי הודעות מקבלים, מחזיקים, ושולחים הודעות. אם פעולה איטית מידי לביצוע באופן סינכרוני, אפשר להשתמש בתור הודעות באופן הבא:
+
+<ul dir="rtl">
+ <li>האפליקציה מקבלת בקשת משתמש לביצוע פעולה כבדה, היא בונה הודעה ומכניסה אותה לתור. המשתמש מקבל תשובה על כך שהבקשה התקבלה והיא בתהליך.</li>
+ <li>תהליך worker רץ ברקע ומאזין לתור, שולף את ההודעה ומתחיל לבצע את הפעולה. כשהוא מסיים, הוא מאשר לתור שההודעה טופלה בהצלחה, ומעדכן את האפליקציה.</li>
+</ul>
+
+המשתמש לא נתקע (blocked) והעבודה מתבצעת ברקע. בזמן הזה, המשתמש יכול לבצע פעולות כדי לגרום לכך להיראות כאילו הפעולה בוצעה. למשל, אם מדובר על העלאה של ציוץ (tweet), הוא יכול להתרפסם מיידית ב-timeline של המשתמש, אבל יקח זמן עד שהוא באמת יישלח לכל העוקבים (ייתכן פער של כמה שניות).
+
+דוגמאות לסוגי תורים:
+
+- [Redis](https://redis.io/) is useful as a simple message broker but messages can be lost.
+
+- [RabbitMQ](https://www.rabbitmq.com/) is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+
+- [Amazon SQS](https://aws.amazon.com/sqs/) is hosted but can have high latency and has the possibility of messages being delivered twice.
+
+### תורי משימות (Task Queues)
+
+תורי משימות מקבלים משימות לצד המידע הרלוונטי שלהן, מריצים אותן, ושולחים את התוצאות. הם יכולים לתמוך ב-scheduling, כלומר להריץ משימה כל זמן מסוים או בשעה קבועה. בנוסף, הם יכולים להריץ משימות כבדות מבחינה חישובית ברקע.
+
+- [Celery](https://docs.celeryproject.org/en/stable/) has support for scheduling and primarily has python support.
+
+### Back Pressure
+
+אם התור מתחיל לגדול באופן משמעותי מעבר לקצב שבו ה-workers מסוגלים לעבד, גודל התור יכול להיות מעבר למה שפנוי לנו בזיכרון, מה שיגרום ל-cache misses, יותר קריאות מהדיסק, וביצועים נמוכים יותר. [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) יכול לעזור באמצעות הגדלת גודל התור, מה ששומר על קצב הטיפול בבקשות לכאלו שכבר בתוך התור. אם התור מתמלא, השרת מפסיק לקבל עבודות חדשות ומחזיר ללקוח שגיאת HTTP 503 (עסוק). הלקוח יכול לנסות שוב לאחר זמן המתנה הולך וגדל כמו [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+
+### חסרונות: asynchronism
+
+<ul dir="rtl">
+ <li>במצבים שבהם מדובר בחישובים זולים במיוחד, או בתהליכים הדורשים עיבוד בזמן אמת, עדיף לעיתים לבצע את הפעולה באופן סינכרוני, משום שהוספת תור למערכת עלולה להוסיף עיכובים ומורכבות מיותרת.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+* [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
+* [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
+* [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
+* [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
 </div>
 
