@@ -30,7 +30,7 @@
 
 מדובר בפרויקט קוד פתוח (open source) שמתעדכן באופן מתמשך.
 
-מוזמנים [לתרום!](#contributing)
+מוזמנים [לתרום!](#תרומה-למדריך)
 
 ### להתכונן לראיונות ארכיטקטורה
 
@@ -41,11 +41,11 @@
 ### נושאים נוספים להכנה לראיונות:
 
 <ul>
-  <li><a href="#study-guide">מדריך למידה</a></li>
-  <li><a href="#how-to-approach-a-system-design-interview-question">איך לגשת לשאלת תכנון מערכת בראיון</a></li>
-  <li><a href="#system-design-interview-questions-with-solutions">שאלות ראיון בתכנון מערכות, <strong>כולל פתרונות</strong></a></li>
-  <li><a href="#object-oriented-design-interview-questions-with-solutions">שאלות ראיון בתכנון מונחה עצמים, <strong>כולל פתרונות</strong></a></li>
-  <li><a href="#additional-system-design-interview-questions">שאלות נוספות לראיונות תכנון מערכות</a></li>
+  <li><a href="#מדריך-למידה">מדריך למידה</a></li>
+  <li><a href="#איך-לגשת-לשאלת-ריאיון-ארכיטקטורה">איך לגשת לשאלת ריאיון ארכיטקטורה</a></li>
+  <li><a href="#שאלות-ריאיון-ארכיטקטורה-עם-פתרונות">שאלות ריאיון ארכיטקטורה עם פתרונות</li>
+  <li><a href="#שאלות-ריאיון-בתכנון-מונחה-עצמים-עם-פתרונות">שאלות ראיון בתכנון מונחה עצמים, עם פתרונות</a></li>
+  <li><a href="#שאלות-נוספות-לראיונות">שאלות נוספות לראיונות </a></li>
 </ul>
 
 </div>
@@ -101,7 +101,7 @@
   <li><a href="https://github.com/donnemartin/system-design-primer/issues/28">תרגום לשפות נוספות</a></li>
 </ul>
 
-תכנים שעדיין דורשים ליטוש מסומנים בתור <a href="#under-development">תחת פיתוח</a>.
+תכנים שעדיין דורשים ליטוש מסומנים בתור <a href="#תחת-פיתוח">תחת פיתוח</a>.
 
 מומלץ לעיין ב<a href="CONTRIBUTING.md">הנחיות לתרומה</a> לפני התחלה.
 
@@ -136,20 +136,20 @@
         <ul>
         <li><a href="#משפט-cap">משפט CAP</a>
             <ul>
-            <li><a href="#בחירה-ב-cp---עקביות-ועמידות-לפי">עקביות ועמידות לפיצול (CP)</a></li>
-            <li><a href="#בחירה-ב-ap---זמינות-ויכולת-חלוקה">זמינות ועמידות לפיצול (AP)</a></li>
+            <li><a href="#בחירה-ב-cp---עקביות-ועמידות-לפיצול">עקביות ועמידות לפיצול (CP)</a></li>
+            <li><a href="#בחירה-ב-ap---זמינות-ועמידות-לפיצול">זמינות ועמידות לפיצול (AP)</a></li>
             </ul>
         </li>
         </ul>
     </li>
-    <li><a href="#דפוסי-עקביות-consistency-patterns">דפוסי עקביות</a>
+    <li><a href="#דפוסי-עקביות-consistency-patterns">דפוסי עקביות (Consistency Patterns)</a>
         <ul>
-        <li><a href="#עקביות-חלשה-weak-consistency">עקביות חלשה (Weak)</a></li>
-        <li><a href="#עקביות-לא-מיידית-eventual-consistency">עקביות לא מיידית (Eventual)</a></li>
-        <li><a href="#עקביות-חזקה-strong-consistency">עקביות חזקה (Strong)</a></li>
+        <li><a href="#עקביות-חלשה-weak-consistency">עקביות חלשה (Weak Consistency)</a></li>
+        <li><a href="#עקביות-לא-מיידית-eventual-consistency">עקביות לא מיידית (Eventual Consistency)</a></li>
+        <li><a href="#עקביות-חזקה-strong-consistency">עקביות חזקה (Strong Consistency)</a></li>
         </ul>
     </li>
-    <li><a href="#דפוסי-זמינות-availability-patterns">דפוסי זמינות</a>
+    <li><a href="#דפוסי-זמינות-availability-patterns">דפוסי זמינות (Availability Patterns)</a>
         <ul>
         <li><a href="#גיבוי-בזמן-כישלון-fail-over">גיבוי בזמן כישלון (Fail-Over)</a></li>
         <li><a href="#שכפול-replication">שכפול (Replication)</a></li>
@@ -165,11 +165,11 @@
     </li>
     <li><a href="#מאזן-עומסים-load-balancer">מאזן עומסים (Load Balancer)</a>
         <ul>
-        <li><a href="#מאזן-עומסים-load-balancer">אקטיבי-פסיבי (Active-Passive)</a></li>
+        <li><a href="#אקטיבי-פסיבי-active-passive">אקטיבי-פסיבי (Active-Passive)</a></li>
         <li><a href="#אקטיבי-אקטיבי-active-active">אקטיבי-אקטיבי (Active-Active)</a></li>
         <li><a href="#איזון-עומסים-בשכבה-4">איזון עומסים בשכבה 4</a></li>
         <li><a href="#איזון-עומסים-בשכבה-7">איזון עומסים בשכבה 7</a></li>
-        <li><a href="#גדילה-אופקית-horizontal-scaling">גדילה אופקית (Horizontal)</a></li>
+        <li><a href="#גדילה-אופקית-horizontal-scaling">גדילה אופקית (Horizontal Scaling)</a></li>
         </ul>
     </li>
     <li><a href="#פרוקסי-הפוך-reverse-proxy">פרוקסי הפוך (Reverse Proxy)</a>
@@ -179,11 +179,11 @@
     </li>
     <li><a href="#שכבת-האפליקציה">שכבת האפליקציה</a>
         <ul>
-        <li><a href="#מיקרו-סרביסים-microservices">מיקרוסרביסים (Microservices)</a></li>
-        <li><a href="#גילוי-סרביסים-service-discovery">גילוי שירותים (Service Discovery)</a></li>
+        <li><a href="#מיקרוסרביסים-microservices">מיקרוסרביסים (Microservices)</a></li>
+        <li><a href="#גילוי-סרביסים-service-discovery">גילוי סרביסים (Service Discovery)</a></li>
         </ul>
     </li>
-    <li><a href="#מסדי-נתונים-db">מסדי נתונים</a>
+    <li><a href="#מסדי-נתונים-db">מסדי נתונים (DB)</a>
         <ul>
         <li><a href="#מסדי-נתונים-רלציוניים-rdbms">מסדי נתונים רלציוניים (RDBMS)</a>
             <ul>
@@ -191,70 +191,71 @@
             <li><a href="#שכפול-master-master">שכפול Master-Master</a></li>
             <li><a href="#פדרציה-federation">פדרציה (Federation)</a></li>
             <li><a href="#חלוקה-sharding">חלוקה (Sharding)</a></li>
-            <li><a href="#דנורמליזציה-denormalization">דה-נורמליזציה (Denormalization)</a></li>
-            <li><a href="#sql-tuning">SQL Tuning</a></li>
+            <li><a href="#דנורמליזציה-denormalization">דנורמליזציה (Denormalization)</a></li>
+            <li><a href="#אופטימיזציית-sql-tuning">אופטימיזציית SQL Tuning</a></li>
             </ul>
         </li>
-        <li><a href="#nosql">NoSQL</a>
+        <li><a href="#מסדי-נתונים-nosql">מסדי נתונים NoSQL</a>
             <ul>
             <li><a href="#אחסון-key-value">אחסון Key-Value</a></li>
             <li><a href="#אחסון-document">אחסון Document</a></li>
-            <li><a href="#אחסון-wide-column">אחסון Wide-Column</a></li>
+            <li><a href="#אחסון-wide-column">אחסון Wide Column</a></li>
             <li><a href="#אחסון-graph">אחסון Graph</a></li>
             </ul>
         </li>
-        <li><a href="#sql-or-nosql">SQL או NoSQL</a></li>
+        <li><a href="#השוואה-sql-or-nosql">השוואה: SQL or NoSQL</a></li>
         </ul>
     </li>
-    <li><a href="#cache">מטמון (Cache)</a>
+    <li><a href="#מטמון-cache">מטמון (Cache)</a>
         <ul>
-        <li><a href="#client-caching">מטמון בצד לקוח</a></li>
-        <li><a href="#cdn-caching">מטמון ב-CDN</a></li>
-        <li><a href="#web-server-caching">מטמון בשרת</a></li>
-        <li><a href="#database-caching">מטמון במסד נתונים</a></li>
-        <li><a href="#application-caching">מטמון באפליקציה</a></li>
-        <li><a href="#caching-at-the-database-query-level">מטמון ברמת שאילתה</a></li>
-        <li><a href="#caching-at-the-object-level">מטמון ברמת אובייקט</a></li>
-        <li><a href="#when-to-update-the-cache">מתי לעדכן את ה-cache?</a>
+        <li><a href="#מטמון-בצד-לקוח">מטמון בצד לקוח</a></li>
+        <li><a href="#מטמון-cdn">מטמון CDN</a></li>
+        <li><a href="#מטמון-בשרת">מטמון בשרת</a></li>
+        <li><a href="#מטמון-במסד-נתונים">מטמון במסד נתונים</a></li>
+        <li><a href="#מטמון-באפליקציה">מטמון באפליקציה</a></li>
+        <li><a href="#מטמון-ברמת-שאילתה">מטמון ברמת שאילתה</a></li>
+        <li><a href="#מטמון-ברמת-אובייקט">מטמון ברמת אובייקט</a></li>
+        <li><a href="#מתי-לעדכן-את-ה-cache">מתי לעדכן את ה-cache?</a>
             <ul>
-            <li><a href="#cache-aside">אסטרטגיית Cache-aside</a></li>
-            <li><a href="#write-through">אסטרטגיית Write-through</a></li>
-            <li><a href="#write-behind-write-back">אסטרטגיית Write-behind (write-back)</a></li>
-            <li><a href="#refresh-ahead">אסטרטגיית Refresh-ahead</a></li>
+            <li><a href="#אסטרטגיית-cache-aside">אסטרטגיית Cache-Aside</a></li>
+            <li><a href="#אסטרטגיית-write-through">אסטרטגיית Write-Through</a></li>
+            <li><a href="#אסטרטגיית-write-behindback">אסטרטגיית Write-Behind/Back</a></li>
+            <li><a href="#אסטרטגיית-refresh-ahead">אסטרטגיית Refresh-Ahead</a></li>
             </ul>
         </li>
         </ul>
     </li>
-    <li><a href="#asynchronism">אסינכרוניות (asynchronism)</a>
+    <li><a href="#אסינכרוניות-asynchronism">אסינכרוניות (Asynchronism)</a>
         <ul>
-        <li><a href="#message-queues">תורי הודעות (MQ)</a></li>
-        <li><a href="#task-queues">תורי משימות</a></li>
-        <li><a href="#back-pressure">לחץ אחורי (Back Pressure)</a></li>
+        <li><a href="#תורי-הודעות-message-queues">תורי הודעות (Message Queues)</a></li>
+        <li><a href="#תורי-משימות-task-queues">תורי משימות (Task Queues)</a></li>
+        <li><a href="#לחץ-נגדי-back-pressure">לחץ נגדי (Back Pressure)</a></li>
         </ul>
     </li>
-    <li><a href="#communication">תקשורת</a>
+    <li><a href="#תקשורת-communication">תקשורת (Communication)</a>
         <ul>
-        <li><a href="#transmission-control-protocol-tcp">פרוטוקול Transmission control protocol (TCP)</a></li>
-        <li><a href="#user-datagram-protocol-udp">פרוטוקול User datagram protocol (UDP)</a></li>
-        <li><a href="#remote-procedure-call-rpc">קריאת Remote procedure call (RPC)</a></li>
-        <li><a href="#representational-state-transfer-rest">פרוטוקול Representational state transfer (REST)</a></li>
+        <li><a href="#פרוטוקול-http">פרוטוקול HTTP</a></li>
+        <li><a href="#פרוטוקול-tcp">פרוטוקול TCP</a></li>
+        <li><a href="#פרוטוקול-udp">פרוטוקול UDP</a></li>
+        <li><a href="#פרוטוקול-rpc">פרוטוקול RPC</a></li>
+        <li><a href="#ממשק-rest">ממשק REST</a></li>
         </ul>
     </li>
-    <li><a href="#security">אבטחה</a></li>
-    <li><a href="#appendix">נספחים</a>
+    <li><a href="#אבטחת-מידע-security">אבטחת מידע (Security)</a></li>
+    <li><a href="#נספחים">נספחים</a>
         <ul>
-        <li><a href="#powers-of-two-table">טבלת חזקות של 2</a></li>
-        <li><a href="#latency-numbers-every-programmer-should-know">מספרי latency חשובים</a></li>
-        <li><a href="#additional-system-design-interview-questions">שאלות נוספות לראיונות</a></li>
-        <li><a href="#real-world-architectures">ארכיטקטורות מהעולם האמיתי</a></li>
-        <li><a href="#company-architectures">ארכיטקטורות של חברות</a></li>
-        <li><a href="#company-engineering-blogs">בלוגים טכניים של חברות</a></li>
+        <li><a href="#טבלת-חזקות-של-2">טבלת חזקות של 2</a></li>
+        <li><a href="#מספרי-latency-חשובים">מספרי latency חשובים</a></li>
+        <li><a href="#שאלות-נוספות-לראיונות">שאלות נוספות לראיונות</a></li>
+        <li><a href="#ארכיטקטורות-מהעולם-האמיתי">ארכיטקטורות מהעולם האמיתי</a></li>
+        <li><a href="#ארכיטקטורות-של-חברות">ארכיטקטורות של חברות</a></li>
+        <li><a href="#בלוגים-טכניים-של-חברות">בלוגים טכניים של חברות</a></li>
         </ul>
     </li>
-    <li><a href="#under-development">תחת פיתוח</a></li>
-    <li><a href="#credits">קרדיטים</a></li>
-    <li><a href="#contact-info">פרטי קשר</a></li>
-    <li><a href="#license">רישיון</a></li>
+    <li><a href="#תחת-פיתוח">תחת פיתוח</a></li>
+    <li><a href="#קרדיטים">קרדיטים</a></li>
+    <li><a href="#יצירת-קשר">פרטי קשר</a></li>
+    <li><a href="#רישיון">רישיון</a></li>
     </ul>
 </details>
 
@@ -441,7 +442,7 @@
 </div>
 
 
-## שאלות ריאיון תכנון מערכות עם פתרונות
+## שאלות ריאיון ארכיטקטורה עם פתרונות
 
 <div dir="rtl">
 
@@ -491,7 +492,8 @@
     </tr>
     <tr>
       <td>הוסף שאלה לתכנון מערכת</td>
-      <td><a href="#contributing">תרום</a></td>
+      <td><a href="#תרומה-למדריך
+    ">תרום</a></td>
     </tr>
   </tbody>
 </table>
@@ -605,7 +607,6 @@
 
 >**הערה: החלק הזה עדיין בפיתוח**
 
-
 <table>
 <thead>
     <tr>
@@ -640,11 +641,13 @@
     </tr>
     <tr>
     <td>תכנן מערך מעגלי</td>
-    <td><a href="#contributing">תרום</a></td>
+    <td><a href="#תרומה-למדריך
+  ">תרום</a></td>
     </tr>
     <tr>
     <td>הוסף שאלה בעיצוב מונחה עצמים</td>
-    <td><a href="#contributing">תרום</a></td>
+    <td><a href="#תרומה-למדריך
+  ">תרום</a></td>
     </tr>
 </tbody>
 </table>
@@ -1838,7 +1841,7 @@ def set_user(user_id, values):
 
 - [Celery](https://docs.celeryproject.org/en/stable/) has support for scheduling and primarily has python support.
 
-### Back Pressure
+### לחץ נגדי (Back Pressure)
 
 אם התור מתחיל לגדול באופן משמעותי מעבר לקצב שבו ה-workers מסוגלים לעבד, גודל התור יכול להיות מעבר למה שפנוי לנו בזיכרון, מה שיגרום ל-cache misses, יותר קריאות מהדיסק, וביצועים נמוכים יותר. [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) יכול לעזור באמצעות הגדלת גודל התור, מה ששומר על קצב הטיפול בבקשות לכאלו שכבר בתוך התור. אם התור מתמלא, השרת מפסיק לקבל עבודות חדשות ומחזיר ללקוח שגיאת HTTP 503 (עסוק). הלקוח יכול לנסות שוב לאחר זמן המתנה הולך וגדל כמו [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
 
@@ -2062,7 +2065,7 @@ PUT /someresources/anId
 
 ## אבטחת מידע (Security)
 
-הפרק הזה זקוק לעדכונים. מוזמנים [לעזור](#contributing)!
+הפרק הזה זקוק לעדכונים. מוזמנים [לעזור](#תרומה-למדריך)!
 
 אבטחת מידע היא תחום רחב ומורכב, אבל לרוב הראיונות (כל עוד אינך מומחה אבטחה) מספיק להכיר את העקרונות הבסיסיים:
 
@@ -2180,7 +2183,7 @@ Notes
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
-| Add a system design question | [Contribute](#contributing) |
+| Add a system design question | [Contribute](#תרומה-למדריך) |
 
 ### ארכיטקטורות מהעולם האמיתי
 
@@ -2222,7 +2225,7 @@ Notes
 | Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | Add an architecture | [Contribute](#contributing) |
+| | Add an architecture | [Contribute](#תרומה-למדריך) |
 
 ### ארכיטקטורות של חברות
 
@@ -2305,17 +2308,14 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-
-
-
 ## תחת פיתוח
 
-מעוניין להוסיף חלק או לעזור לסיים אחד שנמצא בעבודה? [תרום](#contributing)!
+מעוניין להוסיף חלק או לעזור לסיים אחד שנמצא בעבודה? [תרום](#תרומה-למדריך)!
 
 - Distributed computing with MapReduce
 - Consistent hashing
 - Scatter gather
-- [Contribute](#contributing)
+- [Contribute](#תרומה-למדריך)
 
 ## קרדיטים
 
