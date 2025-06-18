@@ -2025,7 +2025,7 @@ PUT /someresources/anId
 
 הפרוטוקול מתמקד בחשיפת הנתונים בתור משאבים (בשונה מהפעלת פונקציות ב-RPC) באמצעות כתובת URL קבועה. הלקוח שולח בקשות HTTP סטנדרטיות והשרת מחזיר את התשובה המתאימה. זה מאפשר coupling נמוך בין הלקוח לשרת: הלקוח רק צריך לדעת אילו URI-ים קיימים ואילו פעלים מותר להפעיל (GET, POST), אין תלות בשפת התכנות של השרת או בספריות מיוחדות. REST מספק ממשק אחיד לייצוג הפעולות - [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md). כיוון שהוא stateless, קל לפרוס עותקים רבים שלו מאחורי load balancer ולבזר את העומסים. 
 
-#### Disadvantage(s): REST
+#### חסרונות: REST
 
 <ul dir="rtl">
  <li>כיוון ש-REST מתמקד שחשיפת נתונים בתור משאבים, אם הדאטא לא מסתדר באופן טבעי בהיררכיה הזאת, זה יכול פחות להתאים. למשל, להחזיר את כל הרשומות שהתעדכנו מהשעה האחרונה, עונה על סט מסוים של אירועים שלאו דווקא קל לבטא בתור path. עם REST, ניתן לשלב URI path, query parameters, ואולי גם להשתמש ב-request body.</li>
@@ -2059,4 +2059,23 @@ PUT /someresources/anId
 - [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 - [Thrift](https://code.facebook.com/posts/1468950976659943/)
 - [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+
+## אבטחת מידע
+
+הפרק הזה זקוק לעדכונים. מוזמנים [לעזור](#contributing)!
+
+אבטחת מידע היא תחום רחב ומורכב, אבל לרוב הראיונות (כל עוד אינך מומחה אבטחה) מספיק להכיר את העקרונות הבסיסיים:
+
+<ul dir="rtl">
+ <li>יש לדאוג שגם התקשורת (HTTPS/TLS) וגם הדאטא השמור על אחסון כלשהו יהיו מוצפנים.</li>
+ <li>יש לנקות ולאמת כל קלט שמגיע מהדפדפן, ממשקי API חיצוניים או מקבצים כדי למנוע מתקפות כמו <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> או <a href="https://en.wikipedia.org/wiki/SQL_injection">SQL injection</a>.</li>
+ <li>כשמרכיבים שאילתת SQL רצוי להשתמש במשתנים או ORM שמוסיף אותם אוטומטית, בלי לשרשר מחרוזות. כך המנוע לוקח את הפרמטרים כערכים ולא כחלק מהקוד.</li>
+ <li>לפעול לפי עיקרון מינימום ההרשאות - <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">least privilege</a>. לכל תהליך, שירות, או משתמש יש להעניק רק את ההרשאות ההכרחיות לביצוע עבודתו ולא יותר.</li>
+</ul>
+
+### מקורות וקריאה נוספת
+
+- [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
+- [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
+- [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
