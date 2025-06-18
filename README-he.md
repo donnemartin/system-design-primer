@@ -116,7 +116,7 @@
 > כל חלק מכיל קישורים להרחבה וללמידה מעמיקה יותר.
 
 <p align="center">
-  <img src="images/jrUBAF7.png", width="75%">
+  <img src="images/jrUBAF7.png", width="60%">
   <br/>
 </p>
 
@@ -268,7 +268,7 @@
 > נושאים מוצעים ללימוד לפי לוח הזמנים לריאיון שלך (קצר, בינוני, ארוך)
 
 <p align="center">
-  <img src="images/OfVllex.png", width="75%">
+  <img src="images/OfVllex.png", width="60%">
   <br/>
 </p>
 
@@ -307,43 +307,43 @@
   </thead>
   <tbody>
     <tr>
-      <td>קרא את <a href="#index-of-system-design-topics">הנושאים בתכנון מערכות</a> כדי לקבל הבנה כללית של איך מערכות עובדות</td>
+      <td>קרא את <a href="#אינדקס-נושאים-בארכיטקטורה">אינדקס נושאים בארכיטקטורה</a> כדי לקבל הבנה כללית של איך מערכות עובדות</td>
       <td>:+1:</td>
       <td>:+1:</td>
       <td>:+1:</td>
     </tr>
     <tr>
-      <td>קרא כמה מאמרים מתוך <a href="#company-engineering-blogs">בלוגים של חברות</a> שאתה מתראיין אליהן</td>
+      <td>קרא כמה מאמרים מתוך <a href="#בלוגים-טכניים-של-חברות">בלוגים טכניים של חברות</a> שאתה מתראיין אליהן</td>
       <td>:+1:</td>
       <td>:+1:</td>
       <td>:+1:</td>
     </tr>
     <tr>
-      <td>קרא על כמה <a href="#real-world-architectures">ארכיטקטורות מהעולם האמיתי</a></td>
+      <td>קרא על כמה <a href="#ארכיטקטורות-מהעולם-האמיתי">ארכיטקטורות מהעולם האמיתי</a></td>
       <td>:+1:</td>
       <td>:+1:</td>
       <td>:+1:</td>
     </tr>
     <tr>
-      <td>חזור על <a href="#how-to-approach-a-system-design-interview-question">איך לגשת לשאלת ריאיון בתכנון מערכות</a></td>
+      <td>חזור על <a href="#איך-לגשת-לשאלת-ריאיון-ארכיטקטורה">איך לגשת לשאלת ריאיון ארכיטקטורה</a></td>
       <td>:+1:</td>
       <td>:+1:</td>
       <td>:+1:</td>
     </tr>
     <tr>
-      <td>תרגל <a href="#system-design-interview-questions-with-solutions">שאלות ריאיון בתכנון מערכות עם פתרונות</a></td>
+      <td>תרגל <a href="#שאלות-ריאיון-ארכיטקטורה-עם-פתרונות">שאלות ריאיון ארכיטקטורה עם פתרונות</a></td>
       <td>כמה</td>
       <td>הרבה</td>
       <td>רוב</td>
     </tr>
     <tr>
-      <td>תרגל <a href="#object-oriented-design-interview-questions-with-solutions">שאלות ריאיון בתכנון מונחה עצמים עם פתרונות</a></td>
+      <td>תרגל <a href="#שאלות-ריאיון-בתכנון-מונחה-עצמים-עם-פתרונות">שאלות ריאיון בתכנון מונחה עצמים עם פתרונות</a></td>
       <td>כמה</td>
       <td>הרבה</td>
       <td>רוב</td>
     </tr>
     <tr>
-      <td>חזור על <a href="#additional-system-design-interview-questions">שאלות ריאיון נוספות בתכנון מערכות</a></td>
+      <td>חזור על <a href="#שאלות-נוספות-לראיונות">שאלות ריאיון נוספות</a></td>
       <td>כמה</td>
       <td>הרבה</td>
       <td>רוב</td>
@@ -361,7 +361,7 @@
 
 ראיון ארכיטקטורה הוא **שיחה פתוחה**. מצופה ממך להוביל אותה.
 
-אתה יכול להיעזר בצעדים הבאים כדי להנחות את הדיון. כדי לחזק את ההבנה של התהליך, תעבור על [שאלות ריאיון בתכנון מערכות עם פתרונות](#system-design-interview-questions-with-solutions) אל מול הצעדים הבאים:
+אתה יכול להיעזר בצעדים הבאים כדי להנחות את הדיון. כדי לחזק את ההבנה של התהליך, תעבור על [שאלות ריאיון ארכיטקטורה עם פתרונות](#שאלות-ריאיון-ארכיטקטורה-עם-פתרונות) אל מול הצעדים הבאים:
 
 ### תאר מקרי שימוש, אילוצים והנחות עבודה
 
@@ -420,24 +420,24 @@
   <li>פיצול בסיס נתונים (Database sharding)</li>
 </ul>
 
-דון בפתרונות אפשריים וה-trade-offs. הכול הוא trade-off. התמודד עם צווארי בקבוק בעזרת [עקרונות תכנון מערכת סקילבילית](#index-of-system-design-topics).
+דון בפתרונות אפשריים וה-trade-offs. הכול הוא trade-off. התמודד עם צווארי בקבוק בעזרת [עקרונות תכנון מערכת סקילבילית](#אינדקס-נושאים-בארכיטקטורה).
 
-### חישובים "על גב המעטפה" (מהירים)
+### חישובי מספרים (back-of-the-enveloppe)
 
-ייתכן שיבקשו ממך לבצע הערכות באופן ידני. ראה את [הנספח](#appendix) עבור המשאבים הבאים:
+ייתכן שיבקשו ממך לבצע הערכות באופן ידני. ראה את [הנספחים](#נספחים) עבור המשאבים הבאים:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+- [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+- [Powers of two table](#powers-of-two-table)
+- [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 
 ### מקורות לקריאה נוספת
 
 עיין בקישורים הבאים כדי להבין טוב יותר למה לצפות:
 
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+- [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+- [The system design interview](http://www.hiredintech.com/system-design)
+- [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+- [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
 </div>
 
@@ -765,7 +765,7 @@
 
 תשובות לבקשות מהמערכת מחזירות את הגרסה הזמינה ביותר של הנתונים הזמינים בשרת הרלוונטי, שאינה בהכרח האחרונה. כתיבה עשויה לקחת זמן מסוים עד שתסתיים, עד אשר התקשורת הבעייתית תיפתר.
 
-לכן, AP הוא בחירה טובה במידה ויש הצדקה עסקית לעבוד במצב של [eventual consistency](#eventual-consistency) או במידה והמערכת צריכה להמשיך לשרת למרות שגיאות בלתי-תלויות.
+לכן, AP הוא בחירה טובה במידה ויש הצדקה עסקית לעבוד במצב של [eventual consistency](#עקביות-לא-מיידית-eventual-consistency) או במידה והמערכת צריכה להמשיך לשרת למרות שגיאות בלתי-תלויות.
 
 ### חומרים וקריאה נוספת
 
@@ -782,7 +782,7 @@
 <div dir="rtl">
 
 כאשר קיימים מספר עותקים של אותם נתונים, עלינו להחליט כיצד לסנכרן ביניהם כדי שלקוחות יקבלו תצוגה עקבית של המידע.  
-ניזכר בהגדרה של עקביות מתוך [משפט CAP](#cap-theorem): כל קריאה מקבלת את הכתיבה העדכנית ביותר או שגיאה.
+ניזכר בהגדרה של עקביות מתוך [משפט CAP](#משפט-cap): כל קריאה מקבלת את הכתיבה העדכנית ביותר או שגיאה.
 
 ### עקביות חלשה (Weak Consistency)
 
@@ -844,10 +844,10 @@
 
 #### עבור Master-Slave/Master-Master
 
-נושא זה נדון בפירוט נוסף בחלק על [מסדי נתונים](#database):
+נושא זה נדון בפירוט נוסף בחלק על [מסדי נתונים](#מסדי-נתונים-db):
 
-- [Master-slave replication](#master-slave-replication)
-- [Master-master replication](#master-master-replication)
+- [Master-slave replication](#שכפול-master-slave)
+- [Master-master replication](#שכפול-master-master)
 
 </div>
 
@@ -1031,8 +1031,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
   </li>
 </ul>
 
-כדי להגן מפני כישלונות נהוג להקים מספר מאזני עומסים, במצב  
-[Active-Passive](#אקטיבי-פסיבי-active-passive) או [Active-Active](#אקטיבי-אקטיבי-active-active).
+כדי להגן מפני כישלונות נהוג להקים מספר מאזני עומסים, במצב [Active-Passive](#אקטיבי-פסיבי-active-passive) או [Active-Active](#אקטיבי-אקטיבי-active-active).
 
 מאזן עומסים יכול לנתב את התעבורה על פי מדדים שונים:
 
@@ -1045,7 +1044,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 
 ### איזון עומסים בשכבה 4
 
-מאזני עומסים בשכבה 4 בוחנים מידע בשכבת התעבורה ([transport layer](#communication)) כדי להחליט כיצד להפיץ בקשות.  
+מאזני עומסים בשכבה 4 בוחנים מידע בשכבת התעבורה ([transport layer](#תקשורת-communication)) כדי להחליט כיצד להפיץ בקשות.  
 בדרך כלל, מדובר בכתובות ה-IP של המקור והיעד ובפורטים שבכותרת (header), ולא בתוכן הפקטה (packet).  
 מאזני עומסים בשכבה 4 מעבירים את חבילות הרשת אל ומן השרת הנבחר (upstream server) תוך ביצוע  
 [תרגום כתובות רשת (NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
@@ -1053,7 +1052,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 
 ### איזון עומסים בשכבה 7
 
-מאזני עומסים בשכבה 7 בוחנים את [שכבת האפליקציה](#communication) כדי להחליט כיצד להפיץ בקשות. ההחלטה יכולה להתבסס על תוכן הכותרות (headers), גוף ההודעה, ועוגיות (cookies).
+מאזני עומסים בשכבה 7 בוחנים את [שכבת האפליקציה](#תקשורת-communication) כדי להחליט כיצד להפיץ בקשות. ההחלטה יכולה להתבסס על תוכן הכותרות (headers), גוף ההודעה, ועוגיות (cookies).
 
 מאזן עומסים בשכבה 7 מסיים (terminates) את תעבורת הרשת אל מול הלקוח, קורא את ההודעה, מקבל החלטת איזון-עומסים, ואז פותח חיבור לשרת שנבחר.  
 למשל, מאזן כזה יכול לשלוח תעבורת וידאו לשרתים שמאחסנים קטעי וידאו, ובמקביל לנתב תעבורת חיוב משתמשים (billing) לשרתים מוקשחים אבטחתית.
@@ -1071,7 +1070,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
   <li>גדילה אופקית מוסיפה מורכבות וכוללת שכפול שרתים
     <ul>
       <li>השרתים צריכים להיות stateless: אין לאחסן בהם מידע משתמש כגון סשנים או תמונות פרופיל</li>
-      <li>ניתן לשמור סשנים באחסון נתונים מרכזי כגון <a href="#database">מסד־נתונים</a> (SQL או NoSQL) או <a href="#cache">מטמון</a> פרסיסטנטי (Redis, Memcached)</li>
+      <li>ניתן לשמור סשנים באחסון נתונים מרכזי כגון <a href="#מסדי-נתונים-db">מסד־נתונים</a> (SQL או NoSQL) או <a href="#מטמון-cache">מטמון</a> פרסיסטנטי (Redis, Memcached)</li>
     </ul>
   </li>
   <li>שרתים בהמשך השרשרת (downstream) למשל cache ו-DB צריכים להתמודד עם יותר חיבורים בו-זמנית ככל שמספר שרתי האפליקציה גדל</li>
@@ -1157,7 +1156,7 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 הפרדת שכבת הרשת משכבת האפליקציה (ידועה גם כשכבת ה-platform), מאפשרת לבצע scaling ולקנפג את שתי השכבות באופן בלתי תלוי. הוספת API חדש גוררת הוספתי שרתי אפליקציה, מבלי להוסיף בהכרח גם שרתי המטפלים בלוגיקת הרשת. 
 
 עקרון האחריות היחידה (**single respoinsibility principle**) מעודד סרביסים עצמאיים וקטנים שעובדים יחד. צוותים קטנים המטפלים שירותים קטנים יכלוים להתכוונן בצורה מיטבית לגדילה מהירה.
-Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוניות](#asynchronism).
+Workers בשכבת האפליקציה מסייעים גם [לאסינכרוניות](#אסינכרוניות-asynchronism).
 
 ### מיקרוסרביסים (Microservices)
 
@@ -1170,7 +1169,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 מערכות כמו [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcddocs/latest), ו-[Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) מסייעות לשירותים “למצוא” זה את זה על ידי ניהול ומעקב אחר שמות הסרביסים, כתובות IP, ופורטים.
 בדיקות דופק ([Health checks](https://www.consul.io/intro/getting-started/checks.html)) — מאמתות את תקינות השירות, לעיתים קרובות באמצעות endpoint HTTP.
 גם Consul וגם Etcd כוללים
-[אחסון key-value](#key-value-store) מובנה, השימושי לאחסון קונפיגורציה ונתונים משותפים.
+[אחסון key-value](#אחסון-key-value) מובנה, השימושי לאחסון קונפיגורציה ונתונים משותפים.
 
 ### חסרונות: שכבת האפליקציה
 
@@ -1230,7 +1229,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 <ul dir="rtl">
   <li>נדרשת לוגיקה לקידום slave ל-master.</li>
-  <li>ראה <a href="#disadvantages-replication">חסרונות: replication</a> – רלוונטי גם ל-Master-Slave וגם ל-Master-Master.</li>
+  <li>ראה <a href="#חסרונות-replication-כללי">חסרונות: replication</a> – רלוונטי גם ל-Master-Slave וגם ל-Master-Master.</li>
 </ul>
 
 ---
@@ -1251,7 +1250,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
   <li>נדרש מאזן עומסים או שינוי לוגיקת האפליקציה כדי להחליט לאן לכתוב.</li>
   <li>רוב מערכות ה-Master-Master מפרות עקרון של עקביות (לכן מפרות ACID) או סובלות מאיטיות כתיבה עקב הצורך לבצע סנכרון.</li>
   <li>ככל שמתרבים שרתים שמאפשרים כתיבה וה-latency גדל, יש צורך להכריע יותר מקרים של conflict.</li>
-  <li>ראה <a href="#disadvantages-replication">חסרונות: replication</a>.</li>
+  <li>ראה <a href="#חסרונות-replication-כללי">חסרונות: replication</a>.</li>
 </ul>
 
 ##### חסרונות: Replication (כללי)
@@ -1307,7 +1306,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 חלוקה מפזרת את הדאטא בין DBים שונים כך שכל DB מנהל חלק (subset) מסוים של הדאטא. נסתכל למשל על DB של משתמשים, ככל שכמות המשתמשים עולה, יותר חלקים (shards) מתווספים ל-cluster.
 
-בדומה ליתרונות של [פדרציה](), חלוקה גוררת פחות תעבורה של קריאות וכתיבות, פחות שכפול, ויותר cache hits. גודל ה-index גם קטן, מה שלרוב משפר את קצב ביצוע השאילתות.
+בדומה ליתרונות של [פדרציה](#פדרציה-federation), חלוקה גוררת פחות תעבורה של קריאות וכתיבות, פחות שכפול, ויותר cache hits. גודל ה-index גם קטן, מה שלרוב משפר את קצב ביצוע השאילתות.
 אם shard אחד נופל, כל שאר ה-shards עדיין פעילים, למרות שנרצה לבצע שכפול מסוים כדי להימנע מאיבוד מידע. כמו פדרציה, אין master מרכזי אחיד שכל הכתיבות עוברות דרכו, מה שמאפשר לכתוב במקביל ל-DBים שונים ולהגביר את ה-throughput.
 
 דרכים נפוצות לבצע sharding לטבלה של משתמשים הן באמצעות האות הראשונה של שם המשפחה, או המיקום הגיאוגרפי של המשתמש.
@@ -1392,7 +1391,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 ##### מניעת JOIN יקר
 
 <ul dir="rtl">
-  <li>לשקול <a href="#">דנורמליזציה</a> כאשר הביצועים דורשים זאת.</li>
+  <li>לשקול <a href="#דנורמליזציה-denormalization">דנורמליזציה</a> כאשר הביצועים דורשים זאת.</li>
 </ul>
 
 ##### חלוקה לטבלאות (Partitioning)
@@ -1418,9 +1417,9 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 לעומת SQL קלאסי, NoSQL הוא אוסף של מבני נתונים הנשמרים בתור **Key-Value Store**, **Document Store**, **Wide Column Store** או **Graph Database**.  
 הנתונים מנורמלים פחות, ופעולות JOIN מבוצעות לרוב בקוד האפליקציה עצמה.  
-רוב האחסונים מסוג NoSQL אינם תומכים בטרנזקציות ACID מלאות ומספקים [עקביות לא מיידית](#eventual-consistency).
+רוב האחסונים מסוג NoSQL אינם תומכים בטרנזקציות ACID מלאות ומספקים [עקביות לא מיידית](#עקביות-לא-מיידית-eventual-consistency).
 
-מקובל לסמן את מאפייני NoSQL בראשי התיבות **BASE** (תווך שימוש ב[משפט CAP](#cap-theorem), תכונות BASE מתעדפות זמינות (A) על פני עקביות (C)):
+מקובל לסמן את מאפייני NoSQL בראשי התיבות **BASE** (תווך שימוש ב[משפט CAP](#משפט-cap), תכונות BASE מתעדפות זמינות (A) על פני עקביות (C)):
 
 <ul dir="rtl">
   <li><strong>Basically Available</strong> – המערכת מבטיחה זמינות.</li>
@@ -1428,14 +1427,14 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
   <li><strong>Eventual Consistency</strong> – המערכת תהפוך עקבית בסופו של דבר, בהנחה שלא מתקבל קלט נוסף בתקופה זו.</li>
 </ul>
 
-מעבר לבחירה בין [SQL ל-NoSQL](#sql-or-nosql), חשוב להבין איזה סוג NoSQL מתאים ביותר לשימוש שלך.  נדון בסוגים **Key-Value Stores**, **Document Stores**, **Wide Column Stores** ו-**Graph Databases**.
+מעבר לבחירה בין [SQL ל-NoSQL](#השוואה-sql-or-nosql), חשוב להבין איזה סוג NoSQL מתאים ביותר לשימוש שלך.  נדון בסוגים **Key-Value Stores**, **Document Stores**, **Wide Column Stores** ו-**Graph Databases**.
 
 ---
 
 #### אחסון Key-Value
 > הפשטה: Hash Table
 
-אחסון Key-Value לרוב מאפשר קריאות וכתיבות ב-O(1) ומגובה באמצעות זיכרון או SSD. ניתן לשמור מפתחות ב[סדר לקסיקוגרפי](), מה שמאפשר שליפה יעילה של טווחי המפתחות.
+אחסון Key-Value לרוב מאפשר קריאות וכתיבות ב-O(1) ומגובה באמצעות זיכרון או SSD. ניתן לשמור מפתחות ב[סדר לקסיקוגרפי](https://he.wikipedia.org/wiki/%D7%99%D7%97%D7%A1_%D7%A1%D7%93%D7%A8_%D7%9E%D7%99%D7%9C%D7%95%D7%A0%D7%99), מה שמאפשר שליפה יעילה של טווחי המפתחות.
 אחסון זה מאפשר תמיכה ב-metadadta עם ערכים.
 
 אחסון זה מספק ביצועים גבוהים ולרוב בשימוש עבור מודלי דאטא פשוטים או לדאטא שמשתנה במהירות, כמו שכבת cache in-memory. כיוון שסוגי אחסון זה מציעים סט מצומצם של פעולות, המורכבות נמצאת בשכבת האפלקציה אם נדרשות פעולות נוספות.
@@ -1517,7 +1516,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 ה-DB מותאם לייצוג קשרים מורכבים – עם הרבה מפתחות זרים (Foreign Keys) או יחסי Many-to-Many.
 
 אחסון זה מאפשר ביצועים גבוהים למודלים עם יחסים מורכבים, למשל כמו רשת חברתית. הטכנולוגיה הזו יחסית חדשה ופות נפוצה; ייתכן קושי למצוא כלי פיתוח ומשאבים. הרבה אחסונים מסוג זה נגישים רק באמצעות
-[REST APIs](#representational-state-transfer-rest).
+[REST APIs](#ממשק-rest).
 
 ##### מקורות וקריאה נוספת: Graph
 
@@ -1600,15 +1599,15 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 ### מטמון בצד לקוח
 
-מטמון יכול להיות ממוקם בצד הלקוח (מערכת ההפעלה או הדפדפן), [צד השרת](#reverse-proxy-web-server), או בשכבה נפרדת.
+מטמון יכול להיות ממוקם בצד הלקוח (מערכת ההפעלה או הדפדפן), [צד השרת](#פרוקסי-הפוך-reverse-proxy), או בשכבה נפרדת.
 
 ### מטמון CDN
 
-ניתן להסתכל על [CDN](#content-delivery-network) גם בתור שכבה של מטמון.
+ניתן להסתכל על [CDN](#רשתות-הפצת-תוכן-cdn) גם בתור שכבה של מטמון.
 
 ### מטמון בשרת
 
-[פרוקסי הפוך](#reverse-proxy-web-server) ומנגנוני cache כמו [Varnish](https://www.varnish-cache.org/) יכולים להנגיש תוכן סטטי ודינמי ישירות. שרתי web יכולים גם לבצע cache לבקשות כדי להחזיר תשובות בלי צורך להגיע עד לשרתי האפליקציה.
+[פרוקסי הפוך](#פרוקסי-הפוך-reverse-proxy) ומנגנוני cache כמו [Varnish](https://www.varnish-cache.org/) יכולים להנגיש תוכן סטטי ודינמי ישירות. שרתי web יכולים גם לבצע cache לבקשות כדי להחזיר תשובות בלי צורך להגיע עד לשרתי האפליקציה.
 
 ### מטמון במסד נתונים
 
