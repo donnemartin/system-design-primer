@@ -1156,11 +1156,11 @@ Pull CDN מתאים לאתרים עתירי תעבורה, שכן העומס מת
 עקרון האחריות היחידה (**single respoinsibility principle**) מעודד סרביסים עצמאיים וקטנים שעובדים יחד. צוותים קטנים המטפלים שירותים קטנים יכלוים להתכוונן בצורה מיטבית לגדילה מהירה.
 Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוניות](#asynchronism).
 
-### מיקרו-סרביסים (Microservices)
+### מיקרוסרביסים (Microservices)
 
 במונח [Microservices](https://he.wikipedia.org/wiki/מיקרו-שירותים) הכוונה למערך של שירותים קטנים,  מודולריים, הניתנים לפריסה עצמאית. כל שירות רץ כתהליך נפרד ומתקשר באמצעות מנגנון פשוט ומוגדר היטב כדי להשיג יעד עסקי.<sup><a href="https://smartbear.com/learn/api-design/what-are-microservices">1</a></sup>
 
-לדוגמה, ב-Pinterest יכולים להיות המיקרו-סרביסים הבאים: פרופיל משתמש, עוקבים, פיד, חיפוש, העלאת תמונה וכו'.
+לדוגמה, ב-Pinterest יכולים להיות המיקרוסרביסים הבאים: פרופיל משתמש, עוקבים, פיד, חיפוש, העלאת תמונה וכו'.
 
 ### גילוי סרביסים (Service Discovery)
 
@@ -1173,7 +1173,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 <ul dir="rtl">
   <li>הוספת שכבת אפליקציה עם סרביסים שהקשר ביניהם רופף (loosely coupled) דורשת גישה שונה בארכיטקטורה, תפעול ותהליכי פיתוח (לעומת מערכת מונוליטית).</li>
-  <li>מיקרו-סרביסים עלולים להוסיף מורכבות מבחינת פריסות ותפעול.</li>
+  <li>מיקרוסרביסים עלולים להוסיף מורכבות מבחינת פריסות ותפעול.</li>
 </ul>
 
 ### מקורות וקריאה נוספת
@@ -1349,7 +1349,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 
 ---
 
-#### SQL Tuning
+#### אופטימיזציית SQL Tuning 
 
 התחום של SQL Tuning הוא  רחב, ונכתבו עליו לא מעט [ספרים](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning).
 חשוב לבצע **Benchmark** ו-**Profile** כדי לדמות עומסים ולגלות צווארי-בקבוק.
@@ -1411,7 +1411,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 - [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 - [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
-### NoSQL
+### מסדי נתונים NoSQL
 
 לעומת SQL קלאסי, NoSQL הוא אוסף של מבני נתונים הנשמרים בתור **Key-Value Store**, **Document Store**, **Wide Column Store** או **Graph Database**.  
 הנתונים מנורמלים פחות, ופעולות JOIN מבוצעות לרוב בקוד האפליקציה עצמה.  
@@ -1530,7 +1530,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
 - [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 - [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### השוואה: SQL or NoSQL
 
 <p align="center">
   <img src="images/wXGqG5f.png", width="40%">
@@ -1538,7 +1538,7 @@ Workers בשכבת האפליקציה מסייעים גם [לא-סינכרוני
   <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
 </p>
 
--סיבות לשימוש ב**SQL**:
+סיבות לשימוש ב-**SQL**:
 
 <ul dir="rtl">
   <li>נתונים עם מבנה קבוע</li>
