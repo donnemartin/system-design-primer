@@ -1857,3 +1857,206 @@ def set_user(user_id, values):
 
 </div>
 
+## תקשורת
+
+<p align="center">
+  <img src="images/5KeocQs.jpg", width="60%">
+  <br/>
+  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
+</p>
+
+<div dir="rtl">
+
+### פרוטוקול HTTP
+
+פרוטוקול HTTP מאפשר ללקוח ולשרת אינטרנט להחליף מידע בפורמט מוגדר. הוא מבוסס על מבנה של request/response: הלקוח/הדפדפן שולח בקשה לתוכן או פעולה מסוימת, והשרת מחזיר תגובה הכוללת את הנתונים המבוקשים, לצד קוד סטטוס שמצהיר אם הבקשה הצליחה, נכשלה, או הופנתה למקום אחר.
+פרוטוקול זה הוא self-contained, כלומר כל המידע הנחוץ - הכותרות, סוג הבקשה, הנתונים - עובר כחבילה אחת. לכן החבילות האלה יכולות לעבור דרך router, load balancer בלי שהמתווכים יידרשו להבין את הלוגיקה. לאורך הדרך אותם גורמי ביניים יכולים להוסיף הצפנה, לדחוס נתונים, מבלי שהפרוטוקול עצמו ייפגע.
+
+בקשת HTTP טיפוסית מכילה verb (מתודה) ו-resource (נקודת קצה). דוגמאות:
+
+| Verb | Description | Idempotent* | Safe | Cacheable |
+|---|---|---|---|---|
+| GET | Reads a resource | Yes | Yes | Yes |
+| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
+| PUT | Creates or replace a resource | Yes | No | No |
+| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
+| DELETE | Deletes a resource | Yes | No | No |
+
+*ניתן לבצע מספר פעמים את אותה הבקשה ולקבל את אותה התוצאה כל פעם.
+
+פרוטוקול זה הוא בשכבת האפליקציה, והוא מסתמך על פרוטוקולים בשכבות נמוכות יותר כמו **TCP** ו-**UDP**.
+
+#### מקורות וקריאה נוספת
+
+* [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
+* [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
+* [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
+
+### פרוטוקול TCP
+
+<p align="center">
+  <img src="images/JdAsdvG.jpg", width="60%">
+  <br/>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+</p>
+
+פרוטוקול זה הוא מבוסס מעל [IP network](https://en.wikipedia.org/wiki/Internet_Protocol). החיבור נבנה ונסגר באמצעות [handshake](https://en.wikipedia.org/wiki/Handshaking). כל הפקטות שנשלחות מובטחות להגיע ליעד בדיוק בסדר המקורי שבו הן נשלחו, ובאופן תקין (uncorrupted):
+
+- Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
+- [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+
+אם השולח לא מקבל תשובה תקינה בתוך פרק זמן קצוב, הוא מניח שהמקטע אבד ומשדר אותו שוב. אם יש מספר timeouts כמה פעמים ברצף, אז החיבור נסגר. TCP מממש גם  [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) וגם [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control) על מנת לפקח על קצב הנתונים. ההבטחות הללו מוסיפות תזמונים, חישובים, וחבילות בקרה, מה שעלול לגרום לעיכובים וליצור תעבורה פחות מהירה מאשר UDP.
+
+כדי לאפשר throughput מהיר, שרתים שומרים הרבה חיבורי TCP פתוחים, מה שמוביל לצריכת זיכרון גבוהה. הבעיה מחריפה כאשר אותו שרת מפעיל חיבורים נפרדים בין התהליכים שלו לבין שירותים פנימיים אחרים, כמו לדוגמה אל שרת [memcached](https://memcached.org/). ביצוע [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool), שמירת אוסף חיבורים פתוחים המשותפים בין כל ה-threads, יכול לסייע ומצמצם את מספר החיבורים האמיתיים וחוסך זיכרון. בנוסף, ניתן לעבור ל-UDP היכן שניתן, שם אין שמירה של חיבור.
+
+ פרוטוקול TCP שימושי לאפליקציות שדורשות אמינות גבוהה, על פני מהירות וזמן תגובה מיידי. דוגמאות: שרתי HTTP, FTP, SMTP, SSH או MySQL בוחרים ב-TCP. שיקולים לבחירה בפרוטוקול זה על פני UDP:
+
+<ul dir="rtl">
+ <li>אנו זקוקים שכל הנתונים יגיעו בשלמותם, ללא אובדן מידע</li>
+ <li>נרצה להתאים את קצב הנתונים ברשת באופן אוטומטי, בלי להציף את הקו</li>
+</ul>
+
+
+### פרוטוקול UDP
+
+<p align="center">
+  <img src="images/yzDrJtA.jpg", width="60%">
+  <br/>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+</p>
+
+בפרוטוקול זה אין חיבור קבוע בין הלקוח לשרת. כל חבילה (Datagram) נשלחת בנפרד, ללא מעקב אחרי מה שכבר נשלח. החבילות יכולות להגיע ליעד בסדר שונה, או בכלל לא. אין תמיכה ב-congestion control. עם זאת, כיוון שאין את כל ההבטחות שכלולות ב-TCP, ה-overhead קטן מאוד ולכן UDP יעיל ומהיר יותר. האפליקציה צריכה להתמודד בעצמה עם איבוד חבילות וסדר החבילות.
+
+ב-UDP מתאפשר שידור (broadcast) - שליחת חבילה אחת לכל המכשירים של אותו ה-subnet. זה שימושי בשילוב עם [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) כיוון שבתחילת התהליך המחשב עדיין לא קיבל כתובת IP, ולכן אינו יודע למי לפנות ישירות. הוא משדר הודעה ברשת וכל שרת DHCP שומע את ההודעה, בוחר להשיב ומציע כתובת IP. ב-TCP זה לא היה עובד, כי שם אנו נדרשים לדעת כתובת יעד ספציפית. 
+
+פרוטוקול זה הינו פחות אמין אבל עובד בצורה טובה במקרים של real time כמו VoIP, וידאו צ'אט, streaming, ומשחקים מרובי משתתפים. מתי הוא עדיף על TCP?
+
+<ul dir="rtl">
+ <li>אנו זקוקים ל-latency נמוך ביותר</li>
+ <li>דאטא שמגיע באיחור גרוע יותר מאיבוד הדאטא</li>
+ <li>נרצה לממש מנגנון תיקון שגיאות משלנו</li>
+</ul>
+
+#### מקורות וקריאה נוספת: TCP and UDP
+
+- [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+- [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
+- [Difference between TCP and UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
+- [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+- [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+- [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
+
+</div>
+
+
+### פרוטוקול RPC
+
+<p align="center">
+  <img src="images/iF4Mkb5.png", width="60%">
+  <br/>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
+</p>
+
+ב-RPC, לקוח גורם לריצה של פונקציה במרחב כתובות שונה, לרוב על שרת מרוחק, כאילו הייתה פונקציה מקומית בקוד שלו. הלקוח פשוט קורא לפונקציה, ומאחורי הקלעים ישנה ספריה אשר מטפלת באריזה (serialization) של הפרמטרים, שליחת הבקשה ב-TCP, קבלת התשובה ותרגומה לאובייקט. 
+RPC הינו לרוב איטי יותר ופחות אמין מאשר קריאה מקומית, לכן חשוב לסמן קריאות כאלו כ-RPC כדי שמפתחים יבינו שהן עלולות להיכשל או להתעכב. תשתיות נפוצות כוללות את [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), [Avro](https://avro.apache.org/docs/current/).
+
+פרוטוקול זה מבוסס על בקשה-תגובה:
+
+<ul dir="rtl">
+ <li><b>תוכנית הלקוח</b> - הקוד קורא לפונקציית ה-stub של ה-client. הפרמטרים נדחפים למחסנית כמו בקריאה לוקאלית רגילה לפונקציה (LPC).</li>
+ <li><b>client stub</b> - הספריה אורזת את מזהה הפונקציה ואת הארגומנטים ומקודדת אותם בפורמט שניתן להעביר לצד השני.</li>
+ <li><b>תקשורת בצד הלקוח</b> - מערכת ההפעלה שולחת את ההודעה אל השרת</li>
+ <li><b>תקשורת בצד השרת</b> - מערכת ההפעלה מקבלת את ההודעה ומעבירה אותה ל-server stub המתאים.</li>
+ <li><b>server stub</b> - מפענחת את המזהה ואת הארגומנטים, קוראת לפונקציה האמיתית בקוד השרת עם אותם הפרמטרים.</li>
+ <li>השרת אורז את התוצאה ומחזיר אותה ללקוח על פי הצעדים הללו בסדר הפוך.</li>
+</ul>
+
+קריאות RPC לדוגמה:
+
+```
+GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+  "data":"anId";
+  "anotherdata": "another value"
+}
+```
+
+פרוטוקול מתמקד בהגדרת התנהגות של פונקציות כאילו הן חלק מהממשק המקומי של השפה. הקריאה עובדת מאחורי הקלעים לשרת אחר, אבל למפתח זה נראה כמו פונקציה רגילה. RPC מאפשר גם שליטה מוחלטת על הפונקציונליות והתקשורת, ומתאים לפיתוח מערכת פנימית. נרצה לבחור בספריה משלנו (SDK) כאשר:
+
+<ul dir="rtl">
+ <li>ישנה שפת יעד קבועה</li>
+ <li>נרצה לשלוט באיך שניגשים ללוגיקה שלנו</li>
+ <li>נרצה לשלוט בלוגיקה של טיפול בשגיאות</li>
+ <li>ביצועים וחווית המשתמש בקצה היא שיקול מרכזי</li>
+</ul>
+
+ממשקים שעוקבים אחרי פרוטוקול **REST** נוטים להיות יותר בשימוש עבור APIים פומביים.
+
+#### חסרונות: RPC
+
+<ul dir="rtl">
+ <li>תלות חזקה בין הלקוח לשרת</li>
+ <li>צריך להגדיר API נפרד לכל פעולה חדשה</li>
+ <li>קשה יותר לדבג RPC</li>
+ <li>לא קל בהכרח לעשות שימוש בטכנולוגיות נוכחיות בלי התאמות נוספות. יש לוודא שהקריאות עוברות <a href="https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/">caching כמו שצריך</a> על שרתים כמו <a href="http://www.squid-cache.org/">Squid</a></li>
+</ul>
+
+### ממשק REST
+
+בממשק REST הלקוח מבקש סט מסוים של משאבים המנוהלים על ידי השרת. השרת מספק ייצוג של המשאבים ופעולות שניתן לעשות עליהם. כל התקשורת היא 
+stateless ו-cacheable. יש 4 תכונות של ממשק RESTful:
+
+<ul dir="rtl">
+ <li><b>זיהוי משאבים (URI ב-HTTP)</b> - כל דבר שה-API חושף מקבל כתובת URL אחידה.</li>
+ <li><b>הפעולה נקבעת לפי הפועל והכותרות</b> - הפעלים השונים ב-HTTP בתוספת לכותרות ולגוף הבקשה מגדירים מה יקרה. עקרון זה מפריד בין ה-URI /orders/7 לבין הפעולה GET/PUT/PATCH.</li>
+ <li><b>סטטוס שגיאות סטנדרטי</b> - אין צורך להמציא קודי שגיאות, משתמשים בסטטוסים של HTTP כמו 404, 200 וכו'.</li>
+ <li><b><a href="http://restcookbook.com/Basics/hateoas/">HATEOAS</a></b> - ממשק HTML עבור HTTP, התשובה עצמה כוללת קישורים לפעולות הבאות האפשריות.</li>
+</ul>
+
+קריאות REST לדוגמה:
+```
+GET /someresources/anId
+
+PUT /someresources/anId
+{"anotherdata": "another value"}
+```
+
+הפרוטוקול מתמקד בחשיפת הנתונים בתור משאבים (בשונה מהפעלת פונקציות ב-RPC) באמצעות כתובת URL קבועה. הלקוח שולח בקשות HTTP סטנדרטיות והשרת מחזיר את התשובה המתאימה. זה מאפשר coupling נמוך בין הלקוח לשרת: הלקוח רק צריך לדעת אילו URI-ים קיימים ואילו פעלים מותר להפעיל (GET, POST), אין תלות בשפת התכנות של השרת או בספריות מיוחדות. REST מספק ממשק אחיד לייצוג הפעולות - [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md). כיוון שהוא stateless, קל לפרוס עותקים רבים שלו מאחורי load balancer ולבזר את העומסים. 
+
+#### Disadvantage(s): REST
+
+<ul dir="rtl">
+ <li>כיוון ש-REST מתמקד שחשיפת נתונים בתור משאבים, אם הדאטא לא מסתדר באופן טבעי בהיררכיה הזאת, זה יכול פחות להתאים. למשל, להחזיר את כל הרשומות שהתעדכנו מהשעה האחרונה, עונה על סט מסוים של אירועים שלאו דווקא קל לבטא בתור path. עם REST, ניתן לשלב URI path, query parameters, ואולי גם להשתמש ב-request body.</li>
+ <li>REST מתבסס לרוב על כמה פעולות ספציפיות (GET, POST, PUT, DELETE, PATCH) שלא תמיד מתאים בדיוק לשימוש המבוקש. פעולה כמו "העבר מסמכים שפג תוקפם לארכיון" אינה יושבת בצורה קלאסית על אחת הפקודות.</li>
+ <li>כדי לשלוף משאב מורכב שכולל היררכייה מסועפת, יש לבצע מספר בקשות הולכות וחוזרות בין הלקוח לשרת. למשל, כדי לקבל פוסט עם תגובות מסוימות, הלקוח צריך לבצע כמה קריאות נפרדות (קודם לפוסט, ואז לתגובות). עבור אפליקציות mobile עם תנאי חיבוריות משתנים, כמות הבקשות הללו אינה רצויה.</li>
+ <li>עם הזמן, שדות נוספים יכולים להתווסף לתגובה שחוזרת מה-API, ומשתמשים ישנים יכולים לקבל מידע שאינם זקוקים לו. הדבר מעמיס על גודל ה-payload ובכך על ה-latency.</li>
+</ul>
+
+### השוואה בין קריאות RPC ובין REST
+| Operation | RPC | REST |
+|---|---|---|
+| Signup    | **POST** /signup | **POST** /persons |
+| Resign    | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
+| Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
+| Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
+| Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| Update an item    | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+
+<p align="center">
+  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+</p>
+
+#### מקורות וקריאה נוספת: REST and RPC
+
+- [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
+- [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
+- [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
+- [Debunking the myths of RPC and REST](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+- [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
+- [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+- [Thrift](https://code.facebook.com/posts/1468950976659943/)
+- [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+
