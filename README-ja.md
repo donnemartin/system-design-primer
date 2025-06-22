@@ -300,7 +300,7 @@
 
 ### Pastebin.com (もしくは Bit.ly) を設計する
 
-[問題と解答を見る](solutions/system_design/pastebin/README.md)
+[問題と解答を見る](solutions/system_design/pastebin/README-ja.md)
 
 ![Imgur](images/4edXG0T.png)
 
