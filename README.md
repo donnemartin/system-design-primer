@@ -1128,6 +1128,7 @@ Sample data well-suited for NoSQL:
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+* [SQL vs. NoSQL: When to use each](https://www.ibm.com/cloud/blog/sql-vs-nosql/#:~:text=SQL%20vs.%20NoSQL:%20When%20to%20use%20each)
 
 ## Cache
 
