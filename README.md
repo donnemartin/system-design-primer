@@ -1797,6 +1797,11 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
+## Interview preparation resources
+
+### Mock interviews
+* [Meetapro - mock interviews with experienced FAANG interviewers](https://meetapro.com/?utm_source=sdpgithub)
+
 ## Under development
 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
