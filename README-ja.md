@@ -546,7 +546,7 @@ DNSは少数のオーソライズされたサーバーが上位に位置する�
 
 [CloudFlare](https://www.cloudflare.com/dns/) や [Route 53](https://aws.amazon.com/route53/) などのサービスはマネージドDNSサービスを提供しています。いくつかのDNSサービスでは様々な手法を使ってトラフィックを捌くことができます:
 
-* [加重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
+* [加重ラウンドロビン](https://g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb/)
     * トラフィックがメンテナンス中のサーバーに行くのを防ぎます
     * 様々なクラスターサイズに応じて調整します
     * A/B テスト
@@ -635,7 +635,7 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 * ランダム
 * Least loaded
 * セッション/クッキー
-* [ラウンドロビンもしくは加重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
+* [ラウンドロビンもしくは加重ラウンドロビン](https://g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb/)
 * [Layer 4](#layer-4-ロードバランシング)
 * [Layer 7](#layer-7-ロードバランシング)
 
