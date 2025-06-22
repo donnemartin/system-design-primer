@@ -55,9 +55,9 @@
 
 这里提供的[抽认卡堆](https://apps.ankiweb.net/)使用间隔重复的方法，帮助你记忆关键的系统设计概念。
 
-* [系统设计的卡堆](resources/flash_cards/System%20Design.apkg)
-* [系统设计的练习卡堆](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [面向对象设计的练习卡堆](resources/flash_cards/OO%20Design.apkg)
+* [系统设计的卡堆](https://github.com/donnemartin/system-design-primer/raw/master/resources/flash_cards/System%20Design.apkg)
+* [系统设计的练习卡堆](https://github.com/donnemartin/system-design-primer/raw/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [面向对象设计的练习卡堆](https://github.com/donnemartin/system-design-primer/raw/master/resources/flash_cards/OO%20Design.apkg)
 
 随时随地都可使用。
 
@@ -72,7 +72,7 @@
 
 请查看我们的姐妹仓库[**互动式编程挑战**](https://github.com/donnemartin/interactive-coding-challenges)，其中包含了一个额外的抽认卡堆：
 
-* [代码卡堆](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [代码卡堆](https://github.com/donnemartin/interactive-coding-challenges/raw/master/anki_cards/Coding.apkg)
 
 ## 贡献
 
