@@ -8,7 +8,13 @@ class UserService(object):
         self.users_by_id = {}  # key: user id, value: User
 
     def add_user(self, user_id, name, pass_hash):
-        pass
+        if user_id not in self.users_by_id:
+            new_user = User(user_id, name, pass_hash)
+            self.users_by_id[user_id] = new_user
+            return new_user
+        else:
+            # User with this ID already exists
+            return None
 
     def remove_user(self, user_id):
         pass
