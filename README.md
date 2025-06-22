@@ -161,6 +161,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Message queues](#message-queues)
     * [Task queues](#task-queues)
     * [Back pressure](#back-pressure)
+    * [Idempotent operations](#idempotent-operations)
 * [Communication](#communication)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
@@ -1355,6 +1356,12 @@ Tasks queues receive tasks and their related data, runs them, then delivers thei
 ### Back pressure
 
 If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+
+### Idempotent operations
+
+It is important to understand the benefits of [idempotent](https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning) operations, especially when using message or task queues that do not guarantee *exactly once* processing.  Many queueing systems guarantee *at least once* message delivery or processing.  These systems are not completely synchronized, for instance, across geographic regions, which simplifies some aspects of their implemntation or design.  Designing the operations that a task queue executes to be idempotent allows one to use a queueing system that has accepted this design trade-off.
+
+**[Google Pub/Sub](https://cloud.google.com/pubsub)** is a highly scalable, reliable, hosted messaging platform, but, on its own, does not guarantee *exactly once* delivery.
 
 ### Disadvantage(s): asynchronism
 
