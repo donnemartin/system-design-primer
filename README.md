@@ -377,7 +377,7 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 ### Step 1: Review the scalability video lecture
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=6PWTxRGh_dk)
 
 * Topics covered:
     * Vertical scaling
