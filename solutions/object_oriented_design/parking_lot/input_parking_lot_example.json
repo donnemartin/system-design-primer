@@ -1,0 +1,275 @@
+{
+  "total_number_of_parking_lot": 1,
+  "total_number_of_levels": 2,
+  "number_of_rows_in_each_level": 2,
+  "number_of_spots_in_each_row": 10,
+  "levels": {
+    "level_1": [
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 1,
+        "spot_size": 0
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 2,
+        "spot_size": 0
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 3,
+        "spot_size": 1
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 4,
+        "spot_size": 1
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 5,
+        "spot_size": 1
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 6,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 7,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 8,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 9,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 1,
+        "spot_number": 10,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 1,
+        "spot_size": 0
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 2,
+        "spot_size": 0
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 3,
+        "spot_size": 1
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 4,
+        "spot_size": 1
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 5,
+        "spot_size": 1
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 6,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 7,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 8,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 9,
+        "spot_size": 2
+      },
+      {
+        "level": 1,
+        "row": 2,
+        "spot_number": 10,
+        "spot_size": 2
+      }
+    ],
+    "level_2": [
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 1,
+        "spot_size": 0
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 2,
+        "spot_size": 0
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 3,
+        "spot_size": 1
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 4,
+        "spot_size": 1
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 5,
+        "spot_size": 1
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 6,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 7,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 8,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 9,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 1,
+        "spot_number": 10,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 1,
+        "spot_size": 0
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 2,
+        "spot_size": 0
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 3,
+        "spot_size": 1
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 4,
+        "spot_size": 1
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 5,
+        "spot_size": 1
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 6,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 7,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 8,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 9,
+        "spot_size": 2
+      },
+      {
+        "level": 2,
+        "row": 2,
+        "spot_number": 10,
+        "spot_size": 2
+      }
+    ]
+  },
+  "users":{
+        "1":{
+            "license_plate":"123-456",
+            "vehicle_type":"CAR",
+            "vehicle_size":"MEDIUM"
+        },
+        "2":{
+            "license_plate": "123-457",
+            "vehicle_type": "CAR",
+            "vehicle_size": "LARGE"
+        },
+        "3":{
+            "license_plate": "123-111",
+            "vehicle_type": "MOTORCYCLE",
+            "vehicle_size": "SMALL"
+        },
+        "4":{
+            "license_plate": "123-999",
+            "vehicle_type": "CAR",
+            "vehicle_size": "LARGE"
+        }
+    }
+
+}
