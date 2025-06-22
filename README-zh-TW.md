@@ -543,7 +543,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 * **A 記錄 (地址)** - 指向要對應的 IP 位置。
 * **CNAME (別名)** - 從一個域名指向另外一個域名，或是 `CNAME` (example.com 指向 www.example.com) 或指向一個 `A` 記錄。
 
-[CloudFlare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 提供了 DNS 的服務。而這些 DNS 服務商透過以下幾種方式來決定流量如何被分派：
+[Cloudflare](https://www.cloudflare.com/dns/) 和 [Route 53](https://aws.amazon.com/route53/) 提供了 DNS 的服務。而這些 DNS 服務商透過以下幾種方式來決定流量如何被分派：
 
 * [加權輪詢](http://g33kinfo.com/info/archives/2657)
     * 防止流量進入正在維修中的伺服器
@@ -1000,7 +1000,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 
 列儲存型資料庫的基本單元是一列 (名稱/值為一組)。每一列可以被分到一個列的族群中(類似於 SQL 中的資料表)。而每個列族群之上還可以有一個超級列群。你可以透過列的鍵值來存取每一列，每個值都有一個時間戳記來解決版本問題。
 
-Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，這影響了用於 Hadoop 系統中開源的 [HBase](https://www.mapr.com/blog/in-depth-look-hbase-architecture) often-used in the Hadoop ecosystem, 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。這些資料庫的儲存系統把鍵值利用字母順序來儲存，可以有效率的來讀取。
+Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)，這影響了用於 Hadoop 系統中開源的 [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, 和 Facebook 的 [Cassandra](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)。這些資料庫的儲存系統把鍵值利用字母順序來儲存，可以有效率的來讀取。
 
 列儲存型態的資料的提供了高可用和高擴展性，通常被用在大量資料的儲存上。
 
@@ -1008,7 +1008,7 @@ Google 發表了第一個列儲存型資料庫 [Bigtable](http://www.read.seas.h
 
 * [SQL 和 NoSQL 歷史簡介](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable 架構](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
-* [HBase 架構](https://www.mapr.com/blog/in-depth-look-hbase-architecture)
+* [HBase 架構](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra 架構](http://docs.datastax.com/en/archived/cassandra/2.0/cassandra/architecture/architectureIntro_c.html)
 
 #### 圖形資料庫
@@ -1616,7 +1616,7 @@ Notes
 | 設計一個 Facebook 時間軸功能           | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html)                                                                                                                                                                                                                                     |
 | 設計 Facebook 的聊天功能               | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0)                                                                                                                                                                                                                                         |
 | 設計一個像 Facebook 的圖形化搜尋系統   | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| 設計一個像 CloudFlare 的內容傳輸網路   | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)                                                                                                                                                                                                                                                                                                                                                             |
+| 設計一個像 Cloudflare 的內容傳輸網路   | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)                                                                                                                                                                                                                                                                                                                                                             |
 | 設計一個像 Twitter 的微網誌服務        | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/)                                                                                                                                                                                                                            |
 | 設計一個隨機 ID 生成系統               | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/)                                                                                                                                                                                                                                                                                                                         |
 | 給定一段時間，回傳次數排名前 K 的請求  | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf)                                                                                                                                                                                                                                                                                                         |
@@ -1717,7 +1717,7 @@ Notes
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)
-* [Hubspot Engineering Blog](http://product.hubspot.com/blog/topic/engineering)
+* [HubSpot Engineering Blog](http://product.hubspot.com/blog/topic/engineering)
 * [High Scalability](http://highscalability.com/)
 * [Instagram Engineering](http://instagram-engineering.tumblr.com/)
 * [Intel Software Blog](https://software.intel.com/en-us/blogs/)
@@ -1726,7 +1726,7 @@ Notes
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
+* [PayPal Developer Blog](https://devblog.paypal.com/category/engineering/)
 * [Pinterest Engineering Blog](http://engineering.pinterest.com/)
 * [Quora Engineering](https://engineering.quora.com/)
 * [Reddit Blog](http://www.redditblog.com/)
