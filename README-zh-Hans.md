@@ -1160,7 +1160,7 @@ Redis 有下列附加功能：
 
 由于你只能在缓存中存储有限的数据，所以你需要选择一个适用于你用例的缓存更新策略。
 
-#### 缓存模式
+#### 旁路缓存模式
 
 <p align="center">
   <img src="images/ONjORqk.png">
@@ -1190,7 +1190,7 @@ def get_user(self, user_id):
 
 添加到缓存中的数据读取速度很快。缓存模式也称为延迟加载。只缓存所请求的数据，这避免了没有被请求的数据占满了缓存空间。
 
-##### 缓存的缺点：
+##### 旁路缓存的缺点：
 
 - 请求的数据如果不在缓存中就需要经过三个步骤来获取数据，这会导致明显的延迟。
 - 如果数据库中的数据更新了会导致缓存中的数据过时。这个问题需要通过设置 TTL 强制更新缓存或者直写模式来缓解这种情况。
@@ -1247,7 +1247,7 @@ def set_user(user_id, values):
 ##### 回写模式的缺点：
 
 - 缓存可能在其内容成功存储之前丢失数据。
-- 执行直写模式比缓存或者回写模式更复杂。
+- 执行回写模式比旁路缓存或者直写模式更复杂。
 
 #### 刷新
 
@@ -1377,7 +1377,7 @@ TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面
 
 如果发送者没有收到正确的响应，它将重新发送数据包。如果多次超时，连接就会断开。TCP 实行[流量控制](https://en.wikipedia.org/wiki/Flow_control_(data))和[拥塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)。这些确保措施会导致延迟，而且通常导致传输效率比 UDP 低。
 
-为了确保高吞吐量，Web 服务器可以保持大量的 TCP 连接，从而导致高内存使用。在 Web 服务器线程间拥有大量开放连接可能开销巨大，消耗资源过多，也就是说，一个 [memcached](#memcached) 服务器。[连接池](https://en.wikipedia.org/wiki/Connection_pool) 可以帮助除了在适用的情况下切换到 UDP。
+为了确保高吞吐量，Web 服务器可以保持大量的 TCP 连接，从而导致高内存使用。在 Web 服务器线程间拥有大量开放连接可能开销巨大，消耗资源过多，例如一个 [memcached](#memcached) 服务器。[连接池](https://en.wikipedia.org/wiki/Connection_pool) 可以帮助除了在适用的情况下切换到 UDP。
 
 TCP  对于需要高可靠性但时间紧迫的应用程序很有用。比如包括 Web 服务器，数据库信息，SMTP，FTP 和 SSH。
 
