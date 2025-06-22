@@ -640,7 +640,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 ### 第四層負載平衡
 
-第四層的負載平衡器會監看 [傳輸層](#傳輸層) 的資訊來決定如何分發請求。一般來說，這包含了來源、目標 IP 位置，以及在 header 中的 port，但不包含資料本身的內容。第四層的負載平衡器會透過 [網路地址轉換(NAT)](https://www.nginx.com/resources/glossary/layer-4-load-balancing/) 來向上游的伺服器轉發資料。
+第四層的負載平衡器會監看 [傳輸層](#傳輸層) 的資訊來決定如何分發請求。一般來說，這包含了來源、目標 IP 位置，以及在 header 中的 port，但不包含資料本身的內容。第四層的負載平衡器會透過 [網路地址轉換(NAT)](https://www.geeksforgeeks.org/network-address-translation-nat/) 來向上游的伺服器轉發資料。
 
 ### 第七層負載平衡
 
