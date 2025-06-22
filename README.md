@@ -442,7 +442,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href="https://robertgreiner.com/cap-theorem-revisited/">Source: CAP theorem revisited</a></i>
 </p>
 
 In a distributed computer system, you can only support two of the following guarantees:
@@ -465,7 +465,7 @@ AP is a good choice if the business needs to allow for [eventual consistency](#e
 
 ### Source(s) and further reading
 
-* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
@@ -494,7 +494,7 @@ This approach is seen in file systems and RDBMSes.  Strong consistency works wel
 
 ### Source(s) and further reading
 
-* [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [Transactions across data centers](https://snarfed.org/transactions_across_datacenters_io.html)
 
 ## Availability patterns
 
@@ -583,7 +583,7 @@ If both `Foo` and `Bar` each had 99.9% availability, their total availability in
 <p align="center">
   <img src="images/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <i><a href="https://www.slideshare.net/srikrupa5/dns-security-presentation-issa">Source: DNS security presentation</a></i>
 </p>
 
 A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
@@ -607,8 +607,8 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 ### Disadvantage(s): DNS
 
 * Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](https://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
+* DNS services in the past have come under [DDoS attack](https://www.techrepublic.com/article/dyn-ddos-attack-5-takeaways-on-what-we-know-and-why-it-matters/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
 
 ### Source(s) and further reading
 
@@ -662,7 +662,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 <p align="center">
   <img src="images/h81n9iK.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">Source: Scalable system design patterns</a></i>
 </p>
 
 Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
@@ -686,7 +686,7 @@ Load balancers can route traffic based on various metrics, including:
 * Random
 * Least loaded
 * Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [Round robin or weighted round robin](https://constellix.com/news/load-balancing-round-robin-vs-weighted-round-robin)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
 
@@ -775,7 +775,7 @@ Additional benefits include:
 <p align="center">
   <img src="images/yB5SYwm.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href="https://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">Source: Intro to architecting systems for scale</a></i>
 </p>
 
 Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
@@ -790,7 +790,7 @@ Pinterest, for example, could have the following microservices: user profile, fo
 
 ### Service Discovery
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](https://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
 
 ### Disadvantage(s): application layer
 
@@ -833,7 +833,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 <p align="center">
   <img src="images/C9ioGtn.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href="https://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 ##### Disadvantage(s): master-slave replication
@@ -848,7 +848,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 <p align="center">
   <img src="images/krAHLGg.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href="https://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 ##### Disadvantage(s): master-master replication
@@ -897,7 +897,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 <p align="center">
   <img src="images/wU8x5Id.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href="https://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
@@ -1041,7 +1041,7 @@ Document stores provide high flexibility and are often used for working with occ
 <p align="center">
   <img src="images/n16iOGk.png">
   <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+  <i><a href="https://blog.grio.com/2015/11/sql-nosql-a-brief-history.html">Source: SQL & NoSQL, a brief history</a></i>
 </p>
 
 > Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
@@ -1134,7 +1134,7 @@ Sample data well-suited for NoSQL:
 <p align="center">
   <img src="images/Q6z24La.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">Source: Scalable system design patterns</a></i>
 </p>
 
 Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
@@ -1205,7 +1205,7 @@ Since you can only store a limited amount of data in cache, you'll need to deter
 <p align="center">
   <img src="images/ONjORqk.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href="https://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">Source: From cache to in-memory data grid</a></i>
 </p>
 
 The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
@@ -1241,7 +1241,7 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 <p align="center">
   <img src="images/0vBc0hN.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href="https://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
@@ -1276,7 +1276,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 <p align="center">
   <img src="images/rgSrvjG.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href="https://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 In write-behind, the application does the following:
@@ -1294,7 +1294,7 @@ In write-behind, the application does the following:
 <p align="center">
   <img src="images/kxtjqgE.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href="https://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">Source: From cache to in-memory data grid</a></i>
 </p>
 
 You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
@@ -1326,7 +1326,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 <p align="center">
   <img src="images/54GYsSx.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href="https://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">Source: Intro to architecting systems for scale</a></i>
 </p>
 
 Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
@@ -1372,7 +1372,7 @@ If queues start to grow significantly, the queue size can become larger than mem
 <p align="center">
   <img src="images/5KeocQs.jpg">
   <br/>
-  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
+  <i><a href="http://www.escotal.com/osilayer.html">Source: OSI 7 layer model</a></i>
 </p>
 
 ### Hypertext transfer protocol (HTTP)
@@ -1404,7 +1404,7 @@ HTTP is an application layer protocol relying on lower-level protocols such as *
 <p align="center">
   <img src="images/JdAsdvG.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <i><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/">Source: How to make a multiplayer game</a></i>
 </p>
 
 TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
@@ -1428,7 +1428,7 @@ Use TCP over UDP when:
 <p align="center">
   <img src="images/yzDrJtA.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <i><a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/">Source: How to make a multiplayer game</a></i>
 </p>
 
 UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.
@@ -1457,7 +1457,7 @@ Use UDP over TCP when:
 <p align="center">
   <img src="images/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
+  <i><a href="https://tianpan.co/notes/2016-02-13-crack-the-system-design-interview">Source: Crack the system design interview</a></i>
 </p>
 
 In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
