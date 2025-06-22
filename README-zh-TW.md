@@ -360,7 +360,8 @@
 | 設計一個 LRU 快取        | [解答](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)         |
 | 設計一個客服系統         | [解答](solutions/object_oriented_design/call_center/call_center.ipynb)     |
 | 設計一副牌               | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb) |
-| 設計一個停車場           | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)     |
+| 設計一個停車場           | [解答](solutions/object_oriented_design/online_chat/parking_lot.ipynb)     |
+| 設計一個聊天伺服器       | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)     |
 | 設計一個環形陣列         | [如何貢獻](#如何貢獻)                                                      |
 | 增加一個物件導向設計問題 | [如何貢獻](#如何貢獻)                                                      |
 
