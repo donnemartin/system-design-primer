@@ -11,6 +11,7 @@ class State(Enum):
 class Graph(object):
 
     def bfs(self, source, dest):
+        """ Return True if there is a path from source to dest."""
         if source is None:
             return False
         queue = deque()
