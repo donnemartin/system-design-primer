@@ -126,7 +126,7 @@ class SalesRanker(MRJob):
         if self.within_past_week(timestamp):
             yield (category_id, product_id), quantity
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """Sum values for each key.
 
         (category1, product1), 2
