@@ -41,6 +41,7 @@ Additional topics for interview prep:
 * [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
 * [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
+* [Low-level system design interview questions **with solutions**](https://github.com/prasadgujar/low-level-design-primer)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
 
 ## Anki flashcards
@@ -213,6 +214,7 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
 | Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
+| Work through [Low-level system design interview questions with solutions](https://github.com/prasadgujar/low-level-design-primer) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
 ## How to approach a system design interview question
