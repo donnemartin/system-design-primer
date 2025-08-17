@@ -279,6 +279,7 @@
 * [システム設計面接で成功するには？](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [システム設計面接](http://www.hiredintech.com/system-design)
 * [アーキテクチャ、システム設計面接への導入](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [システム設計テンプレート](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
 ## システム設計課題例とその解答
 
@@ -444,7 +445,7 @@
 分散型コンピュータシステムにおいては下の三つのうち二つまでしか同時に保証することはできない。:
 
 * **一貫性** - 全ての読み込みは最新の書き込みもしくはエラーを受け取る
-* **可用性** - 受け取る情報が最新のものだという保証はないが、全てのリクエストはレスポンスを必ず受け取る
+* **可用性** - 受け取る情報が最新のバージョンだという保証はないが、全てのリクエストはレスポンスを必ず受け取る
 * **分断耐性** - ネットワーク問題によって順不同の分断が起きてもシステムが動作を続ける
 
 *ネットワークは信頼できないので、分断耐性は必ず保証しなければなりません。つまりソフトウェアシステムとしてのトレードオフは、一貫性を取るか、可用性を取るかを考えなければなりません。*
@@ -455,15 +456,16 @@
 
 #### AP - 可用性と分断耐性(availability and partition tolerance)
 
-レスポンスはノード上にあるデータで最新のものを返します。つまり、最新版のデータが返されるとは限りません。分断が解消された後も、書き込みが反映されるのには時間がかかります。
+レスポンスは読み込み可能なデータの中で最も新しいものを返しますが、データが最新であるとは限りません。分断が解消された後も、書き込みが反映されるのには時間がかかります。
 
 [結果整合性](#結果整合性)　を求めるサービスの際にはAPを採用するのがいいでしょう。もしくは、外部エラーに関わらずシステムが稼働する必要がある際にも同様です。
 
 ### その他の参考資料、ページ
 
 * [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
+* [CAP 理論](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
 ## 一貫性パターン
 
@@ -493,7 +495,7 @@
 
 ## 可用性パターン
 
-高い可用性を担保するには主に次の二つのパターンがあります: **フェイルオーバー** と **レプリケーション** です。
+高い可用性を担保するには相補的な次の二つのパターンがあります: **フェイルオーバー** と **レプリケーション** です。
 
 ### フェイルオーバー
 
@@ -546,7 +548,7 @@ DNSは少数のオーソライズされたサーバーが上位に位置する�
 
 [CloudFlare](https://www.cloudflare.com/dns/) や [Route 53](https://aws.amazon.com/route53/) などのサービスはマネージドDNSサービスを提供しています。いくつかのDNSサービスでは様々な手法を使ってトラフィックを捌くことができます:
 
-* [加重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
+* [加重ラウンドロビン](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
     * トラフィックがメンテナンス中のサーバーに行くのを防ぎます
     * 様々なクラスターサイズに応じて調整します
     * A/B テスト
@@ -635,7 +637,7 @@ CDNを用いてコンテンツを配信することで以下の二つの理由�
 * ランダム
 * Least loaded
 * セッション/クッキー
-* [ラウンドロビンもしくは加重ラウンドロビン](http://g33kinfo.com/info/archives/2657)
+* [ラウンドロビンもしくは加重ラウンドロビン](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
 * [Layer 4](#layer-4-ロードバランシング)
 * [Layer 7](#layer-7-ロードバランシング)
 
@@ -761,7 +763,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 <p align="center">
   <img src="images/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
 ### リレーショナルデータベースマネジメントシステム (RDBMS)
@@ -827,7 +829,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 <p align="center">
   <img src="images/U3qV33e.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
 フェデレーション (もしくは機能分割化とも言う) はデータベースを機能ごとに分割する。例えば、モノリシックな単一データベースの代わりに、データベースを **フォーラム**、 **ユーザー**、 **プロダクト** のように三つにすることで、データベース一つあたりの書き込み・読み取りのトラフィックが減り、その結果レプリケーションのラグも短くなります。データベースが小さくなることで、メモリーに収まるデータが増えます。キャッシュの局所性が高まるため、キャッシュヒット率も上がります。単一の中央マスターで書き込みを直列化したりしないため、並列で書き込みを処理することができ、スループットの向上が期待できます。
@@ -841,7 +843,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 
 ##### その他の参考資料、ページ: federation
 
-* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
 #### シャーディング
 
@@ -1077,7 +1079,7 @@ NoSQLに適するサンプルデータ:
 
 ##### その他の参考資料、ページ:  　SQLもしくはNoSQL
 
-* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=w95murBkYmU)
+* [最初の1000万ユーザーにスケールアップするために](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQLとNoSQLの違い](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
 ## キャッシュ
@@ -1521,6 +1523,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 
 ### その他の参考資料、ページ:
 
+* [APIセキュリティチェックリスト](https://github.com/shieldfy/API-Security-Checklist)
 * [開発者のためのセキュリティガイド](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
@@ -1622,6 +1625,8 @@ Notes
 | 複数のデータセンターからデータを配信するサービスの設計 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| APIのRate Limitを設計する | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| (NASDAQやBinanceのような)株式取引所を設計する | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | システム設計例題を追加する | [Contribute](#contributing) |
 
 ### 実世界のアーキテクチャ
@@ -1725,9 +1730,9 @@ Notes
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
+* [Paypal Developer Blog](https://medium.com/paypal-engineering)
 * [Pinterest Engineering Blog](http://engineering.pinterest.com/)
-* [Quora Engineering](https://engineering.quora.com/)
+* [Engineering](https://www.quora.com/q/quoraengineering)
 * [Reddit Blog](http://www.redditblog.com/)
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
