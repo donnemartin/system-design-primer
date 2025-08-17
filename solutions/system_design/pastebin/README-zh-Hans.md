@@ -23,7 +23,7 @@
 * **用户** 输入一个 paste 的 url 后，可以看到它存储的内容
 * **用户** 是匿名的
 * **Service** 跟踪页面分析
-  * 一个月的访问统计
+  * 每月的访问数统计
 * **Service** 删除过期的 pastes
 * **Service** 需要高可用
 
@@ -189,7 +189,7 @@ Response:
 
 ### 用例： 服务跟踪分析页面
 
-因为实时分析不是必须的，所以我们可以简单的 **MapReduce** **Web Server** 的日志，用来生成点击次数。
+因为实时分析不是必须的，所以我们可以简单地 **MapReduce** **Web Server** 的日志，用来生成点击次数。
 
 ```python
 class HitCounts(MRJob):
@@ -241,7 +241,7 @@ class HitCounts(MRJob):
 
 重要的是讨论在初始设计中可能遇到的瓶颈，以及如何解决每个瓶颈。比如，在多个 **Web 服务器** 上添加 **负载平衡器** 可以解决哪些问题？ **CDN** 解决哪些问题？**Master-Slave Replicas** 解决哪些问题? 替代方案是什么和怎么对每一个替代方案进行权衡比较？
 
-我们将介绍一些组件来完成设计，并解决可伸缩性问题。内部的负载平衡器并不能减少杂乱。
+我们将介绍一些组件来完成设计，并解决可伸缩性问题。为减少混乱，内部负载平衡器并未展示。
 
 **为了避免重复的讨论**， 参考以下[系统设计主题](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#系统设计主题的索引)获取主要讨论要点、权衡和替代方案：
 
@@ -258,13 +258,13 @@ class HitCounts(MRJob):
 * [一致性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#一致性模式)
 * [可用性模式](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#可用性模式)
 
-**分析存储数据库** 可以用比如 Amazon Redshift 或者 Google BigQuery 这样的数据仓库解决方案。
+**分析型数据库** 可以用比如 Amazon Redshift 或者 Google BigQuery 这样的数据仓库解决方案。
 
-一个像 Amazon S3 这样的 **对象存储**，可以轻松处理每月 12.7 GB 的新内容约束。
+一个像 Amazon S3 这样的 **对象存储**，可以轻松满足每月 12.7 GB 新增内容这样的约束。
 
-要处理 *平均* 每秒 40 读请求(峰值更高)，其中热点内容的流量应该由 **内存缓存** 处理，而不是数据库。**内存缓存** 对于处理分布不均匀的流量和流量峰值也很有用。只要副本没有陷入复制写的泥潭，**SQL Read Replicas** 应该能够处理缓存丢失。
+要处理 *平均* 每秒 40 读请求(峰值更高)，其中热点内容的流量应该由 **内存缓存** 处理，而不是数据库。**内存缓存** 对于处理分布不均匀的流量和流量峰值也很有用。只要副本未被复制写拖累，**SQL Read Replicas** 应该能够应对缓存未命中的情况。
 
-对于单个 **SQL Write Master-Slave**，*平均* 每秒 4paste 写入 (峰值更高) 应该是可以做到的。否则，我们需要使用额外的 SQL 扩展模式:
+对于单个 **SQL Write Master-Slave**，*平均* 每秒 4 paste 写入 (峰值更高) 应该是可以做到的。否则，我们需要引入额外的 SQL 扩展模式:
 
 * [联合](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#联合)
 * [分片](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#分片)
