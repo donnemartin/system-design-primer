@@ -522,6 +522,7 @@ Active-active failover can also be referred to as master-master failover.
 
 * Fail-over adds more hardware and additional complexity.
 * There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* A stateful system that does not have built-in support for Active-Passive failover will usually not work as expected if an external tool is used to facilitate failover.
 
 ### Replication
 
