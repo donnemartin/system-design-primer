@@ -389,13 +389,14 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 ### Step 2: Review the scalability article
 
-[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+### Step 2 — Scalability (updated resources)
 
-* Topics covered:
-    * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+> The original "Scalability for Dummies" series referenced here is no longer reliably available via archive links. The following maintained resources cover the same practical concepts (clones, database scaling, caching, asynchrony) and are recommended replacements:
+
+* **Scalability for Dummies — community guide.** A maintained summary and split-up writeup that covers clones, DB, cache, and asynchrony. (Community-maintained guide) — https://cs.fyi/guide/scalability-for-dummies.
+* **Scalability primer & practical patterns** — HighScalability and various practical posts covering cloning, horizontal/vertical scale, caching and async approaches. Good for real-world patterns and case studies. — https://highscalability.com/ (search for "scaling" topics).
+
+If you prefer preserving the original `lecloud`/Wayback entries, please note they currently appear to be inaccessible (see issue #1009) so we recommend removing or flagging them as unavailable until a working archive is found.
 
 ### Next steps
 
