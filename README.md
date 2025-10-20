@@ -442,7 +442,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><[a href=http://robertgreiner.com/2014/08/cap-theorem-revisited](https://robertgreiner.com/cap-theorem-revisited/)>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
 
 In a distributed computer system, you can only support two of the following guarantees:
@@ -465,7 +465,7 @@ AP is a good choice if the business needs to allow for [eventual consistency](#e
 
 ### Source(s) and further reading
 
-* [CAP theorem revisited][(http://robertgreiner.com/2014/08/cap-theorem-revisited/](https://robertgreiner.com/cap-theorem-revisited/))
+* [CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited/))
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
