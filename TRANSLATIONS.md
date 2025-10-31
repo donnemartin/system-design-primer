@@ -52,6 +52,12 @@ Languages are grouped by status and are listed in alphabetical order.
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/87
 * Translation Fork: https://github.com/voitau/system-design-primer/blob/master/README-ru.md
 
+### ⏳ Spanish
+
+* Maintainer(s): [@jaimenavarrete](https://github.com/jaimenavarrete) 👏
+* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/136
+* Translation Fork: https://github.com/jaimenavarrete/system-design-primer/tree/spanish-translation
+
 ## Stalled
 
 **Notes**:
@@ -122,13 +128,6 @@ Languages are grouped by status and are listed in alphabetical order.
     * Previous Maintainer(s): [@hadisinaee](https://github.com/hadisinaee)
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/pull/112
 * Translation Fork: https://github.com/donnemartin/system-design-primer/pull/112
-
-### ❗ Spanish
-
-* Maintainer(s): **Help Wanted** ✋
-    * Previous Maintainer(s): [@eamanu](https://github.com/eamanu)
-* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/136
-* Translation Fork: https://github.com/donnemartin/system-design-primer/pull/189
 
 ### ❗ Thai
 
