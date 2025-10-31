@@ -572,7 +572,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
   <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>來源：為什麼要使用 CDN</a></i>
 </p>
 
-內容傳遞網路(CDN)是一種全球性的分散式代理伺服器，它透過靠近使用者的伺服器來提供檔案。通常 HTML/CSS/JS、圖片或影片等檔案會靜態檔案會透過 CDN 來提供，儘管 Amazon 的 CloudFront 也支援了動態內容的 CDN 服務。而 CDN 的 DNS 服務會告知使用者要連接哪一台伺服器。
+內容傳遞網路(CDN)是一種全球性的分散式代理伺服器，它透過靠近使用者的伺服器來提供檔案。通常 HTML/CSS/JS、圖片、影片或靜態檔案等......會透過 CDN 來提供，儘管 Amazon 的 CloudFront 也支援了動態內容的 CDN 服務。而 CDN 的 DNS 服務會告知使用者要連接哪一台伺服器。
 
 透過 CDN 來取得檔案可以大幅度地增加請求的效率，因為：
 
