@@ -1779,6 +1779,7 @@ Handy metrics based on numbers above:
 * [Netflix Tech Blog](http://techblog.netflix.com/)
 * [Paypal Developer Blog](https://medium.com/paypal-engineering)
 * [Pinterest Engineering Blog](https://medium.com/@Pinterest_Engineering)
+* [Pulumi Tech Blog](https://www.pulumi.com/blog/)
 * [Reddit Blog](http://www.redditblog.com/)
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
