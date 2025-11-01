@@ -1445,7 +1445,7 @@ Use UDP over TCP when:
 
 #### Source(s) and further reading: TCP and UDP
 
-* [Networking for game programming](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [Networking for game programming](https://www.gafferongames.com/post/udp_vs_tcp/)
 * [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
 * [Difference between TCP and UDP](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
 * [Transmission control protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
