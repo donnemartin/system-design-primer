@@ -1,0 +1,10 @@
+Ride-Sharing Service:
+
+1. User: Represents a user who can request rides.
+
+2. Driver: Represents a driver who can accept rides.
+
+3. Ride: Represents a ride request, including the user and locations.
+
+4. RideSharingService: Manages users and drivers and includes logic 
+    to match rides.

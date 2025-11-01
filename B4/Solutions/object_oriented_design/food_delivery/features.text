@@ -1,0 +1,14 @@
+Features of this Food Delivery System:
+
+1. Customer Class: Represents a customer with attributes like name, address, and phone number.
+
+2. Restaurant Class: Represents a restaurant with a menu. It allows the system to show available 
+   items and get the price of food.
+
+3. DeliveryPerson Class: Represents a delivery person who is assigned to deliver an order.
+
+4. Order Class: Represents an order with details like the customer, restaurant, and the food 
+    item ordered. It also includes the price of the order.
+    
+5. FoodDeliverySystem Class: This is the core of the system. It manages customers, restaurants, 
+    delivery personnel, and the order placement process. It assigns a delivery person to each order.
