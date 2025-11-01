@@ -71,7 +71,7 @@ class Cache(object):
         If the entry is new and the cache is at capacity, removes the oldest entry
         before the new entry is added.
         """
-        node = self.map[query]
+        node = self.lookup.get(query)
         if node is not None:
             # Key exists in cache, update the value
             node.results = results
