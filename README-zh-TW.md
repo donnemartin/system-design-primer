@@ -276,7 +276,6 @@
 
 查看以下的連結獲得更好的做法：
 
-* [如何在系統設計的面試中勝出](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [系統設計的面試](http://www.hiredintech.com/system-design)
 * [系統架構與設計的面試介紹](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 
@@ -601,7 +600,6 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 ### 來源及延伸閱讀
 
-* [全球性的 CDN](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
 * [拉取式和推拉式 CDN 的差別](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [維基百科](https://en.wikipedia.org/wiki/Content_delivery_network)
 
@@ -1616,7 +1614,6 @@ Notes
 | 設計一個 Facebook 時間軸功能           | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html)                                                                                                                                                                                                                                     |
 | 設計 Facebook 的聊天功能               | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0)                                                                                                                                                                                                                                         |
 | 設計一個像 Facebook 的圖形化搜尋系統   | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| 設計一個像 CloudFlare 的內容傳輸網路   | [cmu.edu](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)                                                                                                                                                                                                                                                                                                                                                             |
 | 設計一個像 Twitter 的微網誌服務        | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/)                                                                                                                                                                                                                            |
 | 設計一個隨機 ID 生成系統               | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/)                                                                                                                                                                                                                                                                                                                         |
 | 給定一段時間，回傳次數排名前 K 的請求  | [ucsb.edu](https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf)                                                                                                                                                                                                                                                                                                         |
