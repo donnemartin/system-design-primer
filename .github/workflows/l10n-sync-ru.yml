@@ -1,0 +1,21 @@
+name: l10n-sync-ru
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  sync-status-ru:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Download mdlm
+      run: curl -o- https://raw.githubusercontent.com/markdown-localization/mdlm-sh/v0.0.20/install.sh | bash      
+      
+    - name: Sync status - ru
+      run: |
+        $HOME/.mdlm/mdlm.sh diff ru
