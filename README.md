@@ -17,7 +17,7 @@
 
 ### Learn how to design large-scale systems
 
-Learning how to design scalable systems will help you become a better engineer.
+Learning how to design scalable systems will help you become a better engineer in the world (hari).
 
 System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
 
