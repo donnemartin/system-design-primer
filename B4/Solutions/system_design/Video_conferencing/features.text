@@ -1,0 +1,5 @@
+Video Conferencing System:
+
+1. User: Represents a user in the system.
+
+2. Meeting: Handles participant management and audio/video streaming.

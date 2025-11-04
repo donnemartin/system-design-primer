@@ -1,0 +1,22 @@
+Explanation
+
+1. Room Class:
+
+    a. Represents a hotel room with attributes for room number, type, price, and availability.
+    b. Methods include book_room (to book the room) and release_room (to make the room available again).
+        
+2. Customer Class:
+
+    a. Represents a customer who can book rooms.
+    b. Includes a method make_booking that attempts to book a room and create a Booking object if successful.
+        
+3. Booking Class:
+
+    a. Represents a booking made by a customer.
+    b. Calculates total price based on the duration of the stay and the room price.
+    c. Includes a method cancel_booking to release the room and remove the booking from the customer’s list.
+        
+4. Hotel Class:
+
+    a. Manages the collection of rooms.
+    b. Provides methods to add rooms, search for available rooms, and display all rooms.
