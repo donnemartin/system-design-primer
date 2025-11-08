@@ -1,11 +1,12 @@
----
 name: Interview Solution Navigator
 description: Use curated object-oriented and system design notes to craft thorough interview answers.
-version: 1.0.0
 ---
 
 ## Overview
 This Skill equips Claude to leverage the study materials in this repository when drafting interview-ready explanations, walkthroughs, or study plans. Trigger it for system design or object-oriented design interview questions that need structured, example-backed answers grounded in the included solutions.
+
+## Version
+- 1.0.0
 
 ## Repository Map
 - Object-oriented designs live in `solutions/object_oriented_design/`, each scenario having a Python module plus an exploratory notebook.
