@@ -25,7 +25,7 @@
 
 このプロジェクトは、これからもずっと更新されていくオープンソースプロジェクトの初期段階にすぎません。
 
-[Contributions](#contributing) は大歓迎です！
+[Contributions](#コントリビュート) は大歓迎です！
 
 ### システム設計面接課題に備える
 
@@ -296,7 +296,7 @@
 | 検索エンジンのキー/バリュー構造を設計する | [解答](solutions/system_design/query_cache/README.md) |
 | Amazonのカテゴリ毎の売り上げランキングを設計する | [解答](solutions/system_design/sales_rank/README.md) |
 | AWS上で100万人規模のユーザーを捌くサービスを設計する | [解答](solutions/system_design/scaling_aws/README.md) |
-| システム設計問題を追加する | [Contribute](#contributing) |
+| システム設計問題を追加する | [Contribute](#コントリビュート) |
 
 ### Pastebin.com (もしくは Bit.ly) を設計する
 
@@ -362,8 +362,8 @@
 | カードのデッキの設計 | [解答](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
 | 駐車場の設計 | [解答](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | チャットサーバーの設計 | [解答](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| 円形配列の設計 | [Contribute](#contributing)  |
-| オブジェクト指向システム設計問題を追加する | [Contribute](#contributing) |
+| 円形配列の設計 | [Contribute](#コントリビュート)  |
+| オブジェクト指向システム設計問題を追加する | [Contribute](#コントリビュート) |
 
 ## システム設計トピックス: まずはここから
 
@@ -1510,7 +1510,7 @@ RESTはデータを公開することに焦点を当てています。クライ�
 
 ## セキュリティ
 
-このセクションは更新が必要です。[contributing](#contributing)してください！
+このセクションは更新が必要です。[contributing](#コントリビュート)してください！
 
 セキュリティは幅広いトピックです。十分な経験、セキュリティ分野のバックグラウンドがなくても、セキュリティの知識を要する職に応募するのでない限り、基本以上のことを知る必要はないでしょう。
 
@@ -1622,7 +1622,7 @@ Notes
 | 複数のデータセンターからデータを配信するサービスの設計 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| システム設計例題を追加する | [Contribute](#contributing) |
+| システム設計例題を追加する | [Contribute](#コントリビュート) |
 
 ### 実世界のアーキテクチャ
 
@@ -1662,7 +1662,7 @@ Notes
 | Misc | **Dapper** - 分散システムを追跡するインフラ | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Misc | **Kafka** - LinkedInによるPub/subメッセージキュー | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - 同期を可能にする中央集権インフラとサービス | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | アーキテクチャを追加する | [Contribute](#contributing) |
+| | アーキテクチャを追加する | [Contribute](#コントリビュート) |
 
 ### 各企業のアーキテクチャ
 
@@ -1748,12 +1748,12 @@ Notes
 
 ## 進行中の作業
 
-セクションの追加や、進行中の作業を手伝っていただける場合は[こちら](#contributing)!
+セクションの追加や、進行中の作業を手伝っていただける場合は[こちら](#コントリビュート)!
 
 * MapReduceによる分散コンピューティング
 * Consistent hashing
 * Scatter gather
-* [Contribute](#contributing)
+* [Contribute](#コントリビュート)
 
 ## クレジット
 
