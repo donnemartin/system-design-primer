@@ -62,3 +62,12 @@ scratch/
 
 # IPython Notebook templates
 template.ipynb
+
+# visual studio folder
+vs/
+/.vs/VSWorkspaceState.json
+/.vs/system-design-primer/v17
+/.vs/slnx.sqlite
+/.vs/system-design-primer/FileContentIndex
+/.vs/system-design-primer/project-colors.json
+/.vs
