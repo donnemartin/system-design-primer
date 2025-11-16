@@ -102,7 +102,7 @@
 
 我们可以将用户自己发表的推特存储在[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)中。我们也可以讨论一下[究竟是用 SQL 还是用 NoSQL](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#sql-还是-nosql)。
 
-构建用户主页时间轴（查看关注用户的活动）以及推送推特是件麻烦事。将特推传播给所有关注者（每秒约递送 6 万条推特）这一操作有可能会使传统的[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)超负载。因此，我们可以使用 **NoSQL 数据库**或**内存数据库**之类的更快的数据存储方式。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
+构建用户主页时间轴（查看关注用户的活动）以及推送推特是件麻烦事。将推特传播给所有关注者（每秒约递送 6 万条推特）这一操作有可能会使传统的[关系数据库](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)超负载。因此，我们可以使用 **NoSQL 数据库**或**内存数据库**之类的更快的数据存储方式。从内存读取 1 MB 连续数据大约要花 250 微秒，而从 SSD 读取同样大小的数据要花费 4 倍的时间，从机械硬盘读取需要花费 80 倍以上的时间。<sup><a href=https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md#每个程序员都应该知道的延迟数>1</a></sup>
 
 我们可以将照片、视频之类的媒体存储于**对象存储**中。
 
@@ -222,7 +222,7 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 
 > 根据限制条件，找到并解决瓶颈。
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](http://i.imgur.com/jrUBAF7.png)
 
 **重要提示：不要从最初设计直接跳到最终设计中！**
 
