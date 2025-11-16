@@ -9,39 +9,44 @@
   <br/>
 </p>
 
-## Motivation
+## Motivasiya
 
-> Learn how to design large-scale systems.
+> Böyük miqyaslı sistemlərin dizaynlaşdırılmasının öyrənilməsi.
 >
-> Prep for the system design interview.
+> Sistem dizaynı üzrə müsahibəyə hazırlanması.
 
-### Learn how to design large-scale systems
+### Böyük miqyaslı sistemlərin dizaynlaşdırılmasının öyrənilməsi.
 
-Learning how to design scalable systems will help you become a better engineer.
+Böyük miqyaslı sistemlərin dizaynının öyrənilməsi sizə daha yaxşı mühəndis olmağa kömək edəcək.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+Sistem dizaynı geniş mövzudur. Bu mövzunun prinsipləri üzrə internetdə səpələnmiş formada **böyük miqdarda resurs mövcuddur**.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Bu repo, bele tip sistemləri qurmağı öyrənməyə kömək etmək üçün **təşkil edilmiş resurslar toplusudur**.
 
-### Learn from the open source community
+### Açıq mənbə (open source) icmasından öyrənin
 
-This is a continually updated, open source project.
+Bu daim yenilənən, open source layihədir.
 
-[Contributions](#contributing) are welcome!
+[Contributions](#contributing) xoş gördük.
 
-### Prep for the system design interview
+[//]: # (ToDo: Help on translation: Contributions)
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+### Sistem dizaynı üzrə müsahibəyə hazırlanması.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+Bir çox texnoloji şirkətlərin müsahibələrində kodlaşdırmaqla yanaşı, sistem dizaynı **texniki müsahibə prosesi**nin **tələb olunan komponent**lərindən biridir.
 
-Additional topics for interview prep:
+**Sistem dizaynı üzrə ümumi müsahibə suallarını tətbiq edin** və nəticələrinizi **nümunə həllər** ilə **müqayisə edin**: müzakirələr, kodlar və diaqramlar.
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+[//]: # (ToDo: Help on translation: **Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.)
+
+
+Müsahibəyə hazırlaşmaq üçün əlavə mövzular:
+
+* [Tədris bələdçisi](#study-guide)
+* [Sistem dizaynı ilə bağlı müsahibə sualına necə yanaşmaq olar](#how-to-approach-a-system-design-interview-question)
+* [Sistem dizaynı ilə bağlı müsahibə sualları, **həllərlə birlikdə**](#system-design-interview-questions-with-solutions)
+* [Obyekt yönümlü dizayn müsahibə sualları, **həllərlə birlikdə**](#object-oriented-design-interview-questions-with-solutions)
+* [Əlavə sistem dizaynı müsahibə sualları](#additional-system-design-interview-questions)
 
 ## Anki flashcards
 
@@ -50,53 +55,60 @@ Additional topics for interview prep:
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+Təqdim edilən [Anki flashcard decks](https://apps.ankiweb.net/) əsas sistem dizayn konsepsiyalarını saxlamağınıza kömək etmək üçün təkrarlardan istifadə edir.
 
 * [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
 * [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
 * [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Oxuduqca paralel olaraq istifadə etmək məsləhətdir.
 
-### Coding Resource: Interactive Coding Challenges
+### Kodlaşdırma Resursu: İnteraktiv Kodlaşdırma Problemləri
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+[**Kodlaşdırma Müsahibəsinə**](https://github.com/donnemartin/interactive-coding-challenges) hazırlaşmağınıza kömək edəcək resurslar axtarırsınız?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Bu repo ilə əlaqəli qardaş repo [**İnteraktiv Kodlaşdırma Problemləri**](https://github.com/donnemartin/interactive-coding-challenges) ilə tanış olun hansı ki, əlavə Anki deck-i məlumatlarını tapa bilərsiniz:
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
 ## Contributing
 
-> Learn from the community.
+[//]: # (ToDo: Help on translation: Contributing)
 
-Feel free to submit pull requests to help:
+> Cəmiyyətdən öyrənin.
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+[//]: # (ToDo: Help on translation: Community)
 
-Content that needs some polishing is placed [under development](#under-development).
+Kömək etmək üçün pull requests göndərməkdən çəkinməyin:
+
+* Səhvləri düzəldin
+* Bölmələri təkmilləşdirin
+* Yeni bölmələr əlavə edin
+* [Tərcümə](https://github.com/donnemartin/system-design-primer/issues/28)
+
+Müəyyən qədər dəyişikliyə ehtiyacı olan hissələri [inkişaf mərhələsinə](#under-development) yerləşdirilir.
 
 Review the [Contributing Guidelines](CONTRIBUTING.md).
 
-## Index of system design topics
+[//]: # (ToDo: Help on translation: Review the Contributing Guidelines)
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+## Sistem dizaynı mövzularının indeksi
+
+> Müxtəlif növ sistem dizayn mövzularının xülasəsi, müsbət və mənfi cəhətlərilə birlikdə. **Hər şey bir mübadilədir**.
 >
-> Each section contains links to more in-depth resources.
+> Hər bölmədə ki, qeyd edilən link-lər vasitəsilə daha dərin/ətraflı məlumatlar tapa bilərsiniz.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
+[//]: # (ToDo: Update later when finish translation...)
 * [System design topics: start here](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
     * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
@@ -179,32 +191,33 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Contact info](#contact-info)
 * [License](#license)
 
-## Study guide
+## Öyrənmə qaydası
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Müsahibə qrafikinizə əsasən nəzərdən keçirmək üçün təklif olunan mövzular (qısa, orta, uzun).
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**Sual: Müsahibə üçün mən burdakı bütün materialı bilməliyəm?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**Cavab: Yox, Müsahibə üçün burdakı bütün materialı əzbər bilmək lazım deyil**.
 
-What you are asked in an interview depends on variables such as:
+Sizdən müsahibədə soruşulanlar aşağıdakı kimi şərtlərdən asılıdır:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Nə qədər təcrübəniz var
+* Texniki biliyiniz nə qədərdir
+* Hansı vəzifə üçün müsahibə alırsınız
+* Hansı şirkətdə müsahibə alırsınız
+* Bəxt
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Daha təcrübəli namizədlərin ümumiyyətlə sistem dizaynı haqqında daha çox məlumatlı olması gözlənilir. Architect-lər və ya Team Lead-lar fərdi contributor daha çox şey bilməsi gözlənilə bilər. Ən yaxşı texnoloji şirkətləri çox güman ki, bir və ya daha çox dizayn müsahibə mərhələsi keçirəcəklər.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Geniş başlayın və bir neçə sahədə daha dərinə gedin. Bu, müxtəlif əsas sistem dizayn mövzuları haqqında bir az bilməyə kömək edir. Aşağıdakı bələdçini vaxt cədvəlinizə, təcrübənizə, hansı vəzifələr üçün müsahibə aldığınıza və hansı şirkətlərlə müsahibə etdiyinizə əsasən tənzimləyin.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Qısa müddətli** - Sistem dizayn mövzuları ilə **genişliyə** hədəfləyin. Müsahibə suallarını **bəzilərini** həll etməklə məşq edin.
+* **Orta müddətli** - Sistem dizaynı mövzuları ilə **genişliyə** və **bir qədər dərinliyə** hədəflənin. **Çoxlu sayda** müsahibə suallarını həll etməklə məşq edin.
+* **Uzun müddətli** - Sistem dizaynı mövzuları ilə **genişliyə** və **daha çox dərinliyə** hədəfləyin. Müsahibə suallarını **əksəriyyətini** həll etməklə məşq edin.
 
+[//]: # (ToDo: Update later When finish translation...)
 | | Short | Medium | Long |
 |---|---|---|---|
 | Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
@@ -215,81 +228,82 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## How to approach a system design interview question
+## Sistem dizaynı ilə bağlı müsahibə sualına necə yanaşmaq olar
 
-> How to tackle a system design interview question.
+> Sistem dizaynı ilə bağlı müsahibə sualını necə həll etmək olar.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Sistem dizaynı üzrə müsahibə **açıq söhbətdir**. Sizə rəhbərlik edəcəyiniz gözlənilir.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Müzakirəyə rəhbərlik etmək üçün aşağıdakı addımlardan istifadə edə bilərsiniz. Bu prosesi möhkəmlətməyə kömək etmək üçün aşağıdakı addımlardan istifadə edərək həllər bölməsi ilə [Həlləri olan sistem dizaynı müsahibə sualları](#həlləri-olan-sistem-dizaynı-müsahibə-sualları) üzərində işləyin.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Addım 1: İstifadə hallarını, məhdudiyyətləri və fərziyyələri təsvir edin
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Tələbləri toplayın və problemi əhatə edin. İstifadə hallarını və məhdudiyyətləri aydınlaşdırmaq üçün suallar verin. Fərziyyələri müzakirə edin.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Kim istifadə edəcək?
+* Ondan necə istifadə edəcəklər?
+* Neçə istifadəçi var?
+* Sistem nə edir?
+* Sistemin giriş və çıxışları hansılardır?
+* Nə qədər məlumatı idarə etməyi gözləyirik?
+* Biz saniyədə neçə sorğu gözləyirik?
+* Gözlənilən oxu-yazma nisbəti nədir?
 
-### Step 2: Create a high level design
+### Addım 2: Yüksək səviyyəli dizayn yaradın
 
-Outline a high level design with all important components.
+Bütün vacib komponentlər daxil olmaq şərtilə tərtib etdiyiniz dizaynı təsvir edin.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Əsas komponentləri və birləşmələri eskiz edin
+* Fikirlərinizi əsaslandırın
 
-### Step 3: Design core components
+### Addım 3: Əsas komponentləri dizayn edin
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Hər bir əsas komponenti ətraflı izzah etməyə başlayın. Məsələn, sizdən [url qısaldıcı xidmət](solutions/system_design/pastebin/README.md) dizayn etmək istənilsə, müzakirə edin:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Tam url-in hashının yaradılması və saxlanması
+    * [MD5](solutions/system_design/pastebin/README.md) və [Base62](solutions/system_design/pastebin/README.md)
+    * Xeş toqquşmaları (Hash collision)
+    * SQL va ya NoSQL
+    * Məlumatlar bazası sxemi (Database schema)
+* Hash-lənmiş url-in tam url-ə yönləndirilməsi
+    * Database axtarışı
+* API və obyekt yönümlü dizayn
 
-### Step 4: Scale the design
+### Addım 4: Dizaynı genişləndirin
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Məhdudiyyətləri nəzərə alaraq problemləri müəyyənləşdirin və həll edin. Məsələn, miqyaslılıq problemlərini həll etmək üçün sizə aşağıdakılar lazımdırmı?
 
 * Load balancer
 * Horizontal scaling
 * Caching
-* Database sharding
+* Database parçalanması (Database sharding)
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Potensial həll yollarını və güzəştləri müzakirə edin. Hər şey bir mübadilədir. [Ölçülən sistem dizaynı prinsiplərindən](#sistem-dizaynı-mövzularının-indeksi) istifadə edərək, çətin vəziyyəti aradan qaldırın
 
-### Back-of-the-envelope calculations
+### Back-of-the-envelope hesablamaları
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Sizdən bəzi təxminləri əl ilə etməyiniz xahiş oluna bilər. Aşağıdakı mənbələr üçün [Əlavələrə](#appendix) baxın:
 
 * [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
 * [Powers of two table](#powers-of-two-table)
 * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 
-### Source(s) and further reading
+### Mənbə(lər) və əlavə oxu
 
-Check out the following links to get a better idea of what to expect:
+Nə gözlədiyiniz barədə daha yaxşı fikir əldə etmək üçün aşağıdakı linklərə baxın:
 
-* [How to ace a systems design interview](https://web.archive.org/web/20210505130322/https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## Həlləri olan sistem dizaynı müsahibə sualları
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Nümunə müzakirələr, kodlar və diaqramlarla ümumi sistem dizaynı müsahibə sualları.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Həllər `solutions/` qovluğundakı məzmunla əlaqələndirilir.
 
+[//]: # (ToDo: Update later When finish translation...)
 | Question | |
 |---|---|
 | Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
@@ -302,62 +316,63 @@ Check out the following links to get a better idea of what to expect:
 | Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
 | Add a system design question | [Contribute](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Pastebin.com (və Bit.ly) dizaynı
 
 [View exercise and solution](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Twitter vaxt qrafikini və axtarışı dizaynı (və ya Facebook lenti və axtarışı)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Tapşırıq və həll yoluna baxın](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### web crawler dizaynı
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### Mint.com dizaynı
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Sosial şəbəkə üçün data structure dizaynı
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### search engine üçün key-value store dizaynı
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Kateqoriya xüsusiyyətinə görə Amazonun satış sıralamasını dizaynı
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### AWS-də milyonlarla istifadəçini əhatə edən sistem dizaynı
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Məşq və həll yoluna baxın](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Həlləri olan obyekt yönümlü dizayn müsahibə sualları
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Nümunə müzakirələr, kodlar və diaqramlarla ümumi sistem dizaynı müsahibə sualları.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Həllər `solutions/` qovluğundakı məzmunla əlaqələndirilir.
 
->**Note: This section is under development**
+>**Qeyd: Bu bölmə development mərhələsindədir**
 
+[//]: # (ToDo: Update later When finish translation...)
 | Question | |
 |---|---|
 | Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
@@ -369,17 +384,17 @@ Check out the following links to get a better idea of what to expect:
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
-## System design topics: start here
+## Sistem dizaynı mövzuları: buradan başlayın
 
-New to system design?
+Sistem dizaynında yenisiniz?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+İlk öncə əsas sistem dizaynın baza prinsiplərini, onların necə istifadə olunduğunu və onların üstünlüklərini və mənfi cəhətlərini öyrənməlisiniz.
 
-### Step 1: Review the scalability video lecture
+### 1-ci addım: Harvarddakı scalability video müsahibəsini izləyin
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
+* Əhatə edən mövzular:
     * Vertical scaling
     * Horizontal scaling
     * Caching
@@ -387,36 +402,36 @@ First, you'll need a basic understanding of common principles, learning about wh
     * Database replication
     * Database partitioning
 
-### Step 2: Review the scalability article
+### 2-ci addım: scalability məqaləsini oxuyun
 
 [Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* Əhatə edən mövzular:
     * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Növbəti addımlar
 
-Next, we'll look at high-level trade-offs:
+Növbəti olaraq aşağıdakı mövzulara baxacığıq:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Performans** vs **miqyaslılıq**
+* **Gecikmə** vs **keçirmə qabiliyyəti**
+* **Mövcudluq** vs **ardıcıllıq**
 
-Keep in mind that **everything is a trade-off**.
+Unutmayın ki, **hər şey bir mübadiləddəir**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Ardınca daha çətin mövzulara baxacağıq, məsələn DNS, CDN və load balancer-lər kimi.
 
-## Performance vs scalability
+## Performans vs miqyaslılıq
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Servis **miqyaslı**dırsa, əlavə resurslar əlavə edildikcə **performans** artır. Ümumiyyətlə, performansı artırmaq daha çox iş birlikləri deməkdir, amma həm də dataset-lərin böyüməsi buna bir nümunədir.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Performans vs miqyaslılıq mübadiləsinə başqa bir yanaşmada baxaq:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* **Performans** problemi varsa, sistem bir istifadəçi üçün yavaşdır.
+* **Miqyaslılıq** problemi varsa, sistem bir istifadəçi üçün sürətli olsa da, ağır yüklənmə zamanı yavaşdır.
 
 ### Source(s) and further reading
 
@@ -442,7 +457,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href="https://robertgreiner.com/cap-theorem-revisited">Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
 
 In a distributed computer system, you can only support two of the following guarantees:
@@ -465,7 +480,7 @@ AP is a good choice if the business needs to allow for [eventual consistency](#e
 
 ### Source(s) and further reading
 
-* [CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited/))
+* [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
@@ -601,8 +616,8 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
     * Prevent traffic from going to servers under maintenance
     * Balance between varying cluster sizes
     * A/B testing
-* [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
-* [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html)
+* [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency)
+* [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo)
 
 ### Disadvantage(s): DNS
 
@@ -721,7 +736,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
-* [Scalability](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
@@ -1083,7 +1098,7 @@ Graphs databases offer high performance for data models with complex relationshi
 
 * [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
 * [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
-* [Scalability](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+* [Scalability](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
@@ -1317,7 +1332,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 * [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
-* [Scalability](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+* [Scalability](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
@@ -1499,7 +1514,7 @@ HTTP APIs following **REST** tend to be used more often for public APIs.
 * RPC clients become tightly coupled to the service implementation.
 * A new API must be defined for every new operation or use case.
 * It can be difficult to debug RPC.
-* You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
+* You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
 
 ### Representational state transfer (REST)
 
@@ -1551,7 +1566,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
 * [REST vs JSON-RPC](http://stackoverflow.com/questions/15056878/rest-vs-json-rpc)
-* [Debunking the myths of RPC and REST](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
+* [Debunking the myths of RPC and REST](http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/)
 * [What are the drawbacks of using REST](https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
@@ -1783,7 +1798,6 @@ Handy metrics based on numbers above:
 * [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
 * [Slack Engineering Blog](https://slack.engineering/)
 * [Spotify Labs](https://labs.spotify.com/)
-* [Stripe Engineering Blog](https://stripe.com/blog/engineering)
 * [Twilio Engineering Blog](http://www.twilio.com/engineering)
 * [Twitter Engineering](https://blog.twitter.com/engineering/)
 * [Uber Engineering Blog](http://eng.uber.com/)
