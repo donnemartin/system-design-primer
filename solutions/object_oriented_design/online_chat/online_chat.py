@@ -44,7 +44,7 @@ class User(object):
     def send_friend_request(self, friend_id):
         pass
 
-    def receive_friend_request(self, friend_id):
+    def check_pending_friend_requests(self):
         pass
 
     def approve_friend_request(self, friend_id):
@@ -53,30 +53,44 @@ class User(object):
     def reject_friend_request(self, friend_id):
         pass
 
+    def remove_friend(self, friend_id):
+        pass
+
 
 class Chat(metaclass=ABCMeta):
 
-    def __init__(self, chat_id):
+    def __init__(self, chat_id, max_member):
         self.chat_id = chat_id
         self.users = []
         self.messages = []
+        self.max_member = max_member
+
+    def add_user(self, user):
+        if len(self.users) == self.max_member:
+            raise OverflowError('Chat {} already has maximum number of users'.format(self.chat_id))
+        self.users.append(user)
+
+    def remove_user(self, user):
+        self.users.remove(user)
 
 
 class PrivateChat(Chat):
 
-    def __init__(self, first_user, second_user):
-        super(PrivateChat, self).__init__()
-        self.users.append(first_user)
-        self.users.append(second_user)
+    def __init__(self, chat_id, first_user, second_user):
+        super(PrivateChat, self).__init__(chat_id, max_member=2)
+        self.add_user(first_user)
+        self.add_user(second_user)
+
+    def add_user(self, user):
+        if len(self.users) == self.max_member:
+            raise OverflowError(
+                'PrivateChat {} cannot have more than {} members'.format(self.chat_id, self.max_member)
+            )
+        super(PrivateChat, self).add_user(user)
 
 
 class GroupChat(Chat):
-
-    def add_user(self, user):
-        pass
-
-    def remove_user(self, user):
-        pass
+    pass
 
 
 class Message(object):
@@ -97,7 +111,6 @@ class AddRequest(object):
 
 
 class RequestStatus(Enum):
-
     UNREAD = 0
     READ = 1
     ACCEPTED = 2
