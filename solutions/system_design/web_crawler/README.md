@@ -159,6 +159,8 @@ class Crawler(object):
         ...
 
     def crawl_page(self, page):
+        self.reverse_index_queue.add(page.url)
+        self.doc_index_queue.add(page.url)
         for url in page.child_urls:
             self.data_store.add_link_to_crawl(url)
         page.signature = self.create_signature(page)
