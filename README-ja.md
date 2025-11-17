@@ -50,9 +50,9 @@
 
 この[Anki用フラッシュカードデッキ](https://apps.ankiweb.net/) は、間隔反復を活用して、システム設計のキーコンセプトの学習を支援します。
 
-* [システム設計デッキ](resources/flash_cards/System%20Design.apkg)
-* [システム設計練習課題デッキ](resources/flash_cards/System%20Design%20Exercises.apkg)
-* [オブジェクト指向練習課題デッキ](resources/flash_cards/OO%20Design.apkg)
+* [システム設計デッキ](https://github.com/donnemartin/system-design-primer/raw/master/resources/flash_cards/System%20Design.apkg)
+* [システム設計練習課題デッキ](https://github.com/donnemartin/system-design-primer/raw/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [オブジェクト指向練習課題デッキ](https://github.com/donnemartin/system-design-primer/raw/master/resources/flash_cards/OO%20Design.apkg)
 
 外出先や移動中の勉強に役立つでしょう。
 
@@ -67,7 +67,7 @@
 
 姉妹リポジトリの [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges)も見てみてください。追加の暗記デッキカードも入っています。
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/raw/master/anki_cards/Coding.apkg)
 
 ## コントリビュート
 
