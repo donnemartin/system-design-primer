@@ -656,6 +656,7 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 * [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
 * [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
+* [Akamai CDN](https://www.akamai.com/our-thinking/cdn/what-is-a-cdn)
 
 ## Load balancer
 
