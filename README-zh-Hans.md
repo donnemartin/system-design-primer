@@ -467,7 +467,7 @@
 ### 来源及延伸阅读
 
 * [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一致性模式
