@@ -366,7 +366,7 @@ Check out the following links to get a better idea of what to expect:
 | Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
 | Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
 | Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
+| Design a circular array | [Solution](solutions/object_oriented_design/circular_array/circular_array.ipynb)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
 
 ## System design topics: start here
