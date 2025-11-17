@@ -1558,20 +1558,73 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
 ## Security
+> How to stop bad people from doing bad things to your system
 
 This section could use some updates.  Consider [contributing](#contributing)!
 
-Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+Security is often about giving up some speed or convenience in order to prevent really bad things from happening. To make the right tradeoffs, you need a clear picture of what can go wrong and what the impact is for each one of those things. This is often referred to as [threat modeling](https://en.wikipedia.org/wiki/Threat_model)
 
-* Encrypt in transit and at rest.
-* Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
-* Use parameterized queries to prevent SQL injection.
-* Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+If you're building a system without hard security requirements, just cover the [basics](#security-basics).
+
+## Security Basics
+
+### Secure Input Handling
+Prevents
+* [Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow) i.e. [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed)
+* [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)
+* [SQL injection](https://en.wikipedia.org/wiki/SQL_injection)
+* [Directory traversal](https://en.wikipedia.org/wiki/Directory_traversal_attack)
+* Data corruption (integrity)
+
+How:
+* Min and max values for numbers, list sizes, string length
+* [Regular expressions](https://regexone.com) on all strings
+* Domain-specific validation: URL, email, SSN
+* Prefer white-listing to black-listing
+  * Black-listing all potential bad inputs is often unachievable
+* When performing SQL queries that contain user input, [parameterize them](https://en.wikipedia.org/wiki/SQL_injection#Parameterized_statements)
+
+### Secure Output Handling
+Prevents:
+* [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)
+* Information disclosure
+* Denial of Service
+
+How:
+* Escape before inserting data into HTML [elements][escape-html-element] and [attributes][escape-html-attribute]
+* Return bounded-length error messages
+* Do not return stack traces
+
+[escape-html-element]: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet#RULE_.231_-_HTML_Escape_Before_Inserting_Untrusted_Data_into_HTML_Element_Content
+[escape-html-attribute]: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet#RULE_.232_-_Attribute_Escape_Before_Inserting_Untrusted_Data_into_HTML_Common_Attributes
+
+### Protect Data in Transit
+Prevents:
+* [Man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) i.e. [POODLE](https://en.wikipedia.org/wiki/POODLE)
+* Information disclosure
+
+How:
+* Use HTTPS on web servers
+  * Obtain an [SSL server certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS.2FSSL_server_certificate) from a [certificate authority](https://en.wikipedia.org/wiki/Certificate_authority) and install it on your web server
+  * [Configure TLS settings](https://en.wikipedia.org/wiki/Transport_Layer_Security#Websites) to disable insecure versions and [cipher suites](https://en.wikipedia.org/wiki/Cipher_suite)
+* Configure clients within your service to connect to the SSL-enabled endpoints of other services, commonly done by using port 443
+* [Verify your SSL configuration](https://www.ssllabs.com/ssltest/)
+
+### Protect Data at Rest
+Prevents:
+* [Session hijacking](https://en.wikipedia.org/wiki/Session_hijacking)
+* Information disclosure
+
+How:
+* Use [secure cookies](https://en.wikipedia.org/wiki/Secure_cookies)
+* Encrypt sensitive data before writing to disk using an [encryption library](https://en.wikipedia.org/wiki/Comparison_of_cryptography_libraries)
+* Do not put sensitive data in a URL - URLs are stored in the clear in browser history and log files
 
 ### Source(s) and further reading
 
 * [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
+* [Basics of Web Application Security](https://martinfowler.com/articles/web-security-basics.html)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
 ## Appendix
