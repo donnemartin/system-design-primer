@@ -1714,6 +1714,7 @@ Handy metrics based on numbers above:
 | Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
 | Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
+| Misc | **Raft** - Distributed Consensus | [paper](https://raft.github.io/raft.pdf)<br/>[secret lives of data](http://thesecretlivesofdata.com/raft/) |
 | | Add an architecture | [Contribute](#contributing) |
 
 ### Company architectures
@@ -1802,6 +1803,7 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
 
 * Distributed computing with MapReduce
+* Distributed system synchronization and consensus algorithms
 * Consistent hashing
 * Scatter gather
 * [Contribute](#contributing)
