@@ -1078,6 +1078,7 @@ Graphs databases offer high performance for data models with complex relationshi
 * [Graph database](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
+* [Dgraph](https://dgraph.io/)
 
 #### Source(s) and further reading: NoSQL
 
