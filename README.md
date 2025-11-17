@@ -420,6 +420,7 @@ Another way to look at performance vs scalability:
 
 ### Source(s) and further reading
 
+* [A short masterclass on Scalability](https://open.substack.com/pub/devdesigndigest/p/scalability)
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
@@ -434,6 +435,7 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### Source(s) and further reading
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+* [Difference between latency and throughput and how to improve it](https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/)
 
 ## Availability vs consistency
 
