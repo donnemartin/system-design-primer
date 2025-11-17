@@ -937,6 +937,7 @@ In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A rea
 ###### Source(s) and further reading: denormalization
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
+* [Understand Denormalization with analogy](https://www.youtube.com/watch?v=T3cx09FINuU)
 
 #### SQL tuning
 
