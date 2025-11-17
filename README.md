@@ -11,17 +11,17 @@
 
 ## Motivation
 
-> Learn how to design large-scale systems.
+> Learn how to design large-scale system.
 >
 > Prep for the system design interview.
 
-### Learn how to design large-scale systems
+### Learn how to design large-scale system
 
-Learning how to design scalable systems will help you become a better engineer.
+Learning how to design scalable system will help you become a better engineer.
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+System design is a broad topic.  There are **vast amount of resources scattered throughout the web** on system design principles.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+This repo is an **organized collection** of resources that help you learn how to build systems at scale.
 
 ### Learn from the open source community
 
@@ -29,7 +29,7 @@ This is a continually updated, open source project.
 
 [Contributions](#contributing) are welcome!
 
-### Prep for the system design interview
+### Preparation for the system design interview
 
 In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
 
@@ -60,14 +60,14 @@ Great for use while on-the-go.
 
 ### Coding Resource: Interactive Coding Challenges
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+Looking for resources to help your prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Check out this sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
@@ -191,15 +191,15 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 What you are asked in an interview depends on variables such as:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
+* How much experience do you have
+* What is your technical background
+* Which positions you are interviewing for
+* Which company you interview with
 * Luck
 
 More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Starting broad and going deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 
 * **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
 * **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
@@ -229,7 +229,7 @@ Gather requirements and scope the problem.  Ask questions to clarify use cases a
 
 * Who is going to use it?
 * How are they going to use it?
-* How many users are there?
+* How many users will be there?
 * What does the system do?
 * What are the inputs and outputs of the system?
 * How much data do we expect to handle?
@@ -1525,7 +1525,7 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 
 #### Disadvantage(s): REST
 
-* With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
+* With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updates of the records from the past hour matching a particular set of events is not expressed easily as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
 * REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.
 * Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
 * Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
@@ -1793,7 +1793,7 @@ Handy metrics based on numbers above:
 
 #### Source(s) and further reading
 
-Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+Looking to add a blog?  To avoid duplicating of work, consider adding your company blog to the following repo:
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
