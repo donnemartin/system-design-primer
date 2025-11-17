@@ -1674,6 +1674,7 @@ Handy metrics based on numbers above:
 | Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
+| Design a Task Scheduler | [Codemia](https://codemia.io/system-design/design-a-task-scheduler/solutions/sc3c5j/My-Solution-for-Design-a-Task-Scheduler-with-Score-910) |
 | Add a system design question | [Contribute](#contributing) |
 
 ### Real world architectures
