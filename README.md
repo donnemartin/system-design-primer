@@ -1837,3 +1837,49 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
     http://creativecommons.org/licenses/by/4.0/
+## C++ Solutions
+
+As requested in Issue #1075, this repository now includes C++ examples for data structures, algorithms, and system-design components.
+
+This section is intended for contributors and learners who prefer C++ in system-design practice.
+
+---
+
+### 📁 Folder Structure
+
+All C++ examples are located here:
+
+
+---
+
+### 📌 Included Examples
+
+- `hashmap.cpp` — Demonstrates basic unordered_map usage in C++
+- `lru_cache.cpp` — Implements an LRU Cache using C++ STL
+- `thread_pool.cpp` — Simple thread pool (std::thread) demonstration  
+*(Add only the files you actually commit)*
+
+---
+
+### ▶️ How to Compile and Run (C++)
+
+Use any C++17 or newer compiler:
+
+```bash
+g++ hashmap.cpp -o hashmap
+./hashmap
+ 
+Why Add C++?
+
+Most sample implementations in this repository are written in Python.
+This section introduces C++ examples as requested in Issue #1075: "More Programming Languages Options"
+to support contributors and readers who prefer strongly-typed, performance-focused languages such as C++.
+Contributed by: @[AHVSSATHVIK]
+
+---
+
+# 👍 If you want the **C++ files themselves** (hashmap.cpp, lru_cache.cpp, thread_pool.cpp),  
+I can generate them ready for direct copy-paste also.
+
+Just tell me **“give me cpp files”**.
+
