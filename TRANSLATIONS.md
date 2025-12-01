@@ -38,6 +38,12 @@ Languages are grouped by status and are listed in alphabetical order.
 * Maintainer(s): [@kevingo](https://github.com/kevingo) 👏
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/88
 
+### 🎉 Ukrainian
+
+* [README-uk.md](README-uk.md)
+* Maintainer(s): [@shramko-serhii](https://github.com/shramkoweb) 👏
+* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/248
+
 ## In Progress
 
 ### ⏳ Korean
@@ -143,13 +149,6 @@ Languages are grouped by status and are listed in alphabetical order.
     * Previous Maintainer(s): [@hwclass](https://github.com/hwclass), [@canerbaran](https://github.com/canerbaran), [@emrahtoy](https://github.com/emrahtoy)
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/39
 * Translation Fork: https://github.com/donnemartin/system-design-primer/pull/239
-
-### ❗ Ukrainian
-
-* Maintainer(s): **Help Wanted** ✋
-    * Previous Maintainer(s): [@Kietzmann](https://github.com/Kietzmann), [@Acarus](https://github.com/Acarus)
-* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/248
-* Translation Fork: https://github.com/Acarus/system-design-primer
 
 ### ❗ Vietnamese
 
