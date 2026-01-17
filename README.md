@@ -421,7 +421,7 @@ Another way to look at performance vs scalability:
 ### Source(s) and further reading
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Scalability, availability, stability, patterns](https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/)
 
 ## Latency vs throughput
 
@@ -833,7 +833,7 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 <p align="center">
   <img src="images/C9ioGtn.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 ##### Disadvantage(s): master-slave replication
@@ -848,7 +848,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 <p align="center">
   <img src="images/krAHLGg.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 ##### Disadvantage(s): master-master replication
@@ -868,7 +868,7 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 
 ##### Source(s) and further reading: replication
 
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Scalability, availability, stability, patterns](https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
 #### Federation
@@ -897,7 +897,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 <p align="center">
   <img src="images/wU8x5Id.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
@@ -1241,7 +1241,7 @@ Subsequent reads of data added to cache are fast.  Cache-aside is also referred 
 <p align="center">
   <img src="images/0vBc0hN.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
@@ -1276,7 +1276,7 @@ Write-through is a slow overall operation due to the write operation, but subseq
 <p align="center">
   <img src="images/rgSrvjG.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
 
 In write-behind, the application does the following:
@@ -1316,7 +1316,7 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 * [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 * [Introduction to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale/)
-* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Scalability, availability, stability, patterns](https://speakerdeck.com/jboner/scalability-availability-and-stability-patterns/)
 * [Scalability](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
