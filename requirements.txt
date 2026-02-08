@@ -1,0 +1,5 @@
+mrjob
+jupyter
+notebook
+ipykernel
+pytest
