@@ -49,7 +49,7 @@ Mülakat hazırlığı için ek konular:
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
 
-## Study guide
+## Çalışma Kılavuzu
 
 > Mülakat zaman çizelgenize (kısa, orta, uzun) göre gözden geçirmeniz önerilen konular.
 
@@ -176,7 +176,7 @@ Biraz cilalanması gereken içerik [under development](#under-development) altı
     * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
         * [Master-slave replication](#master-slave-replication)
         * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
+        * [Federation](#Federation)
         * [Sharding](#sharding)
         * [Denormalization](#denormalization)
         * [SQL tuning](#sql-tuning)
@@ -830,7 +830,7 @@ SQL gibi bir ilişkisel veritabanı, tablolarda düzenlenmiş veri öğelerinin 
 * **Isolation** - Transaction'ları eşzamanlı olarak çalıştırmak, transaction'lar seri olarak çalıştırılmış gibi aynı sonuçlara sahiptir
 * **Durability** - Bir transaction commit edildikten sonra, öyle kalır
 
-Bir ilişkisel veritabanını ölçeklendirmek için birçok teknik vardır: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization** ve **SQL tuning**.
+Bir ilişkisel veritabanını ölçeklendirmek için birçok teknik vardır: **master-slave replication**, **master-master replication**, **Federasyon**, **sharding**, **denormalization** ve **SQL tuning**.
 
 #### Master-slave replication
 
@@ -877,7 +877,7 @@ Her iki master da okuma ve yazma işlemlerini sunar ve yazmalarda birbirleriyle 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### Federasyon
 
 <p align="center">
   <img src="images/U3qV33e.png">
@@ -885,16 +885,16 @@ Her iki master da okuma ve yazma işlemlerini sunar ve yazmalarda birbirleriyle 
   <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
 </p>
 
-Federation (veya fonksiyonel bölümleme), veritabanlarını işleve göre böler. Örneğin, tek, monolitik bir veritabanı yerine, üç veritabanınız olabilir: **forums**, **users** ve **products**, bu da her veritabanına daha az okuma ve yazma trafiği ve dolayısıyla daha az çoğaltma gecikmesi ile sonuçlanır. Daha küçük veritabanları, belleğe sığabilecek daha fazla veri ile sonuçlanır, bu da geliştirilmiş cache locality nedeniyle daha fazla cache hit ile sonuçlanır. Yazmaları serileştiren tek bir merkezi master olmadan paralel yazabilirsiniz, throughput'u artırırsınız.
+Federasyon (veya fonksiyonel bölümleme), veritabanlarını işleve göre böler. Örneğin, tek, monolitik bir veritabanı yerine, üç veritabanınız olabilir: **forums**, **users** ve **products**, bu da her veritabanına daha az okuma ve yazma trafiği ve dolayısıyla daha az çoğaltma gecikmesi ile sonuçlanır. Daha küçük veritabanları, belleğe sığabilecek daha fazla veri ile sonuçlanır, bu da geliştirilmiş cache locality nedeniyle daha fazla cache hit ile sonuçlanır. Yazmaları serileştiren tek bir merkezi master olmadan paralel yazabilirsiniz, throughput'u artırırsınız.
 
-##### Disadvantage(s): federation
+##### Disadvantage(s): Federasyon
 
-* Şemanız büyük fonksiyonlar veya tablolar gerektiriyorsa federation etkili değildir.
+* Şemanız büyük fonksiyonlar veya tablolar gerektiriyorsa Federasyon etkili değildir.
 * Hangi veritabanından okunacağını ve yazılacağını belirlemek için uygulama mantığınızı güncellemeniz gerekecek.
 * İki veritabanından veri birleştirmek, [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers) ile daha karmaşıktır.
-* Federation daha fazla donanım ve ek karmaşıklık ekler.
+* Federasyon daha fazla donanım ve ek karmaşıklık ekler.
 
-##### Source(s) and further reading: federation
+##### Source(s) and further reading: Federasyon
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
@@ -908,7 +908,7 @@ Federation (veya fonksiyonel bölümleme), veritabanlarını işleve göre böle
 
 Sharding, veriyi farklı veritabanları arasında dağıtır, böylece her veritabanı yalnızca verinin bir alt kümesini yönetebilir. Bir kullanıcı veritabanını örnek olarak alırsak, kullanıcı sayısı arttıkça cluster'a daha fazla shard eklenir.
 
-[Federation](#federation)'ın avantajlarına benzer şekilde, sharding daha az okuma ve yazma trafiği, daha az çoğaltma ve daha fazla cache hit ile sonuçlanır. Index boyutu da azalır, bu da genellikle daha hızlı sorgularla performansı iyileştirir. Bir shard çökerse, diğer shard'lar hala çalışır durumdadır, ancak veri kaybını önlemek için bir tür çoğaltma eklemek isteyeceksiniz. Federation gibi, yazmaları serileştiren tek bir merkezi master yoktur, bu da artan throughput ile paralel yazmanıza olanak tanır.
+[Federation](#Federation)'ın avantajlarına benzer şekilde, sharding daha az okuma ve yazma trafiği, daha az çoğaltma ve daha fazla cache hit ile sonuçlanır. Index boyutu da azalır, bu da genellikle daha hızlı sorgularla performansı iyileştirir. Bir shard çökerse, diğer shard'lar hala çalışır durumdadır, ancak veri kaybını önlemek için bir tür çoğaltma eklemek isteyeceksiniz. Federasyon gibi, yazmaları serileştiren tek bir merkezi master yoktur, bu da artan throughput ile paralel yazmanıza olanak tanır.
 
 Bir kullanıcı tablosunu shard'lamanın yaygın yolları, kullanıcının soyadının baş harfi veya kullanıcının coğrafi konumudur.
 
@@ -930,7 +930,7 @@ Bir kullanıcı tablosunu shard'lamanın yaygın yolları, kullanıcının soyad
 
 Denormalization, bazı yazma performansı pahasına okuma performansını iyileştirmeye çalışır. Verinin yedek kopyaları, pahalı join'lerden kaçınmak için birden fazla tabloya yazılır. [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) ve Oracle gibi bazı RDBMS'ler, yedek bilgileri depolama ve yedek kopyaları tutarlı tutma işini yapan [materialized views](https://en.wikipedia.org/wiki/Materialized_view)'i destekler.
 
-Veri [federation](#federation) ve [sharding](#sharding) gibi tekniklerle dağıtıldığında, veri merkezleri arasında join'leri yönetmek karmaşıklığı daha da artırır. Denormalization bu tür karmaşık join'lere olan ihtiyacı ortadan kaldırabilir.
+Veri [Federation](#Federation) ve [sharding](#sharding) gibi tekniklerle dağıtıldığında, veri merkezleri arasında join'leri yönetmek karmaşıklığı daha da artırır. Denormalization bu tür karmaşık join'lere olan ihtiyacı ortadan kaldırabilir.
 
 Çoğu sistemde, okumalar yazmaları 100:1 veya hatta 1000:1 oranında ağır basabilir. Karmaşık bir veritabanı join'i ile sonuçlanan bir okuma çok pahalı olabilir, disk işlemlerinde önemli miktarda zaman harcar.
 
