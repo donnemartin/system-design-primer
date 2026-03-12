@@ -434,7 +434,7 @@
 
 ### 来源及延伸阅读
 
-* [理解延迟与吞吐量](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+* [理解延迟与吞吐量](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
 
 ## 可用性与一致性
 
