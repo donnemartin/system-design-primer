@@ -1468,7 +1468,7 @@ RPC is a request-response protocol:
 * **Client stub procedure** - Marshals (packs) procedure id and arguments into a request message.
 * **Client communication module** - OS sends the message from the client to the server.
 * **Server communication module** - OS passes the incoming packets to the server stub procedure.
-* **Server stub procedure** -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.
+* **Server stub procedure** -  Unmarshalls the request, calls the server procedure matching the procedure id and passes the given arguments.
 * The server response repeats the steps above in reverse order.
 
 Sample RPC calls:
