@@ -71,6 +71,13 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
+### Video Resources
+
+* Watch [**20 System Design Concepts**](https://www.youtube.com/watch?v=i53Gi_K3o7I) to become familiar with the various topics within system design.
+* Watch the [**System Design Course for Beginners**](https://www.youtube.com/watch?v=MbjObHmDbZo) for a free high level crash course on the system design concepts.
+* To learn about specific System Design Concepts in greater detail, check out the [**System Design playlist**](https://www.youtube.com/playlist?list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf)
+  
+
 ## Contributing
 
 > Learn from the community.
@@ -368,6 +375,9 @@ Check out the following links to get a better idea of what to expect:
 | Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
+
+
+**Stuck?** Watch this [quick video](https://www.youtube.com/watch?v=tv-_1er1mWI) on common [design patterns](https://roadmap.sh/guides/design-patterns-for-humans)
 
 ## System design topics: start here
 
