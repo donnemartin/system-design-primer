@@ -52,6 +52,12 @@ Languages are grouped by status and are listed in alphabetical order.
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/87
 * Translation Fork: https://github.com/voitau/system-design-primer/blob/master/README-ru.md
 
+### ⏳ Uzbek
+
+* Maintainer(s): [@shaxbozbekpulatov](https://github.com/shaxbozbekpulatov) 👏
+* Discussion Thread: TBD
+* Translation Fork: [README-uz.md](README-uz.md)
+
 ## Stalled
 
 **Notes**:
