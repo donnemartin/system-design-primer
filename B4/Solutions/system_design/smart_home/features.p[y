@@ -1,0 +1,5 @@
+Smart Home System:
+
+1. SmartDevice: Represents a smart device with on/off control.
+
+2. SmartHomeSystem: Manages devices and controls their states.
