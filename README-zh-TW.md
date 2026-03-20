@@ -556,7 +556,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 * 儘管可以透過快取來減輕 DNS 的延遲，但連接 DNS 伺服器還是帶來了些許的延遲。
 * DNS 伺服器的管理是複雜的，儘管他通常由 [政府、ISP 業者或大公司](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729) 來處理。
-* DNS 伺服器會有 [DDoS 攻擊](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) ，讓不知道 Twitter IP 的使用者無法訪問 Twitter 網站。
+* DNS 伺服器會有 [DDoS 攻擊](https://web.archive.org/web/20170506010920/http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) ，讓不知道 Twitter IP 的使用者無法訪問 Twitter 網站。
 
 ### 來源及延伸閱讀
 
