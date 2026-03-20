@@ -386,6 +386,7 @@ First, you'll need a basic understanding of common principles, learning about wh
     * Load balancing
     * Database replication
     * Database partitioning
+    * High availability 
 
 ### Step 2: Review the scalability article
 
