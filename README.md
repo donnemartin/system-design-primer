@@ -377,15 +377,17 @@ First, you'll need a basic understanding of common principles, learning about wh
 
 ### Step 1: Review the scalability video lecture
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=6PWTxRGh_dk)
 
 * Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
+    * Load Balancing
+    * Autoscaling
+    * Database Replication
     * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+    * HTTPS
+    * Public-Key Cryptography
+    * Cross-Site Scripting
+    * Cross-Site Request Forgery
 
 ### Step 2: Review the scalability article
 
