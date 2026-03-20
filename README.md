@@ -992,7 +992,7 @@ Benchmarking and profiling might point you to the following optimizations.
 
 NoSQL is a collection of data items represented in a **key-value store**, **document store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
 
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
+**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [ACID](#relational-database-management-system-rdbms), BASE chooses availability over consistency.
 
 * **Basically available** - the system guarantees availability.
 * **Soft state** - the state of the system may change over time, even without input.
