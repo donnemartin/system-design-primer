@@ -162,6 +162,7 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
     * [Task queues](#task-queues)
     * [Back pressure](#back-pressure)
 * [Communication](#communication)
+    * [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
     * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
     * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
     * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
