@@ -85,9 +85,7 @@ class Level(object):
 
     def park_vehicle(self, vehicle):
         spot = self._find_available_spot(vehicle)
-        if spot is None:
-            return None
-        else:
+        if spot:
             spot.park_vehicle(vehicle)
             return spot
 
@@ -111,10 +109,10 @@ class ParkingSpot(object):
         self.vehicle = None
 
     def is_available(self):
-        return True if self.vehicle is None else False
+        return not self.vehicle
 
     def can_fit_vehicle(self, vehicle):
-        if self.vehicle is not None:
+        if self.vehicle:
             return False
         return vehicle.can_fit_in_spot(self)
 
