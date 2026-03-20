@@ -1509,8 +1509,8 @@ There are four qualities of a RESTful interface:
 
 * **Identify resources (URI in HTTP)** - use the same URI regardless of any operation.
 * **Change with representations (Verbs in HTTP)** - use verbs, headers, and body.
-* **Self-descriptive error message (status response in HTTP)** - Use status codes, don't reinvent the wheel.
-* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML interface for HTTP)** - your web service should be fully accessible in a browser.
+* **Self-descriptive error message (Status codes in HTTP)** - use status codes, don't reinvent the wheel.
+* **[HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) (Hypermedia in HTTP)** - provide dynamic application options through hypermedia.
 
 Sample REST calls:
 
@@ -1525,10 +1525,10 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 
 #### Disadvantage(s): REST
 
-* With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
-* REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.
-* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
-* Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
+* With REST being resource oriented, it demands a solid understanding of the business, so hierarchy and relationships between resources can be properly modeled. A poorly designed API is hard to evolve and misleads future clients implementations.
+* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable. In this case, additional endpoints or query parameters logic must be implemented to return aggregated data and reduce latency.
+* Over time, fields might be added, changed or even removed from an API response. Breaking changes should be versioned, which adds the complexity of maintaning multiple endpoints or headers versioning logic. Addition of fields can also lead to unecessary data being sent, which leads to the necessity of implementing response filtering logic, usually through query paramenters.
+
 
 ### RPC and REST calls comparison
 
