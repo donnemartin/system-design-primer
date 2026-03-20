@@ -245,14 +245,14 @@ Outline a high level design with all important components.
 
 ### Step 3: Design core components
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Dive into details for each core component.  For example, if you were asked to [design a URL shortening service](solutions/system_design/pastebin/README.md), discuss:
 
-* Generating and storing a hash of the full url
+* Generating and storing a hash of the full URL
     * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
     * Hash collisions
     * SQL or NoSQL
     * Database schema
-* Translating a hashed url to the full url
+* Translating a hashed URL to the full URL
     * Database lookup
 * API and object-oriented design
 
@@ -476,7 +476,7 @@ With multiple copies of the same data, we are faced with options on how to synch
 
 ### Weak consistency
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+After a write, reads may or may not see it.  The best effort approach is taken.
 
 This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
 
@@ -597,7 +597,7 @@ DNS is hierarchical, with a few authoritative servers at the top level.  Your ro
 
 Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
 
-* [Weighted round robin](https://www.jscape.com/blog/load-balancing-algorithms)
+* [Weighted round-robin](https://www.jscape.com/blog/load-balancing-algorithms)
     * Prevent traffic from going to servers under maintenance
     * Balance between varying cluster sizes
     * A/B testing
@@ -686,7 +686,7 @@ Load balancers can route traffic based on various metrics, including:
 * Random
 * Least loaded
 * Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [Round-robin or weighted round-robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
 * [Layer 4](#layer-4-load-balancing)
 * [Layer 7](#layer-7-load-balancing)
 
@@ -702,7 +702,7 @@ At the cost of flexibility, layer 4 load balancing requires less time and comput
 
 ### Horizontal scaling
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost-efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
 
 #### Disadvantage(s): horizontal scaling
 
@@ -790,7 +790,7 @@ Pinterest, for example, could have the following microservices: user profile, fo
 
 ### Service Discovery
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built-in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
 
 ### Disadvantage(s): application layer
 
@@ -958,7 +958,7 @@ Benchmarking and profiling might point you to the following optimizations.
 * Use `INT` for larger numbers up to 2^32 or 4 billion.
 * Use `DECIMAL` for currency to avoid floating point representation errors.
 * Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
+* `VARCHAR(255)` is the largest number of characters that can be counted in an 8-bit number, often maximizing the use of a byte in some RDBMS.
 * Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
 
 ##### Use good indices
@@ -984,7 +984,7 @@ Benchmarking and profiling might point you to the following optimizations.
 ##### Source(s) and further reading: SQL tuning
 
 * [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
-* [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
+* [Is there a good reason I see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
 * [How do null values affect performance?](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search)
 * [Slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html)
 
@@ -1348,7 +1348,7 @@ The user is not blocked and the job is processed in the background.  During this
 
 ### Task queues
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+Task queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
 
 **[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
 
@@ -1420,8 +1420,8 @@ TCP is useful for applications that require high reliability but are less time c
 
 Use TCP over UDP when:
 
-* You need all of the data to arrive intact
-* You want to automatically make a best estimate use of the network throughput
+* You need all the data to arrive intact
+* You want to automatically make the best estimate use of the network throughput
 
 ### User datagram protocol (UDP)
 
@@ -1460,7 +1460,7 @@ Use UDP over TCP when:
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
-In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
+In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls, so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
 
 RPC is a request-response protocol:
 
@@ -1686,7 +1686,7 @@ Handy metrics based on numbers above:
   <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
 </p>
 
-**Don't focus on nitty gritty details for the following articles, instead:**
+**Don't focus on nitty-gritty details for the following articles, instead:**
 
 * Identify shared principles, common technologies, and patterns within these articles
 * Study what problems are solved by each component, where it works, where it doesn't
