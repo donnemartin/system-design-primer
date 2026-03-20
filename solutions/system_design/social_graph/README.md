@@ -63,7 +63,7 @@ Handy conversion guide:
 Without the constraint of millions of users (vertices) and billions of friend relationships (edges), we could solve this unweighted shortest path task with a general BFS approach:
 
 ```python
-class Graph(Graph):
+class Graph():
 
     def shortest_path(self, source, dest):
         if source is None or dest is None:
@@ -97,6 +97,19 @@ class Graph(Graph):
                     prev_node_keys[adj_node.key] = prev_node.key
                     adj_node.visit_state = State.visited
         return None
+
+"""
+obj = Graph()
+a = Obj("a")
+b = Obj("b")
+c = Obj("c")
+d = Obj("d")
+a.adj_nodes = {"b":b, "c":c}
+b.adj_nodes = {"a":a}
+c.adj_nodes = {"a":a, "d":d}
+d.adj_nodes = {"c":c}
+print(obj.shortest_path(a, d))
+"""
 ```
 
 We won't be able to fit all users on the same machine, we'll need to [shard](https://github.com/donnemartin/system-design-primer#sharding) users across **Person Servers** and access them with a **Lookup Service**.
