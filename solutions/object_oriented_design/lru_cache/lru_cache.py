@@ -1,8 +1,17 @@
 class Node(object):
 
-    def __init__(self, results):
+    def __init__(self, query, results):
+        """Doubly-linked list node used by the LRU cache.
+
+        Args:
+            query: The cache key this node represents.
+            results: Cached value for *query*.
+        """
+        self.query = query
         self.results = results
-        self.next = next
+        # Pointers for the doubly-linked list
+        self.prev = None
+        self.next = None
 
 
 class LinkedList(object):
@@ -61,6 +70,6 @@ class Cache(object):
             else:
                 self.size += 1
             # Add the new key and value
-            new_node = Node(results)
+            new_node = Node(query, results)
             self.linked_list.append_to_front(new_node)
             self.lookup[query] = new_node
