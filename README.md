@@ -740,7 +740,7 @@ A reverse proxy is a web server that centralizes internal services and provides 
 
 Additional benefits include:
 
-* **Increased security** - Hide information about backend servers, blacklist IPs, limit number of connections per client
+* **Increased security** - Hide information about backend servers, Denylist IPs, limit number of connections per client
 * **Increased scalability and flexibility** - Clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration
 * **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
     * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
