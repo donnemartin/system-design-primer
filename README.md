@@ -435,6 +435,10 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
 
+* [Video Lecture from ByteByteGo](https://youtube.com/shorts/7kJAJREtAlo?si=T4KEO0HftFpuTZky)
+
+* [When to focus on what](https://youtu.be/ryzF1vO7N4w?si=pcXAUJUOLgbcXYuu&t=116)
+
 ## Availability vs consistency
 
 ### CAP theorem
