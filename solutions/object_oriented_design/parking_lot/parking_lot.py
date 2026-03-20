@@ -111,7 +111,7 @@ class ParkingSpot(object):
         self.vehicle = None
 
     def is_available(self):
-        return True if self.vehicle is None else False
+        return self.vehicle == None 
 
     def can_fit_vehicle(self, vehicle):
         if self.vehicle is not None:
