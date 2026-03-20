@@ -222,7 +222,7 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 
 > 根据限制条件，找到并解决瓶颈。
 
-![Imgur](http://i.imgur.com/MzExP06.png)
+![Imgur](http://i.imgur.com/jrUBAF7.png)
 
 **重要提示：不要从最初设计直接跳到最终设计中！**
 
