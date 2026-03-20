@@ -52,6 +52,12 @@ Languages are grouped by status and are listed in alphabetical order.
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/87
 * Translation Fork: https://github.com/voitau/system-design-primer/blob/master/README-ru.md
 
+### ⏳ Arabic
+
+* Maintainer(s): [@MohamedMetwalli5](https://github.com/MohamedMetwalli5) 👏
+* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/170
+* Translation Fork: https://github.com/MohamedMetwalli5/system-design-primer/blob/arabic-translation/README-ar.md
+
 ## Stalled
 
 **Notes**:
@@ -59,13 +65,6 @@ Languages are grouped by status and are listed in alphabetical order.
 * If you're able to commit to being an active maintainer for a language, let us know in the discussion thread for your language and update this file with a pull request.
     * If you're listed here as a "Previous Maintainer" but can commit to being an active maintainer, also let us know.
 * See the [Contributing Guidelines](CONTRIBUTING.md).
-
-### ❗ Arabic
-
-* Maintainer(s): **Help Wanted** ✋
-    * Previous Maintainer(s): [@aymns](https://github.com/aymns)
-* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/170
-* Translation Fork: https://github.com/aymns/system-design-primer/blob/develop/README-ar.md
 
 ### ❗ Bengali
 
