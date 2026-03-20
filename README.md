@@ -1391,7 +1391,7 @@ A basic HTTP request consists of a verb (method) and a resource (endpoint).  Bel
 
 *Can be called many times without different outcomes.
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
+HTTP is an application layer protocol relying on lower-level protocol **TCP**.
 
 #### Source(s) and further reading: HTTP
 
