@@ -42,6 +42,7 @@ Additional topics for interview prep:
 * [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
+* [System design interview questions](https://www.interviewbit.com/system-design-interview-questions/)
 
 ## Anki flashcards
 
