@@ -66,7 +66,7 @@ Search
 
 * Size per tweet:
     * `tweet_id` - 8 bytes
-    * `user_id` - 32 bytes
+    * `user_id` - 8 bytes
     * `text` - 140 bytes
     * `media` - 10 KB average
     * Total: ~10 KB
