@@ -707,8 +707,8 @@ Load balancers can also help with horizontal scaling, improving performance and 
 #### Disadvantage(s): horizontal scaling
 
 * Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
+    * Servers should ideally be stateless (no authoritative or per-instance user state such as in-memory sessions). User data (e.g., profiles or media) should live in shared services (databases or object storage). If session state is kept per instance, use session persistence (sticky sessions) at the load balancer.
+    * Sessions can be stored in a centralized store (DB/Redis/Memcached) to avoid needing stickiness, or kept per instance with session persistence.
 * Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
 
 ### Disadvantage(s): load balancer
