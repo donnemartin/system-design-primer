@@ -469,6 +469,7 @@ AP is a good choice if the business needs to allow for [eventual consistency](#e
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+* [Why you should not call databases CP or AP](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html)
 
 ## Consistency patterns
 
@@ -495,6 +496,7 @@ This approach is seen in file systems and RDBMSes.  Strong consistency works wel
 ### Source(s) and further reading
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [Additional consistency models](https://xzhu0027.gitbook.io/blog/misc/index/consistency-models-in-distributed-system)
 
 ## Availability patterns
 
