@@ -31,7 +31,16 @@
         <div class="sidebar-search">
             <div class="search-input-wrapper">
                 <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" id="searchInput" placeholder="Search chapters..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Search chapters & content..." autocomplete="off">
+                <kbd class="search-kbd">Ctrl K</kbd>
+            </div>
+            <!-- Full-text search results -->
+            <div class="search-results" id="searchResults" hidden>
+                <div class="search-results-header">
+                    <span class="search-results-count" id="searchResultsCount">0 results</span>
+                    <button class="search-results-close" id="searchResultsClose" aria-label="Close search results">&times;</button>
+                </div>
+                <div class="search-results-list" id="searchResultsList"></div>
             </div>
         </div>
 
@@ -371,6 +380,7 @@
 
         <!-- Chapter Content Area -->
         <div class="content-area" id="contentArea">
+            <div class="content-layout">
             <div class="content-wrapper">
                 <div id="chapterContent" class="chapter-content">
                     <div class="loading-spinner">
@@ -396,6 +406,12 @@
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                     </button>
                 </div>
+            </div>
+            <!-- Floating Table of Contents -->
+            <aside class="chapter-toc" id="chapterToc">
+                <div class="chapter-toc-header">On this page</div>
+                <nav class="chapter-toc-nav" id="chapterTocNav"></nav>
+            </aside>
             </div>
         </div>
 
@@ -437,6 +453,7 @@
     <script src="../js/chapters/chapters-g.js"></script>
     <script src="../js/chapters/chapters-h.js"></script>
     <script src="../js/chapters/chapters-core.js"></script>
+    <script src="../js/quizzes.js"></script>
     <!-- Application logic -->
     <script src="../js/app.js"></script>
 </body>

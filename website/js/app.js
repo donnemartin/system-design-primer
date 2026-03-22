@@ -40,6 +40,16 @@
     const notesSavedIndicator = document.getElementById('notesSavedIndicator');
     const notesOverlay = document.getElementById('notesOverlay');
 
+    // Search results
+    const searchResults = document.getElementById('searchResults');
+    const searchResultsList = document.getElementById('searchResultsList');
+    const searchResultsCount = document.getElementById('searchResultsCount');
+    const searchResultsClose = document.getElementById('searchResultsClose');
+
+    // Table of Contents
+    const chapterToc = document.getElementById('chapterToc');
+    const chapterTocNav = document.getElementById('chapterTocNav');
+
     // ============================================
     // State
     // ============================================
@@ -47,6 +57,9 @@
     let completedChapters = new Set();
     let chapterNotes = {};
     let notesSaveTimeout = null;
+    let quizScores = {};         // { chapterKey: { answered: [0-based indices answered], correct: count } }
+    let searchDebounce = null;
+    let tocScrollRAF = null;
 
     // ============================================
     // Initialization
@@ -84,6 +97,9 @@
 
             const savedNotes = localStorage.getItem('sdp_notes');
             if (savedNotes) chapterNotes = JSON.parse(savedNotes);
+
+            const savedQuiz = localStorage.getItem('sdp_quiz');
+            if (savedQuiz) quizScores = JSON.parse(savedQuiz);
         } catch (e) { /* ignore */ }
     }
 
@@ -92,6 +108,7 @@
             localStorage.setItem('sdp_completed', JSON.stringify([...completedChapters]));
             localStorage.setItem('sdp_current', currentChapter);
             localStorage.setItem('sdp_notes', JSON.stringify(chapterNotes));
+            localStorage.setItem('sdp_quiz', JSON.stringify(quizScores));
         } catch (e) { /* ignore */ }
     }
 
@@ -160,6 +177,8 @@
             bindAccordions();
             bindShadcnTabs();
             renderMermaidDiagrams();
+            buildTableOfContents();
+            renderQuiz(key);
 
             saveState();
         }, 150);
@@ -296,12 +315,31 @@
     }
 
     // ============================================
-    // Search
+    // Full-Text Search
     // ============================================
+    // Build a search index: strip HTML tags from chapter content
+    let searchIndex = null;
+
+    function buildSearchIndex() {
+        if (searchIndex) return searchIndex;
+        searchIndex = [];
+        CHAPTER_ORDER.forEach(key => {
+            const ch = CHAPTERS[key];
+            if (!ch || !ch.content) return;
+            // Strip HTML to get plain text
+            const div = document.createElement('div');
+            div.innerHTML = ch.content;
+            const text = div.textContent || div.innerText || '';
+            searchIndex.push({ key, title: ch.title, part: ch.part, text });
+        });
+        return searchIndex;
+    }
+
     function handleSearch(query) {
         const q = query.toLowerCase().trim();
         const navItems = document.querySelectorAll('.nav-item');
 
+        // Always filter nav items by title
         navItems.forEach(item => {
             const label = item.querySelector('.nav-item-label').textContent.toLowerCase();
             const chapter = item.getAttribute('data-chapter');
@@ -317,6 +355,331 @@
 
         if (q) {
             document.querySelectorAll('.nav-group-items').forEach(g => g.classList.remove('collapsed'));
+        }
+
+        // Debounce content search
+        clearTimeout(searchDebounce);
+        if (q.length < 2) {
+            searchResults.hidden = true;
+            return;
+        }
+
+        searchDebounce = setTimeout(() => {
+            performContentSearch(q);
+        }, 200);
+    }
+
+    function performContentSearch(query) {
+        const index = buildSearchIndex();
+        const results = [];
+
+        index.forEach(entry => {
+            const lowerText = entry.text.toLowerCase();
+            const idx = lowerText.indexOf(query);
+            if (idx !== -1) {
+                // Grab a snippet around the match
+                const start = Math.max(0, idx - 60);
+                const end = Math.min(entry.text.length, idx + query.length + 80);
+                let snippet = (start > 0 ? '...' : '') + entry.text.substring(start, end) + (end < entry.text.length ? '...' : '');
+                results.push({ key: entry.key, title: entry.title, part: entry.part, snippet, matchIdx: idx });
+            }
+
+            // Also check title match
+            if (entry.title.toLowerCase().includes(query) && idx === -1) {
+                results.push({ key: entry.key, title: entry.title, part: entry.part, snippet: entry.text.substring(0, 120) + '...', matchIdx: 0 });
+            }
+        });
+
+        if (results.length === 0) {
+            searchResultsCount.textContent = '0 results';
+            searchResultsList.innerHTML = '<div class="search-no-results">No results found for &ldquo;' + escapeHTML(query) + '&rdquo;</div>';
+            searchResults.hidden = false;
+            return;
+        }
+
+        searchResultsCount.textContent = results.length + ' result' + (results.length !== 1 ? 's' : '');
+
+        const escapedQuery = escapeHTML(query);
+        searchResultsList.innerHTML = results.map(r => {
+            const highlightedSnippet = highlightMatch(escapeHTML(r.snippet), escapedQuery);
+            return '<button class="search-result-item" data-chapter="' + r.key + '">' +
+                '<div class="search-result-item-title">' +
+                    '<span>' + escapeHTML(r.title) + '</span>' +
+                    '<span class="search-result-item-part">' + escapeHTML(r.part) + '</span>' +
+                '</div>' +
+                '<div class="search-result-item-snippet">' + highlightedSnippet + '</div>' +
+            '</button>';
+        }).join('');
+
+        // Bind clicks
+        searchResultsList.querySelectorAll('.search-result-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.getAttribute('data-chapter');
+                loadChapter(key);
+                closeSidebar();
+                searchResults.hidden = true;
+                searchInput.value = '';
+                handleSearch('');
+            });
+        });
+
+        searchResults.hidden = false;
+    }
+
+    function escapeHTML(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function highlightMatch(text, query) {
+        if (!query) return text;
+        const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    function closeSearchResults() {
+        searchResults.hidden = true;
+    }
+
+    // ============================================
+    // Table of Contents (floating, scroll-spy)
+    // ============================================
+    function buildTableOfContents() {
+        if (!chapterTocNav) return;
+        const headings = chapterContent.querySelectorAll('h2, h3');
+
+        if (headings.length < 2) {
+            chapterToc.style.display = 'none';
+            chapterTocNav.innerHTML = '';
+            return;
+        }
+
+        // Restore display (CSS handles media query)
+        chapterToc.style.display = '';
+
+        // Ensure headings have IDs
+        headings.forEach((h, i) => {
+            if (!h.id) {
+                h.id = 'toc-' + i + '-' + h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            }
+        });
+
+        chapterTocNav.innerHTML = Array.from(headings).map(h => {
+            const level = h.tagName === 'H3' ? 'toc-h3' : '';
+            return '<a class="chapter-toc-link ' + level + '" data-toc-target="' + h.id + '">' + h.textContent.trim() + '</a>';
+        }).join('');
+
+        // Clicking a TOC link scrolls to heading
+        chapterTocNav.querySelectorAll('.chapter-toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = link.getAttribute('data-toc-target');
+                const target = document.getElementById(id);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Init scroll spy
+        setupScrollSpy(headings);
+    }
+
+    function setupScrollSpy(headings) {
+        // Use IntersectionObserver for scroll spy
+        if (window._tocObserver) {
+            window._tocObserver.disconnect();
+        }
+
+        const tocLinks = chapterTocNav.querySelectorAll('.chapter-toc-link');
+        if (tocLinks.length === 0) return;
+
+        const headingArr = Array.from(headings);
+
+        window._tocObserver = new IntersectionObserver((entries) => {
+            // Find the first heading that is intersecting or has passed
+            let activeId = null;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activeId = entry.target.id;
+                }
+            });
+
+            if (!activeId) {
+                // Fallback: find the last heading that is above the viewport middle
+                const midY = window.innerHeight / 3;
+                for (let i = headingArr.length - 1; i >= 0; i--) {
+                    const rect = headingArr[i].getBoundingClientRect();
+                    if (rect.top <= midY) {
+                        activeId = headingArr[i].id;
+                        break;
+                    }
+                }
+            }
+
+            if (activeId) {
+                tocLinks.forEach(l => l.classList.remove('active'));
+                const active = chapterTocNav.querySelector('[data-toc-target="' + activeId + '"]');
+                if (active) active.classList.add('active');
+            }
+        }, {
+            rootMargin: '-10% 0px -70% 0px',
+            threshold: [0, 0.5, 1]
+        });
+
+        headingArr.forEach(h => window._tocObserver.observe(h));
+
+        // Also activate first by default
+        if (tocLinks.length > 0) tocLinks[0].classList.add('active');
+    }
+
+    // ============================================
+    // Quiz Mode
+    // ============================================
+    function renderQuiz(chapterKey) {
+        if (typeof QUIZZES === 'undefined') return;
+        const questions = QUIZZES[chapterKey];
+        if (!questions || questions.length === 0) return;
+
+        const score = quizScores[chapterKey] || { answered: {}, correct: 0 };
+        const totalAnswered = Object.keys(score.answered).length;
+
+        let html = '<div class="quiz-section">' +
+            '<div class="quiz-section-header">' +
+                '<span class="quiz-section-title">🧠 Knowledge Check</span>' +
+                '<span class="quiz-section-badge">' + questions.length + ' question' + (questions.length !== 1 ? 's' : '') + '</span>' +
+            '</div>';
+
+        questions.forEach((q, qi) => {
+            const answered = score.answered[qi] !== undefined;
+            const selectedIdx = score.answered[qi];
+            const isCorrect = selectedIdx === q.answer;
+            const cardClass = answered ? (isCorrect ? 'answered-correct' : 'answered-wrong') : '';
+
+            html += '<div class="quiz-card ' + cardClass + '" data-quiz-idx="' + qi + '">' +
+                '<div class="quiz-question-number">Question ' + (qi + 1) + '</div>' +
+                '<div class="quiz-question-text">' + q.q + '</div>' +
+                '<div class="quiz-options">';
+
+            const markers = ['A', 'B', 'C', 'D', 'E', 'F'];
+            q.options.forEach((opt, oi) => {
+                let optClass = answered ? 'disabled' : '';
+                if (answered && oi === q.answer) optClass += ' correct';
+                if (answered && oi === selectedIdx && oi !== q.answer) optClass += ' wrong';
+                if (answered && oi === selectedIdx) optClass += ' selected';
+
+                html += '<button class="quiz-option ' + optClass + '" data-question="' + qi + '" data-option="' + oi + '">' +
+                    '<span class="quiz-option-marker">' + markers[oi] + '</span>' +
+                    '<span>' + opt + '</span>' +
+                '</button>';
+            });
+
+            html += '</div>';
+            html += '<div class="quiz-explanation ' + (answered ? 'visible' : '') + '" data-explain="' + qi + '">' +
+                (isCorrect ? '✅ Correct! ' : (answered ? '❌ Incorrect. ' : '')) + q.explanation +
+            '</div>';
+            html += '</div>';
+        });
+
+        // Score bar
+        if (totalAnswered > 0) {
+            const pct = Math.round((score.correct / questions.length) * 100);
+            html += '<div class="quiz-score">' +
+                '<span class="quiz-score-label">Score</span>' +
+                '<span class="quiz-score-value">' + score.correct + '/' + questions.length + '</span>' +
+                '<div class="quiz-score-bar"><div class="quiz-score-fill" style="width:' + pct + '%"></div></div>' +
+                '<button class="quiz-reset-btn" data-quiz-reset="' + chapterKey + '">Reset</button>' +
+            '</div>';
+        }
+
+        html += '</div>';
+
+        // Append to chapter content
+        chapterContent.insertAdjacentHTML('beforeend', html);
+
+        // Bind quiz option clicks
+        chapterContent.querySelectorAll('.quiz-option:not(.disabled)').forEach(btn => {
+            btn.addEventListener('click', () => handleQuizAnswer(chapterKey, btn));
+        });
+
+        // Bind reset
+        const resetBtn = chapterContent.querySelector('[data-quiz-reset]');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                delete quizScores[chapterKey];
+                saveState();
+                renderQuiz.__reloading = true;
+                // Re-render by reloading chapter
+                loadChapter(chapterKey);
+            });
+        }
+    }
+
+    function handleQuizAnswer(chapterKey, btn) {
+        const qi = parseInt(btn.getAttribute('data-question'));
+        const oi = parseInt(btn.getAttribute('data-option'));
+        const questions = QUIZZES[chapterKey];
+        if (!questions) return;
+        const q = questions[qi];
+
+        // Init score
+        if (!quizScores[chapterKey]) quizScores[chapterKey] = { answered: {}, correct: 0 };
+        const score = quizScores[chapterKey];
+
+        // Already answered?
+        if (score.answered[qi] !== undefined) return;
+
+        score.answered[qi] = oi;
+        if (oi === q.answer) score.correct++;
+        saveState();
+
+        // Update UI
+        const card = chapterContent.querySelector('.quiz-card[data-quiz-idx="' + qi + '"]');
+        if (!card) return;
+
+        card.classList.add(oi === q.answer ? 'answered-correct' : 'answered-wrong');
+
+        card.querySelectorAll('.quiz-option').forEach(opt => {
+            opt.classList.add('disabled');
+            const optIdx = parseInt(opt.getAttribute('data-option'));
+            if (optIdx === q.answer) opt.classList.add('correct');
+            if (optIdx === oi && oi !== q.answer) opt.classList.add('wrong');
+            if (optIdx === oi) opt.classList.add('selected');
+        });
+
+        // Show explanation
+        const explain = card.querySelector('[data-explain="' + qi + '"]');
+        if (explain) {
+            explain.textContent = (oi === q.answer ? '✅ Correct! ' : '❌ Incorrect. ') + q.explanation;
+            explain.classList.add('visible');
+        }
+
+        // Update score bar if all answered
+        const totalAnswered = Object.keys(score.answered).length;
+        if (totalAnswered === questions.length) {
+            // Remove existing score bar and re-add
+            const existingScore = chapterContent.querySelector('.quiz-score');
+            if (existingScore) existingScore.remove();
+
+            const pct = Math.round((score.correct / questions.length) * 100);
+            const scoreHtml = '<div class="quiz-score">' +
+                '<span class="quiz-score-label">Score</span>' +
+                '<span class="quiz-score-value">' + score.correct + '/' + questions.length + '</span>' +
+                '<div class="quiz-score-bar"><div class="quiz-score-fill" style="width:' + pct + '%"></div></div>' +
+                '<button class="quiz-reset-btn" data-quiz-reset="' + chapterKey + '">Reset</button>' +
+            '</div>';
+
+            const quizSection = chapterContent.querySelector('.quiz-section');
+            if (quizSection) {
+                quizSection.insertAdjacentHTML('beforeend', scoreHtml);
+                const resetBtn = quizSection.querySelector('[data-quiz-reset]');
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        delete quizScores[chapterKey];
+                        saveState();
+                        loadChapter(chapterKey);
+                    });
+                }
+            }
         }
     }
 
@@ -522,6 +885,14 @@
 
         // Search
         searchInput.addEventListener('input', (e) => handleSearch(e.target.value));
+        searchResultsClose.addEventListener('click', closeSearchResults);
+
+        // Close search results when clicking outside sidebar-search
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.sidebar-search') && !searchResults.hidden) {
+                closeSearchResults();
+            }
+        });
 
         // Mark complete
         markComplete.addEventListener('click', toggleChapterComplete);
@@ -552,6 +923,8 @@
                 closeLightbox();
                 closeSidebar();
                 closeNotesPanel();
+                closeSearchResults();
+                searchInput.blur();
             }
             if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
                 if (e.key === 'ArrowLeft') prevChapter.click();
