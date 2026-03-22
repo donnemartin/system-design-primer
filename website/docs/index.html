@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design Primer — Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="/" class="logo" id="logoLink" title="Back to homepage">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">System Design<br><small>Primer</small></span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+
+        <!-- Search -->
+        <div class="sidebar-search">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="searchInput" placeholder="Search chapters..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="sidebar-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0% complete</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Part A -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-a">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part A: Getting Started</span>
+                    <span class="nav-group-badge">4</span>
+                </div>
+                <div class="nav-group-items" data-group-items="part-a">
+                    <a href="#" class="nav-item active" data-chapter="motivation">
+                        <span class="nav-item-status" data-check="motivation"></span>
+                        <span class="nav-item-number">01</span>
+                        <span class="nav-item-label">Motivation</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="flashcards">
+                        <span class="nav-item-status" data-check="flashcards"></span>
+                        <span class="nav-item-number">02</span>
+                        <span class="nav-item-label">Anki Flashcards</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="study-guide">
+                        <span class="nav-item-status" data-check="study-guide"></span>
+                        <span class="nav-item-number">03</span>
+                        <span class="nav-item-label">Study Guide</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="interview-approach">
+                        <span class="nav-item-status" data-check="interview-approach"></span>
+                        <span class="nav-item-number">04</span>
+                        <span class="nav-item-label">Interview Approach</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part B -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-b">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part B: Core Concepts</span>
+                    <span class="nav-group-badge">5</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-b">
+                    <a href="#" class="nav-item" data-chapter="performance-scalability">
+                        <span class="nav-item-status" data-check="performance-scalability"></span>
+                        <span class="nav-item-number">05</span>
+                        <span class="nav-item-label">Performance vs Scalability</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="latency-throughput">
+                        <span class="nav-item-status" data-check="latency-throughput"></span>
+                        <span class="nav-item-number">06</span>
+                        <span class="nav-item-label">Latency vs Throughput</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="availability-consistency">
+                        <span class="nav-item-status" data-check="availability-consistency"></span>
+                        <span class="nav-item-number">07</span>
+                        <span class="nav-item-label">Availability vs Consistency</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="consistency-patterns">
+                        <span class="nav-item-status" data-check="consistency-patterns"></span>
+                        <span class="nav-item-number">08</span>
+                        <span class="nav-item-label">Consistency Patterns</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="availability-patterns">
+                        <span class="nav-item-status" data-check="availability-patterns"></span>
+                        <span class="nav-item-number">09</span>
+                        <span class="nav-item-label">Availability Patterns</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part C -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-c">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part C: Infrastructure</span>
+                    <span class="nav-group-badge">4</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-c">
+                    <a href="#" class="nav-item" data-chapter="dns">
+                        <span class="nav-item-status" data-check="dns"></span>
+                        <span class="nav-item-number">10</span>
+                        <span class="nav-item-label">Domain Name System</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="cdn">
+                        <span class="nav-item-status" data-check="cdn"></span>
+                        <span class="nav-item-number">11</span>
+                        <span class="nav-item-label">Content Delivery Network</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="load-balancer">
+                        <span class="nav-item-status" data-check="load-balancer"></span>
+                        <span class="nav-item-number">12</span>
+                        <span class="nav-item-label">Load Balancer</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="reverse-proxy">
+                        <span class="nav-item-status" data-check="reverse-proxy"></span>
+                        <span class="nav-item-number">13</span>
+                        <span class="nav-item-label">Reverse Proxy</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part D -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-d">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part D: Data Layer</span>
+                    <span class="nav-group-badge">4</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-d">
+                    <a href="#" class="nav-item" data-chapter="application-layer">
+                        <span class="nav-item-status" data-check="application-layer"></span>
+                        <span class="nav-item-number">14</span>
+                        <span class="nav-item-label">Application Layer</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="database">
+                        <span class="nav-item-status" data-check="database"></span>
+                        <span class="nav-item-number">15</span>
+                        <span class="nav-item-label">Database</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="cache">
+                        <span class="nav-item-status" data-check="cache"></span>
+                        <span class="nav-item-number">16</span>
+                        <span class="nav-item-label">Cache</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="asynchronism">
+                        <span class="nav-item-status" data-check="asynchronism"></span>
+                        <span class="nav-item-number">17</span>
+                        <span class="nav-item-label">Asynchronism</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part E -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-e">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part E: Communication</span>
+                    <span class="nav-group-badge">2</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-e">
+                    <a href="#" class="nav-item" data-chapter="communication">
+                        <span class="nav-item-status" data-check="communication"></span>
+                        <span class="nav-item-number">18</span>
+                        <span class="nav-item-label">Communication</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="security">
+                        <span class="nav-item-status" data-check="security"></span>
+                        <span class="nav-item-number">19</span>
+                        <span class="nav-item-label">Security</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part F -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-f">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part F: Practice Problems</span>
+                    <span class="nav-group-badge">8</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-f">
+                    <a href="#" class="nav-item" data-chapter="design-pastebin">
+                        <span class="nav-item-status" data-check="design-pastebin"></span>
+                        <span class="nav-item-number">20</span>
+                        <span class="nav-item-label">Design Pastebin</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-twitter">
+                        <span class="nav-item-status" data-check="design-twitter"></span>
+                        <span class="nav-item-number">21</span>
+                        <span class="nav-item-label">Design Twitter</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-web-crawler">
+                        <span class="nav-item-status" data-check="design-web-crawler"></span>
+                        <span class="nav-item-number">22</span>
+                        <span class="nav-item-label">Design Web Crawler</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-mint">
+                        <span class="nav-item-status" data-check="design-mint"></span>
+                        <span class="nav-item-number">23</span>
+                        <span class="nav-item-label">Design Mint.com</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-social-graph">
+                        <span class="nav-item-status" data-check="design-social-graph"></span>
+                        <span class="nav-item-number">24</span>
+                        <span class="nav-item-label">Design Social Network</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-kv-store">
+                        <span class="nav-item-status" data-check="design-kv-store"></span>
+                        <span class="nav-item-number">25</span>
+                        <span class="nav-item-label">Design Key-Value Cache</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-sales-rank">
+                        <span class="nav-item-status" data-check="design-sales-rank"></span>
+                        <span class="nav-item-number">26</span>
+                        <span class="nav-item-label">Design Sales Ranking</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="design-scaling-aws">
+                        <span class="nav-item-status" data-check="design-scaling-aws"></span>
+                        <span class="nav-item-number">27</span>
+                        <span class="nav-item-label">Scaling on AWS</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part G -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-g">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part G: OO Design</span>
+                    <span class="nav-group-badge">6</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-g">
+                    <a href="#" class="nav-item" data-chapter="oo-hash-map">
+                        <span class="nav-item-status" data-check="oo-hash-map"></span>
+                        <span class="nav-item-number">28</span>
+                        <span class="nav-item-label">Design Hash Map</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="oo-lru-cache">
+                        <span class="nav-item-status" data-check="oo-lru-cache"></span>
+                        <span class="nav-item-number">29</span>
+                        <span class="nav-item-label">Design LRU Cache</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="oo-call-center">
+                        <span class="nav-item-status" data-check="oo-call-center"></span>
+                        <span class="nav-item-number">30</span>
+                        <span class="nav-item-label">Design Call Center</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="oo-deck-of-cards">
+                        <span class="nav-item-status" data-check="oo-deck-of-cards"></span>
+                        <span class="nav-item-number">31</span>
+                        <span class="nav-item-label">Design Deck of Cards</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="oo-parking-lot">
+                        <span class="nav-item-status" data-check="oo-parking-lot"></span>
+                        <span class="nav-item-number">32</span>
+                        <span class="nav-item-label">Design Parking Lot</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="oo-online-chat">
+                        <span class="nav-item-status" data-check="oo-online-chat"></span>
+                        <span class="nav-item-number">33</span>
+                        <span class="nav-item-label">Design Online Chat</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Part H -->
+            <div class="nav-group">
+                <div class="nav-group-header" data-group="part-h">
+                    <span class="nav-group-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
+                    <span class="nav-group-label">Part H: Appendix</span>
+                    <span class="nav-group-badge">5</span>
+                </div>
+                <div class="nav-group-items collapsed" data-group-items="part-h">
+                    <a href="#" class="nav-item" data-chapter="powers-of-two">
+                        <span class="nav-item-status" data-check="powers-of-two"></span>
+                        <span class="nav-item-number">34</span>
+                        <span class="nav-item-label">Powers of Two Table</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="latency-numbers">
+                        <span class="nav-item-status" data-check="latency-numbers"></span>
+                        <span class="nav-item-number">35</span>
+                        <span class="nav-item-label">Latency Numbers</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="additional-questions">
+                        <span class="nav-item-status" data-check="additional-questions"></span>
+                        <span class="nav-item-number">36</span>
+                        <span class="nav-item-label">Additional Questions</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="real-world-architectures">
+                        <span class="nav-item-status" data-check="real-world-architectures"></span>
+                        <span class="nav-item-number">37</span>
+                        <span class="nav-item-label">Real World Architectures</span>
+                    </a>
+                    <a href="#" class="nav-item" data-chapter="engineering-blogs">
+                        <span class="nav-item-status" data-check="engineering-blogs"></span>
+                        <span class="nav-item-number">38</span>
+                        <span class="nav-item-label">Engineering Blogs</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="breadcrumb" id="breadcrumb">
+                <span class="breadcrumb-part">Part A</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <span class="breadcrumb-chapter">Motivation</span>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn-notes-toggle" id="notesToggle" title="My Notes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Notes</span>
+                </button>
+                <button class="btn-mark-complete" id="markComplete" title="Mark chapter as completed">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Mark Complete</span>
+                </button>
+                <button class="theme-toggle-topbar" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chapter Content Area -->
+        <div class="content-area" id="contentArea">
+            <div class="content-wrapper">
+                <div id="chapterContent" class="chapter-content">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Loading chapter...</p>
+                    </div>
+                </div>
+
+                <!-- Chapter Navigation -->
+                <div class="chapter-nav" id="chapterNav">
+                    <button class="chapter-nav-btn prev" id="prevChapter" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                        <div class="chapter-nav-text">
+                            <small>Previous</small>
+                            <span id="prevLabel">—</span>
+                        </div>
+                    </button>
+                    <button class="chapter-nav-btn next" id="nextChapter">
+                        <div class="chapter-nav-text">
+                            <small>Next</small>
+                            <span id="nextLabel">Anki Flashcards</span>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top -->
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+    </main>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <!-- Notes Panel (slide-in) -->
+    <div class="notes-panel" id="notesPanel">
+        <div class="notes-panel-header">
+            <h3>📝 My Notes</h3>
+            <button class="notes-panel-close" id="notesPanelClose" aria-label="Close notes">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="notes-panel-chapter" id="notesPanelChapter">Chapter: Motivation</div>
+        <textarea class="notes-textarea" id="notesTextarea" placeholder="Type your notes for this chapter here..."></textarea>
+        <div class="notes-panel-footer">
+            <span class="notes-saved-indicator" id="notesSavedIndicator">All changes saved</span>
+        </div>
+    </div>
+    <div class="notes-overlay" id="notesOverlay"></div>
+
+    <!-- Chapter content (modular, one file per part) -->
+    <script src="../js/chapters/chapters-a.js"></script>
+    <script src="../js/chapters/chapters-b.js"></script>
+    <script src="../js/chapters/chapters-c.js"></script>
+    <script src="../js/chapters/chapters-d.js"></script>
+    <script src="../js/chapters/chapters-e.js"></script>
+    <script src="../js/chapters/chapters-f.js"></script>
+    <script src="../js/chapters/chapters-g.js"></script>
+    <script src="../js/chapters/chapters-h.js"></script>
+    <script src="../js/chapters/chapters-core.js"></script>
+    <!-- Application logic -->
+    <script src="../js/app.js"></script>
+</body>
+</html>
