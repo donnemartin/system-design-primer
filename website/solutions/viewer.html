@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Viewer — System Design Primer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <!-- Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <style>
+        /* --- Theme Variables --- */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #1c2129;
+            --bg-elevated: #21262d;
+            --bg-hover: #292e36;
+            --border-primary: #30363d;
+            --border-secondary: #21262d;
+            --border-accent: #1f6feb;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-tertiary: #6e7681;
+            --text-link: #58a6ff;
+            --text-on-accent: #ffffff;
+            --accent: #1f6feb;
+            --accent-hover: #388bfd;
+            --accent-subtle: #1f6feb22;
+            --success: #3fb950;
+            --success-subtle: #3fb95022;
+            --warning: #d29922;
+            --warning-subtle: #d2992222;
+            --danger: #f85149;
+            --danger-subtle: #f8514922;
+            --code-bg: #161b22;
+            --code-border: #30363d;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f6f8fa;
+            --bg-tertiary: #f0f2f5;
+            --bg-elevated: #ffffff;
+            --bg-hover: #eaeef2;
+            --border-primary: #d0d7de;
+            --border-secondary: #e8ebef;
+            --border-accent: #0969da;
+            --text-primary: #1f2328;
+            --text-secondary: #656d76;
+            --text-tertiary: #8c959f;
+            --text-link: #0969da;
+            --text-on-accent: #ffffff;
+            --accent: #0969da;
+            --accent-hover: #0550ae;
+            --accent-subtle: #0969da15;
+            --success: #1a7f37;
+            --success-subtle: #1a7f3715;
+            --warning: #9a6700;
+            --warning-subtle: #9a670015;
+            --danger: #cf222e;
+            --danger-subtle: #cf222e15;
+            --code-bg: #f6f8fa;
+            --code-border: #d0d7de;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* --- Top Bar --- */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+            padding: 0 24px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-primary);
+            backdrop-filter: blur(12px);
+        }
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+        .topbar-left a {
+            color: var(--text-link);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color var(--transition-fast);
+            white-space: nowrap;
+        }
+        .topbar-left a:hover { color: var(--accent-hover); }
+        .topbar-left .separator { color: var(--text-tertiary); }
+        .notebook-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .topbar-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-primary);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .topbar-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: var(--border-accent);
+        }
+        .topbar-btn.active {
+            background: var(--accent-subtle);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        .topbar-btn.run-all-btn {
+            background: var(--success-subtle);
+            color: var(--success);
+            border-color: var(--success);
+        }
+        .topbar-btn.run-all-btn:hover {
+            background: var(--success);
+            color: var(--text-on-accent);
+        }
+        .topbar-btn.run-all-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* --- Pyodide Status Banner --- */
+        .pyodide-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--accent-subtle);
+            border-bottom: 1px solid var(--border-primary);
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            transition: all 0.4s ease;
+        }
+        .pyodide-banner.ready {
+            background: var(--success-subtle);
+            color: var(--success);
+        }
+        .pyodide-banner.error {
+            background: var(--danger-subtle);
+            color: var(--danger);
+        }
+        .pyodide-banner .mini-spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--border-primary);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        .pyodide-banner.ready .mini-spinner { display: none; }
+        .pyodide-banner.error .mini-spinner { display: none; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .pyodide-banner.hidden {
+            max-height: 0;
+            padding: 0 20px;
+            opacity: 0;
+            overflow: hidden;
+            border: none;
+        }
+
+        /* --- Notebook Container --- */
+        .notebook-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 24px 80px;
+        }
+
+        /* --- Cell Base --- */
+        .cell {
+            margin-bottom: 8px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-primary);
+            background: var(--bg-secondary);
+            overflow: hidden;
+            transition: border-color var(--transition-fast);
+        }
+        .cell:hover {
+            border-color: var(--border-accent);
+        }
+        .cell.running {
+            border-color: var(--warning);
+            box-shadow: 0 0 0 1px var(--warning-subtle);
+        }
+        .cell.success {
+            border-color: var(--success);
+        }
+        .cell.error {
+            border-color: var(--danger);
+        }
+        .cell-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 14px;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-secondary);
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            font-family: var(--font-mono);
+        }
+        .cell-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .cell-badge.code { background: var(--accent-subtle); color: var(--accent); }
+        .cell-badge.markdown { background: var(--success-subtle); color: var(--success); }
+        .cell-number {
+            font-size: 0.72rem;
+            color: var(--text-tertiary);
+            min-width: 44px;
+            text-align: right;
+        }
+        .cell-number.running-num { color: var(--warning); }
+        .cell-actions {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .cell-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: transparent;
+            color: var(--text-tertiary);
+            cursor: pointer;
+            font-size: 0.82rem;
+            transition: all var(--transition-fast);
+        }
+        .cell-action-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+        .cell-action-btn.copied { color: var(--success); }
+
+        /* --- Run Button --- */
+        .run-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 12px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--success);
+            background: var(--success-subtle);
+            color: var(--success);
+            font-size: 0.75rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+        .run-btn:hover {
+            background: var(--success);
+            color: var(--text-on-accent);
+        }
+        .run-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .run-btn .run-icon { font-size: 0.7rem; }
+        .run-btn.running-btn {
+            border-color: var(--warning);
+            background: var(--warning-subtle);
+            color: var(--warning);
+            cursor: wait;
+        }
+
+        /* --- Code Cell --- */
+        .cell-code .CodeMirror {
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            height: auto;
+            padding: 4px 0;
+            background: var(--bg-secondary);
+        }
+        .cell-code .CodeMirror-gutters {
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-secondary);
+        }
+        .cell-code .CodeMirror-linenumber {
+            color: var(--text-tertiary);
+            font-size: 0.78rem;
+        }
+        .cell-code .CodeMirror-focused {
+            outline: none;
+        }
+
+        /* --- Cell Output --- */
+        .cell-output-area {
+            border-top: 1px solid var(--border-secondary);
+            background: var(--bg-primary);
+        }
+        .cell-output-area:empty { display: none; }
+        .cell-output-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 14px;
+            border-bottom: 1px solid var(--border-secondary);
+        }
+        .cell-output-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+        }
+        .clear-output-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: transparent;
+            color: var(--text-tertiary);
+            font-size: 0.7rem;
+            font-family: var(--font-sans);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .clear-output-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+        .cell-output-content {
+            padding: 10px 16px;
+            max-height: 400px;
+            overflow: auto;
+        }
+        .cell-output-content pre {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+        }
+        .cell-output-content pre.error-output {
+            color: var(--danger);
+        }
+        .cell-output-content pre.result-output {
+            color: var(--success);
+        }
+        .execution-time {
+            font-size: 0.7rem;
+            color: var(--text-tertiary);
+            font-family: var(--font-mono);
+            padding: 4px 16px 8px;
+        }
+
+        /* --- Markdown Cell --- */
+        .cell-markdown { padding: 16px 20px; }
+        .cell-markdown h1 {
+            font-size: 1.8rem; font-weight: 700; margin-bottom: 12px;
+            padding-bottom: 8px; border-bottom: 2px solid var(--border-primary);
+        }
+        .cell-markdown h2 { font-size: 1.35rem; font-weight: 600; margin-top: 8px; margin-bottom: 10px; }
+        .cell-markdown h3 { font-size: 1.1rem; font-weight: 600; margin-top: 6px; margin-bottom: 8px; }
+        .cell-markdown p { margin-bottom: 10px; }
+        .cell-markdown ul, .cell-markdown ol { margin: 8px 0 12px 20px; }
+        .cell-markdown li { margin-bottom: 4px; }
+        .cell-markdown li ul { margin-top: 4px; margin-bottom: 4px; }
+        .cell-markdown code {
+            font-family: var(--font-mono); font-size: 0.88em;
+            background: var(--code-bg); border: 1px solid var(--code-border);
+            border-radius: 4px; padding: 2px 6px;
+        }
+        .cell-markdown pre {
+            background: var(--code-bg); border: 1px solid var(--code-border);
+            border-radius: var(--radius-sm); padding: 12px 16px; margin: 8px 0; overflow-x: auto;
+        }
+        .cell-markdown pre code { background: none; border: none; padding: 0; }
+        .cell-markdown a { color: var(--text-link); text-decoration: none; }
+        .cell-markdown a:hover { text-decoration: underline; }
+        .cell-markdown strong { font-weight: 600; }
+
+        /* --- Loading / Error States --- */
+        .loading-state, .error-state {
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; min-height: 60vh; gap: 16px; text-align: center;
+        }
+        .loading-spinner {
+            width: 40px; height: 40px;
+            border: 3px solid var(--border-primary); border-top-color: var(--accent);
+            border-radius: 50%; animation: spin 0.8s linear infinite;
+        }
+        .loading-text { font-size: 0.95rem; color: var(--text-secondary); }
+        .error-icon { font-size: 3rem; margin-bottom: 8px; }
+        .error-title { font-size: 1.3rem; font-weight: 600; }
+        .error-message { font-size: 0.95rem; color: var(--text-secondary); max-width: 500px; }
+        .error-back-btn {
+            margin-top: 12px; display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 20px; border-radius: var(--radius-sm);
+            border: 1px solid var(--border-primary); background: var(--bg-elevated);
+            color: var(--text-primary); font-size: 0.9rem; font-family: var(--font-sans);
+            font-weight: 500; cursor: pointer; text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        .error-back-btn:hover { background: var(--bg-hover); border-color: var(--border-accent); }
+
+        /* --- Notebook Info Bar --- */
+        .notebook-info {
+            display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+            padding: 16px 20px; margin-bottom: 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border-primary);
+            border-radius: var(--radius-md);
+        }
+        .notebook-info-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.82rem; color: var(--text-secondary);
+        }
+        .notebook-info-item strong { color: var(--text-primary); font-weight: 600; }
+        .info-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-tertiary); }
+
+        /* --- Keyboard Hint --- */
+        .keyboard-hint {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.75rem; color: var(--text-tertiary);
+            padding: 8px 0;
+            margin-bottom: 16px;
+        }
+        .kbd {
+            display: inline-flex; align-items: center; padding: 2px 6px;
+            background: var(--bg-tertiary); border: 1px solid var(--border-primary);
+            border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem;
+            color: var(--text-secondary); line-height: 1.4;
+        }
+
+        /* --- Toast --- */
+        .copy-toast {
+            position: fixed; bottom: 24px; right: 24px; padding: 10px 20px;
+            background: var(--bg-elevated); border: 1px solid var(--success);
+            border-radius: var(--radius-sm); color: var(--success);
+            font-size: 0.85rem; font-weight: 500; box-shadow: var(--shadow-lg);
+            transform: translateY(80px); opacity: 0;
+            transition: all 0.3s ease; z-index: 200;
+        }
+        .copy-toast.show { transform: translateY(0); opacity: 1; }
+
+        /* --- Responsive --- */
+        @media (max-width: 640px) {
+            .topbar { padding: 0 12px; gap: 6px; }
+            .notebook-title { display: none; }
+            .notebook-container { padding: 16px 12px 60px; }
+            .cell-markdown { padding: 12px 14px; }
+            .cell-markdown h1 { font-size: 1.4rem; }
+            .notebook-info { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .info-dot { display: none; }
+            .topbar-btn span.btn-label { display: none; }
+            .keyboard-hint { display: none; }
+        }
+        @media print {
+            .topbar, .pyodide-banner { display: none; }
+            .cell { border: 1px solid #ddd; break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <a href="/docs/" title="Back to course">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h8.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"/></svg>
+                Back to Course
+            </a>
+            <span class="separator">›</span>
+            <span class="notebook-title" id="notebookTitle">Loading…</span>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-btn run-all-btn" id="runAllBtn" disabled title="Run all cells (Ctrl+Shift+Enter)">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"/></svg>
+                <span class="btn-label">Run All</span>
+            </button>
+            <button class="topbar-btn" id="resetKernel" title="Reset Python runtime">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 4a4 4 0 00-3.8 2.75.75.75 0 11-1.4-.5A5.5 5.5 0 0113.5 8a.75.75 0 01-1.5 0A4 4 0 008 4zm-5.5 4a.75.75 0 011.5 0A4 4 0 0011.8 10.75a.75.75 0 111.4.5A5.5 5.5 0 012.5 8z"/></svg>
+                <span class="btn-label">Reset</span>
+            </button>
+            <button class="topbar-btn" id="toggleLineNumbers" title="Toggle line numbers">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2 3.5a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1a.5.5 0 01-.5-.5zm4 0a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm-4 4a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1a.5.5 0 01-.5-.5zm4 0a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm-4 4a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1a.5.5 0 01-.5-.5zm4 0a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5z"/></svg>
+                <span class="btn-label">Lines</span>
+            </button>
+            <button class="topbar-btn" id="themeToggle" title="Toggle theme">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 13V2a6 6 0 110 12z"/></svg>
+                <span class="btn-label">Theme</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Pyodide Status Banner -->
+    <div class="pyodide-banner" id="pyodideBanner">
+        <div class="mini-spinner"></div>
+        <span id="pyodideStatus">Loading Python runtime (Pyodide)… This may take a few seconds on first load.</span>
+    </div>
+
+    <!-- Notebook Content -->
+    <main class="notebook-container" id="notebookContent">
+        <div class="loading-state" id="loadingState">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading notebook…</div>
+        </div>
+    </main>
+
+    <!-- Toast -->
+    <div class="copy-toast" id="copyToast">✓ Copied to clipboard</div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ===================== STATE =====================
+        let editors = [];           // CodeMirror instances
+        let cellData = [];          // {editor, index, execCount, outputEl}
+        let pyodide = null;         // Pyodide runtime
+        let pyodideReady = false;
+        let executionCounter = 0;
+        let isRunning = false;
+        let showLineNumbers = true;
+        let wordWrap = false;
+        let currentTheme = localStorage.getItem('sdp_theme') || 'dark';
+
+        // ===================== THEME =====================
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            currentTheme = theme;
+            localStorage.setItem('sdp_theme', theme);
+            const cmTheme = theme === 'dark' ? 'material-darker' : 'default';
+            editors.forEach(ed => ed.setOption('theme', cmTheme));
+        }
+
+        // ===================== PYODIDE =====================
+        async function initPyodide() {
+            const banner = document.getElementById('pyodideBanner');
+            const status = document.getElementById('pyodideStatus');
+            try {
+                pyodide = await loadPyodide({
+                    indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.25.1/full/'
+                });
+
+                // Set up stdout/stderr capture
+                pyodide.runPython(`
+import sys
+from io import StringIO
+`);
+                pyodideReady = true;
+                status.textContent = '✓ Python runtime ready — edit and run code cells interactively';
+                banner.classList.add('ready');
+                document.getElementById('runAllBtn').disabled = false;
+
+                // Auto-hide banner after 3s
+                setTimeout(() => banner.classList.add('hidden'), 3000);
+            } catch (err) {
+                status.textContent = '✗ Failed to load Python runtime: ' + err.message;
+                banner.classList.add('error');
+                console.error('Pyodide init error:', err);
+            }
+        }
+
+        // Run a single code cell
+        async function runCell(cellInfo) {
+            if (!pyodideReady || isRunning) return;
+
+            const code = cellInfo.editor.getValue();
+            if (!code.trim()) return;
+
+            isRunning = true;
+            executionCounter++;
+            const execNum = executionCounter;
+
+            // UI: mark running
+            const cellEl = cellInfo.editor.getWrapperElement().closest('.cell');
+            cellEl.classList.remove('success', 'error');
+            cellEl.classList.add('running');
+            const numEl = cellEl.querySelector('.cell-number');
+            numEl.textContent = `In [*]`;
+            numEl.classList.add('running-num');
+            cellInfo.runBtn.classList.add('running-btn');
+            cellInfo.runBtn.disabled = true;
+            cellInfo.runBtn.querySelector('.run-icon').textContent = '⏳';
+
+            // Prepare output area
+            let outputArea = cellEl.querySelector('.cell-output-area');
+            if (!outputArea) {
+                outputArea = document.createElement('div');
+                outputArea.className = 'cell-output-area';
+                cellEl.appendChild(outputArea);
+            }
+            outputArea.innerHTML = '';
+
+            const startTime = performance.now();
+
+            try {
+                // Strip Jupyter magics like %%writefile
+                let cleanCode = code;
+                const lines = code.split('\n');
+                if (lines[0].trim().startsWith('%%')) {
+                    cleanCode = lines.slice(1).join('\n');
+                }
+
+                // Capture stdout/stderr
+                pyodide.runPython(`
+_sdp_stdout = StringIO()
+_sdp_stderr = StringIO()
+sys.stdout = _sdp_stdout
+sys.stderr = _sdp_stderr
+`);
+
+                // Execute code
+                let result;
+                try {
+                    result = await pyodide.runPythonAsync(cleanCode);
+                } finally {
+                    // Restore stdout/stderr
+                    pyodide.runPython(`
+sys.stdout = sys.__stdout__
+sys.stderr = sys.__stderr__
+`);
+                }
+
+                const stdout = pyodide.runPython('_sdp_stdout.getvalue()');
+                const stderr = pyodide.runPython('_sdp_stderr.getvalue()');
+                const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+
+                // Build output
+                let outputHtml = `
+                    <div class="cell-output-header">
+                        <span class="cell-output-label">Output</span>
+                        <button class="clear-output-btn" onclick="this.closest('.cell-output-area').innerHTML=''">Clear</button>
+                    </div>`;
+                let hasOutput = false;
+
+                if (stdout) {
+                    hasOutput = true;
+                    outputHtml += `<div class="cell-output-content"><pre>${escapeHtml(stdout)}</pre></div>`;
+                }
+                if (stderr) {
+                    hasOutput = true;
+                    outputHtml += `<div class="cell-output-content"><pre class="error-output">${escapeHtml(stderr)}</pre></div>`;
+                }
+                if (result !== undefined && result !== null && result.toString() !== 'undefined') {
+                    hasOutput = true;
+                    const resultStr = typeof result === 'object' && result.toString ? result.toString() : String(result);
+                    if (resultStr && resultStr !== 'undefined' && resultStr !== 'None') {
+                        outputHtml += `<div class="cell-output-content"><pre class="result-output">${escapeHtml(resultStr)}</pre></div>`;
+                    }
+                }
+
+                if (hasOutput) {
+                    outputHtml += `<div class="execution-time">Executed in ${elapsed}s</div>`;
+                    outputArea.innerHTML = outputHtml;
+                } else {
+                    outputArea.innerHTML = `
+                        <div class="cell-output-header">
+                            <span class="cell-output-label">Output</span>
+                            <button class="clear-output-btn" onclick="this.closest('.cell-output-area').innerHTML=''">Clear</button>
+                        </div>
+                        <div class="cell-output-content"><pre style="color:var(--text-tertiary);font-style:italic;">Cell executed successfully (no output)</pre></div>
+                        <div class="execution-time">Executed in ${elapsed}s</div>`;
+                }
+
+                // UI: success
+                cellEl.classList.remove('running');
+                cellEl.classList.add('success');
+                numEl.textContent = `In [${execNum}]`;
+                numEl.classList.remove('running-num');
+
+            } catch (err) {
+                const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+                // Restore stdout anyway
+                try { pyodide.runPython('sys.stdout = sys.__stdout__\nsys.stderr = sys.__stderr__'); } catch(e) {}
+
+                const stdout = pyodide.runPython('_sdp_stdout.getvalue()');
+
+                let outputHtml = `
+                    <div class="cell-output-header">
+                        <span class="cell-output-label">Output</span>
+                        <button class="clear-output-btn" onclick="this.closest('.cell-output-area').innerHTML=''">Clear</button>
+                    </div>`;
+                if (stdout) {
+                    outputHtml += `<div class="cell-output-content"><pre>${escapeHtml(stdout)}</pre></div>`;
+                }
+                outputHtml += `<div class="cell-output-content"><pre class="error-output">${escapeHtml(err.message)}</pre></div>`;
+                outputHtml += `<div class="execution-time">Failed after ${elapsed}s</div>`;
+                outputArea.innerHTML = outputHtml;
+
+                // UI: error
+                cellEl.classList.remove('running');
+                cellEl.classList.add('error');
+                numEl.textContent = `In [${execNum}]`;
+                numEl.classList.remove('running-num');
+            }
+
+            // Reset run button
+            cellInfo.runBtn.classList.remove('running-btn');
+            cellInfo.runBtn.disabled = false;
+            cellInfo.runBtn.querySelector('.run-icon').textContent = '▶';
+            isRunning = false;
+        }
+
+        // Run all cells sequentially
+        async function runAllCells() {
+            if (!pyodideReady || isRunning) return;
+            for (const ci of cellData) {
+                await runCell(ci);
+            }
+        }
+
+        // Reset Python runtime
+        async function resetKernel() {
+            if (!pyodide) return;
+            executionCounter = 0;
+            // Reset namespace 
+            pyodide.runPython(`
+import sys
+from io import StringIO
+# Clear user variables
+_keep = set(dir()) | {'_keep'}
+`);
+            // Reset all cell numbers and outputs
+            cellData.forEach(ci => {
+                const cellEl = ci.editor.getWrapperElement().closest('.cell');
+                cellEl.classList.remove('success', 'error', 'running');
+                const numEl = cellEl.querySelector('.cell-number');
+                numEl.textContent = `In [ ]`;
+                numEl.classList.remove('running-num');
+                const outputArea = cellEl.querySelector('.cell-output-area');
+                if (outputArea) outputArea.innerHTML = '';
+            });
+
+            showToast('Python runtime reset');
+        }
+
+        // ===================== UTILITY =====================
+        function escapeHtml(str) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return str.replace(/[&<>"']/g, c => map[c]);
+        }
+
+        function getNotebookPath() {
+            return new URLSearchParams(window.location.search).get('notebook');
+        }
+
+        function formatTitle(nbPath) {
+            return nbPath.split('/').pop().replace('.ipynb', '')
+                .replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        function showError(title, message) {
+            document.getElementById('notebookContent').innerHTML = `
+                <div class="error-state">
+                    <div class="error-icon">📓</div>
+                    <div class="error-title">${title}</div>
+                    <div class="error-message">${message}</div>
+                    <a href="/docs/" class="error-back-btn">← Back to Course</a>
+                </div>`;
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('copyToast');
+            toast.textContent = '✓ ' + msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard'));
+        }
+
+        // ===================== RENDER =====================
+        function renderMarkdownCell(cell, index) {
+            const html = marked.parse(cell.source.join(''));
+            return `
+                <div class="cell cell-markdown-wrapper">
+                    <div class="cell-header">
+                        <span class="cell-badge markdown">Markdown</span>
+                        <span class="cell-number">[${index}]</span>
+                    </div>
+                    <div class="cell-markdown">${html}</div>
+                </div>`;
+        }
+
+        function renderCodeCell(cell, index) {
+            // Show original outputs from the .ipynb
+            let origOutput = '';
+            if (cell.outputs && cell.outputs.length > 0) {
+                origOutput = '<div class="cell-output-area">';
+                origOutput += '<div class="cell-output-header"><span class="cell-output-label">Saved Output</span>';
+                origOutput += '<button class="clear-output-btn" onclick="this.closest(\'.cell-output-area\').innerHTML=\'\'">Clear</button></div>';
+                cell.outputs.forEach(out => {
+                    if (out.output_type === 'stream') {
+                        origOutput += `<div class="cell-output-content"><pre>${escapeHtml(out.text.join(''))}</pre></div>`;
+                    } else if (out.output_type === 'execute_result') {
+                        const text = (out.data['text/plain'] || []).join('');
+                        origOutput += `<div class="cell-output-content"><pre class="result-output">${escapeHtml(text)}</pre></div>`;
+                    } else if (out.output_type === 'error') {
+                        const tb = out.traceback.map(l => l.replace(/\x1b\[[0-9;]*m/g, '')).join('\n');
+                        origOutput += `<div class="cell-output-content"><pre class="error-output">${escapeHtml(tb)}</pre></div>`;
+                    }
+                });
+                origOutput += '</div>';
+            }
+
+            return `
+                <div class="cell cell-code" data-cell-index="${index}">
+                    <div class="cell-header">
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <span class="cell-badge code">Python</span>
+                            <span class="cell-number">In [ ]</span>
+                        </div>
+                        <div class="cell-actions">
+                            <button class="run-btn" data-cell-index="${index}" title="Run cell (Shift+Enter)">
+                                <span class="run-icon">▶</span> Run
+                            </button>
+                            <button class="cell-action-btn copy-btn" data-cell-index="${index}" title="Copy code">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cell-editor" id="editor-${index}"></div>
+                    ${origOutput}
+                </div>`;
+        }
+
+        function initEditors(notebook) {
+            const cmTheme = currentTheme === 'dark' ? 'material-darker' : 'default';
+            editors = [];
+            cellData = [];
+
+            notebook.cells.forEach((cell, i) => {
+                if (cell.cell_type !== 'code') return;
+                const source = cell.source.join('');
+                const container = document.getElementById('editor-' + i);
+                if (!container) return;
+
+                const editor = CodeMirror(container, {
+                    value: source,
+                    mode: 'python',
+                    theme: cmTheme,
+                    lineNumbers: showLineNumbers,
+                    lineWrapping: wordWrap,
+                    readOnly: false,
+                    tabSize: 4,
+                    indentUnit: 4,
+                    viewportMargin: Infinity,
+                    scrollbarStyle: 'native',
+                    extraKeys: {
+                        'Shift-Enter': function(cm) {
+                            const ci = cellData.find(c => c.editor === cm);
+                            if (ci) runCell(ci);
+                        }
+                    }
+                });
+                editor._cellIndex = i;
+                editors.push(editor);
+
+                const runBtn = document.querySelector(`.run-btn[data-cell-index="${i}"]`);
+                cellData.push({ editor, index: i, runBtn });
+            });
+        }
+
+        async function loadNotebook() {
+            const nbPath = getNotebookPath();
+            if (!nbPath) {
+                showError('No Notebook Specified', 'Please navigate to a notebook from the course documentation.');
+                return;
+            }
+
+            document.getElementById('notebookTitle').textContent = formatTitle(nbPath);
+            document.title = formatTitle(nbPath) + ' — System Design Primer';
+
+            try {
+                const response = await fetch(nbPath);
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                const notebook = await response.json();
+                renderNotebook(notebook, nbPath);
+            } catch (err) {
+                showError('Failed to Load Notebook', `Could not load <strong>${escapeHtml(nbPath)}</strong>.<br>${escapeHtml(err.message)}`);
+            }
+        }
+
+        function renderNotebook(notebook, nbPath) {
+            const content = document.getElementById('notebookContent');
+            const kernel = notebook.metadata?.kernelspec?.display_name || 'Python';
+            const codeCells = notebook.cells.filter(c => c.cell_type === 'code').length;
+            const mdCells = notebook.cells.filter(c => c.cell_type === 'markdown').length;
+
+            let html = `
+                <div class="notebook-info">
+                    <div class="notebook-info-item"><strong>🐍 ${kernel}</strong></div>
+                    <div class="info-dot"></div>
+                    <div class="notebook-info-item"><strong>${notebook.cells.length}</strong> cells</div>
+                    <div class="info-dot"></div>
+                    <div class="notebook-info-item"><strong>${codeCells}</strong> code · <strong>${mdCells}</strong> markdown</div>
+                    <div class="info-dot"></div>
+                    <div class="notebook-info-item" style="opacity:0.7;">${nbPath.split('/').pop()}</div>
+                </div>
+                <div class="keyboard-hint">
+                    <span class="kbd">Shift</span> + <span class="kbd">Enter</span> Run cell
+                    &nbsp;·&nbsp;
+                    <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">Enter</span> Run all
+                </div>`;
+
+            notebook.cells.forEach((cell, i) => {
+                if (cell.cell_type === 'markdown') {
+                    html += renderMarkdownCell(cell, i);
+                } else if (cell.cell_type === 'code') {
+                    html += renderCodeCell(cell, i);
+                }
+            });
+
+            content.innerHTML = html;
+            initEditors(notebook);
+
+            // Bind run buttons
+            content.querySelectorAll('.run-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const ci = cellData.find(c => c.index === parseInt(btn.dataset.cellIndex));
+                    if (ci) runCell(ci);
+                });
+            });
+
+            // Bind copy buttons
+            content.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.dataset.cellIndex);
+                    const editor = editors.find(e => e._cellIndex === idx);
+                    if (editor) {
+                        copyToClipboard(editor.getValue());
+                        btn.classList.add('copied');
+                        setTimeout(() => btn.classList.remove('copied'), 2000);
+                    }
+                });
+            });
+        }
+
+        // ===================== EVENT BINDINGS =====================
+        document.getElementById('runAllBtn').addEventListener('click', runAllCells);
+        document.getElementById('resetKernel').addEventListener('click', resetKernel);
+
+        document.getElementById('toggleLineNumbers').addEventListener('click', function() {
+            showLineNumbers = !showLineNumbers;
+            this.classList.toggle('active', showLineNumbers);
+            editors.forEach(ed => ed.setOption('lineNumbers', showLineNumbers));
+        });
+
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Global keyboard shortcut: Ctrl+Shift+Enter = Run All
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'Enter') {
+                e.preventDefault();
+                runAllCells();
+            }
+        });
+
+        // ===================== INIT =====================
+        applyTheme(currentTheme);
+        document.getElementById('toggleLineNumbers').classList.add('active');
+        loadNotebook();
+        initPyodide(); // Start loading Pyodide in parallel
+    })();
+    </script>
+</body>
+</html>
