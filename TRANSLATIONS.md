@@ -151,12 +151,12 @@ Languages are grouped by status and are listed in alphabetical order.
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/248
 * Translation Fork: https://github.com/Acarus/system-design-primer
 
-### ❗ Vietnamese
+### ❗ Tiếng Việt
 
-* Maintainer(s): **Help Wanted** ✋
-    * Previous Maintainer(s): [@tranlyvu](https://github.com/tranlyvu), [@duynguyenhoang](https://github.com/duynguyenhoang)
-* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/127
-* Translation Fork: https://github.com/donnemartin/system-design-primer/pull/241, https://github.com/donnemartin/system-design-primer/pull/327
+* Người duy trì: **Cần người** ✋
+    * Người duy trì trước đây: [@tranlyvu](https://github.com/tranlyvu), [@duynguyenhoang](https://github.com/duynguyenhoang)
+* Luồng thảo luận: https://github.com/donnemartin/system-design-primer/issues/127
+* Fork bản dịch: https://github.com/donnemartin/system-design-primer/pull/241, https://github.com/donnemartin/system-design-primer/pull/327
 
 ## Not Started
 
