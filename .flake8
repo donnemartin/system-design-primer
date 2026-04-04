@@ -1,0 +1,15 @@
+[flake8]
+max-line-length = 100
+exclude = .git,__pycache__,build,dist,.eggs,*.egg-info
+ignore = E203,W503
+
+[tool:pytest]
+testpaths = tests
+python_files = test_*.py
+addopts = -v --tb=short
+
+[mypy]
+python_version = 3.7
+warn_return_any = True
+warn_unused_configs = True
+disallow_untyped_defs = False

@@ -1,0 +1,3 @@
+mrjob>=0.7.4
+pytest>=6.0
+pytest-cov>=2.10
