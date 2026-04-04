@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">System Design Primer</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/call-center">Call Center</a></li>
+                <li><a href="/parking-lot">Parking Lot</a></li>
+                <li><a href="/deck-of-cards">Deck of Cards</a></li>
+                <li><a href="/hash-table">Hash Table</a></li>
+                <li><a href="/lru-cache">LRU Cache</a></li>
+                <li><a href="/online-chat">Online Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="solution-detail">
+            <h1>🅿️ Parking Lot Management</h1>
+            <p class="description">
+                Design a parking lot that manages different vehicle sizes across multiple levels.
+                Motorcycles fit anywhere, cars need compact/large spots, buses need 5 large spots.
+            </p>
+
+            <div class="demo-section">
+                <h2>Lot Configuration</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Levels</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">10</div>
+                        <div class="stat-label">Spots/Level</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">20</div>
+                        <div class="stat-label">Total Spots</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h2>Park a Vehicle</h2>
+                <form id="parkForm">
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle Type:</label>
+                        <select id="vehicleType" name="vehicle_type">
+                            <option value="motorcycle">🏍️ Motorcycle (1 spot)</option>
+                            <option value="car">🚙 Car (1 spot)</option>
+                            <option value="bus">🚌 Bus (5 spots)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="licensePlate">License Plate:</label>
+                        <input type="text" id="licensePlate" name="plate" placeholder="e.g., ABC123" value="ABC123">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Park Vehicle</button>
+                </form>
+            </div>
+
+            <div id="result" class="result-section" style="display:none;">
+                <h2>Parking Result</h2>
+                <div class="result-content">
+                    <p><strong>Vehicle:</strong> <span id="resultVehicle"></span></p>
+                    <p><strong>Status:</strong> <span id="resultMessage"></span></p>
+                    <p><strong>Available Spots:</strong> <span id="resultAvailable"></span></p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Vehicle Size Requirements</h3>
+                <ul>
+                    <li>🏍️ Motorcycle: 1 spot, fits anywhere</li>
+                    <li>🚙 Car: 1 spot, needs compact or large</li>
+                    <li>🚌 Bus: 5 consecutive large spots</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 System Design Primer</p>
+    </footer>
+
+    <script>
+        document.getElementById('parkForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const vehicle_type = document.getElementById('vehicleType').value.split(' ')[0].toLowerCase();
+            const plate = document.getElementById('licensePlate').value || 'UNKNOWN';
+            
+            try {
+                const response = await fetch('/api/parking-lot/park', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({vehicle_type, plate})
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('resultVehicle').textContent = data.vehicle;
+                    document.getElementById('resultMessage').textContent = data.message;
+                    document.getElementById('resultAvailable').textContent = data.available_spots;
+                    document.getElementById('result').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

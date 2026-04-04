@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRU Cache</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">System Design Primer</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/call-center">Call Center</a></li>
+                <li><a href="/parking-lot">Parking Lot</a></li>
+                <li><a href="/deck-of-cards">Deck of Cards</a></li>
+                <li><a href="/hash-table">Hash Table</a></li>
+                <li><a href="/lru-cache">LRU Cache</a></li>
+                <li><a href="/online-chat">Online Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="solution-detail">
+            <h1>💾 LRU (Least Recently Used) Cache</h1>
+            <p class="description">
+                A cache that automatically evicts the least recently used item when full.
+                Perfect for caching query results or frequently accessed data.
+            </p>
+
+            <div class="demo-section">
+                <h2>Cache Configuration</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Max Size</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h2>Cache Operations</h2>
+                
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="set">Cache Data</button>
+                    <button class="tab-button" data-tab="get">Retrieve Data</button>
+                </div>
+
+                <div id="set-tab" class="tab-content active">
+                    <h3>Add to Cache</h3>
+                    <form id="setForm">
+                        <div class="form-group">
+                            <label for="setQuery">Query (key):</label>
+                            <input type="text" id="setQuery" name="query" placeholder="e.g., SELECT * FROM users">
+                        </div>
+                        <div class="form-group">
+                            <label for="setResult">Result (value):</label>
+                            <input type="text" id="setResult" name="result" placeholder="e.g., [user1, user2, ...]">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cache Result</button>
+                    </form>
+                </div>
+
+                <div id="get-tab" class="tab-content">
+                    <h3>Get from Cache</h3>
+                    <form id="getForm">
+                        <div class="form-group">
+                            <label for="getQuery">Query (key):</label>
+                            <input type="text" id="getQuery" name="query" placeholder="e.g., SELECT * FROM users">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get Result</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="result" class="result-section" style="display:none;">
+                <h2>Cache Result</h2>
+                <div class="result-content" id="resultContent"></div>
+            </div>
+
+            <div class="info-box">
+                <h3>How It Works</h3>
+                <ul>
+                    <li>Cache stores up to 5 items</li>
+                    <li>When cache is full, the least recently used item is evicted</li>
+                    <li>Accessing an item moves it to the front (most recently used)</li>
+                    <li>Perfect for caching expensive computations or database queries</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 System Design Primer</p>
+    </footer>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+                document.getElementById(e.target.dataset.tab + '-tab').classList.add('active');
+            });
+        });
+
+        // Set operation
+        document.getElementById('setForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = document.getElementById('setQuery').value;
+            const result = document.getElementById('setResult').value;
+            
+            try {
+                const response = await fetch('/api/cache/set', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({query, result})
+                });
+                
+                const data = await response.json();
+                document.getElementById('resultContent').innerHTML = `
+                    <p><strong>Status:</strong> Cached ✓</p>
+                    <p><strong>Query:</strong> ${data.query}</p>
+                    <p><strong>Result:</strong> ${data.result}</p>
+                    <p><strong>Cache Size:</strong> ${data.cache_size}/${data.max_size}</p>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                `;
+                document.getElementById('result').style.display = 'block';
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+
+        // Get operation
+        document.getElementById('getForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = document.getElementById('getQuery').value;
+            
+            try {
+                const response = await fetch('/api/cache/get', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({query})
+                });
+                
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('resultContent').innerHTML = `
+                        <p><strong>Status:</strong> Cache Hit ✓</p>
+                        <p><strong>Query:</strong> ${data.query}</p>
+                        <p><strong>Result:</strong> ${data.result}</p>
+                        <p><strong>Cache Size:</strong> ${data.cache_size}</p>
+                        <p><strong>Message:</strong> ${data.message}</p>
+                    `;
+                } else {
+                    document.getElementById('resultContent').innerHTML = `
+                        <p><strong>Status:</strong> Cache Miss ✗</p>
+                        <p><strong>Error:</strong> ${data.error}</p>
+                    `;
+                }
+                document.getElementById('result').style.display = 'block';
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

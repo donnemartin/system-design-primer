@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design Primer - Interactive Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">System Design Primer</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/call-center">Call Center</a></li>
+                <li><a href="/parking-lot">Parking Lot</a></li>
+                <li><a href="/deck-of-cards">Deck of Cards</a></li>
+                <li><a href="/hash-table">Hash Table</a></li>
+                <li><a href="/lru-cache">LRU Cache</a></li>
+                <li><a href="/online-chat">Online Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>🎓 Interactive OOP Design Solutions</h1>
+            <p>Explore working implementations of system design patterns</p>
+        </section>
+
+        <section class="solutions-grid">
+            <div class="solution-card">
+                <h3>📞 Call Center System</h3>
+                <p>Dispatch calls to operators, supervisors, and directors with automatic escalation.</p>
+                <a href="/call-center" class="btn">Try It</a>
+            </div>
+
+            <div class="solution-card">
+                <h3>🅿️ Parking Lot Management</h3>
+                <p>Manage vehicles of different sizes across multiple parking levels.</p>
+                <a href="/parking-lot" class="btn">Try It</a>
+            </div>
+
+            <div class="solution-card">
+                <h3>🃏 Deck of Cards</h3>
+                <p>Deal BlackJack hands and calculate scores with proper Ace handling.</p>
+                <a href="/deck-of-cards" class="btn">Try It</a>
+            </div>
+
+            <div class="solution-card">
+                <h3>#️⃣ Hash Table</h3>
+                <p>Store and retrieve key-value pairs with collision handling.</p>
+                <a href="/hash-table" class="btn">Try It</a>
+            </div>
+
+            <div class="solution-card">
+                <h3>💾 LRU Cache</h3>
+                <p>Cache with automatic eviction of least recently used items.</p>
+                <a href="/lru-cache" class="btn">Try It</a>
+            </div>
+
+            <div class="solution-card">
+                <h3>💬 Online Chat System</h3>
+                <p>User management with friend requests and group messaging.</p>
+                <a href="/online-chat" class="btn">Try It</a>
+            </div>
+        </section>
+
+        <section class="info">
+            <h2>About This Project</h2>
+            <p>
+                This is an interactive demonstration of the System Design Primer project,
+                featuring clean, production-ready implementations of common OOP design patterns
+                used in technical interviews and real-world systems.
+            </p>
+            <p>
+                Each solution includes comprehensive type hints, docstrings, and is backed by
+                a test suite with 60+ unit tests.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 System Design Primer - Educational Resource</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Center System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">System Design Primer</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/call-center">Call Center</a></li>
+                <li><a href="/parking-lot">Parking Lot</a></li>
+                <li><a href="/deck-of-cards">Deck of Cards</a></li>
+                <li><a href="/hash-table">Hash Table</a></li>
+                <li><a href="/lru-cache">LRU Cache</a></li>
+                <li><a href="/online-chat">Online Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="solution-detail">
+            <h1>📞 Call Center System</h1>
+            <p class="description">
+                A hierarchical call center that routes incoming calls to available employees.
+                Calls can be escalated from operators to supervisors to directors.
+            </p>
+
+            <div class="demo-section">
+                <h2>System Stats</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Operators</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Supervisor</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Director</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h2>Dispatch A Call</h2>
+                <form id="callForm">
+                    <div class="form-group">
+                        <label for="rankSelect">Call Rank:</label>
+                        <select id="rankSelect" name="rank">
+                            <option value="OPERATOR">Operator</option>
+                            <option value="SUPERVISOR">Supervisor</option>
+                            <option value="DIRECTOR">Director</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Dispatch Call</button>
+                </form>
+            </div>
+
+            <div id="result" class="result-section" style="display:none;">
+                <h2>Call Result</h2>
+                <div class="result-content">
+                    <p><strong>Rank:</strong> <span id="resultRank"></span></p>
+                    <p><strong>State:</strong> <span id="resultState"></span></p>
+                    <p><strong>Assigned To:</strong> <span id="resultAssignedTo"></span></p>
+                    <p><strong>Queued Calls:</strong> <span id="resultQueued"></span></p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>How It Works</h3>
+                <ul>
+                    <li>Calls come in with a desired rank (Operator, Supervisor, Director)</li>
+                    <li>System finds next available employee at that level</li>
+                    <li>If none available, call is queued</li>
+                    <li>Employees can escalate calls to higher levels</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 System Design Primer</p>
+    </footer>
+
+    <script>
+        document.getElementById('callForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const rank = document.getElementById('rankSelect').value;
+            
+            try {
+                const response = await fetch('/api/call-center/dispatch', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({rank})
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('resultRank').textContent = data.rank;
+                    document.getElementById('resultState').textContent = data.state;
+                    document.getElementById('resultAssignedTo').textContent = data.assigned_to;
+                    document.getElementById('resultQueued').textContent = data.queued_calls;
+                    document.getElementById('result').style.display = 'block';
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

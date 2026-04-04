@@ -1,0 +1,5 @@
+mrjob>=0.7.4
+pytest>=6.0
+pytest-cov>=2.10
+Flask>=2.0.0
+Werkzeug>=2.0.0

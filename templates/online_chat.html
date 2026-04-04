@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Chat System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">System Design Primer</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/call-center">Call Center</a></li>
+                <li><a href="/parking-lot">Parking Lot</a></li>
+                <li><a href="/deck-of-cards">Deck of Cards</a></li>
+                <li><a href="/hash-table">Hash Table</a></li>
+                <li><a href="/lru-cache">LRU Cache</a></li>
+                <li><a href="/online-chat">Online Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="solution-detail">
+            <h1>💬 Online Chat System</h1>
+            <p class="description">
+                A multi-user chat system with user management, friend requests,
+                and group chat support.
+            </p>
+
+            <div class="demo-section">
+                <h2>Chat Operations</h2>
+                
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="add-user">Add User</button>
+                    <button class="tab-button" data-tab="send-request">Send Request</button>
+                    <button class="tab-button" data-tab="approve-request">Approve Request</button>
+                </div>
+
+                <div id="add-user-tab" class="tab-content active">
+                    <h3>Create New User</h3>
+                    <form id="addUserForm">
+                        <div class="form-group">
+                            <label for="userId">User ID:</label>
+                            <input type="number" id="userId" name="user_id" placeholder="e.g., 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Name:</label>
+                            <input type="text" id="userName" name="name" placeholder="e.g., Alice">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </form>
+                </div>
+
+                <div id="send-request-tab" class="tab-content">
+                    <h3>Send Friend Request</h3>
+                    <form id="sendRequestForm">
+                        <div class="form-group">
+                            <label for="fromUserId">From User ID:</label>
+                            <input type="number" id="fromUserId" name="from_id" placeholder="e.g., 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="toUserId">To User ID:</label>
+                            <input type="number" id="toUserId" name="to_id" placeholder="e.g., 2">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Request</button>
+                    </form>
+                </div>
+
+                <div id="approve-request-tab" class="tab-content">
+                    <h3>Approve Friend Request</h3>
+                    <form id="approveRequestForm">
+                        <div class="form-group">
+                            <label for="approveFromId">From User ID:</label>
+                            <input type="number" id="approveFromId" name="from_id" placeholder="e.g., 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="approveToId">To User ID:</label>
+                            <input type="number" id="approveToId" name="to_id" placeholder="e.g., 2">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Approve Request</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="result" class="result-section" style="display:none;">
+                <h2>Result</h2>
+                <div class="result-content" id="resultContent"></div>
+            </div>
+
+            <div class="info-box">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>User registration and management</li>
+                    <li>Friend request system with status tracking</li>
+                    <li>Private chats between friends</li>
+                    <li>Group chat functionality</li>
+                    <li>Message storage and retrieval</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 System Design Primer</p>
+    </footer>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+                document.getElementById(e.target.dataset.tab + '-tab').classList.add('active');
+            });
+        });
+
+        // Add User
+        document.getElementById('addUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const user_id = document.getElementById('userId').value;
+            const name = document.getElementById('userName').value;
+            
+            try {
+                const response = await fetch('/api/chat/add-user', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({user_id, name})
+                });
+                
+                const data = await response.json();
+                document.getElementById('resultContent').innerHTML = `
+                    <p><strong>Status:</strong> Success ✓</p>
+                    <p><strong>User ID:</strong> ${data.user_id}</p>
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Total Users:</strong> ${data.total_users}</p>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                `;
+                document.getElementById('result').style.display = 'block';
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+
+        // Send Request
+        document.getElementById('sendRequestForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const from_id = document.getElementById('fromUserId').value;
+            const to_id = document.getElementById('toUserId').value;
+            
+            try {
+                const response = await fetch('/api/chat/send-request', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({from_id, to_id})
+                });
+                
+                const data = await response.json();
+                document.getElementById('resultContent').innerHTML = `
+                    <p><strong>Status:</strong> Sent ✓</p>
+                    <p><strong>From:</strong> User ${data.from}</p>
+                    <p><strong>To:</strong> User ${data.to}</p>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                `;
+                document.getElementById('result').style.display = 'block';
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+
+        // Approve Request
+        document.getElementById('approveRequestForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const from_id = document.getElementById('approveFromId').value;
+            const to_id = document.getElementById('approveToId').value;
+            
+            try {
+                const response = await fetch('/api/chat/approve-request', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({from_id, to_id})
+                });
+                
+                const data = await response.json();
+                document.getElementById('resultContent').innerHTML = `
+                    <p><strong>Status:</strong> Approved ✓</p>
+                    <p><strong>From:</strong> User ${data.from}</p>
+                    <p><strong>To:</strong> User ${data.to}</p>
+                    <p><strong>Message:</strong> ${data.message}</p>
+                `;
+                document.getElementById('result').style.display = 'block';
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
