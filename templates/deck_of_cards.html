@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck of Cards - BlackJack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">System Design Primer</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/call-center">Call Center</a></li>
+                <li><a href="/parking-lot">Parking Lot</a></li>
+                <li><a href="/deck-of-cards">Deck of Cards</a></li>
+                <li><a href="/hash-table">Hash Table</a></li>
+                <li><a href="/lru-cache">LRU Cache</a></li>
+                <li><a href="/online-chat">Online Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="solution-detail">
+            <h1>🃏 Deck of Cards - BlackJack</h1>
+            <p class="description">
+                Deal BlackJack hands and calculate scores. Aces can count as 1 or 11,
+                face cards are worth 10, and other cards are worth their face value.
+            </p>
+
+            <div class="demo-section">
+                <h2>Deal a Hand</h2>
+                <form id="deckForm">
+                    <div class="form-group">
+                        <label for="numCards">Number of Cards:</label>
+                        <input type="number" id="numCards" name="num_cards" min="1" max="10" value="2">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Deal Hand</button>
+                </form>
+            </div>
+
+            <div id="result" class="result-section" style="display:none;">
+                <h2>Your Hand</h2>
+                <div class="result-content">
+                    <div id="cardsDisplay"></div>
+                    <p><strong>Best Score:</strong> <span id="resultScore" class="score-value"></span></p>
+                    <p><strong>Possible Scores:</strong> <span id="resultPossible"></span></p>
+                    <p><strong>Cards Remaining in Deck:</strong> <span id="resultRemaining"></span></p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Card Values</h3>
+                <ul>
+                    <li>🆎 Ace (A): 1 or 11</li>
+                    <li>🃏 Face Cards (J, Q, K): 10</li>
+                    <li>🔢 Number Cards: Face value</li>
+                    <li>🎯 Objective: Get as close to 21 as possible without going over</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 System Design Primer</p>
+    </footer>
+
+    <script>
+        document.getElementById('deckForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const num_cards = document.getElementById('numCards').value;
+            
+            try {
+                const response = await fetch('/api/deck/deal', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({num_cards})
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    const cardsHtml = data.cards.map((card, i) => 
+                        `<div class="card">${card}</div>`
+                    ).join('');
+                    document.getElementById('cardsDisplay').innerHTML = cardsHtml;
+                    document.getElementById('resultScore').textContent = data.score;
+                    document.getElementById('resultPossible').textContent = data.possible_scores.join(', ');
+                    document.getElementById('resultRemaining').textContent = data.cards_remaining;
+                    document.getElementById('result').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+    
+    <style>
+        .card {
+            display: inline-block;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .score-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+    </style>
+</body>
+</html>
