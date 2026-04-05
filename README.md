@@ -78,6 +78,7 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 Feel free to submit pull requests to help:
 
 * Fix errors
+- [Glitch](https://github.com/Ankitajainkuniya/glitch-widget) - AI bug reporting with distributed tracing and error alerting
 * Improve sections
 * Add new sections
 * [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
