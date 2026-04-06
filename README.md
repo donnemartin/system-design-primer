@@ -9,6 +9,7 @@
   <br/>
 </p>
 
+- [guardian-agent-prompts](https://github.com/milkomida77/guardian-agent-prompts) - 49 production-tested AI agent system prompts for system design orchestration, automated architecture review, and multi-agent coordination. MIT licensed.
 ## Motivation
 
 > Learn how to design large-scale systems.
