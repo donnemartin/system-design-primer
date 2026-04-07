@@ -1837,3 +1837,38 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
     http://creativecommons.org/licenses/by/4.0/
+
+---
+
+## 🚀 Project Overview
+Enhanced README documentation for clarity, badges, and contribution guidance.
+
+## ✨ Features
+- Improved documentation structure
+- Repository metadata and badges
+- Automated activity insights
+- Contribution guidance
+
+## 🤝 Contributing
+Contributions are welcome.  
+Feel free to open issues or submit pull requests.
+
+## 📊 Repository Statistics
+![Stars](https://img.shields.io/github/stars/donnemartin/system-design-primer)
+![Forks](https://img.shields.io/github/forks/donnemartin/system-design-primer)
+![Issues](https://img.shields.io/github/issues/donnemartin/system-design-primer)
+![License](https://img.shields.io/github/license/donnemartin/system-design-primer)
+
+## 📜 Recent Repository Activity
+- ae9bbd7 Fix link for UDP vs TCP (#1153) (savasva, 2026-03-20)
+- 83046eb Fix broken link to PayPal Developer Blog (#1189) (Rory James, 2026-03-15)
+- 19a26e6 Update link for understanding latency vs throughput (#1163) (wilburhsu, 2026-03-12)
+- 02a4319 Fix URL for Layer 4 load balancing (#1181) (Isaiah Becker-Mayer, 2026-03-11)
+- bf0262c Fix link for push and pull CDNs (#1190) (Miguel Angel Rojo, 2026-03-11)
+
+## 🕒 Last Updated
+Wed Apr  8 02:47:19 +04 2026
+
+---
+
+### 🤖 Automated Documentation Update
