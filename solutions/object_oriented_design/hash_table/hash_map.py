@@ -33,6 +33,6 @@ class HashTable(object):
         hash_index = self._hash_function(key)
         for index, item in enumerate(self.table[hash_index]):
             if item.key == key:
-                del self.table[hash_index][index]
+                self.table[hash_index].pop(index)
                 return
         raise KeyError('Key not found')

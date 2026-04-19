@@ -65,7 +65,7 @@ class Chat(metaclass=ABCMeta):
 class PrivateChat(Chat):
 
     def __init__(self, first_user, second_user):
-        super(PrivateChat, self).__init__()
+        super(PrivateChat, self).__init__(id(self))
         self.users.append(first_user)
         self.users.append(second_user)
 
