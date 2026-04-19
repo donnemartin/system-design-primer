@@ -43,7 +43,7 @@ class BlackJackCard(Card):
 
     @property
     def value(self):
-        if self.is_ace() == 1:
+        if self.is_ace():
             return 1
         elif self.is_face_card():
             return 10
@@ -81,8 +81,8 @@ class BlackJackHand(Hand):
         super(BlackJackHand, self).__init__(cards)
 
     def score(self):
-        min_over = sys.MAXSIZE
-        max_under = -sys.MAXSIZE
+        min_over = sys.maxsize
+        max_under = -sys.maxsize
         for score in self.possible_scores():
             if self.BLACKJACK < score < min_over:
                 min_over = score
