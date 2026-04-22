@@ -43,7 +43,7 @@ class BlackJackCard(Card):
 
     @property
     def value(self):
-        if self.is_ace() == 1:
+        if self.is_ace():
             return 1
         elif self.is_face_card():
             return 10
