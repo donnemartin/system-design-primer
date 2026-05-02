@@ -1837,3 +1837,27 @@ My contact info can be found on my [GitHub page](https://github.com/donnemartin)
     Creative Commons Attribution 4.0 International License (CC BY 4.0)
 
     http://creativecommons.org/licenses/by/4.0/
+## Cost-Oriented System Design
+
+### Balancing Per-User Cost vs Per-Call Cost
+
+Choosing the right pricing model is a critical system design decision at scale.
+
+#### Per-Seat Pricing
+- Fixed monthly/annual fee per user
+- Independent of usage volume
+- Examples: SaaS applications, enterprise software
+- **Advantage:** Predictable revenue
+- **Disadvantage:** Inefficient for low-usage users
+
+#### Per-Call Pricing
+- Pay based on actual usage
+- Examples: AWS Lambda, OpenAI API
+- **Advantage:** Cost-effective for small users
+- **Disadvantage:** Costs grow rapidly with high usage
+
+#### Finding the Balance
+To choose the right model:
+1. Analyze user behavior patterns
+2. Calculate average and peak usage
+3. Compare cost projections for both models
