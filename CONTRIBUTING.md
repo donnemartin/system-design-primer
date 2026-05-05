@@ -38,7 +38,7 @@ The preferred way to contribute is to fork the
 
 ### GitHub Pull Requests Docs
 
-If you are not familiar with pull requests, review the [pull request docs](https://help.github.com/articles/using-pull-requests/).
+If you are not familiar with pull requests, review the [pull request docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
 
 ## Translations
 
