@@ -965,7 +965,7 @@ NoSQL は **key-value store**、 **document-store**、 **wide column store**、 
 
 * [キーバリューデータベース](https://en.wikipedia.org/wiki/Key-value_database)
 * [キーバリューストアの欠点](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
-* [Redisアーキテクチャ](http://qnimate.com/overview-of-redis-architecture/)
+* [Redisアーキテクチャ](https://redis.io/docs/latest/integrate/redis-data-integration/architecture/)
 * [メムキャッシュアーキテクチャ](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
 #### ドキュメントストア
