@@ -1743,6 +1743,8 @@ Handy metrics based on numbers above:
 | Uber | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html)<br/>[Lessons Learned From Scaling Uber To 2000 Engineers, 1000 Services, And 8000 Git Repositories](http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html) |
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
+| Discord | [How Discord Stores Trillions of Messages](https://discord.com/blog/how-discord-stores-trillions-of-messages)<br/>[How Discord Scaled Elixir to 5,000,000 Concurrent Users](https://discord.com/blog/how-discord-scaled-elixir-to-5-000-000-concurrent-users) |
+| Notion | [Notion's Data Infrastructure Journey](https://www.notion.so/blog/data-infrastructure-at-notion)<br/>[Sharding Notion's Postgres to Scale](https://www.notion.so/blog/sharding-postgres-at-notion) |
 
 ### Company engineering blogs
 
@@ -1756,6 +1758,7 @@ Handy metrics based on numbers above:
 * [Bitly Engineering Blog](http://word.bitly.com/)
 * [Box Blogs](https://blog.box.com/blog/category/engineering)
 * [Cloudera Developer Blog](http://blog.cloudera.com/)
+* [Cloudflare Blog](https://blog.cloudflare.com/)
 * [Dropbox Tech Blog](https://tech.dropbox.com/)
 * [Engineering at Quora](https://www.quora.com/q/quoraengineering)
 * [Ebay Tech Blog](http://www.ebaytechblog.com/)
@@ -1765,6 +1768,7 @@ Handy metrics based on numbers above:
 * [Flickr Code](http://code.flickr.net/)
 * [Foursquare Engineering Blog](http://engineering.foursquare.com/)
 * [GitHub Engineering Blog](https://github.blog/category/engineering)
+* [Gojek Tech Blog](https://www.gojek.io/blog/)
 * [Google Research Blog](http://googleresearch.blogspot.com/)
 * [Groupon Engineering Blog](https://engineering.groupon.com/)
 * [Heroku Engineering Blog](https://engineering.heroku.com/)
@@ -1785,6 +1789,7 @@ Handy metrics based on numbers above:
 * [Spotify Labs](https://labs.spotify.com/)
 * [Stripe Engineering Blog](https://stripe.com/blog/engineering)
 * [Twilio Engineering Blog](http://www.twilio.com/engineering)
+* [Tokopedia Engineering Blog](https://engineering.tokopedia.com/)
 * [Twitter Engineering](https://blog.twitter.com/engineering/)
 * [Uber Engineering Blog](http://eng.uber.com/)
 * [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
