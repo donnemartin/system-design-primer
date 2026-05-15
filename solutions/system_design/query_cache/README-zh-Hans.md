@@ -164,7 +164,7 @@ class Cache(object):
 
         将入口节点位置更新为 LRU 链表的头部。
         """
-        node = self.lookup[query]
+        node = self.lookup.get(query)
         if node is None:
             return None
         self.linked_list.move_to_front(node)
@@ -177,7 +177,7 @@ class Cache(object):
         如果这个记录是新的记录，并且缓存空间已满，应该在加入新记录前
         删除最老的记录。
         """
-        node = self.lookup[query]
+        node = self.lookup.get(query)
         if node is not None:
             # 键存在于缓存中，更新它对应的值
             node.results = results
