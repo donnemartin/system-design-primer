@@ -42,6 +42,7 @@ Additional topics for interview prep:
 * [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
+* [StreamPrep](https://streamprep.dev) - Structured interview roadmap with guided progression, including system design practice.
 
 ## Anki flashcards
 
