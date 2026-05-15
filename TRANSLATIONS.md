@@ -40,6 +40,14 @@ Languages are grouped by status and are listed in alphabetical order.
 
 ## In Progress
 
+### ⏳ Gujarati
+
+* [README-gu.md](README-gu.md)
+* Maintainer(s): [@ambicuity](https://github.com/ambicuity)
+* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/28
+* Translation Fork: https://github.com/ambicuity/system-design-primer
+
+
 ### ⏳ Korean
 
 * Maintainer(s): [@bonomoon](https://github.com/bonomoon), [@mingrammer](https://github.com/mingrammer) 👏
