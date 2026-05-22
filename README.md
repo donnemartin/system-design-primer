@@ -9,6 +9,7 @@
   <br/>
 </p>
 
+
 ## Motivation
 
 > Learn how to design large-scale systems.
@@ -43,7 +44,9 @@ Additional topics for interview prep:
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
 
-## Anki flashcards
+<details>
+  <summary><h3><b>Anki flashcards</b></h3></summary>
+  <br/>
 
 <p align="center">
   <img src="images/zdCAkB3.png">
@@ -70,23 +73,11 @@ Looking for resources to help you prep for the [**Coding Interview**](https://gi
 Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+</details>
 
-## Contributing
-
-> Learn from the community.
-
-Feel free to submit pull requests to help:
-
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
-
-Content that needs some polishing is placed [under development](#under-development).
-
-Review the [Contributing Guidelines](CONTRIBUTING.md).
-
-## Index of system design topics
+<details>
+  <summary><a id="index"></a><h3><b>Index of system design topics</b></h3></summary>
+  <br/>
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
 >
@@ -97,89 +88,89 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
+* [System design topics: start here](#system-design-topics-start-here)**
+    * [Step 1: Review the scalability video lecture](#system-design-topics-start-here)
+    * [Step 2: Review the scalability article](#system-design-topics-start-here)
+    * [Next steps](#system-design-topics-start-here)
 * [Performance vs scalability](#performance-vs-scalability)
 * [Latency vs throughput](#latency-vs-throughput)
 * [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+    * [CAP theorem](#availability-vs-consistency)
+        * [CP - consistency and partition tolerance](#availability-vs-consistency)
+        * [AP - availability and partition tolerance](#availability-vs-consistency)
 * [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
+    * [Weak consistency](#consistency-patterns)
+    * [Eventual consistency](#consistency-patterns)
+    * [Strong consistency](#consistency-patterns)
 * [Availability patterns](#availability-patterns)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
+    * [Fail-over](#availability-patterns)
+    * [Replication](#availability-patterns)
+    * [Availability in numbers](#availability-patterns)
 * [Domain name system](#domain-name-system)
 * [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
+    * [Push CDNs](#content-delivery-network)
+    * [Pull CDNs](#content-delivery-network)
 * [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
+    * [Active-passive](#load-balancer)
+    * [Active-active](#load-balancer)
+    * [Layer 4 load balancing](#load-balancer)
+    * [Layer 7 load balancing](#load-balancer)
+    * [Horizontal scaling](#load-balancer)
 * [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
+    * [Load balancer vs reverse proxy](#reverse-proxy-web-server)
 * [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
+    * [Microservices](#application-layer)
+    * [Service discovery](#application-layer)
 * [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
-    * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
+    * [Relational database management system (RDBMS)](#database)
+        * [Master-slave replication](#database)
+        * [Master-master replication](#database)
+        * [Federation](#database)
+        * [Sharding](#database)
+        * [Denormalization](#database)
+        * [SQL tuning](#database)
+    * [NoSQL](#database)
+        * [Key-value store](#database)
+        * [Document store](#database)
+        * [Wide column store](#database)
+        * [Graph Database](#database)
+    * [SQL or NoSQL](#database)
 * [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
-        * [Cache-aside](#cache-aside)
-        * [Write-through](#write-through)
-        * [Write-behind (write-back)](#write-behind-write-back)
-        * [Refresh-ahead](#refresh-ahead)
+    * [Client caching](#cache)
+    * [CDN caching](#cache)
+    * [Web server caching](#cache)
+    * [Database caching](#cache)
+    * [Application caching](#cache)
+    * [Caching at the database query level](#cache)
+    * [Caching at the object level](#cache)
+    * [When to update the cache](#cache)
+        * [Cache-aside](#cache)
+        * [Write-through](#cache)
+        * [Write-behind (write-back)](#cache)
+        * [Refresh-ahead](#cache)
 * [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
+    * [Message queues](#asynchronism)
+    * [Task queues](#asynchronism)
+    * [Back pressure](#asynchronism)
 * [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
+    * [Transmission control protocol (TCP)](#communication)
+    * [User datagram protocol (UDP)](#communication)
+    * [Remote procedure call (RPC)](#communication)
+    * [Representational state transfer (REST)](#communication)
 * [Security](#security)
 * [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+    * [Powers of two table](#appendix)
+    * [Latency numbers every programmer should know](#appendix)
+    * [Additional system design interview questions](#appendix)
+    * [Real world architectures](#appendix)
+    * [Company architectures](#appendix)
+    * [Company engineering blogs](#appendix)
+</details>
 
-## Study guide
+
+<details>
+  <summary><a id="study-guide"/></a><h3><b>Study guide</b></h3></summary>
+  <br/>
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
@@ -214,8 +205,11 @@ Start broad and go deeper in a few areas.  It helps to know a little about vario
 | Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
 | Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
 | Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+</details>
 
-## How to approach a system design interview question
+<details>
+  <summary><a id="how-to-approach-a-system-design-interview-question"></a><h3><b>How to approach a system design interview question</b></h3></summary>
+  <br/>
 
 > How to tackle a system design interview question.
 
@@ -283,8 +277,11 @@ Check out the following links to get a better idea of what to expect:
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+</details>
 
-## System design interview questions with solutions
+<details>
+  <summary><a id="system-design-interview-questions-with-solutions"></a><h3><b>System design interview questions with solutions</b></h3></summary>
+  <br/>
 
 > Common system design interview questions with sample discussions, code, and diagrams.
 >
@@ -349,8 +346,11 @@ Check out the following links to get a better idea of what to expect:
 [View exercise and solution](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
+</details>
 
-## Object-oriented design interview questions with solutions
+<details>
+  <summary><a id="object-oriented-design-interview-questions-with-solutions"></a><h3><b>Object-oriented design interview questions with solutions</b></h3></summary>
+  <br/>
 
 > Common object-oriented design interview questions with sample discussions, code, and diagrams.
 >
@@ -368,9 +368,13 @@ Check out the following links to get a better idea of what to expect:
 | Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | Design a circular array | [Contribute](#contributing)  |
 | Add an object-oriented design question | [Contribute](#contributing) |
+</details>
 
-## System design topics: start here
+<a id="system-design-topics-start-here"></a><h3><b>System design topics: start here</b></h3>
 
+<details>
+  <summary><a id="steps-to-kickstart"></a><b>Steps to kickstart</b></summary>
+  <br/>
 New to system design?
 
 First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
@@ -408,8 +412,13 @@ Next, we'll look at high-level trade-offs:
 Keep in mind that **everything is a trade-off**.
 
 Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Performance vs scalability
+<details>
+  <summary><a id="performance-vs-scalability"></a><b>Performance vs scalability</b></summary>
+  <br/>
 
 A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
@@ -422,8 +431,13 @@ Another way to look at performance vs scalability:
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Latency vs throughput
+<details>
+  <summary><a id="latency-vs-throughput"></a><b>Latency vs throughput</b></summary>
+  <br/>
 
 **Latency** is the time to perform some action or to produce some result.
 
@@ -434,8 +448,13 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 ### Source(s) and further reading
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Availability vs consistency
+<details>
+  <summary><a id="availability-vs-consistency"></a><b>Availability vs consistency</b></summary>
+  <br/>
 
 ### CAP theorem
 
@@ -469,8 +488,13 @@ AP is a good choice if the business needs to allow for [eventual consistency](#e
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Consistency patterns
+<details>
+  <summary><a id="consistency-patterns"></a><b>Consistency patterns</b></summary>
+  <br/>
 
 With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
 
@@ -495,8 +519,13 @@ This approach is seen in file systems and RDBMSes.  Strong consistency works wel
 ### Source(s) and further reading
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Availability patterns
+<details>
+  <summary><a id="availability-patterns"></a><b>Availability patterns</b></summary>
+  <br/>
 
 There are two complementary patterns to support high availability: **fail-over** and **replication**.
 
@@ -577,8 +606,13 @@ Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 ```
 
 If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Domain name system
+<details>
+  <summary><a id="domain-name-system"></a><b>Domain name system</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
@@ -615,8 +649,13 @@ Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](ht
 * [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [DNS articles](https://support.dnsimple.com/categories/dns/)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Content delivery network
+<details>
+  <summary><a id="content-delivery-network"></a><b>Content delivery network</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/h9TAuGI.jpg">
@@ -656,8 +695,13 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 * [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
 * [The differences between push and pull CDNs](https://www.geeksforgeeks.org/system-design/pull-cdn-vs-push-cdn/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Load balancer
+<details>
+  <summary><a id="load-balancer"></a><b>Load balancer</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/h81n9iK.png">
@@ -726,13 +770,18 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Reverse proxy (web server)
+<details>
+  <summary><a id="reverse-proxy-web-server"></a><b>Reverse proxy (web server)</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/n41Azff.png">
   <br/>
-  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
+  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h3g2bob.svg>Source: Wikipedia</a></i>
   <br/>
 </p>
 
@@ -769,8 +818,13 @@ Additional benefits include:
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Application layer
+<details>
+  <summary><a id="application-layer"></a><b>Application layer</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/yB5SYwm.png">
@@ -804,8 +858,13 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Database
+<details>
+  <summary><a id="database"></a><b>Database</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/Xkm5CXz.png">
@@ -1128,8 +1187,13 @@ Sample data well-suited for NoSQL:
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Cache
+<details>
+  <summary><a id="cache"></a><b>Cache</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/Q6z24La.png">
@@ -1320,8 +1384,13 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [Scalability](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Asynchronism
+<details>
+  <summary><a id="asynchronism"></a><b>Asynchronism</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/54GYsSx.png">
@@ -1366,8 +1435,13 @@ If queues start to grow significantly, the queue size can become larger than mem
 * [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
 * [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
 * [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Communication
+<details>
+  <summary><a id="communication"></a><b>Communication</b></summary>
+  <br/>
 
 <p align="center">
   <img src="images/5KeocQs.jpg">
@@ -1556,8 +1630,13 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Security
+<details>
+  <summary><a id="security"></a><b>Security</b></summary>
+  <br/>
 
 This section could use some updates.  Consider [contributing](#contributing)!
 
@@ -1573,9 +1652,17 @@ Security is a broad topic.  Unless you have considerable experience, a security 
 * [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-## Appendix
+<details>
+  <summary><a id="appendix"></a><b>Appendix</b></summary>
+  <br/>
 
+<details>
+  <summary><a id="powers-of-two-table"></a><b>Powers of two table and Latency numbers every programmer should know</b></summary>
+  <br/>
 You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
 
 ### Powers of two table
@@ -1644,8 +1731,13 @@ Handy metrics based on numbers above:
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-### Additional system design interview questions
+<details>
+  <summary><a id="additional-system-design-interview-questions"></a><b>Additional system design interview questions</b></summary>
+  <br/>
 
 > Common system design interview questions, with links to resources on how to solve each.
 
@@ -1675,8 +1767,13 @@ Handy metrics based on numbers above:
 | Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
 | Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | Add a system design question | [Contribute](#contributing) |
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-### Real world architectures
+<details>
+  <summary><a id="real-world-architectures"></a><b>Real world architectures</b></summary>
+  <br/>
 
 > Articles on how real world systems are designed.
 
@@ -1715,8 +1812,13 @@ Handy metrics based on numbers above:
 | Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
 | Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
 | | Add an architecture | [Contribute](#contributing) |
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-### Company architectures
+<details>
+  <summary><a id="company-architectures"></a><b>Company architectures</b></summary>
+  <br/>
 
 | Company | Reference(s) |
 |---|---|
@@ -1743,8 +1845,13 @@ Handy metrics based on numbers above:
 | Uber | [How Uber scales their real-time market platform](http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html)<br/>[Lessons Learned From Scaling Uber To 2000 Engineers, 1000 Services, And 8000 Git Repositories](http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html) |
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
 
-### Company engineering blogs
+<details>
+  <summary><a id="company-engineering-blogs"></a><b>Company engineering blogs</b></summary>
+  <br/>
 
 > Architectures for companies you are interviewing with.
 >
@@ -1796,6 +1903,25 @@ Handy metrics based on numbers above:
 Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
+<br/>
+<a href="#index">Back to Index ↑</a>
+</details>
+</details>
+
+## Contributing
+
+> Learn from the community.
+
+Feel free to submit pull requests to help:
+
+* Fix errors
+* Improve sections
+* Add new sections
+* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+
+Content that needs some polishing is placed [under development](#under-development).
+
+Review the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## Under development
 
