@@ -1622,6 +1622,8 @@ Notes
 | 複数のデータセンターからデータを配信するサービスの設計 | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
 | オンラインの複数プレイヤーカードゲームの設計 | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
 | ガーベッジコレクションシステムの設計 | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| API レートリミッターの設計 | [stripe.com](https://stripe.com/blog/rate-limiters) |
+| 株式取引所（NASDAQ や Binance など）の設計 | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | システム設計例題を追加する | [Contribute](#contributing) |
 
 ### 実世界のアーキテクチャ
