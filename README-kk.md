@@ -1,723 +1,723 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
+*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) ∙ [Қазақша](README-kk.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
 
-**Help [translate](TRANSLATIONS.md) this guide!**
+**Осы нұсқаулықты [аударуға](TRANSLATIONS.md) көмектесіңіз!**
 
-# The System Design Primer
+# Жүйені жобалау негіздері
 
 <p align="center">
   <img src="images/jj3A5N8.png">
   <br/>
 </p>
 
-## Motivation
+## Мотивация
 
-> Learn how to design large-scale systems.
+> Ауқымды жүйелерді қалай жобалауды үйрену.
 >
-> Prep for the system design interview.
+> Жүйені жобалау сұхбатына дайындалу.
 
-### Learn how to design large-scale systems
+### Ауқымды жүйелерді жобалауды үйрену
 
-Learning how to design scalable systems will help you become a better engineer.
+Масштабталатын жүйелерді жобалауды үйрену сізді жақсы инженер болуға көмектеседі.
 
-System design is a broad topic.  There are a **vast number of resources scattered throughout the web** on system design principles.
+Жүйені жобалау кең тақырып. Интернетте жүйені жобалау принциптері бойынша **өте көп ресурстар шашырап жатыр**.
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+Бұл репозиторий — жүйелерді масштабта құруды үйренуге көмектесетін ресурстардың **ұйымдастырылған жинағы**.
 
-### Learn from the open source community
+### Ашық бастапқы кодты қауымдастықтан үйрену
 
-This is a continually updated, open source project.
+Бұл үнемі жаңартылып отыратын ашық бастапқы код жобасы.
 
-[Contributions](#contributing) are welcome!
+[Үлестер](#үлес-қосу) қабылданады!
 
-### Prep for the system design interview
+### Жүйені жобалау сұхбатына дайындалу
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+Кодтау сұхбаттарынан басқа, жүйені жобалау көптеген технологиялық компанияларда **техникалық сұхбат үрдісінің** **міндетті компоненті** болып табылады.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+**Жалпы жүйені жобалау сұхбат сұрақтарын жаттығып**, нәтижелеріңізді **үлгі шешімдерімен салыстырыңыз**: талқылаулар, код және диаграммалар.
 
-Additional topics for interview prep:
+Сұхбатқа дайындалуға арналған қосымша тақырыптар:
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+* [Оқу нұсқаулығы](#оқу-нұсқаулығы)
+* [Жүйені жобалау сұхбат сұрағына қалай кірісу](#жүйені-жобалау-сұхбат-сұрағына-қалай-кірісу)
+* [Жүйені жобалау сұхбат сұрақтары, **шешімдерімен**](#шешімдері-бар-жүйені-жобалау-сұхбат-сұрақтары)
+* [Объектіге бағытталған жобалау сұхбат сұрақтары, **шешімдерімен**](#шешімдері-бар-объектіге-бағытталған-жобалау-сұхбат-сұрақтары)
+* [Қосымша жүйені жобалау сұхбат сұрақтары](#қосымша-жүйені-жобалау-сұхбат-сұрақтары)
 
-## Anki flashcards
+## Anki флэш-карталары
 
 <p align="center">
   <img src="images/zdCAkB3.png">
   <br/>
 </p>
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+Берілген [Anki флэш-карта жинақтары](https://apps.ankiweb.net/) жүйені жобалаудың негізгі тұжырымдамаларын есте сақтауға көмектесу үшін аралықпен қайталау әдісін қолданады.
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+* [Жүйені жобалау жинағы](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
+* [Жүйені жобалау жаттығулары жинағы](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
+* [Объектіге бағытталған жобалау жаттығулары жинағы](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
 
-Great for use while on-the-go.
+Жолда жүрген кезде пайдалануға өте ыңғайлы.
 
-### Coding Resource: Interactive Coding Challenges
+### Кодтау ресурсы: Интерактивті кодтау тапсырмалары
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+[**Кодтау сұхбатына**](https://github.com/donnemartin/interactive-coding-challenges) дайындалуға арналған ресурстарды іздеп жүрсіз бе?
 
 <p align="center">
   <img src="images/b4YtAEN.png">
   <br/>
 </p>
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Қосымша Anki жинағын қамтитын туыс репозиторийді қараңыз — [**Интерактивті кодтау тапсырмалары**](https://github.com/donnemartin/interactive-coding-challenges):
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* [Кодтау жинағы](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
-## Contributing
+## Үлес қосу
 
-> Learn from the community.
+> Қауымдастықтан үйреніңіз.
 
-Feel free to submit pull requests to help:
+Келесілерге көмектесу үшін pull request жіберіңіз:
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+* Қателерді түзету
+* Бөлімдерді жетілдіру
+* Жаңа бөлімдер қосу
+* [Аудару](https://github.com/donnemartin/system-design-primer/issues/28)
 
-Content that needs some polishing is placed [under development](#under-development).
+Жетілдіруді қажет ететін мазмұн [дамуда](#дамуда) деп белгіленген.
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+[Үлес қосу нұсқаулығын](CONTRIBUTING.md) қараңыз.
 
-## Index of system design topics
+## Жүйені жобалау тақырыптарының индексі
 
-> Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
+> Артықшылықтары мен кемшіліктерін қоса алғанда, жүйені жобалаудың әртүрлі тақырыптарының қысқаша мазмұны. **Бәрі — ымыраласу**.
 >
-> Each section contains links to more in-depth resources.
+> Әр бөлім тереңірек ресурстарға сілтемелер қамтиды.
 
 <p align="center">
   <img src="images/jrUBAF7.png">
   <br/>
 </p>
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Performance vs scalability](#performance-vs-scalability)
-* [Latency vs throughput](#latency-vs-throughput)
-* [Availability vs consistency](#availability-vs-consistency)
-    * [CAP theorem](#cap-theorem)
-        * [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-        * [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-* [Consistency patterns](#consistency-patterns)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](#eventual-consistency)
-    * [Strong consistency](#strong-consistency)
-* [Availability patterns](#availability-patterns)
+* [Жүйені жобалау тақырыптары: осыдан бастаңыз](#жүйені-жобалау-тақырыптары-осыдан-бастаңыз)
+    * [1-қадам: Масштабталушылық бойынша бейне дәрісті қарау](#1-қадам-масштабталушылық-бойынша-бейне-дәрісті-қарау)
+    * [2-қадам: Масштабталушылық бойынша мақаланы қарау](#2-қадам-масштабталушылық-бойынша-мақаланы-қарау)
+    * [Келесі қадамдар](#келесі-қадамдар)
+* [Өнімділік пен масштабталушылық](#өнімділік-пен-масштабталушылық)
+* [Кідіріс пен өткізу қабілеті](#кідіріс-пен-өткізу-қабілеті)
+* [Қолжетімділік пен дәйектілік](#қолжетімділік-пен-дәйектілік)
+    * [CAP теоремасы](#cap-теоремасы)
+        * [CP - дәйектілік және бөлімге төзімділік](#cp---дәйектілік-және-бөлімге-төзімділік)
+        * [AP - қолжетімділік және бөлімге төзімділік](#ap---қолжетімділік-және-бөлімге-төзімділік)
+* [Дәйектілік үлгілері](#дәйектілік-үлгілері)
+    * [Әлсіз дәйектілік](#әлсіз-дәйектілік)
+    * [Ақырғы дәйектілік](#ақырғы-дәйектілік)
+    * [Күшті дәйектілік](#күшті-дәйектілік)
+* [Қолжетімділік үлгілері](#қолжетімділік-үлгілері)
     * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
-* [Domain name system](#domain-name-system)
-* [Content delivery network](#content-delivery-network)
-    * [Push CDNs](#push-cdns)
-    * [Pull CDNs](#pull-cdns)
-* [Load balancer](#load-balancer)
-    * [Active-passive](#active-passive)
-    * [Active-active](#active-active)
-    * [Layer 4 load balancing](#layer-4-load-balancing)
-    * [Layer 7 load balancing](#layer-7-load-balancing)
-    * [Horizontal scaling](#horizontal-scaling)
-* [Reverse proxy (web server)](#reverse-proxy-web-server)
-    * [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
-* [Application layer](#application-layer)
-    * [Microservices](#microservices)
-    * [Service discovery](#service-discovery)
-* [Database](#database)
-    * [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
-        * [Master-slave replication](#master-slave-replication)
-        * [Master-master replication](#master-master-replication)
-        * [Federation](#federation)
-        * [Sharding](#sharding)
-        * [Denormalization](#denormalization)
-        * [SQL tuning](#sql-tuning)
+    * [Репликация](#репликация)
+    * [Сандарда қолжетімділік](#сандарда-қолжетімділік)
+* [Домендік атау жүйесі](#домендік-атау-жүйесі)
+* [Контентті жеткізу желісі](#контентті-жеткізу-желісі)
+    * [Push CDN](#push-cdn)
+    * [Pull CDN](#pull-cdn)
+* [Жүктеме теңестіргіш](#жүктеме-теңестіргіш)
+    * [Белсенді-пассивті](#белсенді-пассивті)
+    * [Белсенді-белсенді](#белсенді-белсенді)
+    * [4-деңгейлі жүктемені теңестіру](#4-деңгейлі-жүктемені-теңестіру)
+    * [7-деңгейлі жүктемені теңестіру](#7-деңгейлі-жүктемені-теңестіру)
+    * [Горизонтал масштабтау](#горизонтал-масштабтау)
+* [Кері прокси (веб-сервер)](#кері-прокси-веб-сервер)
+    * [Жүктеме теңестіргіш пен кері проксиді салыстыру](#жүктеме-теңестіргіш-пен-кері-проксиді-салыстыру)
+* [Қолданба деңгейі](#қолданба-деңгейі)
+    * [Микросервистер](#микросервистер)
+    * [Қызметті табу](#қызметті-табу)
+* [Дерекқор](#дерекқор)
+    * [Реляциялық дерекқорды басқару жүйесі (РДБЖ)](#реляциялық-дерекқорды-басқару-жүйесі-рдбж)
+        * [Master-slave репликациясы](#master-slave-репликациясы)
+        * [Master-master репликациясы](#master-master-репликациясы)
+        * [Федерация](#федерация)
+        * [Шардтау](#шардтау)
+        * [Денормализация](#денормализация)
+        * [SQL баптау](#sql-баптау)
     * [NoSQL](#nosql)
-        * [Key-value store](#key-value-store)
-        * [Document store](#document-store)
-        * [Wide column store](#wide-column-store)
-        * [Graph Database](#graph-database)
-    * [SQL or NoSQL](#sql-or-nosql)
-* [Cache](#cache)
-    * [Client caching](#client-caching)
-    * [CDN caching](#cdn-caching)
-    * [Web server caching](#web-server-caching)
-    * [Database caching](#database-caching)
-    * [Application caching](#application-caching)
-    * [Caching at the database query level](#caching-at-the-database-query-level)
-    * [Caching at the object level](#caching-at-the-object-level)
-    * [When to update the cache](#when-to-update-the-cache)
+        * [Кілт-мән қоймасы](#кілт-мән-қоймасы)
+        * [Құжат қоймасы](#құжат-қоймасы)
+        * [Кең баған қоймасы](#кең-баған-қоймасы)
+        * [Граф дерекқоры](#граф-дерекқоры)
+    * [SQL немесе NoSQL](#sql-немесе-nosql)
+* [Кэш](#кэш)
+    * [Клиенттік кэштеу](#клиенттік-кэштеу)
+    * [CDN кэштеу](#cdn-кэштеу)
+    * [Веб-серверде кэштеу](#веб-серверде-кэштеу)
+    * [Дерекқорда кэштеу](#дерекқорда-кэштеу)
+    * [Қолданбада кэштеу](#қолданбада-кэштеу)
+    * [Дерекқор сұраныс деңгейінде кэштеу](#дерекқор-сұраныс-деңгейінде-кэштеу)
+    * [Объект деңгейінде кэштеу](#объект-деңгейінде-кэштеу)
+    * [Кэшті қашан жаңарту керек](#кэшті-қашан-жаңарту-керек)
         * [Cache-aside](#cache-aside)
         * [Write-through](#write-through)
         * [Write-behind (write-back)](#write-behind-write-back)
         * [Refresh-ahead](#refresh-ahead)
-* [Asynchronism](#asynchronism)
-    * [Message queues](#message-queues)
-    * [Task queues](#task-queues)
-    * [Back pressure](#back-pressure)
-* [Communication](#communication)
-    * [Transmission control protocol (TCP)](#transmission-control-protocol-tcp)
-    * [User datagram protocol (UDP)](#user-datagram-protocol-udp)
-    * [Remote procedure call (RPC)](#remote-procedure-call-rpc)
-    * [Representational state transfer (REST)](#representational-state-transfer-rest)
-* [Security](#security)
-* [Appendix](#appendix)
-    * [Powers of two table](#powers-of-two-table)
-    * [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    * [Additional system design interview questions](#additional-system-design-interview-questions)
-    * [Real world architectures](#real-world-architectures)
-    * [Company architectures](#company-architectures)
-    * [Company engineering blogs](#company-engineering-blogs)
-* [Under development](#under-development)
-* [Credits](#credits)
-* [Contact info](#contact-info)
-* [License](#license)
+* [Асинхрондылық](#асинхрондылық)
+    * [Хабарлама кезектері](#хабарлама-кезектері)
+    * [Тапсырма кезектері](#тапсырма-кезектері)
+    * [Кері қысым](#кері-қысым)
+* [Байланыс](#байланыс)
+    * [Деректерді беруді басқару хаттамасы (TCP)](#деректерді-беруді-басқару-хаттамасы-tcp)
+    * [Пайдаланушы датаграмма хаттамасы (UDP)](#пайдаланушы-датаграмма-хаттамасы-udp)
+    * [Қашықтан процедураны шақыру (RPC)](#қашықтан-процедураны-шақыру-rpc)
+    * [Өкілдік күй беру (REST)](#өкілдік-күй-беру-rest)
+* [Қауіпсіздік](#қауіпсіздік)
+* [Қосымша](#қосымша)
+    * [Екінің дәрежелері кестесі](#екінің-дәрежелері-кестесі)
+    * [Әр бағдарламашы білуі тиіс кідіріс сандары](#әр-бағдарламашы-білуі-тиіс-кідіріс-сандары)
+    * [Қосымша жүйені жобалау сұхбат сұрақтары](#қосымша-жүйені-жобалау-сұхбат-сұрақтары)
+    * [Нақты әлем архитектуралары](#нақты-әлем-архитектуралары)
+    * [Компания архитектуралары](#компания-архитектуралары)
+    * [Компанияның инженерлік блогтары](#компанияның-инженерлік-блогтары)
+* [Дамуда](#дамуда)
+* [Алғыс](#алғыс)
+* [Байланыс ақпараты](#байланыс-ақпараты)
+* [Лицензия](#лицензия)
 
-## Study guide
+## Оқу нұсқаулығы
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Сұхбат уақытыңызға (қысқа, орта, ұзақ) байланысты қарастырылатын тақырыптар ұсынылады.
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**С: Сұхбат үшін осындағының бәрін білу керек пе?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**Ж: Жоқ, сұхбатқа дайындалу үшін осындағының бәрін білудің қажеті жоқ**.
 
-What you are asked in an interview depends on variables such as:
+Сұхбатта не сұралатыны келесі айнымалыларға байланысты:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Сіздің қанша тәжірибеңіз бар
+* Техникалық дайындығыңыз қандай
+* Қандай лауазымдарға сұхбат беріп жатырсыз
+* Қандай компанияларда сұхбат беріп жатырсыз
+* Сәт
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Тәжірибелі үміткерлерден жүйені жобалау туралы көбірек білу күтіледі. Архитекторлар немесе команда жетекшілерінен жеке үлесшілерге қарағанда көбірек білу күтілуі мүмкін. Ірі технологиялық компанияларда бір немесе бірнеше жобалау сұхбаты раунды болуы ықтимал.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Кең бастаңыз, бірнеше бағытта тереңдеңіз. Жүйені жобалаудың әртүрлі негізгі тақырыптары туралы біраз білу пайдалы. Келесі нұсқаулықты уақыт кестесіне, тәжірибеге, қандай лауазымдарға сұхбат беріп жатқаныңызға және қандай компанияларда сұхбат беретіндігіңізге байланысты реттеңіз.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Қысқа уақыт кестесі** — жүйені жобалау тақырыптарында **кеңдікті** мақсат етіңіз. **Бірнеше** сұхбат сұрақтарын шешу арқылы жаттығыңыз.
+* **Орта уақыт кестесі** — жүйені жобалау тақырыптарында **кеңдік** пен **белгілі тереңдікті** мақсат етіңіз. **Көп** сұхбат сұрақтарын шешу арқылы жаттығыңыз.
+* **Ұзақ уақыт кестесі** — жүйені жобалау тақырыптарында **кеңдік** пен **көбірек тереңдікті** мақсат етіңіз. **Көпшілік** сұхбат сұрақтарын шешу арқылы жаттығыңыз.
 
-| | Short | Medium | Long |
+| | Қысқа | Орта | Ұзақ |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Жүйелердің қалай жұмыс істейтінін жалпы түсіну үшін [Жүйені жобалау тақырыптарын](#жүйені-жобалау-тақырыптарының-индексі) оқып шығыңыз | :+1: | :+1: | :+1: |
+| Сұхбат беретін компаниялардың [Компания инженерлік блогтарынан](#компанияның-инженерлік-блогтары) бірнеше мақала оқыңыз | :+1: | :+1: | :+1: |
+| Бірнеше [Нақты әлем архитектурасын](#нақты-әлем-архитектуралары) оқып шығыңыз | :+1: | :+1: | :+1: |
+| [Жүйені жобалау сұхбат сұрағына қалай кірісуді](#жүйені-жобалау-сұхбат-сұрағына-қалай-кірісу) қараңыз | :+1: | :+1: | :+1: |
+| [Шешімдері бар жүйені жобалау сұхбат сұрақтарын](#шешімдері-бар-жүйені-жобалау-сұхбат-сұрақтары) орындаңыз | Бірнеше | Көп | Көпшілігін |
+| [Шешімдері бар объектіге бағытталған жобалау сұхбат сұрақтарын](#шешімдері-бар-объектіге-бағытталған-жобалау-сұхбат-сұрақтары) орындаңыз | Бірнеше | Көп | Көпшілігін |
+| [Қосымша жүйені жобалау сұхбат сұрақтарын](#қосымша-жүйені-жобалау-сұхбат-сұрақтары) қараңыз | Бірнеше | Көп | Көпшілігін |
 
-## How to approach a system design interview question
+## Жүйені жобалау сұхбат сұрағына қалай кірісу
 
-> How to tackle a system design interview question.
+> Жүйені жобалау сұхбат сұрағын қалай шешуге болады.
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+Жүйені жобалау сұхбаты — **ашық диалог**. Оны сіз жетекшілік етуге тиіссіз.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Талқылауды бағыттау үшін келесі қадамдарды пайдалануға болады. Осы үрдісті нығайтуға көмектесу үшін [Шешімдері бар жүйені жобалау сұхбат сұрақтары](#шешімдері-бар-жүйені-жобалау-сұхбат-сұрақтары) бөлімін осы қадамдарды пайдаланып орындаңыз.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### 1-қадам: Қолдану жағдайларын, шектеулерді және болжамдарды белгілеу
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Талаптарды жинаңыз және мәселенің ауқымын анықтаңыз. Қолдану жағдайлары мен шектеулерді нақтылау үшін сұрақтар қойыңыз. Болжамдарды талқылаңыз.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Кім пайдаланатын болады?
+* Олар қалай пайдаланатын болады?
+* Қанша пайдаланушы бар?
+* Жүйе не істейді?
+* Жүйенің кірістері мен шығыстары қандай?
+* Қанша деректерді өңдеуді күтеміз?
+* Секундына қанша сұраныс күтеміз?
+* Оқу мен жазудың күтілетін арақатынасы қандай?
 
-### Step 2: Create a high level design
+### 2-қадам: Жоғары деңгейлі жобалау жасау
 
-Outline a high level design with all important components.
+Барлық маңызды компоненттермен жоғары деңгейлі жобаны белгілеңіз.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Негізгі компоненттер мен байланыстарды схема түрінде сызыңыз
+* Идеяларыңызды негіздеңіз
 
-### Step 3: Design core components
+### 3-қадам: Негізгі компоненттерді жобалау
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Әр негізгі компоненттің бөлшектеріне үңіліңіз. Мысалы, [URL қысқарту қызметін жобалауды](solutions/system_design/pastebin/README.md) сұрасаңыз, талқылаңыз:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Толық URL хэшін жасау және сақтау
+    * [MD5](solutions/system_design/pastebin/README.md) және [Base62](solutions/system_design/pastebin/README.md)
+    * Хэш қақтығыстары
+    * SQL немесе NoSQL
+    * Дерекқор схемасы
+* Хэшталған URL-ді толық URL-ге аудару
+    * Дерекқорда іздеу
+* API және объектіге бағытталған жобалау
 
-### Step 4: Scale the design
+### 4-қадам: Жобаны масштабтау
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Шектеулерді ескере отырып, тарлықтарды анықтаңыз және шешіңіз. Мысалы, масштабталушылық мәселелерін шешу үшін мыналар қажет пе?
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+* Жүктеме теңестіргіш
+* Горизонтал масштабтау
+* Кэштеу
+* Дерекқорды шардтау
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Ықтимал шешімдер мен ымыраласуларды талқылаңыз. Бәрі — ымыраласу. Тарлықтарды [масштабталатын жүйені жобалаудың принциптерін](#жүйені-жобалау-тақырыптарының-индексі) пайдаланып шешіңіз.
 
-### Back-of-the-envelope calculations
+### Шамалы есептеулер
 
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+Сізден қолмен кейбір бағалауларды жасауды сұрауы мүмкін. Келесі ресурстар үшін [Қосымшаға](#қосымша) жүгініңіз:
 
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+* [Шамалы есептеулерді пайдалану](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Екінің дәрежелері кестесі](#екінің-дәрежелері-кестесі)
+* [Әр бағдарламашы білуі тиіс кідіріс сандары](#әр-бағдарламашы-білуі-тиіс-кідіріс-сандары)
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
-Check out the following links to get a better idea of what to expect:
+Не күтетінін жақсырақ түсіну үшін келесі сілтемелерді қараңыз:
 
 * [How to ace a systems design interview](https://web.archive.org/web/20210505130322/https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
 * [The system design interview](http://www.hiredintech.com/system-design)
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## Шешімдері бар жүйені жобалау сұхбат сұрақтары
 
-> Common system design interview questions with sample discussions, code, and diagrams.
+> Үлгі талқылаулар, код және диаграммалармен жалпы жүйені жобалау сұхбат сұрақтары.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Шешімдер `solutions/` қалтасындағы мазмұнға сілтелген.
 
-| Question | |
+| Сұрақ | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Pastebin.com (немесе Bit.ly) жобалаңыз | [Шешім](solutions/system_design/pastebin/README.md) |
+| Twitter уақыт белгісі мен іздеуді (немесе Facebook жаңалықтар ағыны мен іздеуін) жобалаңыз | [Шешім](solutions/system_design/twitter/README.md) |
+| Веб-шолғышты жобалаңыз | [Шешім](solutions/system_design/web_crawler/README.md) |
+| Mint.com жобалаңыз | [Шешім](solutions/system_design/mint/README.md) |
+| Әлеуметтік желінің деректер құрылымдарын жобалаңыз | [Шешім](solutions/system_design/social_graph/README.md) |
+| Іздеу жүйесіне арналған кілт-мән қоймасын жобалаңыз | [Шешім](solutions/system_design/query_cache/README.md) |
+| Amazon-ның санат бойынша сату рейтингі мүмкіндігін жобалаңыз | [Шешім](solutions/system_design/sales_rank/README.md) |
+| AWS-те миллиондаған пайдаланушыларға дейін масштабталатын жүйені жобалаңыз | [Шешім](solutions/system_design/scaling_aws/README.md) |
+| Жүйені жобалау сұрағын қосу | [Үлес қосу](#үлес-қосу) |
 
-### Design Pastebin.com (or Bit.ly)
+### Pastebin.com (немесе Bit.ly) жобалаңыз
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Twitter уақыт белгісі мен іздеуді (немесе Facebook жаңалықтар ағыны мен іздеуін) жобалаңыз
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### Веб-шолғышты жобалаңыз
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### Mint.com жобалаңыз
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Әлеуметтік желінің деректер құрылымдарын жобалаңыз
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Іздеу жүйесіне арналған кілт-мән қоймасын жобалаңыз
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Amazon-ның санат бойынша сату рейтингі мүмкіндігін жобалаңыз
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### AWS-те миллиондаған пайдаланушыларға дейін масштабталатын жүйені жобалаңыз
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Жаттығу мен шешімді қараңыз](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Шешімдері бар объектіге бағытталған жобалау сұхбат сұрақтары
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Үлгі талқылаулар, код және диаграммалармен жалпы объектіге бағытталған жобалау сұхбат сұрақтары.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Шешімдер `solutions/` қалтасындағы мазмұнға сілтелген.
 
->**Note: This section is under development**
+>**Ескерту: Бұл бөлім дамуда**
 
-| Question | |
+| Сұрақ | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Хэш картасын жобалаңыз | [Шешім](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Ең соңғы пайдаланылған кэшті жобалаңыз | [Шешім](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Қоңырау орталығын жобалаңыз | [Шешім](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Карта дестесін жобалаңыз | [Шешім](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Тұрақ орнын жобалаңыз | [Шешім](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Чат серверін жобалаңыз | [Шешім](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Дөңгелек массивті жобалаңыз | [Үлес қосу](#үлес-қосу)  |
+| Объектіге бағытталған жобалау сұрағын қосу | [Үлес қосу](#үлес-қосу) |
 
-## System design topics: start here
+## Жүйені жобалау тақырыптары: осыдан бастаңыз
 
-New to system design?
+Жүйені жобалауда жаңасыз ба?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Алдымен жалпы принциптердің негізгі түсінігі қажет: олардың не екенін, қалай қолданылатынын және артықшылықтары мен кемшіліктерін үйрену.
 
-### Step 1: Review the scalability video lecture
+### 1-қадам: Масштабталушылық бойынша бейне дәрісті қарау
 
-[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+[Гарвардтағы масштабталушылық дәрісі](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
-    * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+* Қамтылған тақырыптар:
+    * Тік масштабтау
+    * Горизонтал масштабтау
+    * Кэштеу
+    * Жүктемені теңестіру
+    * Дерекқорды репликациялау
+    * Дерекқорды бөлу
 
-### Step 2: Review the scalability article
+### 2-қадам: Масштабталушылық бойынша мақаланы қарау
 
-[Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+[Масштабталушылық](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
-    * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-    * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
-    * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
-    * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+* Қамтылған тақырыптар:
+    * [Клондар](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Дерекқорлар](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Кэштер](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Асинхрондылық](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Келесі қадамдар
 
-Next, we'll look at high-level trade-offs:
+Келесіде жоғары деңгейлі ымыраласуларды қарастырамыз:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Өнімділік** пен **масштабталушылық**
+* **Кідіріс** пен **өткізу қабілеті**
+* **Қолжетімділік** пен **дәйектілік**
 
-Keep in mind that **everything is a trade-off**.
+**Бәрі — ымыраласу** екенін есте сақтаңыз.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Содан кейін DNS, CDN және жүктеме теңестіргіштер сияқты нақтырақ тақырыптарға үңілеміз.
 
-## Performance vs scalability
+## Өнімділік пен масштабталушылық
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Қосылған ресурстарға пропорционал **өнімділіктің** артуына әкелсе, қызмет **масштабталатын** болып саналады. Жалпы, өнімділікті арттыру дегеніміз — жұмыс бірліктерін көбірек орындау, бірақ деректер жинақтары өскен сайын үлкен жұмыс бірліктерін өңдеу де болуы мүмкін.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Өнімділік пен масштабталушылықты салыстырудың тағы бір жолы:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* **Өнімділік** мәселесі болса, жүйеңіз бір пайдаланушы үшін баяу жұмыс істейді.
+* **Масштабталушылық** мәселесі болса, жүйеңіз бір пайдаланушы үшін жылдам, бірақ ауыр жүктеме кезінде баяу болады.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 
-## Latency vs throughput
+## Кідіріс пен өткізу қабілеті
 
-**Latency** is the time to perform some action or to produce some result.
+**Кідіріс** — белгілі бір іс-әрекетті орындауға немесе нәтиже шығаруға кететін уақыт.
 
-**Throughput** is the number of such actions or results per unit of time.
+**Өткізу қабілеті** — уақыт бірлігіндегі осындай іс-әрекеттер немесе нәтижелер саны.
 
-Generally, you should aim for **maximal throughput** with **acceptable latency**.
+Жалпы, **қолайлы кідіріспен** **ең жоғары өткізу қабілетін** мақсат ету керек.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## Қолжетімділік пен дәйектілік
 
-### CAP theorem
+### CAP теоремасы
 
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href="https://robertgreiner.com/cap-theorem-revisited">Source: CAP theorem revisited</a></i>
+  <i><a href="https://robertgreiner.com/cap-theorem-revisited">Дереккөз: CAP теоремасы қайта қаралды</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+Таратылған компьютерлік жүйеде келесі кепілдіктердің тек екеуін ғана қамтамасыз ете аласыз:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **Дәйектілік** — әр оқу ең соңғы жазуды немесе қатені алады
+* **Қолжетімділік** — әр сұраныс жауап алады, бірақ бұл жауаптың ақпараттың ең соңғы нұсқасын қамтитынына кепілдік жоқ
+* **Бөлімге төзімділік** — желі ақауларынан туындаған ерікті бөлімге қарамастан жүйе жұмыс істей береді
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*Желілер сенімді емес, сондықтан бөлімге төзімділікті қамтамасыз ету қажет. Дәйектілік пен қолжетімділік арасында бағдарламалық ымыраласу жасауыңыз керек болады.*
 
-#### CP - consistency and partition tolerance
+#### CP — дәйектілік және бөлімге төзімділік
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+Бөлінген түйіннен жауап күту уақыт шегінен асу қатесіне әкелуі мүмкін. Бизнес қажеттіліктері атомарлы оқу мен жазуды талап етсе, CP жақсы таңдау болып табылады.
 
-#### AP - availability and partition tolerance
+#### AP — қолжетімділік және бөлімге төзімділік
 
-Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+Жауаптар кез келген түйіндегі деректердің ең оңай қолжетімді нұсқасын қайтарады, ол ең соңғы нұсқа болмауы мүмкін. Бөлім шешілгенде жазулар таратылуына біраз уақыт кетуі мүмкін.
 
-AP is a good choice if the business needs to allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+Бизнес [ақырғы дәйектілікке](#ақырғы-дәйектілік) жол беруі қажет болса немесе жүйе сыртқы қателерге қарамастан жұмыс істеуін жалғастыруы керек болса, AP жақсы таңдау болып табылады.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Consistency patterns
+## Дәйектілік үлгілері
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+Бір деректің бірнеше көшірмесі болғанда, клиенттердің деректерге дәйекті көрінісі болуы үшін оларды қалай синхрондау керектігі туралы таңдаулармен бетпе-бет келеміз. [CAP теоремасының](#cap-теоремасы) дәйектілік анықтамасын еске алыңыз: әр оқу ең соңғы жазуды немесе қатені алады.
 
-### Weak consistency
+### Әлсіз дәйектілік
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+Жазудан кейін оқулар оны көруі де, көрмеуі де мүмкін. Мүмкіндігінше жақсы орындау тәсілі қолданылады.
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+Бұл тәсіл memcached сияқты жүйелерде кездеседі. Әлсіз дәйектілік VoIP, бейне чат және нақты уақыттағы көп ойыншылы ойындар сияқты нақты уақыт жағдайларында жақсы жұмыс істейді. Мысалы, телефон қоңырауы кезінде бірнеше секундқа байланыс үзілсе, байланыс қалпына келгенде байланыс үзілісі кезінде айтылғандарды естімейсіз.
 
-### Eventual consistency
+### Ақырғы дәйектілік
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+Жазудан кейін оқулар ақыр соңында оны көреді (әдетте миллисекундтар ішінде). Деректер асинхронды түрде репликацияланады.
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+Бұл тәсіл DNS және электрондық пошта сияқты жүйелерде кездеседі. Ақырғы дәйектілік жоғары қолжетімді жүйелерде жақсы жұмыс істейді.
 
-### Strong consistency
+### Күшті дәйектілік
 
-After a write, reads will see it.  Data is replicated synchronously.
+Жазудан кейін оқулар оны көреді. Деректер синхронды түрде репликацияланады.
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+Бұл тәсіл файлдық жүйелер мен РДБЖ-де кездеседі. Күшті дәйектілік транзакцияларды қажет ететін жүйелерде жақсы жұмыс істейді.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
-## Availability patterns
+## Қолжетімділік үлгілері
 
-There are two complementary patterns to support high availability: **fail-over** and **replication**.
+Жоғары қолжетімділікті қамтамасыз ету үшін екі толықтырушы үлгі бар: **fail-over** және **репликация**.
 
 ### Fail-over
 
-#### Active-passive
+#### Белсенді-пассивті
 
-With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.
+Белсенді-пассивті fail-over кезінде белсенді және резервтегі пассивті сервер арасында «жүрек соғысы» сигналдары жіберіледі. «Жүрек соғысы» үзілсе, пассивті сервер белсендінің IP мекенжайын алады және қызметті жалғастырады.
 
-The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.
+Істен шығу ұзақтығы пассивті сервердің «ыстық» резервте жұмыс істеп тұрғанына немесе «суық» резервтен іске қосылуы керектігіне байланысты. Тек белсенді сервер ғана трафикті өңдейді.
 
-Active-passive failover can also be referred to as master-slave failover.
+Белсенді-пассивті failover master-slave failover деп те аталуы мүмкін.
 
-#### Active-active
+#### Белсенді-белсенді
 
-In active-active, both servers are managing traffic, spreading the load between them.
+Белсенді-белсенді режимде екі сервер де трафикті басқарады, жүктемені олардың арасына бөліп тарату.
 
-If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.
+Серверлер жалпыға ашық болса, DNS екі сервердің де жалпы IP-адрестерін білуі керек. Серверлер ішкі болса, қолданба логикасы екі сервер туралы да білуі керек.
 
-Active-active failover can also be referred to as master-master failover.
+Белсенді-белсенді failover master-master failover деп те аталуы мүмкін.
 
-### Disadvantage(s): failover
+### Кемшілік(тер): failover
 
-* Fail-over adds more hardware and additional complexity.
-* There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+* Fail-over қосымша жабдық пен күрделілік қосады.
+* Жаңадан жазылған деректер пассивке репликацияланғанға дейін белсенді жүйе істен шықса, деректер жоғалу қаупі бар.
 
-### Replication
+### Репликация
 
-#### Master-slave and master-master
+#### Master-slave және master-master
 
-This topic is further discussed in the [Database](#database) section:
+Бұл тақырып [Дерекқор](#дерекқор) бөлімінде толығырақ талқыланады:
 
-* [Master-slave replication](#master-slave-replication)
-* [Master-master replication](#master-master-replication)
+* [Master-slave репликациясы](#master-slave-репликациясы)
+* [Master-master репликациясы](#master-master-репликациясы)
 
-### Availability in numbers
+### Сандарда қолжетімділік
 
-Availability is often quantified by uptime (or downtime) as a percentage of time the service is available.  Availability is generally measured in number of 9s--a service with 99.99% availability is described as having four 9s.
+Қолжетімділік жиі жұмыс уақытымен (немесе тоқтап қалу уақытымен) қызмет қолжетімді болатын уақыт пайызы ретінде өлшенеді. Қолжетімділік жалпы «9-дар» санымен өлшенеді — 99.99% қолжетімділікті қызмет «төрт 9» деп сипатталады.
 
-#### 99.9% availability - three 9s
+#### 99.9% қолжетімділік — үш 9
 
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 8h 45min 57s       |
-| Downtime per month  | 43m 49.7s          |
-| Downtime per week   | 10m 4.8s           |
-| Downtime per day    | 1m 26.4s           |
+| Ұзақтық               | Қолайлы тоқтап қалу уақыты |
+|-----------------------|----------------------------|
+| Жылдық тоқтап қалу   | 8 сағ 45 мин 57 с          |
+| Айлық тоқтап қалу    | 43 мин 49.7 с              |
+| Апталық тоқтап қалу  | 10 мин 4.8 с               |
+| Күндік тоқтап қалу   | 1 мин 26.4 с               |
 
-#### 99.99% availability - four 9s
+#### 99.99% қолжетімділік — төрт 9
 
-| Duration            | Acceptable downtime|
-|---------------------|--------------------|
-| Downtime per year   | 52min 35.7s        |
-| Downtime per month  | 4m 23s             |
-| Downtime per week   | 1m 5s              |
-| Downtime per day    | 8.6s               |
+| Ұзақтық               | Қолайлы тоқтап қалу уақыты |
+|-----------------------|----------------------------|
+| Жылдық тоқтап қалу   | 52 мин 35.7 с              |
+| Айлық тоқтап қалу    | 4 мин 23 с                 |
+| Апталық тоқтап қалу  | 1 мин 5 с                  |
+| Күндік тоқтап қалу   | 8.6 с                      |
 
-#### Availability in parallel vs in sequence
+#### Параллель және дәйекті қолжетімділік
 
-If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+Егер қызмет ақауға бейім бірнеше компоненттен тұрса, қызметтің жалпы қолжетімділігі компоненттердің дәйекті немесе параллель орналасқанына байланысты.
 
-###### In sequence
+###### Дәйектіде
 
-Overall availability decreases when two components with availability < 100% are in sequence:
-
-```
-Availability (Total) = Availability (Foo) * Availability (Bar)
-```
-
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in sequence would be 99.8%.
-
-###### In parallel
-
-Overall availability increases when two components with availability < 100% are in parallel:
+Қолжетімділігі < 100% екі компонент дәйекті болғанда жалпы қолжетімділік төмендейді:
 
 ```
-Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
+Қолжетімділік (Барлығы) = Қолжетімділік (Foo) * Қолжетімділік (Bar)
 ```
 
-If both `Foo` and `Bar` each had 99.9% availability, their total availability in parallel would be 99.9999%.
+`Foo` және `Bar` екеуінің де 99.9% қолжетімділігі болса, дәйектідегі жалпы қолжетімділіктері 99.8% болар еді.
 
-## Domain name system
+###### Параллельде
+
+Қолжетімділігі < 100% екі компонент параллель болғанда жалпы қолжетімділік артады:
+
+```
+Қолжетімділік (Барлығы) = 1 - (1 - Қолжетімділік (Foo)) * (1 - Қолжетімділік (Bar))
+```
+
+`Foo` және `Bar` екеуінің де 99.9% қолжетімділігі болса, параллельдегі жалпы қолжетімділіктері 99.9999% болар еді.
+
+## Домендік атау жүйесі
 
 <p align="center">
   <img src="images/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Дереккөз: DNS қауіпсіздігі презентациясы</a></i>
 </p>
 
-A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.
+Домендік атау жүйесі (DNS) www.example.com сияқты домен атын IP мекенжайына аударады.
 
-DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
+DNS иерархиялық болып табылады, жоғарғы деңгейде бірнеше уәкілетті серверлер бар. Маршрутизаторыңыз немесе интернет провайдеріңіз іздеу кезінде қандай DNS сервер(лер)іне хабарласу керектігі туралы ақпарат береді. Төменгі деңгейдегі DNS серверлері салыстырмаларды кэштейді, бұл DNS таралу кешігулері себебінен ескіруі мүмкін. DNS нәтижелері де браузеріңізбен немесе ОЖ-мен белгілі бір уақыт аралығында кэштелуі мүмкін, оны [өмір сүру уақыты (TTL)](https://en.wikipedia.org/wiki/Time_to_live) анықтайды.
 
-* **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
-* **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
-* **A record (address)** - Points a name to an IP address.
-* **CNAME (canonical)** - Points a name to another name or `CNAME` (example.com to www.example.com) or to an `A` record.
+* **NS жазбасы (атау сервері)** — доменіңіз/субдоменіңіз үшін DNS серверлерін көрсетеді.
+* **MX жазбасы (пошта алмасу)** — хабарламаларды қабылдауға арналған пошта серверлерін көрсетеді.
+* **A жазбасы (мекенжай)** — атауды IP мекенжайына нұсқайды.
+* **CNAME (канондық)** — атауды басқа атауға немесе `CNAME`-ге (example.com-ды www.example.com-ға) немесе `A` жазбасына нұсқайды.
 
-Services such as [CloudFlare](https://www.cloudflare.com/dns/) and [Route 53](https://aws.amazon.com/route53/) provide managed DNS services.  Some DNS services can route traffic through various methods:
+[CloudFlare](https://www.cloudflare.com/dns/) және [Route 53](https://aws.amazon.com/route53/) сияқты қызметтер басқарылатын DNS қызметтерін ұсынады. Кейбір DNS қызметтері трафикті әртүрлі әдістермен бағыттай алады:
 
-* [Weighted round robin](https://www.jscape.com/blog/load-balancing-algorithms)
-    * Prevent traffic from going to servers under maintenance
-    * Balance between varying cluster sizes
-    * A/B testing
-* [Latency-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
-* [Geolocation-based](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html)
+* [Салмақты дөңгелек жолмен](https://www.jscape.com/blog/load-balancing-algorithms)
+    * Техникалық қызмет көрсетудегі серверлерге трафиктің баруын болдырмау
+    * Әртүрлі кластер өлшемдері арасындағы теңгерім
+    * A/B тестілеу
+* [Кідірісіне негізделген](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
+* [Геоорналасуға негізделген](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html)
 
-### Disadvantage(s): DNS
+### Кемшілік(тер): DNS
 
-* Accessing a DNS server introduces a slight delay, although mitigated by caching described above.
-* DNS server management could be complex and is generally managed by [governments, ISPs, and large companies](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729).
-* DNS services have recently come under [DDoS attack](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/), preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).
+* DNS серверіне қол жеткізу аздап кешігу енгізеді, дегенмен жоғарыда сипатталған кэштеу арқылы азайтылады.
+* DNS серверін басқару күрделі болуы мүмкін және жалпы [үкіметтер, интернет провайдерлер және ірі компаниялар](http://superuser.com/questions/472695/who-controls-the-dns-servers/472729) тарапынан басқарылады.
+* DNS қызметтері жақында [DDoS шабуылына](http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/) ұшырады, бұл пайдаланушыларды Twitter IP мекенжайын білмей Twitter сияқты веб-сайттарға кіруге кедергі жасады.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [DNS architecture](https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx)
 * [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 * [DNS articles](https://support.dnsimple.com/categories/dns/)
 
-## Content delivery network
+## Контентті жеткізу желісі
 
 <p align="center">
   <img src="images/h9TAuGI.jpg">
   <br/>
-  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Source: Why use a CDN</a></i>
+  <i><a href=https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/>Дереккөз: CDN неге пайдалану керек</a></i>
 </p>
 
-A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.  Generally, static files such as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as Amazon's CloudFront support dynamic content.  The site's DNS resolution will tell clients which server to contact.
+Контентті жеткізу желісі (CDN) — пайдаланушыға жақын орындардан контент беретін прокси серверлердің жаһандық таратылған желісі. Жалпы, HTML/CSS/JS, фотосуреттер және бейнелер сияқты статикалық файлдар CDN-нан беріледі, дегенмен Amazon CloudFront сияқты кейбір CDN-дар динамикалық контентті де қолдайды. Сайттың DNS ажыратымдылығы клиенттерге қандай серверге хабарласу керектігін айтады.
 
-Serving content from CDNs can significantly improve performance in two ways:
+CDN-дан контент беру өнімділікті екі жолмен айтарлықтай жақсарта алады:
 
-* Users receive content from data centers close to them
-* Your servers do not have to serve requests that the CDN fulfills
+* Пайдаланушылар өздеріне жақын деректер орталықтарынан контент алады
+* Серверлеріңізге CDN орындайтын сұраныстарды өңдеудің қажеті жоқ
 
-### Push CDNs
+### Push CDN
 
-Push CDNs receive new content whenever changes occur on your server.  You take full responsibility for providing content, uploading directly to the CDN and rewriting URLs to point to the CDN.  You can configure when content expires and when it is updated.  Content is uploaded only when it is new or changed, minimizing traffic, but maximizing storage.
+Push CDN серверіңізде өзгерістер болған сайын жаңа контент алады. Контентті ұсыну, тікелей CDN-ға жүктеп салу және CDN-ға нұсқайтын URL-дерді қайта жазу үшін толық жауапкершілік өзіңізде болады. Контенттің қашан мерзімі өтетінін және қашан жаңартылатынын конфигурациялауға болады. Контент тек жаңа немесе өзгерген кезде жүктеледі, трафикті азайтады, бірақ сақтау орнын барынша пайдаланады.
 
-Sites with a small amount of traffic or sites with content that isn't often updated work well with push CDNs.  Content is placed on the CDNs once, instead of being re-pulled at regular intervals.
+Аз трафикі бар сайттар немесе контенті жиі жаңартылмайтын сайттар push CDN-дармен жақсы жұмыс істейді. Контент тұрақты аралықтармен қайтадан тартылудың орнына CDN-дарға бір рет орналастырылады.
 
-### Pull CDNs
+### Pull CDN
 
-Pull CDNs grab new content from your server when the first user requests the content.  You leave the content on your server and rewrite URLs to point to the CDN.  This results in a slower request until the content is cached on the CDN.
+Pull CDN бірінші пайдаланушы контентті сұраған кезде серверіңізден жаңа контентті тартып алады. Контентті серверіңізде қалдырасыз және URL-дерді CDN-ға нұсқайтын етіп қайта жазасыз. Контент CDN-да кэштелгенге дейін бұл баяуырақ сұранысқа әкеледі.
 
-A [time-to-live (TTL)](https://en.wikipedia.org/wiki/Time_to_live) determines how long content is cached.  Pull CDNs minimize storage space on the CDN, but can create redundant traffic if files expire and are pulled before they have actually changed.
+[Өмір сүру уақыты (TTL)](https://en.wikipedia.org/wiki/Time_to_live) контенттің қанша уақыт кэштелетінін анықтайды. Pull CDN CDN-дағы сақтау орнын азайтады, бірақ файлдар іс жүзінде өзгермей тұрып мерзімі өтіп, тартылса, артық трафик жасауы мүмкін.
 
-Sites with heavy traffic work well with pull CDNs, as traffic is spread out more evenly with only recently-requested content remaining on the CDN.
+Трафигі жоғары сайттар pull CDN-дармен жақсы жұмыс істейді, өйткені трафик CDN-да тек жақында сұралған контент қалуымен бірге біркелкірек таралады.
 
-### Disadvantage(s): CDN
+### Кемшілік(тер): CDN
 
-* CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
-* Content might be stale if it is updated before the TTL expires it.
-* CDNs require changing URLs for static content to point to the CDN.
+* CDN шығындары трафикке байланысты айтарлықтай болуы мүмкін, дегенмен CDN пайдаланбаудан туындайтын қосымша шығындармен теңестіру керек.
+* TTL мерзімі өткенге дейін контент жаңартылса, контент ескіруі мүмкін.
+* CDN-дар статикалық контент үшін URL-дерді CDN-ға нұсқайтын етіп өзгертуді талап етеді.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
 * [The differences between push and pull CDNs](https://www.geeksforgeeks.org/system-design/pull-cdn-vs-push-cdn/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
-## Load balancer
+## Жүктеме теңестіргіш
 
 <p align="center">
   <img src="images/h81n9iK.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Дереккөз: Масштабталатын жүйені жобалау үлгілері</a></i>
 </p>
 
-Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:
+Жүктеме теңестіргіштер клиенттен келетін сұраныстарды қолданба серверлері мен дерекқорлар сияқты есептеу ресурстарына таратады. Әр жағдайда жүктеме теңестіргіш есептеу ресурсынан жауапты тиісті клиентке қайтарады. Жүктеме теңестіргіштер мыналарда тиімді:
 
-* Preventing requests from going to unhealthy servers
-* Preventing overloading resources
-* Helping to eliminate a single point of failure
+* Сұраныстардың жұмыс істемейтін серверлерге баруын болдырмау
+* Ресурстардың шамадан тыс жүктелуін болдырмау
+* Жалғыз ақаулық нүктесін жоюға көмектесу
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+Жүктеме теңестіргіштерді жабдықпен (қымбат) немесе HAProxy сияқты бағдарламалық жасақтамамен іске асыруға болады.
 
-Additional benefits include:
+Қосымша артықшылықтар:
 
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Session persistence** - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions
+* **SSL аяқтау** — бэкенд серверлері осы ықтимал қымбат операцияларды орындамауы үшін кіріс сұраныстарды шифрды ашу және сервер жауаптарын шифрлау
+    * Әр серверге [X.509 сертификаттарын](https://en.wikipedia.org/wiki/X.509) орнату қажеттілігін жояды
+* **Сессияны сақтау** — веб-қолданбалар сессияларды бақыламаса, белгілі бір клиенттің сұраныстарын бір данаға бағыттау үшін куки беру
 
-To protect against failures, it's common to set up multiple load balancers, either in [active-passive](#active-passive) or [active-active](#active-active) mode.
+Ақаулыктарға қарсы қорғану үшін [белсенді-пассивті](#белсенді-пассивті) немесе [белсенді-белсенді](#белсенді-белсенді) режимде бірнеше жүктеме теңестіргіш орнату жалпы тәжірибе болып табылады.
 
-Load balancers can route traffic based on various metrics, including:
+Жүктеме теңестіргіштер трафикті әртүрлі метриктер негізінде бағыттай алады:
 
-* Random
-* Least loaded
-* Session/cookies
-* [Round robin or weighted round robin](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
-* [Layer 4](#layer-4-load-balancing)
-* [Layer 7](#layer-7-load-balancing)
+* Кездейсоқ
+* Ең аз жүктелген
+* Сессия/куки
+* [Дөңгелек жолмен немесе салмақты дөңгелек жолмен](https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb)
+* [4-деңгей](#4-деңгейлі-жүктемені-теңестіру)
+* [7-деңгей](#7-деңгейлі-жүктемені-теңестіру)
 
-### Layer 4 load balancing
+### 4-деңгейлі жүктемені теңестіру
 
-Layer 4 load balancers look at info at the [transport layer](#communication) to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing [Network Address Translation (NAT)](https://web.archive.org/web/20240117134735/https://www.nginx.com/resources/glossary/layer-4-load-balancing/).
+4-деңгейлі жүктеме теңестіргіштер сұраныстарды қалай таратуды шешу үшін [тасымалдау деңгейіндегі](#байланыс) ақпаратқа қарайды. Жалпы, бұл тақырыпшадағы бастапқы, тағайындалу IP мекенжайлары мен порттарды қамтиды, бірақ пакет мазмұнын қамтымайды. 4-деңгейлі жүктеме теңестіргіштер [Желілік мекенжайды аудару (NAT)](https://web.archive.org/web/20240117134735/https://www.nginx.com/resources/glossary/layer-4-load-balancing/) орындай отырып, желілік пакеттерді жоғарыдағы серверге және одан тасымалдайды.
 
-### Layer 7 load balancing
+### 7-деңгейлі жүктемені теңестіру
 
-Layer 7 load balancers look at the [application layer](#communication) to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminate network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.
+7-деңгейлі жүктеме теңестіргіштер сұраныстарды қалай таратуды шешу үшін [қолданба деңгейіне](#байланыс) қарайды. Бұл тақырыпша, хабарлама және куки мазмұнын қамтуы мүмкін. 7-деңгейлі жүктеме теңестіргіштер желілік трафикті аяқтайды, хабарламаны оқиды, жүктеме теңестіру шешімін қабылдайды, содан кейін таңдалған серверге байланыс ашады. Мысалы, 7-деңгейлі жүктеме теңестіргіш бейне трафигін бейне орналастыратын серверлерге, ал пайдаланушының есепшотын есептеуге байланысты сезімтал трафигін қауіпсіздігі күшейтілген серверлерге бағыттай алады.
 
-At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.
+Икемділік құнына қарамастан, 4-деңгейлі жүктемені теңестіру 7-деңгейге қарағанда аз уақыт пен есептеу ресурстарын қажет етеді, дегенмен өнімділікке әсері қазіргі жалпы мақсаттағы жабдықта минималды болуы мүмкін.
 
-### Horizontal scaling
+### Горизонтал масштабтау
 
-Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called **Vertical Scaling**.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.
+Жүктеме теңестіргіштер өнімділік пен қолжетімділікті жақсарта отырып, горизонтал масштабтауға да көмектесе алады. Жалпы мақсаттағы машиналарды пайдаланып кеңейту **Тік масштабтау** деп аталатын қымбатырақ жабдықта бір серверді кеңейтуге қарағанда шығынды тиімдірек және жоғары қолжетімділікке алып келеді. Сондай-ақ мамандандырылған кәсіпорын жүйелеріне қарағанда жалпы мақсаттағы жабдықта жұмыс істейтін мамандарды жалдау оңайырақ.
 
-#### Disadvantage(s): horizontal scaling
+#### Кемшілік(тер): горизонтал масштабтау
 
-* Scaling horizontally introduces complexity and involves cloning servers
-    * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
-    * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
-* Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+* Горизонтал масштабтау күрделілік енгізеді және серверлерді клондауды талап етеді
+    * Серверлер күйсіз болуы керек: олар сессиялар немесе профиль суреттері сияқты пайдаланушыға қатысты деректерді қамтымауы керек
+    * Сессиялар [дерекқор](#дерекқор) (SQL, NoSQL) немесе тұрақты [кэш](#кэш) (Redis, Memcached) сияқты орталықтандырылған деректер қоймасында сақталуы мүмкін
+* Кэштер мен дерекқорлар сияқты төменгі серверлер жоғарыдағы серверлер кеңейген сайын көбірек бір мезгілдегі байланыстарды өңдеуі керек
 
-### Disadvantage(s): load balancer
+### Кемшілік(тер): жүктеме теңестіргіш
 
-* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
-* Introducing a load balancer to help eliminate a single point of failure results in increased complexity.
-* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+* Жүктеме теңестіргіш жеткілікті ресурстар болмаса немесе дұрыс конфигурацияланбаса, өнімділік тарлығына айналуы мүмкін.
+* Жалғыз ақаулық нүктесін жоюға көмектесу үшін жүктеме теңестіргіш енгізу күрделілікті арттырады.
+* Жалғыз жүктеме теңестіргіш — жалғыз ақаулық нүктесі, бірнеше жүктеме теңестіргіш конфигурациялау күрделілікті одан әрі арттырады.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
@@ -727,77 +727,77 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
-## Reverse proxy (web server)
+## Кері прокси (веб-сервер)
 
 <p align="center">
   <img src="images/n41Azff.png">
   <br/>
-  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
+  <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Дереккөз: Wikipedia</a></i>
   <br/>
 </p>
 
-A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public.  Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
+Кері прокси — ішкі қызметтерді орталықтандыратын және жалпыға бірыңғай интерфейстер ұсынатын веб-сервер. Клиенттерден келетін сұраныстар оны орындай алатын серверге жіберіледі, содан кейін кері прокси сервер жауабын клиентке қайтарады.
 
-Additional benefits include:
+Қосымша артықшылықтар:
 
-* **Increased security** - Hide information about backend servers, blacklist IPs, limit number of connections per client
-* **Increased scalability and flexibility** - Clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration
-* **SSL termination** - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations
-    * Removes the need to install [X.509 certificates](https://en.wikipedia.org/wiki/X.509) on each server
-* **Compression** - Compress server responses
-* **Caching** - Return the response for cached requests
-* **Static content** - Serve static content directly
+* **Жоғарылатылған қауіпсіздік** — бэкенд серверлер туралы ақпаратты жасыру, IP-дерді бұғаттау, клиент бастауына байланыстар санын шектеу
+* **Жоғарылатылған масштабталушылық пен икемділік** — клиенттер тек кері проксидің IP-ін көреді, бұл серверлерді масштабтауға немесе конфигурациясын өзгертуге мүмкіндік береді
+* **SSL аяқтау** — бэкенд серверлері осы ықтимал қымбат операцияларды орындамауы үшін кіріс сұраныстарды шифрды ашу және сервер жауаптарын шифрлау
+    * Әр серверге [X.509 сертификаттарын](https://en.wikipedia.org/wiki/X.509) орнату қажеттілігін жояды
+* **Қысу** — сервер жауаптарын қысу
+* **Кэштеу** — кэшталған сұраныстар үшін жауап қайтару
+* **Статикалық контент** — статикалық контентті тікелей беру
     * HTML/CSS/JS
-    * Photos
-    * Videos
-    * Etc
+    * Фотосуреттер
+    * Бейнелер
+    * Т.б.
 
-### Load balancer vs reverse proxy
+### Жүктеме теңестіргіш пен кері проксиді салыстыру
 
-* Deploying a load balancer is useful when you have multiple servers.  Often, load balancers  route traffic to a set of servers serving the same function.
-* Reverse proxies can be useful even with just one web server or application server, opening up the benefits described in the previous section.
-* Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.
+* Жүктеме теңестіргішті орналастыру бірнеше сервер болғанда пайдалы. Жиі жүктеме теңестіргіштер трафикті бір функцияны атқаратын серверлер жинағына бағыттайды.
+* Кері прокси тек бір веб-сервер немесе қолданба сервері болса да, алдыңғы бөлімде сипатталған артықшылықтарды ашып пайдалы болуы мүмкін.
+* NGINX және HAProxy сияқты шешімдер 7-деңгейлі кері проксиді де, жүктемені теңестіруді де қолдай алады.
 
-### Disadvantage(s): reverse proxy
+### Кемшілік(тер): кері прокси
 
-* Introducing a reverse proxy results in increased complexity.
-* A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
+* Кері проксиді енгізу күрделілікті арттырады.
+* Жалғыз кері прокси — жалғыз ақаулық нүктесі, бірнеше кері прокси конфигурациялау ([failover](https://en.wikipedia.org/wiki/Failover)) күрделілікті одан әрі арттырады.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
-## Application layer
+## Қолданба деңгейі
 
 <p align="center">
   <img src="images/yB5SYwm.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Дереккөз: Масштабта жүйелерді жобалауға кіріспе</a></i>
 </p>
 
-Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently.  Adding a new API results in adding application servers without necessarily adding additional web servers.  The **single responsibility principle** advocates for small and autonomous services that work together.  Small teams with small services can plan more aggressively for rapid growth.
+Веб деңгейін қолданба деңгейінен (платформа деңгейі деп те аталады) бөлу екі деңгейді де дербес масштабтауға және конфигурациялауға мүмкіндік береді. Жаңа API қосу міндетті түрде қосымша веб-серверлер қоспай-ақ қолданба серверлерін қосуға әкеледі. **Жалғыз жауапкершілік принципі** бірге жұмыс істейтін шағын және дербес қызметтерді жақтайды. Шағын қызметтермен шағын командалар жылдам өсуді неғұрлым батыл жоспарлай алады.
 
-Workers in the application layer also help enable [asynchronism](#asynchronism).
+Қолданба деңгейіндегі жұмысшылар [асинхрондылықты](#асинхрондылық) қосуға да көмектеседі.
 
-### Microservices
+### Микросервистер
 
-Related to this discussion are [microservices](https://en.wikipedia.org/wiki/Microservices), which can be described as a suite of independently deployable, small, modular services.  Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal. <sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
+Осы талқылауға байланысты — [микросервистер](https://en.wikipedia.org/wiki/Microservices), оларды дербес орналастырылатын, шағын, модульдік қызметтер жинағы ретінде сипаттауға болады. Әр қызмет бизнес мақсатына қызмет ету үшін бірегей процесс жүргізіп, жақсы анықталған, жеңіл механизм арқылы байланысады.<sup><a href=https://smartbear.com/learn/api-design/what-are-microservices>1</a></sup>
 
-Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.
+Pinterest, мысалы, мынадай микросервистерге ие болуы мүмкін: пайдаланушы профилі, ізбасарлар, жаңалықтар ағыны, іздеу, фотосурет жүктеу, т.б.
 
-### Service Discovery
+### Қызметті табу
 
-Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest), and [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) can help services find each other by keeping track of registered names, addresses, and ports.  [Health checks](https://www.consul.io/intro/getting-started/checks.html) help verify service integrity and are often done using an [HTTP](#hypertext-transfer-protocol-http) endpoint.  Both Consul and Etcd have a built in [key-value store](#key-value-store) that can be useful for storing config values and other shared data.
+[Consul](https://www.consul.io/docs/index.html), [Etcd](https://coreos.com/etcd/docs/latest) және [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) сияқты жүйелер тіркелген атауларды, мекенжайларды және порттарды бақылай отырып, қызметтердің бір-бірін табуына көмектеседі. [Денсаулықты тексеру](https://www.consul.io/intro/getting-started/checks.html) қызмет тұтастығын тексеруге көмектеседі және жиі [HTTP](#гипермәтінді-тасымалдау-хаттамасы-http) соқпасы арқылы жасалады. Consul және Etcd екеуінде де конфигурация мәндері мен басқа ортақ деректерді сақтауға пайдалы [кілт-мән қоймасы](#кілт-мән-қоймасы) бар.
 
-### Disadvantage(s): application layer
+### Кемшілік(тер): қолданба деңгейі
 
-* Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
-* Microservices can add complexity in terms of deployments and operations.
+* Тығыз байланыспаған қызметтер бар қолданба деңгейін қосу монолитті жүйемен салыстырғанда архитектуралық, операциялық және үрдіс тұрғысынан басқа тәсілді қажет етеді.
+* Микросервистер орналастыру мен операциялар тұрғысынан күрделілік қосуы мүмкін.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
 * [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
@@ -805,183 +805,183 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 * [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
 * [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
 
-## Database
+## Дерекқор
 
 <p align="center">
   <img src="images/Xkm5CXz.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Дереккөз: Алғашқы 10 миллион пайдаланушыға дейін масштабтау</a></i>
 </p>
 
-### Relational database management system (RDBMS)
+### Реляциялық дерекқорды басқару жүйесі (РДБЖ)
 
-A relational database like SQL is a collection of data items organized in tables.
+SQL сияқты реляциялық дерекқор — кестелерде ұйымдастырылған деректер элементтерінің жинағы.
 
-**ACID** is a set of properties of relational database [transactions](https://en.wikipedia.org/wiki/Database_transaction).
+**ACID** — реляциялық дерекқор [транзакцияларының](https://en.wikipedia.org/wiki/Database_transaction) қасиеттер жиыны.
 
-* **Atomicity** - Each transaction is all or nothing
-* **Consistency** - Any transaction will bring the database from one valid state to another
-* **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
-* **Durability** - Once a transaction has been committed, it will remain so
+* **Атомарлылық** — әр транзакция не толық орындалады, не мүлде орындалмайды
+* **Дәйектілік** — кез келген транзакция дерекқорды бір жарамды күйден екіншісіне ауыстырады
+* **Оқшаулану** — транзакцияларды бір мезгілде орындау оларды дәйекті орындаумен бірдей нәтиже береді
+* **Тұрақтылық** — транзакция бекітілгеннен кейін ол солай қалады
 
-There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
+Реляциялық дерекқорды масштабтаудың көптеген тәсілдері бар: **master-slave репликациясы**, **master-master репликациясы**, **федерация**, **шардтау**, **денормализация** және **SQL баптау**.
 
-#### Master-slave replication
+#### Master-slave репликациясы
 
-The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.
+Master оқу мен жазуға қызмет етеді, тек оқуға қызмет ететін бір немесе бірнеше slave-ке жазуларды репликациялайды. Slave-дер де ағаш тәрізді тәсілмен қосымша slave-дерге репликациялай алады. Master желіден шықса, slave master-ге жоғарылатылғанша немесе жаңа master орнатылғанша жүйе тек оқу режимінде жұмыс істей алады.
 
 <p align="center">
   <img src="images/C9ioGtn.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Дереккөз: Масштабталушылық, қолжетімділік, тұрақтылық үлгілері</a></i>
 </p>
 
-##### Disadvantage(s): master-slave replication
+##### Кемшілік(тер): master-slave репликациясы
 
-* Additional logic is needed to promote a slave to a master.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Slave-ді master-ге жоғарылату үшін қосымша логика қажет.
+* Master-slave де, master-master-ге де қатысты тармақтарды [Кемшілік(тер): репликация](#кемшіліктер-репликация) бөлімінен қараңыз.
 
-#### Master-master replication
+#### Master-master репликациясы
 
-Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+Екі master-де оқу мен жазуға қызмет етеді және жазулар бойынша бір-бірімен үйлеседі. Кез келген master жұмысын тоқтатса, жүйе оқу мен жазумен де жұмысын жалғастыра алады.
 
 <p align="center">
   <img src="images/krAHLGg.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Дереккөз: Масштабталушылық, қолжетімділік, тұрақтылық үлгілері</a></i>
 </p>
 
-##### Disadvantage(s): master-master replication
+##### Кемшілік(тер): master-master репликациясы
 
-* You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.
-* Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.
-* Conflict resolution comes more into play as more write nodes are added and as latency increases.
-* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+* Жүктеме теңестіргіш қажет немесе қайда жазу керектігін анықтау үшін қолданба логикасын өзгертуіңіз керек болады.
+* Көпшілік master-master жүйелері я тығыз байланыспаған (ACID бұзу), я синхрондау себебінен жазу кідірісі артқан болады.
+* Жазу түйіндері қосылған сайын және кідіріс артқан сайын қайшылықтарды шешу маңыздырақ болады.
+* Master-slave де, master-master-ге де қатысты тармақтарды [Кемшілік(тер): репликация](#кемшіліктер-репликация) бөлімінен қараңыз.
 
-##### Disadvantage(s): replication
+##### Кемшіліктер: репликация
 
-* There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.
-* Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.
-* The more read slaves, the more you have to replicate, which leads to greater replication lag.
-* On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
-* Replication adds more hardware and additional complexity.
+* Жаңадан жазылған деректер басқа түйіндерге репликацияланғанға дейін master ақаулық тапса, деректер жоғалу қаупі бар.
+* Жазулар оқу репликаларына қайталанады. Жазулар көп болса, оқу репликалары жазуларды қайталаумен шұғылданып, аз оқуды орындай алады.
+* Оқу slave-дері қаншалықты көп болса, соншалықты репликациялау қажет, бұл репликация кешігуінің артуына алып келеді.
+* Кейбір жүйелерде master-ге жазу параллель жазуға арналған бірнеше ағын тудыруы мүмкін, ал оқу репликалары жалғыз ағынмен дәйекті жазуды ғана қолдайды.
+* Репликация қосымша жабдық пен күрделілік қосады.
 
-##### Source(s) and further reading: replication
+##### Дереккөз(дер) және қосымша оқу: репликация
 
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
 
-#### Federation
+#### Федерация
 
 <p align="center">
   <img src="images/U3qV33e.png">
   <br/>
-  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Source: Scaling up to your first 10 million users</a></i>
+  <i><a href=https://www.youtube.com/watch?v=kKjm4ehYiMs>Дереккөз: Алғашқы 10 миллион пайдаланушыға дейін масштабтау</a></i>
 </p>
 
-Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: **forums**, **users**, and **products**, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.
+Федерация (немесе функционалдық бөлу) дерекқорларды функция бойынша бөледі. Мысалы, жалғыз монолитті дерекқордың орнына үш дерекқор болуы мүмкін: **форумдар**, **пайдаланушылар** және **өнімдер**, бұл әр дерекқорға оқу мен жазу трафигін азайтады, сондықтан репликация кешігуін де азайтады. Кішірек дерекқорлар жадта сыятын деректерді көбейтеді, бұл кэш жайылымын жақсарту арқылы кэш иелерінің санын арттырады. Жазуларды бірізділендіретін жалғыз орталық master болмаса, параллель жазуға болады, өткізу қабілетін арттырады.
 
-##### Disadvantage(s): federation
+##### Кемшілік(тер): федерация
 
-* Federation is not effective if your schema requires huge functions or tables.
-* You'll need to update your application logic to determine which database to read and write.
-* Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
-* Federation adds more hardware and additional complexity.
+* Схема үлкен функцияларды немесе кестелерді талап етсе, федерация тиімді емес.
+* Қай дерекқорға оқу мен жазуды анықтау үшін қолданба логикасын жаңартуыңыз керек болады.
+* Екі дерекқордан деректерді біріктіру [сервер сілтемесімен](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers) күрделірек болады.
+* Федерация қосымша жабдық пен күрделілік қосады.
 
-##### Source(s) and further reading: federation
+##### Дереккөз(дер) және қосымша оқу: федерация
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 
-#### Sharding
+#### Шардтау
 
 <p align="center">
   <img src="images/wU8x5Id.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Дереккөз: Масштабталушылық, қолжетімділік, тұрақтылық үлгілері</a></i>
 </p>
 
-Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.
+Шардтау деректерді әртүрлі дерекқорларға тарата отырып, әр дерекқор деректердің тек бір бөлігін ғана басқара алады. Пайдаланушылар дерекқорын мысал ретінде алсақ, пайдаланушылар саны өскен сайын кластерге қосымша шардтар қосылады.
 
-Similar to the advantages of [federation](#federation), sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.
+[Федерация](#федерация) артықшылықтарына ұқсас, шардтау оқу мен жазу трафигін, репликацияны азайтады және кэш иелерін арттырады. Индекс өлшемі де азаяды, бұл жалпы жылдамырақ сұраныстармен өнімділікті жақсартады. Бір шард жұмысын тоқтатса, басқа шардтар әлі жұмыс істейді, дегенмен деректер жоғалтуды болдырмау үшін репликацияның бір түрін қосқыңыз келеді. Федерация сияқты, жазуларды бірізділендіретін жалғыз орталық master жоқ, бұл арттырылған өткізу қабілетімен параллель жазуға мүмкіндік береді.
 
-Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.
+Пайдаланушылар кестесін шардтаудың жалпы жолдары — пайдаланушының тегінің бас әрпі немесе пайдаланушының географиялық орналасуы.
 
-##### Disadvantage(s): sharding
+##### Кемшілік(тер): шардтау
 
-* You'll need to update your application logic to work with shards, which could result in complex SQL queries.
-* Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.
-    * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
-* Joining data from multiple shards is more complex.
-* Sharding adds more hardware and additional complexity.
+* Күрделі SQL сұраныстарға алып келуі мүмкін шардтармен жұмыс істеу үшін қолданба логикасын жаңартуыңыз керек болады.
+* Шардтағы деректер таралуы теңсіз болуы мүмкін. Мысалы, шардтағы белсенді пайдаланушылар жинағы басқаларға қарағанда сол шардқа жүктемені арттыруы мүмкін.
+    * Қайта теңдестіру қосымша күрделілік қосады. [Тұрақты хэштеуге](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) негізделген шардтау функциясы тасымалданатын деректер мөлшерін азайтуы мүмкін.
+* Бірнеше шардтан деректерді біріктіру күрделірек.
+* Шардтау қосымша жабдық пен күрделілік қосады.
 
-##### Source(s) and further reading: sharding
+##### Дереккөз(дер) және қосымша оқу: шардтау
 
 * [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
 * [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
-#### Denormalization
+#### Денормализация
 
-Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) and Oracle support [materialized views](https://en.wikipedia.org/wiki/Materialized_view) which handle the work of storing redundant information and keeping redundant copies consistent.
+Денормализация қымбат біріктірулерді болдырмау үшін деректердің артық көшірмелерін бірнеше кестеге жазу арқылы жазу өнімділігін кейбір деңгейде азайту есебінен оқу өнімділігін жақсартуға тырысады. [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL) және Oracle сияқты кейбір РДБЖ артық ақпаратты сақтау мен артық көшірмелерді дәйекті ұстауды орындайтын [материалдандырылған көріністерді](https://en.wikipedia.org/wiki/Materialized_view) қолдайды.
 
-Once data becomes distributed with techniques such as [federation](#federation) and [sharding](#sharding), managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.
+[Федерация](#федерация) және [шардтау](#шардтау) сияқты тәсілдермен деректер таратылғаннан кейін деректер орталықтары арқылы біріктірулерді басқару күрделілікті одан әрі арттырады. Денормализация мұндай күрделі біріктірулер қажеттілігін айналып өтуі мүмкін.
 
-In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.
+Көптеген жүйелерде оқулар жазуларды 100:1 немесе тіпті 1000:1 қатынасында айтарлықтай басым болуы мүмкін. Күрделі дерекқор біріктіруіне алып келетін оқу диск операцияларына айтарлықтай уақыт жұмсай отырып өте қымбат болуы мүмкін.
 
-##### Disadvantage(s): denormalization
+##### Кемшілік(тер): денормализация
 
-* Data is duplicated.
-* Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
-* A denormalized database under heavy write load might perform worse than its normalized counterpart.
+* Деректер қайталанады.
+* Шектеулер ақпараттың артық көшірмелерін синхронда ұстауға көмектесе алады, бұл дерекқор жобалауының күрделілігін арттырады.
+* Ауыр жазу жүктемесіндегі денормализацияланған дерекқор нормализацияланған аналогынан нашар жұмыс істеуі мүмкін.
 
-###### Source(s) and further reading: denormalization
+###### Дереккөз(дер) және қосымша оқу: денормализация
 
 * [Denormalization](https://en.wikipedia.org/wiki/Denormalization)
 
-#### SQL tuning
+#### SQL баптау
 
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+SQL баптау кең тақырып болып табылады және анықтамалық ретінде көптеген [кітаптар](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) жазылған.
 
-It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
+Тарлықтарды модельдеп ашу үшін **бенчмаркинг** және **профильдеу** маңызды.
 
-* **Benchmark** - Simulate high-load situations with tools such as [ab](http://httpd.apache.org/docs/2.2/programs/ab.html).
-* **Profile** - Enable tools such as the [slow query log](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) to help track performance issues.
+* **Бенчмаркинг** — [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) сияқты құралдармен жоғары жүктелу жағдайларын модельдеу.
+* **Профильдеу** — өнімділік мәселелерін бақылауға көмектесетін [баяу сұраныс журналы](http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) сияқты құралдарды қосу.
 
-Benchmarking and profiling might point you to the following optimizations.
+Бенчмаркинг пен профильдеу сізді келесі оңтайландыруларға бағыттауы мүмкін.
 
-##### Tighten up the schema
+##### Схеманы тарылту
 
-* MySQL dumps to disk in contiguous blocks for fast access.
-* Use `CHAR` instead of `VARCHAR` for fixed-length fields.
-    * `CHAR` effectively allows for fast, random access, whereas with `VARCHAR`, you must find the end of a string before moving onto the next one.
-* Use `TEXT` for large blocks of text such as blog posts.  `TEXT` also allows for boolean searches.  Using a `TEXT` field results in storing a pointer on disk that is used to locate the text block.
-* Use `INT` for larger numbers up to 2^32 or 4 billion.
-* Use `DECIMAL` for currency to avoid floating point representation errors.
-* Avoid storing large `BLOBS`, store the location of where to get the object instead.
-* `VARCHAR(255)` is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
-* Set the `NOT NULL` constraint where applicable to [improve search performance](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search).
+* MySQL жылдам қол жеткізу үшін дискіге үздіксіз блоктарда жазады.
+* Тіркелген ұзындықтағы өрістер үшін `VARCHAR` орнына `CHAR` пайдаланыңыз.
+    * `CHAR` жылдам, кездейсоқ қол жеткізуге тиімді мүмкіндік береді, ал `VARCHAR` кезінде келесіге өтер алдында жолдың соңын табу керек.
+* Блог жазбалары сияқты мәтіннің үлкен блоктары үшін `TEXT` пайдаланыңыз. `TEXT` логикалық іздеулерге де мүмкіндік береді. `TEXT` өрісін пайдалану мәтін блогын орнын табу үшін пайдаланылатын дискідегі нұсқағышты сақтауға алып келеді.
+* 2^32 немесе 4 миллиардқа дейінгі үлкен сандар үшін `INT` пайдаланыңыз.
+* Өзгермелі нүкте ұсынымдағы қателерді болдырмау үшін валюта үшін `DECIMAL` пайдаланыңыз.
+* Үлкен `BLOB` файлдарды сақтаудан аулақ болыңыз, оның орнына объект алатын орынның орналасуын сақтаңыз.
+* `VARCHAR(255)` — 8 биттік санда санауға болатын таңбалардың ең үлкен саны, кейбір РДБЖ-де байтты пайдалануды жиі барынша арттырады.
+* [Іздеу өнімділігін жақсарту](http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search) үшін қолданылса `NOT NULL` шектеуін орнатыңыз.
 
-##### Use good indices
+##### Жақсы индекстер пайдаланыңыз
 
-* Columns that you are querying (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) could be faster with indices.
-* Indices are usually represented as self-balancing [B-tree](https://en.wikipedia.org/wiki/B-tree) that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
-* Placing an index can keep the data in memory, requiring more space.
-* Writes could also be slower since the index also needs to be updated.
-* When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+* Сұрайтын бағандар (`SELECT`, `GROUP BY`, `ORDER BY`, `JOIN`) индекстермен жылдамырақ болуы мүмкін.
+* Индекстер жалпы деректерді сорттаулы ұстайтын және логарифмдік уақытта іздеулерге, дәйекті қол жеткізуге, кірістірулерге және жоюларға мүмкіндік беретін өзін-өзі теңдестіретін [B-ағаш](https://en.wikipedia.org/wiki/B-tree) ретінде ұсынылады.
+* Индексті орналастыру деректерді жадта ұстауы мүмкін, қосымша орын қажет.
+* Жазулар да баяуырақ болуы мүмкін, өйткені индекс те жаңартылуы керек.
+* Үлкен мөлшердегі деректерді жүктегенде, индекстерді өшіріп, деректерді жүктеп, содан кейін индекстерді қайта жасаған жылдамырақ болуы мүмкін.
 
-##### Avoid expensive joins
+##### Қымбат біріктірулерден аулақ болыңыз
 
-* [Denormalize](#denormalization) where performance demands it.
+* Өнімділік талап еткен жерде [денормализациялаңыз](#денормализация).
 
-##### Partition tables
+##### Кестелерді бөлу
 
-* Break up a table by putting hot spots in a separate table to help keep it in memory.
+* Жылы нүктелерді жеке кестеге орналастыра отырып, оны жадта ұстауға көмектесу үшін кестені бөліңіз.
 
-##### Tune the query cache
+##### Сұраныс кэшін баптаңыз
 
-* In some cases, the [query cache](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) could lead to [performance issues](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/).
+* Кейбір жағдайларда [сұраныс кэші](https://dev.mysql.com/doc/refman/5.7/en/query-cache.html) [өнімділік мәселелеріне](https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/) алып келуі мүмкін.
 
-##### Source(s) and further reading: SQL tuning
+##### Дереккөз(дер) және қосымша оқу: SQL баптау
 
 * [Tips for optimizing MySQL queries](http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/)
 * [Is there a good reason i see VARCHAR(255) used so often?](http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l)
@@ -990,96 +990,96 @@ Benchmarking and profiling might point you to the following optimizations.
 
 ### NoSQL
 
-NoSQL is a collection of data items represented in a **key-value store**, **document store**, **wide column store**, or a **graph database**.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor [eventual consistency](#eventual-consistency).
+NoSQL — **кілт-мән қоймасында**, **құжат қоймасында**, **кең баған қоймасында** немесе **граф дерекқорында** ұсынылған деректер элементтерінің жинағы. Деректер денормализацияланған, ал біріктірулер жалпы қолданба кодында жасалады. Көптеген NoSQL қоймаларында шынайы ACID транзакциялары жоқ және [ақырғы дәйектілікті](#ақырғы-дәйектілік) артық санайды.
 
-**BASE** is often used to describe the properties of NoSQL databases.  In comparison with the [CAP Theorem](#cap-theorem), BASE chooses availability over consistency.
+**BASE** жиі NoSQL дерекқорларының қасиеттерін сипаттау үшін пайдаланылады. [CAP теоремасымен](#cap-теоремасы) салыстырғанда, BASE дәйектіліктен қолжетімділікті таңдайды.
 
-* **Basically available** - the system guarantees availability.
-* **Soft state** - the state of the system may change over time, even without input.
-* **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
+* **Негізінен қолжетімді** — жүйе қолжетімділікке кепілдік береді.
+* **Жұмсақ күй** — жүйенің күйі уақыт өте өзгеруі мүмкін, тіпті кіріссіз де.
+* **Ақырғы дәйектілік** — жүйе белгілі бір уақыт аралығында дәйекті болады, жүйе сол кезеңде кіріс алмаса.
 
-In addition to choosing between [SQL or NoSQL](#sql-or-nosql), it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review **key-value stores**, **document stores**, **wide column stores**, and **graph databases** in the next section.
+[SQL немесе NoSQL](#sql-немесе-nosql) арасындағы таңдауға қосымша, NoSQL дерекқорының қай түрі сіздің қолдану жағдайыңызға ең жақсы сәйкес келетінін түсіну пайдалы. Келесі бөлімде **кілт-мән қоймаларын**, **құжат қоймаларын**, **кең баған қоймаларын** және **граф дерекқорларын** қарастырамыз.
 
-#### Key-value store
+#### Кілт-мән қоймасы
 
-> Abstraction: hash table
+> Абстракция: хэш кестесі
 
-A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographical_order), allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.
+Кілт-мән қоймасы жалпы O(1) оқу мен жазуға мүмкіндік береді және жиі жад немесе SSD-пен қамтамасыз етіледі. Деректер қоймалары кілт диапазондарын тиімді алуға мүмкіндік беретін [лексикографиялық тәртіпте](https://en.wikipedia.org/wiki/Lexicographical_order) кілттерді сақтай алады. Кілт-мән қоймалары метадеректерді мәнмен бірге сақтауға мүмкіндік береді.
 
-Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.
+Кілт-мән қоймалары жоғары өнімділікті ұсынады және жиі жад ішіндегі кэш деңгейі сияқты қарапайым деректер модельдері немесе жылдам өзгеретін деректер үшін пайдаланылады. Олар тек шектеулі операциялар жинағын ұсынатындықтан, қосымша операциялар қажет болса, күрделілік қолданба деңгейіне ауысады.
 
-A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.
+Кілт-мән қоймасы — құжат қоймасы сияқты және кейбір жағдайларда граф дерекқоры сияқты күрделірек жүйелердің негізі.
 
-##### Source(s) and further reading: key-value store
+##### Дереккөз(дер) және қосымша оқу: кілт-мән қоймасы
 
 * [Key-value database](https://en.wikipedia.org/wiki/Key-value_database)
 * [Disadvantages of key-value stores](http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or)
 * [Redis architecture](http://qnimate.com/overview-of-redis-architecture/)
 * [Memcached architecture](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### Document store
+#### Құжат қоймасы
 
-> Abstraction: key-value store with documents stored as values
+> Абстракция: мәндер ретінде сақталған құжаттары бар кілт-мән қоймасы
 
-A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  *Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.*
+Құжат қоймасы құжаттарға (XML, JSON, бинарлық, т.б.) негізделеді, мұнда бір құжат берілген объектінің барлық ақпаратын сақтайды. Құжат қоймалары құжаттың ішкі құрылымына негізделген сұрауға арналған API немесе сұраныс тілін ұсынады. *Ескерту: көптеген кілт-мән қоймалары мән метадеректерімен жұмыс жасауға арналған мүмкіндіктерді қамтиды, бұл екі сақтау түрінің арасындағы шекараны бұлдырады.*
 
-Based on the underlying implementation, documents are organized by collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.
+Базалық іске асыруға байланысты құжаттар коллекциялар, тегтер, метадеректер немесе каталогтар бойынша ұйымдастырылады. Құжаттарды ұйымдастыруға немесе топтауға болатынымен, құжаттардың бір-бірінен мүлде өзгеше өрістері болуы мүмкін.
 
-Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
+[MongoDB](https://www.mongodb.com/mongodb-architecture) және [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) сияқты кейбір құжат қоймалары күрделі сұрауларды орындауға арналған SQL тәрізді тіл де ұсынады. [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) кілт-мәндерді де, құжаттарды да қолдайды.
 
-Document stores provide high flexibility and are often used for working with occasionally changing data.
+Құжат қоймалары жоғары икемділікті ұсынады және жиі кездейсоқ өзгеретін деректермен жұмыс жасауға пайдаланылады.
 
-##### Source(s) and further reading: document store
+##### Дереккөз(дер) және қосымша оқу: құжат қоймасы
 
 * [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
 
-#### Wide column store
+#### Кең баған қоймасы
 
 <p align="center">
   <img src="images/n16iOGk.png">
   <br/>
-  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Дереккөз: SQL және NoSQL, қысқаша тарих</a></i>
 </p>
 
-> Abstraction: nested map `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
+> Абстракция: кірістірілген карта `ColumnFamily<RowKey, Columns<ColKey, Value, Timestamp>>`
 
-A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.
+Кең баған қоймасының деректердің негізгі бірлігі — баған (ат/мән жұбы). Баған баған тобына (SQL кестесіне ұқсас) топтастырылуы мүмкін. Супер баған топтары баған топтарын одан әрі топтастырады. Жол кілтімен әр бағанға дербес қол жеткізуге болады, ал бірдей жол кілті бар бағандар жол қалыптастырады. Әр мән нұсқалар мен қайшылықтарды шешуге арналған уақыт белгісін қамтиды.
 
-Google introduced [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) as the first wide column store, which influenced the open-source [HBase](https://www.edureka.co/blog/hbase-architecture/) often-used in the Hadoop ecosystem, and [Cassandra](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.
+Google бірінші кең баған қоймасы ретінде [Bigtable](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) ұсынды, ол Hadoop экожүйесінде жиі пайдаланылатын ашық бастапқы [HBase-ке](https://www.edureka.co/blog/hbase-architecture/) және Facebook-тен [Cassandra-ға](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html) ықпал жасады. BigTable, HBase және Cassandra сияқты қоймалар таңдамалы кілт диапазондарын тиімді алуға мүмкіндік беретін лексикографиялық тәртіпте кілттерді сақтайды.
 
-Wide column stores offer high availability and high scalability.  They are often used for very large data sets.
+Кең баған қоймалары жоғары қолжетімділік пен жоғары масштабталушылықты ұсынады. Олар жиі өте үлкен деректер жинақтары үшін пайдаланылады.
 
-##### Source(s) and further reading: wide column store
+##### Дереккөз(дер) және қосымша оқу: кең баған қоймасы
 
 * [SQL & NoSQL, a brief history](http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html)
 * [Bigtable architecture](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
 * [HBase architecture](https://www.edureka.co/blog/hbase-architecture/)
 * [Cassandra architecture](http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html)
 
-#### Graph database
+#### Граф дерекқоры
 
 <p align="center">
   <img src="images/fNcl65g.png">
   <br/>
-  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Дереккөз: Граф дерекқоры</a></i>
 </p>
 
-> Abstraction: graph
+> Абстракция: граф
 
-In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.
+Граф дерекқорында әр түйін — жазба, ал әр доға — екі түйін арасындағы байланыс. Граф дерекқорлары көп сыртқы кілттері немесе көп-көпке байланыстары бар күрделі байланыстарды ұсынуды оңтайландырылған.
 
-Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with [REST APIs](#representational-state-transfer-rest).
+Граф дерекқорлары әлеуметтік желі сияқты күрделі байланыстары бар деректер модельдері үшін жоғары өнімділікті ұсынады. Олар салыстырмалы түрде жаңа және әлі кеңінен қолданылмайды; даму құралдары мен ресурстарын табу қиынырақ болуы мүмкін. Көптеген граф дерекқорларына тек [REST API-дер](#өкілдік-күй-беру-rest) арқылы қол жеткізуге болады.
 
-##### Source(s) and further reading: graph
+##### Дереккөз(дер) және қосымша оқу: граф
 
 * [Graph database](https://en.wikipedia.org/wiki/Graph_database)
 * [Neo4j](https://neo4j.com/)
 * [FlockDB](https://blog.twitter.com/2010/introducing-flockdb)
 
-#### Source(s) and further reading: NoSQL
+#### Дереккөз(дер) және қосымша оқу: NoSQL
 
 * [Explanation of base terminology](http://stackoverflow.com/questions/3342497/explanation-of-base-terminology)
 * [NoSQL databases a survey and decision guidance](https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq)
@@ -1087,133 +1087,133 @@ Graphs databases offer high performance for data models with complex relationshi
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I)
 * [NoSQL patterns](http://horicky.blogspot.com/2009/11/nosql-patterns.html)
 
-### SQL or NoSQL
+### SQL немесе NoSQL
 
 <p align="center">
   <img src="images/wXGqG5f.png">
   <br/>
-  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Дереккөз: РДБЖ-дан NoSQL-ге өту</a></i>
 </p>
 
-Reasons for **SQL**:
+**SQL** таңдауға себептер:
 
-* Structured data
-* Strict schema
-* Relational data
-* Need for complex joins
-* Transactions
-* Clear patterns for scaling
-* More established: developers, community, code, tools, etc
-* Lookups by index are very fast
+* Құрылымдалған деректер
+* Қатаң схема
+* Реляциялық деректер
+* Күрделі біріктірулер қажет
+* Транзакциялар
+* Масштабтаудың нақты үлгілері
+* Жетілдірілген: әзірлеушілер, қауымдастық, код, құралдар, т.б.
+* Индекс бойынша іздеу өте жылдам
 
-Reasons for **NoSQL**:
+**NoSQL** таңдауға себептер:
 
-* Semi-structured data
-* Dynamic or flexible schema
-* Non-relational data
-* No need for complex joins
-* Store many TB (or PB) of data
-* Very data intensive workload
-* Very high throughput for IOPS
+* Жартылай құрылымдалған деректер
+* Динамикалық немесе икемді схема
+* Реляциялық емес деректер
+* Күрделі біріктірулер қажет емес
+* Деректердің көп ТБ (немесе ПБ) сақтау
+* Өте деректерге қарқынды жұмыс жүктемесі
+* IOPS үшін өте жоғары өткізу қабілеті
 
-Sample data well-suited for NoSQL:
+NoSQL үшін жақсы сәйкес келетін үлгі деректер:
 
-* Rapid ingest of clickstream and log data
-* Leaderboard or scoring data
-* Temporary data, such as a shopping cart
-* Frequently accessed ('hot') tables
-* Metadata/lookup tables
+* Кликтер ағыны мен журнал деректерін жылдам жинау
+* Рейтинг немесе бағалау деректері
+* Сатып алу себеті сияқты уақытша деректер
+* Жиі қолжетімді ('ыстық') кестелер
+* Метадеректер/іздеу кестелері
 
-##### Source(s) and further reading: SQL or NoSQL
+##### Дереккөз(дер) және қосымша оқу: SQL немесе NoSQL
 
 * [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=kKjm4ehYiMs)
 * [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
 
-## Cache
+## Кэш
 
 <p align="center">
   <img src="images/Q6z24La.png">
   <br/>
-  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Дереккөз: Масштабталатын жүйені жобалау үлгілері</a></i>
 </p>
 
-Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.
+Кэштеу бет жүктелу уақытын жақсартады және серверлер мен дерекқорлардағы жүктемені азайтуы мүмкін. Бұл үлгіде диспетчер алдымен сұраныс бұрын жасалған-жасалмағанын тексереді және нақты орындауды үнемдеу үшін алдыңғы нәтижені қайтаруға тырысады.
 
-Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.
+Дерекқорлар жиі бөлімдер бойынша оқу мен жазудың біркелкі таралуынан пайда алады. Танымал элементтер таралуды бұрмалап, тарлықтарға алып келуі мүмкін. Дерекқордың алдына кэш орналастыру теңсіз жүктемелер мен трафик шыңдарын сіңіруге көмектеседі.
 
-### Client caching
+### Клиенттік кэштеу
 
-Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
+Кэштер клиент тарапында (ОЖ немесе браузер), [сервер тарапында](#кері-прокси-веб-сервер) немесе бөлек кэш деңгейінде орналасуы мүмкін.
 
-### CDN caching
+### CDN кэштеу
 
-[CDNs](#content-delivery-network) are considered a type of cache.
+[CDN-дар](#контентті-жеткізу-желісі) кэш түрі болып саналады.
 
-### Web server caching
+### Веб-серверде кэштеу
 
-[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
+[Кері проксилер](#кері-прокси-веб-сервер) және [Varnish](https://www.varnish-cache.org/) сияқты кэштер статикалық және динамикалық контентті тікелей бере алады. Веб-серверлер де сұраныстарды кэштеп, қолданба серверлеріне хабарласпай жауап қайтара алады.
 
-### Database caching
+### Дерекқорда кэштеу
 
-Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.
+Дерекқор жалпы жалпы қолдану жағдайына оңтайландырылған әдепкі конфигурацияда кэштеудің белгілі бір деңгейін қамтиды. Белгілі қолдану үлгілері үшін осы параметрлерді реттеу өнімділікті одан әрі арттыруы мүмкін.
 
-### Application caching
+### Қолданбада кэштеу
 
-In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms) algorithms such as [least recently used (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) can help invalidate 'cold' entries and keep 'hot' data in RAM.
+Memcached және Redis сияқты жад ішіндегі кэштер — қолданба мен деректер қоймасы арасындағы кілт-мән қоймалары. Деректер RAM-да сақталатындықтан, деректер дискіде сақталатын типтік дерекқорларға қарағанда әлдеқайда жылдам. RAM дискіден шектеулірек, сондықтан [кэш жарамсыздандыру](https://en.wikipedia.org/wiki/Cache_algorithms) алгоритмдері, мысалы [ең сирек пайдаланылған (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)), 'суық' жазбаларды жарамсыздандырып, 'ыстық' деректерді RAM-да ұстауға көмектеседі.
 
-Redis has the following additional features:
+Redis-те мынадай қосымша мүмкіндіктер бар:
 
-* Persistence option
-* Built-in data structures such as sorted sets and lists
+* Сақтандыру опциясы
+* Сорттаулы жинақтар мен тізімдер сияқты кірістірілген деректер құрылымдары
 
-There are multiple levels you can cache that fall into two general categories: **database queries** and **objects**:
+Екі жалпы санатқа жататын кэштеудің бірнеше деңгейі бар: **дерекқор сұраныстары** және **объектілер**:
 
-* Row level
-* Query-level
-* Fully-formed serializable objects
-* Fully-rendered HTML
+* Жол деңгейі
+* Сұраныс деңгейі
+* Толық қалыптасқан сериализацияланатын объектілер
+* Толық салынған HTML
 
-Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+Жалпы, файлға негізделген кэштеуден аулақ болуға тырысу керек, өйткені ол клондауды және автоматты масштабтауды қиындатады.
 
-### Caching at the database query level
+### Дерекқор сұраныс деңгейінде кэштеу
 
-Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+Дерекқорды сұраған сайын сұранысты кілт ретінде хэштеңіз және нәтижені кэшке сақтаңыз. Бұл тәсіл мерзім өту мәселелеріне тап болады:
 
-* Hard to delete a cached result with complex queries
-* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
+* Күрделі сұраныстармен кэшталған нәтижені жою қиын
+* Кесте ұяшығы сияқты деректердің бір бөлігі өзгерсе, өзгерген ұяшықты қамтуы мүмкін барлық кэшталған сұраныстарды жою керек
 
-### Caching at the object level
+### Объект деңгейінде кэштеу
 
-See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):
+Деректеріңізді қолданба кодыңызда жасайтыныңыздай объект ретінде қараңыз. Қолданба дерекқордан деректер жинағын класс данасына немесе деректер құрылымына жиналасын:
 
-* Remove the object from cache if its underlying data has changed
-* Allows for asynchronous processing: workers assemble objects by consuming the latest cached object
+* Базалық деректер өзгерсе, объектіні кэштен алып тастаңыз
+* Асинхронды өңдеуге мүмкіндік береді: жұмысшылар ең соңғы кэшталған объектіні тұтыну арқылы объектілерді жинастырады
 
-Suggestions of what to cache:
+Кэштеуге ұсынылатындар:
 
-* User sessions
-* Fully rendered web pages
-* Activity streams
-* User graph data
+* Пайдаланушы сессиялары
+* Толық салынған веб-беттер
+* Белсенділік ағындары
+* Пайдаланушы граф деректері
 
-### When to update the cache
+### Кэшті қашан жаңарту керек
 
-Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
+Кэште тек шектеулі мөлшерде деректер сақтай алатындықтан, қолдану жағдайыңызға ең жақсы сәйкес келетін кэш жаңарту стратегиясын анықтау қажет.
 
 #### Cache-aside
 
 <p align="center">
   <img src="images/ONjORqk.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Дереккөз: Кэштен жад ішіндегі деректер торына</a></i>
 </p>
 
-The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:
+Қолданба сақтаудан оқу мен жазуға жауапты. Кэш сақтаумен тікелей байланыспайды. Қолданба мыналарды жасайды:
 
-* Look for entry in cache, resulting in a cache miss
-* Load entry from the database
-* Add entry to cache
-* Return entry
+* Кэштен жазбаны іздеу, нәтижесінде кэш жіберіп алу болады
+* Дерекқордан жазбаны жүктеу
+* Жазбаны кэшке қосу
+* Жазбаны қайтару
 
 ```python
 def get_user(self, user_id):
@@ -1226,37 +1226,37 @@ def get_user(self, user_id):
     return user
 ```
 
-[Memcached](https://memcached.org/) is generally used in this manner.
+[Memcached](https://memcached.org/) жалпы осылай пайдаланылады.
 
-Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+Кэшке қосылған деректердің кейінгі оқулары жылдам. Cache-aside сонымен бірге жалқау жүктеу деп те аталады. Тек сұралған деректер кэшке орналасады, бұл сұралмаған деректермен кэшті толтырудан сақтайды.
 
-##### Disadvantage(s): cache-aside
+##### Кемшілік(тер): cache-aside
 
-* Each cache miss results in three trips, which can cause a noticeable delay.
-* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
-* When a node fails, it is replaced by a new, empty node, increasing latency.
+* Әр кэш жіберіп алу үш сапарға алып келеді, бұл байқалатын кешігуге алып келуі мүмкін.
+* Деректер дерекқорда жаңартылса ескіруі мүмкін. Бұл мәселе кэш жазбасының жаңартылуын мәжбүрлейтін өмір сүру уақытын (TTL) орнату немесе write-through пайдалану арқылы азайтылады.
+* Түйін ақаулық тапса, оны жаңа, бос түйін алмастырады, кідірісті арттырады.
 
 #### Write-through
 
 <p align="center">
   <img src="images/0vBc0hN.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Дереккөз: Масштабталушылық, қолжетімділік, тұрақтылық үлгілері</a></i>
 </p>
 
-The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:
+Қолданба кэшті негізгі деректер қоймасы ретінде пайдаланады, деректерді оған оқып жазады, ал кэш дерекқорға оқу мен жазуға жауапты:
 
-* Application adds/updates entry in cache
-* Cache synchronously writes entry to data store
-* Return
+* Қолданба кэштегі жазбаны қосады/жаңартады
+* Кэш жазбаны деректер қоймасына синхронды жазады
+* Қайтару
 
-Application code:
+Қолданба коды:
 
 ```python
 set_user(12345, {"foo":"bar"})
 ```
 
-Cache code:
+Кэш коды:
 
 ```python
 def set_user(user_id, values):
@@ -1264,54 +1264,54 @@ def set_user(user_id, values):
     cache.set(user_id, user)
 ```
 
-Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.
+Write-through жазу операциясына байланысты жалпы баяу операция, бірақ жаңадан жазылған деректердің кейінгі оқулары жылдам. Пайдаланушылар жалпы деректерді оқуға қарағанда жаңарту кезіндегі кідіріске шыдамдырақ. Кэштегі деректер ескірмейді.
 
-##### Disadvantage(s): write through
+##### Кемшілік(тер): write-through
 
-* When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.
-* Most data written might never be read, which can be minimized with a TTL.
+* Ақаулық немесе масштабтау себебінен жаңа түйін жасалғанда, жазба дерекқорда жаңартылғанша жаңа түйін жазбаларды кэштемейді. Cache-aside-ды write-through-мен бірге пайдалану бұл мәселені азайтуы мүмкін.
+* Жазылған деректердің көпшілігі ешқашан оқылмауы мүмкін, бұл TTL арқылы азайтылуы мүмкін.
 
 #### Write-behind (write-back)
 
 <p align="center">
   <img src="images/rgSrvjG.png">
   <br/>
-  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Дереккөз: Масштабталушылық, қолжетімділік, тұрақтылық үлгілері</a></i>
 </p>
 
-In write-behind, the application does the following:
+Write-behind кезінде қолданба мыналарды жасайды:
 
-* Add/update entry in cache
-* Asynchronously write entry to the data store, improving write performance
+* Кэштегі жазбаны қосу/жаңарту
+* Жазу өнімділігін жақсарта отырып, жазбаны деректер қоймасына асинхронды жазу
 
-##### Disadvantage(s): write-behind
+##### Кемшілік(тер): write-behind
 
-* There could be data loss if the cache goes down prior to its contents hitting the data store.
-* It is more complex to implement write-behind than it is to implement cache-aside or write-through.
+* Кэш мазмұны деректер қоймасына жетер алдында жұмысын тоқтатса, деректер жоғалуы мүмкін.
+* Write-behind-ды cache-aside немесе write-through-ға қарағанда іске асыру күрделірек.
 
 #### Refresh-ahead
 
 <p align="center">
   <img src="images/kxtjqgE.png">
   <br/>
-  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Дереккөз: Кэштен жад ішіндегі деректер торына</a></i>
 </p>
 
-You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.
+Кэшті жақында қолжетімді болған кэш жазбасын мерзімі өткенге дейін автоматты түрде жаңартатындай конфигурациялауға болады.
 
-Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.
+Кэш болашақта қандай элементтер қажет болуы мүмкін екенін дәл болжай алса, Refresh-ahead read-through-ға қарағанда кідірісті азайтуы мүмкін.
 
-##### Disadvantage(s): refresh-ahead
+##### Кемшілік(тер): refresh-ahead
 
-* Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+* Болашақта қандай элементтер қажет болуы мүмкін екенін дәл болжай алмау refresh-ahead-сіз жағдайдан гөрі нашар өнімділікке алып келуі мүмкін.
 
-### Disadvantage(s): cache
+### Кемшілік(тер): кэш
 
-* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
-* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
-* Need to make application changes such as adding Redis or memcached.
+* [Кэш жарамсыздандыру](https://en.wikipedia.org/wiki/Cache_algorithms) арқылы кэштер мен дерекқор сияқты шындық дереккөзі арасындағы дәйектілікті сақтау қажет.
+* Кэш жарамсыздандыру — күрделі мәселе, кэшті қашан жаңарту керектігіне байланысты қосымша күрделілік бар.
+* Redis немесе memcached қосу сияқты қолданба өзгертулері жасау қажет.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [From cache to in-memory data grid](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast)
 * [Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
@@ -1321,129 +1321,129 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 * [AWS ElastiCache strategies](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
 * [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
 
-## Asynchronism
+## Асинхрондылық
 
 <p align="center">
   <img src="images/54GYsSx.png">
   <br/>
-  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Source: Intro to architecting systems for scale</a></i>
+  <i><a href=http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer>Дереккөз: Масштабта жүйелерді жобалауға кіріспе</a></i>
 </p>
 
-Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line.  They can also help by doing time-consuming work in advance, such as periodic aggregation of data.
+Асинхронды жұмыс ағындары басқаша жолмен тікелей орындалатын қымбат операциялар үшін сұраныс уақытын қысқартуға көмектеседі. Сондай-ақ деректерді мерзімді жинақтау сияқты уақытты қажет ететін жұмысты алдын ала орындау арқылы да көмектеседі.
 
-### Message queues
+### Хабарлама кезектері
 
-Message queues receive, hold, and deliver messages.  If an operation is too slow to perform inline, you can use a message queue with the following workflow:
+Хабарлама кезектері хабарламаларды қабылдайды, ұстайды және жеткізеді. Егер операция тікелей орындалуы тым баяу болса, келесі жұмыс ағынымен хабарлама кезегін пайдалануға болады:
 
-* An application publishes a job to the queue, then notifies the user of job status
-* A worker picks up the job from the queue, processes it, then signals the job is complete
+* Қолданба кезекке тапсырма жариялайды, содан кейін пайдаланушыға тапсырма күйін хабарлайды
+* Жұмысшы кезектен тапсырманы алады, оны өңдейді, содан кейін тапсырманың аяқталғанын білдіреді
 
-The user is not blocked and the job is processed in the background.  During this time, the client might optionally do a small amount of processing to make it seem like the task has completed.  For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.
+Пайдаланушы бөгелмейді және тапсырма фонда өңделеді. Осы уақыт ішінде клиент тапсырма аяқталғандай болып көрсету үшін аздап өңдеу жасауы мүмкін. Мысалы, твит жарияласа, твит жаңалықтар лентасына бірден жарияланады, бірақ твитіңіз барлық ізбасарларыңызға жеткізілгенге дейін біраз уақыт кетуі мүмкін.
 
-**[Redis](https://redis.io/)** is useful as a simple message broker but messages can be lost.
+**[Redis](https://redis.io/)** қарапайым хабарлама брокері ретінде пайдалы, бірақ хабарламалар жоғалуы мүмкін.
 
-**[RabbitMQ](https://www.rabbitmq.com/)** is popular but requires you to adapt to the 'AMQP' protocol and manage your own nodes.
+**[RabbitMQ](https://www.rabbitmq.com/)** танымал, бірақ 'AMQP' хаттамасына бейімделуді және өз түйіндерін басқаруды талап етеді.
 
-**[Amazon SQS](https://aws.amazon.com/sqs/)** is hosted but can have high latency and has the possibility of messages being delivered twice.
+**[Amazon SQS](https://aws.amazon.com/sqs/)** хосттелген, бірақ жоғары кідірісі болуы мүмкін және хабарламалардың екі рет жеткізілу мүмкіндігі бар.
 
-### Task queues
+### Тапсырма кезектері
 
-Tasks queues receive tasks and their related data, runs them, then delivers their results.  They can support scheduling and can be used to run computationally-intensive jobs in the background.
+Тапсырма кезектері тапсырмаларды және олардың байланысты деректерін қабылдайды, орындайды, содан кейін нәтижелерін жеткізеді. Олар жоспарлауды қолдай алады және фонда есептеу ресурстарын қажет ететін тапсырмаларды орындауға пайдаланылуы мүмкін.
 
-**[Celery](https://docs.celeryproject.org/en/stable/)** has support for scheduling and primarily has python support.
+**[Celery](https://docs.celeryproject.org/en/stable/)** жоспарлауды қолдайды және бастапқы ретінде Python қолдауы бар.
 
-### Back pressure
+### Кері қысым
 
-If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance.  [Back pressure](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.  Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later.  Clients can retry the request at a later time, perhaps with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff).
+Кезектер айтарлықтай өсе бастаса, кезек өлшемі жадтан үлкен болуы мүмкін, бұл кэш жіберіп алуларына, дискіден оқуларға және тіпті баяуырақ өнімділікке алып келеді. [Кері қысым](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html) кезек өлшемін шектеу арқылы кезекте тұрған тапсырмалар үшін жоғары өткізу қабілеті жылдамдығы мен жақсы жауап уақытын сақтауға көмектесуі мүмкін. Кезек толғаннан кейін клиенттер кейінірек қайта сынау үшін сервер бос емес немесе HTTP 503 күй кодын алады. Клиенттер сұранысты кейінірек, мүмкін [экспоненциалды қадам](https://en.wikipedia.org/wiki/Exponential_backoff) арқылы қайталай алады.
 
-### Disadvantage(s): asynchronism
+### Кемшілік(тер): асинхрондылық
 
-* Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.
+* Арзан есептеулер мен нақты уақыт жұмыс ағындары сияқты қолдану жағдайлары синхронды операциялар үшін жарамдырақ болуы мүмкін, өйткені кезектерді енгізу кешігулер мен күрделілік қосуы мүмкін.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [It's all a numbers game](https://www.youtube.com/watch?v=1KRYH75wgy4)
 * [Applying back pressure when overloaded](http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html)
 * [Little's law](https://en.wikipedia.org/wiki/Little%27s_law)
 * [What is the difference between a message queue and a task queue?](https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function)
 
-## Communication
+## Байланыс
 
 <p align="center">
   <img src="images/5KeocQs.jpg">
   <br/>
-  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
+  <i><a href=http://www.escotal.com/osilayer.html>Дереккөз: OSI 7 деңгейлі модель</a></i>
 </p>
 
-### Hypertext transfer protocol (HTTP)
+### Гипермәтінді тасымалдау хаттамасы (HTTP)
 
-HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.
+HTTP — клиент пен сервер арасында деректерді кодтау және тасымалдау әдісі. Бұл сұраныс/жауап хаттамасы: клиенттер сұраныс жібереді, серверлер сұраныс туралы тиісті мазмұн мен аяқталу күйі ақпаратымен жауап береді. HTTP өздігінен жұмыс жасайды, сұраныстар мен жауаптардың жүктемені теңестіру, кэштеу, шифрлеу және қысуды орындайтын көптеген аралық маршрутизаторлар мен серверлер арқылы өтуіне мүмкіндік береді.
 
-A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:
+Негізгі HTTP сұранысы етістіктен (әдіс) және ресурстан (соқпа) тұрады. Төменде жалпы HTTP етістіктері берілген:
 
-| Verb | Description | Idempotent* | Safe | Cacheable |
-|---|---|---|---|---|
-| GET | Reads a resource | Yes | Yes | Yes |
-| POST | Creates a resource or trigger a process that handles data | No | No | Yes if response contains freshness info |
-| PUT | Creates or replace a resource | Yes | No | No |
-| PATCH | Partially updates a resource | No | No | Yes if response contains freshness info |
-| DELETE | Deletes a resource | Yes | No | No |
+| Етістік | Сипаттама | Идемпотентті* | Қауіпсіз | Кэштелетін |
+|---------|-----------|--------------|----------|-----------|
+| GET | Ресурсты оқиды | Иә | Иә | Иә |
+| POST | Ресурс жасайды немесе деректерді өңдейтін процесті іске қосады | Жоқ | Жоқ | Жауап жаңалық ақпаратын қамтыса иә |
+| PUT | Ресурс жасайды немесе алмастырады | Иә | Жоқ | Жоқ |
+| PATCH | Ресурсты ішінара жаңартады | Жоқ | Жоқ | Жауап жаңалық ақпаратын қамтыса иә |
+| DELETE | Ресурсты жояды | Иә | Жоқ | Жоқ |
 
-*Can be called many times without different outcomes.
+*Әртүрлі нәтижелерсіз көп рет шақырылуы мүмкін.
 
-HTTP is an application layer protocol relying on lower-level protocols such as **TCP** and **UDP**.
+HTTP — **TCP** және **UDP** сияқты төменгі деңгейлі хаттамаларға сүйенетін қолданба деңгейі хаттамасы.
 
-#### Source(s) and further reading: HTTP
+#### Дереккөз(дер) және қосымша оқу: HTTP
 
 * [What is HTTP?](https://www.nginx.com/resources/glossary/http/)
 * [Difference between HTTP and TCP](https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol)
 * [Difference between PUT and PATCH](https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1)
 
-### Transmission control protocol (TCP)
+### Деректерді беруді басқару хаттамасы (TCP)
 
 <p align="center">
   <img src="images/JdAsdvG.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Дереккөз: Көп ойыншылы ойын жасау</a></i>
 </p>
 
-TCP is a connection-oriented protocol over an [IP network](https://en.wikipedia.org/wiki/Internet_Protocol).  Connection is established and terminated using a [handshake](https://en.wikipedia.org/wiki/Handshaking).  All packets sent are guaranteed to reach the destination in the original order and without corruption through:
+TCP — [IP желісіндегі](https://en.wikipedia.org/wiki/Internet_Protocol) байланысқа бағытталған хаттама. Байланыс [қол алысу](https://en.wikipedia.org/wiki/Handshaking) арқылы орнатылып аяқталады. Жіберілген барлық пакеттер мыналар арқылы бастапқы тәртіпте және зақымданбай тағайындалған жерге жетуіне кепілдік беріледі:
 
-* Sequence numbers and [checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation) for each packet
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) packets and automatic retransmission
+* Әр пакет үшін реттік нөмірлер мен [бақылау сомасы өрістері](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)
+* [Растау](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)) пакеттері мен автоматты қайта жіберу
 
-If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements [flow control](https://en.wikipedia.org/wiki/Flow_control_(data)) and [congestion control](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control).  These guarantees cause delays and generally result in less efficient transmission than UDP.
+Жіберуші дұрыс жауап алмаса, пакеттерді қайта жібереді. Бірнеше уақыт шегінен асу болса, байланыс үзіледі. TCP сонымен бірге [ағынды басқаруды](https://en.wikipedia.org/wiki/Flow_control_(data)) және [кептеліс басқаруды](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control) іске асырады. Бұл кепілдіктер кешігуге алып келеді және жалпы UDP-ге қарағанда тиімдірек емес тасымалдауға алып келеді.
 
-To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a [memcached](https://memcached.org/) server.  [Connection pooling](https://en.wikipedia.org/wiki/Connection_pool) can help in addition to switching to UDP where applicable.
+Жоғары өткізу қабілетін қамтамасыз ету үшін веб-серверлер көп TCP байланысын ашық ұстай алады, бұл жоғары жад пайдалануына алып келеді. Веб-сервер ағындары мен, айталық, [memcached](https://memcached.org/) сервері арасында көп ашық байланыс болуы қымбатқа түсуі мүмкін. [Байланыс ресурстарын басқару](https://en.wikipedia.org/wiki/Connection_pool) қолданылатын жерде UDP-ге ауысуға қосымша көмектесе алады.
 
-TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.
+TCP жоғары сенімділікті талап ететін, бірақ уақытқа онша маңызды емес қолданбалар үшін пайдалы. Кейбір мысалдар: веб-серверлер, дерекқор ақпараты, SMTP, FTP және SSH.
 
-Use TCP over UDP when:
+TCP-ні UDP-ден таңдаңыз, егер:
 
-* You need all of the data to arrive intact
-* You want to automatically make a best estimate use of the network throughput
+* Барлық деректердің бүтін жетуі қажет болса
+* Желі өткізу қабілетін автоматты түрде ең жақсы пайдаланғыңыз келсе
 
-### User datagram protocol (UDP)
+### Пайдаланушы датаграмма хаттамасы (UDP)
 
 <p align="center">
   <img src="images/yzDrJtA.jpg">
   <br/>
-  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Дереккөз: Көп ойыншылы ойын жасау</a></i>
 </p>
 
-UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.
+UDP — байланыссыз. Датаграммалар (пакеттерге ұқсас) тек датаграмма деңгейінде кепілдендіріледі. Датаграммалар тағайындалған жерге ретсіз жетуі немесе мүлде жетпеуі мүмкін. UDP кептеліс басқаруды қолдамайды. TCP қолдайтын кепілдіктерсіз UDP жалпы тиімдірек болады.
 
-UDP can broadcast, sending datagrams to all devices on the subnet.  This is useful with [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address.
+UDP таратылым жіберуі мүмкін, субжелідегі барлық құрылғыларға датаграммалар жіберу. Бұл [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) кезінде пайдалы, өйткені клиент әлі IP мекенжайын алмаған, сондықтан IP мекенжайысыз TCP ағынының жолын жабады.
 
-UDP is less reliable but works well in real time use cases such as VoIP, video chat, streaming, and realtime multiplayer games.
+UDP аз сенімді, бірақ VoIP, бейне чат, ағынды тарату және нақты уақыттағы көп ойыншылы ойындар сияқты нақты уақыт жағдайларында жақсы жұмыс істейді.
 
-Use UDP over TCP when:
+UDP-ні TCP-ден таңдаңыз, егер:
 
-* You need the lowest latency
-* Late data is worse than loss of data
-* You want to implement your own error correction
+* Ең төменгі кідіріс қажет болса
+* Кешіккен деректер деректерді жоғалтудан жаман болса
+* Өз қате түзетуіңізді іске асырғыңыз келсе
 
-#### Source(s) and further reading: TCP and UDP
+#### Дереккөз(дер) және қосымша оқу: TCP және UDP
 
 * [Networking for game programming](https://gafferongames.com/post/udp_vs_tcp/)
 * [Key differences between TCP and UDP protocols](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
@@ -1452,26 +1452,26 @@ Use UDP over TCP when:
 * [User datagram protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 * [Scaling memcache at Facebook](http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf)
 
-### Remote procedure call (RPC)
+### Қашықтан процедураны шақыру (RPC)
 
 <p align="center">
   <img src="images/iF4Mkb5.png">
   <br/>
-  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Дереккөз: Жүйені жобалау сұхбатын жар ету</a></i>
 </p>
 
-In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
+RPC-де клиент процедураны басқа мекенжай кеңістігінде, әдетте қашықтағы сервердегі орындалуын тудырады. Процедура жергілікті процедура шақыруы сияқты кодталады, клиент бағдарламасынан серверлермен байланысу жолдарының бөлшектерін абстракциялайды. Қашықтан шақырулар жалпы жергілікті шақырулардан баяу және аз сенімді, сондықтан RPC шақыруларын жергілікті шақырулардан ажырату пайдалы. Танымал RPC фреймворктары: [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/) және [Avro](https://avro.apache.org/docs/current/).
 
-RPC is a request-response protocol:
+RPC — сұраныс-жауап хаттамасы:
 
-* **Client program** - Calls the client stub procedure.  The parameters are pushed onto the stack like a local procedure call.
-* **Client stub procedure** - Marshals (packs) procedure id and arguments into a request message.
-* **Client communication module** - OS sends the message from the client to the server.
-* **Server communication module** - OS passes the incoming packets to the server stub procedure.
-* **Server stub procedure** -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.
-* The server response repeats the steps above in reverse order.
+* **Клиент бағдарламасы** — клиент суррогат процедурасын шақырады. Параметрлер жергілікті процедура шақыруы сияқты стекке итеріледі.
+* **Клиент суррогат процедурасы** — процедура идентификаторы мен аргументтерді сұраныс хабарламасына маршалдайды (буып).
+* **Клиент байланыс модулі** — ОЖ хабарламаны клиенттен серверге жібереді.
+* **Сервер байланыс модулі** — ОЖ кіріс пакеттерді сервер суррогат процедурасына береді.
+* **Сервер суррогат процедурасы** — нәтижелерді демаршалдайды, процедура идентификаторына сәйкес сервер процедурасын шақырады және берілген аргументтерді береді.
+* Сервер жауабы жоғарыдағы қадамдарды кері тәртіпте қайталайды.
 
-Sample RPC calls:
+RPC шақырулары үлгілері:
 
 ```
 GET /someoperation?data=anId
@@ -1483,36 +1483,36 @@ POST /anotheroperation
 }
 ```
 
-RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.
+RPC мінез-құлықтарды ашуға бағытталған. RPC жиі ішкі байланыстарда өнімділік себептерімен пайдаланылады, өйткені қолдану жағдайларыңызға жақсырақ сәйкес келу үшін жергілікті шақырулар дайындай аласыз.
 
-Choose a native library (aka SDK) when:
+Жергілікті кітапхананы (SDK) таңдаңыз, егер:
 
-* You know your target platform.
-* You want to control how your "logic" is accessed.
-* You want to control how error control happens off your library.
-* Performance and end user experience is your primary concern.
+* Мақсатты платформаңызды білсеңіз.
+* «Логикаға» қол жеткізуді басқарғыңыз келсе.
+* Кітапханаңыздан тыс қателерді басқарудың қалай жүргізілетінін басқарғыңыз келсе.
+* Өнімділік пен соңғы пайдаланушы тәжірибесі басты мақсатыңыз болса.
 
-HTTP APIs following **REST** tend to be used more often for public APIs.
+**REST**-ті ұстанатын HTTP API-лер жалпы API-лер үшін жиірек пайдаланылады.
 
-#### Disadvantage(s): RPC
+#### Кемшілік(тер): RPC
 
-* RPC clients become tightly coupled to the service implementation.
-* A new API must be defined for every new operation or use case.
-* It can be difficult to debug RPC.
-* You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure [RPC calls are properly cached](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) on caching servers such as [Squid](http://www.squid-cache.org/).
+* RPC клиенттері қызмет іске асырылуымен тығыз байланысады.
+* Әр жаңа операция немесе қолдану жағдайы үшін жаңа API анықталуы керек.
+* RPC-ды жөндеу қиын болуы мүмкін.
+* Бар технологияларды қорапта пайдалана алмауыңыз мүмкін. Мысалы, [Squid](http://www.squid-cache.org/) сияқты кэштеу серверлерінде [RPC шақырулары дұрыс кэштелуін](https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/) қамтамасыз ету үшін қосымша күш қажет болуы мүмкін.
 
-### Representational state transfer (REST)
+### Өкілдік күй беру (REST)
 
-REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server.  The server provides a representation of resources and actions that can either manipulate or get a new representation of resources.  All communication must be stateless and cacheable.
+REST — клиент сервер басқаратын ресурстар жинағына қызмет ететін клиент/сервер үлгісін орнататын архитектуралық стиль. Сервер ресурстар мен оларды өзгертуге немесе жаңа ресурс өкілдігін алуға болатын іс-әрекеттердің өкілдігін береді. Барлық байланыс күйсіз және кэштелетін болуы керек.
 
-There are four qualities of a RESTful interface:
+RESTful интерфейсінің төрт сапасы бар:
 
-* **Identify resources (URI in HTTP)** - use the same URI regardless of any operation.
-* **Change with representations (Verbs in HTTP)** - use verbs, headers, and body.
-* **Self-descriptive error message (status response in HTTP)** - Use status codes, don't reinvent the wheel.
-* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTML interface for HTTP)** - your web service should be fully accessible in a browser.
+* **Ресурстарды анықтау (HTTP-дегі URI)** — кез келген операцияға қарамастан бірдей URI пайдалану.
+* **Өкілдіктермен өзгерту (HTTP-дегі етістіктер)** — етістіктерді, тақырыпшаларды және денені пайдалану.
+* **Өзін-өзі сипаттайтын қате хабарламасы (HTTP-дегі күй жауабы)** — күй кодтарын пайдалану, дөңгелекті қайта ойлап таппаңыз.
+* **[HATEOAS](http://restcookbook.com/Basics/hateoas/) (HTTP үшін HTML интерфейсі)** — веб-қызметіңіз браузерде толық қолжетімді болуы керек.
 
-Sample REST calls:
+REST шақырулары үлгілері:
 
 ```
 GET /someresources/anId
@@ -1521,32 +1521,32 @@ PUT /someresources/anId
 {"anotherdata": "another value"}
 ```
 
-REST is focused on exposing data.  It minimizes the coupling between client/server and is often used for public HTTP APIs.  REST uses a more generic and uniform method of exposing resources through URIs, [representation through headers](https://github.com/for-GET/know-your-http-well/blob/master/headers.md), and actions through verbs such as GET, POST, PUT, DELETE, and PATCH.  Being stateless, REST is great for horizontal scaling and partitioning.
+REST деректерді ашуға бағытталған. Клиент/сервер арасындағы байланысты азайтады және жиі жалпы HTTP API-лері үшін пайдаланылады. REST URI арқылы ресурстарды ашудың жалпырақ және біркелкі әдісін, [тақырыпшалар арқылы өкілдікті](https://github.com/for-GET/know-your-http-well/blob/master/headers.md) және GET, POST, PUT, DELETE және PATCH сияқты етістіктер арқылы іс-әрекеттерді пайдаланады. Күйсіз болу REST-ті горизонтал масштабтау мен бөлу үшін тамаша етеді.
 
-#### Disadvantage(s): REST
+#### Кемшілік(тер): REST
 
-* With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.
-* REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.
-* Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.
-* Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.
+* REST деректерді ашуға бағытталғандықтан, ресурстар табиғи ұйымдастырылмаса немесе қарапайым иерархияда қолжетімді болмаса, жарамды болмауы мүмкін. Мысалы, белгілі бір оқиғалар жиынымен сәйкес келетін соңғы сағаттан барлық жаңартылған жазбаларды қайтару жолмен оңай өрнектелмейді. REST кезінде ол URI жолы, сұраныс параметрлері және мүмкін сұраныс денесінің комбинациясымен іске асырылуы ықтимал.
+* REST әдетте бірнеше етістікке (GET, POST, PUT, DELETE және PATCH) сүйенеді, бұл кейде қолдану жағдайыңызға сәйкес келмейді. Мысалы, мерзімі өткен құжаттарды мұрағат қалтасына жылжыту осы етістіктерге жинақты сәйкес келмеуі мүмкін.
+* Кірістірілген иерархиялары бар күрделі ресурстарды алу жалғыз көріністерді салу үшін клиент пен сервер арасындағы бірнеше айналма сапарларды талап етеді, мысалы, блог жазбасының мазмұнын және сол жазбадағы пікірлерді алу. Желі жағдайлары ауыспалы мобильді қолданбалар үшін осы бірнеше айналма сапарлар өте қолайсыз.
+* Уақыт өте API жауабына қосымша өрістер қосылуы мүмкін, ескі клиенттер барлық жаңа деректер өрістерін, соның ішінде қажет еместерін де алады, нәтижесінде жүктеме өлшемі ісіп, үлкенірек кідіріске алып келеді.
 
-### RPC and REST calls comparison
+### RPC және REST шақырулары салыстыруы
 
-| Operation | RPC | REST |
-|---|---|---|
-| Signup    | **POST** /signup | **POST** /persons |
-| Resign    | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
-| Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
-| Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
-| Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
-| Update an item    | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
-| Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+| Операция | RPC | REST |
+|---------|-----|------|
+| Тіркелу | **POST** /signup | **POST** /persons |
+| Бас тарту | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
+| Адамды оқу | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
+| Адамның элементтер тізімін оқу | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
+| Адам элементтеріне элемент қосу | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| Элементті жаңарту | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| Элементті жою | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
 
 <p align="center">
-  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Дереккөз: RPC-дан REST-ті неге артық санайтыныңызды шынымен білесіз бе</a></i>
 </p>
 
-#### Source(s) and further reading: REST and RPC
+#### Дереккөз(дер) және қосымша оқу: REST және RPC
 
 * [Do you really know why you prefer REST over RPC](https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/)
 * [When are RPC-ish approaches more appropriate than REST?](http://programmers.stackexchange.com/a/181186)
@@ -1557,177 +1557,177 @@ REST is focused on exposing data.  It minimizes the coupling between client/serv
 * [Thrift](https://code.facebook.com/posts/1468950976659943/)
 * [Why REST for internal use and not RPC](http://arstechnica.com/civis/viewtopic.php?t=1190508)
 
-## Security
+## Қауіпсіздік
 
-This section could use some updates.  Consider [contributing](#contributing)!
+Бұл бөлім жаңартуларды қажет етуі мүмкін. [Үлес қосуды](#үлес-қосу) қарастырыңыз!
 
-Security is a broad topic.  Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics:
+Қауіпсіздік кең тақырып. Қауіпсіздік бойынша елеулі тәжірибеңіз, қауіпсіздік негізіңіз болмаса немесе қауіпсіздік білімін талап ететін лауазымға өтінім бермесеңіз, негіздерден артығын білудің қажеті жоқ:
 
-* Encrypt in transit and at rest.
-* Sanitize all user inputs or any input parameters exposed to user to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) and [SQL injection](https://en.wikipedia.org/wiki/SQL_injection).
-* Use parameterized queries to prevent SQL injection.
-* Use the principle of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+* Тасымалдау кезінде де, тыныштық күйінде де шифрлаңыз.
+* [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) және [SQL инъекциясының](https://en.wikipedia.org/wiki/SQL_injection) алдын алу үшін барлық пайдаланушы кірістерін немесе пайдаланушыға ашық кіріс параметрлерін тазартыңыз.
+* SQL инъекциясының алдын алу үшін параметрлендірілген сұраныстарды пайдаланыңыз.
+* [Ең аз артықшылық](https://en.wikipedia.org/wiki/Principle_of_least_privilege) принципін пайдаланыңыз.
 
-### Source(s) and further reading
+### Дереккөз(дер) және қосымша оқу
 
 * [API security checklist](https://github.com/shieldfy/API-Security-Checklist)
 * [Security guide for developers](https://github.com/FallibleInc/security-guide-for-developers)
 * [OWASP top ten](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
 
-## Appendix
+## Қосымша
 
-You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
+Кейде ‘шамалы есептеулер’ жасауды сұрайды. Мысалы, дискіден 100 кескін нобайын жасауға қанша уақыт кететінін немесе деректер құрылымы қанша жады алатынын анықтауыңыз керек болуы мүмкін. **Екінің дәрежелері кестесі** және **Әр бағдарламашы білуі тиіс кідіріс сандары** ыңғайлы анықтамалар.
 
-### Powers of two table
+### Екінің дәрежелері кестесі
 
 ```
-Power           Exact Value         Approx Value        Bytes
+Дәреже      Нақты мән           Шамамен мән         Байт
 ---------------------------------------------------------------
 7                             128
 8                             256
-10                           1024   1 thousand           1 KB
-16                         65,536                       64 KB
-20                      1,048,576   1 million            1 MB
-30                  1,073,741,824   1 billion            1 GB
-32                  4,294,967,296                        4 GB
-40              1,099,511,627,776   1 trillion           1 TB
+10                           1024   1 мың               1 КБ
+16                         65,536                      64 КБ
+20                      1,048,576   1 миллион            1 МБ
+30                  1,073,741,824   1 миллиард           1 ГБ
+32                  4,294,967,296                        4 ГБ
+40              1,099,511,627,776   1 триллион           1 ТБ
 ```
 
-#### Source(s) and further reading
+#### Дереккөз(дер) және қосымша оқу
 
 * [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 
-### Latency numbers every programmer should know
+### Әр бағдарламашы білуі тиіс кідіріс сандары
 
 ```
-Latency Comparison Numbers
+Кідіріс салыстыру сандары
 --------------------------
-L1 cache reference                           0.5 ns
-Branch mispredict                            5   ns
-L2 cache reference                           7   ns                      14x L1 cache
-Mutex lock/unlock                           25   ns
-Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
-Compress 1K bytes with Zippy            10,000   ns       10 us
-Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
-Read 4 KB randomly from SSD*           150,000   ns      150 us          ~1GB/sec SSD
-Read 1 MB sequentially from memory     250,000   ns      250 us
-Round trip within same datacenter      500,000   ns      500 us
-Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
-HDD seek                            10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
-Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
-Read 1 MB sequentially from HDD     30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
-Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
+L1 кэш сілтемесі                             0.5 нс
+Тармақ қате болжауы                            5   нс
+L2 кэш сілтемесі                               7   нс                      L1 кэштен 14 есе
+Mutex құлып/ашу                               25   нс
+Негізгі жад сілтемесі                        100   нс                      L2-ден 20 есе, L1-ден 200 есе
+1КБ байтты Zippy-мен қысу               10,000   нс       10 мкс
+1 Гбит/с желі арқылы 1 КБ байт жіберу  10,000   нс       10 мкс
+SSD*-тан 4 КБ кездейсоқ оқу           150,000   нс      150 мкс          ~1ГБ/с SSD
+Жадтан 1 МБ дәйекті оқу               250,000   нс      250 мкс
+Бір деректер орталығында айналма сапар 500,000   нс      500 мкс
+SSD*-тан 1 МБ дәйекті оқу           1,000,000   нс    1,000 мкс    1 мс  ~1ГБ/с SSD, жадтан 4 есе
+HDD іздеу                           10,000,000   нс   10,000 мкс   10 мс  деректер орталығы сапарынан 20 есе
+1 Гбит/с желіден 1 МБ дәйекті оқу  10,000,000   нс   10,000 мкс   10 мс  жадтан 40 есе, SSD-тан 10 есе
+HDD-тан 1 МБ дәйекті оқу           30,000,000   нс   30,000 мкс   30 мс  жадтан 120 есе, SSD-тан 30 есе
+CA->Нидерланды->CA пакет жіберу    150,000,000   нс  150,000 мкс  150 мс
 
-Notes
------
-1 ns = 10^-9 seconds
-1 us = 10^-6 seconds = 1,000 ns
-1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+Ескертпелер
+-----------
+1 нс = 10^-9 секунд
+1 мкс = 10^-6 секунд = 1,000 нс
+1 мс = 10^-3 секунд = 1,000 мкс = 1,000,000 нс
 ```
 
-Handy metrics based on numbers above:
+Жоғарыдағы сандарға негізделген ыңғайлы метриктер:
 
-* Read sequentially from HDD at 30 MB/s
-* Read sequentially from 1 Gbps Ethernet at 100 MB/s
-* Read sequentially from SSD at 1 GB/s
-* Read sequentially from main memory at 4 GB/s
-* 6-7 world-wide round trips per second
-* 2,000 round trips per second within a data center
+* HDD-тан 30 МБ/с жылдамдықпен дәйекті оқу
+* 1 Гбит/с Ethernet арқылы 100 МБ/с жылдамдықпен дәйекті оқу
+* SSD-тан 1 ГБ/с жылдамдықпен дәйекті оқу
+* Негізгі жадтан 4 ГБ/с жылдамдықпен дәйекті оқу
+* Секундына 6-7 дүниежүзілік айналма сапар
+* Деректер орталығында секундына 2,000 айналма сапар
 
-#### Latency numbers visualized
+#### Кідіріс сандарын визуализация
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
-#### Source(s) and further reading
+#### Дереккөз(дер) және қосымша оқу
 
 * [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 * [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Additional system design interview questions
+### Қосымша жүйені жобалау сұхбат сұрақтары
 
-> Common system design interview questions, with links to resources on how to solve each.
+> Жалпы жүйені жобалау сұхбат сұрақтары, әрқайсысын қалай шешу туралы ресурстарға сілтемелермен.
 
-| Question | Reference(s) |
-|---|---|
-| Design a file sync service like Dropbox | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
-| Design a search engine like Google | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
-| Design a scalable web crawler like Google | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
-| Design Google docs | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| Design a key-value store like Redis | [codecapsule.com](http://codecapsule.com/2012/11/07/ikvs-implementing-a-key-value-store-table-of-contents/)<br/>[allthingsdistributed.com](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) |
-| Design a cache system like Memcached | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Design a recommendation system like Amazon's | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
-| Design a tinyurl system like Bitly | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
-| Design a chat app like WhatsApp | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-| Design a picture sharing system like Instagram | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
-| Design the Facebook news feed function | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
-| Design the Facebook timeline function | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
-| Design the Facebook chat function | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
-| Design a graph search function like Facebook's | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
-| Design a content delivery network like CloudFlare | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
-| Design a trending topic system like Twitter's | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
-| Design a random ID generation system | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
-| Return the top k requests during a time interval | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/default/files/documents/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
-| Design a system that serves data from multiple data centers | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
-| Design an online multiplayer card game | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
-| Design a garbage collection system | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
-| Design an API rate limiter | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
-| Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
-| Add a system design question | [Contribute](#contributing) |
+| Сұрақ | Дереккөз(дер) |
+|-------|--------------|
+| Dropbox сияқты файлдарды синхрондау қызметін жобалаңыз | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| Google сияқты іздеу жүйесін жобалаңыз | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
+| Google сияқты масштабталатын веб-шолғышты жобалаңыз | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
+| Google docs жобалаңыз | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
+| Redis сияқты кілт-мән қоймасын жобалаңыз | [codecapsule.com](http://codecapsule.com/2012/11/07/ikvs-implementing-a-key-value-store-table-of-contents/)<br/>[allthingsdistributed.com](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) |
+| Memcached сияқты кэш жүйесін жобалаңыз | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Amazon сияқты ұсыныс жүйесін жобалаңыз | [hulu.com](https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
+| Bitly сияқты tinyurl жүйесін жобалаңыз | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
+| WhatsApp сияқты чат қолданбасын жобалаңыз | [highscalability.com](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
+| Instagram сияқты сурет бөлісу жүйесін жобалаңыз | [highscalability.com](http://highscalability.com/flickr-architecture)<br/>[highscalability.com](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html) |
+| Facebook жаңалықтар ағыны функциясын жобалаңыз | [quora.com](http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed)<br/>[quora.com](http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed)<br/>[slideshare.net](http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture) |
+| Facebook уақыт кестесі функциясын жобалаңыз | [facebook.com](https://www.facebook.com/note.php?note_id=10150468255628920)<br/>[highscalability.com](http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html) |
+| Facebook чат функциясын жобалаңыз | [erlang-factory.com](http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf)<br/>[facebook.com](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0) |
+| Facebook сияқты граф іздеу функциясын жобалаңыз | [facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920)<br/>[facebook.com](https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920) |
+| CloudFlare сияқты контентті жеткізу желісін жобалаңыз | [figshare.com](https://figshare.com/articles/Globally_distributed_content_delivery/6605972) |
+| Twitter сияқты трендті тақырыптар жүйесін жобалаңыз | [michael-noll.com](http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/)<br/>[snikolov .wordpress.com](http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/) |
+| Кездейсоқ ID генерациялау жүйесін жобалаңыз | [blog.twitter.com](https://blog.twitter.com/2010/announcing-snowflake)<br/>[github.com](https://github.com/twitter/snowflake/) |
+| Уақыт аралығында ең жоғары k сұранысты қайтарыңыз | [cs.ucsb.edu](https://www.cs.ucsb.edu/sites/default/files/documents/2005-23.pdf)<br/>[wpi.edu](http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf) |
+| Бірнеше деректер орталықтарынан деректер беретін жүйені жобалаңыз | [highscalability.com](http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html) |
+| Онлайн көп ойыншылы карта ойынын жобалаңыз | [indieflashblog.com](https://web.archive.org/web/20180929181117/http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html)<br/>[buildnewgames.com](http://buildnewgames.com/real-time-multiplayer/) |
+| Қоқысты жинау жүйесін жобалаңыз | [stuffwithstuff.com](http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/)<br/>[washington.edu](http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf) |
+| API жылдамдық шектеушісін жобалаңыз | [https://stripe.com/blog/](https://stripe.com/blog/rate-limiters) |
+| Қор биржасын (NASDAQ немесе Binance сияқты) жобалаңыз | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implementation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
+| Жүйені жобалау сұрағын қосу | [Үлес қосу](#үлес-қосу) |
 
-### Real world architectures
+### Нақты әлем архитектуралары
 
-> Articles on how real world systems are designed.
+> Нақты әлемдегі жүйелердің қалай жобаланатыны туралы мақалалар.
 
 <p align="center">
   <img src="images/TcUo2fw.png">
   <br/>
-  <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
+  <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Дереккөз: Масштабтағы Twitter уақыт белгілері</a></i>
 </p>
 
-**Don't focus on nitty gritty details for the following articles, instead:**
+**Келесі мақалалардың ұсақ-түйек бөлшектеріне назар аудармаңыз, оның орнына:**
 
-* Identify shared principles, common technologies, and patterns within these articles
-* Study what problems are solved by each component, where it works, where it doesn't
-* Review the lessons learned
+* Осы мақалалардағы ортақ принциптерді, жалпы технологияларды және үлгілерді анықтаңыз
+* Әр компонент қандай мәселелерді шешетінін, қай жерде жұмыс істейтінін, қай жерде жұмыс істемейтінін зерттеңіз
+* Үйренілген сабақтарды қараңыз
 
-|Type | System | Reference(s) |
-|---|---|---|
-| Data processing | **MapReduce** - Distributed data processing from Google | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
-| Data processing | **Spark** - Distributed data processing from Databricks | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
-| Data processing | **Storm** - Distributed data processing from Twitter | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
+| Түрі | Жүйе | Дереккөз(дер) |
+|------|------|--------------|
+| Деректерді өңдеу | **MapReduce** — Google-дан таратылған деректерді өңдеу | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf) |
+| Деректерді өңдеу | **Spark** — Databricks-тен таратылған деректерді өңдеу | [slideshare.net](http://www.slideshare.net/AGrishchenko/apache-spark-architecture) |
+| Деректерді өңдеу | **Storm** — Twitter-дан таратылған деректерді өңдеу | [slideshare.net](http://www.slideshare.net/previa/storm-16094009) |
 | | | |
-| Data store | **Bigtable** - Distributed column-oriented database from Google | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
-| Data store | **HBase** - Open source implementation of Bigtable | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
-| Data store | **Cassandra** - Distributed column-oriented database from Facebook | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)
-| Data store | **DynamoDB** - Document-oriented database from Amazon | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
-| Data store | **MongoDB** - Document-oriented database | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
-| Data store | **Spanner** - Globally-distributed database from Google | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
-| Data store | **Memcached** - Distributed memory caching system | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
-| Data store | **Redis** - Distributed memory caching system with persistence and value types | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| Деректер қоймасы | **Bigtable** — Google-дан таратылған баған бағытталған дерекқор | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) |
+| Деректер қоймасы | **HBase** — Bigtable-дің ашық бастапқы іске асырылуы | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase) |
+| Деректер қоймасы | **Cassandra** — Facebook-тен таратылған баған бағытталған дерекқор | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666) |
+| Деректер қоймасы | **DynamoDB** — Amazon-нан құжат бағытталған дерекқор | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) |
+| Деректер қоймасы | **MongoDB** — Құжат бағытталған дерекқор | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb) |
+| Деректер қоймасы | **Spanner** — Google-дан жаһандық таратылған дерекқор | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf) |
+| Деректер қоймасы | **Memcached** — Таратылған жадты кэштеу жүйесі | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
+| Деректер қоймасы | **Redis** — Тұрақтылық пен мән түрлері бар таратылған жадты кэштеу жүйесі | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
 | | | |
-| File system | **Google File System (GFS)** - Distributed file system | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
-| File system | **Hadoop File System (HDFS)** - Open source implementation of GFS | [apache.org](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) |
+| Файлдық жүйе | **Google File System (GFS)** — Таратылған файлдық жүйе | [research.google.com](http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf) |
+| Файлдық жүйе | **Hadoop File System (HDFS)** — GFS-тің ашық бастапқы іске асырылуы | [apache.org](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html) |
 | | | |
-| Misc | **Chubby** - Lock service for loosely-coupled distributed systems from Google | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
-| Misc | **Dapper** - Distributed systems tracing infrastructure | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)
-| Misc | **Kafka** - Pub/sub message queue from LinkedIn | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
-| Misc | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
-| | Add an architecture | [Contribute](#contributing) |
+| Басқа | **Chubby** — Google-дан тығыз байланыспаған таратылған жүйелерге арналған құлып қызметі | [research.google.com](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf) |
+| Басқа | **Dapper** — Таратылған жүйелерді іздеу инфрақұрылымы | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf) |
+| Басқа | **Kafka** — LinkedIn-нен Pub/sub хабарлама кезегі | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug) |
+| Басқа | **Zookeeper** — Синхрондауды қамтамасыз ететін орталықтандырылған инфрақұрылым мен қызметтер | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) |
+| | Архитектура қосу | [Үлес қосу](#үлес-қосу) |
 
-### Company architectures
+### Компания архитектуралары
 
-| Company | Reference(s) |
-|---|---|
+| Компания | Дереккөз(дер) |
+|---------|--------------|
 | Amazon | [Amazon architecture](http://highscalability.com/amazon-architecture) |
 | Cinchcast | [Producing 1,500 hours of audio every day](http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html) |
 | DataSift | [Realtime datamining At 120,000 tweets per second](http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html) |
-| Dropbox | [How we've scaled Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
+| Dropbox | [How we’ve scaled Dropbox](https://www.youtube.com/watch?v=PE4gwstWhmc) |
 | ESPN | [Operating At 100,000 duh nuh nuhs per second](http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html) |
 | Google | [Google architecture](http://highscalability.com/google-architecture) |
 | Instagram | [14 million users, terabytes of photos](http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html)<br/>[What powers Instagram](http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances) |
-| Justin.tv | [Justin.Tv's live video broadcasting architecture](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
+| Justin.tv | [Justin.Tv’s live video broadcasting architecture](http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html) |
 | Facebook | [Scaling memcached at Facebook](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf)<br/>[TAO: Facebook’s distributed data store for the social graph](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf)<br/>[Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf)<br/>[How Facebook Live Streams To 800,000 Simultaneous Viewers](http://highscalability.com/blog/2016/6/27/how-facebook-live-streams-to-800000-simultaneous-viewers.html) |
 | Flickr | [Flickr architecture](http://highscalability.com/flickr-architecture) |
 | Mailbox | [From 0 to one million users in 6 weeks](http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html) |
@@ -1744,11 +1744,11 @@ Handy metrics based on numbers above:
 | WhatsApp | [The WhatsApp architecture Facebook bought for $19 billion](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html) |
 | YouTube | [YouTube scalability](https://www.youtube.com/watch?v=w5WVu624fY8)<br/>[YouTube architecture](http://highscalability.com/youtube-architecture) |
 
-### Company engineering blogs
+### Компанияның инженерлік блогтары
 
-> Architectures for companies you are interviewing with.
+> Сұхбат беретін компаниялардың архитектуралары.
 >
-> Questions you encounter might be from the same domain.
+> Кездесетін сұрақтар бір доменнен болуы мүмкін.
 
 * [Airbnb Engineering](http://nerds.airbnb.com/)
 * [Atlassian Developers](https://developer.atlassian.com/blog/)
@@ -1791,26 +1791,26 @@ Handy metrics based on numbers above:
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
 
-#### Source(s) and further reading
+#### Дереккөз(дер) және қосымша оқу
 
-Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+Блог қосқыңыз келе ме? Жұмысты қайталамау үшін компания блогыңызды келесі репозиторийге қосуды қарастырыңыз:
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
-## Under development
+## Дамуда
 
-Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
+Бөлім қосқыңыз немесе аяқталмаған бөлімді аяқтауға көмектескіңіз келе ме? [Үлес қосыңыз](#үлес-қосу)!
 
-* Distributed computing with MapReduce
-* Consistent hashing
-* Scatter gather
-* [Contribute](#contributing)
+* MapReduce арқылы үлестірілген есептеу
+* Дәйекті хэштеу (Consistent hashing)
+* Шашырату-жинау (Scatter gather)
+* [Үлес қосыңыз](#үлес-қосу)
 
-## Credits
+## Алғыс
 
-Credits and sources are provided throughout this repo.
+Бүкіл репозиторий бойынша алғыстар мен дереккөздер берілген.
 
-Special thanks to:
+Ерекше алғыс:
 
 * [Hired in tech](http://www.hiredintech.com/system-design/the-system-design-process/)
 * [Cracking the coding interview](https://www.amazon.com/dp/0984782850/)
@@ -1822,15 +1822,15 @@ Special thanks to:
 * [A distributed systems reading list](http://dancres.github.io/Pages/)
 * [Cracking the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
 
-## Contact info
+## Байланыс ақпараты
 
-Feel free to contact me to discuss any issues, questions, or comments.
+Кез келген мәселені, сұрақты немесе пікірді талқылау үшін маған хабарласыңыз.
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+Байланыс ақпаратымды [GitHub бетімнен](https://github.com/donnemartin) таба аласыз.
 
-## License
+## Лицензия
 
-*I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).*
+*Мен осы репозиторийдегі код пен ресурстарды сізге ашық бастапқы лицензия бойынша ұсынамын. Бұл менің жеке репозиторийім болғандықтан, сіз алатын лицензия менің жұмыс берушімнен (Facebook) емес, менен алынады.*
 
     Copyright 2017 Donne Martin
 
