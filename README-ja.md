@@ -438,7 +438,7 @@
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href="https://robertgreiner.com/cap-theorem-revisited">Source: CAP theorem revisited</a></i>
 </p>
 
 分散型コンピュータシステムにおいては下の三つのうち二つまでしか同時に保証することはできない。:
@@ -461,8 +461,8 @@
 
 ### その他の参考資料、ページ
 
-* [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [CAP 理論を振り返る](https://robertgreiner.com/cap-theorem-revisited/)
+* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一貫性パターン
@@ -671,7 +671,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 * [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy アーキテクチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [スケーラビリティ](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_%28computing%29)
 * [Layer 4 ロードバランシング](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 ロードバランシング](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
@@ -868,7 +868,7 @@ SQLなどのリレーショナルデータベースはテーブルに整理さ�
 ##### その他の参考資料、ページ: シャーディング
 
 * [シャードの登場](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-* [シャードデータベースアーキテクチャ](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+* [シャードデータベースアーキテクチャ](https://en.wikipedia.org/wiki/Shard_%28database_architecture%29)
 * [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
 #### 非正規化
@@ -1270,7 +1270,7 @@ def set_user(user_id, values):
 * [スケーラビリティ、可用性、安定性、パターン](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 * [スケーラビリティ](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 * [AWS ElastiCacheのストラテジー](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
-* [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing))
+* [Wikipedia](https://en.wikipedia.org/wiki/Cache_%28computing%29)
 
 ## 非同期処理
 
@@ -1361,9 +1361,9 @@ HTTPは**TCP** や **UDP** などの低級プロトコルに依存している�
 TCPは[IP network](https://en.wikipedia.org/wiki/Internet_Protocol)の上で成り立つ接続プロトコルです。接続は[handshake](https://en.wikipedia.org/wiki/Handshaking)によって開始、解除されます。全ての送信されたパケットは欠損なしで送信先に送信された順番で到達するように以下の方法で保証されています:
 
 * シーケンス番号と[checksum fields](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)が全てのパケットに用意されている
-* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))パケットと自動再送信
+* [Acknowledgement](https://en.wikipedia.org/wiki/Acknowledgement_%28data_networks%29)パケットと自動再送信
 
-もし送信者が正しいレスポンスを受け取らなかったとき、パケットを再送信します。複数のタイムアウトがあったとき、接続は解除されます。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_(data)) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの機能によって速度は低下し、一般的にUDPよりも非効率な転送手段になっています。
+もし送信者が正しいレスポンスを受け取らなかったとき、パケットを再送信します。複数のタイムアウトがあったとき、接続は解除されます。TCP は[フロー制御](https://en.wikipedia.org/wiki/Flow_control_%28data%29) と [輻輳制御](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)も実装しています。これらの機能によって速度は低下し、一般的にUDPよりも非効率な転送手段になっています。
 
 ハイスループットを実現するために、ウェブサーバーはかなり大きな数のTCP接続を開いておくことがあり、そのことでメモリー使用が圧迫されます。ウェブサーバスレッドと例えば[memcached](#memcached) サーバーの間で多数のコネクションを保っておくことは高くつくかもしれません。可能なところではUDPに切り替えるだけでなく[コネクションプーリング](https://en.wikipedia.org/wiki/Connection_pool)なども役立つかもしれません。
 

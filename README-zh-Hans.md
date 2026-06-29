@@ -443,7 +443,7 @@
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
+  <strong><a href="https://robertgreiner.com/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
 
 在一个分布式计算系统中，只能同时满足下列的两点:
@@ -466,8 +466,8 @@
 
 ### 来源及延伸阅读
 
-* [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [再看 CAP 理论](https://robertgreiner.com/cap-theorem-revisited/)
+* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一致性模式
@@ -674,7 +674,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 * [NGINX 架构](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy 架构指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [可扩展性](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
-* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_%28computing%29)
 * [四层负载平衡](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [七层负载平衡](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB 监听器配置](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
@@ -879,7 +879,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 #### 来源及延伸阅读：分片
 
 - [分片时代来临](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
-- [数据库分片架构](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+- [数据库分片架构](https://en.wikipedia.org/wiki/Shard_%28database_architecture%29)
 - [一致性哈希](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
 
 #### 非规范化
@@ -1279,7 +1279,7 @@ def set_user(user_id, values):
 - [可扩展性，可用性，稳定性和模式](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
 - [可扩展性](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 - [AWS ElastiCache 策略](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html)
-- [维基百科](https://en.wikipedia.org/wiki/Cache_(computing))
+- [维基百科](https://en.wikipedia.org/wiki/Cache_%28computing%29)
 
 ## 异步
 
@@ -1373,9 +1373,9 @@ HTTP 是依赖于较低级协议（如 **TCP** 和 **UDP**）的应用层协议�
 TCP 是通过 [IP 网络](https://en.wikipedia.org/wiki/Internet_Protocol)的面向连接的协议。 使用[握手](https://en.wikipedia.org/wiki/Handshaking)建立和断开连接。 发送的所有数据包保证以原始顺序到达目的地，用以下措施保证数据包不被损坏：
 
 - 每个数据包的序列号和[校验码](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation)。
-- [确认包](https://en.wikipedia.org/wiki/Acknowledgement_(data_networks))和自动重传
+- [确认包](https://en.wikipedia.org/wiki/Acknowledgement_%28data_networks%29)和自动重传
 
-如果发送者没有收到正确的响应，它将重新发送数据包。如果多次超时，连接就会断开。TCP 实行[流量控制](https://en.wikipedia.org/wiki/Flow_control_(data))和[拥塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)。这些确保措施会导致延迟，而且通常导致传输效率比 UDP 低。
+如果发送者没有收到正确的响应，它将重新发送数据包。如果多次超时，连接就会断开。TCP 实行[流量控制](https://en.wikipedia.org/wiki/Flow_control_%28data%29)和[拥塞控制](https://en.wikipedia.org/wiki/Network_congestion#Congestion_control)。这些确保措施会导致延迟，而且通常导致传输效率比 UDP 低。
 
 为了确保高吞吐量，Web 服务器可以保持大量的 TCP 连接，从而导致高内存使用。在 Web 服务器线程间拥有大量开放连接可能开销巨大，消耗资源过多，也就是说，一个 [memcached](#memcached) 服务器。[连接池](https://en.wikipedia.org/wiki/Connection_pool) 可以帮助除了在适用的情况下切换到 UDP。
 
@@ -1408,7 +1408,7 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实�
 
 #### 来源及延伸阅读：TCP 与 UDP
 
-* [游戏编程的网络](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [游戏编程的网络](https://gafferongames.com/post/udp_vs_tcp/)
 * [TCP 与 UDP 的关键区别](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
 * [TCP 与 UDP 的不同](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
 * [传输控制协议](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
