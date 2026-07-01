@@ -93,7 +93,7 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/48tEA2j.png)
+![High level design of the Twitter timeline and search (or Facebook feed and search)](https://i.imgur.com/48tEA2j.png)
 
 ## Step 3: Design core components
 
@@ -223,7 +223,7 @@ The response would be similar to that of the home timeline, except for tweets ma
 
 > Identify and address bottlenecks, given the constraints.
 
-![Imgur](http://i.imgur.com/jrUBAF7.png)
+![Scaled design of the Twitter timeline and search (or Facebook feed and search)](https://i.imgur.com/jrUBAF7.png)
 
 **Important: Do not simply jump right into the final design from the initial design!**
 

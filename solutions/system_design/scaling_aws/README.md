@@ -64,7 +64,7 @@ Handy conversion guide:
 
 > Outline a high level design with all important components.
 
-![Imgur](http://i.imgur.com/B8LDKD7.png)
+![High level design of an AWS service](https://i.imgur.com/B8LDKD7.png)
 
 ## Step 3: Design core components
 
@@ -139,7 +139,7 @@ Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
 
 ### Users+
 
-![Imgur](http://i.imgur.com/rrfjMXB.png)
+![Scaled design of an AWS service to lighten load on a single box and allow for independent scaling](https://i.imgur.com/rrfjMXB.png)
 
 #### Assumptions
 
@@ -191,7 +191,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 
 ### Users++
 
-![Imgur](http://i.imgur.com/raoFTXM.png)
+![Scaled design of an AWS service to address web server scaling](https://i.imgur.com/raoFTXM.png)
 
 #### Assumptions
 
@@ -220,7 +220,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
 
 ### Users+++
 
-![Imgur](http://i.imgur.com/OZCxJr0.png)
+![Scaled design of an AWS service to address MySQL scaling](https://i.imgur.com/OZCxJr0.png)
 
 **Note:** **Internal Load Balancers** not shown to reduce clutter
 
@@ -258,7 +258,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100
 
 ### Users++++
 
-![Imgur](http://i.imgur.com/3X8nmdL.png)
+![Scaled design of an AWS service with autoscaling added](https://i.imgur.com/3X8nmdL.png)
 
 #### Assumptions
 
@@ -297,7 +297,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
 
 ### Users+++++
 
-![Imgur](http://i.imgur.com/jj3A5N8.png)
+![Scaled design of a system that scales to millions of users on AWS](https://i.imgur.com/jj3A5N8.png)
 
 **Note:** **Autoscaling** groups not shown to reduce clutter
 
