@@ -1721,7 +1721,7 @@ Notes
 * [Instagram Engineering](http://instagram-engineering.tumblr.com/)
 * [Intel Software Blog](https://software.intel.com/en-us/blogs/)
 * [Jane Street Tech Blog](https://blogs.janestreet.com/category/ocaml/)
-* [LinkedIn Engineering](http://engineering.linkedin.com/blog)
+* [LinkedIn Engineering](https://www.linkedin.com/blog/engineering)
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
