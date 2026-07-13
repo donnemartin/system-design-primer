@@ -44,7 +44,7 @@ If you are not familiar with pull requests, review the [pull request docs](https
 
 We'd like for the guide to be available in many languages. Here is the process for maintaining translations:
 
-* This original version and content of the guide is maintained in English.
+* The original version and content of the guide are maintained in English.
 * Translations follow the content of the original. Contributors must speak at least some English, so that translations do not diverge.
 * Each translation has a maintainer to update the translation as the original evolves and to review others' changes. This doesn't require a lot of time, but a review by the maintainer is important to maintain quality.
 
