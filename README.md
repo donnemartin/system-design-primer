@@ -25,7 +25,7 @@ This repo is an **organized collection** of resources to help you learn how to b
 
 ### Learn from the open source community
 
-This is a continually updated, open source project.
+This is a continuously updated, open source project.
 
 [Contributions](#contributing) are welcome!
 
