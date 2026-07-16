@@ -2,7 +2,8 @@ class Node(object):
 
     def __init__(self, results):
         self.results = results
-        self.next = next
+        self.prev = None
+        self.next = None
 
 
 class LinkedList(object):

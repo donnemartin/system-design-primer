@@ -133,11 +133,11 @@ PRIMARY KEY(shortlink)
 ```python
 def base_encode(num, base=62):
     digits = []
-    while num > 0
+    while num > 0:
       remainder = modulo(num, base)
-      digits.push(remainder)
+      digits.append(remainder)
       num = divide(num, base)
-    digits = digits.reverse
+    digits = digits[::-1]
 ```
 
 * 取输出的前 7 个字符，结果会有 62^7 个可能的值，应该足以满足在 3 年内处理 3.6 亿个短链接的约束：
