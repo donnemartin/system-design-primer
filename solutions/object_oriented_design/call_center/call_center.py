@@ -4,7 +4,6 @@ from enum import Enum
 
 
 class Rank(Enum):
-
     OPERATOR = 0
     SUPERVISOR = 1
     DIRECTOR = 2
@@ -12,7 +11,7 @@ class Rank(Enum):
 
 class Employee(metaclass=ABCMeta):
 
-    def __init__(self, employee_id, name, rank, call_center):
+    def __init__(self, employee_id, name, rank, call_center=None):
         self.employee_id = employee_id
         self.name = name
         self.rank = rank
@@ -27,7 +26,8 @@ class Employee(metaclass=ABCMeta):
 
     def complete_call(self):
         self.call.state = CallState.COMPLETE
-        self.call_center.notify_call_completed(self.call)
+        if self.call_center:
+            self.call_center.notify_call_completed(self.call)
 
     @abstractmethod
     def escalate_call(self):
@@ -37,13 +37,14 @@ class Employee(metaclass=ABCMeta):
         self.call.state = CallState.READY
         call = self.call
         self.call = None
-        self.call_center.notify_call_escalated(call)
+        if self.call_center:
+            self.call_center.notify_call_escalated(call)
 
 
 class Operator(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR)
+    def __init__(self, employee_id, name, call_center=None):
+        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR, call_center)
 
     def escalate_call(self):
         self.call.level = Rank.SUPERVISOR
@@ -52,8 +53,8 @@ class Operator(Employee):
 
 class Supervisor(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+    def __init__(self, employee_id, name, call_center=None):
+        super(Supervisor, self).__init__(employee_id, name, Rank.SUPERVISOR, call_center)
 
     def escalate_call(self):
         self.call.level = Rank.DIRECTOR
@@ -62,8 +63,8 @@ class Supervisor(Employee):
 
 class Director(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
+    def __init__(self, employee_id, name, call_center=None):
+        super(Director, self).__init__(employee_id, name, Rank.DIRECTOR, call_center)
 
     def escalate_call(self):
         raise NotImplementedError('Directors must be able to handle any call')
