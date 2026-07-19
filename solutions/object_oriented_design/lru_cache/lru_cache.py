@@ -2,7 +2,8 @@ class Node(object):
 
     def __init__(self, results):
         self.results = results
-        self.next = next
+        self.prev = None
+        self.next = None
 
 
 class LinkedList(object):
@@ -40,7 +41,7 @@ class Cache(object):
         self.linked_list.move_to_front(node)
         return node.results
 
-    def set(self, results, query):
+    def set(self, query, results):
         """Set the result for the given query key in the cache.
 
         When updating an entry, updates its position to the front of the LRU list.
@@ -56,7 +57,7 @@ class Cache(object):
             # Key does not exist in cache
             if self.size == self.MAX_SIZE:
                 # Remove the oldest entry from the linked list and lookup
-                self.lookup.pop(self.linked_list.tail.query, None)
+                self.lookup.pop(self.linked_list.tail.results, None)
                 self.linked_list.remove_from_tail()
             else:
                 self.size += 1
