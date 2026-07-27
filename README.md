@@ -671,7 +671,7 @@ Load balancers distribute incoming client requests to computing resources such a
 * Preventing overloading resources
 * Helping to eliminate a single point of failure
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+Load balancers can be implemented with hardware (expensive) or with software such as HAProxy, NGINX, and Envoy (used in service mesh architectures).
 
 Additional benefits include:
 
