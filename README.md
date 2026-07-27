@@ -671,7 +671,7 @@ Load balancers distribute incoming client requests to computing resources such a
 * Preventing overloading resources
 * Helping to eliminate a single point of failure
 
-Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.
+Load balancers can be implemented with hardware (expensive) or with software such as HAProxy, NGINX, and Envoy (used in service mesh architectures).
 
 Additional benefits include:
 
@@ -1460,7 +1460,7 @@ Use UDP over TCP when:
   <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
 </p>
 
-In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
+In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include [gRPC](https://grpc.io/), [Protobuf](https://developers.google.com/protocol-buffers/), [Thrift](https://thrift.apache.org/), and [Avro](https://avro.apache.org/docs/current/).
 
 RPC is a request-response protocol:
 
@@ -1629,7 +1629,7 @@ Handy metrics based on numbers above:
 
 * Read sequentially from HDD at 30 MB/s
 * Read sequentially from 1 Gbps Ethernet at 100 MB/s
-* Read sequentially from SSD at 1 GB/s
+* Read sequentially from SATA SSD at 1 GB/s (Modern NVMe SSD at 3–7 GB/s)
 * Read sequentially from main memory at 4 GB/s
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
