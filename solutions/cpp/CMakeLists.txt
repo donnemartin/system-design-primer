@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 3.14)
+project(SystemDesignSolutions CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Object-Oriented Design Solutions
+add_executable(hash_table object_oriented_design/hash_table/hash_table.cpp)
+add_executable(lru_cache object_oriented_design/lru_cache/lru_cache.cpp)
+add_executable(parking_lot object_oriented_design/parking_lot/parking_lot.cpp)
+add_executable(deck_of_cards object_oriented_design/deck_of_cards/deck_of_cards.cpp)
+add_executable(call_center object_oriented_design/call_center/call_center.cpp)
+add_executable(online_chat object_oriented_design/online_chat/online_chat.cpp)
+
+# System Design Solutions
+add_executable(query_cache system_design/query_cache/query_cache.cpp)
+add_executable(social_graph system_design/social_graph/social_graph.cpp)
+add_executable(mint system_design/mint/mint.cpp)
+add_executable(web_crawler system_design/web_crawler/web_crawler.cpp)
+add_executable(web_crawler_mapreduce system_design/web_crawler/web_crawler_mapreduce.cpp)
+add_executable(pastebin system_design/pastebin/pastebin.cpp)
+add_executable(mint_mapreduce system_design/mint/mint_mapreduce.cpp)
+add_executable(sales_rank system_design/sales_rank/sales_rank.cpp)
+
+# Enable warnings
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(hash_table PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(lru_cache PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(parking_lot PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(deck_of_cards PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(call_center PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(online_chat PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(query_cache PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(social_graph PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(mint PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(web_crawler PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(web_crawler_mapreduce PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(pastebin PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(mint_mapreduce PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(sales_rank PRIVATE -Wall -Wextra -Wpedantic)
+endif()
