@@ -43,6 +43,43 @@ Additional topics for interview prep:
 * [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
 * [Additional system design interview questions](#additional-system-design-interview-questions)
 
+## Suggested learning path
+
+Use this checklist to track your progress through the primer. The order moves
+from foundational trade-offs to core building blocks and then to practice.
+Copy this section to a personal note or fork if you want to keep your progress
+between sessions.
+
+### Foundations
+
+* [ ] [Study guide](#study-guide)
+* [ ] [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
+* [ ] [Performance vs scalability](#performance-vs-scalability)
+* [ ] [Latency vs throughput](#latency-vs-throughput)
+* [ ] [Availability vs consistency](#availability-vs-consistency)
+
+### Core building blocks
+
+* [ ] [Domain name system](#domain-name-system)
+* [ ] [Content delivery network](#content-delivery-network)
+* [ ] [Load balancer](#load-balancer)
+* [ ] [Reverse proxy (web server)](#reverse-proxy-web-server)
+* [ ] [Application layer](#application-layer)
+
+### Data, communication, and security
+
+* [ ] [Database](#database)
+* [ ] [Cache](#cache)
+* [ ] [Asynchronism](#asynchronism)
+* [ ] [Communication](#communication)
+* [ ] [Security](#security)
+
+### Practice
+
+* [ ] [System design interview questions, with solutions](#system-design-interview-questions-with-solutions)
+* [ ] [Object-oriented design interview questions, with solutions](#object-oriented-design-interview-questions-with-solutions)
+* [ ] [Additional system design interview questions](#additional-system-design-interview-questions)
+
 ## Anki flashcards
 
 <p align="center">
