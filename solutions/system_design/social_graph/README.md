@@ -113,7 +113,7 @@ We won't be able to fit all users on the same machine, we'll need to [shard](htt
 
 **Clarify with your interviewer how much code you should be writing**.
 
-**Note**: Error handling is excluded below for simplicity.  Ask if you should code proper error handing.
+**Note**: Error handling is excluded below for simplicity.  Ask if you should code proper error handling.
 
 **Lookup Service** implementation:
 
