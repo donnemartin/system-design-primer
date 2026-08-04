@@ -443,7 +443,7 @@
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
+  <strong><a href="https://robertgreiner.com/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
 
 在一个分布式计算系统中，只能同时满足下列的两点:
@@ -466,7 +466,7 @@
 
 ### 来源及延伸阅读
 
-* [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [再看 CAP 理论](https://robertgreiner.com/cap-theorem-revisited/)
 * [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
@@ -607,7 +607,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 ### 来源及延伸阅读
 
 * [全球性内容分发网络](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&context=compsci)
-* [CDN 拉取和 CDN 推送的区别](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [CDN 拉取和 CDN 推送的区别](https://www.geeksforgeeks.org/system-design/pull-cdn-vs-push-cdn/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
 
 ## 负载均衡器
@@ -644,7 +644,7 @@ CDN 拉取是当第一个用户请求该资源时，从服务器上拉取资源�
 
 ### 四层负载均衡
 
-四层负载均衡根据监看[传输层](#通讯)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
+四层负载均衡根据监看[传输层](#通讯)的信息来决定如何分发请求。通常，这会涉及来源，目标 IP 地址和请求头中的端口，但不包括数据包（报文）内容。四层负载均衡执行[网络地址转换（NAT）](https://web.archive.org/web/20240117134735/https://www.nginx.com/resources/glossary/layer-4-load-balancing/)来向上游服务器转发网络数据包。
 
 ### 七层负载均衡器
 
@@ -1408,7 +1408,7 @@ UDP 可靠性更低但适合用在网络电话、视频聊天，流媒体和实�
 
 #### 来源及延伸阅读：TCP 与 UDP
 
-* [游戏编程的网络](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [游戏编程的网络](https://gafferongames.com/post/udp_vs_tcp/)
 * [TCP 与 UDP 的关键区别](http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/)
 * [TCP 与 UDP 的不同](http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp)
 * [传输控制协议](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
@@ -1616,7 +1616,7 @@ Notes
 | 设计类似于 Google 的搜索引擎      | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html) |
 | 设计类似于 Google 的可扩展网络爬虫   | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch) |
 | 设计 Google 文档            | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/) |
-| 设计类似 Redis 的键值存储        | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis) |
+| 设计类似 Redis 的键值存储        | [codecapsule.com](http://codecapsule.com/2012/11/07/ikvs-implementing-a-key-value-store-table-of-contents/)<br/>[allthingsdistributed.com](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) |
 | 设计类似 Memcached 的缓存系统    | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached) |
 | 设计类似亚马逊的推荐系统            | [hulu.com](http://tech.hulu.com/blog/2011/09/19/recommendation-system.html)<br/>[ijcai13.org](http://ijcai13.org/files/tutorial_slides/td3.pdf) |
 | 设计类似 Bitly 的短链接系统       | [n00tc0d3r.blogspot.com](http://n00tc0d3r.blogspot.com/) |
@@ -1736,7 +1736,7 @@ Notes
 * [Microsoft Engineering](https://engineering.microsoft.com/)
 * [Microsoft Python Engineering](https://blogs.msdn.microsoft.com/pythonengineering/)
 * [Netflix Tech Blog](http://techblog.netflix.com/)
-* [Paypal Developer Blog](https://devblog.paypal.com/category/engineering/)
+* [Paypal Developer Blog](https://developer.paypal.com/community/blog/)
 * [Pinterest Engineering Blog](http://engineering.pinterest.com/)
 * [Quora Engineering](https://engineering.quora.com/)
 * [Reddit Blog](http://www.redditblog.com/)
