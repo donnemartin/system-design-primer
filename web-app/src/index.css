@@ -117,10 +117,12 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem 4rem;
   position: relative;
   scroll-behavior: smooth;
   width: 100%;
+  max-width: 100vw;
 }
 
 .menu-toggle {
@@ -134,7 +136,7 @@ body {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .menu-toggle {
     display: block;
   }
@@ -183,6 +185,25 @@ body {
   .markdown-body h2 {
     font-size: 1.5rem;
   }
+}
+
+/* Markdown styling fixes for mobile overflow */
+.markdown-body {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.markdown-body pre, 
+.markdown-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Navigation */
