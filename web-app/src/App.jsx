@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
-import { BookOpen, FileText, Settings, Layers, Code, GitBranch, ArrowLeft } from 'lucide-react';
+import { BookOpen, FileText, Settings, Layers, Code, GitBranch, ArrowLeft, Menu, X } from 'lucide-react';
 import './index.css';
 
 // Import the README dynamically using Vite's raw import
@@ -14,6 +14,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('readme');
   const [currentPath, setCurrentPath] = useState(''); // Empty means root
   const [history, setHistory] = useState([]); // To allow going back
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mobile sidebar state
 
   const loadMarkdown = async (filePath) => {
     try {
@@ -114,6 +115,9 @@ function App() {
         }
       });
     }
+    
+    // Close sidebar on mobile when a link is clicked
+    setIsSidebarOpen(false);
   };
 
   const handleBack = () => {
@@ -126,11 +130,26 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Sidebar */}
-      <div className="sidebar glass">
-        <div className="logo">
-          <Layers className="nav-icon" />
-          System Design
+      {/* Mobile Sidebar Overlay */}
+      <div 
+        className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
+        onClick={() => setIsSidebarOpen(false)}
+      ></div>
+
+      {/* Sidebar Navigation */}
+      <div className={`sidebar glass-panel ${isSidebarOpen ? 'open' : ''}`}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
+          <div className="logo-container animate-slide-in">
+            <Layers className="logo-icon" size={32} />
+            <h1 className="logo-text">System<br/>Design</h1>
+          </div>
+          <button 
+            className="menu-toggle" 
+            onClick={() => setIsSidebarOpen(false)}
+            style={{ marginRight: 0, padding: 0 }}
+          >
+            <X size={24} />
+          </button>
         </div>
         
         <div style={{ marginBottom: '2rem' }}>
@@ -167,6 +186,12 @@ function App() {
         <header className="animate-fade-in" style={{ marginBottom: '2rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <button 
+                className="menu-toggle" 
+                onClick={() => setIsSidebarOpen(true)}
+              >
+                <Menu size={24} />
+              </button>
               {history.length > 0 && (
                 <button 
                   onClick={handleBack} 
