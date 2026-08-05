@@ -15,6 +15,7 @@ function App() {
   const [currentPath, setCurrentPath] = useState(''); // Empty means root
   const [history, setHistory] = useState([]); // To allow going back
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mobile sidebar state
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false); // Desktop sidebar collapse state
 
   const loadMarkdown = async (filePath) => {
     try {
@@ -137,11 +138,11 @@ function App() {
       ></div>
 
       {/* Sidebar Navigation */}
-      <div className={`sidebar glass-panel ${isSidebarOpen ? 'open' : ''}`}>
+      <div className={`sidebar glass-panel ${isSidebarOpen ? 'open' : ''} ${isSidebarCollapsed ? 'collapsed' : ''}`}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
           <div className="logo-container animate-slide-in">
             <Layers className="logo-icon" size={32} />
-            <h1 className="logo-text">System<br/>Design</h1>
+            <h1 className="logo-text nav-text">System<br/>Design</h1>
           </div>
           <button 
             className="menu-toggle" 
@@ -153,30 +154,33 @@ function App() {
         </div>
         
         <div style={{ marginBottom: '2rem' }}>
-          <p style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, paddingLeft: '1rem', marginBottom: '0.5rem' }}>Navigation</p>
+          <p className="nav-title" style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, paddingLeft: '1rem', marginBottom: '0.5rem' }}>Navigation</p>
           <button 
             className={`nav-item ${activeTab === 'readme' ? 'active' : ''}`}
             onClick={() => setActiveTab('readme')}
+            title="Primer (README)"
           >
-            <BookOpen className="nav-icon" /> Primer (README)
+            <BookOpen className="nav-icon" /> <span className="nav-text">Primer (README)</span>
           </button>
           <button 
             className={`nav-item ${activeTab === 'solutions' ? 'active' : ''}`}
             onClick={() => setActiveTab('solutions')}
+            title="Solutions"
           >
-            <Code className="nav-icon" /> Solutions
+            <Code className="nav-icon" /> <span className="nav-text">Solutions</span>
           </button>
           <button 
             className={`nav-item ${activeTab === 'contributing' ? 'active' : ''}`}
             onClick={() => setActiveTab('contributing')}
+            title="Contributing"
           >
-            <GitBranch className="nav-icon" /> Contributing
+            <GitBranch className="nav-icon" /> <span className="nav-text">Contributing</span>
           </button>
         </div>
         
         <div style={{ marginTop: 'auto' }}>
-          <button className="nav-item">
-            <Settings className="nav-icon" /> Settings
+          <button className="nav-item" title="Settings">
+            <Settings className="nav-icon" /> <span className="nav-text">Settings</span>
           </button>
         </div>
       </div>
@@ -187,8 +191,14 @@ function App() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <button 
-                className="menu-toggle" 
-                onClick={() => setIsSidebarOpen(true)}
+                className="universal-menu-toggle" 
+                onClick={() => {
+                  if (window.innerWidth <= 1024) {
+                    setIsSidebarOpen(true);
+                  } else {
+                    setIsSidebarCollapsed(!isSidebarCollapsed);
+                  }
+                }}
               >
                 <Menu size={24} />
               </button>
