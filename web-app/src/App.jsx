@@ -15,7 +15,6 @@ function App() {
   const [currentPath, setCurrentPath] = useState(''); // Empty means root
   const [history, setHistory] = useState([]); // To allow going back
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mobile sidebar state
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false); // Desktop sidebar collapse state
 
   const loadMarkdown = async (filePath) => {
     try {
@@ -138,7 +137,7 @@ function App() {
       ></div>
 
       {/* Sidebar Navigation */}
-      <div className={`sidebar glass-panel ${isSidebarOpen ? 'open' : ''} ${isSidebarCollapsed ? 'collapsed' : ''}`}>
+      <div className={`sidebar glass-panel ${isSidebarOpen ? 'open' : ''}`}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
           <div className="logo-container animate-slide-in">
             <Layers className="logo-icon" size={32} />
@@ -191,14 +190,8 @@ function App() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <button 
-                className="universal-menu-toggle" 
-                onClick={() => {
-                  if (window.innerWidth <= 1024) {
-                    setIsSidebarOpen(true);
-                  } else {
-                    setIsSidebarCollapsed(!isSidebarCollapsed);
-                  }
-                }}
+                className="menu-toggle" 
+                onClick={() => setIsSidebarOpen(true)}
               >
                 <Menu size={24} />
               </button>

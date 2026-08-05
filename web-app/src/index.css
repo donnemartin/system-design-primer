@@ -113,31 +113,6 @@ body {
   transition: width 0.3s ease, left 0.3s ease, padding 0.3s ease;
 }
 
-.sidebar.collapsed {
-  width: 88px;
-  padding: 1.5rem 1rem;
-}
-
-.sidebar.collapsed .nav-text,
-.sidebar.collapsed .nav-title {
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-.sidebar.collapsed .logo-container,
-.sidebar.collapsed .nav-item {
-  justify-content: center;
-}
-
-.sidebar.collapsed .nav-item {
-  padding: 0.75rem;
-}
-
-.sidebar.collapsed .nav-icon {
-  margin-right: 0;
-}
-
 .main-content {
   flex: 1;
   display: flex;
@@ -151,24 +126,6 @@ body {
   max-width: 100vw;
 }
 
-.universal-menu-toggle {
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  cursor: pointer;
-  padding: 0.5rem;
-  margin-right: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  transition: background 0.2s ease;
-}
-
-.universal-menu-toggle:hover {
-  background: var(--bg-secondary);
-}
-
 .menu-toggle {
   display: none;
   background: none;
@@ -177,6 +134,74 @@ body {
   cursor: pointer;
   padding: 0.5rem;
   margin-right: 1rem;
+}
+
+/* Desktop Hover Sidebar */
+@media (min-width: 1025px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 88px;
+    padding: 1.5rem 1rem;
+    z-index: 100;
+  }
+
+  .main-content {
+    margin-left: 88px;
+  }
+
+  .sidebar:hover {
+    width: 320px;
+    padding: 1.5rem;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+
+  .sidebar .nav-text,
+  .sidebar .nav-title,
+  .sidebar .logo-text {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .sidebar:hover .nav-text,
+  .sidebar:hover .nav-title,
+  .sidebar:hover .logo-text {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+    transition-delay: 0.1s;
+  }
+
+  .sidebar .logo-container,
+  .sidebar .nav-item {
+    justify-content: center;
+  }
+
+  .sidebar .nav-item {
+    padding: 0.75rem;
+  }
+
+  .sidebar .nav-icon {
+    margin-right: 0;
+  }
+
+  .sidebar:hover .logo-container,
+  .sidebar:hover .nav-item {
+    justify-content: flex-start;
+  }
+
+  .sidebar:hover .nav-item {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .sidebar:hover .nav-icon {
+    margin-right: 1rem;
+  }
 }
 
 /* Mobile Responsiveness */
