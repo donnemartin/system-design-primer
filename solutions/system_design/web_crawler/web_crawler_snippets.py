@@ -70,4 +70,3 @@ class Crawler(object):
                 self.data_store.reduce_priority_link_to_crawl(page.url)
             else:
                 self.crawl_page(page)
-            page = self.data_store.extract_max_priority_page()
