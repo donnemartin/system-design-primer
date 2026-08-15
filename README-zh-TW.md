@@ -137,7 +137,7 @@
         * [SQL 優化](#sql-優化)
     * [NoSQL](#nosql)
         * [鍵-值對的資料庫](#鍵-值對的資料庫)
-        * [文件類型資料庫](#文件類型資料庫)
+        * [檔案類型資料庫](#檔案類型資料庫)
         * [列儲存型資料庫](#列儲存型資料庫)
         * [圖形資料庫](#圖形資料庫)
     * [SQL 或 NoSQL](#sql-或-nosql)
@@ -589,7 +589,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 拉取式的 CDN 指的是當地一個使用者來請求該資源時，才從伺服器上抓取對應檔案。將檔案留在伺服器上並且重寫指向 CDN 的 URL，直到檔案被快取在 CDN 上為止，請求都會比較慢。
 
-[存活時間 (TTL)](https://en.wikipedia.org/wiki/Time_to_live) 決定檔案要被緩存多久的時間。拉取式 CDN 可以節省儲存空間，但在過期的文件被更新之前，則會導致多餘的流量。
+[存活時間 (TTL)](https://en.wikipedia.org/wiki/Time_to_live) 決定檔案要被緩存多久的時間。拉取式 CDN 可以節省儲存空間，但在過期的檔案被更新之前，則會導致多餘的流量。
 
 拉取式的 CDN 適合高流量的網站，因為檔案會被平均的分散在各個結點伺服器中。
 
@@ -942,7 +942,7 @@ SQL 優化是一個涵蓋範圍很廣的主題，有許多相關的 [參考書�
 
 ### NoSQL
 
-NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列儲存型資料庫** 和 **圖形資料庫** 等的統稱。資料是非正規化的，Join 大部分在應用端完成。大多數的 NoSQL 資料庫無法真正實現 ACID 的 transaction，他們通常會支援 [最終一致性](#最終一致性)。
+NoSQL 指的是 **鍵-值對的資料庫**、**檔案類型資料庫**、**列儲存型資料庫** 和 **圖形資料庫** 等的統稱。資料是非正規化的，Join 大部分在應用端完成。大多數的 NoSQL 資料庫無法真正實現 ACID 的 transaction，他們通常會支援 [最終一致性](#最終一致性)。
 
 **BASE** 通常被用來描述 NoSQL 資料庫的特性。  跟 [CAP 理論](#cap 理論) 相比，BASE 強調可用性而非一致性。
 
@@ -950,7 +950,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 * **軟狀態** - 系統的狀態可能隨著時間改變，即使在沒有輸入的情況下也是如此。
 * **最終一致性** - 經過一段時間之後，在沒有收到任何輸入的情況下，系統最終會達到一致。
 
-除了在 [SQL 或 NoSQL](#sql-或-nosql) 之間做選擇，了解哪種類型的 NoSQL 資料庫最適合你的需求也是很有幫助的。我們會在下一節中快速瞭解一下 **鍵-值對的資料庫**、**文件類型資料庫**、**列儲存型資料庫** 和 **圖形資料庫** 等資料庫。
+除了在 [SQL 或 NoSQL](#sql-或-nosql) 之間做選擇，了解哪種類型的 NoSQL 資料庫最適合你的需求也是很有幫助的。我們會在下一節中快速瞭解一下 **鍵-值對的資料庫**、**檔案類型資料庫**、**列儲存型資料庫** 和 **圖形資料庫** 等資料庫。
 
 #### 鍵-值對的資料庫
 
@@ -960,7 +960,7 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 
 鍵值對資料庫的效能很好，通常用來儲存簡單的資料模型或是頻繁修改的資料，如放在記憶體中的快取層。鍵值對資料庫所提供的操作有限，如果要進行更多操作，會將其放在應用端進行。
 
-鍵值對的資料庫在某些情況下，是更複雜系統的基礎，例如圖形資料庫或是文件類型的資料庫。
+鍵值對的資料庫在某些情況下，是更複雜系統的基礎，例如圖形資料庫或是檔案類型的資料庫。
 
 ##### 來源及延伸閱讀
 
@@ -969,21 +969,21 @@ NoSQL 指的是 **鍵-值對的資料庫**、**文件類型資料庫**、**列�
 * [Redis 架構](http://qnimate.com/overview-of-redis-architecture/)
 * [Memcached 架構](https://adayinthelifeof.nl/2011/02/06/memcache-internals/)
 
-#### 文件類型資料庫
+#### 檔案類型資料庫
 
-> 抽象模型：將文件當做值的鍵值對資料庫
+> 抽象模型：將檔案當做值的鍵值對資料庫
 
-文件類型的資料庫是以文件 (XML、JSON、二進制檔案等) 為核心，文件本身儲存了對應物件的所有資訊。這種類型的資料庫提供了 API 或相關的查詢方法來根據儲存物件本身的特性來實現查詢功能。請注意，許多鍵值對資料庫有儲存 metadata 的特性，這也模糊了這兩種資料庫之間的界線。
+檔案類型的資料庫是以檔案 (XML、JSON、二進制檔案等) 為核心，檔案本身儲存了對應物件的所有資訊。這種類型的資料庫提供了 API 或相關的查詢方法來根據儲存物件本身的特性來實現查詢功能。請注意，許多鍵值對資料庫有儲存 metadata 的特性，這也模糊了這兩種資料庫之間的界線。
 
-根據底層實作的不同，文件資料庫可以根據集合、標籤、metadata 或目錄等來組織而成。儘管不同的文件可以被組織在一起或是分成一組，但彼此之間可能具有完全不同的內容。
+根據底層實作的不同，檔案資料庫可以根據集合、標籤、metadata 或目錄等來組織而成。儘管不同的檔案可以被組織在一起或是分成一組，但彼此之間可能具有完全不同的內容。
 
-某些文件型資料庫，例如 [MongoDB](https://www.mongodb.com/mongodb-architecture) 和 [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) 同樣提供了類似於 SQL 查詢語句的功能來實現複雜的查詢。[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)則同時支援了鍵值對儲存和文件類型儲存的功能。
+某些檔案型資料庫，例如 [MongoDB](https://www.mongodb.com/mongodb-architecture) 和 [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) 同樣提供了類似於 SQL 查詢語句的功能來實現複雜的查詢。[DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)則同時支援了鍵值對儲存和檔案類型儲存的功能。
 
-文件類型的資料庫具備高度靈活性，通常用於處理偶爾變化的資料。
+檔案類型的資料庫具備高度靈活性，通常用於處理偶爾變化的資料。
 
 ##### 延伸閱讀
 
-* [文件類型的資料庫](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [檔案類型的資料庫](https://en.wikipedia.org/wiki/Document-oriented_database)
 * [MongoDB 架構](https://www.mongodb.com/mongodb-architecture)
 * [CouchDB 架構](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
 * [Elasticsearch 架構](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
@@ -1125,7 +1125,7 @@ Redis 還有以下額外的功能：
 * 完整的可序列化物件
 * 完整的 HTML
 
-一般來說，你應該避免文件檔案的快取，因為這會讓複製和自動擴展變得困難。
+一般來說，你應該避免檔案檔案的快取，因為這會讓複製和自動擴展變得困難。
 
 ### 資料庫查詢級別的快取
 
@@ -1327,7 +1327,7 @@ def set_user(user_id, values):
   <i><a href=http://www.escotal.com/osilayer.html>來源：OSI 七層模型</a></i>
 </p>
 
-### 超文件通訊協定 (HTTP)
+### 超檔案通訊協定 (HTTP)
 
 HTTP 是一種在客戶端和伺服器端傳輸資料和定義編碼的方法。它是基於請求/回應的協議：客戶端發出請求，而伺服器端則針對請求內容完成對應的行為並進行回應。HTTP 是獨立的，它允許請求和回應經過許多負載平衡、快取、加密和壓縮的中間路由器和伺服器。
 
@@ -1478,7 +1478,7 @@ REST 關注於揭露資料，減少客戶端/伺服器之間耦合的程度，�
 #### REST 的缺點
 
 * 因為 REST 的重點是放在如何揭露資料，所以當資料不是以自然的形式組成時，或是結構相當複雜時，REST 可能無法很好的處理他們。舉個範例，回傳過去一小時中與特定事件吻合的更新操作就很難透過路徑來表示，使用 REST，可能會使用 URI、查詢參數和請求本身來實現。
-* REST 一般依賴於幾個動詞操作(GET、POST、PUT、DELETE 和 PATCH)，但有時候這些操作無法滿足你的需求，舉個範例，將過期的文件移動到歸檔文件資料庫中這樣的操作，可能就沒辦法簡單的使用以上幾個動詞操作來完成。
+* REST 一般依賴於幾個動詞操作(GET、POST、PUT、DELETE 和 PATCH)，但有時候這些操作無法滿足你的需求，舉個範例，將過期的檔案移動到歸檔檔案資料庫中這樣的操作，可能就沒辦法簡單的使用以上幾個動詞操作來完成。
 * 對於那些多層複雜的資源來說，需要在客戶端和伺服器端進行多次請求，例如：獲得部落格頁面及相關評論，而對於網路環境較不穩定的行動端應用來說，這些多次往返的請求是非常麻煩的。
 * 隨著時間的增加，API 的回應中可能會增加更多的欄位，比較舊的客戶端還是會收到所有新的回應內容，即時他們不需要這些回應，這會造成他們的負擔，並且造成更大的延遲。
 
@@ -1602,7 +1602,7 @@ Notes
 
 | 問題                                   | 來源                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 設計一個類似於 Dropbox 的文件同步系統  | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc)                                                                                                                                                                                                                                                                                                                                                                                        |
+| 設計一個類似於 Dropbox 的檔案同步系統  | [youtube.com](https://www.youtube.com/watch?v=PE4gwstWhmc)                                                                                                                                                                                                                                                                                                                                                                                        |
 | 設計一個類似於 Google 的搜尋引擎       | [queue.acm.org](http://queue.acm.org/detail.cfm?id=988407)<br/>[stackexchange.com](http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search)<br/>[ardendertat.com](http://www.ardendertat.com/2012/01/11/implementing-search-engines/)<br/>[stanford.edu](http://infolab.stanford.edu/~backrub/google.html)                                                                                                 |
 | 設計一個像 Google 一樣可擴展的網路爬蟲 | [quora.com](https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch)                                                                                                                                                                                                                                                                                                                                                                     |
 | 設計一個 Google Docs                   | [code.google.com](https://code.google.com/p/google-mobwrite/)<br/>[neil.fraser.name](https://neil.fraser.name/writing/sync/)                                                                                                                                                                                                                                                                                                                           |
@@ -1650,8 +1650,8 @@ Notes
 | 資料儲存 | **Bigtable** - Google 的列式資料庫                       | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)                                                    |
 | 資料儲存 | **HBase** - Bigtable 的開放原始碼解決方案                | [slideshare.net](http://www.slideshare.net/alexbaranau/intro-to-hbase)                                                                         |
 | 資料儲存 | **Cassandra** - Facebook 的列式資料庫                    | [slideshare.net](http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666)                                           |
-| 資料儲存 | **DynamoDB** - Amazon 的文件式資料庫                     | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)                                                   |
-| 資料儲存 | **MongoDB** - 文件式資料庫                               | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb)                                                                    |
+| 資料儲存 | **DynamoDB** - Amazon 的檔案式資料庫                     | [harvard.edu](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf)                                                   |
+| 資料儲存 | **MongoDB** - 檔案式資料庫                               | [slideshare.net](http://www.slideshare.net/mdirolf/introduction-to-mongodb)                                                                    |
 | 資料儲存 | **Spanner** - Google 的全球分散式資料庫                  | [research.google.com](http://research.google.com/archive/spanner-osdi2012.pdf)                                                                 |
 | 資料儲存 | **Memcached** - 分散式的記憶體快取系統                   | [slideshare.net](http://www.slideshare.net/oemebamo/introduction-to-memcached)                                                                 |
 | 資料儲存 | **Redis** - 具有持久化及值型別的分散式快取系統           | [slideshare.net](http://www.slideshare.net/dvirsky/introduction-to-redis)                                                                      |
