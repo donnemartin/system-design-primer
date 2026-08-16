@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* #F8FAFC crisp off-white */
+    --foreground: 222 47% 11%; /* #0F172A */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 243 75% 59%; /* #4F46E5 Indigo */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%; /* #F1F5F9 */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%; /* #64748B */
+    --accent: 239 84% 67%; /* #6366F1 */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%; /* #E2E8F0 */
+    --input: 214 32% 91%;
+    --ring: 243 75% 59%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 24% 6%; /* #0B0D12 deep slate-navy */
+    --foreground: 210 40% 96%; /* #F1F5F9 */
+    --card: 222 23% 9%; /* #11141B */
+    --card-foreground: 210 40% 96%;
+    --popover: 222 23% 9%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 239 84% 67%; /* #6366F1 Indigo */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 20% 12%; /* #171A24 */
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 20% 12%;
+    --muted-foreground: 215 20% 65%; /* #94A3B8 */
+    --accent: 239 84% 67%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 23% 15%; /* #1E2330 */
+    --input: 222 23% 15%;
+    --ring: 239 84% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "calt";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-semibold text-foreground;
+  }
+
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.25);
+    color: inherit;
+  }
+}
+
+/* Subtle, clean scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.4);
+}
+
+/* Clean dot grid background for technical diagrams & canvas */
+.bg-grid-pattern {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+}
+
+.light .bg-grid-pattern {
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
+/* Domain Badges & Identifiers */
+.domain-badge-fundamentals {
+  @apply bg-indigo-500/10 text-indigo-600 border-indigo-500/20 dark:bg-indigo-500/15 dark:text-indigo-400 dark:border-indigo-500/30;
+}
+.domain-badge-networking {
+  @apply bg-cyan-500/10 text-cyan-600 border-cyan-500/20 dark:bg-cyan-500/15 dark:text-cyan-400 dark:border-cyan-500/30;
+}
+.domain-badge-app-architecture {
+  @apply bg-blue-500/10 text-blue-600 border-blue-500/20 dark:bg-blue-500/15 dark:text-blue-400 dark:border-blue-500/30;
+}
+.domain-badge-databases {
+  @apply bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:bg-emerald-500/15 dark:text-emerald-400 dark:border-emerald-500/30;
+}
+.domain-badge-caching {
+  @apply bg-amber-500/10 text-amber-600 border-amber-500/20 dark:bg-amber-500/15 dark:text-amber-400 dark:border-amber-500/30;
+}
+.domain-badge-distributed-systems {
+  @apply bg-violet-500/10 text-violet-600 border-violet-500/20 dark:bg-violet-500/15 dark:text-violet-400 dark:border-violet-500/30;
+}
+.domain-badge-security {
+  @apply bg-rose-500/10 text-rose-600 border-rose-500/20 dark:bg-rose-500/15 dark:text-rose-400 dark:border-rose-500/30;
+}
+.domain-badge-real-world-architectures {
+  @apply bg-purple-500/10 text-purple-600 border-purple-500/20 dark:bg-purple-500/15 dark:text-purple-400 dark:border-purple-500/30;
+}
+.domain-badge-interviews {
+  @apply bg-amber-500/10 text-amber-600 border-amber-500/20 dark:bg-amber-500/15 dark:text-amber-400 dark:border-amber-500/30;
+}
+
+/* Subtle Tinted Surface Utilities */
+.surface-tint-indigo {
+  @apply bg-indigo-50/40 dark:bg-indigo-950/20 border-indigo-200/50 dark:border-indigo-800/30;
+}
+.surface-tint-cyan {
+  @apply bg-cyan-50/40 dark:bg-cyan-950/20 border-cyan-200/50 dark:border-cyan-800/30;
+}
+.surface-tint-emerald {
+  @apply bg-emerald-50/40 dark:bg-emerald-950/20 border-emerald-200/50 dark:border-emerald-800/30;
+}
+.surface-tint-amber {
+  @apply bg-amber-50/40 dark:bg-amber-950/20 border-amber-200/50 dark:border-amber-800/30;
+}
+.surface-tint-violet {
+  @apply bg-violet-50/40 dark:bg-violet-950/20 border-violet-200/50 dark:border-violet-800/30;
+}
+.surface-tint-rose {
+  @apply bg-rose-50/40 dark:bg-rose-950/20 border-rose-200/50 dark:border-rose-800/30;
+}
+
+/* 3D perspective for clean flashcard flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Flow line dash animation */
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+.animate-flow-dash {
+  animation: flowDash 1.2s linear infinite;
+  stroke-dasharray: 5 4;
+}

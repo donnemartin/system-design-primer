@@ -62,3 +62,12 @@ scratch/
 
 # IPython Notebook templates
 template.ipynb
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
