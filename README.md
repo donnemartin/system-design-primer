@@ -71,6 +71,10 @@ Check out the sister repo [**Interactive Coding Challenges**](https://github.com
 
 * [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
 
+## Interactive companion
+
+Prefer this guide as a browsable site?  [**system-design-primer.rujalduwal.com.np**](https://system-design-primer.rujalduwal.com.np) presents these sections with their own URLs, full-text search across the guide, and interactive simulations of the trade-offs they describe.  Community-maintained, free, and open source ([source](https://github.com/Rujal-Duwal/system-design-primer-web)).
+
 ## Contributing
 
 > Learn from the community.
