@@ -202,7 +202,7 @@ seller_category_map['Target'] = DefaultCategories.SHOPPING
 ```python
 class Categorizer(object):
 
-    def __init__(self, seller_category_map, self.seller_category_crowd_overrides_map):
+    def __init__(self, seller_category_map, seller_category_crowd_overrides_map):
         self.seller_category_map = seller_category_map
         self.seller_category_crowd_overrides_map = \
             seller_category_crowd_overrides_map
@@ -223,7 +223,7 @@ class Categorizer(object):
 class Transaction(object):
 
     def __init__(self, created_at, seller, amount):
-        self.timestamp = timestamp
+        self.created_at = created_at
         self.seller = seller
         self.amount = amount
 ```
@@ -242,10 +242,10 @@ class Budget(object):
 
     def create_budget_template(self):
         return {
-            'DefaultCategories.HOUSING': income * .4,
-            'DefaultCategories.FOOD': income * .2
-            'DefaultCategories.GAS': income * .1,
-            'DefaultCategories.SHOPPING': income * .2
+            DefaultCategories.HOUSING: self.income * .4,
+            DefaultCategories.FOOD: self.income * .2,
+            DefaultCategories.GAS: self.income * .1,
+            DefaultCategories.SHOPPING: self.income * .2,
             ...
         }
 

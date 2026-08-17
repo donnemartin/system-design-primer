@@ -110,7 +110,7 @@ class SalesRanker(MRJob):
         否则返回 False。"""
         ...
 
-    def mapper(self, _ line):
+    def mapper(self, _, line):
         """解析日志的每一行，提取并转换相关行，
 
         将键值对设定为如下形式：
@@ -127,7 +127,7 @@ class SalesRanker(MRJob):
         if self.within_past_week(timestamp):
             yield (category_id, product_id), quantity
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """将每个 key 的值加起来。
 
         (category1, product1), 2
