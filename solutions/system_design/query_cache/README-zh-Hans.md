@@ -159,7 +159,7 @@ class Cache(object):
         self.lookup = {}  # key: query, value: node
         self.linked_list = LinkedList()
 
-    def get(self, query)
+    def get(self, query):
         """从缓存取得存储的内容
 
         将入口节点位置更新为 LRU 链表的头部。

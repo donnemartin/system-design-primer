@@ -101,7 +101,7 @@
 ```python
 class PagesDataStore(object):
 
-    def __init__(self, db);
+    def __init__(self, db):
         self.db = db
         ...
 
@@ -113,7 +113,7 @@ class PagesDataStore(object):
         """从 `links_to_crawl` 中删除指定链接。"""
         ...
 
-    def reduce_priority_link_to_crawl(self, url)
+    def reduce_priority_link_to_crawl(self, url):
         """在 `links_to_crawl` 中降低一个链接的优先级以避免死循环。"""
         ...
 
