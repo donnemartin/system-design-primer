@@ -6,6 +6,18 @@ import { ProgressProvider } from '@/context/ProgressContext';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'System Design Primer 2.0 | Interactive Learning Platform',
   description: 'Master large-scale distributed systems, architectural trade-offs, and FAANG system design interviews with interactive visualizations, roadmaps, and calculators.',
@@ -17,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="antialiased min-h-screen bg-background text-foreground flex flex-col md:flex-row">
+    <html lang="en" className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="antialiased min-h-screen bg-background text-foreground flex flex-col md:flex-row font-sans">
         <ThemeProvider>
           <ProgressProvider>
             {/* Persistent Navigation Sidebar */}
@@ -37,3 +49,4 @@ export default function RootLayout({
     </html>
   );
 }
+
