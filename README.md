@@ -1780,7 +1780,7 @@ Handy metrics based on numbers above:
 * [Paypal Developer Blog](https://developer.paypal.com/community/blog/)
 * [Pinterest Engineering Blog](https://medium.com/@Pinterest_Engineering)
 * [Reddit Blog](http://www.redditblog.com/)
-* [Salesforce Engineering Blog](https://developer.salesforce.com/blogs/engineering/)
+* [Salesforce Engineering Blog](https://engineering.salesforce.com/)
 * [Slack Engineering Blog](https://slack.engineering/)
 * [Spotify Labs](https://labs.spotify.com/)
 * [Stripe Engineering Blog](https://stripe.com/blog/engineering)
