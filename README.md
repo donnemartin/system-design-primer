@@ -765,7 +765,7 @@ Additional benefits include:
 
 ### Source(s) and further reading
 
-* [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+* [Reverse proxy vs load balancer](https://www.f5.com/glossary/reverse-proxy)
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
