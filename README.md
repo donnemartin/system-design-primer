@@ -1116,6 +1116,11 @@ Reasons for **NoSQL**:
 * Very data intensive workload
 * Very high throughput for IOPS
 
+A practical way to choose:
+
+- Choose SQL when your data has strong relationships and you need transactions or complex queries across related data.
+- Choose NoSQL when your data is flexible or highly distributed and you prioritize large-scale storage or high throughput over complex relationships.
+
 Sample data well-suited for NoSQL:
 
 * Rapid ingest of clickstream and log data
