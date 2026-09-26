@@ -667,7 +667,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 
 ### 來源及延伸閱讀
 
-* [NGINX 架構](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [NGINX 架構](https://aosabook.org/en/v2/nginx.html)
 * [HAProxy 架構指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [可擴展性](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [維基百科](https://en.wikipedia.org/wiki/Load_balancing_(computing))
@@ -714,7 +714,7 @@ DNS 是階層式的架構，一部分的 DNS 伺服器位於頂層，當查詢�
 ### 來源與延伸閱讀
 
 * [反向代理伺服器與負載平衡](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX 架構](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [NGINX 架構](https://aosabook.org/en/v2/nginx.html)
 * [HAProxy 架構指南](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [維基百科](https://en.wikipedia.org/wiki/Reverse_proxy)
 
