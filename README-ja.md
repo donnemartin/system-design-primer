@@ -668,7 +668,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 
 ### その他の参考資料、ページ
 
-* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [NGINX アーキテクチャ](https://aosabook.org/en/v2/nginx.html)
 * [HAProxy アーキテクチャガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [スケーラビリティ](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
@@ -715,7 +715,7 @@ Layer 7 ロードバランサーは [アプリケーションレイヤー](#通�
 ### その他の参考資料、ページ
 
 * [リバースプロキシ vs ロードバランサー](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-* [NGINX アーキテクチャ](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [NGINX アーキテクチャ](https://aosabook.org/en/v2/nginx.html)
 * [HAProxy アーキテクチャ ガイド](http://www.haproxy.org/download/1.2/doc/architecture.txt)
 * [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
 
