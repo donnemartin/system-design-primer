@@ -27,9 +27,11 @@ class Categorizer(object):
         if transaction.seller in self.seller_category_map:
             return self.seller_category_map[transaction.seller]
         if transaction.seller in self.seller_category_overrides_map:
-            seller_category_map[transaction.seller] = \
-                self.manual_overrides[transaction.seller].peek_min()
-            return self.seller_category_map[transaction.seller]
+            category = self.seller_category_overrides_map[
+                transaction.seller
+            ].peek_min()
+            self.seller_category_map[transaction.seller] = category
+            return category
         return None
 
 
