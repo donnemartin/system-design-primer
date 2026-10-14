@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Exercises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:780px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px;font-family:"IBM Plex Mono";font-size:12.5px} .topnav a{text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:5px 10px} .topnav a:hover{color:var(--accent);border-color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 26px;margin-bottom:30px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 10px} .badge .n{background:var(--accent-soft);border-radius:4px;padding:2px 7px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 12px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:64ch;margin:0 0 16px}
+.callout{background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:6px;padding:16px 18px;margin:18px 0 0} .callout p{margin:0 0 8px;font-size:14.5px} .callout p:last-child{margin-bottom:0} .callout ol{margin:6px 0 0 18px;padding:0;font-size:14.5px} .callout ol li{margin-bottom:4px}
+h2.track{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-family:"IBM Plex Mono";color:var(--muted);margin:38px 0 14px;border-top:1px solid var(--border);padding-top:28px}
+.qlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.q{padding:18px 2px;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:flex-start}
+.q .idx{font-family:"IBM Plex Mono";font-size:13px;color:var(--muted);padding-top:2px;min-width:22px}
+.q .body h3{margin:0 0 6px;font-size:16.5px;font-weight:600} .q .body p{margin:0;color:var(--muted);font-size:14px;max-width:56ch} .q .alt{font-weight:400;color:var(--muted);font-size:14px}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">← Course Map</a><span>Module 13 of 16</span></nav>
+  <header class="hero">
+    <p class="badge">The System Design Primer — Study Path <span class="n">13</span></p>
+    <h1>Exercises: attempt these before you look at the solutions</h1>
+    <p class="lede">Fourteen practice problems — eight system design prompts and six object-oriented design prompts — pulled straight out of the original repo's interview-questions tables. No hints, no diagrams, no code here. That's intentional.</p>
+    <div class="callout">
+      <p><strong>How to use this page.</strong> For each system design prompt, run it through the framework from Module 01 before you check anything in Modules 14–15:</p>
+      <ol><li>Outline use cases, constraints, and assumptions</li><li>Create a high-level design</li><li>Design the core components</li><li>Identify bottlenecks and scale the design</li></ol>
+      <p>Give yourself a real attempt — sketch it on paper, say it out loud, or write it down — before comparing against the worked solution. The gap between your answer and the solution is where the learning happens, not the solution text itself.</p>
+    </div>
+  </header>
+
+  <h2 class="track">System design — 8 prompts</h2>
+  <ol class="qlist">
+    <li class="q"><span class="idx">1</span><div class="body"><h3>Design Pastebin.com <span class="alt">(or Bit.ly)</span></h3><p>A service that stores a block of text (or a long URL) and hands back a short, shareable link.</p></div></li>
+    <li class="q"><span class="idx">2</span><div class="body"><h3>Design the Twitter timeline and search <span class="alt">(or Facebook feed and search)</span></h3><p>A feed that fans out a user's posts to their followers, plus a way to search across all posts.</p></div></li>
+    <li class="q"><span class="idx">3</span><div class="body"><h3>Design a web crawler</h3><p>A system that discovers and downloads pages across the web at scale, without crawling the same page forever.</p></div></li>
+    <li class="q"><span class="idx">4</span><div class="body"><h3>Design Mint.com</h3><p>A service that aggregates a user's finances across many external bank accounts into one view.</p></div></li>
+    <li class="q"><span class="idx">5</span><div class="body"><h3>Design the data structures for a social network</h3><p>Model users, friendships/follows, and the queries a social graph needs to answer efficiently.</p></div></li>
+    <li class="q"><span class="idx">6</span><div class="body"><h3>Design a key-value store for a search engine</h3><p>A cache sitting in front of a search engine, keyed by query, built to serve read-heavy traffic fast.</p></div></li>
+    <li class="q"><span class="idx">7</span><div class="body"><h3>Design Amazon's sales ranking by category feature</h3><p>A "best sellers" list per product category that updates continuously off of purchase data.</p></div></li>
+    <li class="q"><span class="idx">8</span><div class="body"><h3>Design a system that scales to millions of users on AWS</h3><p>Start from a single server and walk forward, one bottleneck at a time, to a system that can handle millions of users.</p></div></li>
+  </ol>
+
+  <h2 class="track">Object-oriented design — 6 prompts</h2>
+  <ol class="qlist">
+    <li class="q"><span class="idx">1</span><div class="body"><h3>Design a hash map</h3><p>Build the data structure itself: hashing, buckets, collision handling, resize.</p></div></li>
+    <li class="q"><span class="idx">2</span><div class="body"><h3>Design a least recently used (LRU) cache</h3><p>Fixed-capacity cache that evicts whatever was used least recently, in O(1) per operation.</p></div></li>
+    <li class="q"><span class="idx">3</span><div class="body"><h3>Design a call center</h3><p>Model employees of different ranks and route an incoming call to the right handler.</p></div></li>
+    <li class="q"><span class="idx">4</span><div class="body"><h3>Design a deck of cards</h3><p>Model a standard deck, hands, and a shuffle — in a way a real card game could be built on top of.</p></div></li>
+    <li class="q"><span class="idx">5</span><div class="body"><h3>Design a parking lot</h3><p>Model levels, spots of different sizes, vehicles of different sizes, and ticketing.</p></div></li>
+    <li class="q"><span class="idx">6</span><div class="body"><h3>Design a chat server</h3><p>Model users, one-to-one and group conversations, and message delivery.</p></div></li>
+  </ol>
+  <footer>When you've genuinely attempted a prompt, Module 14 (System Design Solutions) and Module 15 (Object-Oriented Design Solutions) have the worked answers — discussions, diagrams, and code.</footer>
+</div>
+</body></html>

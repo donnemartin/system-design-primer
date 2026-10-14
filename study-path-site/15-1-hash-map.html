@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Hash Map — OOD Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+.backlink{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted)} .backlink:hover{color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 10px}
+.badge{display:inline-block;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;letter-spacing:.04em;margin-left:8px}
+h1{font-size:clamp(26px,5vw,36px);margin:0 0 14px;text-wrap:balance;font-weight:700} h2{font-size:21px;margin:34px 0 10px} p{max-width:68ch} .lede{color:var(--muted);font-size:16px}
+.classlist{list-style:none;margin:14px 0;padding:0;border-top:1px solid var(--border)} .classlist li{padding:11px 2px;border-bottom:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap} .classlist .cname{font-family:"IBM Plex Mono";font-weight:600;min-width:140px;color:var(--accent)} .classlist .cdesc{color:var(--muted);font-size:14.5px;flex:1;min-width:0}
+ul.points{padding-left:20px} ul.points li{margin-bottom:8px}
+.note{border-left:3px solid var(--accent-2);padding:10px 14px;background:var(--accent-soft);border-radius:0 6px 6px 0;font-size:14px;color:var(--fg);margin:18px 0}
+details{margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} summary{cursor:pointer;padding:12px 16px;font-family:"IBM Plex Mono";font-size:13px;background:var(--accent-soft);color:var(--accent);list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸ "} details[open] summary::before{content:"▾ "}
+pre{margin:0;padding:16px;overflow-x:auto;background:var(--code-bg);color:var(--code-fg);font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.65}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <a class="backlink" href="00-home.html">← Course Map</a>
+  <p class="eyebrow">The System Design Primer — Study Path <span class="badge">Module 15.1</span></p>
+  <h1>Design a hash map</h1>
+  <p class="lede">Build a key-value store from scratch — the data structure behind every dict, map, and cache you've used — supporting <span class="mono">set</span>, <span class="mono">get</span>, and <span class="mono">remove</span> in average O(1) time.</p>
+  <h2>The problem</h2>
+  <p>A hash map needs to answer "what value did I store under this key?" without scanning every entry. The trick is a <strong>hash function</strong> that turns a key into an array index, so lookups jump straight to the right slot instead of searching. The real design challenge is what happens when two different keys hash to the <em>same</em> slot — a collision.</p>
+  <h2>Classes at a glance</h2>
+  <ul class="classlist">
+    <li><span class="cname">Item</span><span class="cdesc">One stored key/value pair. This is what actually lives inside a bucket.</span></li>
+    <li><span class="cname">HashTable</span><span class="cdesc">Owns a fixed-size array of buckets (<span class="mono">self.table</span>), hashes a key down to a bucket index, and walks that bucket's list to find, insert, or remove an <span class="mono">Item</span>.</span></li>
+  </ul>
+  <h2>Key design decisions</h2>
+  <ul class="points">
+    <li><strong>Separate chaining for collisions.</strong> Each bucket is a plain list. When two keys land on the same index, the new <span class="mono">Item</span> is just appended to that bucket's list instead of needing open addressing or probing to find another slot.</li>
+    <li><strong>The hash function is intentionally simple:</strong> <span class="mono">key % size</span>. That only works cleanly for integer keys and assumes the table size never changes — good enough to demonstrate the mechanism in an interview, but a real implementation would hash arbitrary key types (strings, tuples) and handle resizing.</li>
+    <li><strong><span class="mono">get</span> and <span class="mono">remove</span> raise <span class="mono">KeyError</span></strong> on a missing key, mirroring the contract Python's built-in <span class="mono">dict</span> already follows.</li>
+  </ul>
+  <div class="note">What this solution deliberately leaves out — and what an interviewer will likely push on next: resizing and rehashing. As more items are added, the average bucket length grows past O(1) unless the table grows and every existing item gets rehashed into a bigger array. That's the natural next question to raise yourself.</div>
+  <details><summary>Show full code — hash_map.py</summary><pre><code>class Item(object):
+
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+
+
+class HashTable(object):
+
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(self.size)]
+
+    def _hash_function(self, key):
+        return key % self.size
+
+    def set(self, key, value):
+        hash_index = self._hash_function(key)
+        for item in self.table[hash_index]:
+            if item.key == key:
+                item.value = value
+                return
+        self.table[hash_index].append(Item(key, value))
+
+    def get(self, key):
+        hash_index = self._hash_function(key)
+        for item in self.table[hash_index]:
+            if item.key == key:
+                return item.value
+        raise KeyError('Key not found')
+
+    def remove(self, key):
+        hash_index = self._hash_function(key)
+        for index, item in enumerate(self.table[hash_index]):
+            if item.key == key:
+                del self.table[hash_index][index]
+                return
+        raise KeyError('Key not found')</code></pre></details>
+  <footer>Source: <span class="mono">solutions/object_oriented_design/hash_table/hash_map.py</span></footer>
+</div>
+</body></html>

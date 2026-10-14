@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>DNS &amp; CDN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 90px}
+.topnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;font-family:"IBM Plex Mono";font-size:13px} .topnav a{text-decoration:none;color:var(--muted)} .topnav a:hover{color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 24px;margin-bottom:28px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.badge{background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:2px 8px;font-weight:600}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 12px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:60ch;margin:0}
+figure{margin:26px 0;text-align:center} figure img{max-width:100%;border-radius:8px;border:1px solid var(--border)} figcaption{font-size:13px;color:var(--muted);margin-top:8px} figcaption a{color:var(--muted);text-decoration:underline}
+h2{font-size:22px;margin:40px 0 10px;font-weight:700} h3{font-size:17px;margin:26px 0 8px;font-weight:600;color:var(--accent)}
+p{margin:0 0 14px;font-size:15.5px} ul{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px;font-size:15.5px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:14px 16px;margin:18px 0;font-size:14.5px} .callout b{color:var(--accent)}
+.recordlist{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:4px 16px;margin:14px 0} .recordlist dt{font-family:"IBM Plex Mono";font-weight:600;font-size:13.5px;color:var(--accent);margin-top:12px} .recordlist dd{margin:2px 0 10px;font-size:14.5px;color:var(--fg)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0} .compare > div{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px} .compare h4{margin:0 0 8px;font-size:14px;font-family:"IBM Plex Mono";text-transform:uppercase;letter-spacing:.06em;color:var(--accent-2)} .compare p{font-size:14px;margin:0}
+@media (max-width:480px){ .compare{grid-template-columns:1fr} }
+.sources{margin-top:46px;padding-top:18px;border-top:1px solid var(--border)} .sources h2{margin-top:0;font-size:14px;text-transform:uppercase;letter-spacing:.1em;font-family:"IBM Plex Mono";color:var(--muted)} .sources ul{padding-left:18px} .sources li{font-size:14px}
+.footnav{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;font-size:14px} .footnav .next{text-align:right} .footnav .lbl{display:block;font-family:"IBM Plex Mono";font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px} .footnav a{text-decoration:none;color:var(--fg)} .footnav a:hover{color:var(--accent)}
+@media (max-width:480px){ .footnav{flex-direction:column} .footnav .next{text-align:left} }
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">&larr; Course Map</a><span class="mono">Module 04 / 16</span></nav>
+  <header class="hero">
+    <p class="eyebrow"><span class="badge">04</span> The System Design Primer — Study Path</p>
+    <h1>DNS &amp; CDN</h1>
+    <p class="lede">Before a request ever reaches your servers, two things happen: a name gets turned into an address, and — if you're lucky — the content never has to travel that far in the first place.</p>
+  </header>
+
+  <h2>Domain name system</h2>
+  <figure><img src="assets/images/IOyLj4i.jpg" alt="DNS resolution diagram"><figcaption>Source: <a href="http://www.slideshare.net/srikrupa5/dns-security-presentation-issa">DNS security presentation</a></figcaption></figure>
+  <p>A Domain Name System (DNS) translates a domain name such as <span class="mono">www.example.com</span> to an IP address.</p>
+  <p>DNS is hierarchical, with a few authoritative servers at the top level. Your router or ISP tells you which DNS server(s) to contact for a lookup. Lower-level DNS servers cache mappings, which can go stale due to propagation delays. Your browser or OS also caches DNS results for a while, controlled by the record's <a href="https://en.wikipedia.org/wiki/Time_to_live">time to live (TTL)</a>.</p>
+  <dl class="recordlist">
+    <dt>NS record (name server)</dt><dd>Specifies the DNS servers for your domain/subdomain.</dd>
+    <dt>MX record (mail exchange)</dt><dd>Specifies the mail servers for accepting messages.</dd>
+    <dt>A record (address)</dt><dd>Points a name to an IP address.</dd>
+    <dt>CNAME (canonical)</dt><dd>Points a name to another name or CNAME (e.g. <span class="mono">example.com</span> &rarr; <span class="mono">www.example.com</span>), or to an A record.</dd>
+  </dl>
+  <p>Services such as <a href="https://www.cloudflare.com/dns/">CloudFlare</a> and <a href="https://aws.amazon.com/route53/">Route 53</a> provide managed DNS. Some DNS services can route traffic through several methods:</p>
+  <ul>
+    <li><a href="https://www.jscape.com/blog/load-balancing-algorithms">Weighted round robin</a> — prevent traffic from going to servers under maintenance, balance between varying cluster sizes, or run A/B tests.</li>
+    <li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html">Latency-based</a> routing.</li>
+    <li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geo.html">Geolocation-based</a> routing.</li>
+  </ul>
+  <div class="callout"><b>Disadvantages of DNS:</b> accessing a DNS server introduces a slight delay, though caching mitigates most of it. DNS server management can be complex and is generally handled by <a href="http://superuser.com/questions/472695/who-controls-the-dns-servers/472729">governments, ISPs, and large companies</a>. DNS services have also come under <a href="http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/">DDoS attack</a>, which can keep users from reaching a site without knowing its IP address directly.</div>
+
+  <h2>Content delivery network</h2>
+  <figure><img src="assets/images/h9TAuGI.jpg" alt="Content delivery network diagram"><figcaption>Source: <a href="https://www.creative-artworks.eu/why-use-a-content-delivery-network-cdn/">Why use a CDN</a></figcaption></figure>
+  <p>A content delivery network (CDN) is a globally distributed network of proxy servers that serve content from locations closer to the user. Generally, static files — HTML/CSS/JS, photos, videos — are served from a CDN, though some, like Amazon CloudFront, also support dynamic content. The site's DNS resolution tells clients which server to contact.</p>
+  <p>Serving content from a CDN improves performance in two ways: users get content from data centers close to them, and your own servers don't have to serve the requests the CDN fulfills instead.</p>
+  <div class="compare">
+    <div><h4>Push CDNs</h4><p>You push new content to the CDN whenever it changes on your server — uploading directly and rewriting URLs to point at the CDN. You control expiry and update timing. Content uploads only when new or changed, which minimizes traffic but maximizes storage. Works well for low-traffic sites or content that rarely changes.</p></div>
+    <div><h4>Pull CDNs</h4><p>The CDN grabs new content from your server the first time a user requests it, so the very first request is slower until it's cached. A TTL determines how long content stays cached. This minimizes CDN storage but can create redundant traffic if content expires and gets re-pulled before it actually changed. Works well for high-traffic sites.</p></div>
+  </div>
+  <div class="callout"><b>Disadvantages of a CDN:</b> cost can be significant depending on traffic (though weigh that against what it would cost <i>not</i> to use one). Content can go stale if it's updated before the TTL expires it. And using a CDN means rewriting URLs for all your static content to point at it.</div>
+
+  <div class="sources"><h2>Sources &amp; further reading</h2><ul>
+    <li><a href="https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx">DNS architecture</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS — Wikipedia</a></li>
+    <li><a href="https://support.dnsimple.com/categories/dns/">DNS articles</a></li>
+    <li><a href="https://figshare.com/articles/Globally_distributed_content_delivery/6605972">Globally distributed content delivery</a></li>
+    <li><a href="https://www.geeksforgeeks.org/system-design/pull-cdn-vs-push-cdn/">The differences between push and pull CDNs</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN — Wikipedia</a></li>
+  </ul></div>
+  <div class="footnav"><div><span class="lbl">Previous</span><a href="03-consistency-availability.html">Module 03 · Consistency &amp; Availability</a></div><div class="next"><span class="lbl">Next</span><a href="05-load-balancing-reverse-proxies.html">Module 05 · Load Balancing &amp; Reverse Proxies</a></div></div>
+</div>
+</body></html>

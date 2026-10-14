@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Study Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 28px;margin-bottom:28px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;text-wrap:balance;font-weight:700}
+.lede{color:var(--muted);font-size:17px;max-width:62ch;margin:0 0 18px}
+.howto{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px} .howto span{font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:5px 10px}
+.track-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:36px 0 14px} .track-head h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;font-family:"IBM Plex Mono";color:var(--muted);margin:0}
+#progress-label{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+ol.modules{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.mod{display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:start;padding:16px 4px;border-bottom:1px solid var(--border);min-width:0}
+.mod .num{font-family:"IBM Plex Mono";font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.mod .body{min-width:0} .mod a.title{font-size:17px;font-weight:600;color:var(--fg);text-decoration:none} .mod a.title:hover{color:var(--accent)}
+.mod p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:58ch}
+.mod .sub{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px} .mod .sub a{font-family:"IBM Plex Mono";font-size:11.5px;border:1px solid var(--border);border-radius:4px;padding:3px 7px;text-decoration:none;color:var(--muted)} .mod .sub a:hover{border-color:var(--accent);color:var(--accent)}
+.chk{appearance:none;width:22px;height:22px;border:1.5px solid var(--border);border-radius:5px;background:var(--surface);cursor:pointer;display:grid;place-items:center;margin-top:2px}
+.chk:checked{background:var(--done);border-color:var(--done)} .chk:checked::after{content:"✓";color:#fff;font-size:14px;font-weight:700}
+.track{margin-top:34px;padding-top:18px;border-top:1px solid var(--border)} .track .eyebrow{margin-bottom:8px}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+@media (max-width:480px){ .mod{grid-template-columns:34px 1fr auto} }
+</style></head><body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">The System Design Primer — Study Path</p>
+    <h1>A beginner-safe, dependency-ordered route through the whole primer</h1>
+    <p class="lede">Everything in the original <span class="mono">system-design-primer</span> repo — every topic, every diagram, every worked solution, and all three Anki decks — reassembled into one path. Each module only assumes what came before it. Work top to bottom; nothing here requires skipping ahead.</p>
+    <div class="howto"><span>16 modules</span><span>13 worked solutions</span><span>3 flashcard decks</span><span>36 diagrams</span><span>self-paced</span></div>
+  </header>
+
+  <div class="track-head"><h2>Core path</h2><span id="progress-label">0 / 12 done</span></div>
+  <ol class="modules" id="core-list">
+    <li class="mod" data-id="m01"><span class="num">01</span><div class="body"><a class="title" href="01-orientation.html">Orientation</a><p>Why this exists, how a system design interview actually goes, and the back-of-envelope habit you'll reuse everywhere else.</p></div><input type="checkbox" class="chk" aria-label="Mark Orientation done"></li>
+    <li class="mod" data-id="m02"><span class="num">02</span><div class="body"><a class="title" href="02-foundations.html">Foundations</a><p>Scalability, performance vs. scalability, latency vs. throughput, and the latency numbers you'll keep referring back to.</p></div><input type="checkbox" class="chk" aria-label="Mark Foundations done"></li>
+    <li class="mod" data-id="m03"><span class="num">03</span><div class="body"><a class="title" href="03-consistency-availability.html">Consistency &amp; Availability</a><p>CAP theorem, consistency patterns, fail-over and replication, and the "how many 9s" math.</p></div><input type="checkbox" class="chk" aria-label="Mark Consistency and Availability done"></li>
+    <li class="mod" data-id="m04"><span class="num">04</span><div class="body"><a class="title" href="04-dns-cdn.html">DNS &amp; CDN</a><p>How a name becomes an address, and how push/pull CDNs get content closer to users.</p></div><input type="checkbox" class="chk" aria-label="Mark DNS and CDN done"></li>
+    <li class="mod" data-id="m05"><span class="num">05</span><div class="body"><a class="title" href="05-load-balancing-reverse-proxies.html">Load Balancing &amp; Reverse Proxies</a><p>L4 vs L7 balancing, horizontal scaling, and where a reverse proxy earns its keep.</p></div><input type="checkbox" class="chk" aria-label="Mark Load Balancing done"></li>
+    <li class="mod" data-id="m06"><span class="num">06</span><div class="body"><a class="title" href="06-application-layer.html">Application Layer</a><p>Microservices, service discovery, and why splitting the web and app layers pays off.</p></div><input type="checkbox" class="chk" aria-label="Mark Application Layer done"></li>
+    <li class="mod" data-id="m07"><span class="num">07</span><div class="body"><a class="title" href="07-databases.html">Databases</a><p>RDBMS replication, federation, sharding, denormalization, SQL tuning, the NoSQL families, and when to reach for each.</p></div><input type="checkbox" class="chk" aria-label="Mark Databases done"></li>
+    <li class="mod" data-id="m08"><span class="num">08</span><div class="body"><a class="title" href="08-caching.html">Caching</a><p>Every layer you can cache at, and the four update strategies: aside, through, behind, refresh-ahead.</p></div><input type="checkbox" class="chk" aria-label="Mark Caching done"></li>
+    <li class="mod" data-id="m09"><span class="num">09</span><div class="body"><a class="title" href="09-asynchronism.html">Asynchronism</a><p>Message queues, task queues, and back pressure — doing work after you've already answered the request.</p></div><input type="checkbox" class="chk" aria-label="Mark Asynchronism done"></li>
+    <li class="mod" data-id="m10"><span class="num">10</span><div class="body"><a class="title" href="10-communication.html">Communication</a><p>HTTP, TCP, UDP, and the RPC vs. REST call you'll be asked to defend.</p></div><input type="checkbox" class="chk" aria-label="Mark Communication done"></li>
+    <li class="mod" data-id="m11"><span class="num">11</span><div class="body"><a class="title" href="11-security.html">Security</a><p>The baseline checklist for any design you present.</p></div><input type="checkbox" class="chk" aria-label="Mark Security done"></li>
+    <li class="mod" data-id="m12"><span class="num">12</span><div class="body"><a class="title" href="12-flashcard-review.html">Flashcard Review</a><p>All three Anki decks, rebuilt as flip-cards and grouped to match modules 01–11. Use this to drill, not to learn cold.</p></div><input type="checkbox" class="chk" aria-label="Mark Flashcard Review done"></li>
+  </ol>
+
+  <div class="track">
+    <div class="track-head"><h2>Practice path — only after the core path</h2></div>
+    <ol class="modules">
+      <li class="mod" data-id="m13"><span class="num">13</span><div class="body"><a class="title" href="13-exercises.html">Exercises</a><p>The 8 system design prompts and 6 object-oriented design prompts, unsolved — attempt them yourself first.</p></div></li>
+      <li class="mod" data-id="m14"><span class="num">14</span><div class="body"><a class="title" href="14-system-design-solutions.html">System Design Solutions</a><p>Pastebin, Twitter timeline, web crawler, Mint.com, social graph, key-value search store, Amazon sales rank, scaling to millions on AWS.</p>
+        <div class="sub"><a href="14-1-pastebin.html">Pastebin</a><a href="14-2-twitter.html">Twitter</a><a href="14-3-web-crawler.html">Web crawler</a><a href="14-4-mint.html">Mint.com</a><a href="14-5-social-graph.html">Social graph</a><a href="14-6-query-cache.html">Query cache</a><a href="14-7-sales-rank.html">Sales rank</a><a href="14-8-scaling-aws.html">Scaling on AWS</a></div>
+      </div></li>
+      <li class="mod" data-id="m15"><span class="num">15</span><div class="body"><a class="title" href="15-ood-solutions.html">Object-Oriented Design Solutions</a><p>Hash map, LRU cache, call center, deck of cards, parking lot, online chat server.</p>
+        <div class="sub"><a href="15-1-hash-map.html">Hash map</a><a href="15-2-lru-cache.html">LRU cache</a><a href="15-3-call-center.html">Call center</a><a href="15-4-deck-of-cards.html">Deck of cards</a><a href="15-5-parking-lot.html">Parking lot</a><a href="15-6-online-chat.html">Online chat</a></div>
+      </div></li>
+    </ol>
+  </div>
+
+  <div class="track">
+    <div class="track-head"><h2>Reference — dip in anytime</h2></div>
+    <ol class="modules">
+      <li class="mod" data-id="m16"><span class="num">16</span><div class="body"><a class="title" href="16-appendix-reference.html">Appendix &amp; Reference</a><p>Powers of two, real-world architectures, company engineering blogs, and extra practice questions.</p></div></li>
+    </ol>
+  </div>
+
+  <footer>Built from <span class="mono">donnemartin/system-design-primer</span>. Progress is saved only in this browser.</footer>
+</div>
+
+<script>
+(function(){
+  try{
+    var boxes = document.querySelectorAll('.chk');
+    var label = document.getElementById('progress-label');
+    var KEY = 'sdp-progress-v1';
+    var saved = {};
+    try{ saved = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ saved = {}; }
+    function update(){ var done = 0; boxes.forEach(function(b){ if(b.checked) done++; }); if(label) label.textContent = done + ' / ' + boxes.length + ' done'; }
+    boxes.forEach(function(b){
+      var id = b.closest('.mod').dataset.id;
+      b.checked = !!saved[id];
+      b.addEventListener('change', function(){ saved[id] = b.checked; try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){} update(); });
+    });
+    update();
+  }catch(e){}
+})();
+</script>
+</body></html>

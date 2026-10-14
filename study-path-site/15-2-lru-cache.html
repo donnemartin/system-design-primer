@@ -1,0 +1,112 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>LRU Cache — OOD Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+.backlink{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted)} .backlink:hover{color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 10px}
+.badge{display:inline-block;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;letter-spacing:.04em;margin-left:8px}
+h1{font-size:clamp(26px,5vw,36px);margin:0 0 14px;text-wrap:balance;font-weight:700} h2{font-size:21px;margin:34px 0 10px} p{max-width:68ch} .lede{color:var(--muted);font-size:16px}
+.classlist{list-style:none;margin:14px 0;padding:0;border-top:1px solid var(--border)} .classlist li{padding:11px 2px;border-bottom:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap} .classlist .cname{font-family:"IBM Plex Mono";font-weight:600;min-width:140px;color:var(--accent)} .classlist .cdesc{color:var(--muted);font-size:14.5px;flex:1;min-width:0}
+ul.points{padding-left:20px} ul.points li{margin-bottom:8px}
+.note{border-left:3px solid var(--accent-2);padding:10px 14px;background:var(--accent-soft);border-radius:0 6px 6px 0;font-size:14px;color:var(--fg);margin:18px 0}
+.warn{border-left:3px solid #c0392b;padding:10px 14px;background:var(--accent-soft);border-radius:0 6px 6px 0;font-size:14px;color:var(--fg);margin:18px 0}
+details{margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} summary{cursor:pointer;padding:12px 16px;font-family:"IBM Plex Mono";font-size:13px;background:var(--accent-soft);color:var(--accent);list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸ "} details[open] summary::before{content:"▾ "}
+pre{margin:0;padding:16px;overflow-x:auto;background:var(--code-bg);color:var(--code-fg);font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.65}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <a class="backlink" href="00-home.html">← Course Map</a>
+  <p class="eyebrow">The System Design Primer — Study Path <span class="badge">Module 15.2</span></p>
+  <h1>Design a least-recently-used (LRU) cache</h1>
+  <p class="lede">A fixed-capacity cache that, once full, evicts whichever entry hasn't been touched the longest — while keeping both lookup and eviction at O(1).</p>
+  <h2>The problem</h2>
+  <p>A plain dict gives you O(1) <span class="mono">get</span>/<span class="mono">set</span>, but no sense of "oldest" or "newest." A plain linked list gives you ordering, but finding an item in it means scanning. An LRU cache needs <em>both</em> at once: instant lookup <strong>and</strong> instant re-ordering by recency. The classic answer is to combine them.</p>
+  <h2>Classes at a glance</h2>
+  <ul class="classlist">
+    <li><span class="cname">Node</span><span class="cdesc">One cache entry, living inside the linked list. Holds the cached <span class="mono">results</span>.</span></li>
+    <li><span class="cname">LinkedList</span><span class="cdesc">Tracks recency order. The front is "most recently used," the tail is "least recently used" — the next thing to evict.</span></li>
+    <li><span class="cname">Cache</span><span class="cdesc">The public API. Pairs a <span class="mono">lookup</span> dict (query → node) for instant access with the <span class="mono">LinkedList</span> for instant re-ordering.</span></li>
+  </ul>
+  <h2>Key design decisions</h2>
+  <ul class="points">
+    <li><strong>Hash map + doubly linked list is the whole trick.</strong> The dict gives O(1) "does this key exist, and where." The linked list gives O(1) "move this to the front" and "drop whatever's at the tail" — neither structure alone can do both jobs cheaply.</li>
+    <li><strong>On a hit, move to front.</strong> <span class="mono">get()</span> and the update branch of <span class="mono">set()</span> both call <span class="mono">move_to_front</span> — touching an entry is what "recently used" means.</li>
+    <li><strong>On a miss at capacity, evict from the tail first.</strong> <span class="mono">set()</span> checks <span class="mono">self.size == self.MAX_SIZE</span>; if full, it removes the tail node from both the list <em>and</em> the lookup dict before inserting the new entry — forgetting the dict side of an eviction is the most common bug in a real interview attempt.</li>
+  </ul>
+  <div class="warn"><strong>Read this before you trust the code as-is:</strong> this sample is intentionally a skeleton, and it's worth noticing exactly where. The three <span class="mono">LinkedList</span> methods (<span class="mono">move_to_front</span>, <span class="mono">append_to_front</span>, <span class="mono">remove_from_tail</span>) are all stubbed with <span class="mono">pass</span> — they describe the shape of the solution an interviewer wants sketched, not a finished implementation. And <span class="mono">Node.__init__</span> has a real bug: <span class="mono">self.next = next</span> accidentally assigns Python's built-in <span class="mono">next()</span> function instead of initializing an empty link — it should be <span class="mono">self.next = None</span>, plus a <span class="mono">self.prev = None</span> (a doubly linked list needs a <em>previous</em> pointer too, or you can't splice a node out of the middle in O(1)). Spotting that kind of thing is exactly the sort of close reading an interviewer rewards.</div>
+  <details><summary>Show full code — lru_cache.py (as shipped in the repo, bug included)</summary><pre><code>class Node(object):
+
+    def __init__(self, results):
+        self.results = results
+        self.next = next
+
+
+class LinkedList(object):
+
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def move_to_front(self, node):
+        pass
+
+    def append_to_front(self, node):
+        pass
+
+    def remove_from_tail(self):
+        pass
+
+
+class Cache(object):
+
+    def __init__(self, MAX_SIZE):
+        self.MAX_SIZE = MAX_SIZE
+        self.size = 0
+        self.lookup = {}  # key: query, value: node
+        self.linked_list = LinkedList()
+
+    def get(self, query):
+        """Get the stored query result from the cache.
+
+        Accessing a node updates its position to the front of the LRU list.
+        """
+        node = self.lookup.get(query)
+        if node is None:
+            return None
+        self.linked_list.move_to_front(node)
+        return node.results
+
+    def set(self, results, query):
+        """Set the result for the given query key in the cache.
+
+        When updating an entry, updates its position to the front of the LRU list.
+        If the entry is new and the cache is at capacity, removes the oldest entry
+        before the new entry is added.
+        """
+        node = self.lookup.get(query)
+        if node is not None:
+            # Key exists in cache, update the value
+            node.results = results
+            self.linked_list.move_to_front(node)
+        else:
+            # Key does not exist in cache
+            if self.size == self.MAX_SIZE:
+                # Remove the oldest entry from the linked list and lookup
+                self.lookup.pop(self.linked_list.tail.query, None)
+                self.linked_list.remove_from_tail()
+            else:
+                self.size += 1
+            # Add the new key and value
+            new_node = Node(results)
+            self.linked_list.append_to_front(new_node)
+            self.lookup[query] = new_node</code></pre></details>
+  <footer>Source: <span class="mono">solutions/object_oriented_design/lru_cache/lru_cache.py</span></footer>
+</div>
+</body></html>

@@ -1,0 +1,153 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Communication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px} .topnav a{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 10px} .topnav a:hover{color:var(--accent);border-color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 24px;margin-bottom:28px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.badge{background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:2px 8px;font-weight:600}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0}
+figure{margin:28px 0} figure img{display:block;width:100%;max-height:380px;object-fit:contain;background:var(--surface);border-radius:8px;border:1px solid var(--border)} figcaption{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+h2{font-size:22px;margin:42px 0 10px;font-weight:700;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{border-top:none;padding-top:0}
+h3{font-size:16px;margin:20px 0 8px;font-weight:600;color:var(--accent-2)}
+p{margin:0 0 14px;font-size:15.5px} ul{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px;font-size:15.5px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;display:block;overflow-x:auto} th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;white-space:nowrap} th{background:var(--accent-soft);color:var(--accent);font-family:"IBM Plex Mono";font-size:12px;text-transform:uppercase;letter-spacing:.04em} td.mono{font-family:"IBM Plex Mono"}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:16px 0} .callout b{color:var(--accent)}
+.codebox{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:14px 16px;overflow-x:auto;font-family:"IBM Plex Mono";font-size:13px;margin:14px 0;line-height:1.6}
+.sources{background:var(--accent-soft);border-radius:8px;padding:14px 16px;margin-top:34px} .sources h3{margin-top:0;color:var(--accent)} .sources ul{margin-bottom:0} .sources a{color:var(--fg)}
+.nextbox{margin-top:40px;border:1px dashed var(--border);border-radius:10px;padding:16px;text-align:center;color:var(--muted);font-family:"IBM Plex Mono";font-size:13px} .nextbox a{color:var(--fg);text-decoration:none} .nextbox a:hover{color:var(--accent)}
+@media (max-width:480px){ table{font-size:13px} th,td{padding:6px 8px} }
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">← Course Map</a><span class="mono" style="color:var(--muted); font-size:13px">Module 10 / 16</span></nav>
+  <header class="hero">
+    <p class="eyebrow"><span class="badge">10</span> The System Design Primer — Study Path</p>
+    <h1>Communication</h1>
+    <p class="lede">How machines actually talk to each other: the transport protocols underneath everything (TCP, UDP), the request protocol on top of them (HTTP), and the two competing styles for designing an API (RPC, REST).</p>
+  </header>
+  <figure><img src="assets/images/5KeocQs.jpg" alt="OSI 7 layer model"><figcaption>Source: <a href="http://www.escotal.com/osilayer.html" target="_blank" rel="noopener">OSI 7 layer model</a></figcaption></figure>
+  <h2>Hypertext transfer protocol (HTTP)</h2>
+  <p>HTTP is a method for encoding and transporting data between a client and a server. It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request. HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.</p>
+  <p>A basic HTTP request consists of a verb (method) and a resource (endpoint). Below are the common HTTP verbs:</p>
+  <table><tr><th>Verb</th><th>Description</th><th>Idempotent*</th><th>Safe</th><th>Cacheable</th></tr>
+    <tr><td class="mono">GET</td><td>Reads a resource</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td class="mono">POST</td><td>Creates a resource or triggers a process that handles data</td><td>No</td><td>No</td><td>Yes if response contains freshness info</td></tr>
+    <tr><td class="mono">PUT</td><td>Creates or replaces a resource</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td class="mono">PATCH</td><td>Partially updates a resource</td><td>No</td><td>No</td><td>Yes if response contains freshness info</td></tr>
+    <tr><td class="mono">DELETE</td><td>Deletes a resource</td><td>Yes</td><td>No</td><td>No</td></tr>
+  </table>
+  <p style="font-size:13px; color:var(--muted)">*Can be called many times without different outcomes.</p>
+  <p>HTTP is an application layer protocol relying on lower-level protocols such as <b>TCP</b> and <b>UDP</b> — the two you'll meet next.</p>
+  <div class="sources" style="margin-top:10px"><h3>Source(s): HTTP</h3><ul>
+    <li><a href="https://www.nginx.com/resources/glossary/http/" target="_blank" rel="noopener">What is HTTP?</a></li>
+    <li><a href="https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol" target="_blank" rel="noopener">Difference between HTTP and TCP</a></li>
+    <li><a href="https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1" target="_blank" rel="noopener">Difference between PUT and PATCH</a></li>
+  </ul></div>
+
+  <h2>Transmission control protocol (TCP)</h2>
+  <figure><img src="assets/images/JdAsdvG.jpg" alt="TCP handshake diagram"><figcaption>Source: <a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/" target="_blank" rel="noopener">How to make a multiplayer game</a></figcaption></figure>
+  <p>TCP is a connection-oriented protocol over an <a href="https://en.wikipedia.org/wiki/Internet_Protocol" target="_blank" rel="noopener">IP network</a>. Connection is established and terminated using a <a href="https://en.wikipedia.org/wiki/Handshaking" target="_blank" rel="noopener">handshake</a>. All packets sent are guaranteed to reach the destination in the original order and without corruption through:</p>
+  <ul><li>Sequence numbers and <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation" target="_blank" rel="noopener">checksum fields</a> for each packet</li><li><a href="https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)" target="_blank" rel="noopener">Acknowledgement</a> packets and automatic retransmission</li></ul>
+  <p>If the sender does not receive a correct response, it will resend the packets. If there are multiple timeouts, the connection is dropped. TCP also implements <a href="https://en.wikipedia.org/wiki/Flow_control_(data)" target="_blank" rel="noopener">flow control</a> and <a href="https://en.wikipedia.org/wiki/Network_congestion#Congestion_control" target="_blank" rel="noopener">congestion control</a>. These guarantees cause delays and generally result in less efficient transmission than UDP.</p>
+  <p>To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage. It can be expensive to have a large number of open connections between web server threads and, say, a <a href="https://memcached.org/" target="_blank" rel="noopener">memcached</a> server. <a href="https://en.wikipedia.org/wiki/Connection_pool" target="_blank" rel="noopener">Connection pooling</a> can help, in addition to switching to UDP where applicable.</p>
+  <p>TCP is useful for applications that require high reliability but are less time critical. Some examples include web servers, database info, SMTP, FTP, and SSH.</p>
+  <div class="callout"><b>Use TCP over UDP when</b><ul style="margin-top:8px"><li>You need all of the data to arrive intact</li><li>You want to automatically make a best estimate use of the network throughput</li></ul></div>
+
+  <h2>User datagram protocol (UDP)</h2>
+  <figure><img src="assets/images/yzDrJtA.jpg" alt="UDP diagram"><figcaption>Source: <a href="http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/" target="_blank" rel="noopener">How to make a multiplayer game</a></figcaption></figure>
+  <p>UDP is connectionless. Datagrams (analogous to packets) are guaranteed only at the datagram level. Datagrams might reach their destination out of order, or not at all. UDP does not support congestion control. Without the guarantees that TCP supports, UDP is generally more efficient.</p>
+  <p>UDP can broadcast, sending datagrams to all devices on the subnet. This is useful with <a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol" target="_blank" rel="noopener">DHCP</a> because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address.</p>
+  <p>UDP is less reliable but works well in real time use cases such as VoIP, video chat, streaming, and realtime multiplayer games.</p>
+  <div class="callout"><b>Use UDP over TCP when</b><ul style="margin-top:8px"><li>You need the lowest latency</li><li>Late data is worse than loss of data</li><li>You want to implement your own error correction</li></ul></div>
+  <div class="sources" style="margin-top:10px"><h3>Source(s): TCP and UDP</h3><ul>
+    <li><a href="https://gafferongames.com/post/udp_vs_tcp/" target="_blank" rel="noopener">Networking for game programming</a></li>
+    <li><a href="http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/" target="_blank" rel="noopener">Key differences between TCP and UDP protocols</a></li>
+    <li><a href="http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp" target="_blank" rel="noopener">Difference between TCP and UDP</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank" rel="noopener">Transmission control protocol</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol" target="_blank" rel="noopener">User datagram protocol</a></li>
+    <li><a href="http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf" target="_blank" rel="noopener">Scaling memcache at Facebook</a></li>
+  </ul></div>
+
+  <h2>Remote procedure call (RPC)</h2>
+  <figure><img src="assets/images/iF4Mkb5.png" alt="RPC diagram"><figcaption>Source: <a href="http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview" target="_blank" rel="noopener">Crack the system design interview</a></figcaption></figure>
+  <p>In an RPC, a client causes a procedure to execute on a different address space, usually a remote server. The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program. Remote calls are usually slower and less reliable than local calls, so it is helpful to distinguish RPC calls from local calls. Popular RPC frameworks include <a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="noopener">Protobuf</a>, <a href="https://thrift.apache.org/" target="_blank" rel="noopener">Thrift</a>, and <a href="https://avro.apache.org/docs/current/" target="_blank" rel="noopener">Avro</a>.</p>
+  <p>RPC is a request-response protocol:</p>
+  <ul>
+    <li><b>Client program</b> — calls the client stub procedure. The parameters are pushed onto the stack like a local procedure call.</li>
+    <li><b>Client stub procedure</b> — marshals (packs) procedure id and arguments into a request message.</li>
+    <li><b>Client communication module</b> — OS sends the message from the client to the server.</li>
+    <li><b>Server communication module</b> — OS passes the incoming packets to the server stub procedure.</li>
+    <li><b>Server stub procedure</b> — unmarshals the results, calls the server procedure matching the procedure id, and passes the given arguments.</li>
+    <li>The server response repeats the steps above in reverse order.</li>
+  </ul>
+  <p>Sample RPC calls:</p>
+  <div class="codebox">GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+  "data":"anId";
+  "anotherdata": "another value"
+}</div>
+  <p>RPC is focused on exposing behaviors. RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.</p>
+  <div class="callout"><b>Choose a native library (SDK) when</b><ul style="margin-top:8px"><li>You know your target platform.</li><li>You want to control how your "logic" is accessed.</li><li>You want to control how error control happens off your library.</li><li>Performance and end user experience is your primary concern.</li></ul></div>
+  <p>HTTP APIs following <b>REST</b> tend to be used more often for public APIs.</p>
+  <div class="callout"><b>Disadvantage(s): RPC</b><ul style="margin-top:8px">
+    <li>RPC clients become tightly coupled to the service implementation.</li>
+    <li>A new API must be defined for every new operation or use case.</li>
+    <li>It can be difficult to debug RPC.</li>
+    <li>You might not be able to leverage existing technologies out of the box — for example, <a href="https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/" target="_blank" rel="noopener">RPC calls may need extra effort to cache properly</a> on servers such as <a href="http://www.squid-cache.org/" target="_blank" rel="noopener">Squid</a>.</li>
+  </ul></div>
+
+  <h2>Representational state transfer (REST)</h2>
+  <p>REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server. The server provides a representation of resources and actions that can either manipulate or get a new representation of resources. All communication must be stateless and cacheable.</p>
+  <p>There are four qualities of a RESTful interface:</p>
+  <ul>
+    <li><b>Identify resources (URI in HTTP)</b> — use the same URI regardless of any operation.</li>
+    <li><b>Change with representations (Verbs in HTTP)</b> — use verbs, headers, and body.</li>
+    <li><b>Self-descriptive error message (status response in HTTP)</b> — use status codes, don't reinvent the wheel.</li>
+    <li><b><a href="http://restcookbook.com/Basics/hateoas/" target="_blank" rel="noopener">HATEOAS</a> (HTML interface for HTTP)</b> — your web service should be fully accessible in a browser.</li>
+  </ul>
+  <p>Sample REST calls:</p>
+  <div class="codebox">GET /someresources/anId
+
+PUT /someresources/anId
+{"anotherdata": "another value"}</div>
+  <p>REST is focused on exposing data. It minimizes the coupling between client/server and is often used for public HTTP APIs. REST uses a more generic and uniform method of exposing resources through URIs, <a href="https://github.com/for-GET/know-your-http-well/blob/master/headers.md" target="_blank" rel="noopener">representation through headers</a>, and actions through verbs such as GET, POST, PUT, DELETE, and PATCH. Being stateless, REST is great for horizontal scaling and partitioning.</p>
+  <div class="callout"><b>Disadvantage(s): REST</b><ul style="margin-top:8px">
+    <li>With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy. For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path — it likely needs a combination of URI path, query parameters, and possibly the request body.</li>
+    <li>REST typically relies on a few verbs (GET, POST, PUT, DELETE, PATCH), which sometimes doesn't fit your use case — e.g. moving expired documents to an archive folder doesn't cleanly map to any of them.</li>
+    <li>Fetching complicated resources with nested hierarchies requires multiple round trips to render single views (e.g. a blog entry plus its comments) — costly for mobile apps on variable networks.</li>
+    <li>Over time, more fields get added to an API response and older clients receive data they don't need, bloating payload size and latency.</li>
+  </ul></div>
+
+  <h2>RPC and REST calls comparison</h2>
+  <table><tr><th>Operation</th><th>RPC</th><th>REST</th></tr>
+    <tr><td>Signup</td><td class="mono">POST /signup</td><td class="mono">POST /persons</td></tr>
+    <tr><td>Resign</td><td class="mono">POST /resign {personid:1234}</td><td class="mono">DELETE /persons/1234</td></tr>
+    <tr><td>Read a person</td><td class="mono">GET /readPerson?personid=1234</td><td class="mono">GET /persons/1234</td></tr>
+    <tr><td>Read a person's items</td><td class="mono">GET /readUsersItemsList?personid=1234</td><td class="mono">GET /persons/1234/items</td></tr>
+    <tr><td>Add an item</td><td class="mono">POST /addItemToUsersItemsList {personid,itemid}</td><td class="mono">POST /persons/1234/items {itemid}</td></tr>
+    <tr><td>Update an item</td><td class="mono">POST /modifyItem {itemid,key,value}</td><td class="mono">PUT /items/456 {key,value}</td></tr>
+    <tr><td>Delete an item</td><td class="mono">POST /removeItem {itemid}</td><td class="mono">DELETE /items/456</td></tr>
+  </table>
+  <p style="text-align:center; font-size:13px; color:var(--muted)">Source: <a href="https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/" target="_blank" rel="noopener">Do you really know why you prefer REST over RPC</a></p>
+  <div class="sources"><h3>Source(s): REST and RPC</h3><ul>
+    <li><a href="https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/" target="_blank" rel="noopener">Do you really know why you prefer REST over RPC</a></li>
+    <li><a href="http://programmers.stackexchange.com/a/181186" target="_blank" rel="noopener">When are RPC-ish approaches more appropriate than REST?</a></li>
+    <li><a href="http://stackoverflow.com/questions/15056878/rest-vs-json-rpc" target="_blank" rel="noopener">REST vs JSON-RPC</a></li>
+    <li><a href="https://web.archive.org/web/20170608193645/http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/" target="_blank" rel="noopener">Debunking the myths of RPC and REST</a></li>
+    <li><a href="https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs" target="_blank" rel="noopener">What are the drawbacks of using REST</a></li>
+    <li><a href="http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview" target="_blank" rel="noopener">Crack the system design interview</a></li>
+    <li><a href="https://code.facebook.com/posts/1468950976659943/" target="_blank" rel="noopener">Thrift</a></li>
+    <li><a href="http://arstechnica.com/civis/viewtopic.php?t=1190508" target="_blank" rel="noopener">Why REST for internal use and not RPC</a></li>
+  </ul></div>
+  <div class="nextbox">Next: <a href="11-security.html">Module 11 — Security</a></div>
+</div>
+</body></html>

@@ -1,0 +1,100 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Load Balancing &amp; Reverse Proxies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
+.topbar a.back{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 12px} .topbar a.back:hover{color:var(--accent);border-color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.modbadge{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:13px;color:var(--muted);background:var(--accent-soft);border-radius:6px;padding:5px 10px;margin-bottom:14px} .modbadge b{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 14px;text-wrap:balance;font-weight:700}
+h2{font-size:21px;margin:38px 0 10px;font-weight:700;border-top:1px solid var(--border);padding-top:22px} h3{font-size:17px;margin:24px 0 8px;font-weight:600;color:var(--accent)}
+p{margin:0 0 14px;max-width:68ch} ul,ol{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px}
+figure{margin:18px 0 22px;text-align:center} figure img{max-width:100%;border-radius:8px;border:1px solid var(--border);background:var(--surface)} figcaption{font-size:12.5px;color:var(--muted);margin-top:8px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:16px 0} .callout.warn{border-left-color:var(--accent-2)} .callout b{color:var(--accent)}
+.sources{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-top:16px} .sources h3{margin-top:0} .sources li{font-size:14px}
+footer.nav{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;font-family:"IBM Plex Mono";font-size:13px;flex-wrap:wrap} footer.nav a{text-decoration:none} .next-label{color:var(--fg)} .next-label:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <div class="topbar"><p class="eyebrow" style="margin:0">The System Design Primer — Study Path</p><a class="back" href="00-home.html">&larr; Course Map</a></div>
+  <span class="modbadge"><b>MODULE 05</b> · Load Balancing &amp; Reverse Proxies</span>
+  <h1>Spreading load, and standing in front of it</h1>
+  <p>You now know how a request finds a server (DNS) and how static content gets served near the user (CDN). This module covers the two pieces that sit in front of your actual application servers: the <b>load balancer</b>, which spreads traffic across many servers, and the <b>reverse proxy</b>, which centralizes and protects what's behind it — even when there's only one server.</p>
+
+  <h2>Load balancer</h2>
+  <figure><img src="assets/images/h81n9iK.png" alt="Load balancer diagram"><figcaption>Source: <a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">Scalable system design patterns</a></figcaption></figure>
+  <p>Load balancers distribute incoming client requests to computing resources such as application servers and databases. In each case, the load balancer returns the response from the computing resource to the appropriate client. Load balancers are effective at:</p>
+  <ul><li>Preventing requests from going to unhealthy servers</li><li>Preventing overloading resources</li><li>Helping to eliminate a single point of failure</li></ul>
+  <p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.</p>
+  <h3>Additional benefits</h3>
+  <ul>
+    <li><b>SSL termination</b> — decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations. This removes the need to install <a href="https://en.wikipedia.org/wiki/X.509">X.509 certificates</a> on each server.</li>
+    <li><b>Session persistence</b> — issue cookies and route a specific client's requests to the same instance if the web apps do not keep track of sessions.</li>
+  </ul>
+  <p>To protect against failures, it's common to set up multiple load balancers, either in <b>active-passive</b> or <b>active-active</b> mode (you met these in Module 03's availability patterns).</p>
+  <p>Load balancers can route traffic based on various metrics, including:</p>
+  <ul><li>Random</li><li>Least loaded</li><li>Session/cookies</li><li><a href="https://www.g33kinfo.com/info/round-robin-vs-weighted-round-robin-lb">Round robin or weighted round robin</a></li><li>Layer 4</li><li>Layer 7</li></ul>
+  <h3>Layer 4 load balancing</h3>
+  <p>Layer 4 load balancers look at info at the transport layer to decide how to distribute requests. Generally, this involves the source and destination IP addresses and ports in the header, but not the contents of the packet. Layer 4 load balancers forward network packets to and from the upstream server, performing <a href="https://web.archive.org/web/20240117134735/https://www.nginx.com/resources/glossary/layer-4-load-balancing/">Network Address Translation (NAT)</a>.</p>
+  <h3>Layer 7 load balancing</h3>
+  <p>Layer 7 load balancers look at the application layer to decide how to distribute requests. This can involve the contents of the header, message, and cookies. Layer 7 load balancers terminate network traffic, read the message, make a load-balancing decision, then open a connection to the selected server. For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.</p>
+  <p>At the cost of flexibility, layer 4 load balancing requires less time and computing resources than layer 7, although the performance impact can be minimal on modern commodity hardware.</p>
+  <h3>Horizontal scaling</h3>
+  <p>Load balancers can also help with horizontal scaling, improving performance and availability. Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called <b>vertical scaling</b>. It's also easier to hire for talent working on commodity hardware than for specialized enterprise systems.</p>
+  <div class="callout warn"><b>Disadvantage(s): horizontal scaling</b><ul style="margin-top:8px">
+    <li>Scaling horizontally introduces complexity and involves cloning servers — servers should be <b>stateless</b>: they should not contain any user-related data like sessions or profile pictures. Sessions can be stored in a centralized data store such as a database (SQL, NoSQL) or a persistent cache (Redis, Memcached).</li>
+    <li>Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out.</li>
+  </ul></div>
+  <div class="callout warn"><b>Disadvantage(s): load balancer</b><ul style="margin-top:8px">
+    <li>The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.</li>
+    <li>Introducing a load balancer to help eliminate a single point of failure results in increased complexity.</li>
+    <li>A single load balancer is itself a single point of failure — configuring multiple load balancers further increases complexity.</li>
+  </ul></div>
+  <div class="sources"><h3>Source(s) and further reading</h3><ul>
+    <li><a href="https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/">NGINX architecture</a></li>
+    <li><a href="http://www.haproxy.org/download/1.2/doc/architecture.txt">HAProxy architecture guide</a></li>
+    <li><a href="https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones">Scalability</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Load_balancing_(computing)">Wikipedia</a></li>
+    <li><a href="https://www.nginx.com/resources/glossary/layer-4-load-balancing/">Layer 4 load balancing</a></li>
+    <li><a href="https://www.nginx.com/resources/glossary/layer-7-load-balancing/">Layer 7 load balancing</a></li>
+    <li><a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">ELB listener config</a></li>
+  </ul></div>
+
+  <h2>Reverse proxy (web server)</h2>
+  <figure><img src="assets/images/n41Azff.png" alt="Reverse proxy diagram"><figcaption>Source: <a href="https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg">Wikipedia</a></figcaption></figure>
+  <p>A reverse proxy is a web server that centralizes internal services and provides a unified interface to the public. Requests from clients are forwarded to a server that can fulfill them before the reverse proxy returns that server's response to the client.</p>
+  <h3>Additional benefits</h3>
+  <ul>
+    <li><b>Increased security</b> — hide information about backend servers, blacklist IPs, limit the number of connections per client.</li>
+    <li><b>Increased scalability and flexibility</b> — clients only see the reverse proxy's IP, allowing you to scale servers or change their configuration.</li>
+    <li><b>SSL termination</b> — same benefit as on a load balancer: backend servers skip the expensive decrypt/encrypt work, and you only need X.509 certificates in one place.</li>
+    <li><b>Compression</b> — compress server responses.</li>
+    <li><b>Caching</b> — return the response for cached requests.</li>
+    <li><b>Static content</b> — serve HTML/CSS/JS, photos, videos, etc. directly.</li>
+  </ul>
+  <h3>Load balancer vs. reverse proxy</h3>
+  <ul>
+    <li>Deploying a load balancer is useful when you have multiple servers. Often, load balancers route traffic to a set of servers serving the same function.</li>
+    <li>Reverse proxies can be useful even with just one web server or application server, opening up the benefits described above.</li>
+    <li>Solutions such as NGINX and HAProxy can support both layer 7 reverse proxying and load balancing.</li>
+  </ul>
+  <div class="callout warn"><b>Disadvantage(s): reverse proxy</b><ul style="margin-top:8px">
+    <li>Introducing a reverse proxy results in increased complexity.</li>
+    <li>A single reverse proxy is a single point of failure — configuring multiple reverse proxies (i.e. a <a href="https://en.wikipedia.org/wiki/Failover">failover</a>) further increases complexity.</li>
+  </ul></div>
+  <div class="sources"><h3>Source(s) and further reading</h3><ul>
+    <li><a href="https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/">Reverse proxy vs load balancer</a></li>
+    <li><a href="https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/">NGINX architecture</a></li>
+    <li><a href="http://www.haproxy.org/download/1.2/doc/architecture.txt">HAProxy architecture guide</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Reverse_proxy">Wikipedia</a></li>
+  </ul></div>
+
+  <footer class="nav"><a href="00-home.html">&larr; Course Map</a><a class="next-label" href="06-application-layer.html">Next: Module 06 — Application Layer</a></footer>
+</div>
+</body></html>

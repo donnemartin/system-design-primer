@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Security</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px} .topnav a{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 10px} .topnav a:hover{color:var(--accent);border-color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 24px;margin-bottom:28px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.badge{background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:2px 8px;font-weight:600}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:60ch;margin:0}
+p{margin:0 0 14px;font-size:15.5px}
+.checklist{display:flex;flex-direction:column;gap:0;margin:20px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden} .checklist .item{display:flex;gap:12px;padding:16px;background:var(--surface);border-bottom:1px solid var(--border)} .checklist .item:last-child{border-bottom:none} .checklist .item .mark{font-family:"IBM Plex Mono";color:var(--done);font-weight:700}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+.sources{background:var(--accent-soft);border-radius:8px;padding:14px 16px;margin-top:34px} .sources h3{margin-top:0;color:var(--accent)} .sources ul{margin:0;padding-left:22px} .sources a{color:var(--fg)}
+.nextbox{margin-top:40px;border:1px dashed var(--border);border-radius:10px;padding:16px;text-align:center;color:var(--muted);font-family:"IBM Plex Mono";font-size:13px} .nextbox a{color:var(--fg);text-decoration:none} .nextbox a:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">← Course Map</a><span class="mono" style="color:var(--muted); font-size:13px">Module 11 / 16</span></nav>
+  <header class="hero">
+    <p class="eyebrow"><span class="badge">11</span> The System Design Primer — Study Path</p>
+    <h1>Security</h1>
+    <p class="lede">The last concept module before you move to flashcards and practice. Security is a huge field on its own — here's the floor every design should clear.</p>
+  </header>
+  <p>Security is a broad topic. Unless you have considerable experience, a security background, or are applying for a position that requires knowledge of security, you probably won't need to know more than the basics below.</p>
+  <div class="checklist">
+    <div class="item"><span class="mark">✓</span><span>Encrypt in transit and at rest.</span></div>
+    <div class="item"><span class="mark">✓</span><span>Sanitize all user inputs, or any input parameters exposed to a user, to prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">XSS</a> and <a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank" rel="noopener">SQL injection</a>.</span></div>
+    <div class="item"><span class="mark">✓</span><span>Use parameterized queries to prevent SQL injection.</span></div>
+    <div class="item"><span class="mark">✓</span><span>Use the principle of <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege" target="_blank" rel="noopener">least privilege</a>.</span></div>
+  </div>
+  <div class="note">This is one of the thinner sections of the original primer — it notes that the topic "could use some updates." Treat the checklist above as a floor, not a ceiling: in an interview, naming these four unprompted already signals you're thinking about security at all.</div>
+  <div class="sources"><h3>Source(s) and further reading</h3><ul><li><a href="https://github.com/shieldfy/API-Security-Checklist" target="_blank" rel="noopener">API security checklist</a></li></ul></div>
+  <div class="nextbox">That's the core path. Next: <a href="12-flashcard-review.html">Module 12 — Flashcard Review</a></div>
+</div>
+</body></html>

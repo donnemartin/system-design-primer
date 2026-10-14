@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Application Layer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
+.topbar a.back{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 12px} .topbar a.back:hover{color:var(--accent);border-color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.modbadge{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:13px;color:var(--muted);background:var(--accent-soft);border-radius:6px;padding:5px 10px;margin-bottom:14px} .modbadge b{color:var(--accent)}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 14px;text-wrap:balance;font-weight:700}
+h2{font-size:21px;margin:38px 0 10px;font-weight:700;border-top:1px solid var(--border);padding-top:22px}
+p{margin:0 0 14px;max-width:68ch} ul,ol{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px}
+figure{margin:18px 0 22px;text-align:center} figure img{max-width:100%;border-radius:8px;border:1px solid var(--border);background:var(--surface)} figcaption{font-size:12.5px;color:var(--muted);margin-top:8px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:16px 0} .callout.warn{border-left-color:var(--accent-2)} .callout b{color:var(--accent)}
+.example{background:var(--accent-soft);border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14.5px} .example b{color:var(--accent)}
+.sources{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-top:16px} .sources h3{margin-top:0} .sources li{font-size:14px}
+footer.nav{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;font-family:"IBM Plex Mono";font-size:13px;flex-wrap:wrap} footer.nav a{text-decoration:none} .next-label{color:var(--fg)} .next-label:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <div class="topbar"><p class="eyebrow" style="margin:0">The System Design Primer — Study Path</p><a class="back" href="00-home.html">&larr; Course Map</a></div>
+  <span class="modbadge"><b>MODULE 06</b> · Application Layer</span>
+  <h1>Splitting "serving the web" from "doing the work"</h1>
+  <p>So far you've covered the pieces that get a request to a server. This module is about what's on the other side of the load balancer: the <b>application layer</b> (also called the platform layer) — where the actual business logic runs, separate from the web layer that just handles HTTP.</p>
+  <figure><img src="assets/images/yB5SYwm.png" alt="Application layer diagram"><figcaption>Source: <a href="http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer">Intro to architecting systems for scale</a></figcaption></figure>
+  <p>Separating the web layer from the application layer lets you scale and configure both independently. Adding a new API results in adding application servers without necessarily adding additional web servers. The <b>single responsibility principle</b> advocates for small, autonomous services that work together — small teams with small services can plan more aggressively for rapid growth.</p>
+  <p>Workers in the application layer also help enable asynchronism, which is Module 09.</p>
+  <h2>Microservices</h2>
+  <p><a href="https://en.wikipedia.org/wiki/Microservices">Microservices</a> can be described as a suite of independently deployable, small, modular services. Each service runs a unique process and communicates through a well-defined, lightweight mechanism to serve a business goal.</p>
+  <div class="example"><b>Example:</b> Pinterest could have the following microservices: user profile, follower, feed, search, photo upload, etc. — each one deployed, scaled, and owned separately.</div>
+  <h2>Service discovery</h2>
+  <p>Systems such as <a href="https://www.consul.io/docs/index.html">Consul</a>, <a href="https://coreos.com/etcd/docs/latest">Etcd</a>, and <a href="http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper">Zookeeper</a> help services find each other by keeping track of registered names, addresses, and ports. <a href="https://www.consul.io/intro/getting-started/checks.html">Health checks</a> help verify service integrity and are often done using an HTTP endpoint (Module 10 covers HTTP). Both Consul and Etcd have a built-in key-value store (Module 07 covers this) that's useful for storing config values and other shared data.</p>
+  <div class="callout warn"><b>Disadvantage(s): application layer</b><ul style="margin-top:8px">
+    <li>Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint, compared to a monolithic system.</li>
+    <li>Microservices can add complexity in terms of deployments and operations.</li>
+  </ul></div>
+  <div class="sources"><h3>Source(s) and further reading</h3><ul>
+    <li><a href="http://lethain.com/introduction-to-architecting-systems-for-scale">Intro to architecting systems for scale</a></li>
+    <li><a href="http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview">Crack the system design interview</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">Service oriented architecture</a></li>
+    <li><a href="http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper">Introduction to Zookeeper</a></li>
+    <li><a href="https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/">Here's what you need to know about building microservices</a></li>
+  </ul></div>
+  <footer class="nav"><a href="00-home.html">&larr; Course Map</a><a class="next-label" href="07-databases.html">Next: Module 07 — Databases</a></footer>
+</div>
+</body></html>

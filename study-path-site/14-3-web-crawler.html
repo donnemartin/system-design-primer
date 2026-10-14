@@ -1,0 +1,169 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Web Crawler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design a web crawler"</p>
+  <h1>Web Crawler</h1>
+  <p class="lede">Build the crawling + indexing pipeline that a search engine runs underneath — deliberately without reaching for an existing system like Solr or Nutch, so the components stay visible.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <ul>
+    <li><strong>Service</strong> crawls a list of urls, builds a reverse index (word → pages), and generates static titles/snippets per page</li>
+    <li><strong>User</strong> searches a term and gets back ranked pages with titles/snippets (sketched only — not the focus)</li>
+    <li><strong>Service</strong> is highly available</li>
+  </ul>
+  <p><strong>Out of scope:</strong> search analytics, personalized results, page rank.</p>
+  <div class="constraints"><strong>What makes this one hard:</strong><ul>
+    <li>1 billion links, re-crawled roughly weekly for freshness → ~4 billion crawls/month</li>
+    <li>500 KB average stored size per page → ~2 PB of new content per month, ~72 PB over 3 years</li>
+    <li>100 billion searches/month → worked rates of ~1,600 writes/sec, ~40,000 searches/sec</li>
+    <li>The crawler must never get stuck in a cycle — the link graph isn't a tree, it has cycles</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/web_crawler/web_crawler.png" alt="High-level design: crawler service, NoSQL store of links_to_crawl and crawled_links, reverse index service, document service"><figcaption>Crawler Service loops over links_to_crawl, feeding the Reverse Index and Document services</figcaption></figure>
+  <p>Start from a seed list of <code class="mono">links_to_crawl</code>, ranked by overall site popularity (or seeded from hub sites like Yahoo/DMOZ if no ranking exists yet). A <code class="mono">crawled_links</code> table tracks what's already been processed, keyed by a page signature. Both fit naturally in a key-value NoSQL store — Redis sorted sets work well for the ranked <code class="mono">links_to_crawl</code> queue specifically.</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <h3>The crawl loop</h3>
+  <p>The Crawler Service repeatedly: pulls the highest-priority link, checks <code class="mono">crawled_links</code> for a matching page signature. If a near-duplicate is already crawled, it lowers that link's priority (this is exactly what stops infinite loops on cyclic links) and moves on. Otherwise it crawls the page, queues reverse-index and title/snippet generation jobs, computes the page's signature, and moves the link from <code class="mono">links_to_crawl</code> to <code class="mono">crawled_links</code>.</p>
+  <details class="code"><summary>web_crawler_snippets.py — PagesDataStore, Page, Crawler</summary><pre><code># -*- coding: utf-8 -*-
+
+
+class PagesDataStore(object):
+
+    def __init__(self, db):
+        self.db = db
+        pass
+
+    def add_link_to_crawl(self, url):
+        """Add the given link to `links_to_crawl`."""
+        pass
+
+    def remove_link_to_crawl(self, url):
+        """Remove the given link from `links_to_crawl`."""
+        pass
+
+    def reduce_priority_link_to_crawl(self, url):
+        """Reduce the priority of a link in `links_to_crawl` to avoid cycles."""
+        pass
+
+    def extract_max_priority_page(self):
+        """Return the highest priority link in `links_to_crawl`."""
+        pass
+
+    def insert_crawled_link(self, url, signature):
+        """Add the given link to `crawled_links`."""
+        pass
+
+    def crawled_similar(self, signature):
+        """Determine if we've already crawled a page matching the given signature"""
+        pass
+
+
+class Page(object):
+
+    def __init__(self, url, contents, child_urls):
+        self.url = url
+        self.contents = contents
+        self.child_urls = child_urls
+        self.signature = self.create_signature()
+
+    def create_signature(self):
+        # Create signature based on url and contents
+        pass
+
+
+class Crawler(object):
+
+    def __init__(self, pages, data_store, reverse_index_queue, doc_index_queue):
+        self.pages = pages
+        self.data_store = data_store
+        self.reverse_index_queue = reverse_index_queue
+        self.doc_index_queue = doc_index_queue
+
+    def crawl_page(self, page):
+        for url in page.child_urls:
+            self.data_store.add_link_to_crawl(url)
+        self.reverse_index_queue.generate(page)
+        self.doc_index_queue.generate(page)
+        self.data_store.remove_link_to_crawl(page.url)
+        self.data_store.insert_crawled_link(page.url, page.signature)
+
+    def crawl(self):
+        while True:
+            page = self.data_store.extract_max_priority_page()
+            if page is None:
+                break
+            if self.data_store.crawled_similar(page.signature):
+                self.data_store.reduce_priority_link_to_crawl(page.url)
+            else:
+                self.crawl_page(page)
+            page = self.data_store.extract_max_priority_page()</code></pre></details>
+  <h3>Handling duplicates</h3>
+  <p>Duplicate <em>urls</em> are cheap to remove — for huge lists, MapReduce to keep only urls with frequency 1. Duplicate <em>content</em> at different urls is harder: generate a content signature and compare signatures for similarity (Jaccard index and cosine similarity are the two classic approaches named here).</p>
+  <details class="code"><summary>web_crawler_mapreduce.py — RemoveDuplicateUrls</summary><pre><code># -*- coding: utf-8 -*-
+
+from mrjob.job import MRJob
+
+
+class RemoveDuplicateUrls(MRJob):
+
+    def mapper(self, _, line):
+        yield line, 1
+
+    def reducer(self, key, values):
+        total = sum(values)
+        if total == 1:
+            yield key, total
+
+    def steps(self):
+        """Run the map and reduce steps."""
+        return [
+            self.mr(mapper=self.mapper,
+                    reducer=self.reducer)
+        ]
+
+
+if __name__ == '__main__':
+    RemoveDuplicateUrls.run()</code></pre></details>
+  <h3>Keeping the index fresh</h3>
+  <p>Store a <code class="mono">timestamp</code> per crawled page; refresh on a default cadence (e.g. weekly), shorter for popular or frequently-changing sites. A <code class="mono">robots.txt</code>-style mechanism can let site owners influence crawl frequency directly.</p>
+  <h3>Serving a search</h3>
+  <p>Client → Web Server (reverse proxy) → Query API, which: tokenizes the query (strip markup, split terms, fix typos, normalize case, convert to boolean operators), queries the Reverse Index Service for matches (it ranks and returns the top results), then the Document Service for titles/snippets.</p>
+  <pre class="api">$ curl https://search.com/api/v1/search?query=hello+world
+
+→ [{"title":"foo's title","snippet":"foo's snippet","link":"https://foo.com"},
+   {"title":"bar's title","snippet":"bar's snippet","link":"https://bar.com"}, ...]</pre>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/web_crawler/web_crawler_basic.png" alt="Scaled crawler design with load balancers, sharded reverse index and document services, and a memory cache"><figcaption>Scaled: load balancers, a memory cache for popular queries, and sharded/federated index services</figcaption></figure>
+  <div class="callout">Benchmark → profile → fix the real bottleneck → repeat, as always. See <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> for a worked example of the loop.</div>
+  <p>Query popularity is extremely skewed — some searches run constantly, most run once. A Memory Cache (Redis/Memcached) in front of the Reverse Index and Document Services absorbs the popular ones and smooths out spiky traffic (memory reads ≈250μs vs. 4x on SSD, 80x on disk, which is why this cache matters so much). The Reverse Index and Document Services themselves will need heavy sharding and federation (Module 07) to hold the data volume and request load.</p>
+  <p>Crawler-specific tuning: cache DNS lookups locally in the Crawler Service instead of re-resolving every request; use connection pooling to hold many open connections efficiently; consider UDP (Module 10) where it fits; and make sure outbound bandwidth is provisioned generously, since crawling at this scale is bandwidth-bound as much as compute-bound.</p>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-4-mint.html">Mint.com</a>. Previous: <a href="14-2-twitter.html">Twitter timeline</a>.</p>
+</div>
+</body></html>

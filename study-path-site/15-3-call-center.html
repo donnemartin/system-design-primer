@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Call Center — OOD Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+.backlink{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted)} .backlink:hover{color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 10px}
+.badge{display:inline-block;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;letter-spacing:.04em;margin-left:8px}
+h1{font-size:clamp(26px,5vw,36px);margin:0 0 14px;text-wrap:balance;font-weight:700} h2{font-size:21px;margin:34px 0 10px} p{max-width:68ch} .lede{color:var(--muted);font-size:16px}
+.classlist{list-style:none;margin:14px 0;padding:0;border-top:1px solid var(--border)} .classlist li{padding:11px 2px;border-bottom:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap} .classlist .cname{font-family:"IBM Plex Mono";font-weight:600;min-width:140px;color:var(--accent)} .classlist .cdesc{color:var(--muted);font-size:14.5px;flex:1;min-width:0}
+ul.points{padding-left:20px} ul.points li{margin-bottom:8px}
+.warn{border-left:3px solid #c0392b;padding:10px 14px;background:var(--accent-soft);border-radius:0 6px 6px 0;font-size:14px;color:var(--fg);margin:18px 0}
+details{margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} summary{cursor:pointer;padding:12px 16px;font-family:"IBM Plex Mono";font-size:13px;background:var(--accent-soft);color:var(--accent);list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸ "} details[open] summary::before{content:"▾ "}
+pre{margin:0;padding:16px;overflow-x:auto;background:var(--code-bg);color:var(--code-fg);font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.65}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <a class="backlink" href="00-home.html">← Course Map</a>
+  <p class="eyebrow">The System Design Primer — Study Path <span class="badge">Module 15.3</span></p>
+  <h1>Design a call center</h1>
+  <p class="lede">Model three ranks of employee who can answer a call, and route each incoming call to the lowest-ranked person free to take it — escalating upward only when nobody at that rank is available.</p>
+  <h2>The problem</h2>
+  <p>A call center has operators, supervisors, and directors. Most calls should be handled by an operator; only when a call needs more authority — or no operator is free — should it climb to a supervisor, then a director. The design needs to capture both the <em>rank hierarchy</em> and the <em>escalation path</em> between ranks.</p>
+  <h2>Classes at a glance</h2>
+  <ul class="classlist">
+    <li><span class="cname">Rank</span><span class="cdesc">Enum: OPERATOR, SUPERVISOR, DIRECTOR.</span></li>
+    <li><span class="cname">Employee</span><span class="cdesc">Abstract base for all three ranks. Holds the employee's current call and knows how to take one and complete one; leaves <span class="mono">escalate_call</span> abstract since each rank escalates differently.</span></li>
+    <li><span class="cname">Operator / Supervisor / Director</span><span class="cdesc">Each implements <span class="mono">escalate_call</span> by handing the call to the next rank up. A Director has nowhere left to escalate to.</span></li>
+    <li><span class="cname">CallState</span><span class="cdesc">Enum: READY, IN_PROGRESS, COMPLETE — the lifecycle of a single call.</span></li>
+    <li><span class="cname">Call</span><span class="cdesc">The call itself: its required rank, current state, and which employee (if any) holds it.</span></li>
+    <li><span class="cname">CallCenter</span><span class="cdesc">Owns the pools of operators, supervisors, and directors, plus a FIFO queue for calls nobody could take yet. <span class="mono">dispatch_call</span> is the routing logic.</span></li>
+  </ul>
+  <h2>Key design decisions</h2>
+  <ul class="points">
+    <li><strong>The escalation chain is mirrored directly in the class hierarchy.</strong> Operator only knows how to hand off to Supervisor; Supervisor only knows how to hand off to Director; Director raises <span class="mono">NotImplementedError</span> because "directors must be able to handle any call" — there's nowhere higher to go.</li>
+    <li><strong>Dispatch always tries the lowest qualified rank first.</strong> <span class="mono">dispatch_call</span> checks operators before supervisors before directors, and only falls through to the next rank if nobody at the current rank is free — matching how a real call center triages.</li>
+    <li><strong>Unhandled calls queue instead of dropping.</strong> If every qualified employee is busy, the call goes into <span class="mono">self.queued_calls</span>, a <span class="mono">deque</span>, rather than being lost.</li>
+    <li><strong>Three hooks are left as stubs</strong> — <span class="mono">notify_call_escalated</span>, <span class="mono">notify_call_completed</span>, and <span class="mono">dispatch_queued_call_to_newly_freed_employee</span>. That last one is the real follow-up question: when an employee finishes a call, the next thing to build is pulling the oldest queued call that matches their rank and assigning it to them.</li>
+  </ul>
+  <div class="warn"><strong>Two bugs worth noticing if you read closely:</strong> first, <span class="mono">Operator.__init__</span>, <span class="mono">Supervisor.__init__</span>, and <span class="mono">Director.__init__</span> each call <span class="mono">Employee.__init__</span> with only <span class="mono">(employee_id, name, rank)</span>, but <span class="mono">Employee.__init__</span> requires a fourth argument, <span class="mono">call_center</span> — this would raise a <span class="mono">TypeError</span> as written. Second, <span class="mono">Supervisor</span> and <span class="mono">Director</span> both call <span class="mono">super(Operator, self).__init__(...)</span> — a copy-paste artifact that should read <span class="mono">super(Supervisor, self)</span> and <span class="mono">super(Director, self)</span> respectively; as written, calling it on a <span class="mono">Director</span> instance raises <span class="mono">TypeError</span> because <span class="mono">Operator</span> isn't in a <span class="mono">Director</span>'s method resolution order. Interview sample code is meant to show structure, not survive a test suite — but catching this kind of thing out loud is exactly what an interviewer wants to see.</div>
+  <details><summary>Show full code — call_center.py (as shipped in the repo, bugs included)</summary><pre><code>from abc import ABCMeta, abstractmethod
+from collections import deque
+from enum import Enum
+
+
+class Rank(Enum):
+
+    OPERATOR = 0
+    SUPERVISOR = 1
+    DIRECTOR = 2
+
+
+class Employee(metaclass=ABCMeta):
+
+    def __init__(self, employee_id, name, rank, call_center):
+        self.employee_id = employee_id
+        self.name = name
+        self.rank = rank
+        self.call = None
+        self.call_center = call_center
+
+    def take_call(self, call):
+        """Assume the employee will always successfully take the call."""
+        self.call = call
+        self.call.employee = self
+        self.call.state = CallState.IN_PROGRESS
+
+    def complete_call(self):
+        self.call.state = CallState.COMPLETE
+        self.call_center.notify_call_completed(self.call)
+
+    @abstractmethod
+    def escalate_call(self):
+        pass
+
+    def _escalate_call(self):
+        self.call.state = CallState.READY
+        call = self.call
+        self.call = None
+        self.call_center.notify_call_escalated(call)
+
+
+class Operator(Employee):
+
+    def __init__(self, employee_id, name):
+        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR)
+
+    def escalate_call(self):
+        self.call.level = Rank.SUPERVISOR
+        self._escalate_call()
+
+
+class Supervisor(Employee):
+
+    def __init__(self, employee_id, name):
+        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+
+    def escalate_call(self):
+        self.call.level = Rank.DIRECTOR
+        self._escalate_call()
+
+
+class Director(Employee):
+
+    def __init__(self, employee_id, name):
+        super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
+
+    def escalate_call(self):
+        raise NotImplementedError('Directors must be able to handle any call')
+
+
+class CallState(Enum):
+
+    READY = 0
+    IN_PROGRESS = 1
+    COMPLETE = 2
+
+
+class Call(object):
+
+    def __init__(self, rank):
+        self.state = CallState.READY
+        self.rank = rank
+        self.employee = None
+
+
+class CallCenter(object):
+
+    def __init__(self, operators, supervisors, directors):
+        self.operators = operators
+        self.supervisors = supervisors
+        self.directors = directors
+        self.queued_calls = deque()
+
+    def dispatch_call(self, call):
+        if call.rank not in (Rank.OPERATOR, Rank.SUPERVISOR, Rank.DIRECTOR):
+            raise ValueError('Invalid call rank: {}'.format(call.rank))
+        employee = None
+        if call.rank == Rank.OPERATOR:
+            employee = self._dispatch_call(call, self.operators)
+        if call.rank == Rank.SUPERVISOR or employee is None:
+            employee = self._dispatch_call(call, self.supervisors)
+        if call.rank == Rank.DIRECTOR or employee is None:
+            employee = self._dispatch_call(call, self.directors)
+        if employee is None:
+            self.queued_calls.append(call)
+
+    def _dispatch_call(self, call, employees):
+        for employee in employees:
+            if employee.call is None:
+                employee.take_call(call)
+                return employee
+        return None
+
+    def notify_call_escalated(self, call):
+        pass
+
+    def notify_call_completed(self, call):
+        pass
+
+    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
+        pass</code></pre></details>
+  <footer>Source: <span class="mono">solutions/object_oriented_design/call_center/call_center.py</span></footer>
+</div>
+</body></html>

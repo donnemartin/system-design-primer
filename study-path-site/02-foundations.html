@@ -1,0 +1,105 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Foundations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 80px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.topbar a.back{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);padding:6px 10px;border-radius:6px}
+.topbar a.back:hover{color:var(--accent);border-color:var(--accent)}
+.badge{font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:5px 10px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 14px;text-wrap:balance;font-weight:700}
+.lede{color:var(--muted);font-size:17px;max-width:62ch;margin:0 0 10px}
+h2{font-size:21px;margin:40px 0 10px;font-weight:700} h3{font-size:17px;margin:26px 0 8px;font-weight:600}
+p{margin:0 0 14px} ul,ol{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:16px 18px;margin:20px 0}
+.rule-card{display:flex;gap:14px;background:var(--accent-soft);border-radius:8px;padding:16px 18px;margin:16px 0}
+.rule-card .tag{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);flex:0 0 90px;padding-top:2px}
+.rule-card p{margin:0}
+table.ref{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;font-family:"IBM Plex Mono"}
+table.ref th,table.ref td{border:1px solid var(--border);padding:7px 10px;text-align:right}
+table.ref td:first-child,table.ref th:first-child{text-align:left;font-family:"IBM Plex Sans"}
+table.ref th{background:var(--surface);text-transform:uppercase;font-size:10.5px;letter-spacing:.04em;color:var(--muted)}
+.scroll-x{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch} .scroll-x table.ref{margin:0;min-width:460px}
+.notes{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-size:13.5px;margin:14px 0} .notes div{margin-bottom:4px}
+.handy{margin:0 0 14px;padding-left:22px} .sources{font-size:14px}
+.next-cta{margin-top:50px;padding:20px;border:1px dashed var(--accent);border-radius:10px;text-align:center}
+.next-cta .mono{color:var(--accent);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.next-cta p{margin:8px 0 0;font-size:19px;font-weight:600} .next-cta a{color:var(--fg);text-decoration:none} .next-cta a:hover{color:var(--accent)}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+@media (max-width:480px){ .rule-card{flex-direction:column;gap:4px} .rule-card .tag{flex:none} }
+</style></head><body>
+<div class="wrap">
+  <div class="topbar">
+    <span class="badge">Module 02 / 16</span>
+    <a class="back" href="00-home.html">← Course Map</a>
+  </div>
+  <p class="eyebrow">The System Design Primer — Study Path</p>
+  <h1>Foundations</h1>
+  <p class="lede">The handful of ideas every later module assumes you already have: what scaling actually means, two trade-offs you'll be asked to reason about constantly, and two reference tables you'll keep coming back to for the rest of the course.</p>
+
+  <h2>Start with two outside resources</h2>
+  <p>Before the vocabulary below, it helps to have a mental picture of a system scaling up. Two classic, still-relevant resources cover this well — you don't have to watch/read them now, but they're worth bookmarking:</p>
+  <div class="rule-card"><span class="tag">Video</span><p><a href="https://www.youtube.com/watch?v=-W9F__D3oY4" target="_blank" rel="noopener">Scalability Lecture at Harvard</a> — covers vertical scaling, horizontal scaling, caching, load balancing, database replication, and database partitioning in one sitting.</p></div>
+  <div class="rule-card"><span class="tag">Article</span><p><a href="https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono" target="_blank" rel="noopener">Scalability for Dummies</a> — a four-part series: <a href="https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones" target="_blank" rel="noopener">Clones</a>, <a href="https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database" target="_blank" rel="noopener">Databases</a>, <a href="https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache" target="_blank" rel="noopener">Caches</a>, <a href="https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism" target="_blank" rel="noopener">Asynchronism</a>.</p></div>
+  <p>Everything from here through Module 11 is this course's structured expansion of those same ideas, plus DNS, CDNs, load balancers, and more — in dependency order, so you never hit a term before it's been explained.</p>
+
+  <h2>Performance vs. scalability</h2>
+  <p>A service is <strong>scalable</strong> if it achieves increased performance in a manner proportional to resources added. Increasing performance usually means serving more units of work, though it can also mean handling larger units of work as datasets grow.</p>
+  <p>The simplest way to tell the two apart:</p>
+  <ul><li>If you have a <strong>performance</strong> problem, your system is slow for a single user.</li><li>If you have a <strong>scalability</strong> problem, your system is fast for a single user but slow under heavy load.</li></ul>
+  <div class="callout"><p style="margin:0"><strong>Why this distinction matters later:</strong> a lot of "scaling" techniques you'll meet in Modules 05–09 (load balancers, caching, sharding) do nothing for a single slow request — they only help when many requests arrive at once. Keep asking yourself, for every technique: is this fixing speed, or fixing capacity under load?</p></div>
+  <p class="sources"><em>Source: <a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html" target="_blank" rel="noopener">A word on scalability</a>, <a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Scalability, availability, stability, patterns</a></em></p>
+
+  <h2>Latency vs. throughput</h2>
+  <p><strong>Latency</strong> is the time to perform some action or produce some result. <strong>Throughput</strong> is the number of such actions or results per unit of time.</p>
+  <p>Generally, you should aim for <strong>maximal throughput</strong> with <strong>acceptable latency</strong> — not minimal latency at any cost, and not maximal throughput regardless of how slow any single request feels.</p>
+  <p class="sources"><em>Source: <a href="https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput" target="_blank" rel="noopener">Understanding latency vs throughput</a></em></p>
+
+  <h2>Your two permanent reference tables</h2>
+  <p>These two tables are normally buried in an appendix at the back of the source material — they've been moved here, to the front, because you'll want them within reach starting in Module 05 and for every "back-of-the-envelope" estimate afterward (the habit Module 01 introduced). You don't need to memorize them now; just know they live here.</p>
+  <h3>Powers of two table</h3>
+  <div class="scroll-x"><table class="ref"><thead><tr><th>Power</th><th>Exact value</th><th>Approx value</th><th>Bytes</th></tr></thead><tbody>
+    <tr><td>7</td><td>128</td><td></td><td></td></tr><tr><td>8</td><td>256</td><td></td><td></td></tr>
+    <tr><td>10</td><td>1,024</td><td>1 thousand</td><td>1 KB</td></tr><tr><td>16</td><td>65,536</td><td></td><td>64 KB</td></tr>
+    <tr><td>20</td><td>1,048,576</td><td>1 million</td><td>1 MB</td></tr><tr><td>30</td><td>1,073,741,824</td><td>1 billion</td><td>1 GB</td></tr>
+    <tr><td>32</td><td>4,294,967,296</td><td></td><td>4 GB</td></tr><tr><td>40</td><td>1,099,511,627,776</td><td>1 trillion</td><td>1 TB</td></tr>
+  </tbody></table></div>
+  <p class="sources"><em>Source: <a href="https://en.wikipedia.org/wiki/Power_of_two" target="_blank" rel="noopener">Powers of two</a></em></p>
+  <h3>Latency numbers every programmer should know</h3>
+  <div class="scroll-x"><table class="ref"><thead><tr><th>Operation</th><th>Time</th><th>Relative</th></tr></thead><tbody>
+    <tr><td>L1 cache reference</td><td>0.5 ns</td><td></td></tr><tr><td>Branch mispredict</td><td>5 ns</td><td></td></tr>
+    <tr><td>L2 cache reference</td><td>7 ns</td><td>14× L1 cache</td></tr><tr><td>Mutex lock/unlock</td><td>25 ns</td><td></td></tr>
+    <tr><td>Main memory reference</td><td>100 ns</td><td>20× L2, 200× L1</td></tr>
+    <tr><td>Compress 1 KB with Zippy</td><td>10,000 ns (10 µs)</td><td></td></tr>
+    <tr><td>Send 1 KB over 1 Gbps network</td><td>10,000 ns (10 µs)</td><td></td></tr>
+    <tr><td>Read 4 KB randomly from SSD*</td><td>150,000 ns (150 µs)</td><td>~1 GB/s SSD</td></tr>
+    <tr><td>Read 1 MB sequentially from memory</td><td>250,000 ns (250 µs)</td><td></td></tr>
+    <tr><td>Round trip within same datacenter</td><td>500,000 ns (500 µs)</td><td></td></tr>
+    <tr><td>Read 1 MB sequentially from SSD*</td><td>1,000,000 ns (1 ms)</td><td>~1 GB/s SSD, 4× memory</td></tr>
+    <tr><td>HDD seek</td><td>10,000,000 ns (10 ms)</td><td>20× datacenter round trip</td></tr>
+    <tr><td>Read 1 MB sequentially from 1 Gbps network</td><td>10,000,000 ns (10 ms)</td><td>40× memory, 10× SSD</td></tr>
+    <tr><td>Read 1 MB sequentially from HDD</td><td>30,000,000 ns (30 ms)</td><td>120× memory, 30× SSD</td></tr>
+    <tr><td>Send packet CA → Netherlands → CA</td><td>150,000,000 ns (150 ms)</td><td></td></tr>
+  </tbody></table></div>
+  <div class="notes"><div class="mono">1 ns = 10⁻⁹ seconds</div><div class="mono">1 µs = 10⁻⁶ seconds = 1,000 ns</div><div class="mono">1 ms = 10⁻³ seconds = 1,000 µs = 1,000,000 ns</div></div>
+  <p><strong>Handy metrics derived from the numbers above:</strong></p>
+  <ul class="handy"><li>Read sequentially from HDD at ~30 MB/s</li><li>Read sequentially from 1 Gbps Ethernet at ~100 MB/s</li><li>Read sequentially from SSD at ~1 GB/s</li><li>Read sequentially from main memory at ~4 GB/s</li><li>6–7 world-wide round trips per second</li><li>2,000 round trips per second within a data center</li></ul>
+  <p class="sources"><em>Sources: <a href="https://gist.github.com/jboner/2841832" target="_blank" rel="noopener">Latency numbers every programmer should know — 1</a>, <a href="https://gist.github.com/hellerbarde/2843375" target="_blank" rel="noopener">— 2</a>, <a href="http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf" target="_blank" rel="noopener">Designs, lessons, and advice from building large distributed systems</a>, <a href="https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf" target="_blank" rel="noopener">Software Engineering Advice from Building Large-Scale Distributed Systems</a></em></p>
+
+  <h2>Where this goes next</h2>
+  <p>With performance-vs-scalability and latency-vs-throughput in hand, Module 03 adds the third big trade-off — availability vs. consistency — and from there the course moves into concrete infrastructure: DNS, CDNs, load balancers, and so on. Keep in mind the phrase you'll see everywhere: <strong>everything is a trade-off.</strong></p>
+
+  <div class="next-cta"><div class="mono">Up next</div><p><a href="03-consistency-availability.html">Module 03 — Consistency &amp; Availability</a></p></div>
+  <footer>Built from <span class="mono">donnemartin/system-design-primer</span>.</footer>
+</div>
+</body></html>

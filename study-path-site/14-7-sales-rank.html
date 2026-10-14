@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Sales Rank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design Amazon's sales ranking by category feature"</p>
+  <h1>Sales Rank</h1>
+  <p class="lede">Scoped narrowly on purpose: not the whole e-commerce site, just the pipeline that turns a week of raw transactions into a "most popular products in this category" leaderboard, updated hourly.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <ul><li><strong>Service</strong> computes the past week's best sellers, per category</li><li><strong>User</strong> views that leaderboard for a category</li><li><strong>Service</strong> is highly available</li></ul>
+  <p><strong>Out of scope:</strong> the rest of the e-commerce site entirely — just the ranking pipeline.</p>
+  <div class="constraints"><strong>Shape of the problem:</strong><ul>
+    <li>10 million products, 1,000 flat categories (no subcategories), items can be in multiple categories but never change category</li>
+    <li>1 billion transactions/month, 100 billion reads/month — a 100:1 read:write ratio, heavily read-skewed</li>
+    <li>Results must refresh hourly (more popular items might warrant even tighter refresh)</li>
+    <li>Per-transaction size ~40 bytes → ~40 GB new transaction data/month, ~1.44 TB over 3 years</li>
+    <li>Worked rates: ~400 writes/sec average, ~40,000 reads/sec average</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/sales_rank/sales_rank.png" alt="High-level design: sales API logs to object store, sales rank service running MapReduce, SQL database, read API"><figcaption>Logs → Object Store → MapReduce → sales_rank table → Read API</figcaption></figure>
+  <p>Raw Sales API log files land in an Object Store (S3-class — no need to build a distributed filesystem for this). A sample log line, tab-delimited:</p>
+  <pre class="api">timestamp   product_id  category_id    qty     total_price   seller_id    buyer_id
+t1          product1    category1      2       20.00         1            1
+t2          product1    category2      2       20.00         2            2
+t2          product1    category2      1       10.00         2            3
+t3          product2    category1      3        7.00         3            4</pre>
+  <p>A Sales Rank Service runs MapReduce over those logs and writes results into a <code class="mono">sales_rank</code> table in SQL.</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <h3>Computing the ranking</h3>
+  <p>This is a <strong>two-step MapReduce</strong>: first collapse to total quantity sold per (category, product), then do a distributed sort so each category's products come out ordered by quantity.</p>
+  <details class="code"><summary>sales_rank_mapreduce.py — SalesRanker (two-step job)</summary><pre><code># -*- coding: utf-8 -*-
+
+from mrjob.job import MRJob
+
+
+class SalesRanker(MRJob):
+
+    def within_past_week(self, timestamp):
+        """Return True if timestamp is within past week, False otherwise."""
+        ...
+
+    def mapper(self, _, line):
+        """Parse each log line, extract and transform relevant lines.
+
+        Emit key value pairs of the form:
+
+        (foo, p1), 2
+        (bar, p1), 2
+        (bar, p1), 1
+        (foo, p2), 3
+        (bar, p3), 10
+        (foo, p4), 1
+        """
+        timestamp, product_id, category, quantity = line.split('\t')
+        if self.within_past_week(timestamp):
+            yield (category, product_id), quantity
+
+    def reducer(self, key, values):
+        """Sum values for each key.
+
+        (foo, p1), 2
+        (bar, p1), 3
+        (foo, p2), 3
+        (bar, p3), 10
+        (foo, p4), 1
+        """
+        yield key, sum(values)
+
+    def mapper_sort(self, key, value):
+        """Construct key to ensure proper sorting.
+
+        Transform key and value to the form:
+
+        (foo, 2), p1
+        (bar, 3), p1
+        (foo, 3), p2
+        (bar, 10), p3
+        (foo, 1), p4
+
+        The shuffle/sort step of MapReduce will then do a
+        distributed sort on the keys, resulting in:
+
+        (category1, 1), product4
+        (category1, 2), product1
+        (category1, 3), product2
+        (category2, 3), product1
+        (category2, 7), product3
+        """
+        category, product_id = key
+        quantity = value
+        yield (category, quantity), product_id
+
+    def reducer_identity(self, key, value):
+        yield key, value
+
+    def steps(self):
+        """Run the map and reduce steps."""
+        return [
+            self.mr(mapper=self.mapper,
+                    reducer=self.reducer),
+            self.mr(mapper=self.mapper_sort,
+                    reducer=self.reducer_identity),
+        ]
+
+
+if __name__ == '__main__':
+    SalesRanker.run()</code></pre></details>
+  <p>The distributed sort step is the clever part: by re-keying on <code class="mono">(category, quantity)</code> before the second shuffle, MapReduce's own sort-by-key does the ranking work for you — no separate sort pass needed. Result, ready to insert into <code class="mono">sales_rank</code>:</p>
+  <pre class="api">(category1, 1), product4
+(category1, 2), product1
+(category1, 3), product2
+(category2, 3), product1
+(category2, 7), product3</pre>
+  <pre class="api">sales_rank table:
+id int NOT NULL AUTO_INCREMENT
+category_id int NOT NULL
+total_sold int NOT NULL
+product_id int NOT NULL
+PRIMARY KEY(id)
+FOREIGN KEY(category_id) REFERENCES Categories(id)
+FOREIGN KEY(product_id) REFERENCES Products(id)</pre>
+  <p>Index <code class="mono">id</code>, <code class="mono">category_id</code>, and <code class="mono">product_id</code> to keep lookups fast and in memory (memory reads run ~250μs vs. 4x on SSD, 80x on disk).</p>
+  <h3>Serving the leaderboard</h3>
+  <p>Client → Web Server (reverse proxy) → Read API, which just reads straight from the <code class="mono">sales_rank</code> table.</p>
+  <pre class="api">$ curl https://amazon.com/api/v1/popular?category_id=1234
+
+→ [{"id":"100","category_id":"1234","total_sold":"100000","product_id":"50"},
+   {"id":"53","category_id":"1234","total_sold":"90000","product_id":"200"}, ...]</pre>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/sales_rank/sales_rank_basic.png" alt="Scaled design with CDN, load balancers, memory cache, SQL read replicas, and a separate analytics database"><figcaption>Heavily read-skewed (100:1) — most of the scaling work goes into the read path</figcaption></figure>
+  <div class="callout">Benchmark → profile → fix the real bottleneck → repeat. See <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> for a worked example.</div>
+  <p>Move the <code class="mono">sales_rank</code> rollups toward a dedicated Analytics Database (Redshift/BigQuery-class) and keep only a recent window of raw transaction data in SQL, with the rest in a warehouse or Object Store — 40 GB/month is trivial for S3-class storage. The ~40,000 average reads/sec (much higher for popular categories at peak) is squarely Memory Cache territory — SQL read replicas alone likely can't absorb that volume of cache misses. The write side (~400/sec average) can also get tight for a single write master, which is where Module 07's Federation, Sharding, Denormalization and SQL tuning come back in, alongside considering NoSQL for part of the data.</p>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-8-scaling-aws.html">Scaling on AWS</a>. Previous: <a href="14-6-query-cache.html">Query cache</a>.</p>
+</div>
+</body></html>

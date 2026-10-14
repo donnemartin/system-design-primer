@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Orientation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f5f3ee; --surface:#ffffff; --fg:#1b1f27; --muted:#5b6270; --border:#d9d2c2;
+  --accent:#2f5d9e; --accent-soft:#e4edfa; --accent-2:#b5672f; --done:#3f8f5f;
+  --code-bg:#11161f; --code-fg:#d8e2f0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0f14; --surface:#141922; --fg:#e7ebf2; --muted:#98a2b3; --border:#242c39;
+    --accent:#6fa3e0; --accent-soft:#1b2838; --accent-2:#e0a360; --done:#5fbf86;
+    --code-bg:#070a0f; --code-fg:#cdd9ea;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c0f14; --surface:#141922; --fg:#e7ebf2; --muted:#98a2b3; --border:#242c39;
+  --accent:#6fa3e0; --accent-soft:#1b2838; --accent-2:#e0a360; --done:#5fbf86;
+  --code-bg:#070a0f; --code-fg:#cdd9ea;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--fg); font-family:"IBM Plex Sans",system-ui,sans-serif; line-height:1.6; margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+a{color:var(--accent)}
+img{max-width:100%}
+.wrap{max-width:720px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); padding-block:24px 80px}
+.topbar{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px; flex-wrap:wrap}
+.topbar a.back{font-family:"IBM Plex Mono"; font-size:13px; text-decoration:none; color:var(--muted); border:1px solid var(--border); padding:6px 10px; border-radius:6px}
+.topbar a.back:hover{color:var(--accent); border-color:var(--accent)}
+.badge{font-family:"IBM Plex Mono"; font-size:12px; background:var(--accent-soft); color:var(--accent); border-radius:5px; padding:5px 10px}
+.eyebrow{font-family:"IBM Plex Mono"; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px); margin:0 0 14px; text-wrap:balance; font-weight:700}
+.lede{color:var(--muted); font-size:17px; max-width:62ch; margin:0 0 10px}
+h2{font-size:21px; margin:40px 0 10px; font-weight:700}
+h3{font-size:17px; margin:26px 0 8px; font-weight:600}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px; padding-left:22px}
+li{margin-bottom:6px}
+figure{margin:24px 0; text-align:center}
+figure img{max-width:100%; border-radius:8px; border:1px solid var(--border)}
+figcaption{font-size:13px; color:var(--muted); margin-top:8px}
+.callout{background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding:16px 18px; margin:20px 0}
+.callout.aside{border-left-color:var(--accent-2)}
+.callout h3{margin-top:0}
+table{border-collapse:collapse; width:100%; margin:16px 0; font-size:14px}
+th,td{border:1px solid var(--border); padding:8px 10px; text-align:left}
+th{font-family:"IBM Plex Mono"; font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); background:var(--surface)}
+td.yes{text-align:center; color:var(--done); font-weight:700}
+.qa{background:var(--accent-soft); border-radius:8px; padding:16px 18px; margin:18px 0}
+.qa p{margin:0 0 8px}
+.qa p:last-child{margin-bottom:0}
+.next-cta{margin-top:50px; padding:20px; border:1px dashed var(--accent); border-radius:10px; text-align:center}
+.next-cta .mono{color:var(--accent); font-size:13px; letter-spacing:.08em; text-transform:uppercase}
+.next-cta p{margin:8px 0 0; font-size:19px; font-weight:600}
+.next-cta a{color:var(--fg); text-decoration:none}
+.next-cta a:hover{color:var(--accent)}
+footer{margin-top:50px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:13px}
+.sources{font-size:14px}
+@media (max-width:480px){ table{font-size:12.5px} th,td{padding:6px} }
+</style></head><body>
+<div class="wrap">
+  <div class="topbar">
+    <span class="badge">Module 01 / 16</span>
+    <a class="back" href="00-home.html">← Course Map</a>
+  </div>
+
+  <p class="eyebrow">The System Design Primer — Study Path</p>
+  <h1>Orientation</h1>
+  <p class="lede">Start here. This page explains why this material exists, how to pace yourself, and the exact four-step process you'll lean on for every design problem later in the course.</p>
+
+  <h2>Why learn system design at all</h2>
+  <p>System design is a broad topic — there's a vast number of resources scattered across the web, each covering a slice of it. This course is an organized walk through one well-known collection of that material (the open-source <span class="mono">system-design-primer</span> repo), reassembled so you never have to guess what to read next.</p>
+  <p>Two reasons people work through it:</p>
+  <ul>
+    <li><strong>You become a better engineer.</strong> Knowing how systems behave under load, failure, and growth changes how you build things even when no one's interviewing you.</li>
+    <li><strong>You prep for the system design interview.</strong> At most tech companies, system design is a required part of the technical interview process alongside coding rounds — and unlike coding problems, there's rarely a single "correct" answer to compare against.</li>
+  </ul>
+  <p>It's also a living, open-source body of knowledge — contributed to and corrected by the community over time, rather than written once and frozen.</p>
+
+  <h2>How much of this do you actually need to know</h2>
+  <div class="qa">
+    <p><strong>Q: For interviews, do I need to know everything here?</strong></p>
+    <p><strong>A: No.</strong> What you're asked depends on your experience level, your technical background, the role, the company, and some luck. More senior candidates and architects are generally expected to know more. Start broad, then go deeper in a few areas that matter for your situation.</p>
+  </div>
+
+  <figure>
+    <img src="assets/images/OfVllex.png" alt="Study guide illustration">
+  </figure>
+
+  <h3>Pick a track based on your timeline</h3>
+  <p>Adjust how deep you go based on how much time you have before your interview (or how much depth you simply want):</p>
+  <table>
+    <thead><tr><th>Do this</th><th>Short</th><th>Medium</th><th>Long</th></tr></thead>
+    <tbody>
+      <tr><td>Read the core-path modules (02–11) for a broad understanding of how systems work</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Read a few company engineering blogs for the companies you're interviewing with</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Read a few real-world architecture write-ups</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Review this interview framework below</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Work through the system design solutions (Module 14)</td><td>Some</td><td>Many</td><td>Most</td></tr>
+      <tr><td>Work through the OOD solutions (Module 15)</td><td>Some</td><td>Many</td><td>Most</td></tr>
+      <tr><td>Review additional practice questions (Module 16)</td><td>Some</td><td>Many</td><td>Most</td></tr>
+    </tbody>
+  </table>
+  <p>Breadth first, depth second — in all three tracks. A little knowledge of every topic beats deep knowledge of one.</p>
+
+  <h2>The framework: how to approach a system design interview question</h2>
+  <p>A system design interview is an <strong>open-ended conversation</strong> — you're expected to lead it, not wait to be asked the right questions. The same four steps work for almost every prompt you'll see in Module 14's solutions, so it's worth internalizing now, before you've seen a single worked example.</p>
+
+  <h3>Step 1 — Outline use cases, constraints, and assumptions</h3>
+  <p>Gather requirements and scope the problem before designing anything. Ask:</p>
+  <ul>
+    <li>Who is going to use it, and how?</li>
+    <li>How many users are there?</li>
+    <li>What does the system do — what are its inputs and outputs?</li>
+    <li>How much data do we expect to handle, and at what request rate?</li>
+    <li>What's the expected read-to-write ratio?</li>
+  </ul>
+
+  <h3>Step 2 — Create a high-level design</h3>
+  <ul>
+    <li>Sketch the main components and how they connect.</li>
+    <li>Justify your choices out loud — the reasoning matters more than the diagram.</li>
+  </ul>
+
+  <h3>Step 3 — Design core components</h3>
+  <p>Go deep on each core piece. For example, if asked to design a URL-shortening service (Module 14 covers this exact problem — Pastebin), you'd discuss things like generating and storing a hash of the full URL, hash collisions, whether to use SQL or NoSQL, the database schema, how a hashed URL gets translated back to the original, and the API/object-oriented design underneath it.</p>
+
+  <h3>Step 4 — Scale the design</h3>
+  <p>Identify bottlenecks given the constraints from Step 1, and address them — do you need a load balancer, horizontal scaling, caching, database sharding? Discuss trade-offs honestly. <strong>Everything is a trade-off</strong> — you'll see this phrase recur throughout every module in this course, because it's the single most load-bearing idea in the whole subject.</p>
+
+  <h3>Back-of-the-envelope calculations</h3>
+  <p>You may be asked to estimate things by hand — how long it'd take to generate 100 thumbnails from disk, how much memory a data structure needs. Module 02 (Foundations) gives you the two reference tables you'll use for this: the powers-of-two table and the latency numbers every programmer should know. Keep them close; you'll reach for them constantly.</p>
+
+  <div class="callout aside">
+    <h3>Also prepping for the coding interview?</h3>
+    <figure style="margin:0 0 12px">
+      <img src="assets/images/b4YtAEN.png" alt="Interactive Coding Challenges">
+    </figure>
+    <p style="margin:0">System design is usually paired with a separate coding interview. The sister project <a href="https://github.com/donnemartin/interactive-coding-challenges" target="_blank" rel="noopener">Interactive Coding Challenges</a> covers that side, with its own Anki deck of coding problems — worth a look if you need both.</p>
+  </div>
+
+  <h3 class="sources">Sources and further reading</h3>
+  <ul class="sources">
+    <li><a href="https://web.archive.org/web/20210505130322/https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/" target="_blank" rel="noopener">How to ace a systems design interview</a></li>
+    <li><a href="http://www.hiredintech.com/system-design" target="_blank" rel="noopener">The system design interview</a></li>
+    <li><a href="https://www.youtube.com/watch?v=ZgdS0EUmn70" target="_blank" rel="noopener">Intro to Architecture and Systems Design Interviews</a></li>
+    <li><a href="https://leetcode.com/discuss/career/229177/My-System-Design-Template" target="_blank" rel="noopener">System design template</a></li>
+  </ul>
+
+  <div class="next-cta">
+    <div class="mono">Up next</div>
+    <p><a href="02-foundations.html">Module 02 — Foundations</a></p>
+  </div>
+
+  <footer>Built from <span class="mono">donnemartin/system-design-primer</span>.</footer>
+</div>
+</body></html>

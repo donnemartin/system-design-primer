@@ -1,0 +1,153 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Flashcard Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box;min-width:0} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px;font-family:"IBM Plex Mono";font-size:12.5px} .topnav a{text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:5px 10px} .topnav a:hover{color:var(--accent);border-color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 24px;margin-bottom:26px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 10px} .badge .n{background:var(--accent-soft);border-radius:4px;padding:2px 7px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 12px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16px;max-width:64ch;margin:0 0 6px}
+.banner{width:100%;max-height:150px;object-fit:cover;border-radius:8px;margin:16px 0 0;display:block;border:1px solid var(--border)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 16px;border-bottom:1px solid var(--border);padding-bottom:12px}
+.tab{font-family:"IBM Plex Mono";font-size:13px;border:1px solid var(--border);background:var(--surface);color:var(--muted);border-radius:6px;padding:7px 12px;cursor:pointer}
+.tab[aria-selected="true"]{color:#fff;background:var(--accent);border-color:var(--accent)}
+.groupbar{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 20px}
+.chip{font-family:"IBM Plex Mono";font-size:11.5px;border:1px solid var(--border);background:transparent;color:var(--muted);border-radius:20px;padding:4px 11px;cursor:pointer}
+.chip[aria-pressed="true"]{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.stage-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;font-family:"IBM Plex Mono";font-size:12.5px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;min-height:220px;max-height:62vh;overflow-y:auto;padding:26px;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card .face-label{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin:0 0 10px}
+.card .content h1,.card .content h2,.card .content h3,.card .content h4{font-size:1.15em;margin:0 0 10px;font-weight:600}
+.card .content p{margin:0 0 10px} .card .content ul,.card .content ol{margin:0 0 10px 20px;padding:0} .card .content li{margin-bottom:5px}
+.card .content code{font-family:"IBM Plex Mono";background:var(--accent-soft);padding:1px 5px;border-radius:3px;font-size:.9em}
+.card .content pre{background:var(--code-bg);color:var(--code-fg);padding:12px;border-radius:6px;overflow-x:auto;font-size:13px}
+.card .content a{word-break:break-word}
+.hint{text-align:center;color:var(--muted);font-size:12.5px;margin:10px 0 0;font-family:"IBM Plex Mono"}
+.controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn{font-family:"IBM Plex Mono";font-size:13px;border:1px solid var(--border);background:var(--surface);color:var(--fg);border-radius:7px;padding:9px 14px;cursor:pointer} .btn:hover{border-color:var(--accent);color:var(--accent)} .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+@media (max-width:480px){ .card{padding:18px} }
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">← Course Map</a><span>Module 12 of 16</span></nav>
+  <header class="hero">
+    <p class="badge">The System Design Primer — Study Path <span class="n">12</span></p>
+    <h1>Flashcard review</h1>
+    <p class="lede">Every card from all three of the repo's Anki decks — 42 concept cards, 8 system design problem cards, and 6 object-oriented design problem cards — rebuilt here as flip-cards. Use this to drill what you've already read in Modules 01–11, not to learn something cold for the first time.</p>
+    <img class="banner" id="anki-banner" alt="Anki flashcards" src="assets/images/zdCAkB3.png">
+  </header>
+
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="groupbar" id="groupbar"></div>
+  <div class="stage-head"><span id="deck-counter">Card 1 of 1</span><span id="deck-group-label"></span></div>
+  <div class="card" id="card" tabindex="0" role="button" aria-label="Flip card"></div>
+  <p class="hint">Click the card (or press space) to flip.</p>
+  <div class="controls">
+    <button class="btn" id="prevBtn">← Prev</button>
+    <button class="btn primary" id="flipBtn">Flip</button>
+    <button class="btn" id="nextBtn">Next →</button>
+    <button class="btn" id="shuffleBtn">Shuffle</button>
+  </div>
+  <footer>Source decks: <span class="mono">System Design.apkg</span>, <span class="mono">System Design Exercises.apkg</span>, <span class="mono">OO Design.apkg</span>. Also useful for study on the go: the <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki app</a> can import the original <span class="mono">.apkg</span> files directly from the repo's <span class="mono">resources/flash_cards/</span> folder.</footer>
+</div>
+
+<script>
+(function(){
+  var DECKS = [
+    { key: 'sd', label: 'System Design', file: 'clean_SystemDesign.json', grouped: true },
+    { key: 'sde', label: 'Practice: SD Problems', file: 'clean_SystemDesignExercises.json', grouped: false },
+    { key: 'ood', label: 'Practice: OOD Problems', file: 'clean_OODesign.json', grouped: false }
+  ];
+  var MODULE_MAP = [
+    { test: /performance vs scalability|latency vs throughput|powers of two|latency numbers every programmer/, mod: '02 — Foundations' },
+    { test: /consistency patterns|availability patterns|availability vs consistency/, mod: '03 — Consistency & Availability' },
+    { test: /domain name system|content delivery network/, mod: '04 — DNS & CDN' },
+    { test: /load balancer|reverse proxy/, mod: '05 — Load Balancing & Reverse Proxies' },
+    { test: /^application layer$/, mod: '06 — Application Layer' },
+    { test: /^database$|federation|sharding|denormalization|sql tuning|nosql|key-value store|document store|wide column store|graph database|sql or nosql/, mod: '07 — Databases' },
+    { test: /^cache$|cache locations|database caching, what to cache|cache-aside|write-through|write-behind|refresh-ahead/, mod: '08 — Caching' },
+    { test: /^asynchronism$/, mod: '09 — Asynchronism' },
+    { test: /^communication$|hypertext transfer protocol|transmission control protocol|user datagram protocol|remote procedure call|representational state transfer|rpc and rest|hateoas/, mod: '10 — Communication' },
+    { test: /^security$/, mod: '11 — Security' }
+  ];
+  function moduleFor(frontText){
+    var t = frontText.replace(/<[^>]+>/g,'').trim().toLowerCase();
+    for (var i=0;i<MODULE_MAP.length;i++){ if (MODULE_MAP[i].test.test(t)) return MODULE_MAP[i].mod; }
+    return 'General';
+  }
+  var state = { deckKey: 'sd', group: 'All', index: 0, flipped: false, data: {}, order: [] };
+  function renderTabs(){
+    var el = document.getElementById('tabs'); el.innerHTML = '';
+    DECKS.forEach(function(d){
+      var b = document.createElement('button');
+      b.className = 'tab'; b.textContent = d.label + ' (' + (state.data[d.key]||[]).length + ')';
+      b.setAttribute('role','tab'); b.setAttribute('aria-selected', d.key === state.deckKey ? 'true':'false');
+      b.addEventListener('click', function(){ state.deckKey = d.key; state.group='All'; state.index=0; state.flipped=false; recomputeOrder(); render(); });
+      el.appendChild(b);
+    });
+  }
+  function currentDeckMeta(){ return DECKS.filter(function(d){return d.key===state.deckKey;})[0]; }
+  function recomputeOrder(){
+    var items = state.data[state.deckKey] || [];
+    if (currentDeckMeta().grouped && state.group !== 'All'){
+      state.order = items.map(function(n,i){return i;}).filter(function(i){ return items[i]._module === state.group; });
+    } else { state.order = items.map(function(n,i){return i;}); }
+    if (state.order.length === 0) state.order = [0];
+    state.index = 0; state.flipped = false;
+  }
+  function renderGroupbar(){
+    var el = document.getElementById('groupbar'); var meta = currentDeckMeta();
+    if (!meta.grouped){ el.style.display='none'; el.innerHTML=''; return; }
+    el.style.display='flex';
+    var items = state.data[state.deckKey] || []; var mods = [];
+    items.forEach(function(n){ if (mods.indexOf(n._module) === -1) mods.push(n._module); });
+    mods.sort(); var groups = ['All'].concat(mods); el.innerHTML = '';
+    groups.forEach(function(g){
+      var count = g === 'All' ? items.length : items.filter(function(n){return n._module===g;}).length;
+      var b = document.createElement('button');
+      b.className='chip'; b.textContent = g + ' (' + count + ')';
+      b.setAttribute('aria-pressed', g===state.group ? 'true':'false');
+      b.addEventListener('click', function(){ state.group = g; recomputeOrder(); render(); });
+      el.appendChild(b);
+    });
+  }
+  function render(){
+    renderTabs(); renderGroupbar();
+    var items = state.data[state.deckKey] || []; var realIdx = state.order[state.index]; var note = items[realIdx];
+    var card = document.getElementById('card'); var counter = document.getElementById('deck-counter'); var glabel = document.getElementById('deck-group-label');
+    counter.textContent = 'Card ' + (state.index+1) + ' of ' + state.order.length;
+    glabel.textContent = currentDeckMeta().grouped ? state.group : '';
+    if (!note){ card.innerHTML = '<p>No cards.</p>'; return; }
+    var label = state.flipped ? 'Back' : 'Front'; var html = state.flipped ? note.back : note.front;
+    card.innerHTML = '<p class="face-label">' + label + '</p><div class="content">' + html + '</div>';
+  }
+  function flip(){ state.flipped = !state.flipped; render(); }
+  function next(){ state.index = (state.index+1) % state.order.length; state.flipped=false; render(); }
+  function prev(){ state.index = (state.index-1+state.order.length) % state.order.length; state.flipped=false; render(); }
+  function shuffle(){
+    for (var i = state.order.length -1; i>0; i--){ var j = Math.floor(Math.random()*(i+1)); var t = state.order[i]; state.order[i]=state.order[j]; state.order[j]=t; }
+    state.index = 0; state.flipped = false; render();
+  }
+  document.getElementById('card').addEventListener('click', flip);
+  document.getElementById('flipBtn').addEventListener('click', flip);
+  document.getElementById('nextBtn').addEventListener('click', next);
+  document.getElementById('prevBtn').addEventListener('click', prev);
+  document.getElementById('shuffleBtn').addEventListener('click', shuffle);
+  document.addEventListener('keydown', function(e){
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+    if (e.code === 'Space'){ e.preventDefault(); flip(); } if (e.key === 'ArrowRight'){ next(); } if (e.key === 'ArrowLeft'){ prev(); }
+  });
+  Promise.all(DECKS.map(function(d){ return fetch(d.file).then(function(r){ return r.json(); }).catch(function(){ return []; }); })).then(function(results){
+    DECKS.forEach(function(d, i){ var items = results[i] || []; items.forEach(function(n){ n._module = moduleFor(n.front); }); state.data[d.key] = items; });
+    recomputeOrder(); render();
+  });
+  try{ var img = document.getElementById('anki-banner'); img.addEventListener('error', function(){ img.style.display='none'; }); }catch(e){}
+})();
+</script>
+</body></html>

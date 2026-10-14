@@ -1,0 +1,260 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Social Graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design the data structures for a social network"</p>
+  <h1>Social Graph</h1>
+  <p class="lede">The whole exercise, deliberately: find the shortest chain of friends between two people — "degrees of separation" — without reaching for a purpose-built graph database. The constraint is the point: it forces you to think about sharding a graph across machines.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <ul><li><strong>User</strong> searches for someone and sees the shortest path connecting them</li><li><strong>Service</strong> is highly available</li></ul>
+  <div class="constraints"><strong>Deliberately out of reach:</strong> graph-native tools like Neo4j or GraphQL — this is solved with plain services and sharding instead.<ul>
+    <li>100 million users, ~50 friends each on average → 5 billion friend-relationship edges; graph edges are unweighted</li>
+    <li>The whole graph won't fit on one machine</li>
+    <li>1 billion friend searches/month → ~400 search requests/sec on average</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/social_graph/social_graph.png" alt="High-level design: client, web server, search API, user graph service, lookup service, sharded person servers"><figcaption>Search API → User Graph Service → Lookup Service → the right Person Server shard</figcaption></figure>
+  <p>If the graph fit in memory on one machine, this would just be unweighted shortest-path BFS:</p>
+  <details class="code"><summary>Plain BFS shortest path (no sharding constraint)</summary><pre><code>class Graph(Graph):
+
+    def shortest_path(self, source, dest):
+        if source is None or dest is None:
+            return None
+        if source is dest:
+            return [source.key]
+        prev_node_keys = self._shortest_path(source, dest)
+        if prev_node_keys is None:
+            return None
+        else:
+            path_ids = [dest.key]
+            prev_node_key = prev_node_keys[dest.key]
+            while prev_node_key is not None:
+                path_ids.append(prev_node_key)
+                prev_node_key = prev_node_keys[prev_node_key]
+            return path_ids[::-1]
+
+    def _shortest_path(self, source, dest):
+        queue = deque()
+        queue.append(source)
+        prev_node_keys = {source.key: None}
+        source.visit_state = State.visited
+        while queue:
+            node = queue.popleft()
+            if node is dest:
+                return prev_node_keys
+            prev_node = node
+            for adj_node in node.adj_nodes.values():
+                if adj_node.visit_state == State.unvisited:
+                    queue.append(adj_node)
+                    prev_node_keys[adj_node.key] = prev_node.key
+                    adj_node.visit_state = State.visited
+        return None</code></pre></details>
+  <p>But 100 million users won't fit on one machine. So users (vertices) get sharded across many <strong>Person Servers</strong>, and a <strong>Lookup Service</strong> maps a person id to the server that holds them.</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <ol>
+    <li>Client → Web Server (reverse proxy) → Search API → <strong>User Graph Service</strong></li>
+    <li>User Graph Service asks the Lookup Service which Person Server holds the current user, fetches their <code class="mono">friend_ids</code></li>
+    <li>Runs BFS with the current user as source — but every time it needs a friend's data (an adjacent node), it has to ask the Lookup Service again for that friend's Person Server. That extra round-trip per hop is exactly the scaling pain point this design has to manage.</li>
+  </ol>
+  <details class="code"><summary>social_graph_snippets.py — Graph, Person, LookupService, PersonServer, UserGraphService</summary><pre><code># -*- coding: utf-8 -*-
+from collections import deque
+from enum import Enum
+
+
+class State(Enum):
+    unvisited = 0
+    visited = 1
+
+
+class Graph(object):
+
+    def bfs(self, source, dest):
+        if source is None:
+            return False
+        queue = deque()
+        queue.append(source)
+        source.visit_state = State.visited
+        while queue:
+            node = queue.popleft()
+            print(node)
+            if dest is node:
+                return True
+            for adjacent_node in node.adj_nodes.values():
+                if adjacent_node.visit_state == State.unvisited:
+                    queue.append(adjacent_node)
+                    adjacent_node.visit_state = State.visited
+        return False
+
+
+class Person(object):
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+        self.friend_ids = []
+
+
+class LookupService(object):
+
+    def __init__(self):
+        self.lookup = {}  # key: person_id, value: person_server
+
+    def get_person(self, person_id):
+        person_server = self.lookup[person_id]
+        return person_server.people[person_id]
+
+
+class PersonServer(object):
+
+    def __init__(self):
+        self.people = {}  # key: person_id, value: person
+
+    def get_people(self, ids):
+        results = []
+        for id in ids:
+            if id in self.people:
+                results.append(self.people[id])
+        return results
+
+
+class UserGraphService(object):
+
+    def __init__(self, person_ids, lookup):
+        self.lookup = lookup
+        self.person_ids = person_ids
+        self.visited_ids = set()
+
+    def bfs(self, source, dest):
+        # Use self.visited_ids to track visited nodes
+        # Use self.lookup to translate a person_id to a Person
+        pass</code></pre></details>
+  <p>A fuller sketch of the sharded BFS, including the full Lookup/Person/UserGraphService trio and the path-reconstruction logic:</p>
+  <details class="code"><summary>Full sharded BFS implementation (illustrative, from the README)</summary><pre><code>class LookupService(object):
+
+    def __init__(self):
+        self.lookup = self._init_lookup()  # key: person_id, value: person_server
+
+    def _init_lookup(self):
+        ...
+
+    def lookup_person_server(self, person_id):
+        return self.lookup[person_id]
+
+
+class PersonServer(object):
+
+    def __init__(self):
+        self.people = {}  # key: person_id, value: person
+
+    def add_person(self, person):
+        ...
+
+    def people(self, ids):
+        results = []
+        for id in ids:
+            if id in self.people:
+                results.append(self.people[id])
+        return results
+
+
+class Person(object):
+
+    def __init__(self, id, name, friend_ids):
+        self.id = id
+        self.name = name
+        self.friend_ids = friend_ids
+
+
+class UserGraphService(object):
+
+    def __init__(self, lookup_service):
+        self.lookup_service = lookup_service
+
+    def person(self, person_id):
+        person_server = self.lookup_service.lookup_person_server(person_id)
+        return person_server.people([person_id])
+
+    def shortest_path(self, source_key, dest_key):
+        if source_key is None or dest_key is None:
+            return None
+        if source_key is dest_key:
+            return [source_key]
+        prev_node_keys = self._shortest_path(source_key, dest_key)
+        if prev_node_keys is None:
+            return None
+        else:
+            path_ids = [dest_key]
+            prev_node_key = prev_node_keys[dest_key]
+            while prev_node_key is not None:
+                path_ids.append(prev_node_key)
+                prev_node_key = prev_node_keys[prev_node_key]
+            return path_ids[::-1]
+
+    def _shortest_path(self, source_key, dest_key, path):
+        source = self.person(source_key)
+        queue = deque()
+        queue.append(source)
+        prev_node_keys = {source_key: None}
+        visited_ids = set()
+        visited_ids.add(source.id)
+        while queue:
+            node = queue.popleft()
+            if node.key is dest_key:
+                return prev_node_keys
+            prev_node = node
+            for friend_id in node.friend_ids:
+                if friend_id not in visited_ids:
+                    friend_node = self.person(friend_id)
+                    queue.append(friend_node)
+                    prev_node_keys[friend_id] = prev_node.key
+                    visited_ids.add(friend_id)
+        return None</code></pre></details>
+  <pre class="api">$ curl https://social.com/api/v1/friend_search?person_id=1234
+
+→ [{"person_id":"100","name":"foo","link":"https://social.com/foo"},
+   {"person_id":"53","name":"bar","link":"https://social.com/bar"}, ...]</pre>
+  <p>Internal service-to-service calls would reasonably use RPC instead of REST.</p>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/social_graph/social_graph_basic.png" alt="Scaled design with load balancers, memory cache in front of the Lookup/Person servers, and sharded person servers by location"><figcaption>A Memory Cache absorbs repeat lookups; Person Servers get sharded by location to keep friends co-located</figcaption></figure>
+  <div class="callout">Benchmark → profile → fix the real bottleneck → repeat. See <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> for a worked example.</div>
+  <p>The ~400 average search requests/sec push toward a Memory Cache in front of person data — especially valuable for well-connected users and for anyone doing repeated searches (memory reads run ~250μs vs. 4x on SSD, 80x on disk).</p>
+  <p>The graph-specific optimizations are the interesting part of this one:</p>
+  <ul>
+    <li>Cache complete or partial BFS traversals so a repeated or similar search doesn't redo the walk</li>
+    <li>Batch-compute common traversals offline and store them in a NoSQL store for fast lookup</li>
+    <li>Batch friend lookups that happen to live on the same Person Server to cut down on machine hops — and shard Person Servers by geography, since friends tend to live near each other, which increases the odds a batch stays on one server</li>
+    <li>Run BFS from both ends at once — source→dest and dest→source — and meet in the middle, which is dramatically faster than a one-directional search on a graph this size</li>
+    <li>Start from highly-connected people first, since they're statistically more likely to shortcut the "six degrees of separation" path</li>
+    <li>Cap the search by time or hop count and ask the user if they want to keep going, since worst-case BFS here can take a while</li>
+    <li>And, if the constraint were lifted: a real graph database (Neo4j) or GraphQL would do a lot of this natively</li>
+  </ul>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-6-query-cache.html">Query cache (key-value search store)</a>. Previous: <a href="14-4-mint.html">Mint.com</a>.</p>
+</div>
+</body></html>
