@@ -1,0 +1,211 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Mint.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design Mint.com"</p>
+  <h1>Mint.com</h1>
+  <p class="lede">A service that links to a user's financial accounts, pulls transactions out automatically, categorizes them, and warns the user when they're close to blowing a budget.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <ul>
+    <li><strong>User</strong> connects a financial account</li>
+    <li><strong>Service</strong> extracts transactions (daily), categorizes them (user can override, but no auto re-categorization), and rolls up monthly spending by category</li>
+    <li><strong>Service</strong> recommends a budget, lets the user override it manually, and notifies them near/over budget</li>
+    <li><strong>Service</strong> is highly available</li>
+  </ul>
+  <p><strong>Out of scope:</strong> extra logging/analytics.</p>
+  <div class="constraints"><strong>The shape of the data:</strong><ul>
+    <li>10 million users × 10 budget categories = 100 million budget items; 30 million linked financial accounts; ~50,000 distinct sellers used for categorization</li>
+    <li>5 billion transactions/month, ~50 bytes each → 250 GB new content/month, ~9 TB over 3 years</li>
+    <li>Only 500 million reads/month against those 5 billion transaction-writes — a 10:1 write-heavy system, since users transact daily but rarely open the app</li>
+    <li>Worked rates: ~2,000 writes/sec average, ~200 reads/sec average</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/mint/mint.png" alt="High-level design: client, web server, accounts API, queue, transaction extraction service, category service, budget service, SQL database"><figcaption>Account linking writes straight to SQL; transaction extraction is queued and handled asynchronously</figcaption></figure>
+  <p>User records live comfortably in a relational database (10 million rows is nothing special — the interesting tradeoffs are all downstream, in how transactions get extracted and categorized at volume).</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <h3>Connecting an account</h3>
+  <p>Client → Web Server (reverse proxy) → Accounts API, which writes a row into the <code class="mono">accounts</code> table:</p>
+  <pre class="api">id int NOT NULL AUTO_INCREMENT
+created_at datetime NOT NULL
+last_update datetime NOT NULL
+account_url varchar(255) NOT NULL
+account_login varchar(32) NOT NULL
+account_password_hash char(64) NOT NULL
+user_id int NOT NULL
+PRIMARY KEY(id)
+FOREIGN KEY(user_id) REFERENCES users(id)</pre>
+  <p>Index <code class="mono">id</code>, <code class="mono">user_id</code>, and <code class="mono">created_at</code> to keep lookups fast and in memory (memory reads run ~250μs vs. 4x on SSD, 80x on disk — the same reason this matters everywhere else in the course).</p>
+  <pre class="api">$ curl -X POST --data '{ "user_id": "foo", "account_url": "bar",
+    "account_login": "baz", "account_password": "qux" }' \
+    https://mint.com/api/v1/account</pre>
+  <h3>Extracting transactions</h3>
+  <p>Triggers: first link, manual refresh, or an automatic daily pull for anyone active in the last 30 days. Pulling from a bank can be slow, so the Accounts API just drops a job on a Queue (SQS/RabbitMQ-class) and returns — this is Module 09's asynchronism pattern in action. A Transaction Extraction Service then: pulls the job, fetches raw transactions from the institution into the Object Store, runs them through the Category Service, runs them through the Budget Service (which fires a notification if the user is near/over budget), writes categorized rows to <code class="mono">transactions</code> and rolled-up rows to <code class="mono">monthly_spending</code>, and notifies the user the sync finished (again via a queue).</p>
+  <pre class="api">transactions                          monthly_spending
+id, created_at, seller,                id, month_year, category,
+amount, user_id                        amount, user_id
+PRIMARY KEY(id)                        PRIMARY KEY(id)
+FOREIGN KEY(user_id)                   FOREIGN KEY(user_id)</pre>
+  <h3>Categorizing a transaction</h3>
+  <p>Seed a seller→category dictionary for the most common sellers — 50,000 sellers at well under 255 bytes each is only ~12 MB, trivial to keep fully in memory. For anything not seeded, fall back to crowdsourced data from users' own manual overrides, using a heap to find the most common override per seller in O(1).</p>
+  <details class="code"><summary>mint_snippets.py — Categorizer, Transaction, Budget</summary><pre><code># -*- coding: utf-8 -*-
+
+from enum import Enum
+
+
+class DefaultCategories(Enum):
+
+    HOUSING = 0
+    FOOD = 1
+    GAS = 2
+    SHOPPING = 3
+    # ...
+
+
+seller_category_map = {}
+seller_category_map['Exxon'] = DefaultCategories.GAS
+seller_category_map['Target'] = DefaultCategories.SHOPPING
+
+
+class Categorizer(object):
+
+    def __init__(self, seller_category_map, seller_category_overrides_map):
+        self.seller_category_map = seller_category_map
+        self.seller_category_overrides_map = seller_category_overrides_map
+
+    def categorize(self, transaction):
+        if transaction.seller in self.seller_category_map:
+            return self.seller_category_map[transaction.seller]
+        if transaction.seller in self.seller_category_overrides_map:
+            seller_category_map[transaction.seller] = \
+                self.manual_overrides[transaction.seller].peek_min()
+            return self.seller_category_map[transaction.seller]
+        return None
+
+
+class Transaction(object):
+
+    def __init__(self, timestamp, seller, amount):
+        self.timestamp = timestamp
+        self.seller = seller
+        self.amount = amount
+
+
+class Budget(object):
+
+    def __init__(self, template_categories_to_budget_map):
+        self.categories_to_budget_map = template_categories_to_budget_map
+
+    def override_category_budget(self, category, amount):
+        self.categories_to_budget_map[category] = amount</code></pre></details>
+  <h3>Recommending (and tracking) a budget</h3>
+  <p>Start from an income-tiered template instead of storing all 100 million budget items — only store what a user actually overrides, in a <code class="mono">budget_overrides</code> table.</p>
+  <details class="code"><summary>Budget template logic (from the README, illustrative)</summary><pre><code>class Budget(object):
+
+    def __init__(self, income):
+        self.income = income
+        self.categories_to_budget_map = self.create_budget_template()
+
+    def create_budget_template(self):
+        return {
+            DefaultCategories.HOUSING: self.income * .4,
+            DefaultCategories.FOOD: self.income * .2,
+            DefaultCategories.GAS: self.income * .1,
+            DefaultCategories.SHOPPING: self.income * .2,
+            # ...
+        }
+
+    def override_category_budget(self, category, amount):
+        self.categories_to_budget_map[category] = amount</code></pre></details>
+  <p>The Budget Service can compute <code class="mono">monthly_spending</code> with plain SQL aggregation (there are far fewer monthly rows than the 5 billion raw transactions), or — likely better at this volume — run MapReduce directly over the raw transaction log files, which also categorizes on the fly and keeps the heavy lifting off the primary database:</p>
+  <details class="code"><summary>mint_mapreduce.py — SpendingByCategory</summary><pre><code># -*- coding: utf-8 -*-
+
+from mrjob.job import MRJob
+
+
+class SpendingByCategory(MRJob):
+
+    def __init__(self, categorizer):
+        self.categorizer = categorizer
+        ...
+
+    def current_year_month(self):
+        """Return the current year and month."""
+        ...
+
+    def extract_year_month(self, timestamp):
+        """Return the year and month portions of the timestamp."""
+        ...
+
+    def handle_budget_notifications(self, key, total):
+        """Call notification API if nearing or exceeded budget."""
+        ...
+
+    def mapper(self, _, line):
+        """Parse each log line, extract and transform relevant lines.
+
+        Emit key value pairs of the form:
+
+        (2016-01, shopping), 25
+        (2016-01, shopping), 100
+        (2016-01, gas), 50
+        """
+        timestamp, category, amount = line.split('\t')
+        period = self. extract_year_month(timestamp)
+        if period == self.current_year_month():
+            yield (period, category), amount
+
+    def reducer(self, key, values):
+        """Sum values for each key.
+
+        (2016-01, shopping), 125
+        (2016-01, gas), 50
+        """
+        total = sum(values)
+        self.handle_budget_notifications(key, total)
+        yield key, sum(values)
+
+    def steps(self):
+        """Run the map and reduce steps."""
+        return [
+            self.mr(mapper=self.mapper,
+                    reducer=self.reducer)
+        ]
+
+
+if __name__ == '__main__':
+    SpendingByCategory.run()</code></pre></details>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/mint/mint_basic.png" alt="Scaled design with CDN, load balancers, memory cache, SQL read replicas, and a separate analytics database"><figcaption>New use case at scale: viewing summaries/transactions — served cache-aside through a Memory Cache in front of SQL</figcaption></figure>
+  <div class="callout">Benchmark → profile → fix the real bottleneck → repeat. See <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> for a worked example.</div>
+  <p>A new read-heavy use case shows up at scale: viewing summaries and recent transactions. Serve it cache-aside (Module 08) — check the Memory Cache first, fall back to SQL on a miss, then populate the cache; static content comes from an Object Store behind a CDN.</p>
+  <p>Move the <code class="mono">monthly_spending</code> rollups into a dedicated Analytics Database (Redshift/BigQuery-class) rather than the primary SQL database, and consider keeping only a recent window of raw <code class="mono">transactions</code> in SQL with the rest in a data warehouse or Object Store — comfortably within reach of S3-class storage at 250 GB/month. 200 average reads/sec is cache-and-read-replica territory; 2,000 average writes/sec is genuinely tough for one SQL write master, which is where Module 07's Federation, Sharding, Denormalization and SQL tuning (plus a possible move to NoSQL for part of the data) come back in.</p>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-5-social-graph.html">Social graph</a>. Previous: <a href="14-3-web-crawler.html">Web crawler</a>.</p>
+</div>
+</body></html>

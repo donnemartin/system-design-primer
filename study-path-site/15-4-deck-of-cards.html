@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Deck of Cards — OOD Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+.backlink{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted)} .backlink:hover{color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 10px}
+.badge{display:inline-block;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;letter-spacing:.04em;margin-left:8px}
+h1{font-size:clamp(26px,5vw,36px);margin:0 0 14px;text-wrap:balance;font-weight:700} h2{font-size:21px;margin:34px 0 10px} p{max-width:68ch} .lede{color:var(--muted);font-size:16px}
+.classlist{list-style:none;margin:14px 0;padding:0;border-top:1px solid var(--border)} .classlist li{padding:11px 2px;border-bottom:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap} .classlist .cname{font-family:"IBM Plex Mono";font-weight:600;min-width:140px;color:var(--accent)} .classlist .cdesc{color:var(--muted);font-size:14.5px;flex:1;min-width:0}
+ul.points{padding-left:20px} ul.points li{margin-bottom:8px}
+.warn{border-left:3px solid #c0392b;padding:10px 14px;background:var(--accent-soft);border-radius:0 6px 6px 0;font-size:14px;color:var(--fg);margin:18px 0}
+details{margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} summary{cursor:pointer;padding:12px 16px;font-family:"IBM Plex Mono";font-size:13px;background:var(--accent-soft);color:var(--accent);list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸ "} details[open] summary::before{content:"▾ "}
+pre{margin:0;padding:16px;overflow-x:auto;background:var(--code-bg);color:var(--code-fg);font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.65}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <a class="backlink" href="00-home.html">← Course Map</a>
+  <p class="eyebrow">The System Design Primer — Study Path <span class="badge">Module 15.4</span></p>
+  <h1>Design a deck of cards</h1>
+  <p class="lede">Model a generic deck of playing cards so it can be reused across different card games — here specialized for Blackjack — without rewriting the deck or card mechanics for each game.</p>
+  <h2>The problem</h2>
+  <p>"A deck of cards" sounds simple until you notice that what a card's <em>value</em> means depends entirely on the game: an Ace is 1 or 11 in Blackjack, high or low in Poker, and worth nothing in War except for comparison. A good design keeps the deck and dealing mechanics generic, and pushes game-specific scoring into a subclass.</p>
+  <h2>Classes at a glance</h2>
+  <ul class="classlist">
+    <li><span class="cname">Suit</span><span class="cdesc">Enum: HEART, DIAMOND, CLUBS, SPADE.</span></li>
+    <li><span class="cname">Card</span><span class="cdesc">Abstract base. Tracks suit and availability, but leaves what "value" means to subclasses.</span></li>
+    <li><span class="cname">BlackJackCard</span><span class="cdesc">A <span class="mono">Card</span> whose value follows Blackjack rules: aces score 1, face cards (Jack/Queen/King) score 10.</span></li>
+    <li><span class="cname">Hand</span><span class="cdesc">A generic collection of cards with a <span class="mono">score()</span> that sums card values.</span></li>
+    <li><span class="cname">BlackJackHand</span><span class="cdesc">Overrides scoring to handle the ace-is-1-or-11 ambiguity, picking the best legal total at or under 21.</span></li>
+    <li><span class="cname">Deck</span><span class="cdesc">An ordered stack of cards with a deal pointer and a shuffle operation.</span></li>
+  </ul>
+  <h2>Key design decisions</h2>
+  <ul class="points">
+    <li><strong><span class="mono">Card.value</span> is an abstract property, not a plain field.</strong> That's the whole trick for reuse: it forces every concrete card type (Blackjack, Poker, War, ...) to define its own meaning of "value" while sharing the same suit/availability plumbing.</li>
+    <li><strong>Dealing advances a pointer instead of removing cards from a list.</strong> <span class="mono">Deck.deal_card()</span> reads <span class="mono">self.cards[self.deal_index]</span>, marks that card unavailable, and increments the index — cheaper than mutating the underlying list, and <span class="mono">remaining_cards()</span> is then just subtraction.</li>
+    <li><strong>Blackjack's hardest rule — ace flexibility — is isolated in one method.</strong> <span class="mono">BlackJackHand.score()</span> is written generically against whatever <span class="mono">possible_scores()</span> returns (every legal total given each ace counted as 1 or 11), then picks the highest total that doesn't bust, or the lowest bust if there's no way to avoid it.</li>
+  </ul>
+  <div class="warn"><strong>Two stubs to know about before you run this:</strong> <span class="mono">BlackJackHand.possible_scores()</span> is left as <span class="mono">pass</span> — it's the actual hard part of Blackjack scoring (enumerating every ace-high/ace-low combination) and is the natural place to keep building. And <span class="mono">Deck.shuffle()</span> is also a no-op stub, so as shipped this deck never actually shuffles; a real implementation would use something like <span class="mono">random.shuffle(self.cards)</span>.</div>
+  <details><summary>Show full code — deck_of_cards.py</summary><pre><code>from abc import ABCMeta, abstractmethod
+from enum import Enum
+import sys
+
+
+class Suit(Enum):
+
+    HEART = 0
+    DIAMOND = 1
+    CLUBS = 2
+    SPADE = 3
+
+
+class Card(metaclass=ABCMeta):
+
+    def __init__(self, value, suit):
+        self.value = value
+        self.suit = suit
+        self.is_available = True
+
+    @property
+    @abstractmethod
+    def value(self):
+        pass
+
+    @value.setter
+    @abstractmethod
+    def value(self, other):
+        pass
+
+
+class BlackJackCard(Card):
+
+    def __init__(self, value, suit):
+        super(BlackJackCard, self).__init__(value, suit)
+
+    def is_ace(self):
+        return True if self._value == 1 else False
+
+    def is_face_card(self):
+        """Jack = 11, Queen = 12, King = 13"""
+        return True if 10 < self._value <= 13 else False
+
+    @property
+    def value(self):
+        if self.is_ace() == 1:
+            return 1
+        elif self.is_face_card():
+            return 10
+        else:
+            return self._value
+
+    @value.setter
+    def value(self, new_value):
+        if 1 <= new_value <= 13:
+            self._value = new_value
+        else:
+            raise ValueError('Invalid card value: {}'.format(new_value))
+
+
+class Hand(object):
+
+    def __init__(self, cards):
+        self.cards = cards
+
+    def add_card(self, card):
+        self.cards.append(card)
+
+    def score(self):
+        total_value = 0
+        for card in self.cards:
+            total_value += card.value
+        return total_value
+
+
+class BlackJackHand(Hand):
+
+    BLACKJACK = 21
+
+    def __init__(self, cards):
+        super(BlackJackHand, self).__init__(cards)
+
+    def score(self):
+        min_over = sys.MAXSIZE
+        max_under = -sys.MAXSIZE
+        for score in self.possible_scores():
+            if self.BLACKJACK < score < min_over:
+                min_over = score
+            elif max_under < score <= self.BLACKJACK:
+                max_under = score
+        return max_under if max_under != -sys.MAXSIZE else min_over
+
+    def possible_scores(self):
+        """Return a list of possible scores, taking Aces into account."""
+        pass
+
+
+class Deck(object):
+
+    def __init__(self, cards):
+        self.cards = cards
+        self.deal_index = 0
+
+    def remaining_cards(self):
+        return len(self.cards) - self.deal_index
+
+    def deal_card(self):
+        try:
+            card = self.cards[self.deal_index]
+            card.is_available = False
+            self.deal_index += 1
+        except IndexError:
+            return None
+        return card
+
+    def shuffle(self):
+        pass</code></pre></details>
+  <footer>Source: <span class="mono">solutions/object_oriented_design/deck_of_cards/deck_of_cards.py</span></footer>
+</div>
+</body></html>

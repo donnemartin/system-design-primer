@@ -1,0 +1,157 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Query Cache</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design a key-value store for a search engine" (query result cache)</p>
+  <h1>Query Cache</h1>
+  <p class="lede">A focused, smaller cousin of the web crawler problem: given a search engine already exists, cache its most recent/popular query results so repeat searches don't have to hit the index every time.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <ul><li><strong>User</strong> sends a search that hits the cache</li><li><strong>User</strong> sends a search that misses the cache</li><li><strong>Service</strong> is highly available</li></ul>
+  <div class="constraints"><strong>What's actually constrained here:</strong><ul>
+    <li>Memory is limited — you cannot cache every query forever, so eviction policy is the whole problem</li>
+    <li>10 million users, 10 billion queries/month → ~4,000 requests/sec</li>
+    <li>Per cached entry: query (50 B) + title (20 B) + snippet (200 B) ≈ 270 bytes → if every one of those 10 billion monthly queries were unique and cached, that's 2.7 TB/month, which is exactly why you can't keep them all</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/query_cache/query_cache.png" alt="High-level design: client, web server, query API, memory cache, reverse index service, document service"><figcaption>Query API checks the Memory Cache first; only a miss touches the Reverse Index and Document services</figcaption></figure>
+  <p>Popular queries get served from a Memory Cache (Redis/Memcached) instead of hitting the Reverse Index and Document services every time — memory reads run ~250μs vs. 4x on SSD, 80x on disk, which is the entire reason this cache is worth building. Since capacity is limited, evict with <strong>LRU</strong> (least recently used).</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <h3>Serving a request</h3>
+  <ol>
+    <li>Client → Web Server (reverse proxy) → Query API</li>
+    <li>Query API parses the query (strip markup, split into terms, fix typos, normalize case, convert to boolean operators)</li>
+    <li>Checks the Memory Cache. <strong>Hit:</strong> move the entry to the front of the LRU list, return it. <strong>Miss:</strong> query the Reverse Index Service (which ranks and returns top matches) and the Document Service (titles/snippets), then insert the result at the front of the LRU list.</li>
+  </ol>
+  <p>The cache itself is a classic LRU structure: a doubly-linked list (new entries at the head, expired entries removed from the tail) plus a hash table for O(1) lookup into the list.</p>
+  <details class="code"><summary>query_cache_snippets.py — QueryApi, Node, LinkedList, Cache (LRU)</summary><pre><code># -*- coding: utf-8 -*-
+
+
+class QueryApi(object):
+
+    def __init__(self, memory_cache, reverse_index_cluster):
+        self.memory_cache = memory_cache
+        self.reverse_index_cluster = reverse_index_cluster
+
+    def parse_query(self, query):
+        """Remove markup, break text into terms, deal with typos,
+        normalize capitalization, convert to use boolean operations.
+        """
+        ...
+
+    def process_query(self, query):
+        query = self.parse_query(query)
+        results = self.memory_cache.get(query)
+        if results is None:
+            results = self.reverse_index_cluster.process_search(query)
+            self.memory_cache.set(query, results)
+        return results
+
+
+class Node(object):
+
+    def __init__(self, query, results):
+        self.query = query
+        self.results = results
+
+
+class LinkedList(object):
+
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def move_to_front(self, node):
+        ...
+
+    def append_to_front(self, node):
+        ...
+
+    def remove_from_tail(self):
+        ...
+
+
+class Cache(object):
+
+    def __init__(self, MAX_SIZE):
+        self.MAX_SIZE = MAX_SIZE
+        self.size = 0
+        self.lookup = {}
+        self.linked_list = LinkedList()
+
+    def get(self, query):
+        """Get the stored query result from the cache.
+
+        Accessing a node updates its position to the front of the LRU list.
+        """
+        node = self.lookup[query]
+        if node is None:
+            return None
+        self.linked_list.move_to_front(node)
+        return node.results
+
+    def set(self, results, query):
+        """Set the result for the given query key in the cache.
+
+        When updating an entry, updates its position to the front of the LRU list.
+        If the entry is new and the cache is at capacity, removes the oldest entry
+        before the new entry is added.
+        """
+        node = self.map[query]
+        if node is not None:
+            # Key exists in cache, update the value
+            node.results = results
+            self.linked_list.move_to_front(node)
+        else:
+            # Key does not exist in cache
+            if self.size == self.MAX_SIZE:
+                # Remove the oldest entry from the linked list and lookup
+                self.lookup.pop(self.linked_list.tail.query, None)
+                self.linked_list.remove_from_tail()
+            else:
+                self.size += 1
+            # Add the new key and value
+            new_node = Node(results)
+            self.linked_list.append_to_front(new_node)
+            self.lookup[query] = new_node</code></pre></details>
+  <p><strong>Note:</strong> this is the same LRU shape you'll build from scratch in <a href="15-2-lru-cache.html">Module 15's LRU Cache</a> object-oriented design exercise — worth noticing the pattern repeats.</p>
+  <h3>When to update the cache</h3>
+  <p>A cached entry goes stale when the underlying page's contents change, the page is added/removed, or its rank changes. The simplest fix: give every entry a time-to-live (TTL) and refresh on expiry. This whole approach — check cache, fall back to the source, populate cache — is exactly Module 08's <strong>cache-aside</strong> pattern.</p>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/query_cache/query_cache_basic.png" alt="Scaled design with a sharded memory cache cluster across many machines"><figcaption>One cache no longer fits on one machine — the real decision is how to spread it across a cluster</figcaption></figure>
+  <div class="callout">Benchmark → profile → fix the real bottleneck → repeat. See <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> for a worked example.</div>
+  <p>The core scaling question here is how the Memory Cache cluster holds its data across many machines — three real options:</p>
+  <ul>
+    <li><strong>Each machine has its own independent cache</strong> — simplest, but hit rate suffers since the same query can land on a cache that's never seen it</li>
+    <li><strong>Every machine holds a full copy of the cache</strong> — simplest reads, but wastes memory badly</li>
+    <li><strong>Shard the cache across machines</strong> — <code class="mono">machine = hash(query)</code> — more moving parts, but the best use of memory and the best hit rate; in practice you'd want consistent hashing here so adding/removing cache machines doesn't reshuffle everything</li>
+  </ul>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-7-sales-rank.html">Amazon sales rank</a>. Previous: <a href="14-5-social-graph.html">Social graph</a>.</p>
+</div>
+</body></html>

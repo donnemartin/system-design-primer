@@ -1,0 +1,145 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Pastebin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto} table th,table td{border:1px solid var(--border);padding:7px 10px;text-align:left;white-space:nowrap}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design Pastebin.com (or Bit.ly)"</p>
+  <h1>Pastebin</h1>
+  <p class="lede">A service that stores a block of text and hands back a short link to retrieve it later — the same shape of problem as a URL shortener, except the thing being stored is the content itself, not a redirect target. Work through this after you've tried the exercise in Module 13 yourself.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <p>We're scoping this to what's answerable in an interview — no accounts, no login, no editing.</p>
+  <h3>In scope</h3>
+  <ul>
+    <li><strong>User</strong> pastes a block of text and gets back a randomly generated link, optionally with an expiration time (default: never expires)</li>
+    <li><strong>User</strong> visits a paste's url and sees its contents</li>
+    <li><strong>User</strong> is always anonymous</li>
+    <li><strong>Service</strong> tracks monthly visit analytics (not realtime)</li>
+    <li><strong>Service</strong> deletes expired pastes</li>
+    <li><strong>Service</strong> is highly available</li>
+  </ul>
+  <h3>Out of scope</h3>
+  <p>Accounts, email verification, login, editing an existing paste, custom visibility, custom shortlinks.</p>
+  <div class="constraints"><strong>Assumptions used for the math below:</strong><ul>
+    <li>10 million users, 10 million paste writes/month, 100 million reads/month (10:1 read:write)</li>
+    <li>~1 KB of text per paste → ~1.27 KB per paste once you add the shortlink, timestamps and path (255 bytes) → ~12.7 GB of new content every month, ~450 GB over 3 years, 360 million shortlinks over 3 years</li>
+    <li>That works out to about 4 writes/second and 40 reads/second on average — handy rule of thumb: 40 req/s ≈ 100 million requests/month</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/pastebin/pastebin.png" alt="High-level design: client, web server, read/write API servers, SQL database, object store"><figcaption>Client → Web Server (reverse proxy) → Write/Read API → SQL Database + Object Store</figcaption></figure>
+  <p>The write path could use a relational database as a giant hash table mapping the generated url to where the paste content lives, or a managed object store (S3) for the actual bytes, or a NoSQL key-value store instead of SQL entirely — all three are defensible; the discussion below picks the relational-database approach and says so explicitly, which is exactly what you should do out loud in an interview.</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <h3>Creating a paste</h3>
+  <ol><li>Client sends a create-paste request to the Web Server (a reverse proxy)</li><li>Web Server forwards it to the Write API</li><li>Write API generates a unique url, checks the SQL database for a collision, retries if needed, saves the row to a <code class="mono">pastes</code> table, saves the content to the Object Store, and returns the url</li></ol>
+  <p>A reasonable <code class="mono">pastes</code> table:</p>
+  <pre class="api">shortlink char(7) NOT NULL
+expiration_length_in_minutes int NOT NULL
+created_at datetime NOT NULL
+paste_path varchar(255) NOT NULL
+PRIMARY KEY(shortlink)</pre>
+  <p>The primary key on <code class="mono">shortlink</code> gives you a free uniqueness-enforcing index. A second index on <code class="mono">created_at</code> keeps lookups fast and keeps recent data in memory — reading 1 MB sequentially from memory takes ~250 microseconds, 4x longer from SSD, and 80x longer from disk, so keeping the hot path in memory matters.</p>
+  <p><strong>Generating the url:</strong> take the MD5 hash of the user's IP address plus a timestamp (or of random data), then Base62-encode it (<code class="mono">[a-zA-Z0-9]</code> — url-safe, no escaping needed, unlike Base64's <code class="mono">+</code>/<code class="mono">/</code>). Keep the first 7 characters: 62⁷ possible values is comfortably more than the 360 million shortlinks the 3-year estimate calls for.</p>
+  <details class="code"><summary>Base62 encode — pseudocode</summary><pre><code>def base_encode(num, base=62):
+    digits = []
+    while num &gt; 0
+      remainder = modulo(num, base)
+      digits.push(remainder)
+      num = divide(num, base)
+    digits = digits.reverse
+
+url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]</code></pre></details>
+  <p>A public REST API for creating a paste:</p>
+  <pre class="api">$ curl -X POST --data '{ "expiration_length_in_minutes": "60",
+    "paste_contents": "Hello World!" }' https://pastebin.com/api/v1/paste
+
+→ { "shortlink": "foobar" }</pre>
+  <h3>Reading a paste</h3>
+  <p>Client → Web Server → Read API, which checks the SQL database for the shortlink; if found, fetches the content from the Object Store, otherwise returns an error.</p>
+  <pre class="api">$ curl https://pastebin.com/api/v1/paste?shortlink=foobar
+
+→ { "paste_contents": "Hello World", "created_at": "YYYY-MM-DD HH:MM:SS",
+    "expiration_length_in_minutes": "60" }</pre>
+  <h3>Tracking analytics</h3>
+  <p>Since realtime isn't a requirement, just MapReduce the web server logs into monthly hit counts.</p>
+  <details class="code"><summary>hit_counts.py — MapReduce job (mrjob)</summary><pre><code># -*- coding: utf-8 -*-
+
+from mrjob.job import MRJob
+
+
+class HitCounts(MRJob):
+
+    def extract_url(self, line):
+        """Extract the generated url from the log line."""
+        pass
+
+    def extract_year_month(self, line):
+        """Return the year and month portions of the timestamp."""
+        pass
+
+    def mapper(self, _, line):
+        """Parse each log line, extract and transform relevant lines.
+
+        Emit key value pairs of the form:
+
+        (2016-01, url0), 1
+        (2016-01, url0), 1
+        (2016-01, url1), 1
+        """
+        url = self.extract_url(line)
+        period = self.extract_year_month(line)
+        yield (period, url), 1
+
+    def reducer(self, key, values):
+        """Sum values for each key.
+
+        (2016-01, url0), 2
+        (2016-01, url1), 1
+        """
+        yield key, sum(values)
+
+    def steps(self):
+        """Run the map and reduce steps."""
+        return [
+            self.mr(mapper=self.mapper,
+                    reducer=self.reducer)
+        ]
+
+
+if __name__ == '__main__':
+    HitCounts.run()</code></pre></details>
+  <h3>Deleting expired pastes</h3>
+  <p>Scan the SQL database for rows whose expiration timestamp has passed, then delete (or mark) them. Simple and good enough since this isn't a realtime requirement.</p>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/pastebin/pastebin_basic.png" alt="Scaled design with load balancers, CDN, cache, SQL read replicas, NoSQL database, and an analytics database"><figcaption>Added for scale: DNS, CDN, load balancers, a memory cache, SQL read replicas, and a separate analytics database</figcaption></figure>
+  <div class="callout">Don't jump straight from the basic design to this one — say out loud that you'd get here iteratively: benchmark, profile for the actual bottleneck, fix that one thing, repeat. See the <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> solution for what that iteration looks like in practice.</div>
+  <p>Talking points for this upgrade, each covered in its own module — don't re-derive them here, just reference them: <a href="04-dns-cdn.html">DNS and CDN</a> (Module 04), <a href="05-load-balancing-reverse-proxies.html">Load Balancer and Horizontal scaling</a> (Module 05), <a href="08-caching.html">Cache</a> (Module 08), <a href="07-databases.html">RDBMS replication</a> (Module 07), <a href="03-consistency-availability.html">Consistency and Availability patterns</a> (Module 03).</p>
+  <p>The Analytics Database becomes a proper data warehouse (Redshift/BigQuery-style). The Object Store (S3-class) comfortably absorbs 12.7 GB/month of new paste content. The ~40 reads/second (more at peak) get served from a Memory Cache in front of SQL Read Replicas, which also smooths out the uneven traffic. 4 average writes/second is fine for a single SQL Write Master with replicas — if it weren't, the next moves are Federation, Sharding, Denormalization, and SQL tuning (all in Module 07), plus considering a NoSQL database for part of the data.</p>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-2-twitter.html">Twitter timeline &amp; search</a>.</p>
+</div>
+</body></html>

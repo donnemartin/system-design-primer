@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Twitter Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:20px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+details.code{margin:14px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} details.code summary{cursor:pointer;padding:10px 14px;font-family:"IBM Plex Mono";font-size:13px;background:var(--surface);list-style:none;display:flex;align-items:center;gap:8px} details.code summary::-webkit-details-marker{display:none} details.code summary::before{content:"▶";font-size:10px;color:var(--accent)} details.code[open] summary::before{content:"▼"} details.code pre{margin:0;padding:16px;background:var(--code-bg);color:var(--code-fg);overflow-x:auto;min-width:0} details.code pre, details.code code{font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.6}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto} table th,table td{border:1px solid var(--border);padding:7px 10px;text-align:left;white-space:nowrap}
+.api{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono";font-size:12.5px;overflow-x:auto;margin:10px 0;white-space:pre-wrap}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design the Twitter timeline and search"</p>
+  <h1>Twitter Timeline &amp; Search</h1>
+  <p class="lede">Same shape of question as "design the Facebook feed" or "design Facebook search" — the hard part isn't storing a tweet, it's getting that tweet in front of every follower, fast, without melting your database.</p>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <h3>In scope</h3>
+  <ul>
+    <li><strong>User</strong> posts a tweet; the <strong>service</strong> pushes it out to followers (push notifications, email)</li>
+    <li><strong>User</strong> views their own user timeline, and their home timeline (people they follow)</li>
+    <li><strong>User</strong> searches keywords</li>
+    <li><strong>Service</strong> is highly available</li>
+  </ul>
+  <p><strong>Out of scope:</strong> the public Firehose stream, visibility/reply-hiding rules, analytics.</p>
+  <div class="constraints"><strong>The numbers that make this problem interesting:</strong><ul>
+    <li>100 million active users, 500 million tweets/day (15 billion/month), each tweet fanned out to ~10 followers on average → 150 billion fanout deliveries/month</li>
+    <li>250 billion read requests/month, 10 billion searches/month</li>
+    <li>Per-tweet size ~10 KB (mostly media) → ~150 TB of new tweet content every month, ~5.4 PB over 3 years</li>
+    <li>Worked rates: ~100k reads/sec, ~6,000 new tweets/sec, <strong>~60,000 fanout deliveries/sec</strong>, ~4,000 searches/sec</li>
+  </ul></div>
+  <p>Twitter is far more read-heavy than write-heavy, so reads need to be cheap — but the fanout write (one tweet → thousands of timeline inserts) is the one write path that can genuinely overload a naive design.</p>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>High-level design</h2>
+  <figure><img src="assets/solutions/twitter/twitter.png" alt="High-level design: client, web server, write/read/search API, fan-out service, user graph service, memory cache, SQL database, search index, object store, notification service"><figcaption>Write path fans a tweet out to followers' cached timelines; read path serves straight from that cache</figcaption></figure>
+  <p>A relational database is fine for a user's own tweet history (their <em>user timeline</em>). It is not fine for building everyone's <em>home timeline</em> — fanning one tweet out to thousands of followers (60k/sec at peak) needs something with fast writes: a NoSQL store or a memory cache (reading 1 MB sequentially from memory takes ~250μs vs. 4x on SSD and 80x on disk, so keeping the hot path in memory is what makes this tractable). Media goes to an Object Store.</p>
+
+  <h2><span class="step">Framework step 3 · Module 01</span>Core components</h2>
+  <h3>Posting a tweet</h3>
+  <ol>
+    <li>Client → Web Server (reverse proxy) → Write API</li>
+    <li>Write API stores the tweet in the user's own timeline in SQL</li>
+    <li>Write API hands off to the <strong>Fan Out Service</strong>, which: looks up the user's followers via the User Graph Service (cached in memory), writes the tweet into each follower's home-timeline cache entry (O(n): 1,000 followers = 1,000 cache writes), indexes it in the Search Index Service, stores any media in the Object Store, and queues a push notification/email via the Notification Service (asynchronously, through a queue)</li>
+  </ol>
+  <p>If the Memory Cache is Redis, a native Redis list works well for a timeline — a tight packed structure per tweet:</p>
+  <pre class="api">           tweet n+2                   tweet n+1                   tweet n
+| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte |
+| tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |</pre>
+  <p>Public REST API:</p>
+  <pre class="api">$ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123",
+    "status": "hello world!", "media_ids": "ABC987" }' \
+    https://twitter.com/api/v1/tweet
+
+→ { "created_at": "Wed Sep 05 00:37:15 +0000 2012", "status": "hello world!",
+    "tweet_id": "987", "user_id": "123", ... }</pre>
+  <p>Internal service-to-service calls would reasonably use RPC instead of REST (Module 10 covers that tradeoff).</p>
+  <h3>Viewing the home timeline</h3>
+  <p>Client → Web Server → Read API → <strong>Timeline Service</strong>, which: reads tweet ids + user ids for this user from the Memory Cache (O(1)), then multigets the actual tweet bodies from the Tweet Info Service (O(n)) and the author details from the User Info Service (O(n)).</p>
+  <pre class="api">$ curl https://twitter.com/api/v1/home_timeline?user_id=123
+
+→ [{"user_id":"456","tweet_id":"123","status":"foo"},
+   {"user_id":"789","tweet_id":"456","status":"bar"}, ...]</pre>
+  <h3>Viewing the user timeline</h3>
+  <p>Same path, but the Read API pulls straight from the SQL database instead of the fanout cache — these are just the user's own tweets, already stored there.</p>
+  <h3>Searching keywords</h3>
+  <p>Client → Web Server → Search API → <strong>Search Service</strong>, which: tokenizes the query (strip markup, split into terms, fix typos, normalize case, convert to boolean operators), then scatter-gathers the query across a Search Cluster (e.g. Lucene-based), merging, ranking and sorting the results before returning them in the same shape as a timeline response.</p>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design</h2>
+  <figure><img src="assets/solutions/twitter/twitter_basic.png" alt="Scaled design with DNS, CDN, load balancers, multiple web/API servers, SQL read replicas, and caching layers"><figcaption>Scaled: DNS, CDN, load balancers, horizontally-scaled API tiers, SQL read replicas, and a cache sized to active users only</figcaption></figure>
+  <div class="callout">As always: benchmark, profile, fix the actual bottleneck, repeat — don't jump straight to this diagram. See <a href="14-8-scaling-aws.html">Scaling to millions on AWS</a> for what that loop looks like in practice.</div>
+  <p>Reused talking points, covered in their own modules — <a href="04-dns-cdn.html">DNS/CDN</a> (04), <a href="05-load-balancing-reverse-proxies.html">Load balancing &amp; horizontal scaling</a> (05), <a href="08-caching.html">Caching</a> (08), <a href="07-databases.html">RDBMS replication</a> (07), <a href="03-consistency-availability.html">Consistency &amp; Availability patterns</a> (03).</p>
+  <p>The <strong>Fan Out Service</strong> is the standout bottleneck here: a user with millions of followers can take minutes to fully fan out, which creates a race condition where @replies can arrive before the original tweet is visible everywhere (fixable by re-ordering at serve time). One mitigation: don't fan out tweets from extremely high-follower accounts at all — instead, merge their tweets into a follower's timeline via search at read time.</p>
+  <p>Further optimizations: keep only a few hundred tweets per home timeline in cache; cache only active users (rebuild a dormant user's timeline from SQL on demand by re-querying the User Graph Service); keep only ~a month of tweets in the Tweet Info Service and only active users in the User Info Service; keep the Search Cluster's index in memory to hold latency down. For the SQL layer itself, read replicas alone likely won't absorb the cache-miss load, and a single write master won't absorb the write volume — so Module 07's <a href="07-databases.html">Federation</a>, <a href="07-databases.html">Sharding</a>, <a href="07-databases.html">Denormalization</a> and <a href="07-databases.html">SQL tuning</a> all come back into play, alongside moving some data to NoSQL entirely.</p>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">Next in Module 14: <a href="14-3-web-crawler.html">Web crawler</a>. Previous: <a href="14-1-pastebin.html">Pastebin</a>.</p>
+</div>
+</body></html>

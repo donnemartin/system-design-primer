@@ -1,0 +1,105 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Caching — Study Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px}
+.back{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 10px} .back:hover{color:var(--accent);border-color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:12px;color:var(--muted)} .badge b{font-size:15px;color:var(--accent);font-variant-numeric:tabular-nums}
+h1{font-size:clamp(26px,5vw,38px);margin:10px 0 10px;text-wrap:balance;font-weight:700} .dek{color:var(--muted);font-size:16px;max-width:64ch;margin:0 0 30px}
+h2{font-size:21px;margin:42px 0 6px;font-weight:700;border-bottom:1px solid var(--border);padding-bottom:8px} h3{font-size:17px;margin:26px 0 8px;font-weight:600;color:var(--accent)} h4{font-size:14px;margin:20px 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+p{margin:0 0 14px;max-width:68ch} ul,ol{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px}
+.figure{margin:18px 0 22px;text-align:center} .figure img{max-width:100%;border-radius:8px;border:1px solid var(--border)} .figure figcaption{margin-top:8px;font-size:12.5px;color:var(--muted);font-style:italic}
+.callout{border:1px solid var(--border);border-left:4px solid var(--accent-2);border-radius:6px;padding:14px 16px;margin:16px 0;background:var(--surface)} .callout h4{color:var(--accent-2);margin-top:0}
+.sources{border-top:1px dashed var(--border);margin-top:16px;padding-top:12px;font-size:13.5px} .sources h4{color:var(--muted)}
+pre{background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:14px 16px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.5;margin:12px 0 18px}
+code{font-family:"IBM Plex Mono",monospace} :not(pre)>code{background:var(--accent-soft);color:var(--accent);padding:1px 5px;border-radius:4px;font-size:.9em}
+.nextbox{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap} .nextbox .label{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em} .nextbox strong{display:block;font-size:16px;margin-top:4px} .nextbox strong a{color:var(--fg);text-decoration:none} .nextbox strong a:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <div class="topbar"><span class="badge">Module <b>08</b> / 16</span><a class="back" href="00-home.html">← Course Map</a></div>
+  <p class="eyebrow">The System Design Primer — Study Path</p>
+  <h1>Caching</h1>
+  <p class="dek">Where to put a cache, what to put in it, and the four strategies for keeping it in sync with the database underneath.</p>
+  <div class="figure"><img src="assets/images/Q6z24La.png"><figcaption><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html" target="_blank" rel="noopener">Source: Scalable system design patterns</a></figcaption></div>
+  <p>Caching improves page load times and reduces load on your servers and databases. Before doing the real work, a cache-aware dispatcher first checks whether this exact request has already been answered, and returns that stored answer instead of redoing the work.</p>
+  <p>Databases usually assume a fairly even spread of reads and writes across their partitions. Popular items skew that distribution and create bottlenecks — a cache in front of the database absorbs that unevenness and smooths out traffic spikes.</p>
+  <h2>Where you can cache</h2>
+  <h3>Client caching</h3><p>Caches can live on the client side (the OS or the browser), on the server side, or in a distinct cache layer of their own.</p>
+  <h3>CDN caching</h3><p>A CDN (Module 04) is itself a kind of cache.</p>
+  <h3>Web server caching</h3><p>Reverse proxies (Module 05) and dedicated caches like Varnish can serve static and dynamic content directly. Web servers can also cache requests themselves, answering without ever contacting an application server.</p>
+  <h3>Database caching</h3><p>Your database usually ships with some caching already configured for a generic use case — tuning those settings for your actual access pattern can meaningfully boost performance.</p>
+  <h3>Application caching</h3>
+  <p>In-memory caches such as Memcached and Redis sit between your application and your data storage as key-value stores. Because the data lives in RAM, they're far faster than a disk-backed database. RAM is scarcer than disk, so invalidation algorithms like <strong>least recently used (LRU)</strong> evict "cold" entries to make room for "hot" ones.</p>
+  <p>Redis adds a few things on top: an optional persistence mode, and built-in data structures like sorted sets and lists.</p>
+  <p>There are several levels you can cache at, falling into two broad categories — <strong>database queries</strong> and <strong>objects</strong>:</p>
+  <ul><li>Row level</li><li>Query level</li><li>Fully-formed, serializable objects</li><li>Fully-rendered HTML</li></ul>
+  <p>Generally, avoid file-based caching — it makes cloning and auto-scaling servers much harder.</p>
+  <h3>Caching at the database query level</h3>
+  <p>Hash the query itself as a key, and store its result in the cache. This runs into expiration trouble: complex queries are hard to invalidate precisely, and if a single table cell changes, you must invalidate every cached query that might have touched it.</p>
+  <h3>Caching at the object level</h3>
+  <p>Treat your data the way your application code already does: as objects. Have the application assemble a class instance (or other data structure) from the database, then:</p>
+  <ul><li>Remove the object from cache whenever its underlying data changes.</li><li>This also enables asynchronous processing — workers can assemble objects by consuming the latest cached version.</li></ul>
+  <p>Good candidates to cache this way: user sessions, fully-rendered web pages, activity streams, user graph data.</p>
+
+  <h2>When to update the cache</h2>
+  <p>Since cache space is limited, you need a deliberate strategy for keeping it in sync with the source of truth.</p>
+  <h3>Cache-aside</h3>
+  <div class="figure"><img src="assets/images/ONjORqk.png"><figcaption><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast" target="_blank" rel="noopener">Source: From cache to in-memory data grid</a></figcaption></div>
+  <p>The application talks to both the cache and the storage directly — the cache never talks to storage on its own. On a cache miss, the application loads the entry from the database, adds it to the cache, and returns it:</p>
+  <pre>def get_user(self, user_id):
+    user = cache.get("user.{0}", user_id)
+    if user is None:
+        user = db.query("SELECT * FROM users WHERE user_id = {0}", user_id)
+        if user is not None:
+            key = "user.{0}".format(user_id)
+            cache.set(key, json.dumps(user))
+    return user</pre>
+  <p>Memcached is generally used this way. Subsequent reads of the same data are fast, since this is also called <em>lazy loading</em> — only data that's actually requested ever gets cached, so you never fill the cache with things nobody asked for.</p>
+  <div class="callout"><h4>Disadvantages: cache-aside</h4><ul>
+    <li>Every cache miss costs three trips (check cache, query DB, write cache) — a noticeable delay.</li>
+    <li>Data can go stale once the database is updated underneath it. A time-to-live (TTL), or pairing this with write-through, mitigates it.</li>
+    <li>When a node fails, it's replaced by an empty one, temporarily raising latency until it warms back up.</li>
+  </ul></div>
+
+  <h3>Write-through</h3>
+  <div class="figure"><img src="assets/images/0vBc0hN.png"><figcaption><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Source: Scalability, availability, stability, patterns</a></figcaption></div>
+  <p>The application treats the cache as its main data store — the cache itself is now responsible for reading and writing to the database behind it:</p>
+  <ul><li>Application adds or updates an entry in the cache.</li><li>Cache synchronously writes that entry to the data store.</li><li>Return.</li></ul>
+  <p>Application code:</p><pre>set_user(12345, {"foo":"bar"})</pre>
+  <p>Cache code:</p><pre>def set_user(user_id, values):
+    user = db.query("UPDATE Users WHERE id = {0}", user_id, values)
+    cache.set(user_id, user)</pre>
+  <p>Write-through is slower overall because of the extra write step, but any data just written reads back fast — and people tolerate latency on writes far better than on reads. The cache is never stale.</p>
+  <div class="callout"><h4>Disadvantages: write-through</h4><ul>
+    <li>A newly-created node (from scaling or failure recovery) won't have cached entries until something updates them in the database — pairing with cache-aside mitigates this.</li>
+    <li>Most data written is never read back, which a TTL can help limit.</li>
+  </ul></div>
+
+  <h3>Write-behind (write-back)</h3>
+  <div class="figure"><img src="assets/images/rgSrvjG.png"><figcaption><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Source: Scalability, availability, stability, patterns</a></figcaption></div>
+  <p>The application adds or updates an entry in the cache, then the entry is written to the data store <strong>asynchronously</strong> — improving write performance at a cost.</p>
+  <div class="callout"><h4>Disadvantages: write-behind</h4><ul><li>Data can be lost if the cache goes down before its contents reach the data store.</li><li>More complex to implement correctly than cache-aside or write-through.</li></ul></div>
+
+  <h3>Refresh-ahead</h3>
+  <div class="figure"><img src="assets/images/kxtjqgE.png"><figcaption><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast" target="_blank" rel="noopener">Source: From cache to in-memory data grid</a></figcaption></div>
+  <p>Configure the cache to automatically refresh any recently-accessed entry just before it expires. Done well, this beats read-through on latency — but only if the cache can actually predict what's likely to be needed next.</p>
+  <div class="callout"><h4>Disadvantages: refresh-ahead</h4><ul><li>Bad predictions mean wasted refresh work and worse performance than not using it at all.</li></ul></div>
+
+  <div class="callout"><h4>Disadvantages: caching, in general</h4><ul>
+    <li>You must maintain consistency between the cache and the source of truth — cache invalidation is a genuinely hard problem.</li>
+    <li>Deciding exactly when to update the cache adds real complexity.</li>
+    <li>You're adding an application dependency (Redis, Memcached) that has to be operated and reasoned about.</li>
+  </ul></div>
+  <div class="sources"><h4>Sources</h4><p><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast" target="_blank" rel="noopener">From cache to in-memory data grid</a> · <a href="http://lethain.com/introduction-to-architecting-systems-for-scale/" target="_blank" rel="noopener">Introduction to architecting systems for scale</a> · <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html" target="_blank" rel="noopener">AWS ElastiCache strategies</a> · <a href="https://en.wikipedia.org/wiki/Cache_(computing)" target="_blank" rel="noopener">Wikipedia</a></p></div>
+
+  <div class="nextbox"><div><span class="label">Next</span><strong><a href="09-asynchronism.html">Module 09 — Asynchronism</a></strong></div><a class="back" href="00-home.html">Course Map →</a></div>
+</div>
+</body></html>

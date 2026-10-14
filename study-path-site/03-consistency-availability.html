@@ -1,0 +1,95 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Consistency &amp; Availability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 90px}
+.topnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;font-family:"IBM Plex Mono";font-size:13px} .topnav a{text-decoration:none;color:var(--muted)} .topnav a:hover{color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 24px;margin-bottom:28px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.badge{background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:2px 8px;font-weight:600}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 12px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:60ch;margin:0}
+figure{margin:26px 0;text-align:center} figure img{max-width:100%;border-radius:8px;border:1px solid var(--border)} figcaption{font-size:13px;color:var(--muted);margin-top:8px} figcaption a{color:var(--muted);text-decoration:underline}
+h2{font-size:22px;margin:40px 0 10px;font-weight:700} h3{font-size:17px;margin:26px 0 8px;font-weight:600;color:var(--accent)} h4{font-size:15px;margin:20px 0 6px;font-weight:600}
+p{margin:0 0 14px;font-size:15.5px} ul{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px;font-size:15.5px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:14px 16px;margin:18px 0;font-size:14.5px} .callout b{color:var(--accent)}
+.example{background:var(--accent-soft);border-radius:6px;padding:12px 14px;margin:12px 0;font-size:14.5px}
+table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px} th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)} th{font-family:"IBM Plex Mono";font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)} td.mono,th.mono{font-family:"IBM Plex Mono"}
+.formula{background:var(--code-bg);color:var(--code-fg);font-family:"IBM Plex Mono";font-size:14px;padding:14px 16px;border-radius:6px;overflow-x:auto;margin:12px 0}
+.sources{margin-top:46px;padding-top:18px;border-top:1px solid var(--border)} .sources h2{margin-top:0;font-size:14px;text-transform:uppercase;letter-spacing:.1em;font-family:"IBM Plex Mono";color:var(--muted)} .sources ul{padding-left:18px} .sources li{font-size:14px}
+.footnav{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;font-size:14px} .footnav .next{text-align:right} .footnav .lbl{display:block;font-family:"IBM Plex Mono";font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px} .footnav a{text-decoration:none;color:var(--fg)} .footnav a:hover{color:var(--accent)}
+@media (max-width:480px){ .footnav{flex-direction:column} .footnav .next{text-align:left} }
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">&larr; Course Map</a><span class="mono">Module 03 / 16</span></nav>
+  <header class="hero">
+    <p class="eyebrow"><span class="badge">03</span> The System Design Primer — Study Path</p>
+    <h1>Consistency &amp; Availability</h1>
+    <p class="lede">Distributed systems keep more than one copy of your data. These are the rules for how those copies agree with each other, and what happens when part of the system can't be reached.</p>
+  </header>
+
+  <h2>CAP theorem</h2>
+  <figure><img src="assets/images/bgLMI2u.png" alt="CAP theorem diagram: Consistency, Availability, Partition Tolerance, pick two"><figcaption>Source: <a href="https://robertgreiner.com/cap-theorem-revisited">CAP theorem revisited</a></figcaption></figure>
+  <p>In a distributed computer system, you can only support two of the following three guarantees at once:</p>
+  <ul><li><b>Consistency</b> — every read receives the most recent write, or an error.</li><li><b>Availability</b> — every request receives a response, but with no guarantee it contains the most recent version of the information.</li><li><b>Partition Tolerance</b> — the system keeps operating despite network failures splitting it into parts that can't talk to each other.</li></ul>
+  <div class="callout"><b>Networks aren't reliable.</b> That means partition tolerance isn't optional — you'll always need it. The real tradeoff you get to make is between consistency and availability.</div>
+  <h3>CP — consistency and partition tolerance</h3>
+  <p>Waiting for a response from the partitioned node might result in a timeout error. CP is a good choice if your business needs require atomic reads and writes.</p>
+  <h3>AP — availability and partition tolerance</h3>
+  <p>Responses return the most readily available version of the data on any node, which might not be the latest. Writes might take time to propagate once the partition resolves.</p>
+  <p>AP is a good choice if the business can tolerate eventual consistency, or the system needs to keep working despite external errors.</p>
+
+  <h2>Consistency patterns</h2>
+  <p>With multiple copies of the same data, you have to decide how to keep them synchronized so clients see a consistent view. Recall the CAP definition above: every read receives the most recent write, or an error.</p>
+  <h3>Weak consistency</h3>
+  <p>After a write, reads may or may not see it. A best-effort approach is taken.</p>
+  <div class="example"><b>Where you'll see it:</b> systems like memcached. Weak consistency works well for real-time use cases such as VoIP, video chat, and real-time multiplayer games — if you're on a phone call and lose reception for a few seconds, when you reconnect you simply don't hear what was said during the gap. Nobody replays it for you.</div>
+  <h3>Eventual consistency</h3>
+  <p>After a write, reads will eventually see it — typically within milliseconds. Data is replicated asynchronously.</p>
+  <div class="example"><b>Where you'll see it:</b> DNS and email. Eventual consistency works well in highly available systems.</div>
+  <h3>Strong consistency</h3>
+  <p>After a write, reads will see it immediately. Data is replicated synchronously.</p>
+  <div class="example"><b>Where you'll see it:</b> file systems and RDBMSes. Strong consistency works well in systems that need transactions.</div>
+
+  <h2>Availability patterns</h2>
+  <p>There are two complementary patterns used to support high availability: <b>fail-over</b> and <b>replication</b>.</p>
+  <h3>Fail-over</h3>
+  <h4>Active-passive</h4>
+  <p>Heartbeats are sent between the active server and the passive server on standby. If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.</p>
+  <p>How long that takeover takes depends on whether the passive server was already running in "hot" standby, or needs to start up from "cold" standby. Only the active server handles traffic while things are healthy. Active-passive fail-over is also called <b>master-slave</b> fail-over.</p>
+  <h4>Active-active</h4>
+  <p>Both servers manage traffic, splitting the load between them. If the servers are public-facing, DNS needs to know about both servers' public IPs; if they're internal-facing, the application logic needs to know about both. Active-active fail-over is also called <b>master-master</b> fail-over.</p>
+  <div class="callout"><b>Disadvantages of fail-over:</b> it adds more hardware and complexity, and there's a risk of losing data if the active system fails before newly written data replicates to the passive one.</div>
+  <h3>Replication</h3>
+  <p>Master-slave and master-master replication are the mechanics behind fail-over — covered in full once you reach <span class="mono">Module 07 · Databases</span>.</p>
+  <h3>Availability in numbers</h3>
+  <p>Availability is usually quantified as uptime (or downtime) as a percentage of time the service is available — measured in "9s." A service with 99.99% availability is described as having <b>four 9s</b>.</p>
+  <table><tr><th>Duration</th><th>Acceptable downtime</th></tr><tr><td>Per year</td><td class="mono">8h 45min 57s</td></tr><tr><td>Per month</td><td class="mono">43m 49.7s</td></tr><tr><td>Per week</td><td class="mono">10m 4.8s</td></tr><tr><td>Per day</td><td class="mono">1m 26.4s</td></tr></table>
+  <p class="mono" style="color:var(--muted); font-size:13px; margin-top:-10px">99.9% availability — three 9s</p>
+  <table><tr><th>Duration</th><th>Acceptable downtime</th></tr><tr><td>Per year</td><td class="mono">52min 35.7s</td></tr><tr><td>Per month</td><td class="mono">4m 23s</td></tr><tr><td>Per week</td><td class="mono">1m 5s</td></tr><tr><td>Per day</td><td class="mono">8.6s</td></tr></table>
+  <p class="mono" style="color:var(--muted); font-size:13px; margin-top:-10px">99.99% availability — four 9s</p>
+  <h4>Availability in parallel vs. in sequence</h4>
+  <p>If a service has multiple components that can fail, the overall availability depends on whether those components sit in sequence or in parallel.</p>
+  <p><b>In sequence</b> — overall availability decreases:</p>
+  <div class="formula">Availability (Total) = Availability (Foo) * Availability (Bar)</div>
+  <p>If <span class="mono">Foo</span> and <span class="mono">Bar</span> each have 99.9% availability, their combined availability in sequence is <b>99.8%</b>.</p>
+  <p><b>In parallel</b> — overall availability increases:</p>
+  <div class="formula">Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))</div>
+  <p>If <span class="mono">Foo</span> and <span class="mono">Bar</span> each have 99.9% availability, their combined availability in parallel is <b>99.9999%</b>.</p>
+
+  <div class="sources"><h2>Sources &amp; further reading</h2><ul>
+    <li><a href="https://robertgreiner.com/cap-theorem-revisited/">CAP theorem revisited</a></li>
+    <li><a href="http://ksat.me/a-plain-english-introduction-to-cap-theorem">A plain english introduction to CAP theorem</a></li>
+    <li><a href="https://github.com/henryr/cap-faq">CAP FAQ</a></li>
+    <li><a href="https://www.youtube.com/watch?v=k-Yaq8AHlFA">The CAP theorem (video)</a></li>
+    <li><a href="http://snarfed.org/transactions_across_datacenters_io.html">Transactions across data centers</a></li>
+  </ul></div>
+
+  <div class="footnav"><div><span class="lbl">Previous</span><a href="02-foundations.html">Module 02 · Foundations</a></div><div class="next"><span class="lbl">Next</span><a href="04-dns-cdn.html">Module 04 · DNS &amp; CDN</a></div></div>
+</div>
+</body></html>

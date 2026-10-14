@@ -1,0 +1,97 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Solution: Scaling on AWS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 10px}
+.constraints{background:var(--accent-soft);border-radius:8px;padding:14px 18px;margin:18px 0;font-size:14.5px} .constraints ul{margin:6px 0;padding-left:20px}
+h2{font-size:21px;margin:40px 0 12px;border-top:1px solid var(--border);padding-top:26px} h2:first-of-type{margin-top:30px} h3{font-size:16px;margin:26px 0 8px}
+p,li{font-size:15.5px}
+.step{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-2);margin:0 0 6px}
+.stage-num{font-family:"IBM Plex Mono";font-size:11px;color:var(--accent);background:var(--accent-soft);display:inline-block;padding:2px 8px;border-radius:4px;margin-bottom:6px}
+figure{margin:18px 0;padding:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)} figure img{display:block;width:100%;height:auto} figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--border);font-family:"IBM Plex Mono"}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:16px 0}
+.stage{border-top:1px dashed var(--border);padding-top:22px;margin-top:28px}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14 · SYSTEM DESIGN SOLUTION</p>
+  <p class="eyebrow">Solution to the exercise: "Design a system that scales to millions of users on AWS"</p>
+  <h1>Scaling to Millions of Users on AWS</h1>
+  <p class="lede">The other solutions in this module jump straight to "the scaled design." This one is different on purpose — it's the only exercise that walks the <em>iterative</em> loop itself: benchmark, profile, fix the real bottleneck, repeat. AWS specifics aren't the point; the sequence of decisions generalizes to any cloud.</p>
+  <figure><img src="assets/solutions/scaling_aws/scaling_aws.png" alt="Overview of the fully scaled AWS architecture"><figcaption>Where this exercise ends up — the rest of the page is how it gets there, one bottleneck at a time</figcaption></figure>
+
+  <h2><span class="step">Framework step 1 · Module 01</span>Use cases &amp; constraints</h2>
+  <ul>
+    <li><strong>User</strong> makes a read or write request; the <strong>service</strong> processes it, stores data, returns a result</li>
+    <li><strong>Service</strong> evolves from a handful of users to tens of millions — the whole point is watching that evolution happen</li>
+    <li><strong>Service</strong> is highly available</li>
+  </ul>
+  <div class="constraints"><strong>End-state numbers (what we're scaling toward):</strong><ul>
+    <li>10 million users, 1 billion writes/month, 100 billion reads/month — 100:1 read:write, 1 KB per write</li>
+    <li>→ 1 TB new content/month, ~36 TB over 3 years</li>
+    <li>Worked rates: ~400 writes/sec average, ~40,000 reads/sec average</li>
+  </ul></div>
+
+  <h2><span class="step">Framework step 2 · Module 01</span>Starting point: a single box</h2>
+  <figure><img src="assets/solutions/scaling_aws/scaling_aws_1.png" alt="Single EC2 instance running both the web server and MySQL database"><figcaption>One box: web server and MySQL together</figcaption></figure>
+  <p>With one or two users, over-engineering is the actual risk. Start with one EC2 instance running the web server and a MySQL database together, scale it <strong>vertically</strong> (a bigger box) as needed, and watch CPU/memory/IO/network to know when that stops working. Assign an Elastic IP so failover doesn't mean changing DNS, point a DNS record (Route 53) at it, and lock the box down to ports 80/443 plus whitelisted SSH on 22. Vertical scaling gets expensive fast and gives you zero redundancy — it's a starting point, not a destination.</p>
+
+  <h2><span class="step">Framework step 4 · Module 01</span>Scaling the design, iteratively</h2>
+  <p>Each stage below exists because a <em>specific</em>, <em>measured</em> bottleneck showed up in benchmarking — not because the final architecture looked good on a whiteboard. That distinction is the whole lesson of this exercise.</p>
+
+  <div class="stage">
+    <p class="stage-num">STAGE · USERS+</p>
+    <h3>Split static content and the database off the web box</h3>
+    <figure><img src="assets/solutions/scaling_aws/scaling_aws_2.png" alt="Single web server with separate S3 object store and RDS-managed MySQL database"><figcaption>Object Store (S3) for static files, managed MySQL (RDS) on its own box</figcaption></figure>
+    <p><strong>What broke:</strong> MySQL was eating more and more CPU/memory, user content was filling disk, and vertical scaling could no longer scale the web server and the database independently.</p>
+    <p><strong>What changed:</strong> static content (user files, JS, CSS, images, video) moves to a managed Object Store like S3; MySQL moves to its own box via a managed service like RDS (multi-AZ, encrypted at rest). Also: encrypt data in transit and at rest, and put everything except the single public-facing web server inside a private VPC subnet.</p>
+  </div>
+
+  <div class="stage">
+    <p class="stage-num">STAGE · USERS++</p>
+    <h3>Horizontal scaling and a load balancer</h3>
+    <figure><img src="assets/solutions/scaling_aws/scaling_aws_3.png" alt="Load balancer distributing to multiple web servers and application servers across availability zones, CDN in front"><figcaption>Load balancer → multiple web/app servers across availability zones, CDN for static content</figcaption></figure>
+    <p><strong>What broke:</strong> the single web server now bottlenecks at peak hours — slow responses, occasional downtime.</p>
+    <p><strong>What changed:</strong> add a Load Balancer (ELB or self-managed HAProxy in active-active/active-passive across zones), terminate SSL there to take that cost off the backend, run multiple web servers across availability zones, and put MySQL into master-slave failover across zones too. Separate the Web Server (reverse proxy) from the Application Server layer so each scales and deploys independently — e.g. some app servers handle reads, others handle writes. Push static (and some dynamic) content onto a CDN like CloudFront.</p>
+  </div>
+
+  <div class="stage">
+    <p class="stage-num">STAGE · USERS+++</p>
+    <h3>Memory cache and read replicas</h3>
+    <figure><img src="assets/solutions/scaling_aws/scaling_aws_4.png" alt="Memory cache (ElastiCache) in front of MySQL, read replicas added, web servers made stateless"><figcaption>Memory cache for hot data and sessions; MySQL read replicas take load off the write master</figcaption></figure>
+    <p><strong>What broke:</strong> benchmarks show the system is read-heavy (100:1) and the database is straining under read load.</p>
+    <p><strong>What changed:</strong> move frequently-accessed MySQL content into a Memory Cache (ElastiCache/Redis) — try tuning MySQL's own query cache first before reaching for this — and move session data out of the web servers into that same cache, which makes the web servers stateless and therefore freely autoscalable (memory reads run ~250μs vs. 4x on SSD, 80x on disk, which is the whole reason this helps). Add MySQL read replicas with load balancers in front of them, and teach the web server to route reads to replicas and writes to the master.</p>
+  </div>
+
+  <div class="stage">
+    <p class="stage-num">STAGE · USERS++++</p>
+    <h3>Autoscaling and automated operations</h3>
+    <figure><img src="assets/solutions/scaling_aws/scaling_aws_5.png" alt="Autoscaling groups for web and application servers triggered by CloudWatch metrics"><figcaption>Autoscaling groups per server type, triggered on CPU/latency/traffic/time-of-day</figcaption></figure>
+    <p><strong>What broke:</strong> traffic spikes predictably during U.S. business hours and drops off-hours — paying for peak capacity around the clock is wasteful for a small team.</p>
+    <p><strong>What changed:</strong> one Autoscaling group per server type, each spanning multiple availability zones, with min/max instance counts and CloudWatch-driven triggers (time-of-day, CPU, latency, network, or a custom metric). Automate the DevOps side too (Chef/Puppet/Ansible) and layer in real monitoring: host-level, aggregate/load-balancer-level, log analysis (CloudWatch/CloudTrail/Loggly/Splunk/Sumo), external uptime checks (Pingdom/New Relic), incident paging (PagerDuty), and error reporting (Sentry). The tradeoff: autoscaling adds complexity and isn't instantaneous — there's lag both scaling up and scaling down.</p>
+  </div>
+
+  <div class="stage">
+    <p class="stage-num">STAGE · USERS+++++</p>
+    <h3>Data warehousing, NoSQL, and async workers</h3>
+    <figure><img src="assets/solutions/scaling_aws/scaling_aws_6.png" alt="Full scaled architecture with data warehouse, NoSQL database, and asynchronous worker queues"><figcaption>The architecture approaching the full constraint set: 10M users, 100:1 read:write</figcaption></figure>
+    <p><strong>What broke:</strong> approaching the full constraint numbers — the database is growing too large, and both read and write volume are pushing past what caching and replicas alone can absorb.</p>
+    <p><strong>What changed:</strong> keep only a recent window of data in MySQL and move the rest to a data warehouse (Redshift comfortably handles the 1 TB/month constraint); scale the Memory Cache further for the ~40,000 reads/sec; bring in Module 07's Federation, Sharding, Denormalization and SQL tuning for the ~400 writes/sec that's now too much for one write master; and move appropriate data to a NoSQL database (DynamoDB-class). Separate out Application Servers further, and push anything that doesn't need to happen in real time onto <strong>Queues and Workers</strong> (Module 09's asynchronism, in practice) — e.g. a photo upload returns immediately while a Worker pulls the job off an SQS-style queue, generates the thumbnail, updates the database, and stores the result in the Object Store.</p>
+  </div>
+
+  <figure><img src="assets/solutions/scaling_aws/scaling_aws_7.png" alt="Full architecture overview combining every stage above"><figcaption>The complete picture: every stage above, combined (internal load balancers and autoscaling groups omitted to reduce clutter)</figcaption></figure>
+
+  <div class="callout">The lesson to take from this exercise isn't the AWS service names — it's the discipline: benchmark → profile → fix the <em>one</em> thing the data points to → repeat. Every other solution in this module name-drops that loop; this is the one that actually walks it, stage by stage.</div>
+  <p style="margin-top:40px;color:var(--muted);font-size:13.5px">This closes Module 14. Previous: <a href="14-7-sales-rank.html">Sales rank</a>. Next: Module 15 — Object-Oriented Design Solutions.</p>
+</div>
+</body></html>

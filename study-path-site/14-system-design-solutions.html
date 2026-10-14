@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>System Design Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.crumb{font-size:13px;margin-bottom:18px} .crumb a{text-decoration:none;color:var(--muted)} .crumb a:hover{color:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;margin-bottom:14px}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 24px}
+ol.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--border)}
+.item{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:start;padding:18px 4px;border-bottom:1px solid var(--border)}
+.item .num{font-family:"IBM Plex Mono";font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.item a.title{font-size:17px;font-weight:600;color:var(--fg);text-decoration:none} .item a.title:hover{color:var(--accent)}
+.item p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:58ch}
+.callout{background:var(--accent-soft);border-radius:8px;padding:14px 16px;font-size:14px;margin:24px 0}
+.nextline{margin-top:32px;color:var(--muted);font-size:13.5px} .nextline a{color:var(--fg);text-decoration:none} .nextline a:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <p class="crumb"><a href="00-home.html">← Course Map</a></p>
+  <p class="badge mono">MODULE 14</p>
+  <h1>System Design Solutions</h1>
+  <p class="lede">Eight classic system design interview questions, worked end to end using the Module 01 framework (use cases → high-level design → core components → scaling). Try each one yourself in <a href="13-exercises.html">Module 13's exercises</a> first — these are the answer key, not the starting point.</p>
+  <ol class="list">
+    <li class="item"><span class="num">14.1</span><div><a class="title" href="14-1-pastebin.html">Pastebin</a><p>A url-shortener-shaped problem: generate a short link, store the paste, serve it back fast.</p></div></li>
+    <li class="item"><span class="num">14.2</span><div><a class="title" href="14-2-twitter.html">Twitter timeline &amp; search</a><p>The fanout problem — getting one tweet in front of thousands of followers without melting the database.</p></div></li>
+    <li class="item"><span class="num">14.3</span><div><a class="title" href="14-3-web-crawler.html">Web crawler</a><p>Crawl a billion links without looping forever, then serve search results from what you indexed.</p></div></li>
+    <li class="item"><span class="num">14.4</span><div><a class="title" href="14-4-mint.html">Mint.com</a><p>Link a bank account, pull transactions asynchronously, categorize them, and track a budget.</p></div></li>
+    <li class="item"><span class="num">14.5</span><div><a class="title" href="14-5-social-graph.html">Social graph</a><p>Shortest path between two people, sharded across machines — deliberately without a graph database.</p></div></li>
+    <li class="item"><span class="num">14.6</span><div><a class="title" href="14-6-query-cache.html">Query cache</a><p>An LRU cache for search results — the same data structure you'll build from scratch in Module 15.</p></div></li>
+    <li class="item"><span class="num">14.7</span><div><a class="title" href="14-7-sales-rank.html">Amazon sales rank</a><p>A two-step MapReduce job that turns raw transactions into a per-category leaderboard.</p></div></li>
+    <li class="item"><span class="num">14.8</span><div><a class="title" href="14-8-scaling-aws.html">Scaling to millions on AWS</a><p>The odd one out — this is the only solution that walks the benchmark → profile → fix → repeat loop itself, stage by stage, instead of jumping to the final diagram.</p></div></li>
+  </ol>
+  <div class="callout">Every solution above reuses vocabulary from Modules 02–11 (CAP, caching, sharding, replication, async, REST/RPC) instead of re-explaining it — if a term feels unfamiliar, it's worth a detour back to that module before continuing.</div>
+  <p class="nextline">Next: <a href="15-ood-solutions.html">Module 15 — Object-Oriented Design Solutions</a>.</p>
+</div>
+</body></html>

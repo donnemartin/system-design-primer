@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Parking Lot — OOD Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+.backlink{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted)} .backlink:hover{color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 10px}
+.badge{display:inline-block;font-family:"IBM Plex Mono";font-size:12px;background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:4px 10px;letter-spacing:.04em;margin-left:8px}
+h1{font-size:clamp(26px,5vw,36px);margin:0 0 14px;text-wrap:balance;font-weight:700} h2{font-size:21px;margin:34px 0 10px} p{max-width:68ch} .lede{color:var(--muted);font-size:16px}
+.classlist{list-style:none;margin:14px 0;padding:0;border-top:1px solid var(--border)} .classlist li{padding:11px 2px;border-bottom:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap} .classlist .cname{font-family:"IBM Plex Mono";font-weight:600;min-width:140px;color:var(--accent)} .classlist .cdesc{color:var(--muted);font-size:14.5px;flex:1;min-width:0}
+ul.points{padding-left:20px} ul.points li{margin-bottom:8px}
+.warn{border-left:3px solid #c0392b;padding:10px 14px;background:var(--accent-soft);border-radius:0 6px 6px 0;font-size:14px;color:var(--fg);margin:18px 0}
+details{margin:22px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden} summary{cursor:pointer;padding:12px 16px;font-family:"IBM Plex Mono";font-size:13px;background:var(--accent-soft);color:var(--accent);list-style:none} summary::-webkit-details-marker{display:none} summary::before{content:"▸ "} details[open] summary::before{content:"▾ "}
+pre{margin:0;padding:16px;overflow-x:auto;background:var(--code-bg);color:var(--code-fg);font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.65}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+</style></head><body>
+<div class="wrap">
+  <a class="backlink" href="00-home.html">← Course Map</a>
+  <p class="eyebrow">The System Design Primer — Study Path <span class="badge">Module 15.5</span></p>
+  <h1>Design a parking lot</h1>
+  <p class="lede">Support multiple vehicle sizes (motorcycle, car, bus) across multiple levels, where each vehicle can only park in a spot sized to fit it — and a bus needs several spots at once.</p>
+  <h2>The problem</h2>
+  <p>Not every vehicle fits every spot, and the compatibility rules differ per vehicle: a motorcycle fits anywhere, a car needs a compact-or-larger spot, a bus needs several large spots together. The design has to express "can this vehicle park here" without a tangle of if/elif logic scattered through the parking lot itself.</p>
+  <h2>Classes at a glance</h2>
+  <ul class="classlist">
+    <li><span class="cname">VehicleSize</span><span class="cdesc">Enum: MOTORCYCLE, COMPACT, LARGE.</span></li>
+    <li><span class="cname">Vehicle</span><span class="cdesc">Abstract base. Tracks which spots it currently occupies; leaves <span class="mono">can_fit_in_spot</span> to each concrete vehicle.</span></li>
+    <li><span class="cname">Motorcycle / Car / Bus</span><span class="cdesc">Each defines its own fit rule and how many spots it needs (a Bus needs 5).</span></li>
+    <li><span class="cname">ParkingLot</span><span class="cdesc">Holds every <span class="mono">Level</span>; tries each level in turn until one can park the vehicle.</span></li>
+    <li><span class="cname">Level</span><span class="cdesc">One floor's worth of spots; finds an available spot that fits the given vehicle.</span></li>
+    <li><span class="cname">ParkingSpot</span><span class="cdesc">One physical spot, sized for a given <span class="mono">VehicleSize</span>, holding at most one vehicle at a time.</span></li>
+  </ul>
+  <h2>Key design decisions</h2>
+  <ul class="points">
+    <li><strong>Fit rules live on the vehicle, not the spot.</strong> <span class="mono">can_fit_in_spot</span> is implemented per subclass — a <span class="mono">Car</span> knows it fits in COMPACT or LARGE spots, a <span class="mono">Bus</span> knows it only fits LARGE — so adding a new vehicle type never means editing <span class="mono">ParkingSpot</span>.</li>
+    <li><strong>The hierarchy mirrors the physical building:</strong> <span class="mono">ParkingLot</span> → <span class="mono">Level</span> → <span class="mono">ParkingSpot</span>, which is what lets <span class="mono">park_vehicle</span> simply try level after level until one succeeds, instead of one function reasoning about the whole building's layout at once.</li>
+    <li><strong>A Bus occupies more than one spot.</strong> It's constructed with <span class="mono">spot_size=5</span> versus 1 for a Motorcycle or Car — the real implementation of spot-finding has to reserve a contiguous run of large spots for a bus, not just a single slot.</li>
+  </ul>
+  <div class="warn"><strong>Worth noticing:</strong> <span class="mono">Vehicle.__init__</span> has the line <span class="mono">self.spot_size</span> with no assignment — it should read <span class="mono">self.spot_size = spot_size</span>; as written, the parameter is accepted but never actually stored on the instance. Separately, four methods are left as stubs (<span class="mono">pass</span>): <span class="mono">Level._find_available_spot</span>, <span class="mono">Level._park_starting_at_spot</span>, <span class="mono">ParkingSpot.park_vehicle</span>, and <span class="mono">ParkingSpot.remove_vehicle</span> — these are the actual spot-searching and occupancy logic, intentionally left for you to complete.</div>
+  <details><summary>Show full code — parking_lot.py (as shipped in the repo, bug included)</summary><pre><code>from abc import ABCMeta, abstractmethod
+from enum import Enum
+
+
+class VehicleSize(Enum):
+
+    MOTORCYCLE = 0
+    COMPACT = 1
+    LARGE = 2
+
+
+class Vehicle(metaclass=ABCMeta):
+
+    def __init__(self, vehicle_size, license_plate, spot_size):
+        self.vehicle_size = vehicle_size
+        self.license_plate = license_plate
+        self.spot_size
+        self.spots_taken = []
+
+    def clear_spots(self):
+        for spot in self.spots_taken:
+            spot.remove_vehicle(self)
+        self.spots_taken = []
+
+    def take_spot(self, spot):
+        self.spots_taken.append(spot)
+
+    @abstractmethod
+    def can_fit_in_spot(self, spot):
+        pass
+
+
+class Motorcycle(Vehicle):
+
+    def __init__(self, license_plate):
+        super(Motorcycle, self).__init__(VehicleSize.MOTORCYCLE, license_plate, spot_size=1)
+
+    def can_fit_in_spot(self, spot):
+        return True
+
+
+class Car(Vehicle):
+
+    def __init__(self, license_plate):
+        super(Car, self).__init__(VehicleSize.COMPACT, license_plate, spot_size=1)
+
+    def can_fit_in_spot(self, spot):
+        return spot.size in (VehicleSize.LARGE, VehicleSize.COMPACT)
+
+
+class Bus(Vehicle):
+
+    def __init__(self, license_plate):
+        super(Bus, self).__init__(VehicleSize.LARGE, license_plate, spot_size=5)
+
+    def can_fit_in_spot(self, spot):
+        return spot.size == VehicleSize.LARGE
+
+
+class ParkingLot(object):
+
+    def __init__(self, num_levels):
+        self.num_levels = num_levels
+        self.levels = []  # List of Levels
+
+    def park_vehicle(self, vehicle):
+        for level in self.levels:
+            if level.park_vehicle(vehicle):
+                return True
+        return False
+
+
+class Level(object):
+
+    SPOTS_PER_ROW = 10
+
+    def __init__(self, floor, total_spots):
+        self.floor = floor
+        self.num_spots = total_spots
+        self.available_spots = 0
+        self.spots = []  # List of ParkingSpots
+
+    def spot_freed(self):
+        self.available_spots += 1
+
+    def park_vehicle(self, vehicle):
+        spot = self._find_available_spot(vehicle)
+        if spot is None:
+            return None
+        else:
+            spot.park_vehicle(vehicle)
+            return spot
+
+    def _find_available_spot(self, vehicle):
+        """Find an available spot where vehicle can fit, or return None"""
+        pass
+
+    def _park_starting_at_spot(self, spot, vehicle):
+        """Occupy starting at spot.spot_number to vehicle.spot_size."""
+        pass
+
+
+class ParkingSpot(object):
+
+    def __init__(self, level, row, spot_number, spot_size, vehicle_size):
+        self.level = level
+        self.row = row
+        self.spot_number = spot_number
+        self.spot_size = spot_size
+        self.vehicle_size = vehicle_size
+        self.vehicle = None
+
+    def is_available(self):
+        return True if self.vehicle is None else False
+
+    def can_fit_vehicle(self, vehicle):
+        if self.vehicle is not None:
+            return False
+        return vehicle.can_fit_in_spot(self)
+
+    def park_vehicle(self, vehicle):
+        pass
+
+    def remove_vehicle(self):
+        pass</code></pre></details>
+  <footer>Source: <span class="mono">solutions/object_oriented_design/parking_lot/parking_lot.py</span></footer>
+</div>
+</body></html>

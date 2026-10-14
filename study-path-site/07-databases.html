@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Databases — Study Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px}
+.back{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 10px} .back:hover{color:var(--accent);border-color:var(--accent)}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:12px;color:var(--muted)} .badge b{font-size:15px;color:var(--accent);font-variant-numeric:tabular-nums}
+h1{font-size:clamp(26px,5vw,38px);margin:10px 0 10px;text-wrap:balance;font-weight:700} .dek{color:var(--muted);font-size:16px;max-width:64ch;margin:0 0 30px}
+h2{font-size:21px;margin:42px 0 6px;font-weight:700;border-bottom:1px solid var(--border);padding-bottom:8px} h3{font-size:17px;margin:26px 0 8px;font-weight:600;color:var(--accent)} h4{font-size:14px;margin:20px 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+p{margin:0 0 14px;max-width:68ch} ul,ol{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px}
+.figure{margin:18px 0 22px;text-align:center} .figure img{max-width:100%;border-radius:8px;border:1px solid var(--border)} .figure figcaption{margin-top:8px;font-size:12.5px;color:var(--muted);font-style:italic}
+.quote{font-family:"IBM Plex Mono";font-size:13px;color:var(--accent-2);background:var(--accent-soft);display:inline-block;padding:4px 10px;border-radius:5px;margin-bottom:12px}
+.callout{border:1px solid var(--border);border-left:4px solid var(--accent-2);border-radius:6px;padding:14px 16px;margin:16px 0;background:var(--surface)} .callout h4{color:var(--accent-2);margin-top:0}
+.sources{border-top:1px dashed var(--border);margin-top:16px;padding-top:12px;font-size:13.5px} .sources h4{color:var(--muted)}
+code{font-family:"IBM Plex Mono",monospace} :not(pre)>code{background:var(--accent-soft);color:var(--accent);padding:1px 5px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:14px 0 20px;font-size:14px} th,td{border:1px solid var(--border);padding:8px 10px;text-align:left} th{background:var(--accent-soft);font-family:"IBM Plex Mono";font-size:12px;text-transform:uppercase}
+.nextbox{margin-top:50px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap} .nextbox .label{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em} .nextbox strong{display:block;font-size:16px;margin-top:4px} .nextbox strong a{color:var(--fg);text-decoration:none} .nextbox strong a:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <div class="topbar"><span class="badge">Module <b>07</b> / 16</span><a class="back" href="00-home.html">← Course Map</a></div>
+  <p class="eyebrow">The System Design Primer — Study Path</p>
+  <h1>Databases</h1>
+  <p class="dek">How relational databases scale, what ACID actually guarantees, and the four families of NoSQL store — plus a straight answer to "SQL or NoSQL?"</p>
+  <div class="figure"><img src="assets/images/Xkm5CXz.png"><figcaption><a href="https://www.youtube.com/watch?v=kKjm4ehYiMs" target="_blank" rel="noopener">Source: Scaling up to your first 10 million users</a></figcaption></div>
+
+  <h2>Relational database management systems (RDBMS)</h2>
+  <p>A relational database like SQL is a collection of data items organized in tables. What makes it trustworthy under concurrent use is a set of guarantees called <strong>ACID</strong>:</p>
+  <ul>
+    <li><strong>Atomicity</strong> — each transaction is all or nothing.</li>
+    <li><strong>Consistency</strong> — any transaction brings the database from one valid state to another.</li>
+    <li><strong>Isolation</strong> — running transactions concurrently gives the same result as running them one after another.</li>
+    <li><strong>Durability</strong> — once a transaction is committed, it stays committed.</li>
+  </ul>
+  <p>There are six standard techniques for scaling a relational database beyond a single box: <strong>master-slave replication</strong>, <strong>master-master replication</strong>, <strong>federation</strong>, <strong>sharding</strong>, <strong>denormalization</strong>, and <strong>SQL tuning</strong>.</p>
+
+  <h3>Master-slave replication</h3>
+  <p>The master serves both reads and writes, replicating every write to one or more slaves, which serve only reads. Slaves can replicate onward to further slaves in a tree. If the master goes offline, the system can keep running in read-only mode until a slave is promoted to master, or a new master is provisioned.</p>
+  <div class="figure"><img src="assets/images/C9ioGtn.png"><figcaption><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Source: Scalability, availability, stability, patterns</a></figcaption></div>
+  <div class="callout"><h4>Disadvantages: master-slave replication</h4><ul><li>Additional logic is needed to promote a slave to master.</li><li>See <em>Disadvantages: replication</em> below — it covers both master-slave and master-master.</li></ul></div>
+
+  <h3>Master-master replication</h3>
+  <p>Both masters serve reads and writes and coordinate with each other on writes. If either master goes down, the system keeps operating with both reads and writes available. Active-active failover (covered in Module 03) is another name for this pattern.</p>
+  <div class="figure"><img src="assets/images/krAHLGg.png"><figcaption><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Source: Scalability, availability, stability, patterns</a></figcaption></div>
+  <div class="callout"><h4>Disadvantages: master-master replication</h4><ul>
+    <li>You need a load balancer, or application logic, to decide where to write.</li>
+    <li>Most master-master systems are either loosely consistent (violating ACID) or pay increased write latency for synchronization.</li>
+    <li>Conflict resolution matters more as more write nodes — and more latency — are added.</li>
+  </ul></div>
+  <div class="callout"><h4>Disadvantages: replication (both kinds)</h4><ul>
+    <li>Data can be lost if the master fails before a new write replicates to other nodes.</li>
+    <li>Writes replay to every read replica; under heavy write load, replicas can get bogged down replaying writes instead of serving reads.</li>
+    <li>More read slaves means more to replicate, which means more replication lag.</li>
+    <li>Some systems write to the master with multiple parallel threads, but replicas only replay writes sequentially, single-threaded.</li>
+    <li>Replication is more hardware and more operational complexity.</li>
+  </ul></div>
+  <div class="sources"><h4>Sources</h4><p><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Scalability, availability, stability, patterns</a> · <a href="https://en.wikipedia.org/wiki/Multi-master_replication" target="_blank" rel="noopener">Multi-master replication</a></p></div>
+
+  <h3>Federation</h3>
+  <p>Federation (or <em>functional partitioning</em>) splits one monolithic database into several by function — for example, separate <strong>forums</strong>, <strong>users</strong>, and <strong>products</strong> databases. Each one sees less read/write traffic and therefore less replication lag. Smaller databases also fit more comfortably in memory, improving cache locality — and because there's no single master serializing every write, you can write in parallel for higher throughput.</p>
+  <div class="figure"><img src="assets/images/U3qV33e.png"><figcaption><a href="https://www.youtube.com/watch?v=kKjm4ehYiMs" target="_blank" rel="noopener">Source: Scaling up to your first 10 million users</a></figcaption></div>
+  <div class="callout"><h4>Disadvantages: federation</h4><ul>
+    <li>Not effective if your schema needs huge functions or tables.</li>
+    <li>Application logic must now decide which database to read and write.</li>
+    <li>Joining data across two databases is harder — it needs a server link.</li>
+    <li>More hardware, more complexity.</li>
+  </ul></div>
+  <div class="sources"><h4>Sources</h4><p><a href="https://www.youtube.com/watch?v=kKjm4ehYiMs" target="_blank" rel="noopener">Scaling up to your first 10 million users</a></p></div>
+
+  <h3>Sharding</h3>
+  <p>Sharding spreads data across multiple databases so each one manages only a subset — for example, a users table split so that as the user count grows, you add more shards to the cluster. A common split is by the user's last-name initial or geographic location.</p>
+  <p>Like federation, sharding reduces read/write traffic per node, reduces replication, improves cache hits, and shrinks index size (faster queries). There's still no single master serializing writes, so you can write in parallel for higher throughput. If one shard goes down the others keep serving — though you'll still want replication within each shard to avoid data loss.</p>
+  <div class="figure"><img src="assets/images/wU8x5Id.png"><figcaption><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/" target="_blank" rel="noopener">Source: Scalability, availability, stability, patterns</a></figcaption></div>
+  <div class="callout"><h4>Disadvantages: sharding</h4><ul>
+    <li>Application logic must be updated to work with shards, which can mean complex SQL.</li>
+    <li>Data distribution can become lopsided — a set of power users on one shard can overload it relative to others. (A sharding function based on <a href="http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html" target="_blank" rel="noopener">consistent hashing</a> reduces how much data has to move when rebalancing.)</li>
+    <li>Joining data across shards is harder.</li>
+    <li>More hardware, more complexity.</li>
+  </ul></div>
+  <div class="sources"><h4>Sources</h4><p><a href="http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html" target="_blank" rel="noopener">The coming of the shard</a> · <a href="https://en.wikipedia.org/wiki/Shard_(database_architecture)" target="_blank" rel="noopener">Shard database architecture</a> · <a href="http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html" target="_blank" rel="noopener">Consistent hashing</a></p></div>
+
+  <h3>Denormalization</h3>
+  <p>Denormalization trades some write performance for better read performance, by writing redundant copies of data into multiple tables to avoid expensive joins. Some RDBMSes (PostgreSQL, Oracle) support <a href="https://en.wikipedia.org/wiki/Materialized_view" target="_blank" rel="noopener">materialized views</a> that handle storing those redundant copies and keeping them consistent for you.</p>
+  <p>Once data is spread across federation or sharding, joins across data centers get expensive — denormalization can sidestep the need for them entirely. In most systems reads outnumber writes 100:1 or even 1000:1, so a read that triggers a complex join can be very costly in disk time.</p>
+  <div class="callout"><h4>Disadvantages: denormalization</h4><ul><li>Data is duplicated.</li><li>Constraints can help keep redundant copies in sync, but that adds design complexity.</li><li>A denormalized database under heavy write load can perform worse than its normalized counterpart.</li></ul></div>
+
+  <h3>SQL tuning</h3>
+  <p>SQL tuning is a field unto itself. The starting discipline is always the same: <strong>benchmark</strong> (simulate high load with a tool like <code>ab</code>) and <strong>profile</strong> (turn on the slow query log to find real bottlenecks) before you optimize anything.</p>
+  <h4>Tighten up the schema</h4>
+  <ul>
+    <li>MySQL dumps to disk in contiguous blocks for fast access.</li>
+    <li>Use <code>CHAR</code> instead of <code>VARCHAR</code> for fixed-length fields — <code>CHAR</code> allows fast random access, while <code>VARCHAR</code> has to find the end of a string first.</li>
+    <li>Use <code>TEXT</code> for large blocks of text (blog posts); it also supports boolean search and stores a pointer on disk to the actual block.</li>
+    <li>Use <code>INT</code> for large numbers up to 2³² (4 billion).</li>
+    <li>Use <code>DECIMAL</code> for currency, to avoid floating-point rounding errors.</li>
+    <li>Avoid storing large <code>BLOB</code>s directly — store a location/pointer to the object instead.</li>
+    <li><code>VARCHAR(255)</code> is the largest length countable in an 8-bit number, which often maximizes byte use in some RDBMSes.</li>
+    <li>Set <code>NOT NULL</code> where applicable — it can improve search performance.</li>
+  </ul>
+  <h4>Use good indices</h4>
+  <ul>
+    <li>Columns used in <code>SELECT</code>, <code>GROUP BY</code>, <code>ORDER BY</code>, <code>JOIN</code> are good index candidates.</li>
+    <li>Indices are usually a self-balancing B-tree: sorted data, with logarithmic-time search, sequential access, insertion, and deletion.</li>
+    <li>An index keeps data in memory, which costs space — and writes get slower since the index itself must update.</li>
+    <li>When loading large amounts of data, it can be faster to disable indices, load the data, then rebuild them.</li>
+  </ul>
+  <h4>Avoid expensive joins</h4><p>Denormalize where performance genuinely demands it.</p>
+  <h4>Partition tables</h4><p>Break a table up by moving its "hot" rows into a separate table so they're more likely to stay in memory.</p>
+  <h4>Tune the query cache</h4><p>In some cases the query cache itself can become a source of performance problems worth tuning.</p>
+  <div class="sources"><h4>Sources</h4><p><a href="http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/" target="_blank" rel="noopener">Tips for optimizing MySQL queries</a> · <a href="http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html" target="_blank" rel="noopener">Slow query log</a></p></div>
+
+  <h2>NoSQL</h2>
+  <p>NoSQL data is represented as a <strong>key-value store</strong>, <strong>document store</strong>, <strong>wide column store</strong>, or <strong>graph database</strong>. Data is denormalized, and joins are usually done in application code rather than the database. Most NoSQL stores skip true ACID transactions in favor of <strong>eventual consistency</strong> (Module 03).</p>
+  <p>The usual shorthand for NoSQL's guarantees is <strong>BASE</strong> — in contrast to the CAP theorem, BASE chooses availability over consistency:</p>
+  <ul><li><strong>Basically available</strong> — the system guarantees availability.</li><li><strong>Soft state</strong> — the state of the system may change over time, even without new input.</li><li><strong>Eventual consistency</strong> — the system becomes consistent over time, given no new input during that window.</li></ul>
+
+  <h3>Key-value store</h3>
+  <p class="quote">Abstraction: hash table</p>
+  <p>A key-value store generally gives O(1) reads and writes, and is often backed by memory or SSD. Keys can be kept in lexicographic order for efficient range retrieval, and metadata can ride along with a value.</p>
+  <p>Key-value stores are fast and simple — a natural fit for rapidly-changing data such as an in-memory cache layer. Because the operation set is limited, more complexity shifts to the application layer when you need anything fancier. A key-value store is also the foundation other, more complex stores (document stores, sometimes graph databases) are built on.</p>
+  <div class="sources"><h4>Sources</h4><p><a href="https://en.wikipedia.org/wiki/Key-value_database" target="_blank" rel="noopener">Key-value database</a> · <a href="http://qnimate.com/overview-of-redis-architecture/" target="_blank" rel="noopener">Redis architecture</a> · <a href="https://adayinthelifeof.nl/2011/02/06/memcache-internals/" target="_blank" rel="noopener">Memcached architecture</a></p></div>
+
+  <h3>Document store</h3>
+  <p class="quote">Abstraction: key-value store with documents stored as values</p>
+  <p>A document store centers on documents (XML, JSON, binary, etc.), where one document holds all the information for a given object, and the store can query based on the document's internal structure. (Many key-value stores also support metadata on a value, blurring this line.) Documents can be organized by collections, tags, metadata, or directories — and, unlike rows in a rigid schema, documents in the same collection can have completely different fields.</p>
+  <p>MongoDB and CouchDB offer SQL-like query languages on top of this model; DynamoDB supports both key-value and document access. Document stores favor flexibility and fit data that changes shape occasionally.</p>
+  <div class="sources"><h4>Sources</h4><p><a href="https://en.wikipedia.org/wiki/Document-oriented_database" target="_blank" rel="noopener">Document-oriented database</a> · <a href="https://www.mongodb.com/mongodb-architecture" target="_blank" rel="noopener">MongoDB architecture</a> · <a href="https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up" target="_blank" rel="noopener">Elasticsearch architecture</a></p></div>
+
+  <h3>Wide column store</h3>
+  <div class="figure"><img src="assets/images/n16iOGk.png"><figcaption><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html" target="_blank" rel="noopener">Source: SQL &amp; NoSQL, a brief history</a></figcaption></div>
+  <p class="quote">Abstraction: nested map ColumnFamily&lt;RowKey, Columns&lt;ColKey, Value, Timestamp&gt;&gt;</p>
+  <p>The basic unit is a column — a name/value pair. Columns group into column families (roughly analogous to a SQL table), and super column families group those further. Each column is reachable independently by a row key, and columns sharing a row key form a row. Every value carries a timestamp for versioning and conflict resolution.</p>
+  <p>Google's Bigtable was the first wide column store; it influenced HBase (common in the Hadoop ecosystem) and Facebook's Cassandra. All three keep keys in lexicographic order for efficient range retrieval, and all three are built for very large datasets with high availability and high scalability.</p>
+  <div class="sources"><h4>Sources</h4><p><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html" target="_blank" rel="noopener">SQL &amp; NoSQL, a brief history</a> · <a href="https://www.edureka.co/blog/hbase-architecture/" target="_blank" rel="noopener">HBase architecture</a> · <a href="http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html" target="_blank" rel="noopener">Cassandra architecture</a></p></div>
+
+  <h3>Graph database</h3>
+  <div class="figure"><img src="assets/images/fNcl65g.png"><figcaption><a href="https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png" target="_blank" rel="noopener">Source: Graph database</a></figcaption></div>
+  <p class="quote">Abstraction: graph</p>
+  <p>Each node is a record, and each arc is a relationship between two nodes — built to represent complex, many-to-many relationships efficiently. Graph databases shine on data models like a social network, where relationships are the point. They're relatively new and less widely used, so tooling and hiring can be harder to find; many graph databases are only reachable through a REST API (Module 10).</p>
+  <div class="sources"><h4>Sources</h4><p><a href="https://en.wikipedia.org/wiki/Graph_database" target="_blank" rel="noopener">Graph database</a> · <a href="https://neo4j.com/" target="_blank" rel="noopener">Neo4j</a> · <a href="https://blog.twitter.com/2010/introducing-flockdb" target="_blank" rel="noopener">FlockDB</a></p></div>
+  <div class="sources"><h4>More on NoSQL</h4><p><a href="http://stackoverflow.com/questions/3342497/explanation-of-base-terminology" target="_blank" rel="noopener">Explanation of BASE terminology</a> · <a href="https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq" target="_blank" rel="noopener">NoSQL databases: a survey and decision guidance</a> · <a href="http://horicky.blogspot.com/2009/11/nosql-patterns.html" target="_blank" rel="noopener">NoSQL patterns</a></p></div>
+
+  <h2>SQL or NoSQL?</h2>
+  <div class="figure"><img src="assets/images/wXGqG5f.png"><figcaption><a href="https://www.infoq.com/articles/Transition-RDBMS-NoSQL/" target="_blank" rel="noopener">Source: Transitioning from RDBMS to NoSQL</a></figcaption></div>
+  <table><tr><th>Reasons for SQL</th><th>Reasons for NoSQL</th></tr>
+    <tr><td>Structured data, strict schema</td><td>Semi-structured data, dynamic/flexible schema</td></tr>
+    <tr><td>Relational data, need for complex joins</td><td>Non-relational data, no need for complex joins</td></tr>
+    <tr><td>Transactions</td><td>Storing many TB (or PB) of data</td></tr>
+    <tr><td>Clear, established patterns for scaling</td><td>Very data-intensive workloads</td></tr>
+    <tr><td>More established tooling, community, talent</td><td>Very high throughput for IOPS</td></tr>
+    <tr><td>Index lookups are very fast</td><td>—</td></tr>
+  </table>
+  <p>Data that's typically a good fit for NoSQL: rapid ingest of clickstream/log data, leaderboard or scoring data, temporary data like a shopping cart, frequently-accessed ("hot") tables, and metadata/lookup tables.</p>
+  <div class="sources"><h4>Sources</h4><p><a href="https://www.youtube.com/watch?v=kKjm4ehYiMs" target="_blank" rel="noopener">Scaling up to your first 10 million users</a> · <a href="https://www.sitepoint.com/sql-vs-nosql-differences/" target="_blank" rel="noopener">SQL vs NoSQL differences</a></p></div>
+
+  <div class="nextbox"><div><span class="label">Next</span><strong><a href="08-caching.html">Module 08 — Caching</a></strong></div><a class="back" href="00-home.html">Course Map →</a></div>
+</div>
+</body></html>

@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Asynchronism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ee;--surface:#ffffff;--fg:#1b1f27;--muted:#5b6270;--border:#d9d2c2;--accent:#2f5d9e;--accent-soft:#e4edfa;--accent-2:#b5672f;--done:#3f8f5f;--code-bg:#11161f;--code-fg:#d8e2f0;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f14;--surface:#141922;--fg:#e7ebf2;--muted:#98a2b3;--border:#242c39;--accent:#6fa3e0;--accent-soft:#1b2838;--accent-2:#e0a360;--done:#5fbf86;--code-bg:#070a0f;--code-fg:#cdd9ea;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;margin:0} .mono{font-family:"IBM Plex Mono",ui-monospace,monospace} a{color:var(--accent)} img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 90px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px} .topnav a{font-family:"IBM Plex Mono";font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:6px 10px} .topnav a:hover{color:var(--accent);border-color:var(--accent)}
+header.hero{border-bottom:1px solid var(--border);padding-block:0 24px;margin-bottom:28px}
+.eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.badge{background:var(--accent-soft);color:var(--accent);border-radius:5px;padding:2px 8px;font-weight:600}
+h1{font-size:clamp(26px,5vw,38px);margin:0 0 10px;text-wrap:balance;font-weight:700} .lede{color:var(--muted);font-size:16.5px;max-width:60ch;margin:0}
+figure{margin:28px 0} figure img{display:block;width:100%;border-radius:8px;border:1px solid var(--border)} figcaption{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+h2{font-size:21px;margin:38px 0 10px;font-weight:700} h3{font-size:16px;margin:22px 0 8px;font-weight:600}
+p{margin:0 0 14px;font-size:15.5px} ul{margin:0 0 14px;padding-left:22px} li{margin-bottom:6px;font-size:15.5px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;margin:16px 0} .callout b{color:var(--accent)}
+.flow{display:flex;flex-direction:column;gap:0;margin:18px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden} .flow .step{display:flex;gap:14px;padding:14px 16px;background:var(--surface);border-bottom:1px solid var(--border)} .flow .step:last-child{border-bottom:none} .flow .step .n{font-family:"IBM Plex Mono";color:var(--accent);font-weight:700;min-width:20px}
+.tools{display:grid;gap:10px;margin:16px 0} .tool{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px} .tool .name{font-family:"IBM Plex Mono";font-weight:600;color:var(--accent-2)}
+.sources{background:var(--accent-soft);border-radius:8px;padding:14px 16px;margin-top:34px} .sources h3{margin-top:0;color:var(--accent)} .sources ul{margin-bottom:0} .sources a{color:var(--fg)}
+.nextbox{margin-top:40px;border:1px dashed var(--border);border-radius:10px;padding:16px;text-align:center;color:var(--muted);font-family:"IBM Plex Mono";font-size:13px} .nextbox a{color:var(--fg);text-decoration:none} .nextbox a:hover{color:var(--accent)}
+</style></head><body>
+<div class="wrap">
+  <nav class="topnav"><a href="00-home.html">← Course Map</a><span class="mono" style="color:var(--muted); font-size:13px">Module 09 / 16</span></nav>
+  <header class="hero">
+    <p class="eyebrow"><span class="badge">09</span> The System Design Primer — Study Path</p>
+    <h1>Asynchronism</h1>
+    <p class="lede">Some work doesn't need to happen before you answer the request. This module covers how to push it to the background — and what breaks when the background gets overwhelmed.</p>
+  </header>
+  <figure><img src="assets/images/54GYsSx.png" alt="Asynchronous workflow diagram"><figcaption>Source: <a href="http://lethain.com/introduction-to-architecting-systems-for-scale/#platform_layer" target="_blank" rel="noopener">Intro to architecting systems for scale</a></figcaption></figure>
+  <p>Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line. They can also help by doing time-consuming work in advance, such as periodic aggregation of data.</p>
+  <h2>Message queues</h2>
+  <p>Message queues receive, hold, and deliver messages. If an operation is too slow to perform inline, you can use a message queue with the following workflow:</p>
+  <div class="flow">
+    <div class="step"><span class="n">1</span><span>An application publishes a job to the queue, then notifies the user of job status.</span></div>
+    <div class="step"><span class="n">2</span><span>A worker picks up the job from the queue, processes it, then signals the job is complete.</span></div>
+  </div>
+  <p>The user is not blocked and the job is processed in the background. During this time, the client might optionally do a small amount of processing to make it seem like the task has completed. For example, if posting a tweet, the tweet could be instantly posted to your timeline, but it could take some time before your tweet is actually delivered to all of your followers.</p>
+  <div class="tools">
+    <div class="tool"><span class="name">Redis</span> — useful as a simple message broker, but messages can be lost. <a href="https://redis.io/" target="_blank" rel="noopener">redis.io</a></div>
+    <div class="tool"><span class="name">RabbitMQ</span> — popular, but requires you to adapt to the AMQP protocol and manage your own nodes. <a href="https://www.rabbitmq.com/" target="_blank" rel="noopener">rabbitmq.com</a></div>
+    <div class="tool"><span class="name">Amazon SQS</span> — hosted, but can have high latency and the possibility of messages being delivered twice. <a href="https://aws.amazon.com/sqs/" target="_blank" rel="noopener">aws.amazon.com/sqs</a></div>
+  </div>
+  <h2>Task queues</h2>
+  <p>Task queues receive tasks and their related data, run them, then deliver their results. They can support scheduling and can be used to run computationally-intensive jobs in the background.</p>
+  <div class="tools"><div class="tool"><span class="name">Celery</span> — has support for scheduling and primarily has Python support. <a href="https://docs.celeryproject.org/en/stable/" target="_blank" rel="noopener">docs.celeryproject.org</a></div></div>
+  <h2>Back pressure</h2>
+  <p>If queues start to grow significantly, the queue size can become larger than memory, resulting in cache misses, disk reads, and even slower performance. <a href="http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html" target="_blank" rel="noopener">Back pressure</a> can help by limiting the queue size, thereby maintaining a high throughput rate and good response times for jobs already in the queue.</p>
+  <p>Once the queue fills up, clients get a server busy or HTTP 503 status code to try again later. Clients can retry the request at a later time, perhaps with <a href="https://en.wikipedia.org/wiki/Exponential_backoff" target="_blank" rel="noopener">exponential backoff</a>.</p>
+  <div class="callout"><b>Disadvantage(s): asynchronism</b><br>Use cases such as inexpensive calculations and realtime workflows might be better suited for synchronous operations, as introducing queues can add delays and complexity.</div>
+  <div class="sources"><h3>Source(s) and further reading</h3><ul>
+    <li><a href="https://www.youtube.com/watch?v=1KRYH75wgy4" target="_blank" rel="noopener">It's all a numbers game</a></li>
+    <li><a href="http://mechanical-sympathy.blogspot.com/2012/05/apply-back-pressure-when-overloaded.html" target="_blank" rel="noopener">Applying back pressure when overloaded</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Little%27s_law" target="_blank" rel="noopener">Little's law</a></li>
+    <li><a href="https://www.quora.com/What-is-the-difference-between-a-message-queue-and-a-task-queue-Why-would-a-task-queue-require-a-message-broker-like-RabbitMQ-Redis-Celery-or-IronMQ-to-function" target="_blank" rel="noopener">Message queue vs. task queue?</a></li>
+  </ul></div>
+  <div class="nextbox">Next: <a href="10-communication.html">Module 10 — Communication</a></div>
+</div>
+</body></html>
