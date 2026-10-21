@@ -52,6 +52,13 @@ Languages are grouped by status and are listed in alphabetical order.
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/87
 * Translation Fork: https://github.com/voitau/system-design-primer/blob/master/README-ru.md
 
+### ⏳ Uzbek
+
+* [README-uz.md](README-uz.md)
+* Maintainer(s): [@salomh46-rgb](https://github.com/salomh46-rgb) 👏
+* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/1416
+* Translation Fork: https://github.com/salomh46-rgb/system-design-primer/blob/uzbek-translation/README-uz.md
+
 ## Stalled
 
 **Notes**:
