@@ -139,13 +139,13 @@ class DeckLocalizationTests(unittest.TestCase):
             with zipfile.ZipFile(output) as archive:
                 self.assertEqual(
                     set(archive.namelist()),
-                    {"collection.anki2", "media", "h81n9iK.png", "extra.txt"},
+                    {"collection.anki2", "media", "0", "extra.txt"},
                 )
-                self.assertEqual(json.loads(archive.read("media")), {"0": "h81n9iK.png"})
+                self.assertEqual(json.loads(archive.read("media")), {"h81n9iK.png": "0"})
                 self.assertEqual(archive.read("extra.txt"), b"preserve me")
                 database = root / "checked.anki2"
                 database.write_bytes(archive.read("collection.anki2"))
-                self.assertEqual(archive.read("h81n9iK.png"), b"png-data")
+                self.assertEqual(archive.read("0"), b"png-data")
 
             connection = sqlite3.connect(database)
             self.assertEqual(connection.execute("PRAGMA quick_check").fetchone()[0], "ok")

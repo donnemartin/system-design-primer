@@ -193,6 +193,42 @@ def load_inventory(path: Path) -> list[dict]:
     return json.loads(path.read_text())
 
 
+_RUST_TOKEN_RE = re.compile(
+    r"//[^\n]*|/\*.*?\*/|\"(?:\\.|[^\"\\])*\"|"
+    r"\b(?:fn|let|mut|struct|enum|trait|impl|use|pub|mod|match|if|else|for|while|loop|return|self|Self|true|false|Some|None|Result|Option|String|usize|u8|u64)\b|"
+    r"\b\d+\b",
+    re.DOTALL,
+)
+_RUST_TOKEN_STYLES = {
+    "rust-keyword": "#c586c0",
+    "rust-string": "#ce9178",
+    "rust-comment": "#6a9955",
+    "rust-number": "#b5cea8",
+}
+
+
+def highlight_rust_html(source: str) -> str:
+    """Render Rust source with inline colors, so Anki needs no external highlighter."""
+    parts: list[str] = ['<code class="language-rust">']
+    cursor = 0
+    for match in _RUST_TOKEN_RE.finditer(source):
+        parts.append(html.escape(source[cursor:match.start()], quote=False))
+        token = match.group(0)
+        if token.startswith("//") or token.startswith("/*"):
+            kind = "rust-comment"
+        elif token.startswith('"'):
+            kind = "rust-string"
+        elif token.isdigit():
+            kind = "rust-number"
+        else:
+            kind = "rust-keyword"
+        parts.append(f'<span class="{kind}" style="color:{_RUST_TOKEN_STYLES[kind]}">{html.escape(token, quote=False)}</span>')
+        cursor = match.end()
+    parts.append(html.escape(source[cursor:], quote=False))
+    parts.append("</code>")
+    return "".join(parts)
+
+
 def _replace_candidate(field: str, candidate: dict, replacement: str) -> str:
     source_html = candidate["source_html"]
     occurrence = int(candidate.get("occurrence", int(candidate["snippet_id"].rsplit("-", 1)[-1])))
@@ -205,10 +241,11 @@ def _replace_candidate(field: str, candidate: dict, replacement: str) -> str:
             raise ValueError(f"source boundary missing for {candidate['snippet_id']}")
         search_from = start + len(source_html)
     end = start + len(source_html)
+    highlighted = highlight_rust_html(replacement)
     if source_html.lower().startswith("<pre"):
-        updated = re.sub(r"(?is)(<pre\b[^>]*>).*?(</pre>)", lambda match: match.group(1) + replacement + match.group(2), source_html, count=1)
+        updated = re.sub(r"(?is)(<pre\b[^>]*>).*?(</pre>)", lambda match: match.group(1) + highlighted + match.group(2), source_html, count=1)
     else:
-        updated = replacement
+        updated = highlighted
     return field[:start] + updated + field[end:]
 
 

@@ -10,6 +10,7 @@ from tools.migrate_anki_code_to_rust import (
     extract_code_candidates,
     extract_deck_notes,
     field_checksum,
+    highlight_rust_html,
     validate_migrated_deck,
     write_inventory,
 )
@@ -48,6 +49,13 @@ class MigrationExtractionTests(unittest.TestCase):
             archive.writestr("media", "{}")
             archive.writestr("local.png", b"image")
         return deck
+
+    def test_highlights_rust_code_inside_code_element(self):
+        highlighted = highlight_rust_html('fn main() { println!("hi"); // comment\n}')
+        self.assertIn('<code class="language-rust">', highlighted)
+        self.assertIn('class="rust-keyword"', highlighted)
+        self.assertIn('class="rust-string"', highlighted)
+        self.assertIn('class="rust-comment"', highlighted)
 
     def test_extracts_code_candidates_and_preserves_boundaries(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -97,8 +105,9 @@ class MigrationExtractionTests(unittest.TestCase):
             output = root / "output.apkg"
             apply_inventory_replacements(rebuilt, entries, output)
             changed = extract_deck_notes(output).notes[0].fields[0]
-            self.assertIn("fn main()", changed)
-            self.assertIn("fn bye()", changed)
+            self.assertIn('class="language-rust"', changed)
+            self.assertIn("main()", changed)
+            self.assertIn("bye()", changed)
 
     def test_applies_only_approved_code_and_validates_archive(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -118,7 +127,8 @@ class MigrationExtractionTests(unittest.TestCase):
             apply_inventory_replacements(source, [entry], output)
             validate_migrated_deck(source, output, [entry])
             changed = extract_deck_notes(output).notes[0].fields[0]
-            self.assertIn('fn main()', changed)
+            self.assertIn('class="language-rust"', changed)
+            self.assertIn('main()', changed)
             self.assertIn('href="https://example.com"', changed)
             self.assertIn('src="local.png"', changed)
 

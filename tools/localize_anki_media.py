@@ -112,15 +112,17 @@ def _rewrite_field(field: str, asset_dir: Path, filenames: set[str]) -> tuple[st
 
 
 def _normalize_media_manifest(raw_manifest: dict[str, str]) -> dict[str, str]:
+    """Return Anki's filename-to-numeric-member media mapping."""
+    if all(not str(key).isdigit() and str(value).isdigit() for key, value in raw_manifest.items()):
+        return {str(key): str(value) for key, value in raw_manifest.items()}
+    if all(str(key).isdigit() for key in raw_manifest):
+        return {str(name): str(key) for key, name in raw_manifest.items()}
     normalized: dict[str, str] = {}
     next_id = 0
-    for key, name in raw_manifest.items():
-        if str(key).isdigit():
-            normalized[str(key)] = name
-            continue
-        while str(next_id) in normalized:
+    for name in raw_manifest.values():
+        while str(next_id) in normalized.values():
             next_id += 1
-        normalized[str(next_id)] = name
+        normalized[str(name)] = str(next_id)
         next_id += 1
     return normalized
 
@@ -177,25 +179,35 @@ def localize_deck(deck_path: Path, asset_dir: Path, output_path: Path) -> Locali
         connection.close()
 
         media_manifest = dict(existing_manifest)
-        existing_names = set(media_manifest.values())
-        next_media_id = max((int(key) for key in media_manifest if str(key).isdigit()), default=-1) + 1
+        next_media_id = max((int(value) for value in media_manifest.values()), default=-1) + 1
         for name in sorted(localized):
-            if name not in existing_names:
-                media_manifest[str(next_media_id)] = name
+            if name not in media_manifest:
+                media_manifest[name] = str(next_media_id)
                 next_media_id += 1
             shutil.copy2(asset_dir / name, extracted / name)
         media_path = extracted / "media"
         media_path.write_text(json.dumps(media_manifest, separators=(",", ":")), encoding="utf-8")
+
+        media_sources: dict[str, Path] = {}
+        media_members: set[str] = set()
+        for name, member in media_manifest.items():
+            member_path = extracted / member
+            name_path = extracted / name
+            if member_path.exists():
+                media_sources[member] = member_path
+            elif name_path.exists():
+                media_sources[member] = name_path
+            media_members.update({name, member})
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(output_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
             archive.write(database_path, "collection.anki2")
             archive.write(media_path, "media")
             for member in original_members:
-                if member not in {"collection.anki2", "media"} and member not in localized:
+                if member not in {"collection.anki2", "media"} and member not in media_members:
                     archive.write(extracted / member, member)
-            for name in sorted(localized):
-                archive.write(extracted / name, name)
+            for member, source in sorted(media_sources.items()):
+                archive.write(source, member)
 
     return LocalizationReport(
         deck_path=deck_path,
