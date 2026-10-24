@@ -65,6 +65,41 @@ class MigrationExtractionTests(unittest.TestCase):
         self.assertIn('href="https://example.com"', snapshot.notes[0].fields[0])
         self.assertIn('src="local.png"', snapshot.notes[0].fields[0])
 
+    def test_replaces_multiple_code_blocks_in_one_field(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = self.make_deck(root)
+            snapshot = extract_deck_notes(source)
+            original = snapshot.notes[0].fields[0]
+            second = '<pre class="language-python"><code>print(&amp;quot;bye&amp;quot;)</code></pre>'
+            database_dir = root / "db"
+            database_dir.mkdir()
+            with zipfile.ZipFile(source) as archive:
+                archive.extract("collection.anki2", database_dir)
+            database = database_dir / "collection.anki2"
+            connection = sqlite3.connect(database)
+            fields = original.replace("</p>", "</p>" + second, 1)
+            connection.execute("UPDATE notes SET flds = ?, sfld = ?, csum = ? WHERE id = ?", (fields + "\x1fSQL: SELECT 1", fields, field_checksum(fields), 1))
+            connection.commit()
+            connection.close()
+            rebuilt = root / "two.apkg"
+            with zipfile.ZipFile(rebuilt, "w") as archive:
+                archive.write(database, "collection.anki2")
+                archive.writestr("media", "{}")
+                archive.writestr("local.png", b"image")
+            candidates = extract_code_candidates(extract_deck_notes(rebuilt))
+            entries = []
+            for candidate, replacement in zip(candidates, ['fn main() { println!("hi"); }', 'fn bye() {}']):
+                item = candidate.__dict__.copy()
+                item["rust_replacement"] = replacement
+                item["validation_status"] = "compiled"
+                entries.append(item)
+            output = root / "output.apkg"
+            apply_inventory_replacements(rebuilt, entries, output)
+            changed = extract_deck_notes(output).notes[0].fields[0]
+            self.assertIn("fn main()", changed)
+            self.assertIn("fn bye()", changed)
+
     def test_applies_only_approved_code_and_validates_archive(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -86,6 +121,17 @@ class MigrationExtractionTests(unittest.TestCase):
             self.assertIn('fn main()', changed)
             self.assertIn('href="https://example.com"', changed)
             self.assertIn('src="local.png"', changed)
+
+    def test_every_convert_inventory_entry_has_utf8_replacement(self):
+        inventory_path = Path("docs/superpowers/rust-flashcard-code-inventory.json")
+        inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+        converted = [entry for entry in inventory if entry["classification"] == "convert"]
+        self.assertEqual(len(converted), 29)
+        for entry in converted:
+            replacement = entry["rust_replacement"]
+            self.assertIsInstance(replacement, str)
+            self.assertTrue(replacement)
+            replacement.encode("utf-8")
 
     def test_inventory_is_deterministic_json(self):
         with tempfile.TemporaryDirectory() as directory:

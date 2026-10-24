@@ -54,12 +54,13 @@ class CodeCandidate:
     rust_replacement: str | None = None
     validation_status: str = "pending"
     notes: str = ""
+    occurrence: int = 0
     start: int = 0
     end: int = 0
 
 
-def field_checksum(first_field: str) -> str:
-    return hashlib.sha1(first_field.encode("utf-8")).hexdigest()[:8]
+def field_checksum(first_field: str) -> int:
+    return int(hashlib.sha1(first_field.encode("utf-8")).hexdigest()[:8], 16)
 
 
 def _read_archive(deck_path: Path) -> tuple[Path, list[str], dict[str, str]]:
@@ -171,7 +172,7 @@ def extract_code_candidates(snapshot: DeckSnapshot) -> list[CodeCandidate]:
                     snippet_id=f"{deck_name}-{note.note_id}-{field_index}-{occurrence}",
                     source_html=source_html, source_text=source_text,
                     language=language, classification=classification, notes=notes,
-                    start=match.start(), end=match.end(),
+                    occurrence=occurrence, start=match.start(), end=match.end(),
                 ))
     return candidates
 
@@ -194,12 +195,16 @@ def load_inventory(path: Path) -> list[dict]:
 
 def _replace_candidate(field: str, candidate: dict, replacement: str) -> str:
     source_html = candidate["source_html"]
-    start = field.find(source_html)
-    if start < 0:
-        raise ValueError(f"source boundary missing for {candidate['snippet_id']}")
+    occurrence = int(candidate.get("occurrence", int(candidate["snippet_id"].rsplit("-", 1)[-1])))
+    occurrence = min(occurrence, field.count(source_html) - 1)
+    start = -1
+    search_from = 0
+    for _ in range(occurrence + 1):
+        start = field.find(source_html, search_from)
+        if start < 0:
+            raise ValueError(f"source boundary missing for {candidate['snippet_id']}")
+        search_from = start + len(source_html)
     end = start + len(source_html)
-    if field.find(source_html, end) >= 0:
-        raise ValueError(f"source boundary duplicated for {candidate['snippet_id']}")
     if source_html.lower().startswith("<pre"):
         updated = re.sub(r"(?is)(<pre\b[^>]*>).*?(</pre>)", lambda match: match.group(1) + replacement + match.group(2), source_html, count=1)
     else:
@@ -208,7 +213,10 @@ def _replace_candidate(field: str, candidate: dict, replacement: str) -> str:
 
 
 def apply_inventory_replacements(deck_path: Path, inventory: list[dict], output_path: Path) -> None:
-    by_note = {(entry["note_id"], entry["field_index"]): entry for entry in inventory if entry["classification"] == "convert"}
+    by_note: dict[tuple[int, int], list[dict]] = {}
+    for entry in inventory:
+        if entry["classification"] == "convert":
+            by_note.setdefault((entry["note_id"], entry["field_index"]), []).append(entry)
     temp_dir, _, _ = _read_archive(deck_path)
     try:
         database = temp_dir / "collection.anki2"
@@ -216,13 +224,13 @@ def apply_inventory_replacements(deck_path: Path, inventory: list[dict], output_
         for note_id, fields_value in connection.execute("SELECT id, flds FROM notes ORDER BY id"):
             fields = fields_value.split(FIELD_SEPARATOR)
             for field_index, field in enumerate(fields):
-                entry = by_note.get((note_id, field_index))
-                if entry is None:
-                    continue
-                replacement = entry.get("rust_replacement")
-                if not replacement:
-                    raise ValueError(f"missing Rust replacement for {entry['snippet_id']}")
-                fields[field_index] = _replace_candidate(field, entry, replacement)
+                entries = by_note.get((note_id, field_index), [])
+                for entry in sorted(entries, key=lambda item: int(item.get("occurrence", int(item["snippet_id"].rsplit("-", 1)[-1]))), reverse=True):
+                    replacement = entry.get("rust_replacement")
+                    if not replacement:
+                        raise ValueError(f"missing Rust replacement for {entry['snippet_id']}")
+                    field = _replace_candidate(field, entry, replacement)
+                fields[field_index] = field
             new_fields = FIELD_SEPARATOR.join(fields)
             if new_fields != fields_value:
                 connection.execute("UPDATE notes SET flds = ?, sfld = ?, csum = ? WHERE id = ?", (new_fields, fields[0], field_checksum(fields[0]), note_id))
@@ -254,6 +262,19 @@ def validate_migrated_deck(source_path: Path, output_path: Path, inventory: list
         raise ValueError("Anki counts changed")
     if source.members != output.members:
         raise ValueError("archive members changed")
+    source_fields = {(note.note_id, index): value for note in source.notes for index, value in enumerate(note.fields)}
+    output_fields = {(note.note_id, index): value for note in output.notes for index, value in enumerate(note.fields)}
+    converted_keys = {(entry["note_id"], entry["field_index"]) for entry in inventory if entry["classification"] == "convert"}
+    for entry in inventory:
+        key = (entry["note_id"], entry["field_index"])
+        before = source_fields[key]
+        after = output_fields[key]
+        if entry["classification"] != "convert" and key not in converted_keys and before != after:
+            raise ValueError(f"out-of-scope field changed: {entry['snippet_id']}")
+        if entry["classification"] != "convert" and entry["source_html"] not in after:
+            raise ValueError(f"excluded or manual snippet changed: {entry['snippet_id']}")
+        if entry["classification"] == "convert" and entry["source_html"] in after:
+            raise ValueError(f"source snippet remains: {entry['snippet_id']}")
     with zipfile.ZipFile(output_path) as archive:
         with tempfile.TemporaryDirectory() as directory:
             archive.extract("collection.anki2", directory)
@@ -262,7 +283,7 @@ def validate_migrated_deck(source_path: Path, output_path: Path, inventory: list
                 raise ValueError("SQLite quick_check failed")
             for note_id, fields, checksum in connection.execute("SELECT id, flds, csum FROM notes"):
                 first_field = fields.split(FIELD_SEPARATOR)[0]
-                if checksum != field_checksum(first_field):
+                if int(checksum) != field_checksum(first_field):
                     raise ValueError(f"checksum mismatch: {note_id}")
             connection.close()
 
