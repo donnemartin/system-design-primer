@@ -1,8 +1,10 @@
 class Node(object):
 
-    def __init__(self, results):
+    def __init__(self, query, results=None):
+        self.query = query
         self.results = results
-        self.next = next
+        self.prev = None
+        self.next = None
 
 
 class LinkedList(object):
@@ -12,13 +14,46 @@ class LinkedList(object):
         self.tail = None
 
     def move_to_front(self, node):
-        pass
+        if node is None or node is self.head:
+            return
+
+        if node.prev is not None:
+            node.prev.next = node.next
+        if node.next is not None:
+            node.next.prev = node.prev
+        if self.tail is node:
+            self.tail = node.prev
+
+        node.prev = None
+        node.next = self.head
+        if self.head is not None:
+            self.head.prev = node
+        self.head = node
+        if self.tail is None:
+            self.tail = node
 
     def append_to_front(self, node):
-        pass
+        node.prev = None
+        node.next = self.head
+        if self.head is not None:
+            self.head.prev = node
+        self.head = node
+        if self.tail is None:
+            self.tail = node
 
     def remove_from_tail(self):
-        pass
+        if self.tail is None:
+            return None
+        node = self.tail
+        if node.prev is not None:
+            node.prev.next = None
+            self.tail = node.prev
+        else:
+            self.head = None
+            self.tail = None
+        node.prev = None
+        node.next = None
+        return node
 
 
 class Cache(object):
@@ -52,15 +87,18 @@ class Cache(object):
             # Key exists in cache, update the value
             node.results = results
             self.linked_list.move_to_front(node)
+            return
+
+        # Key does not exist in cache
+        if self.size == self.MAX_SIZE:
+            # Remove the oldest entry from the linked list and lookup
+            oldest = self.linked_list.remove_from_tail()
+            if oldest is not None:
+                self.lookup.pop(oldest.query, None)
         else:
-            # Key does not exist in cache
-            if self.size == self.MAX_SIZE:
-                # Remove the oldest entry from the linked list and lookup
-                self.lookup.pop(self.linked_list.tail.query, None)
-                self.linked_list.remove_from_tail()
-            else:
-                self.size += 1
-            # Add the new key and value
-            new_node = Node(results)
-            self.linked_list.append_to_front(new_node)
-            self.lookup[query] = new_node
+            self.size += 1
+
+        # Add the new key and value
+        new_node = Node(query, results)
+        self.linked_list.append_to_front(new_node)
+        self.lookup[query] = new_node

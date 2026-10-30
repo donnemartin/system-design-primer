@@ -81,18 +81,32 @@ class BlackJackHand(Hand):
         super(BlackJackHand, self).__init__(cards)
 
     def score(self):
-        min_over = sys.MAXSIZE
-        max_under = -sys.MAXSIZE
+        min_over = float('inf')
+        max_under = -float('inf')
         for score in self.possible_scores():
             if self.BLACKJACK < score < min_over:
                 min_over = score
             elif max_under < score <= self.BLACKJACK:
                 max_under = score
-        return max_under if max_under != -sys.MAXSIZE else min_over
+        return max_under if max_under != -float('inf') else min_over
 
     def possible_scores(self):
         """Return a list of possible scores, taking Aces into account."""
-        pass
+        total = 0
+        aces = 0
+        for card in self.cards:
+            if card.is_ace():
+                aces += 1
+                total += 1
+            else:
+                total += card.value
+
+        scores = {total}
+        for _ in range(aces):
+            if total + 10 <= self.BLACKJACK:
+                total += 10
+                scores.add(total)
+        return sorted(scores)
 
 
 class Deck(object):
@@ -114,4 +128,7 @@ class Deck(object):
         return card
 
     def shuffle(self):
-        pass
+        import random
+        random.shuffle(self.cards)
+        self.deal_index = 0
+        return self.cards
