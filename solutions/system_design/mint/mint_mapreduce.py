@@ -33,7 +33,7 @@ class SpendingByCategory(MRJob):
         timestamp, category, amount = line.split('\t')
         period = self. extract_year_month(timestamp)
         if period == self.current_year_month():
-            yield (period, category), amount
+            yield (period, category), float(amount)
 
     def reducer(self, key, values):
         """Sum values for each key.
@@ -41,9 +41,10 @@ class SpendingByCategory(MRJob):
         (2016-01, shopping), 125
         (2016-01, gas), 50
         """
+        values = list(values)
         total = sum(values)
         self.handle_budget_notifications(key, total)
-        yield key, sum(values)
+        yield key, total
 
     def steps(self):
         """Run the map and reduce steps."""

@@ -311,16 +311,17 @@ class SpendingByCategory(MRJob):
         category = self.categorizer.categorize(seller)
         period = self.extract_year_month(timestamp)
         if period == self.current_year_month:
-            yield (user_id, period, category), amount
+            yield (user_id, period, category), float(amount)
 
-    def reducer(self, key, value):
+    def reducer(self, key, values):
         """Sum values for each key.
 
         (user_id, 2016-01, shopping), 125
         (user_id, 2016-01, gas), 50
         """
+        values = list(values)
         total = sum(values)
-        yield key, sum(values)
+        yield key, total
 ```
 
 ## Step 4: Scale the design
