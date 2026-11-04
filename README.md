@@ -824,6 +824,12 @@ A relational database like SQL is a collection of data items organized in tables
 * **Isolation** - Executing transactions concurrently has the same results as if the transactions were executed serially
 * **Durability** - Once a transaction has been committed, it will remain so
 
+When a client reads a record and later replaces it in a separate operation, another writer can change the record in between. A replacement based on the old snapshot can silently erase that change, even if the writers intended to edit different fields.
+
+A conditional write can reject a stale snapshot by comparing its expected revision with the current revision. The comparison and write must be atomic in the store that owns the data. After a rejection, re-read the current record and check whether the intended field also changed before reapplying an edit; a retry is not automatically a safe merge.
+
+* [Worked Python example: reproduce a lost update](https://dev.to/alekperak/two-writers-one-document-reproduce-a-lost-update-2dl5) - A deterministic, single-threaded in-memory exercise with assertions, not a database concurrency test.
+
 There are many techniques to scale a relational database: **master-slave replication**, **master-master replication**, **federation**, **sharding**, **denormalization**, and **SQL tuning**.
 
 #### Master-slave replication
