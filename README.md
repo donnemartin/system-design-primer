@@ -724,7 +724,7 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * [Scalability](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 * [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
 * [Layer 4 load balancing](https://web.archive.org/web/20240117134735/https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [Layer 7 load balancing](https://web.archive.org/web/20240117134747/https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
 
 ## Reverse proxy (web server)
