@@ -443,7 +443,7 @@
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <strong><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
+  <strong><a href="https://robertgreiner.com/cap-theorem-revisited">来源：再看 CAP 理论</a></strong>
 </p>
 
 在一个分布式计算系统中，只能同时满足下列的两点:
@@ -466,8 +466,8 @@
 
 ### 来源及延伸阅读
 
-* [再看 CAP 理论](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [再看 CAP 理论](https://robertgreiner.com/cap-theorem-revisited/)
+* [通俗易懂地介绍 CAP 理论](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一致性模式

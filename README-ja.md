@@ -438,7 +438,7 @@
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href="https://robertgreiner.com/cap-theorem-revisited">Source: CAP theorem revisited</a></i>
 </p>
 
 分散型コンピュータシステムにおいては下の三つのうち二つまでしか同時に保証することはできない。:
@@ -461,8 +461,8 @@
 
 ### その他の参考資料、ページ
 
-* [CAP 理論を振り返る](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
-* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem/)
+* [CAP 理論を振り返る](https://robertgreiner.com/cap-theorem-revisited/)
+* [平易な英語でのCAP 理論のイントロ](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 
 ## 一貫性パターン
