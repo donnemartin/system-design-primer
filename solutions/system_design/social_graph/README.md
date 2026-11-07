@@ -85,17 +85,14 @@ class Graph(Graph):
         queue = deque()
         queue.append(source)
         prev_node_keys = {source.key: None}
-        source.visit_state = State.visited
         while queue:
             node = queue.popleft()
             if node is dest:
                 return prev_node_keys
-            prev_node = node
             for adj_node in node.adj_nodes.values():
-                if adj_node.visit_state == State.unvisited:
+                if adj_node.key not in prev_node_keys:
                     queue.append(adj_node)
-                    prev_node_keys[adj_node.key] = prev_node.key
-                    adj_node.visit_state = State.visited
+                    prev_node_keys[adj_node.key] = node.key
         return None
 ```
 
