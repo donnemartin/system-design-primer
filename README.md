@@ -940,7 +940,7 @@ In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A rea
 
 #### SQL tuning
 
-SQL tuning is a broad topic and many [books](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=sql+tuning) have been written as reference.
+SQL tuning is a broad topic and many [books](https://www.amazon.com/s?k=sql+tuning) have been written as reference.
 
 It's important to **benchmark** and **profile** to simulate and uncover bottlenecks.
 
