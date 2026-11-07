@@ -15,16 +15,17 @@ class Graph(object):
             return False
         queue = deque()
         queue.append(source)
-        source.visit_state = State.visited
+        # Keep identity-based visitation local to each search.
+        visited_ids = {id(source)}
         while queue:
             node = queue.popleft()
             print(node)
             if dest is node:
                 return True
             for adjacent_node in node.adj_nodes.values():
-                if adjacent_node.visit_state == State.unvisited:
+                if id(adjacent_node) not in visited_ids:
                     queue.append(adjacent_node)
-                    adjacent_node.visit_state = State.visited
+                    visited_ids.add(id(adjacent_node))
         return False
 
 
