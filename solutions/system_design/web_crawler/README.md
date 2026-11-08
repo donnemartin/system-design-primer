@@ -182,10 +182,10 @@ We need to be careful the web crawler doesn't get stuck in an infinite loop, whi
 
 **Clarify with your interviewer how much code you are expected to write**.
 
-We'll want to remove duplicate urls:
+We'll want to keep one entry per URL:
 
-* For smaller lists we could use something like `sort | unique`
-* With 1 billion links to crawl, we could use **MapReduce** to output only entries that have a frequency of 1
+* For smaller lists we could use `sort -u`.
+* With 1 billion links to crawl, we could use **MapReduce** to group identical URLs and emit each URL once with its occurrence count.
 
 ```python
 class RemoveDuplicateUrls(MRJob):
@@ -194,9 +194,7 @@ class RemoveDuplicateUrls(MRJob):
         yield line, 1
 
     def reducer(self, key, values):
-        total = sum(values)
-        if total == 1:
-            yield key, total
+        yield key, sum(values)
 ```
 
 Detecting duplicate content is more complex.  We could generate a signature based on the contents of the page and compare those two signatures for similarity.  Some potential algorithms are [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) and [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity).

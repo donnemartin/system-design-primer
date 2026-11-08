@@ -9,16 +9,7 @@ class RemoveDuplicateUrls(MRJob):
         yield line, 1
 
     def reducer(self, key, values):
-        total = sum(values)
-        if total == 1:
-            yield key, total
-
-    def steps(self):
-        """Run the map and reduce steps."""
-        return [
-            self.mr(mapper=self.mapper,
-                    reducer=self.reducer)
-        ]
+        yield key, sum(values)
 
 
 if __name__ == '__main__':
