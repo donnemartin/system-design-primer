@@ -50,5 +50,6 @@ dependencies=("pandoc")
 check_dependencies
 generate_with_solutions
 generate README-ja ja
+generate README-ru ru
 generate README-zh-Hans zh-Hans
 generate README-zh-TW zh-TW

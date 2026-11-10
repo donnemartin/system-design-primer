@@ -26,6 +26,12 @@ Languages are grouped by status and are listed in alphabetical order.
 * Maintainer(s): [@tsukukobaan](https://github.com/tsukukobaan) 👏
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/100
 
+### 🎉 Russian
+
+* [README-ru.md](README-ru.md)
+* Maintainer(s): [@voitau](https://github.com/voitau), [@DmitryOlkhovoi](https://github.com/DmitryOlkhovoi) 👏
+* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/87
+
 ### 🎉 Simplified Chinese
 
 * [zh-Hans.md](README-zh-Hans.md)
@@ -45,12 +51,6 @@ Languages are grouped by status and are listed in alphabetical order.
 * Maintainer(s): [@bonomoon](https://github.com/bonomoon), [@mingrammer](https://github.com/mingrammer) 👏
 * Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/102
 * Translation Fork:  https://github.com/mingrammer/system-design-primer, https://github.com/donnemartin/system-design-primer/pull/103
-
-### ⏳ Russian
-
-* Maintainer(s): [@voitau](https://github.com/voitau), [@DmitryOlkhovoi](https://github.com/DmitryOlkhovoi) 👏
-* Discussion Thread: https://github.com/donnemartin/system-design-primer/issues/87
-* Translation Fork: https://github.com/voitau/system-design-primer/blob/master/README-ru.md
 
 ## Stalled
 
