@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from mrjob.job import MRJob
+from mrjob.step import MRStep
 
 
 class SalesRanker(MRJob):
@@ -23,7 +24,7 @@ class SalesRanker(MRJob):
         """
         timestamp, product_id, category, quantity = line.split('\t')
         if self.within_past_week(timestamp):
-            yield (category, product_id), quantity
+            yield (category, product_id), int(quantity)
 
     def reducer(self, key, values):
         """Sum values for each key.
@@ -60,16 +61,17 @@ class SalesRanker(MRJob):
         quantity = value
         yield (category, quantity), product_id
 
-    def reducer_identity(self, key, value):
-        yield key, value
+    def reducer_identity(self, key, values):
+        for value in values:
+            yield key, value
 
     def steps(self):
         """Run the map and reduce steps."""
         return [
-            self.mr(mapper=self.mapper,
-                    reducer=self.reducer),
-            self.mr(mapper=self.mapper_sort,
-                    reducer=self.reducer_identity),
+            MRStep(mapper=self.mapper,
+                   reducer=self.reducer),
+            MRStep(mapper=self.mapper_sort,
+                   reducer=self.reducer_identity),
         ]
 
 

@@ -124,7 +124,7 @@ class SalesRanker(MRJob):
         timestamp, product_id, category_id, quantity, total_price, seller_id, \
             buyer_id = line.split('\t')
         if self.within_past_week(timestamp):
-            yield (category_id, product_id), quantity
+            yield (category_id, product_id), int(quantity)
 
     def reducer(self, key, value):
         """Sum values for each key.
@@ -161,16 +161,17 @@ class SalesRanker(MRJob):
         quantity = value
         yield (category_id, quantity), product_id
 
-    def reducer_identity(self, key, value):
-        yield key, value
+    def reducer_identity(self, key, values):
+        for value in values:
+            yield key, value
 
     def steps(self):
         """Run the map and reduce steps."""
         return [
-            self.mr(mapper=self.mapper,
-                    reducer=self.reducer),
-            self.mr(mapper=self.mapper_sort,
-                    reducer=self.reducer_identity),
+            MRStep(mapper=self.mapper,
+                   reducer=self.reducer),
+            MRStep(mapper=self.mapper_sort,
+                   reducer=self.reducer_identity),
         ]
 ```
 
