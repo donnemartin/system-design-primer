@@ -82,6 +82,9 @@ class Cache(object):
         If the entry is new and the cache is at capacity, removes the oldest entry
         before the new entry is added.
         """
+        if self.MAX_SIZE <= 0:
+            return
+
         node = self.lookup.get(query)
         if node is not None:
             # Key exists in cache, update the value

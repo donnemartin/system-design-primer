@@ -18,7 +18,7 @@ class Vehicle(metaclass=ABCMeta):
         self.spots_taken = []
 
     def clear_spots(self):
-        for spot in self.spots_taken:
+        for spot in self.spots_taken[:]:
             spot.remove_vehicle(self)
         self.spots_taken = []
 
@@ -78,7 +78,7 @@ class Level(object):
         self.floor = floor
         self.num_spots = total_spots
         self.available_spots = total_spots
-        self.spots = [ParkingSpot(self, 0, spot_number, 1, VehicleSize.COMPACT)
+        self.spots = [ParkingSpot(self, 0, spot_number, 1, VehicleSize.LARGE)
                       for spot_number in range(total_spots)]  # List of ParkingSpots
 
     def spot_freed(self):
@@ -89,7 +89,7 @@ class Level(object):
         if spot is None:
             return None
         else:
-            spot.park_vehicle(vehicle)
+            self._park_starting_at_spot(spot, vehicle)
             return spot
 
     def _find_available_spot(self, vehicle):
@@ -139,9 +139,10 @@ class ParkingSpot(object):
     def remove_vehicle(self, vehicle=None):
         if vehicle is not None and self.vehicle is not vehicle:
             return False
-        if self.vehicle is not None:
-            self.vehicle.spots_taken = [spot for spot in self.vehicle.spots_taken if spot is not self]
-            self.vehicle = None
+        if self.vehicle is None:
+            return False
+        self.vehicle.spots_taken = [spot for spot in self.vehicle.spots_taken if spot is not self]
+        self.vehicle = None
         if self.level is not None:
             self.level.spot_freed()
         return True

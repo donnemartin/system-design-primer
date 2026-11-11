@@ -130,5 +130,7 @@ class Deck(object):
     def shuffle(self):
         import random
         random.shuffle(self.cards)
+        for card in self.cards:
+            card.is_available = True
         self.deal_index = 0
         return self.cards

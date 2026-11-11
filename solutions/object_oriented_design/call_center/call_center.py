@@ -28,8 +28,10 @@ class Employee(metaclass=ABCMeta):
     def complete_call(self):
         if self.call is None:
             return
-        self.call.state = CallState.COMPLETE
-        self.call_center.notify_call_completed(self.call)
+        call = self.call
+        self.call = None
+        call.state = CallState.COMPLETE
+        self.call_center.notify_call_completed(call)
 
     @abstractmethod
     def escalate_call(self):

@@ -24,7 +24,7 @@ class UserService(object):
         if from_user is None or to_user is None:
             raise KeyError('Unknown user')
         request = from_user.send_friend_request(to_user_id)
-        to_user.receive_friend_request(from_user_id)
+        to_user.receive_friend_request(from_user_id, from_user)
         return request
 
     def approve_friend_request(self, from_user_id, to_user_id):
@@ -32,23 +32,26 @@ class UserService(object):
         to_user = self.users_by_id.get(to_user_id)
         if from_user is None or to_user is None:
             raise KeyError('Unknown user')
-        request = None
-        if from_user_id in to_user.received_friend_requests_by_friend_id:
-            request = to_user.received_friend_requests_by_friend_id.pop(from_user_id)
-            request.request_status = RequestStatus.ACCEPTED
-        from_user.friends_by_id[to_user_id] = to_user
-        to_user.friends_by_id[from_user_id] = from_user
-        return request
+        request = to_user.received_friend_requests_by_friend_id.get(from_user_id)
+        if request is None:
+            return None
+        request.request_status = RequestStatus.ACCEPTED
+        sent_request = from_user.sent_friend_requests_by_friend_id.get(to_user_id)
+        if sent_request is not None:
+            sent_request.request_status = RequestStatus.ACCEPTED
+        return to_user.approve_friend_request(from_user_id)
 
     def reject_friend_request(self, from_user_id, to_user_id):
         from_user = self.users_by_id.get(from_user_id)
         to_user = self.users_by_id.get(to_user_id)
         if from_user is None or to_user is None:
             raise KeyError('Unknown user')
-        request = None
-        if from_user_id in to_user.received_friend_requests_by_friend_id:
-            request = to_user.received_friend_requests_by_friend_id.pop(from_user_id)
+        request = to_user.received_friend_requests_by_friend_id.pop(from_user_id, None)
+        if request is not None:
             request.request_status = RequestStatus.REJECTED
+            sent_request = from_user.sent_friend_requests_by_friend_id.get(to_user_id)
+            if sent_request is not None:
+                sent_request.request_status = RequestStatus.REJECTED
         return request
 
 
@@ -90,20 +93,29 @@ class User(object):
         self.sent_friend_requests_by_friend_id[friend_id] = request
         return request
 
-    def receive_friend_request(self, friend_id):
-        request = AddRequest(friend_id, self.user_id, RequestStatus.UNREAD, None)
+    def receive_friend_request(self, friend_id, friend=None):
+        request = AddRequest(friend_id, self.user_id, RequestStatus.UNREAD, None, friend)
         self.received_friend_requests_by_friend_id[friend_id] = request
         return request
 
     def approve_friend_request(self, friend_id):
-        if friend_id not in self.received_friend_requests_by_friend_id:
+        friend = friend_id if isinstance(friend_id, User) else None
+        friend_id = friend.user_id if friend is not None else friend_id
+        request = self.received_friend_requests_by_friend_id.get(friend_id)
+        if request is None:
             return None
 
+        friend = friend or request.user
+        if friend is None:
+            raise ValueError('Friend user is required to approve a friend request')
         request = self.received_friend_requests_by_friend_id.pop(friend_id)
         request.request_status = RequestStatus.ACCEPTED
-        self.friends_by_id[friend_id] = friend_id
+        self.friends_by_id[friend_id] = friend
+        friend.friends_by_id[self.user_id] = self
         if friend_id not in self.friend_ids_to_private_chats:
-            self.friend_ids_to_private_chats[friend_id] = PrivateChat(self.user_id, friend_id)
+            chat = PrivateChat(self, friend)
+            self.friend_ids_to_private_chats[friend_id] = chat
+            friend.friend_ids_to_private_chats[self.user_id] = chat
         return request
 
     def reject_friend_request(self, friend_id):
@@ -156,11 +168,12 @@ class Message(object):
 
 class AddRequest(object):
 
-    def __init__(self, from_user_id, to_user_id, request_status, timestamp):
+    def __init__(self, from_user_id, to_user_id, request_status, timestamp, user=None):
         self.from_user_id = from_user_id
         self.to_user_id = to_user_id
         self.request_status = request_status
         self.timestamp = timestamp
+        self.user = user
 
 
 class RequestStatus(Enum):
