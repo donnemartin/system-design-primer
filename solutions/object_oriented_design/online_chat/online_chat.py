@@ -8,19 +8,51 @@ class UserService(object):
         self.users_by_id = {}  # key: user id, value: User
 
     def add_user(self, user_id, name, pass_hash):
-        pass
+        user = User(user_id, name, pass_hash)
+        self.users_by_id[user_id] = user
+        return user
 
     def remove_user(self, user_id):
-        pass
+        if user_id in self.users_by_id:
+            del self.users_by_id[user_id]
+            return True
+        return False
 
     def add_friend_request(self, from_user_id, to_user_id):
-        pass
+        from_user = self.users_by_id.get(from_user_id)
+        to_user = self.users_by_id.get(to_user_id)
+        if from_user is None or to_user is None:
+            raise KeyError('Unknown user')
+        request = from_user.send_friend_request(to_user_id)
+        to_user.receive_friend_request(from_user_id, from_user)
+        return request
 
     def approve_friend_request(self, from_user_id, to_user_id):
-        pass
+        from_user = self.users_by_id.get(from_user_id)
+        to_user = self.users_by_id.get(to_user_id)
+        if from_user is None or to_user is None:
+            raise KeyError('Unknown user')
+        request = to_user.received_friend_requests_by_friend_id.get(from_user_id)
+        if request is None:
+            return None
+        request.request_status = RequestStatus.ACCEPTED
+        sent_request = from_user.sent_friend_requests_by_friend_id.get(to_user_id)
+        if sent_request is not None:
+            sent_request.request_status = RequestStatus.ACCEPTED
+        return to_user.approve_friend_request(from_user_id)
 
     def reject_friend_request(self, from_user_id, to_user_id):
-        pass
+        from_user = self.users_by_id.get(from_user_id)
+        to_user = self.users_by_id.get(to_user_id)
+        if from_user is None or to_user is None:
+            raise KeyError('Unknown user')
+        request = to_user.received_friend_requests_by_friend_id.pop(from_user_id, None)
+        if request is not None:
+            request.request_status = RequestStatus.REJECTED
+            sent_request = from_user.sent_friend_requests_by_friend_id.get(to_user_id)
+            if sent_request is not None:
+                sent_request.request_status = RequestStatus.REJECTED
+        return request
 
 
 class User(object):
@@ -36,27 +68,67 @@ class User(object):
         self.sent_friend_requests_by_friend_id = {}  # key: friend id, value: AddRequest
 
     def message_user(self, friend_id, message):
-        pass
+        if friend_id not in self.friends_by_id:
+            raise KeyError('Not friends with user {}'.format(friend_id))
+        if friend_id not in self.friend_ids_to_private_chats:
+            chat = PrivateChat(self.user_id, friend_id)
+            self.friend_ids_to_private_chats[friend_id] = chat
+            friend = self.friends_by_id[friend_id]
+            friend.friend_ids_to_private_chats[self.user_id] = chat
+        chat = self.friend_ids_to_private_chats[friend_id]
+        message_id = len(chat.messages) + 1
+        chat.messages.append(Message(message_id, message, None))
+        return chat
 
     def message_group(self, group_id, message):
-        pass
+        if group_id not in self.group_chats_by_id:
+            raise KeyError('Unknown group chat {}'.format(group_id))
+        chat = self.group_chats_by_id[group_id]
+        message_id = len(chat.messages) + 1
+        chat.messages.append(Message(message_id, message, None))
+        return chat
 
     def send_friend_request(self, friend_id):
-        pass
+        request = AddRequest(self.user_id, friend_id, RequestStatus.UNREAD, None)
+        self.sent_friend_requests_by_friend_id[friend_id] = request
+        return request
 
-    def receive_friend_request(self, friend_id):
-        pass
+    def receive_friend_request(self, friend_id, friend=None):
+        request = AddRequest(friend_id, self.user_id, RequestStatus.UNREAD, None, friend)
+        self.received_friend_requests_by_friend_id[friend_id] = request
+        return request
 
     def approve_friend_request(self, friend_id):
-        pass
+        friend = friend_id if isinstance(friend_id, User) else None
+        friend_id = friend.user_id if friend is not None else friend_id
+        request = self.received_friend_requests_by_friend_id.get(friend_id)
+        if request is None:
+            return None
+
+        friend = friend or request.user
+        if friend is None:
+            raise ValueError('Friend user is required to approve a friend request')
+        request = self.received_friend_requests_by_friend_id.pop(friend_id)
+        request.request_status = RequestStatus.ACCEPTED
+        self.friends_by_id[friend_id] = friend
+        friend.friends_by_id[self.user_id] = self
+        if friend_id not in self.friend_ids_to_private_chats:
+            chat = PrivateChat(self, friend)
+            self.friend_ids_to_private_chats[friend_id] = chat
+            friend.friend_ids_to_private_chats[self.user_id] = chat
+        return request
 
     def reject_friend_request(self, friend_id):
-        pass
+        if friend_id in self.received_friend_requests_by_friend_id:
+            request = self.received_friend_requests_by_friend_id.pop(friend_id)
+            request.request_status = RequestStatus.REJECTED
+            return request
+        return None
 
 
 class Chat(metaclass=ABCMeta):
 
-    def __init__(self, chat_id):
+    def __init__(self, chat_id=None):
         self.chat_id = chat_id
         self.users = []
         self.messages = []
@@ -65,18 +137,25 @@ class Chat(metaclass=ABCMeta):
 class PrivateChat(Chat):
 
     def __init__(self, first_user, second_user):
-        super(PrivateChat, self).__init__()
-        self.users.append(first_user)
-        self.users.append(second_user)
+        if hasattr(first_user, 'user_id') and hasattr(second_user, 'user_id'):
+            super(PrivateChat, self).__init__('{}-{}'.format(first_user.user_id, second_user.user_id))
+            self.users.append(first_user)
+            self.users.append(second_user)
+        else:
+            super(PrivateChat, self).__init__()
+            self.users.append(first_user)
+            self.users.append(second_user)
 
 
 class GroupChat(Chat):
 
     def add_user(self, user):
-        pass
+        if user not in self.users:
+            self.users.append(user)
 
     def remove_user(self, user):
-        pass
+        if user in self.users:
+            self.users.remove(user)
 
 
 class Message(object):
@@ -89,11 +168,12 @@ class Message(object):
 
 class AddRequest(object):
 
-    def __init__(self, from_user_id, to_user_id, request_status, timestamp):
+    def __init__(self, from_user_id, to_user_id, request_status, timestamp, user=None):
         self.from_user_id = from_user_id
         self.to_user_id = to_user_id
         self.request_status = request_status
         self.timestamp = timestamp
+        self.user = user
 
 
 class RequestStatus(Enum):

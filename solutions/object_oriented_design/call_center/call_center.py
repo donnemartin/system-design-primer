@@ -12,7 +12,7 @@ class Rank(Enum):
 
 class Employee(metaclass=ABCMeta):
 
-    def __init__(self, employee_id, name, rank, call_center):
+    def __init__(self, employee_id, name, rank, call_center=None):
         self.employee_id = employee_id
         self.name = name
         self.rank = rank
@@ -26,14 +26,20 @@ class Employee(metaclass=ABCMeta):
         self.call.state = CallState.IN_PROGRESS
 
     def complete_call(self):
-        self.call.state = CallState.COMPLETE
-        self.call_center.notify_call_completed(self.call)
+        if self.call is None:
+            return
+        call = self.call
+        self.call = None
+        call.state = CallState.COMPLETE
+        self.call_center.notify_call_completed(call)
 
     @abstractmethod
     def escalate_call(self):
         pass
 
     def _escalate_call(self):
+        if self.call is None:
+            return
         self.call.state = CallState.READY
         call = self.call
         self.call = None
@@ -42,28 +48,32 @@ class Employee(metaclass=ABCMeta):
 
 class Operator(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR)
+    def __init__(self, employee_id, name, call_center=None):
+        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR, call_center)
 
     def escalate_call(self):
-        self.call.level = Rank.SUPERVISOR
+        if self.call is None:
+            return
+        self.call.rank = Rank.SUPERVISOR
         self._escalate_call()
 
 
 class Supervisor(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+    def __init__(self, employee_id, name, call_center=None):
+        super(Supervisor, self).__init__(employee_id, name, Rank.SUPERVISOR, call_center)
 
     def escalate_call(self):
-        self.call.level = Rank.DIRECTOR
+        if self.call is None:
+            return
+        self.call.rank = Rank.DIRECTOR
         self._escalate_call()
 
 
 class Director(Employee):
 
-    def __init__(self, employee_id, name):
-        super(Operator, self).__init__(employee_id, name, Rank.DIRECTOR)
+    def __init__(self, employee_id, name, call_center=None):
+        super(Director, self).__init__(employee_id, name, Rank.DIRECTOR, call_center)
 
     def escalate_call(self):
         raise NotImplementedError('Directors must be able to handle any call')
@@ -91,6 +101,8 @@ class CallCenter(object):
         self.supervisors = supervisors
         self.directors = directors
         self.queued_calls = deque()
+        for employee in self.operators + self.supervisors + self.directors:
+            employee.call_center = self
 
     def dispatch_call(self, call):
         if call.rank not in (Rank.OPERATOR, Rank.SUPERVISOR, Rank.DIRECTOR):
@@ -98,12 +110,17 @@ class CallCenter(object):
         employee = None
         if call.rank == Rank.OPERATOR:
             employee = self._dispatch_call(call, self.operators)
-        if call.rank == Rank.SUPERVISOR or employee is None:
+            if employee is None:
+                employee = self._dispatch_call(call, self.supervisors)
+        elif call.rank == Rank.SUPERVISOR:
             employee = self._dispatch_call(call, self.supervisors)
-        if call.rank == Rank.DIRECTOR or employee is None:
+            if employee is None:
+                employee = self._dispatch_call(call, self.directors)
+        elif call.rank == Rank.DIRECTOR:
             employee = self._dispatch_call(call, self.directors)
         if employee is None:
             self.queued_calls.append(call)
+        return employee
 
     def _dispatch_call(self, call, employees):
         for employee in employees:
@@ -113,10 +130,36 @@ class CallCenter(object):
         return None
 
     def notify_call_escalated(self, call):
-        pass
+        self.dispatch_call(call)
 
     def notify_call_completed(self, call):
-        pass
+        self.dispatch_queued_call_to_newly_freed_employee()
 
-    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
-        pass
+    def dispatch_queued_call_to_newly_freed_employee(self, call=None, employee=None):
+        if not self.queued_calls:
+            return None
+        for queued_call in list(self.queued_calls):
+            if queued_call.rank == Rank.OPERATOR:
+                employee = self._dispatch_call(queued_call, self.operators)
+                if employee is not None:
+                    self.queued_calls.remove(queued_call)
+                    return employee
+                employee = self._dispatch_call(queued_call, self.supervisors)
+                if employee is not None:
+                    self.queued_calls.remove(queued_call)
+                    return employee
+            elif queued_call.rank == Rank.SUPERVISOR:
+                employee = self._dispatch_call(queued_call, self.supervisors)
+                if employee is not None:
+                    self.queued_calls.remove(queued_call)
+                    return employee
+                employee = self._dispatch_call(queued_call, self.directors)
+                if employee is not None:
+                    self.queued_calls.remove(queued_call)
+                    return employee
+            elif queued_call.rank == Rank.DIRECTOR:
+                employee = self._dispatch_call(queued_call, self.directors)
+                if employee is not None:
+                    self.queued_calls.remove(queued_call)
+                    return employee
+        return None
