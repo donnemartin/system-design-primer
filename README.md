@@ -495,6 +495,7 @@ This approach is seen in file systems and RDBMSes.  Strong consistency works wel
 ### Source(s) and further reading
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
+* [Anatomy of a Payment](https://digbijoylabs.github.io/anatomy-of-a-payment/) - Interactive Apache-2.0 payment-rail workbench and [CC-BY-4.0 paper](https://doi.org/10.5281/zenodo.24444210) on authorization, clearing, settlement finality, idempotency, and double-entry ledger invariants.
 
 ## Availability patterns
 
